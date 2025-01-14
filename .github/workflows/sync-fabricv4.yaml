@@ -3,7 +3,7 @@ on:
     inputs:
       new_api_spec_version_number:
         required: true
-name: Sync SDK with New API Spec
+name: Sync fabricv4 API spec
 jobs:
   sync:
     strategy:
@@ -31,7 +31,7 @@ jobs:
       - name: Get next API Spec Version
         id: spec_versions
         run: |
-          API_SPEC_LINE=$(grep -i app.swaggerhub.com Makefile)
+          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
           CURRENT_VERSION_NUM=$(echo $API_SPEC_LINE | cut -d / -f7)
           echo "api_spec_line=$API_SPEC_LINE" >> "$GITHUB_OUTPUT"
           echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
@@ -44,9 +44,23 @@ jobs:
 
       - name: Sync
         run: |
-          VERSION_UPDATE="OPENAPI_URL=\"https://app.swaggerhub.com/apiproxy/registry/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}\""
-          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile
-          make generate 
+          VERSION_UPDATE="SPEC_BASE_URL:=https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}"
+          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile.fabricv4
+          make -f Makefile.fabricv4 fetch
+          git add .
+          git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec'
+
+      - name: Patch
+        run: |
+          make -f Makefile.fabricv4 patch
+          git add .
+          git commit -m 'sync: patch ${{ steps.date.outputs.date }} spec'
+
+      - name: Regenerate code
+        run: |
+          make -f Makefile.fabricv4 generate
+          git add .
+          git commit -m 'sync: generate client with patched ${{ steps.date.outputs.date }} spec'
 
       - name: Tests
         env:
@@ -56,15 +70,8 @@ jobs:
           TEST_USER_NAME: ${{ secrets.TEST_USER_NAME }}
           TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
         shell: bash
-        working-directory: ./equinix-openapi-fabric
         run: |-
           mvn clean package -DskipTests -DenvUrl=${{ env.TEST_HOST_URL }} -DuserName=${{ env.TEST_USER_NAME }}
-
-      - name: Commit changes
-        run: |
-          git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec and apply patches' spec/*.json
-          git add equinix-openapi-fabric
-          git commit -m 'sync: generate client with ${{ steps.date.outputs.date }} spec'    
 
       - name: Create Pull Request
         id: cpr
