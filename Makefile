@@ -1,73 +1,42 @@
-.PHONY: generate
+.PHONY: all pull fetch patch generate clean codegen docs move-other patch-post fmt test stage
 
 CURRENT_UID := $(shell id -u)
 CURRENT_GID := $(shell id -g)
 
-##
-# Preliminary definitions
-##
-
-# git repo : equinix fabric-java sdk
-GIT_ORG=equinix-labs
-GIT_REPO=fabric-sdk-java
-
+GIT_ORG=equinix
+GIT_REPO=equinix-sdk-java
 PACKAGE_VERSION=$(shell cat version)
+USER_AGENT=${GIT_REPO}/${PACKAGE_VERSION}
 
-# Equinix fabric OAS 3.0.0
-SPEC_FETCHED_FILE:=spec/oas3.fabric.fetched.json
-SPEC_PATCHED_FILE:=spec/oas3.fabric.patched.json
-OPENAPI_CONFIG:=spec/oas3.fabric.config.json
-OPENAPI_GENERATED_CLIENT=equinix-openapi-fabric/
-TESTS_PATH=src/test/java/com/equinix/openapi/fabric/
+OPENAPI_IMAGE_TAG=v7.4.0
+OPENAPI_IMAGE=openapitools/openapi-generator-cli:${OPENAPI_IMAGE_TAG}
+CRI=docker # nerdctl
+OPENAPI_GENERATOR=${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} -v $(CURDIR):/local ${OPENAPI_IMAGE}
+SPEC_FETCHER=${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} -v $(CURDIR):/workdir --entrypoint sh mikefarah/yq:4.30.8 script/download_spec.sh
 
-# Patches
-SPEC_FETCHED_PATCHES=patches/spec.fetched.json
+SPEC_BASE_DIR=spec/services
+TEMPLATE_BASE_DIR=templates/services
+CODE_BASE_DIR=services
 
-##
-# OpenAPI codegen container
-##
-CRI:=docker # nerdctl
-OPENAPI_CODEGEN_TAG=v6.4.0
-OPENAPI_CODEGEN_IMAGE=openapitools/openapi-generator-cli:${OPENAPI_CODEGEN_TAG}
-DOCKER_OPENAPI=${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} -v $(CURDIR):/local ${OPENAPI_CODEGEN_IMAGE}
-OPENAPI_URL="https://app.swaggerhub.com/apiproxy/registry/equinix-api/fabric/4.18"
+onboard-service:
+	script/onboard_service.sh
 
-generate: clean fetch pre-spec-patch pull docker_generate build_client
-
-clean:
-	rm -rf ${OPENAPI_GENERATED_CLIENT}
-	rm -rf ${OPENAPI_GIT_DIR}
-
-# Fetch any public available version of Fabric V4 API specification. Send the URL to the specification as input argument
-# Example: make fetch OPENAPI_URL=https://app.swaggerhub.com/apiproxy/registry/equinix-api/fabric/4.11
-fetch:
-	curl ${OPENAPI_URL} | jq . > ${SPEC_FETCHED_FILE}
-
-# For patches summary refer : fabric-java/patches/README.md
-pre-spec-patch:
-	# patch is idempotent, always starting with the fetched
-	# fetched file to create the patched file.
-	cp ${SPEC_FETCHED_FILE} ${SPEC_PATCHED_FILE}
-	ARGS="-o ${SPEC_PATCHED_FILE} ${SPEC_FETCHED_FILE}"; \
-	for diff in $(shell find ${SPEC_FETCHED_PATCHES} -name \*.patch | sort -n); do \
-		patch --no-backup-if-mismatch -N -t $$ARGS $$diff; \
-		ARGS=${SPEC_PATCHED_FILE}; \
+patch-all:
+	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
+		make -f $$makefile patch;\
 	done
 
-pull:
-	${CRI} pull ${OPENAPI_CODEGEN_IMAGE}
+generate-all:
+	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
+		make -f $$makefile generate;\
+	done
 
-docker_generate:
-	${DOCKER_OPENAPI} generate \
-		--http-user-agent "${GIT_REPO}/${PACKAGE_VERSION}" \
-        -p artifactVersion=${PACKAGE_VERSION} \
-		-i /local/${SPEC_PATCHED_FILE} \
-		-t /local/templates/Java \
-		-g java \
-		-c /local/${OPENAPI_CONFIG} \
-		-o /local/${OPENAPI_GENERATED_CLIENT} \
-		--git-repo-id ${GIT_REPO} \
-		--git-user-id ${GIT_ORG}
+# This task removes unused files that are generated
+# in the shared parts of the SDK.  If you need to remove
+# unused files within a service directory, you must
+# redefine this task in the service-specific Makefile(s)
+remove-unused:
+	rm -rf .openapi-generator
 
-build_client:
-	rm -rf ${OPENAPI_GENERATED_CLIENT}${TESTS_PATH}v4;
+stage:
+	test -d .git && git add --intent-to-add .
