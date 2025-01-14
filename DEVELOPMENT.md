@@ -44,12 +44,12 @@ mvn clean package
 Create a sample file with the following code:
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
 import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.v4.model.*;
-import com.equinix.openapi.fabric.v4.api.PortsApi;
+import com.equinix.sdk.fabricv4.model.*;
+import com.equinix.sdk.fabricv4.api.PortsApi;
 import java.util.UUID;
 
 public class Example {

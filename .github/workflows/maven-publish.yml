@@ -28,8 +28,6 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Publish to GitHub Packages Apache Maven
-      working-directory: ./equinix-openapi-fabric
-
       run: |- 
         mvn -B package --file pom.xml
         mvn deploy -DskipTests -s $GITHUB_WORKSPACE/settings.xml -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/equinix/equinix-sdk-java
