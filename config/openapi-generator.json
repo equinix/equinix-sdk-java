@@ -1,0 +1,22 @@
+{
+  "groupId": "com.equinix",
+  "artifactDescription": "Equinix Java SDK",
+  "artifactUrl": "https://github.com/equinix/equinix-sdk-java",
+  "parentArtifactId": "equinix-sdk-java",
+  "parentGroupId": "com.equinix",
+  "developerEmail": "support@equinix.com",
+  "developerName": "Equinix Developers",
+  "developerOrganization": "Equinix",
+  "developerOrganizationUrl": "https://equinix.com",
+  "scmConnection": "scm:git:git@github.com:equinix/equinix-sdk-java.git",
+  "scmDeveloperConnection": "scm:git:git@github.com:equinix/equinix-sdk-java.git",
+  "scmUrl": "https://github.com/equinix/equinix-sdk-java",
+  "library": "okhttp-gson",
+  "hideGenerationTimestamp": true,
+  "disallowAdditionalPropertiesIfNotPresent": false,
+  "legacyDiscriminatorBehavior": true,
+  "globalProperties": {
+    "modelTests": false,
+    "apiTests": false
+  }
+}
