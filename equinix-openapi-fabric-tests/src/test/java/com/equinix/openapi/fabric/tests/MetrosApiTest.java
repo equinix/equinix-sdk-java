@@ -10,10 +10,10 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.v4.model.Metro;
-import com.equinix.openapi.fabric.v4.model.MetroResponse;
-import com.equinix.openapi.fabric.v4.model.Presence;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.model.Metro;
+import com.equinix.services.fabricv4.model.MetroResponse;
+import com.equinix.services.fabricv4.model.Presence;
 import org.junit.Test;
 
 import static com.equinix.openapi.fabric.tests.helpers.Apis.metrosApi;
