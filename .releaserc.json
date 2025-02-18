@@ -36,13 +36,8 @@
       {
         "message": "ci: regenerate code for version ${nextRelease.version}",
         "assets": [
-          "version",
-          "equinix-openapi-fabric/src",
-          "equinix-openapi-fabric/README.md",
-          "equinix-openapi-fabric/build.gradle",
-          "equinix-openapi-fabric/build.sbt",
-          "equinix-openapi-fabric/pom.xml",
-          "equinix-openapi-fabric-tests/pom.xml"
+          ".",
+          "!.openapi-generator"
         ]
       }
     ]
