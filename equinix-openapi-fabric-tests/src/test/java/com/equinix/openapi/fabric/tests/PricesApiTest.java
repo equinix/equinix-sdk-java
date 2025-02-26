@@ -10,10 +10,10 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.v4.model.FilterBody;
-import com.equinix.openapi.fabric.v4.model.PriceSearchResponse;
-import com.equinix.openapi.fabric.v4.model.SearchExpression;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.model.FilterBody;
+import com.equinix.services.fabricv4.model.PriceSearchResponse;
+import com.equinix.services.fabricv4.model.SearchExpression;
 
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 import org.junit.BeforeClass;

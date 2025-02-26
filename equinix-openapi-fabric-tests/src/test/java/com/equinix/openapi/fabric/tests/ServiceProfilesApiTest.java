@@ -10,10 +10,10 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.openapi.fabric.ApiException;
+import com.equinix.services.fabricv4.ApiException;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 import com.equinix.openapi.fabric.tests.helpers.Utils;
-import com.equinix.openapi.fabric.v4.model.*;
+import com.equinix.services.fabricv4.model.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -28,7 +28,7 @@ import static com.equinix.openapi.fabric.tests.PortsApiTest.getPorts;
 import static com.equinix.openapi.fabric.tests.helpers.Apis.serviceProfilesApi;
 import static com.equinix.openapi.fabric.tests.helpers.Apis.setUserName;
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.users;
-import static com.equinix.openapi.fabric.v4.model.Expression.OperatorEnum.EQUAL;
+import static com.equinix.services.fabricv4.model.Expression.OperatorEnum.EQUAL;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.*;
 

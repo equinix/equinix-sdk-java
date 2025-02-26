@@ -10,10 +10,10 @@
 
 package com.equinix.openapi.fabric.tests.helpers;
 
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.Pair;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.Pair;
 
 import com.google.gson.reflect.TypeToken;
 import com.equinix.openapi.fabric.tests.dto.TokenRequestDto;

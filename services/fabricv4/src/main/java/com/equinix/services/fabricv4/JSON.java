@@ -11,9 +11,9 @@
 
 package com.equinix.services.fabricv4;
 
-import com.equinix.openapi.fabric.v4.model.PortDeviceRedundancy;
-import com.equinix.openapi.fabric.v4.model.PortEncapsulation;
-import com.equinix.openapi.fabric.v4.model.PortPriority;
+import com.equinix.services.fabricv4.model.PortDeviceRedundancy;
+import com.equinix.services.fabricv4.model.PortEncapsulation;
+import com.equinix.services.fabricv4.model.PortPriority;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
