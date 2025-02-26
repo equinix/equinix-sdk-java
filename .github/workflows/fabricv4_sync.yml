@@ -31,7 +31,7 @@ jobs:
       - name: Get next API Spec Version
         id: spec_versions
         run: |
-          API_SPEC_LINE=$(grep -i app.swaggerhub.com Makefile.fabricv4)
+          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
           CURRENT_VERSION_NUM=$(echo $API_SPEC_LINE | cut -d / -f7)
           echo "api_spec_line=$API_SPEC_LINE" >> "$GITHUB_OUTPUT"
           echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
@@ -44,7 +44,7 @@ jobs:
 
       - name: Sync
         run: |
-          VERSION_UPDATE="OPENAPI_URL=\"https://app.swaggerhub.com/apiproxy/registry/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}\""
+          VERSION_UPDATE="OPENAPI_URL=\"https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}\""
           sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile
           make -f Makefile.fabricv4 fetch
           git add .
