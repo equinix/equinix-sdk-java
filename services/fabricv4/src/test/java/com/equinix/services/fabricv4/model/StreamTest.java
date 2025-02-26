@@ -71,12 +71,4 @@ public class StreamTest {
         // TODO: test project
     }
 
-    /**
-     * Test the property 'enabled'
-     */
-    @Test
-    public void enabledTest() {
-        // TODO: test enabled
-    }
-
 }

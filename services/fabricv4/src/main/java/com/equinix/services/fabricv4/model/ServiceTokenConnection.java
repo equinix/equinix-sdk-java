@@ -67,7 +67,9 @@ public class ServiceTokenConnection {
     
     EPLAN_VC("EPLAN_VC"),
     
-    IPWAN_VC("IPWAN_VC");
+    IPWAN_VC("IPWAN_VC"),
+    
+    IP_VC("IP_VC");
 
     private String value;
 
@@ -167,7 +169,7 @@ public class ServiceTokenConnection {
    * Type of Connection
    * @return type
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
@@ -450,7 +452,6 @@ public class ServiceTokenConnection {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
   }
 
  /**
@@ -465,19 +466,14 @@ public class ServiceTokenConnection {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceTokenConnection is not found in the empty JSON string", ServiceTokenConnection.openapiRequiredFields.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ServiceTokenConnection.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("type").isJsonPrimitive()) {
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the required field `type`
-      TypeEnum.validateJsonElement(jsonObj.get("type"));
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }

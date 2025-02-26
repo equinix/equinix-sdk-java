@@ -12,11 +12,9 @@
 package com.equinix.services.fabricv4.model;
 
 import java.util.Objects;
-import com.equinix.services.fabricv4.model.Project;
 import com.equinix.services.fabricv4.model.StreamSubscriptionFilter;
 import com.equinix.services.fabricv4.model.StreamSubscriptionSelector;
 import com.equinix.services.fabricv4.model.StreamSubscriptionSink;
-import com.equinix.services.fabricv4.model.StreamTarget;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -116,17 +114,9 @@ public class StreamSubscriptionPostRequest {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  private Project project;
-
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
   private Boolean enabled;
-
-  public static final String SERIALIZED_NAME_STREAM = "stream";
-  @SerializedName(SERIALIZED_NAME_STREAM)
-  private StreamTarget stream;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
@@ -204,25 +194,6 @@ public class StreamSubscriptionPostRequest {
   }
 
 
-  public StreamSubscriptionPostRequest project(Project project) {
-    this.project = project;
-    return this;
-  }
-
-   /**
-   * Get project
-   * @return project
-  **/
-  @javax.annotation.Nullable
-  public Project getProject() {
-    return project;
-  }
-
-  public void setProject(Project project) {
-    this.project = project;
-  }
-
-
   public StreamSubscriptionPostRequest enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
@@ -239,25 +210,6 @@ public class StreamSubscriptionPostRequest {
 
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
-  }
-
-
-  public StreamSubscriptionPostRequest stream(StreamTarget stream) {
-    this.stream = stream;
-    return this;
-  }
-
-   /**
-   * Get stream
-   * @return stream
-  **/
-  @javax.annotation.Nullable
-  public StreamTarget getStream() {
-    return stream;
-  }
-
-  public void setStream(StreamTarget stream) {
-    this.stream = stream;
   }
 
 
@@ -394,9 +346,7 @@ public class StreamSubscriptionPostRequest {
     return Objects.equals(this.type, streamSubscriptionPostRequest.type) &&
         Objects.equals(this.name, streamSubscriptionPostRequest.name) &&
         Objects.equals(this.description, streamSubscriptionPostRequest.description) &&
-        Objects.equals(this.project, streamSubscriptionPostRequest.project) &&
         Objects.equals(this.enabled, streamSubscriptionPostRequest.enabled) &&
-        Objects.equals(this.stream, streamSubscriptionPostRequest.stream) &&
         Objects.equals(this.filters, streamSubscriptionPostRequest.filters) &&
         Objects.equals(this.metricSelector, streamSubscriptionPostRequest.metricSelector) &&
         Objects.equals(this.eventSelector, streamSubscriptionPostRequest.eventSelector) &&
@@ -406,7 +356,7 @@ public class StreamSubscriptionPostRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, project, enabled, stream, filters, metricSelector, eventSelector, sink, additionalProperties);
+    return Objects.hash(type, name, description, enabled, filters, metricSelector, eventSelector, sink, additionalProperties);
   }
 
   @Override
@@ -416,9 +366,7 @@ public class StreamSubscriptionPostRequest {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("    metricSelector: ").append(toIndentedString(metricSelector)).append("\n");
     sb.append("    eventSelector: ").append(toIndentedString(eventSelector)).append("\n");
@@ -449,9 +397,7 @@ public class StreamSubscriptionPostRequest {
     openapiFields.add("type");
     openapiFields.add("name");
     openapiFields.add("description");
-    openapiFields.add("project");
     openapiFields.add("enabled");
-    openapiFields.add("stream");
     openapiFields.add("filters");
     openapiFields.add("metricSelector");
     openapiFields.add("eventSelector");
@@ -486,14 +432,6 @@ public class StreamSubscriptionPostRequest {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // validate the optional field `project`
-      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonElement(jsonObj.get("project"));
-      }
-      // validate the optional field `stream`
-      if (jsonObj.get("stream") != null && !jsonObj.get("stream").isJsonNull()) {
-        StreamTarget.validateJsonElement(jsonObj.get("stream"));
       }
       // validate the optional field `filters`
       if (jsonObj.get("filters") != null && !jsonObj.get("filters").isJsonNull()) {

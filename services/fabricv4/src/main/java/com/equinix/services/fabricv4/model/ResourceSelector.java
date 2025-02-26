@@ -18,8 +18,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.UUID;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,33 +47,41 @@ import java.util.Set;
 import com.equinix.services.fabricv4.JSON;
 
 /**
- * Stream uuid
+ * ResourceSelector
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.4.0")
-public class StreamTarget {
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private UUID uuid;
+public class ResourceSelector {
+  public static final String SERIALIZED_NAME_INCLUDE = "include";
+  @SerializedName(SERIALIZED_NAME_INCLUDE)
+  private List<String> include;
 
-  public StreamTarget() {
+  public ResourceSelector() {
   }
 
-  public StreamTarget uuid(UUID uuid) {
-    this.uuid = uuid;
+  public ResourceSelector include(List<String> include) {
+    this.include = include;
+    return this;
+  }
+
+  public ResourceSelector addIncludeItem(String includeItem) {
+    if (this.include == null) {
+      this.include = new ArrayList<>();
+    }
+    this.include.add(includeItem);
     return this;
   }
 
    /**
-   * Stream UUID
-   * @return uuid
+   * ### Supported metric names to use on filters with property /subject:   * &#x60;*&#x60; - all events or metrics   * &#x60;*_/ports/&lt;uuid&gt;&#x60; - port metrics   * &#x60;*_/connections/&lt;uuid&gt;&#x60; - connection metrics   * &#x60;*_/metros/&lt;metroCode&gt;&#x60; - metro latency metrics 
+   * @return include
   **/
   @javax.annotation.Nullable
-  public UUID getUuid() {
-    return uuid;
+  public List<String> getInclude() {
+    return include;
   }
 
-  public void setUuid(UUID uuid) {
-    this.uuid = uuid;
+  public void setInclude(List<String> include) {
+    this.include = include;
   }
 
   /**
@@ -88,9 +97,9 @@ public class StreamTarget {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StreamTarget instance itself
+   * @return the ResourceSelector instance itself
    */
-  public StreamTarget putAdditionalProperty(String key, Object value) {
+  public ResourceSelector putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -129,21 +138,21 @@ public class StreamTarget {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamTarget streamTarget = (StreamTarget) o;
-    return Objects.equals(this.uuid, streamTarget.uuid)&&
-        Objects.equals(this.additionalProperties, streamTarget.additionalProperties);
+    ResourceSelector resourceSelector = (ResourceSelector) o;
+    return Objects.equals(this.include, resourceSelector.include)&&
+        Objects.equals(this.additionalProperties, resourceSelector.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, additionalProperties);
+    return Objects.hash(include, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamTarget {\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("class ResourceSelector {\n");
+    sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -167,7 +176,7 @@ public class StreamTarget {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("uuid");
+    openapiFields.add("include");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -177,17 +186,18 @@ public class StreamTarget {
   * Validates the JSON Element and throws an exception if issues found
   *
   * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to StreamTarget
+  * @throws IOException if the JSON Element is invalid with respect to ResourceSelector
   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StreamTarget.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StreamTarget is not found in the empty JSON string", StreamTarget.openapiRequiredFields.toString()));
+        if (!ResourceSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSelector is not found in the empty JSON string", ResourceSelector.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }
 
@@ -195,16 +205,16 @@ public class StreamTarget {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StreamTarget.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StreamTarget' and its subtypes
+       if (!ResourceSelector.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ResourceSelector' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StreamTarget> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StreamTarget.class));
+       final TypeAdapter<ResourceSelector> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ResourceSelector.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StreamTarget>() {
+       return (TypeAdapter<T>) new TypeAdapter<ResourceSelector>() {
            @Override
-           public void write(JsonWriter out, StreamTarget value) throws IOException {
+           public void write(JsonWriter out, ResourceSelector value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -232,12 +242,12 @@ public class StreamTarget {
            }
 
            @Override
-           public StreamTarget read(JsonReader in) throws IOException {
+           public ResourceSelector read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StreamTarget instance = thisAdapter.fromJsonTree(jsonObj);
+             ResourceSelector instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -264,18 +274,18 @@ public class StreamTarget {
   }
 
  /**
-  * Create an instance of StreamTarget given an JSON string
+  * Create an instance of ResourceSelector given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of StreamTarget
-  * @throws IOException if the JSON string is invalid with respect to StreamTarget
+  * @return An instance of ResourceSelector
+  * @throws IOException if the JSON string is invalid with respect to ResourceSelector
   */
-  public static StreamTarget fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StreamTarget.class);
+  public static ResourceSelector fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ResourceSelector.class);
   }
 
  /**
-  * Convert an instance of StreamTarget to an JSON string
+  * Convert an instance of ResourceSelector to an JSON string
   *
   * @return JSON string
   */

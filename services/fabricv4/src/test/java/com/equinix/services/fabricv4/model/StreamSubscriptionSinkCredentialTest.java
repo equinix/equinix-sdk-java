@@ -67,4 +67,20 @@ public class StreamSubscriptionSinkCredentialTest {
         // TODO: test apiKey
     }
 
+    /**
+     * Test the property 'username'
+     */
+    @Test
+    public void usernameTest() {
+        // TODO: test username
+    }
+
+    /**
+     * Test the property 'password'
+     */
+    @Test
+    public void passwordTest() {
+        // TODO: test password
+    }
+
 }
