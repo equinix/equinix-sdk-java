@@ -25,12 +25,12 @@ Create Service Profile creates Equinix Fabric? Service Profile.
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -96,12 +96,12 @@ delete Service Profile by UUID
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -168,12 +168,12 @@ Get service profile by UUID. View Point parameter if set to zSide will give sell
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -241,12 +241,12 @@ Get service profile metros by UUID.
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -316,12 +316,12 @@ The API request returns all Equinix Fabric Service Profiles in accordance with t
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -391,12 +391,12 @@ This API request replaces a service profile definition
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -467,12 +467,12 @@ Search service profiles by search criteria
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -539,12 +539,12 @@ Update Service Profile by UUID
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ServiceProfilesApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ServiceProfilesApi;
 
 public class Example {
   public static void main(String[] args) {

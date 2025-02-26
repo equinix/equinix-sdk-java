@@ -19,12 +19,12 @@ GET Metros retrieves all Equinix Fabric metros, as well as latency data between 
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.MetrosApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.MetrosApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -89,12 +89,12 @@ GET All Subscriber Metros with an option query parameter to return all Equinix F
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.MetrosApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.MetrosApi;
 
 public class Example {
   public static void main(String[] args) {

@@ -30,12 +30,12 @@ This API provides capability to create Routing Protocol for connections
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -105,12 +105,12 @@ This API provides capability to create Routing Protocol for connections
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -180,12 +180,12 @@ This API provides capability to delete Routing Protocols on virtual connection
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -255,12 +255,12 @@ This API provides capability to get all BGP actions status
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -334,12 +334,12 @@ This API provides capability to accept/reject user&#39;s virtual connection
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -409,12 +409,12 @@ This API provides capability to get Routing Protocols for connections
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -485,12 +485,12 @@ This API provides capability to retrieve specific BGP action
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -561,12 +561,12 @@ This API provides capability to retrieve specific Routing Protocol Change
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -637,12 +637,12 @@ This API provides capability to retrieve user&#39;s Routing Protocol Changes
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -715,12 +715,12 @@ This API provides capability to partially update Routing Protocols on a virtual 
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -792,12 +792,12 @@ This API provides capability to clear/reset Routing Protocols BGP session
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -869,12 +869,12 @@ This API provides capability to replace complete Routing Protocols on a virtual 
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -946,12 +946,12 @@ This API provides capability to validate all subnets associated with any connect
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.RoutingProtocolsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.RoutingProtocolsApi;
 
 public class Example {
   public static void main(String[] args) {

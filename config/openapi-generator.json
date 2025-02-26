@@ -12,9 +12,6 @@
   "scmDeveloperConnection": "scm:git:git@github.com:equinix/equinix-sdk-java.git",
   "scmUrl": "https://github.com/equinix/equinix-sdk-java",
   "library": "okhttp-gson",
-  "invokerPackage": "com.equinix.openapi.fabric",
-  "modelPackage": "com.equinix.openapi.fabric.v4.model",
-  "apiPackage": "com.equinix.openapi.fabric.v4.api",
   "hideGenerationTimestamp": true,
   "disallowAdditionalPropertiesIfNotPresent": false,
   "legacyDiscriminatorBehavior": true

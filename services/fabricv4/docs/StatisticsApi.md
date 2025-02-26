@@ -20,12 +20,12 @@ This API provides service-level metrics so that you can view access and gather k
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.StatisticsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.StatisticsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -95,12 +95,12 @@ This API provides top utilized service-level traffic metrics so that you can vie
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.StatisticsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.StatisticsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -176,12 +176,12 @@ This API provides service-level traffic metrics so that you can view access and 
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.StatisticsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.StatisticsApi;
 
 public class Example {
   public static void main(String[] args) {

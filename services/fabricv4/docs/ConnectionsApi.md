@@ -24,12 +24,12 @@ This API provides capability to create user&#39;s virtual connection
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -98,12 +98,12 @@ This API provides capability to accept/reject user&#39;s virtual connection
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -171,12 +171,12 @@ Delete Connection by ID
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -243,12 +243,12 @@ The API provides capability to get user&#39;s virtual connection details (Servic
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -315,12 +315,12 @@ The API provides capability to get list of user&#39;s virtual connections using 
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -386,12 +386,12 @@ Update Connection by ID
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -458,12 +458,12 @@ This API provides capability to validate by auth key
 ### Example
 ```java
 // Import classes:
-import com.equinix.openapi.fabric.ApiClient;
-import com.equinix.openapi.fabric.ApiException;
-import com.equinix.openapi.fabric.Configuration;
-import com.equinix.openapi.fabric.auth.*;
-import com.equinix.openapi.fabric.models.*;
-import com.equinix.openapi.fabric.v4.api.ConnectionsApi;
+import com.equinix.services.fabricv4.ApiClient;
+import com.equinix.services.fabricv4.ApiException;
+import com.equinix.services.fabricv4.Configuration;
+import com.equinix.services.fabricv4.auth.*;
+import com.equinix.services.fabricv4.models.*;
+import com.equinix.services.fabricv4.api.ConnectionsApi;
 
 public class Example {
   public static void main(String[] args) {

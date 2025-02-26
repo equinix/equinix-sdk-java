@@ -47,6 +47,9 @@ codegen:
         --http-user-agent "${USER_AGENT}" \
         -p artifactVersion=${PACKAGE_VERSION} \
         -p artifactId="${ARTIFACT_ID}" \
+        -p invokerPackage="com.equinix.services.${PACKAGE_NAME}" \
+        -p apiPackage="com.equinix.services.${PACKAGE_NAME}.api" \
+        -p modelPackage="com.equinix.services.${PACKAGE_NAME}.model" \
         -i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
         -t ${TEMPLATE_DIR} \
         -c config/openapi-generator.json \
