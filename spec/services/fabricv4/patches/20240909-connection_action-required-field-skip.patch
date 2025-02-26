@@ -1,12 +1,12 @@
-diff --git a/spec/oas3.fabric.fetched.json b/spec/oas3.fabric.fetched.json
-index 36eeef9..1fc09e6 100644
---- a/spec/oas3.fabric.fetched.json
-+++ b/spec/oas3.fabric.fetched.json
-@@ -12565,7 +12565,6 @@
-       "ConnectionAction": {
-         "required": [
-           "data",
--          "href",
-           "type",
-           "uuid"
-         ],
+diff --git a/spec/services/fabricv4/oas3.patched/swagger.yaml b/spec/services/fabricv4/oas3.patched/swagger.yaml
+index c311384..68dd2d8 100644
+--- a/spec/services/fabricv4/oas3.patched/swagger.yaml
++++ b/spec/services/fabricv4/oas3.patched/swagger.yaml
+@@ -11327,7 +11327,6 @@ components:
+     ConnectionAction:
+       required:
+         - data
+-        - href
+         - type
+         - uuid
+       type: object

@@ -11327,7 +11327,6 @@ components:
     ConnectionAction:
       required:
         - data
-        - href
         - type
         - uuid
       type: object
@@ -12314,7 +12313,6 @@ components:
     CustomField:
       required:
         - dataType
-        - description
         - isRequired
         - label
       properties:
