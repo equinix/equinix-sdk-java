@@ -93,4 +93,12 @@ public class StreamSubscriptionSinkTest {
         // TODO: test settings
     }
 
+    /**
+     * Test the property 'host'
+     */
+    @Test
+    public void hostTest() {
+        // TODO: test host
+    }
+
 }

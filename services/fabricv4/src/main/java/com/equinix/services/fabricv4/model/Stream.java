@@ -70,6 +70,8 @@ public class Stream {
     
     PROVISIONED("PROVISIONED"),
     
+    REPROVISIONING("REPROVISIONING"),
+    
     DEPROVISIONING("DEPROVISIONING"),
     
     DEPROVISIONED("DEPROVISIONED"),
@@ -200,10 +202,6 @@ public class Stream {
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
   private Project project;
-
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
-  @SerializedName(SERIALIZED_NAME_ENABLED)
-  private Boolean enabled;
 
   public Stream() {
   }
@@ -396,25 +394,6 @@ public class Stream {
     this.project = project;
   }
 
-
-  public Stream enabled(Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
-
-   /**
-   * Stream enabled status
-   * @return enabled
-  **/
-  @javax.annotation.Nullable
-  public Boolean getEnabled() {
-    return enabled;
-  }
-
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -479,14 +458,13 @@ public class Stream {
         Objects.equals(this.type, stream.type) &&
         Objects.equals(this.name, stream.name) &&
         Objects.equals(this.description, stream.description) &&
-        Objects.equals(this.project, stream.project) &&
-        Objects.equals(this.enabled, stream.enabled)&&
+        Objects.equals(this.project, stream.project)&&
         Objects.equals(this.additionalProperties, stream.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, state, assetsCount, streamSubscriptionsCount, changeLog, type, name, description, project, enabled, additionalProperties);
+    return Objects.hash(href, uuid, state, assetsCount, streamSubscriptionsCount, changeLog, type, name, description, project, additionalProperties);
   }
 
   @Override
@@ -503,7 +481,6 @@ public class Stream {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -531,7 +508,6 @@ public class Stream {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("project");
-    openapiFields.add("enabled");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -20,6 +20,7 @@ import com.equinix.services.fabricv4.model.BulkPortRequest;
 import com.equinix.services.fabricv4.model.Error;
 import com.equinix.services.fabricv4.model.LinkProtocolGetResponse;
 import com.equinix.services.fabricv4.model.Port;
+import com.equinix.services.fabricv4.model.PortChangeOperation;
 import com.equinix.services.fabricv4.model.PortRequest;
 import com.equinix.services.fabricv4.model.PortV4SearchRequest;
 import java.util.UUID;
@@ -149,6 +150,21 @@ public class PortsApiTest {
     public void searchPortsTest() throws ApiException {
         PortV4SearchRequest portV4SearchRequest = null;
         AllPortsResponse response = api.searchPorts(portV4SearchRequest);
+        // TODO: test validations
+    }
+
+    /**
+     * Update by UUID
+     *
+     * Update Port by UUID
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updatePortByUuidTest() throws ApiException {
+        UUID portId = null;
+        List<PortChangeOperation> portChangeOperation = null;
+        AllPortsResponse response = api.updatePortByUuid(portId, portChangeOperation);
         // TODO: test validations
     }
 

@@ -11,48 +11,52 @@
 
 package com.equinix.services.fabricv4.model;
 
-import com.equinix.services.fabricv4.model.Pagination;
-import com.equinix.services.fabricv4.model.Statistics;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for TopUtilizedStatistics
+ * Model tests for PortChangeOperation
  */
-public class TopUtilizedStatisticsTest {
-    private final TopUtilizedStatistics model = new TopUtilizedStatistics();
+public class PortChangeOperationTest {
+    private final PortChangeOperation model = new PortChangeOperation();
 
     /**
-     * Model tests for TopUtilizedStatistics
+     * Model tests for PortChangeOperation
      */
     @Test
-    public void testTopUtilizedStatistics() {
-        // TODO: test TopUtilizedStatistics
+    public void testPortChangeOperation() {
+        // TODO: test PortChangeOperation
     }
 
     /**
-     * Test the property 'pagination'
+     * Test the property 'op'
      */
     @Test
-    public void paginationTest() {
-        // TODO: test pagination
+    public void opTest() {
+        // TODO: test op
     }
 
     /**
-     * Test the property 'data'
+     * Test the property 'path'
      */
     @Test
-    public void dataTest() {
-        // TODO: test data
+    public void pathTest() {
+        // TODO: test path
+    }
+
+    /**
+     * Test the property 'value'
+     */
+    @Test
+    public void valueTest() {
+        // TODO: test value
     }
 
 }

@@ -11,8 +11,6 @@
 
 package com.equinix.services.fabricv4.model;
 
-import com.equinix.services.fabricv4.model.Pagination;
-import com.equinix.services.fabricv4.model.StreamGetSubscriptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,33 +24,25 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for GetSubscriptionsInStreamResponse
+ * Model tests for ResourceSelector
  */
-public class GetSubscriptionsInStreamResponseTest {
-    private final GetSubscriptionsInStreamResponse model = new GetSubscriptionsInStreamResponse();
+public class ResourceSelectorTest {
+    private final ResourceSelector model = new ResourceSelector();
 
     /**
-     * Model tests for GetSubscriptionsInStreamResponse
+     * Model tests for ResourceSelector
      */
     @Test
-    public void testGetSubscriptionsInStreamResponse() {
-        // TODO: test GetSubscriptionsInStreamResponse
+    public void testResourceSelector() {
+        // TODO: test ResourceSelector
     }
 
     /**
-     * Test the property 'pagination'
+     * Test the property 'include'
      */
     @Test
-    public void paginationTest() {
-        // TODO: test pagination
-    }
-
-    /**
-     * Test the property 'data'
-     */
-    @Test
-    public void dataTest() {
-        // TODO: test data
+    public void includeTest() {
+        // TODO: test include
     }
 
 }

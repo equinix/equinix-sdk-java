@@ -67,4 +67,28 @@ public class StreamSubscriptionSinkSettingTest {
         // TODO: test applicationKey
     }
 
+    /**
+     * Test the property 'eventUri'
+     */
+    @Test
+    public void eventUriTest() {
+        // TODO: test eventUri
+    }
+
+    /**
+     * Test the property 'metricUri'
+     */
+    @Test
+    public void metricUriTest() {
+        // TODO: test metricUri
+    }
+
+    /**
+     * Test the property 'transformAlerts'
+     */
+    @Test
+    public void transformAlertsTest() {
+        // TODO: test transformAlerts
+    }
+
 }

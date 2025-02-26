@@ -43,8 +43,9 @@ public class StreamSubscriptionsApiTest {
      */
     @Test
     public void createStreamSubscriptionsTest() throws ApiException {
+        UUID streamId = null;
         StreamSubscriptionPostRequest streamSubscriptionPostRequest = null;
-        StreamSubscription response = api.createStreamSubscriptions(streamSubscriptionPostRequest);
+        StreamSubscription response = api.createStreamSubscriptions(streamId, streamSubscriptionPostRequest);
         // TODO: test validations
     }
 
@@ -57,8 +58,9 @@ public class StreamSubscriptionsApiTest {
      */
     @Test
     public void deleteStreamSubscriptionByUuidTest() throws ApiException {
-        UUID streamSubscriptionId = null;
-        StreamSubscription response = api.deleteStreamSubscriptionByUuid(streamSubscriptionId);
+        UUID streamId = null;
+        UUID subscriptionId = null;
+        StreamSubscription response = api.deleteStreamSubscriptionByUuid(streamId, subscriptionId);
         // TODO: test validations
     }
 
@@ -71,8 +73,9 @@ public class StreamSubscriptionsApiTest {
      */
     @Test
     public void getStreamSubscriptionByUuidTest() throws ApiException {
-        UUID streamSubscriptionId = null;
-        StreamSubscription response = api.getStreamSubscriptionByUuid(streamSubscriptionId);
+        UUID streamId = null;
+        UUID subscriptionId = null;
+        StreamSubscription response = api.getStreamSubscriptionByUuid(streamId, subscriptionId);
         // TODO: test validations
     }
 
@@ -85,9 +88,10 @@ public class StreamSubscriptionsApiTest {
      */
     @Test
     public void getStreamSubscriptionsTest() throws ApiException {
+        UUID streamId = null;
         Integer offset = null;
         Integer limit = null;
-        GetAllStreamSubscriptionResponse response = api.getStreamSubscriptions(offset, limit);
+        GetAllStreamSubscriptionResponse response = api.getStreamSubscriptions(streamId, offset, limit);
         // TODO: test validations
     }
 
@@ -100,9 +104,10 @@ public class StreamSubscriptionsApiTest {
      */
     @Test
     public void updateStreamSubscriptionByUuidTest() throws ApiException {
-        UUID streamSubscriptionId = null;
+        UUID streamId = null;
+        UUID subscriptionId = null;
         StreamSubscriptionPutRequest streamSubscriptionPutRequest = null;
-        StreamSubscription response = api.updateStreamSubscriptionByUuid(streamSubscriptionId, streamSubscriptionPutRequest);
+        StreamSubscription response = api.updateStreamSubscriptionByUuid(streamId, subscriptionId, streamSubscriptionPutRequest);
         // TODO: test validations
     }
 

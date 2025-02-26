@@ -12,9 +12,7 @@
 package com.equinix.services.fabricv4.model;
 
 import com.equinix.services.fabricv4.model.Changelog;
-import com.equinix.services.fabricv4.model.StreamSubscriptionFilter;
-import com.equinix.services.fabricv4.model.StreamSubscriptionSelector;
-import com.equinix.services.fabricv4.model.StreamSubscriptionSink;
+import com.equinix.services.fabricv4.model.ResourceSelector;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,17 +26,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for StreamSubscription
+ * Model tests for StreamAlertRule
  */
-public class StreamSubscriptionTest {
-    private final StreamSubscription model = new StreamSubscription();
+public class StreamAlertRuleTest {
+    private final StreamAlertRule model = new StreamAlertRule();
 
     /**
-     * Model tests for StreamSubscription
+     * Model tests for StreamAlertRule
      */
     @Test
-    public void testStreamSubscription() {
-        // TODO: test StreamSubscription
+    public void testStreamAlertRule() {
+        // TODO: test StreamAlertRule
     }
 
     /**
@@ -98,35 +96,51 @@ public class StreamSubscriptionTest {
     }
 
     /**
-     * Test the property 'filters'
+     * Test the property 'metricName'
      */
     @Test
-    public void filtersTest() {
-        // TODO: test filters
+    public void metricNameTest() {
+        // TODO: test metricName
     }
 
     /**
-     * Test the property 'metricSelector'
+     * Test the property 'resourceSelector'
      */
     @Test
-    public void metricSelectorTest() {
-        // TODO: test metricSelector
+    public void resourceSelectorTest() {
+        // TODO: test resourceSelector
     }
 
     /**
-     * Test the property 'eventSelector'
+     * Test the property 'windowSize'
      */
     @Test
-    public void eventSelectorTest() {
-        // TODO: test eventSelector
+    public void windowSizeTest() {
+        // TODO: test windowSize
     }
 
     /**
-     * Test the property 'sink'
+     * Test the property 'operand'
      */
     @Test
-    public void sinkTest() {
-        // TODO: test sink
+    public void operandTest() {
+        // TODO: test operand
+    }
+
+    /**
+     * Test the property 'warningThreshold'
+     */
+    @Test
+    public void warningThresholdTest() {
+        // TODO: test warningThreshold
+    }
+
+    /**
+     * Test the property 'criticalThreshold'
+     */
+    @Test
+    public void criticalThresholdTest() {
+        // TODO: test criticalThreshold
     }
 
     /**
