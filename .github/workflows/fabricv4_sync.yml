@@ -3,7 +3,7 @@ on:
     inputs:
       new_api_spec_version_number:
         required: true
-name: Fabricv4 Sync SDK with New API Spec
+name: Sync fabricv4 API spec
 jobs:
   sync:
     strategy:
@@ -44,8 +44,8 @@ jobs:
 
       - name: Sync
         run: |
-          VERSION_UPDATE="OPENAPI_URL=\"https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}\""
-          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile
+          VERSION_UPDATE="SPEC_BASE_URL:=https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}"
+          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile.fabricv4
           make -f Makefile.fabricv4 fetch
           git add .
           git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec'
