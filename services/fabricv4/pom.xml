@@ -2,23 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.equinix</groupId>
-    <artifactId>equinix-openapi-fabric</artifactId>
+    <artifactId>equinix-sdk-java-fabricv4</artifactId>
     <packaging>jar</packaging>
-    <name>equinix-openapi-fabric</name>
+    <name>equinix-sdk-java-fabricv4</name>
     <version>0.11.0</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
-    <description>OpenAPI Java</description>
+    <url>https://github.com/equinix/equinix-sdk-java</url>
+    <description>Equinix Java SDK</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:equinix/equinix-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:equinix/equinix-sdk-java.git</developerConnection>
+        <url>https://github.com/equinix/equinix-sdk-java</url>
     </scm>
-
-    <parent>
-        <groupId>com.equinix</groupId>
-        <artifactId>equinix-openapi-fabric-core</artifactId>
-        <version>0.0.1</version>
-    </parent>
 
     <licenses>
         <license>
@@ -30,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
-            <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <name>Equinix Developers</name>
+            <email>support@equinix.com</email>
+            <organization>Equinix</organization>
+            <organizationUrl>https://equinix.com</organizationUrl>
         </developer>
     </developers>
 

@@ -1,7 +1,7 @@
 lazy val root = (project in file(".")).
   settings(
     organization := "com.equinix",
-    name := "equinix-openapi-fabric",
+    name := "equinix-sdk-java-fabricv4",
     version := "0.11.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),

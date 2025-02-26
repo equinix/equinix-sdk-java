@@ -1,4 +1,4 @@
-# equinix-openapi-fabric
+# equinix-sdk-java-fabricv4
 
 Equinix Fabric API v4
 - API version: 4.18
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.equinix</groupId>
-  <artifactId>equinix-openapi-fabric</artifactId>
+  <artifactId>equinix-sdk-java-fabricv4</artifactId>
   <version>0.11.0</version>
   <scope>compile</scope>
 </dependency>
@@ -52,12 +52,12 @@ Add this dependency to your project's build file:
 
 ```groovy
   repositories {
-    mavenCentral()     // Needed if the 'equinix-openapi-fabric' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'equinix-openapi-fabric' jar has been published to the local maven repo.
+    mavenCentral()     // Needed if the 'equinix-sdk-java-fabricv4' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'equinix-sdk-java-fabricv4' jar has been published to the local maven repo.
   }
 
   dependencies {
-     implementation "com.equinix:equinix-openapi-fabric:0.11.0"
+     implementation "com.equinix:equinix-sdk-java-fabricv4:0.11.0"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/equinix-openapi-fabric-0.11.0.jar`
+* `target/equinix-sdk-java-fabricv4-0.11.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
