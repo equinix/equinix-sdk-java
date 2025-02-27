@@ -1,6 +1,6 @@
 package com.equinix.openapi.fabric.tests.dto.users;
 
-import com.equinix.openapi.fabric.ApiClient;
+import com.equinix.services.fabricv4.ApiClient;
 
 public class UserUsedDto {
 
