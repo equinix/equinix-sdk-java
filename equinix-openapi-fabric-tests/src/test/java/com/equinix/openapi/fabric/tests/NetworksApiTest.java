@@ -10,10 +10,10 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.openapi.fabric.ApiException;
+import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 import com.equinix.openapi.fabric.tests.helpers.Utils;
-import com.equinix.openapi.fabric.v4.model.*;
+import com.equinix.sdk.fabricv4.model.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -5,13 +5,7 @@
     <groupId>com.equinix</groupId>
     <artifactId>openapi-fabric-tests</artifactId>
     <name>equinix-openapi-fabric-tests</name>
-    <version>0.9.0</version>
-
-    <parent>
-        <groupId>com.equinix</groupId>
-        <artifactId>equinix-openapi-fabric-core</artifactId>
-        <version>0.0.1</version>
-    </parent>
+    <version>0.11.0</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -41,9 +35,9 @@
             <version>4.13.2</version>
         </dependency>
         <dependency>
-            <groupId>com.equinix</groupId>
-            <artifactId>equinix-openapi-fabric</artifactId>
-            <version>0.10.0</version>
+            <groupId>com.equinix.sdk</groupId>
+            <artifactId>fabricv4</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

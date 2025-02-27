@@ -1,6 +1,6 @@
 package com.equinix.openapi.fabric.tests.helpers;
 
-import com.equinix.openapi.fabric.JSON;
+import com.equinix.sdk.fabricv4.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.equinix.openapi.fabric.tests.dto.users.UsersDto;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
