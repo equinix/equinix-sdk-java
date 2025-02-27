@@ -35,8 +35,12 @@
       {
         "message": "ci: regenerate code for version ${nextRelease.version}",
         "assets": [
-          ".",
-          "!.openapi-generator"
+          [
+            ".",
+            "!**/.openapi-generator",
+            "!settings.xml",
+            "!toolchains.xml"
+          ]
         ]
       }
     ]
