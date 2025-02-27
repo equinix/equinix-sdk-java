@@ -79,9 +79,9 @@ jobs:
         with:
           branch: sync/gh
           branch-suffix: timestamp
-          title: Version ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }} API Spec Sync by GitHub Action (${{ steps.date.outputs.date }})
+          title: "feat: Fabric API Sync ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }} by GitHub Action for @${{ github.event.sender.login }}"
           body: |
-            This API Sync PR was automated through GitHub Actions workflow_displatch
+            This API Sync PR was triggered by @${{ github.event.sender.login }} through [GitHub Actions workflow_displatch](https://github.com/equinix/equinix-sdk-go/actions?query=event%3Aworkflow_dispatch)
             on ${{ steps.date.outputs.date }}.
             
             This PR updates the SDK API Spec Version:
