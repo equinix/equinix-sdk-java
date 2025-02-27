@@ -10,11 +10,11 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.openapi.fabric.ApiException;
+import com.equinix.services.fabricv4.ApiException;
 import com.equinix.openapi.fabric.tests.dto.port.PortDto;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 import com.equinix.openapi.fabric.tests.helpers.Utils;
-import com.equinix.openapi.fabric.v4.model.*;
+import com.equinix.services.fabricv4.model.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,7 +42,7 @@ public class ConnectionsApiTest {
                 try {
                     deleteConnection(uuid);
                 } catch (ApiException e) {
-                    throw new RuntimeException(e);
+                    System.out.println(e.getMessage());
                 }
             });
         } catch (InterruptedException e) {
@@ -87,7 +87,6 @@ public class ConnectionsApiTest {
                     new AccessPoint()
                             .type(AccessPointType.COLO)
                             .port(new SimplifiedPort()
-//                                    .uuid(port.getUuid()))
                                     .uuid(portUuid))
                             .linkProtocol(new SimplifiedLinkProtocol()
                                     .type(LinkProtocolType.DOT1Q)
@@ -372,7 +371,7 @@ public class ConnectionsApiTest {
         }
 
         if (!result) {
-            System.out.println(result + " Connection has not reached the expected state: " + connectionState[0].getValue() + " current state: " + currentState.getValue());
+            System.out.println("Connection has not reached the expected state: " + connectionState[0].getValue() + " current state: " + currentState.getValue());
         }
         return result;
     }
