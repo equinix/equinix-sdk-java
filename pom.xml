@@ -10,7 +10,7 @@
     <artifactId>equinix-sdk-java</artifactId>
     <packaging>pom</packaging>
     <name>equinix-sdk-java</name>
-    <version>0.11.0</version>
+    <version>0.12.0</version>
 
     <modules>
         <module>services/fabricv4</module>

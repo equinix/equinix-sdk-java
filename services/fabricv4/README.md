@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.equinix</groupId>
   <artifactId>equinix-sdk-java-fabricv4</artifactId>
-  <version>0.11.0</version>
+  <version>0.12.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.equinix:equinix-sdk-java-fabricv4:0.11.0"
+     implementation "com.equinix:equinix-sdk-java-fabricv4:0.12.0"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/equinix-sdk-java-fabricv4-0.11.0.jar`
+* `target/equinix-sdk-java-fabricv4-0.12.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
