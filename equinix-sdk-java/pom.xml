@@ -2,18 +2,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.equinix</groupId>
-    <artifactId>equinix-sdk-java-pom</artifactId>
-    <packaging>pom</packaging>
-    <name>equinix-sdk-java-pom</name>
+    <artifactId>equinix-sdk-java</artifactId>
+    <packaging>jar</packaging>
+    <name>equinix-sdk-java</name>
     <!-- This version is updated by the update-manual-versions task -->
     <version>0.11.0</version>
 
     <!--
-    TODO: this modules section needs to be regenerated
+    TODO: this dependencies section needs to be regenerated
     whenever a new service is onboarded
     -->
-    <modules>
-        <module>services/fabricv4</module>
-        <module>equinix-sdk-java</module>
-    </modules>
+    <dependencies>
+       <dependency>
+            <groupId>com.equinix</groupId>
+            <artifactId>equinix-sdk-java-fabricv4</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
