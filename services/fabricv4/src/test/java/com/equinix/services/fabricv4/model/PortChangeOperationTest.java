@@ -17,48 +17,46 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.net.URI;
-import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for StreamGetSubscriptions
+ * Model tests for PortChangeOperation
  */
-public class StreamGetSubscriptionsTest {
-    private final StreamGetSubscriptions model = new StreamGetSubscriptions();
+public class PortChangeOperationTest {
+    private final PortChangeOperation model = new PortChangeOperation();
 
     /**
-     * Model tests for StreamGetSubscriptions
+     * Model tests for PortChangeOperation
      */
     @Test
-    public void testStreamGetSubscriptions() {
-        // TODO: test StreamGetSubscriptions
+    public void testPortChangeOperation() {
+        // TODO: test PortChangeOperation
     }
 
     /**
-     * Test the property 'href'
+     * Test the property 'op'
      */
     @Test
-    public void hrefTest() {
-        // TODO: test href
+    public void opTest() {
+        // TODO: test op
     }
 
     /**
-     * Test the property 'uuid'
+     * Test the property 'path'
      */
     @Test
-    public void uuidTest() {
-        // TODO: test uuid
+    public void pathTest() {
+        // TODO: test path
     }
 
     /**
-     * Test the property 'type'
+     * Test the property 'value'
      */
     @Test
-    public void typeTest() {
-        // TODO: test type
+    public void valueTest() {
+        // TODO: test value
     }
 
 }

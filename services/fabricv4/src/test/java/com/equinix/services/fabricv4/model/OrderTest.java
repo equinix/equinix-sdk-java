@@ -75,4 +75,12 @@ public class OrderTest {
         // TODO: test orderNumber
     }
 
+    /**
+     * Test the property 'termLength'
+     */
+    @Test
+    public void termLengthTest() {
+        // TODO: test termLength
+    }
+
 }

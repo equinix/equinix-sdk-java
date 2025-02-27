@@ -12,14 +12,9 @@
 package com.equinix.services.fabricv4.api;
 
 import com.equinix.services.fabricv4.ApiException;
-import com.equinix.services.fabricv4.model.Duration;
 import com.equinix.services.fabricv4.model.Error;
-import com.equinix.services.fabricv4.model.MetricInterval;
 import java.time.OffsetDateTime;
-import com.equinix.services.fabricv4.model.QueryDirection;
-import com.equinix.services.fabricv4.model.Sort;
 import com.equinix.services.fabricv4.model.Statistics;
-import com.equinix.services.fabricv4.model.TopUtilizedStatistics;
 import java.util.UUID;
 import com.equinix.services.fabricv4.model.ViewPoint;
 import org.junit.jupiter.api.Disabled;
@@ -52,26 +47,6 @@ public class StatisticsApiTest {
         OffsetDateTime endDateTime = null;
         ViewPoint viewPoint = null;
         Statistics response = api.getConnectionStatsByPortUuid(connectionId, startDateTime, endDateTime, viewPoint);
-        // TODO: test validations
-    }
-
-    /**
-     * Top Port Statistics
-     *
-     * This API provides top utilized service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getPortStatsTest() throws ApiException {
-        List<String> metros = null;
-        Sort sort = null;
-        Integer top = null;
-        Duration duration = null;
-        QueryDirection direction = null;
-        MetricInterval metricInterval = null;
-        String projectId = null;
-        TopUtilizedStatistics response = api.getPortStats(metros, sort, top, duration, direction, metricInterval, projectId);
         // TODO: test validations
     }
 

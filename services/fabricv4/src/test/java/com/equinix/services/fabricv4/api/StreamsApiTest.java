@@ -16,7 +16,6 @@ import com.equinix.services.fabricv4.model.Asset;
 import com.equinix.services.fabricv4.model.Error;
 import com.equinix.services.fabricv4.model.GetAllStreamAssetResponse;
 import com.equinix.services.fabricv4.model.GetAllStreamResponse;
-import com.equinix.services.fabricv4.model.GetSubscriptionsInStreamResponse;
 import com.equinix.services.fabricv4.model.Stream;
 import com.equinix.services.fabricv4.model.StreamAsset;
 import com.equinix.services.fabricv4.model.StreamAssetPutRequest;
@@ -142,22 +141,6 @@ public class StreamsApiTest {
         Integer offset = null;
         Integer limit = null;
         GetAllStreamAssetResponse response = api.getStreamsAssets(streamAssetSearchRequest, offset, limit);
-        // TODO: test validations
-    }
-
-    /**
-     * Get Stream&#39;s Subs
-     *
-     * This API provides capability to retrieve subscriptions in a stream
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getSubscriptionsInStreamTest() throws ApiException {
-        UUID streamId = null;
-        Integer offset = null;
-        Integer limit = null;
-        GetSubscriptionsInStreamResponse response = api.getSubscriptionsInStream(streamId, offset, limit);
         // TODO: test validations
     }
 

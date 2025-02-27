@@ -13,8 +13,6 @@ package com.equinix.services.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.equinix.services.fabricv4.model.Pagination;
-import com.equinix.services.fabricv4.model.Statistics;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,70 +44,44 @@ import java.util.Set;
 import com.equinix.services.fabricv4.JSON;
 
 /**
- * This API provides service-level traffic metrics for the top utilized ports so that you can view access and gather key information required to manage service subscription sizing and capacity.
+ * ResourceSelector
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class TopUtilizedStatistics {
-  public static final String SERIALIZED_NAME_PAGINATION = "pagination";
-  @SerializedName(SERIALIZED_NAME_PAGINATION)
-  private Pagination pagination;
+public class ResourceSelector {
+  public static final String SERIALIZED_NAME_INCLUDE = "include";
+  @SerializedName(SERIALIZED_NAME_INCLUDE)
+  private List<String> include = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Statistics> data = new ArrayList<>();
-
-  public TopUtilizedStatistics() {
+  public ResourceSelector() {
   }
 
-  public TopUtilizedStatistics pagination(Pagination pagination) {
+  public ResourceSelector include(List<String> include) {
     
-    this.pagination = pagination;
+    this.include = include;
     return this;
   }
 
-   /**
-   * Get pagination
-   * @return pagination
-  **/
-  @javax.annotation.Nullable
-
-  public Pagination getPagination() {
-    return pagination;
-  }
-
-
-  public void setPagination(Pagination pagination) {
-    this.pagination = pagination;
-  }
-
-
-  public TopUtilizedStatistics data(List<Statistics> data) {
-    
-    this.data = data;
-    return this;
-  }
-
-  public TopUtilizedStatistics addDataItem(Statistics dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<>();
+  public ResourceSelector addIncludeItem(String includeItem) {
+    if (this.include == null) {
+      this.include = new ArrayList<>();
     }
-    this.data.add(dataItem);
+    this.include.add(includeItem);
     return this;
   }
 
    /**
-   * Data returned from the API call.
-   * @return data
+   * ### Supported metric names to use on filters with property /subject:   * &#x60;*&#x60; - all events or metrics   * &#x60;*_/ports/&lt;uuid&gt;&#x60; - port metrics   * &#x60;*_/connections/&lt;uuid&gt;&#x60; - connection metrics   * &#x60;*_/metros/&lt;metroCode&gt;&#x60; - metro latency metrics 
+   * @return include
   **/
   @javax.annotation.Nullable
 
-  public List<Statistics> getData() {
-    return data;
+  public List<String> getInclude() {
+    return include;
   }
 
 
-  public void setData(List<Statistics> data) {
-    this.data = data;
+  public void setInclude(List<String> include) {
+    this.include = include;
   }
 
   /**
@@ -125,9 +97,9 @@ public class TopUtilizedStatistics {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the TopUtilizedStatistics instance itself
+   * @return the ResourceSelector instance itself
    */
-  public TopUtilizedStatistics putAdditionalProperty(String key, Object value) {
+  public ResourceSelector putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -166,23 +138,21 @@ public class TopUtilizedStatistics {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TopUtilizedStatistics topUtilizedStatistics = (TopUtilizedStatistics) o;
-    return Objects.equals(this.pagination, topUtilizedStatistics.pagination) &&
-        Objects.equals(this.data, topUtilizedStatistics.data)&&
-        Objects.equals(this.additionalProperties, topUtilizedStatistics.additionalProperties);
+    ResourceSelector resourceSelector = (ResourceSelector) o;
+    return Objects.equals(this.include, resourceSelector.include)&&
+        Objects.equals(this.additionalProperties, resourceSelector.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pagination, data, additionalProperties);
+    return Objects.hash(include, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TopUtilizedStatistics {\n");
-    sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class ResourceSelector {\n");
+    sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -206,8 +176,7 @@ public class TopUtilizedStatistics {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("pagination");
-    openapiFields.add("data");
+    openapiFields.add("include");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -217,31 +186,17 @@ public class TopUtilizedStatistics {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to TopUtilizedStatistics
+  * @throws IOException if the JSON Object is invalid with respect to ResourceSelector
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!TopUtilizedStatistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TopUtilizedStatistics is not found in the empty JSON string", TopUtilizedStatistics.openapiRequiredFields.toString()));
+        if (!ResourceSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSelector is not found in the empty JSON string", ResourceSelector.openapiRequiredFields.toString()));
         }
       }
-      // validate the optional field `pagination`
-      if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        Pagination.validateJsonObject(jsonObj.getAsJsonObject("pagination"));
-      }
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
-        JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
-        if (jsonArraydata != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("data").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
-          }
-
-          // validate the optional field `data` (array)
-          for (int i = 0; i < jsonArraydata.size(); i++) {
-            Statistics.validateJsonObject(jsonArraydata.get(i).getAsJsonObject());
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }
 
@@ -249,16 +204,16 @@ public class TopUtilizedStatistics {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!TopUtilizedStatistics.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'TopUtilizedStatistics' and its subtypes
+       if (!ResourceSelector.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ResourceSelector' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<TopUtilizedStatistics> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(TopUtilizedStatistics.class));
+       final TypeAdapter<ResourceSelector> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ResourceSelector.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<TopUtilizedStatistics>() {
+       return (TypeAdapter<T>) new TypeAdapter<ResourceSelector>() {
            @Override
-           public void write(JsonWriter out, TopUtilizedStatistics value) throws IOException {
+           public void write(JsonWriter out, ResourceSelector value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -281,11 +236,11 @@ public class TopUtilizedStatistics {
            }
 
            @Override
-           public TopUtilizedStatistics read(JsonReader in) throws IOException {
+           public ResourceSelector read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              // store additional fields in the deserialized instance
-             TopUtilizedStatistics instance = thisAdapter.fromJsonTree(jsonObj);
+             ResourceSelector instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -312,18 +267,18 @@ public class TopUtilizedStatistics {
   }
 
  /**
-  * Create an instance of TopUtilizedStatistics given an JSON string
+  * Create an instance of ResourceSelector given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of TopUtilizedStatistics
-  * @throws IOException if the JSON string is invalid with respect to TopUtilizedStatistics
+  * @return An instance of ResourceSelector
+  * @throws IOException if the JSON string is invalid with respect to ResourceSelector
   */
-  public static TopUtilizedStatistics fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TopUtilizedStatistics.class);
+  public static ResourceSelector fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ResourceSelector.class);
   }
 
  /**
-  * Convert an instance of TopUtilizedStatistics to an JSON string
+  * Convert an instance of ResourceSelector to an JSON string
   *
   * @return JSON string
   */

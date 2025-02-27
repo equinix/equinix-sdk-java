@@ -14,7 +14,6 @@ package com.equinix.services.fabricv4.model;
 import com.equinix.services.fabricv4.model.StreamSubscriptionFilter;
 import com.equinix.services.fabricv4.model.StreamSubscriptionSelector;
 import com.equinix.services.fabricv4.model.StreamSubscriptionSink;
-import com.equinix.services.fabricv4.model.StreamTarget;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -53,14 +52,6 @@ public class StreamSubscriptionPutRequestTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
-    }
-
-    /**
-     * Test the property 'stream'
-     */
-    @Test
-    public void streamTest() {
-        // TODO: test stream
     }
 
     /**

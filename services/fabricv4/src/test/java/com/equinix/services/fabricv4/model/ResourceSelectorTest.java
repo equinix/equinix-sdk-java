@@ -17,31 +17,32 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for StreamTarget
+ * Model tests for ResourceSelector
  */
-public class StreamTargetTest {
-    private final StreamTarget model = new StreamTarget();
+public class ResourceSelectorTest {
+    private final ResourceSelector model = new ResourceSelector();
 
     /**
-     * Model tests for StreamTarget
+     * Model tests for ResourceSelector
      */
     @Test
-    public void testStreamTarget() {
-        // TODO: test StreamTarget
+    public void testResourceSelector() {
+        // TODO: test ResourceSelector
     }
 
     /**
-     * Test the property 'uuid'
+     * Test the property 'include'
      */
     @Test
-    public void uuidTest() {
-        // TODO: test uuid
+    public void includeTest() {
+        // TODO: test include
     }
 
 }
