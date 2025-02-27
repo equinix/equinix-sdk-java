@@ -1,6 +1,6 @@
 package com.equinix.openapi.fabric.tests.helpers;
 
-import com.equinix.openapi.fabric.v4.api.*;
+import com.equinix.sdk.fabricv4.api.*;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.generate;
