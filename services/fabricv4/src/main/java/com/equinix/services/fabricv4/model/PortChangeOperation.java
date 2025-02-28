@@ -19,8 +19,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.net.URI;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,132 +42,88 @@ import java.util.Set;
 import com.equinix.services.fabricv4.JSON;
 
 /**
- * Stream object
+ * Port change operation data
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class StreamGetSubscriptions {
-  public static final String SERIALIZED_NAME_HREF = "href";
-  @SerializedName(SERIALIZED_NAME_HREF)
-  private URI href;
+public class PortChangeOperation {
+  public static final String SERIALIZED_NAME_OP = "op";
+  @SerializedName(SERIALIZED_NAME_OP)
+  private String op;
 
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private UUID uuid;
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
+  private String path;
 
-  /**
-   * Stream subscription type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION");
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private Object value;
 
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
+  public PortChangeOperation() {
   }
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type;
-
-  public StreamGetSubscriptions() {
-  }
-
-  
-  public StreamGetSubscriptions(
-     URI href
-  ) {
-    this();
-    this.href = href;
-  }
-
-   /**
-   * Stream Get Stream Subscriptions URI
-   * @return href
-  **/
-  @javax.annotation.Nullable
-
-  public URI getHref() {
-    return href;
-  }
-
-
-
-
-  public StreamGetSubscriptions uuid(UUID uuid) {
+  public PortChangeOperation op(String op) {
     
-    this.uuid = uuid;
+    this.op = op;
     return this;
   }
 
    /**
-   * Equinix-assigned access point identifier
-   * @return uuid
+   * Handy shortcut for operation name
+   * @return op
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
-  public UUID getUuid() {
-    return uuid;
+  public String getOp() {
+    return op;
   }
 
 
-  public void setUuid(UUID uuid) {
-    this.uuid = uuid;
+  public void setOp(String op) {
+    this.op = op;
   }
 
 
-  public StreamGetSubscriptions type(TypeEnum type) {
+  public PortChangeOperation path(String path) {
     
-    this.type = type;
+    this.path = path;
     return this;
   }
 
    /**
-   * Stream subscription type
-   * @return type
+   * path inside document leading to updated parameter
+   * @return path
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
 
-  public TypeEnum getType() {
-    return type;
+  public String getPath() {
+    return path;
   }
 
 
-  public void setType(TypeEnum type) {
-    this.type = type;
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+
+  public PortChangeOperation value(Object value) {
+    
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * new value for updated parameter
+   * @return value
+  **/
+  @javax.annotation.Nonnull
+
+  public Object getValue() {
+    return value;
+  }
+
+
+  public void setValue(Object value) {
+    this.value = value;
   }
 
   /**
@@ -185,9 +139,9 @@ public class StreamGetSubscriptions {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StreamGetSubscriptions instance itself
+   * @return the PortChangeOperation instance itself
    */
-  public StreamGetSubscriptions putAdditionalProperty(String key, Object value) {
+  public PortChangeOperation putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -226,25 +180,25 @@ public class StreamGetSubscriptions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StreamGetSubscriptions streamGetSubscriptions = (StreamGetSubscriptions) o;
-    return Objects.equals(this.href, streamGetSubscriptions.href) &&
-        Objects.equals(this.uuid, streamGetSubscriptions.uuid) &&
-        Objects.equals(this.type, streamGetSubscriptions.type)&&
-        Objects.equals(this.additionalProperties, streamGetSubscriptions.additionalProperties);
+    PortChangeOperation portChangeOperation = (PortChangeOperation) o;
+    return Objects.equals(this.op, portChangeOperation.op) &&
+        Objects.equals(this.path, portChangeOperation.path) &&
+        Objects.equals(this.value, portChangeOperation.value)&&
+        Objects.equals(this.additionalProperties, portChangeOperation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, additionalProperties);
+    return Objects.hash(op, path, value, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StreamGetSubscriptions {\n");
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("class PortChangeOperation {\n");
+    sb.append("    op: ").append(toIndentedString(op)).append("\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -268,34 +222,41 @@ public class StreamGetSubscriptions {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("uuid");
-    openapiFields.add("type");
+    openapiFields.add("op");
+    openapiFields.add("path");
+    openapiFields.add("value");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("op");
+    openapiRequiredFields.add("path");
+    openapiRequiredFields.add("value");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamGetSubscriptions
+  * @throws IOException if the JSON Object is invalid with respect to PortChangeOperation
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!StreamGetSubscriptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StreamGetSubscriptions is not found in the empty JSON string", StreamGetSubscriptions.openapiRequiredFields.toString()));
+        if (!PortChangeOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PortChangeOperation is not found in the empty JSON string", PortChangeOperation.openapiRequiredFields.toString()));
         }
       }
-      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PortChangeOperation.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
       }
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      if (!jsonObj.get("op").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
       }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if (!jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
   }
 
@@ -303,16 +264,16 @@ public class StreamGetSubscriptions {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StreamGetSubscriptions.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StreamGetSubscriptions' and its subtypes
+       if (!PortChangeOperation.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PortChangeOperation' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StreamGetSubscriptions> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StreamGetSubscriptions.class));
+       final TypeAdapter<PortChangeOperation> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PortChangeOperation.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StreamGetSubscriptions>() {
+       return (TypeAdapter<T>) new TypeAdapter<PortChangeOperation>() {
            @Override
-           public void write(JsonWriter out, StreamGetSubscriptions value) throws IOException {
+           public void write(JsonWriter out, PortChangeOperation value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -335,11 +296,11 @@ public class StreamGetSubscriptions {
            }
 
            @Override
-           public StreamGetSubscriptions read(JsonReader in) throws IOException {
+           public PortChangeOperation read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              // store additional fields in the deserialized instance
-             StreamGetSubscriptions instance = thisAdapter.fromJsonTree(jsonObj);
+             PortChangeOperation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -366,18 +327,18 @@ public class StreamGetSubscriptions {
   }
 
  /**
-  * Create an instance of StreamGetSubscriptions given an JSON string
+  * Create an instance of PortChangeOperation given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of StreamGetSubscriptions
-  * @throws IOException if the JSON string is invalid with respect to StreamGetSubscriptions
+  * @return An instance of PortChangeOperation
+  * @throws IOException if the JSON string is invalid with respect to PortChangeOperation
   */
-  public static StreamGetSubscriptions fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StreamGetSubscriptions.class);
+  public static PortChangeOperation fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PortChangeOperation.class);
   }
 
  /**
-  * Convert an instance of StreamGetSubscriptions to an JSON string
+  * Convert an instance of PortChangeOperation to an JSON string
   *
   * @return JSON string
   */

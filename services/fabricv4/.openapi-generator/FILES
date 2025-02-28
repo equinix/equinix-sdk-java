@@ -11,6 +11,8 @@ docs/AccessPointSelector.md
 docs/AccessPointType.md
 docs/Actions.md
 docs/AddOperation.md
+docs/AlertRulePostRequest.md
+docs/AlertRulePutRequest.md
 docs/AllPhysicalPortsResponse.md
 docs/AllPortsResponse.md
 docs/ApiConfig.md
@@ -103,7 +105,6 @@ docs/CustomField.md
 docs/DirectConnectionIpv4.md
 docs/DirectConnectionIpv6.md
 docs/Direction.md
-docs/Duration.md
 docs/EndCustomer.md
 docs/EquinixStatus.md
 docs/Error.md
@@ -124,7 +125,6 @@ docs/GetRouteAggregationGetConnectionsResponse.md
 docs/GetRouteAggregationRulesResponse.md
 docs/GetRouteFilterGetConnectionsResponse.md
 docs/GetRouteFilterRulesResponse.md
-docs/GetSubscriptionsInStreamResponse.md
 docs/HealthApi.md
 docs/HealthResponse.md
 docs/InternetAccess.md
@@ -146,7 +146,6 @@ docs/MarketplaceSubscription.md
 docs/MarketplaceSubscriptionsApi.md
 docs/Md5.md
 docs/MetalInterconnection.md
-docs/MetricInterval.md
 docs/Metrics.md
 docs/Metro.md
 docs/MetroError.md
@@ -192,6 +191,7 @@ docs/PhysicalPortSettings.md
 docs/PhysicalPortType.md
 docs/Port.md
 docs/PortAdditionalInfo.md
+docs/PortChangeOperation.md
 docs/PortDemarcationPoint.md
 docs/PortDevice.md
 docs/PortDeviceRedundancy.md
@@ -243,9 +243,9 @@ docs/ProductType.md
 docs/Project.md
 docs/ProviderStatus.md
 docs/PtpAdvanceConfiguration.md
-docs/QueryDirection.md
 docs/RemoveOperation.md
 docs/ReplaceOperation.md
+docs/ResourceSelector.md
 docs/RouteAggregationChangeData.md
 docs/RouteAggregationChangeDataResponse.md
 docs/RouteAggregationConnectionsData.md
@@ -379,7 +379,6 @@ docs/SimplifiedPort.md
 docs/SimplifiedServiceProfile.md
 docs/SimplifiedTokenNetwork.md
 docs/SimplifiedVirtualDevice.md
-docs/Sort.md
 docs/SortBy.md
 docs/SortCriteria.md
 docs/SortCriteriaResponse.md
@@ -388,6 +387,8 @@ docs/SortItem.md
 docs/Statistics.md
 docs/StatisticsApi.md
 docs/Stream.md
+docs/StreamAlertRule.md
+docs/StreamAlertRulesApi.md
 docs/StreamAsset.md
 docs/StreamAssetFilter.md
 docs/StreamAssetFilters.md
@@ -401,7 +402,6 @@ docs/StreamAssetSortDirection.md
 docs/StreamFilter.md
 docs/StreamFilterOrFilter.md
 docs/StreamFilterSimpleExpression.md
-docs/StreamGetSubscriptions.md
 docs/StreamPostRequest.md
 docs/StreamPutRequest.md
 docs/StreamSubscription.md
@@ -413,7 +413,6 @@ docs/StreamSubscriptionSink.md
 docs/StreamSubscriptionSinkCredential.md
 docs/StreamSubscriptionSinkSetting.md
 docs/StreamSubscriptionsApi.md
-docs/StreamTarget.md
 docs/StreamsApi.md
 docs/SubInterface.md
 docs/SubscriptionAsset.md
@@ -434,7 +433,6 @@ docs/TimeServiceSortBy.md
 docs/TimeServiceSortCriteria.md
 docs/TimeServiceSortDirection.md
 docs/TimeServicesSearchRequest.md
-docs/TopUtilizedStatistics.md
 docs/ValidateConnectionResponse.md
 docs/ValidateRequest.md
 docs/ValidateRequestFilter.md
@@ -506,6 +504,7 @@ src/main/java/com/equinix/services/fabricv4/api/RoutingProtocolsApi.java
 src/main/java/com/equinix/services/fabricv4/api/ServiceProfilesApi.java
 src/main/java/com/equinix/services/fabricv4/api/ServiceTokensApi.java
 src/main/java/com/equinix/services/fabricv4/api/StatisticsApi.java
+src/main/java/com/equinix/services/fabricv4/api/StreamAlertRulesApi.java
 src/main/java/com/equinix/services/fabricv4/api/StreamSubscriptionsApi.java
 src/main/java/com/equinix/services/fabricv4/api/StreamsApi.java
 src/main/java/com/equinix/services/fabricv4/auth/ApiKeyAuth.java
@@ -518,6 +517,8 @@ src/main/java/com/equinix/services/fabricv4/model/AccessPointSelector.java
 src/main/java/com/equinix/services/fabricv4/model/AccessPointType.java
 src/main/java/com/equinix/services/fabricv4/model/Actions.java
 src/main/java/com/equinix/services/fabricv4/model/AddOperation.java
+src/main/java/com/equinix/services/fabricv4/model/AlertRulePostRequest.java
+src/main/java/com/equinix/services/fabricv4/model/AlertRulePutRequest.java
 src/main/java/com/equinix/services/fabricv4/model/AllPhysicalPortsResponse.java
 src/main/java/com/equinix/services/fabricv4/model/AllPortsResponse.java
 src/main/java/com/equinix/services/fabricv4/model/ApiConfig.java
@@ -608,7 +609,6 @@ src/main/java/com/equinix/services/fabricv4/model/CustomField.java
 src/main/java/com/equinix/services/fabricv4/model/DirectConnectionIpv4.java
 src/main/java/com/equinix/services/fabricv4/model/DirectConnectionIpv6.java
 src/main/java/com/equinix/services/fabricv4/model/Direction.java
-src/main/java/com/equinix/services/fabricv4/model/Duration.java
 src/main/java/com/equinix/services/fabricv4/model/EndCustomer.java
 src/main/java/com/equinix/services/fabricv4/model/EquinixStatus.java
 src/main/java/com/equinix/services/fabricv4/model/Error.java
@@ -629,7 +629,6 @@ src/main/java/com/equinix/services/fabricv4/model/GetRouteAggregationGetConnecti
 src/main/java/com/equinix/services/fabricv4/model/GetRouteAggregationRulesResponse.java
 src/main/java/com/equinix/services/fabricv4/model/GetRouteFilterGetConnectionsResponse.java
 src/main/java/com/equinix/services/fabricv4/model/GetRouteFilterRulesResponse.java
-src/main/java/com/equinix/services/fabricv4/model/GetSubscriptionsInStreamResponse.java
 src/main/java/com/equinix/services/fabricv4/model/HealthResponse.java
 src/main/java/com/equinix/services/fabricv4/model/InternetAccess.java
 src/main/java/com/equinix/services/fabricv4/model/IpBlockPrice.java
@@ -649,7 +648,6 @@ src/main/java/com/equinix/services/fabricv4/model/MarketingInfo.java
 src/main/java/com/equinix/services/fabricv4/model/MarketplaceSubscription.java
 src/main/java/com/equinix/services/fabricv4/model/Md5.java
 src/main/java/com/equinix/services/fabricv4/model/MetalInterconnection.java
-src/main/java/com/equinix/services/fabricv4/model/MetricInterval.java
 src/main/java/com/equinix/services/fabricv4/model/Metrics.java
 src/main/java/com/equinix/services/fabricv4/model/Metro.java
 src/main/java/com/equinix/services/fabricv4/model/MetroError.java
@@ -693,6 +691,7 @@ src/main/java/com/equinix/services/fabricv4/model/PhysicalPortSettings.java
 src/main/java/com/equinix/services/fabricv4/model/PhysicalPortType.java
 src/main/java/com/equinix/services/fabricv4/model/Port.java
 src/main/java/com/equinix/services/fabricv4/model/PortAdditionalInfo.java
+src/main/java/com/equinix/services/fabricv4/model/PortChangeOperation.java
 src/main/java/com/equinix/services/fabricv4/model/PortDemarcationPoint.java
 src/main/java/com/equinix/services/fabricv4/model/PortDevice.java
 src/main/java/com/equinix/services/fabricv4/model/PortDeviceRedundancy.java
@@ -741,9 +740,9 @@ src/main/java/com/equinix/services/fabricv4/model/ProductType.java
 src/main/java/com/equinix/services/fabricv4/model/Project.java
 src/main/java/com/equinix/services/fabricv4/model/ProviderStatus.java
 src/main/java/com/equinix/services/fabricv4/model/PtpAdvanceConfiguration.java
-src/main/java/com/equinix/services/fabricv4/model/QueryDirection.java
 src/main/java/com/equinix/services/fabricv4/model/RemoveOperation.java
 src/main/java/com/equinix/services/fabricv4/model/ReplaceOperation.java
+src/main/java/com/equinix/services/fabricv4/model/ResourceSelector.java
 src/main/java/com/equinix/services/fabricv4/model/RouteAggregationChangeData.java
 src/main/java/com/equinix/services/fabricv4/model/RouteAggregationChangeDataResponse.java
 src/main/java/com/equinix/services/fabricv4/model/RouteAggregationConnectionsData.java
@@ -870,7 +869,6 @@ src/main/java/com/equinix/services/fabricv4/model/SimplifiedPort.java
 src/main/java/com/equinix/services/fabricv4/model/SimplifiedServiceProfile.java
 src/main/java/com/equinix/services/fabricv4/model/SimplifiedTokenNetwork.java
 src/main/java/com/equinix/services/fabricv4/model/SimplifiedVirtualDevice.java
-src/main/java/com/equinix/services/fabricv4/model/Sort.java
 src/main/java/com/equinix/services/fabricv4/model/SortBy.java
 src/main/java/com/equinix/services/fabricv4/model/SortCriteria.java
 src/main/java/com/equinix/services/fabricv4/model/SortCriteriaResponse.java
@@ -878,6 +876,7 @@ src/main/java/com/equinix/services/fabricv4/model/SortDirection.java
 src/main/java/com/equinix/services/fabricv4/model/SortItem.java
 src/main/java/com/equinix/services/fabricv4/model/Statistics.java
 src/main/java/com/equinix/services/fabricv4/model/Stream.java
+src/main/java/com/equinix/services/fabricv4/model/StreamAlertRule.java
 src/main/java/com/equinix/services/fabricv4/model/StreamAsset.java
 src/main/java/com/equinix/services/fabricv4/model/StreamAssetFilter.java
 src/main/java/com/equinix/services/fabricv4/model/StreamAssetFilters.java
@@ -891,7 +890,6 @@ src/main/java/com/equinix/services/fabricv4/model/StreamAssetSortDirection.java
 src/main/java/com/equinix/services/fabricv4/model/StreamFilter.java
 src/main/java/com/equinix/services/fabricv4/model/StreamFilterOrFilter.java
 src/main/java/com/equinix/services/fabricv4/model/StreamFilterSimpleExpression.java
-src/main/java/com/equinix/services/fabricv4/model/StreamGetSubscriptions.java
 src/main/java/com/equinix/services/fabricv4/model/StreamPostRequest.java
 src/main/java/com/equinix/services/fabricv4/model/StreamPutRequest.java
 src/main/java/com/equinix/services/fabricv4/model/StreamSubscription.java
@@ -902,7 +900,6 @@ src/main/java/com/equinix/services/fabricv4/model/StreamSubscriptionSelector.jav
 src/main/java/com/equinix/services/fabricv4/model/StreamSubscriptionSink.java
 src/main/java/com/equinix/services/fabricv4/model/StreamSubscriptionSinkCredential.java
 src/main/java/com/equinix/services/fabricv4/model/StreamSubscriptionSinkSetting.java
-src/main/java/com/equinix/services/fabricv4/model/StreamTarget.java
 src/main/java/com/equinix/services/fabricv4/model/SubInterface.java
 src/main/java/com/equinix/services/fabricv4/model/SubscriptionAsset.java
 src/main/java/com/equinix/services/fabricv4/model/SubscriptionEntitlementResponse.java
@@ -922,7 +919,6 @@ src/main/java/com/equinix/services/fabricv4/model/TimeServiceSortBy.java
 src/main/java/com/equinix/services/fabricv4/model/TimeServiceSortCriteria.java
 src/main/java/com/equinix/services/fabricv4/model/TimeServiceSortDirection.java
 src/main/java/com/equinix/services/fabricv4/model/TimeServicesSearchRequest.java
-src/main/java/com/equinix/services/fabricv4/model/TopUtilizedStatistics.java
 src/main/java/com/equinix/services/fabricv4/model/ValidateConnectionResponse.java
 src/main/java/com/equinix/services/fabricv4/model/ValidateRequest.java
 src/main/java/com/equinix/services/fabricv4/model/ValidateRequestFilter.java
