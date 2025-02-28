@@ -12,6 +12,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getPorts**](PortsApi.md#getPorts) | **GET** /fabric/v4/ports | Get All Ports |
 | [**getVlans**](PortsApi.md#getVlans) | **GET** /fabric/v4/ports/{portUuid}/linkProtocols | Get Vlans |
 | [**searchPorts**](PortsApi.md#searchPorts) | **POST** /fabric/v4/ports/search | Search ports |
+| [**updatePortByUuid**](PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update by UUID |
 
 
 <a name="addToLag"></a>
@@ -568,4 +569,76 @@ public class Example {
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
+
+<a name="updatePortByUuid"></a>
+# **updatePortByUuid**
+> AllPortsResponse updatePortByUuid(portId, portChangeOperation)
+
+Update by UUID
+
+Update Port by UUID
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.PortsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    PortsApi apiInstance = new PortsApi(defaultClient);
+    UUID portId = UUID.randomUUID(); // UUID | Port UUID
+    List<PortChangeOperation> portChangeOperation = Arrays.asList(); // List<PortChangeOperation> | 
+    try {
+      AllPortsResponse result = apiInstance.updatePortByUuid(portId, portChangeOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PortsApi#updatePortByUuid");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **portId** | **UUID**| Port UUID | |
+| **portChangeOperation** | [**List&lt;PortChangeOperation&gt;**](PortChangeOperation.md)|  | |
+
+### Return type
+
+[**AllPortsResponse**](AllPortsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
 
