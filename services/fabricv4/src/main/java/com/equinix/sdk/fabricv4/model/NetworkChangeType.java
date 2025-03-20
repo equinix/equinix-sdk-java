@@ -27,11 +27,11 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkChangeType.Adapter.class)
 public enum NetworkChangeType {
   
-  NETWORK_CREATION("NETWORK_CREATION"),
+  CREATION("NETWORK_CREATION"),
   
-  NETWORK_UPDATE("NETWORK_UPDATE"),
+  UPDATE("NETWORK_UPDATE"),
   
-  NETWORK_DELETION("NETWORK_DELETION");
+  DELETION("NETWORK_DELETION");
 
   private String value;
 

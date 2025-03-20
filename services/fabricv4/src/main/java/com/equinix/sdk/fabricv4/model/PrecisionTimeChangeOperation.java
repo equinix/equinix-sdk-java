@@ -112,15 +112,15 @@ public class PrecisionTimeChangeOperation {
    */
   @JsonAdapter(PathEnum.Adapter.class)
   public enum PathEnum {
-    _NAME("/name"),
+    NAME("/name"),
     
-    _PACKAGE_CODE("/package/code"),
+    PACKAGE_CODE("/package/code"),
     
-    _IPV4("/ipv4"),
+    IPV4("/ipv4"),
     
-    _NTP_ADVANCED_CONFIGURATION("/ntpAdvancedConfiguration"),
+    NTP_ADVANCED_CONFIGURATION("/ntpAdvancedConfiguration"),
     
-    _PTP_ADVANCED_CONFIGURATION("/ptpAdvancedConfiguration");
+    PTP_ADVANCED_CONFIGURATION("/ptpAdvancedConfiguration");
 
     private String value;
 

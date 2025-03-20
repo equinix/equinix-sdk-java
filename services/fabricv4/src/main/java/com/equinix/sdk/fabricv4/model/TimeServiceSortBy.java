@@ -27,19 +27,19 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(TimeServiceSortBy.Adapter.class)
 public enum TimeServiceSortBy {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _STATE("/state"),
+  STATE("/state"),
   
-  _TYPE("/type"),
+  TYPE("/type"),
   
-  _PACKAGE_CODE("/package/code"),
+  PACKAGE_CODE("/package/code"),
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
 
   private String value;
 

@@ -56,13 +56,13 @@ public class MetroError {
    */
   @JsonAdapter(ErrorCodeEnum.Adapter.class)
   public enum ErrorCodeEnum {
-    EQ_3036001("EQ-3036001"),
+    _3036001("EQ-3036001"),
     
-    EQ_3036013("EQ-3036013"),
+    _3036013("EQ-3036013"),
     
-    EQ_3036030("EQ-3036030"),
+    _3036030("EQ-3036030"),
     
-    EQ_3036100("EQ-3036100");
+    _3036100("EQ-3036100");
 
     private String value;
 

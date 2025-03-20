@@ -21,10 +21,10 @@ Error with details
 
 | Name | Value |
 |---- | -----|
-| EQ_3036001 | &quot;EQ-3036001&quot; |
-| EQ_3036013 | &quot;EQ-3036013&quot; |
-| EQ_3036030 | &quot;EQ-3036030&quot; |
-| EQ_3036100 | &quot;EQ-3036100&quot; |
+| _3036001 | &quot;EQ-3036001&quot; |
+| _3036013 | &quot;EQ-3036013&quot; |
+| _3036030 | &quot;EQ-3036030&quot; |
+| _3036100 | &quot;EQ-3036100&quot; |
 
 
 

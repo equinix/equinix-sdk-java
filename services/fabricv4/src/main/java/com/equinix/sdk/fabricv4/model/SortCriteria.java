@@ -58,7 +58,7 @@ public class SortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private SortBy property = SortBy._CHANGE_LOG_UPDATED_DATE_TIME;
+  private SortBy property = SortBy.CHANGE_LOG_UPDATED_DATE_TIME;
 
   public SortCriteria() {
   }

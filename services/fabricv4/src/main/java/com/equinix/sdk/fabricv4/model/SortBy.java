@@ -27,55 +27,55 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(SortBy.Adapter.class)
 public enum SortBy {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _DIRECTION("/direction"),
+  DIRECTION("/direction"),
   
-  _A_SIDE_ACCESS_POINT_NAME("/aSide/accessPoint/name"),
+  A_SIDE_ACCESS_POINT_NAME("/aSide/accessPoint/name"),
   
-  _A_SIDE_ACCESS_POINT_TYPE("/aSide/accessPoint/type"),
+  A_SIDE_ACCESS_POINT_TYPE("/aSide/accessPoint/type"),
   
-  _A_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/aSide/accessPoint/account/accountName"),
+  A_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/aSide/accessPoint/account/accountName"),
   
-  _A_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/aSide/accessPoint/location/metroName"),
+  A_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/aSide/accessPoint/location/metroName"),
   
-  _A_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/aSide/accessPoint/location/metroCode"),
+  A_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/aSide/accessPoint/location/metroCode"),
   
-  _A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
+  A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
   
-  _A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
+  A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
   
-  _Z_SIDE_ACCESS_POINT_NAME("/zSide/accessPoint/name"),
+  Z_SIDE_ACCESS_POINT_NAME("/zSide/accessPoint/name"),
   
-  _Z_SIDE_ACCESS_POINT_TYPE("/zSide/accessPoint/type"),
+  Z_SIDE_ACCESS_POINT_TYPE("/zSide/accessPoint/type"),
   
-  _Z_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/zSide/accessPoint/account/accountName"),
+  Z_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/zSide/accessPoint/account/accountName"),
   
-  _Z_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/zSide/accessPoint/location/metroName"),
+  Z_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/zSide/accessPoint/location/metroName"),
   
-  _Z_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/zSide/accessPoint/location/metroCode"),
+  Z_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/zSide/accessPoint/location/metroCode"),
   
-  _Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
+  Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
   
-  _Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
+  Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
   
-  _Z_SIDE_ACCESS_POINT_AUTHENTICATION_KEY("/zSide/accessPoint/authenticationKey"),
+  Z_SIDE_ACCESS_POINT_AUTHENTICATION_KEY("/zSide/accessPoint/authenticationKey"),
   
-  _BANDWIDTH("/bandwidth"),
+  BANDWIDTH("/bandwidth"),
   
-  _GEO_SCOPE("/geoScope"),
+  GEO_SCOPE("/geoScope"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
   
-  _OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
   
-  _OPERATION_PROVIDER_STATUS("/operation/providerStatus"),
+  OPERATION_PROVIDER_STATUS("/operation/providerStatus"),
   
-  _REDUNDANCY_PRIORITY("/redundancy/priority");
+  REDUNDANCY_PRIORITY("/redundancy/priority");
 
   private String value;
 

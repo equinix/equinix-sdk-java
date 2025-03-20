@@ -27,13 +27,13 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ServiceTokenSearchFieldName.Adapter.class)
 public enum ServiceTokenSearchFieldName {
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _STATE("/state"),
+  STATE("/state"),
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _PROJECT_PROJECT_ID("/project/projectId");
+  PROJECT_PROJECT_ID("/project/projectId");
 
   private String value;
 

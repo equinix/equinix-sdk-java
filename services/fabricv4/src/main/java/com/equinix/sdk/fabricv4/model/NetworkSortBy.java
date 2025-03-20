@@ -27,19 +27,19 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkSortBy.Adapter.class)
 public enum NetworkSortBy {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _SCOPE("/scope"),
+  SCOPE("/scope"),
   
-  _OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
   
-  _LOCATION_REGION("/location/region"),
+  LOCATION_REGION("/location/region"),
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
 
   private String value;
 

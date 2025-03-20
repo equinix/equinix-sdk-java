@@ -55,15 +55,15 @@ public class RouteAggregationsSearchFilterItem {
    */
   @JsonAdapter(PropertyEnum.Adapter.class)
   public enum PropertyEnum {
-    _TYPE("/type"),
+    TYPE("/type"),
     
-    _NAME("/name"),
+    NAME("/name"),
     
-    _PROJECT_PROJECT_ID("/project/projectId"),
+    PROJECT_PROJECT_ID("/project/projectId"),
     
-    _UUID("/uuid"),
+    UUID("/uuid"),
     
-    _STATE("/state");
+    STATE("/state");
 
     private String value;
 

@@ -60,9 +60,9 @@ public class CloudRouterChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    ROUTER_UPDATE("ROUTER_UPDATE"),
+    UPDATE("ROUTER_UPDATE"),
     
-    ROUTER_PACKAGE_UPDATE("ROUTER_PACKAGE_UPDATE");
+    PACKAGE_UPDATE("ROUTER_PACKAGE_UPDATE");
 
     private String value;
 

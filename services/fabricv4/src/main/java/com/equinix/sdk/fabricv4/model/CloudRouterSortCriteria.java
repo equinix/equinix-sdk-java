@@ -58,7 +58,7 @@ public class CloudRouterSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private CloudRouterSortBy property = CloudRouterSortBy._CHANGE_LOG_UPDATED_DATE_TIME;
+  private CloudRouterSortBy property = CloudRouterSortBy.CHANGE_LOG_UPDATED_DATE_TIME;
 
   public CloudRouterSortCriteria() {
   }

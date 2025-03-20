@@ -58,7 +58,7 @@ public class TimeServiceSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private TimeServiceSortBy property = TimeServiceSortBy._CHANGE_LOG_UPDATED_DATE_TIME;
+  private TimeServiceSortBy property = TimeServiceSortBy.CHANGE_LOG_UPDATED_DATE_TIME;
 
   public TimeServiceSortCriteria() {
   }

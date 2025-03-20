@@ -27,13 +27,13 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(CloudRouterActionsSearchSortBy.Adapter.class)
 public enum CloudRouterActionsSearchSortBy {
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
   
-  _CONNECTION_NAME("/connection/name"),
+  CONNECTION_NAME("/connection/name"),
   
-  _TYPE("/type");
+  TYPE("/type");
 
   private String value;
 

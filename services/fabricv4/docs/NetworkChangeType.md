@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `NETWORK_CREATION` (value: `"NETWORK_CREATION"`)
+* `CREATION` (value: `"NETWORK_CREATION"`)
 
-* `NETWORK_UPDATE` (value: `"NETWORK_UPDATE"`)
+* `UPDATE` (value: `"NETWORK_UPDATE"`)
 
-* `NETWORK_DELETION` (value: `"NETWORK_DELETION"`)
+* `DELETION` (value: `"NETWORK_DELETION"`)
 
 
 

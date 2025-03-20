@@ -56,11 +56,11 @@ public class PriceError {
    */
   @JsonAdapter(ErrorCodeEnum.Adapter.class)
   public enum ErrorCodeEnum {
-    EQ_3038010("EQ-3038010"),
+    _3038010("EQ-3038010"),
     
-    EQ_3038022("EQ-3038022"),
+    _3038022("EQ-3038022"),
     
-    EQ_3038030("EQ-3038030");
+    _3038030("EQ-3038030");
 
     private String value;
 

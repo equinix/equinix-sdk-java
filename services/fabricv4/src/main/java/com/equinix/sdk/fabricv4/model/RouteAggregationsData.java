@@ -64,9 +64,9 @@ public class RouteAggregationsData {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    BGP_IPV4_PREFIX_AGGREGATION("BGP_IPv4_PREFIX_AGGREGATION"),
+    IPV4_PREFIX_AGGREGATION("BGP_IPv4_PREFIX_AGGREGATION"),
     
-    BGP_IPV6_PREFIX_AGGREGATION("BGP_IPv6_PREFIX_AGGREGATION");
+    IPV6_PREFIX_AGGREGATION("BGP_IPv6_PREFIX_AGGREGATION");
 
     private String value;
 

@@ -64,9 +64,9 @@ public class RouteFiltersData {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    BGP_IPV4_PREFIX_FILTER("BGP_IPv4_PREFIX_FILTER"),
+    IPV4_PREFIX_FILTER("BGP_IPv4_PREFIX_FILTER"),
     
-    BGP_IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER");
+    IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER");
 
     private String value;
 

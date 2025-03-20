@@ -27,21 +27,21 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkSortByResponse.Adapter.class)
 public enum NetworkSortByResponse {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _TYPE("/type"),
+  TYPE("/type"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _STATE("/state"),
+  STATE("/state"),
   
-  _SCOPE("/scope"),
+  SCOPE("/scope"),
   
-  _LOCATION_REGION("/location/region"),
+  LOCATION_REGION("/location/region"),
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
 
   private String value;
 

@@ -27,21 +27,21 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(CloudRouterSortBy.Adapter.class)
 public enum CloudRouterSortBy {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _STATE("/state"),
+  STATE("/state"),
   
-  _LOCATION_METRO_CODE("/location/metroCode"),
+  LOCATION_METRO_CODE("/location/metroCode"),
   
-  _LOCATION_METRO_NAME("/location/metroName"),
+  LOCATION_METRO_NAME("/location/metroName"),
   
-  _PACKAGE_CODE("/package/code"),
+  PACKAGE_CODE("/package/code"),
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
 
   private String value;
 

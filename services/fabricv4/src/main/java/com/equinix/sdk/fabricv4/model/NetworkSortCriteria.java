@@ -58,7 +58,7 @@ public class NetworkSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private NetworkSortBy property = NetworkSortBy._CHANGE_LOG_UPDATED_DATE_TIME;
+  private NetworkSortBy property = NetworkSortBy.CHANGE_LOG_UPDATED_DATE_TIME;
 
   public NetworkSortCriteria() {
   }

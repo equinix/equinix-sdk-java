@@ -5,21 +5,21 @@
 ## Enum
 
 
-* `_NAME` (value: `"/name"`)
+* `NAME` (value: `"/name"`)
 
-* `_UUID` (value: `"/uuid"`)
+* `UUID` (value: `"/uuid"`)
 
-* `_STATE` (value: `"/state"`)
+* `STATE` (value: `"/state"`)
 
-* `_LOCATION_METRO_CODE` (value: `"/location/metroCode"`)
+* `LOCATION_METRO_CODE` (value: `"/location/metroCode"`)
 
-* `_LOCATION_METRO_NAME` (value: `"/location/metroName"`)
+* `LOCATION_METRO_NAME` (value: `"/location/metroName"`)
 
-* `_PACKAGE_CODE` (value: `"/package/code"`)
+* `PACKAGE_CODE` (value: `"/package/code"`)
 
-* `_CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
+* `CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
 
-* `_CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
+* `CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
 
 
 

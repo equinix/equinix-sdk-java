@@ -27,27 +27,27 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkSearchFieldName.Adapter.class)
 public enum NetworkSearchFieldName {
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _SCOPE("/scope"),
+  SCOPE("/scope"),
   
-  _TYPE("/type"),
+  TYPE("/type"),
   
-  _OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
   
-  _LOCATION_REGION("/location/region"),
+  LOCATION_REGION("/location/region"),
   
-  _PROJECT_PROJECT_ID("/project/projectId"),
+  PROJECT_PROJECT_ID("/project/projectId"),
   
-  _ACCOUNT_GLOBAL_CUST_ID("/account/globalCustId"),
+  ACCOUNT_GLOBAL_CUST_ID("/account/globalCustId"),
   
-  _ACCOUNT_ORG_ID("/account/orgId"),
+  ACCOUNT_ORG_ID("/account/orgId"),
   
-  _DELETED_DATE("/deletedDate"),
+  DELETED_DATE("/deletedDate"),
   
-  u("/_*");
+  STAR("/_*");
 
   private String value;
 

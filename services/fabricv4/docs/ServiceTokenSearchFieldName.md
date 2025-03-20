@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `_UUID` (value: `"/uuid"`)
+* `UUID` (value: `"/uuid"`)
 
-* `_STATE` (value: `"/state"`)
+* `STATE` (value: `"/state"`)
 
-* `_NAME` (value: `"/name"`)
+* `NAME` (value: `"/name"`)
 
-* `_PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
+* `PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
 
 
 

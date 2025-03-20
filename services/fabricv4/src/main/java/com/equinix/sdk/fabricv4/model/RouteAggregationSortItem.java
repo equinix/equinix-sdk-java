@@ -53,21 +53,21 @@ public class RouteAggregationSortItem {
    */
   @JsonAdapter(PropertyEnum.Adapter.class)
   public enum PropertyEnum {
-    _TYPE("/type"),
+    TYPE("/type"),
     
-    _UUID("/uuid"),
+    UUID("/uuid"),
     
-    _NAME("/name"),
+    NAME("/name"),
     
-    _PROJECT_PROJECT_ID("/project/projectId"),
+    PROJECT_PROJECT_ID("/project/projectId"),
     
-    _STATE("/state"),
+    STATE("/state"),
     
-    _CONNECTIONS_COUNT("/connectionsCount"),
+    CONNECTIONS_COUNT("/connectionsCount"),
     
-    _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+    CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
     
-    _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+    CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
 
     private String value;
 
@@ -115,7 +115,7 @@ public class RouteAggregationSortItem {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private PropertyEnum property = PropertyEnum._CHANGE_LOG_UPDATED_DATE_TIME;
+  private PropertyEnum property = PropertyEnum.CHANGE_LOG_UPDATED_DATE_TIME;
 
   /**
    * Sorting direction

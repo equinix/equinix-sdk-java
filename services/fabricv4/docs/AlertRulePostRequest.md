@@ -33,15 +33,15 @@ Create Stream Alert Rules
 
 | Name | Value |
 |---- | -----|
-| EQUINIX_FABRIC_CONNECTION_BANDWIDTH_TX_USAGE | &quot;equinix.fabric.connection.bandwidth_tx.usage&quot; |
-| EQUINIX_FABRIC_CONNECTION_BANDWIDTH_RX_USAGE | &quot;equinix.fabric.connection.bandwidth_rx.usage&quot; |
-| EQUINIX_FABRIC_PORT_BANDWIDTH_TX_USAGE | &quot;equinix.fabric.port.bandwidth_tx.usage&quot; |
-| EQUINIX_FABRIC_PORT_BANDWIDTH_RX_USAGE | &quot;equinix.fabric.port.bandwidth_rx.usage&quot; |
-| EQUINIX_FABRIC_PORT_PACKETS_ERRED_TX_COUNT | &quot;equinix.fabric.port.packets_erred_tx.count&quot; |
-| EQUINIX_FABRIC_PORT_PACKETS_ERRED_RX_COUNT | &quot;equinix.fabric.port.packets_erred_rx.count&quot; |
-| EQUINIX_FABRIC_PORT_PACKETS_DROPPED_TX_COUNT | &quot;equinix.fabric.port.packets_dropped_tx.count&quot; |
-| EQUINIX_FABRIC_PORT_PACKETS_DROPPED_RX_COUNT | &quot;equinix.fabric.port.packets_dropped_rx.count&quot; |
-| EQUINIX_FABRIC_METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY | &quot;equinix.fabric.metro.&lt;source_metro_code&gt;_&lt;destination_metro_code&gt;.latency&quot; |
+| CONNECTION_BANDWIDTH_TX_USAGE | &quot;equinix.fabric.connection.bandwidth_tx.usage&quot; |
+| CONNECTION_BANDWIDTH_RX_USAGE | &quot;equinix.fabric.connection.bandwidth_rx.usage&quot; |
+| PORT_BANDWIDTH_TX_USAGE | &quot;equinix.fabric.port.bandwidth_tx.usage&quot; |
+| PORT_BANDWIDTH_RX_USAGE | &quot;equinix.fabric.port.bandwidth_rx.usage&quot; |
+| PORT_PACKETS_ERRED_TX_COUNT | &quot;equinix.fabric.port.packets_erred_tx.count&quot; |
+| PORT_PACKETS_ERRED_RX_COUNT | &quot;equinix.fabric.port.packets_erred_rx.count&quot; |
+| PORT_PACKETS_DROPPED_TX_COUNT | &quot;equinix.fabric.port.packets_dropped_tx.count&quot; |
+| PORT_PACKETS_DROPPED_RX_COUNT | &quot;equinix.fabric.port.packets_dropped_rx.count&quot; |
+| METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY | &quot;equinix.fabric.metro.&lt;source_metro_code&gt;_&lt;destination_metro_code&gt;.latency&quot; |
 
 
 

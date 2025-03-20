@@ -22,8 +22,8 @@ Current state of latest CloudRouter change
 
 | Name | Value |
 |---- | -----|
-| ROUTER_UPDATE | &quot;ROUTER_UPDATE&quot; |
-| ROUTER_PACKAGE_UPDATE | &quot;ROUTER_PACKAGE_UPDATE&quot; |
+| UPDATE | &quot;ROUTER_UPDATE&quot; |
+| PACKAGE_UPDATE | &quot;ROUTER_PACKAGE_UPDATE&quot; |
 
 
 

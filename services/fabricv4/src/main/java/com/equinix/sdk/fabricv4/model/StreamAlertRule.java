@@ -194,23 +194,23 @@ public class StreamAlertRule {
    */
   @JsonAdapter(MetricNameEnum.Adapter.class)
   public enum MetricNameEnum {
-    EQUINIX_FABRIC_CONNECTION_BANDWIDTH_TX_USAGE("equinix.fabric.connection.bandwidth_tx.usage"),
+    CONNECTION_BANDWIDTH_TX_USAGE("equinix.fabric.connection.bandwidth_tx.usage"),
     
-    EQUINIX_FABRIC_CONNECTION_BANDWIDTH_RX_USAGE("equinix.fabric.connection.bandwidth_rx.usage"),
+    CONNECTION_BANDWIDTH_RX_USAGE("equinix.fabric.connection.bandwidth_rx.usage"),
     
-    EQUINIX_FABRIC_PORT_BANDWIDTH_TX_USAGE("equinix.fabric.port.bandwidth_tx.usage"),
+    PORT_BANDWIDTH_TX_USAGE("equinix.fabric.port.bandwidth_tx.usage"),
     
-    EQUINIX_FABRIC_PORT_BANDWIDTH_RX_USAGE("equinix.fabric.port.bandwidth_rx.usage"),
+    PORT_BANDWIDTH_RX_USAGE("equinix.fabric.port.bandwidth_rx.usage"),
     
-    EQUINIX_FABRIC_PORT_PACKETS_ERRED_TX_COUNT("equinix.fabric.port.packets_erred_tx.count"),
+    PORT_PACKETS_ERRED_TX_COUNT("equinix.fabric.port.packets_erred_tx.count"),
     
-    EQUINIX_FABRIC_PORT_PACKETS_ERRED_RX_COUNT("equinix.fabric.port.packets_erred_rx.count"),
+    PORT_PACKETS_ERRED_RX_COUNT("equinix.fabric.port.packets_erred_rx.count"),
     
-    EQUINIX_FABRIC_PORT_PACKETS_DROPPED_TX_COUNT("equinix.fabric.port.packets_dropped_tx.count"),
+    PORT_PACKETS_DROPPED_TX_COUNT("equinix.fabric.port.packets_dropped_tx.count"),
     
-    EQUINIX_FABRIC_PORT_PACKETS_DROPPED_RX_COUNT("equinix.fabric.port.packets_dropped_rx.count"),
+    PORT_PACKETS_DROPPED_RX_COUNT("equinix.fabric.port.packets_dropped_rx.count"),
     
-    EQUINIX_FABRIC_METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY("equinix.fabric.metro.<source_metro_code>_<destination_metro_code>.latency");
+    METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY("equinix.fabric.metro.<source_metro_code>_<destination_metro_code>.latency");
 
     private String value;
 

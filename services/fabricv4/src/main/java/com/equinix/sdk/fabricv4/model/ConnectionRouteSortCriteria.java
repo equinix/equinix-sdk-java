@@ -58,7 +58,7 @@ public class ConnectionRouteSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private ConnectionRouteEntrySortBy property = ConnectionRouteEntrySortBy._CHANGE_LOG_UPDATED_DATE_TIME;
+  private ConnectionRouteEntrySortBy property = ConnectionRouteEntrySortBy.CHANGE_LOG_UPDATED_DATE_TIME;
 
   public ConnectionRouteSortCriteria() {
   }

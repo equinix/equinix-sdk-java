@@ -27,19 +27,19 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ConnectionRouteEntrySortBy.Adapter.class)
 public enum ConnectionRouteEntrySortBy {
   
-  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
   
-  _MED("/med"),
+  MED("/med"),
   
-  _CONNECTION_NAME("/connection/name"),
+  CONNECTION_NAME("/connection/name"),
   
-  _TYPE("/type"),
+  TYPE("/type"),
   
-  _PREFIX("/prefix"),
+  PREFIX("/prefix"),
   
-  _NEXT_HOP("/nextHop");
+  NEXT_HOP("/nextHop");
 
   private String value;
 
