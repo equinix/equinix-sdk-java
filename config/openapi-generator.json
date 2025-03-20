@@ -16,5 +16,6 @@
   "globalProperties": {
     "modelTests": false,
     "apiTests": false
-  }
+  },
+  "removeEnumValuePrefix": true
 }
