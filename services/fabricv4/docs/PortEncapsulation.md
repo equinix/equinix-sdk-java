@@ -18,7 +18,7 @@ Port encapsulation configuration
 | Name | Value |
 |---- | -----|
 | NULL | &quot;NULL&quot; |
-| DOT1Q | &quot;DOT1Q&quot; |
+| DOT1_Q | &quot;DOT1Q&quot; |
 | QINQ | &quot;QINQ&quot; |
 | UNTAGGED | &quot;UNTAGGED&quot; |
 

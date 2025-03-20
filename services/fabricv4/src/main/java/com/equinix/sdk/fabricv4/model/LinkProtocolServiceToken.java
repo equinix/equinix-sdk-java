@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,28 +48,31 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Service Token details of Link Protocol
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class LinkProtocolServiceToken {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nullable
   private Long bandwidth;
 
   public LinkProtocolServiceToken() {
   }
 
-  
   public LinkProtocolServiceToken(
      URI href
   ) {
@@ -75,81 +80,70 @@ public class LinkProtocolServiceToken {
     this.href = href;
   }
 
-   /**
+  /**
    * Service Token URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public LinkProtocolServiceToken uuid(UUID uuid) {
-    
+  public LinkProtocolServiceToken uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Get uuid
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public LinkProtocolServiceToken type(String type) {
-    
+  public LinkProtocolServiceToken type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public LinkProtocolServiceToken bandwidth(Long bandwidth) {
-    
+  public LinkProtocolServiceToken bandwidth(@javax.annotation.Nullable Long bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Get bandwidth
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Long bandwidth) {
+  public void setBandwidth(@javax.annotation.Nullable Long bandwidth) {
     this.bandwidth = bandwidth;
   }
 
@@ -260,18 +254,19 @@ public class LinkProtocolServiceToken {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to LinkProtocolServiceToken
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!LinkProtocolServiceToken.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LinkProtocolServiceToken
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!LinkProtocolServiceToken.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in LinkProtocolServiceToken is not found in the empty JSON string", LinkProtocolServiceToken.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -311,7 +306,12 @@ public class LinkProtocolServiceToken {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -320,8 +320,9 @@ public class LinkProtocolServiceToken {
 
            @Override
            public LinkProtocolServiceToken read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              LinkProtocolServiceToken instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -349,22 +350,22 @@ public class LinkProtocolServiceToken {
     }
   }
 
- /**
-  * Create an instance of LinkProtocolServiceToken given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LinkProtocolServiceToken
-  * @throws IOException if the JSON string is invalid with respect to LinkProtocolServiceToken
-  */
+  /**
+   * Create an instance of LinkProtocolServiceToken given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LinkProtocolServiceToken
+   * @throws IOException if the JSON string is invalid with respect to LinkProtocolServiceToken
+   */
   public static LinkProtocolServiceToken fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LinkProtocolServiceToken.class);
   }
 
- /**
-  * Convert an instance of LinkProtocolServiceToken to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LinkProtocolServiceToken to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

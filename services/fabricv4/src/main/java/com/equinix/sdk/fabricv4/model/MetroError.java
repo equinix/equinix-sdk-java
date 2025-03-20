@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PriceErrorAdditionalInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,20 +49,20 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Error with details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class MetroError {
   /**
    * Gets or Sets errorCode
    */
   @JsonAdapter(ErrorCodeEnum.Adapter.class)
   public enum ErrorCodeEnum {
-    _3036001("EQ-3036001"),
+    EQ_3036001("EQ-3036001"),
     
-    _3036013("EQ-3036013"),
+    EQ_3036013("EQ-3036013"),
     
-    _3036030("EQ-3036030"),
+    EQ_3036030("EQ-3036030"),
     
-    _3036100("EQ-3036100");
+    EQ_3036100("EQ-3036100");
 
     private String value;
 
@@ -98,10 +100,16 @@ public class MetroError {
         return ErrorCodeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ErrorCodeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "errorCode";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nonnull
   protected ErrorCodeEnum errorCode;
 
   /**
@@ -157,143 +165,138 @@ public class MetroError {
         return ErrorMessageEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ErrorMessageEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nonnull
   private ErrorMessageEnum errorMessage;
 
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlationId";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
+  @javax.annotation.Nullable
   private String correlationId;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
+  @javax.annotation.Nullable
   private String details;
 
   public static final String SERIALIZED_NAME_HELP = "help";
   @SerializedName(SERIALIZED_NAME_HELP)
+  @javax.annotation.Nullable
   private String help;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<PriceErrorAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public MetroError() {
+
   }
 
-  public MetroError errorCode(ErrorCodeEnum errorCode) {
-    
+  public MetroError errorCode(@javax.annotation.Nonnull ErrorCodeEnum errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * Get errorCode
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ErrorCodeEnum getErrorCode() {
     return errorCode;
   }
 
-
-  public void setErrorCode(ErrorCodeEnum errorCode) {
+  public void setErrorCode(@javax.annotation.Nonnull ErrorCodeEnum errorCode) {
     this.errorCode = errorCode;
   }
 
 
-  public MetroError errorMessage(ErrorMessageEnum errorMessage) {
-    
+  public MetroError errorMessage(@javax.annotation.Nonnull ErrorMessageEnum errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * Get errorMessage
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ErrorMessageEnum getErrorMessage() {
     return errorMessage;
   }
 
-
-  public void setErrorMessage(ErrorMessageEnum errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nonnull ErrorMessageEnum errorMessage) {
     this.errorMessage = errorMessage;
   }
 
 
-  public MetroError correlationId(String correlationId) {
-    
+  public MetroError correlationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
     return this;
   }
 
-   /**
+  /**
    * Get correlationId
    * @return correlationId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCorrelationId() {
     return correlationId;
   }
 
-
-  public void setCorrelationId(String correlationId) {
+  public void setCorrelationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
   }
 
 
-  public MetroError details(String details) {
-    
+  public MetroError details(@javax.annotation.Nullable String details) {
     this.details = details;
     return this;
   }
 
-   /**
+  /**
    * Get details
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDetails() {
     return details;
   }
 
-
-  public void setDetails(String details) {
+  public void setDetails(@javax.annotation.Nullable String details) {
     this.details = details;
   }
 
 
-  public MetroError help(String help) {
-    
+  public MetroError help(@javax.annotation.Nullable String help) {
     this.help = help;
     return this;
   }
 
-   /**
+  /**
    * Get help
    * @return help
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHelp() {
     return help;
   }
 
-
-  public void setHelp(String help) {
+  public void setHelp(@javax.annotation.Nullable String help) {
     this.help = help;
   }
 
 
-  public MetroError additionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
-    
+  public MetroError additionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -306,18 +309,16 @@ public class MetroError {
     return this;
   }
 
-   /**
+  /**
    * Get additionalInfo
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PriceErrorAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
@@ -436,23 +437,23 @@ public class MetroError {
     openapiRequiredFields.add("errorMessage");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to MetroError
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!MetroError.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetroError
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!MetroError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in MetroError is not found in the empty JSON string", MetroError.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MetroError.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
   }
@@ -485,7 +486,12 @@ public class MetroError {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -494,8 +500,9 @@ public class MetroError {
 
            @Override
            public MetroError read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              MetroError instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -523,22 +530,22 @@ public class MetroError {
     }
   }
 
- /**
-  * Create an instance of MetroError given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetroError
-  * @throws IOException if the JSON string is invalid with respect to MetroError
-  */
+  /**
+   * Create an instance of MetroError given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetroError
+   * @throws IOException if the JSON string is invalid with respect to MetroError
+   */
   public static MetroError fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetroError.class);
   }
 
- /**
-  * Convert an instance of MetroError to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetroError to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

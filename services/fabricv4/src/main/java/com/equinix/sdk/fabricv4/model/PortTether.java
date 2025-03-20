@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,189 +46,175 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Port physical connection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortTether {
   public static final String SERIALIZED_NAME_CROSS_CONNECT_ID = "crossConnectId";
   @SerializedName(SERIALIZED_NAME_CROSS_CONNECT_ID)
+  @javax.annotation.Nullable
   private String crossConnectId;
 
   public static final String SERIALIZED_NAME_CABINET_NUMBER = "cabinetNumber";
   @SerializedName(SERIALIZED_NAME_CABINET_NUMBER)
+  @javax.annotation.Nullable
   private String cabinetNumber;
 
   public static final String SERIALIZED_NAME_SYSTEM_NAME = "systemName";
   @SerializedName(SERIALIZED_NAME_SYSTEM_NAME)
+  @javax.annotation.Nullable
   private String systemName;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL = "patchPanel";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL)
+  @javax.annotation.Nullable
   private String patchPanel;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_A = "patchPanelPortA";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_A)
+  @javax.annotation.Nullable
   private String patchPanelPortA;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_B = "patchPanelPortB";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_B)
+  @javax.annotation.Nullable
   private String patchPanelPortB;
 
   public static final String SERIALIZED_NAME_IBX = "ibx";
   @SerializedName(SERIALIZED_NAME_IBX)
+  @javax.annotation.Nullable
   private String ibx;
 
   public PortTether() {
   }
 
-  public PortTether crossConnectId(String crossConnectId) {
-    
+  public PortTether crossConnectId(@javax.annotation.Nullable String crossConnectId) {
     this.crossConnectId = crossConnectId;
     return this;
   }
 
-   /**
+  /**
    * Port cross connect identifier
    * @return crossConnectId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCrossConnectId() {
     return crossConnectId;
   }
 
-
-  public void setCrossConnectId(String crossConnectId) {
+  public void setCrossConnectId(@javax.annotation.Nullable String crossConnectId) {
     this.crossConnectId = crossConnectId;
   }
 
 
-  public PortTether cabinetNumber(String cabinetNumber) {
-    
+  public PortTether cabinetNumber(@javax.annotation.Nullable String cabinetNumber) {
     this.cabinetNumber = cabinetNumber;
     return this;
   }
 
-   /**
+  /**
    * Port cabinet number
    * @return cabinetNumber
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCabinetNumber() {
     return cabinetNumber;
   }
 
-
-  public void setCabinetNumber(String cabinetNumber) {
+  public void setCabinetNumber(@javax.annotation.Nullable String cabinetNumber) {
     this.cabinetNumber = cabinetNumber;
   }
 
 
-  public PortTether systemName(String systemName) {
-    
+  public PortTether systemName(@javax.annotation.Nullable String systemName) {
     this.systemName = systemName;
     return this;
   }
 
-   /**
+  /**
    * Port system name
    * @return systemName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSystemName() {
     return systemName;
   }
 
-
-  public void setSystemName(String systemName) {
+  public void setSystemName(@javax.annotation.Nullable String systemName) {
     this.systemName = systemName;
   }
 
 
-  public PortTether patchPanel(String patchPanel) {
-    
+  public PortTether patchPanel(@javax.annotation.Nullable String patchPanel) {
     this.patchPanel = patchPanel;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel
    * @return patchPanel
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanel() {
     return patchPanel;
   }
 
-
-  public void setPatchPanel(String patchPanel) {
+  public void setPatchPanel(@javax.annotation.Nullable String patchPanel) {
     this.patchPanel = patchPanel;
   }
 
 
-  public PortTether patchPanelPortA(String patchPanelPortA) {
-    
+  public PortTether patchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
     this.patchPanelPortA = patchPanelPortA;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel port A
    * @return patchPanelPortA
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanelPortA() {
     return patchPanelPortA;
   }
 
-
-  public void setPatchPanelPortA(String patchPanelPortA) {
+  public void setPatchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
     this.patchPanelPortA = patchPanelPortA;
   }
 
 
-  public PortTether patchPanelPortB(String patchPanelPortB) {
-    
+  public PortTether patchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
     this.patchPanelPortB = patchPanelPortB;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel port B
    * @return patchPanelPortB
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanelPortB() {
     return patchPanelPortB;
   }
 
-
-  public void setPatchPanelPortB(String patchPanelPortB) {
+  public void setPatchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
     this.patchPanelPortB = patchPanelPortB;
   }
 
 
-  public PortTether ibx(String ibx) {
-    
+  public PortTether ibx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
     return this;
   }
 
-   /**
+  /**
    * z-side/Equinix IBX
    * @return ibx
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getIbx() {
     return ibx;
   }
 
-
-  public void setIbx(String ibx) {
+  public void setIbx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
   }
 
@@ -346,18 +334,19 @@ public class PortTether {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortTether
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortTether.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortTether
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortTether.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortTether is not found in the empty JSON string", PortTether.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("crossConnectId") != null && !jsonObj.get("crossConnectId").isJsonNull()) && !jsonObj.get("crossConnectId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `crossConnectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("crossConnectId").toString()));
       }
@@ -409,7 +398,12 @@ public class PortTether {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -418,8 +412,9 @@ public class PortTether {
 
            @Override
            public PortTether read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortTether instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -447,22 +442,22 @@ public class PortTether {
     }
   }
 
- /**
-  * Create an instance of PortTether given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortTether
-  * @throws IOException if the JSON string is invalid with respect to PortTether
-  */
+  /**
+   * Create an instance of PortTether given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortTether
+   * @throws IOException if the JSON string is invalid with respect to PortTether
+   */
   public static PortTether fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortTether.class);
   }
 
- /**
-  * Convert an instance of PortTether to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortTether to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

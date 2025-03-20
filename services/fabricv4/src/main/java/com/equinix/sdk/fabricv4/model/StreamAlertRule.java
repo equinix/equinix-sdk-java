@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.ResourceSelector;
 import com.google.gson.TypeAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,14 +50,16 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Stream object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamAlertRule {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   /**
@@ -101,18 +105,26 @@ public class StreamAlertRule {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   /**
@@ -160,14 +172,21 @@ public class StreamAlertRule {
         return StateEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StateEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private StateEnum state;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled = true;
 
   /**
@@ -175,23 +194,23 @@ public class StreamAlertRule {
    */
   @JsonAdapter(MetricNameEnum.Adapter.class)
   public enum MetricNameEnum {
-    CONNECTION_BANDWIDTH_TX_USAGE("equinix.fabric.connection.bandwidth_tx.usage"),
+    EQUINIX_FABRIC_CONNECTION_BANDWIDTH_TX_USAGE("equinix.fabric.connection.bandwidth_tx.usage"),
     
-    CONNECTION_BANDWIDTH_RX_USAGE("equinix.fabric.connection.bandwidth_rx.usage"),
+    EQUINIX_FABRIC_CONNECTION_BANDWIDTH_RX_USAGE("equinix.fabric.connection.bandwidth_rx.usage"),
     
-    PORT_BANDWIDTH_TX_USAGE("equinix.fabric.port.bandwidth_tx.usage"),
+    EQUINIX_FABRIC_PORT_BANDWIDTH_TX_USAGE("equinix.fabric.port.bandwidth_tx.usage"),
     
-    PORT_BANDWIDTH_RX_USAGE("equinix.fabric.port.bandwidth_rx.usage"),
+    EQUINIX_FABRIC_PORT_BANDWIDTH_RX_USAGE("equinix.fabric.port.bandwidth_rx.usage"),
     
-    PORT_PACKETS_ERRED_TX_COUNT("equinix.fabric.port.packets_erred_tx.count"),
+    EQUINIX_FABRIC_PORT_PACKETS_ERRED_TX_COUNT("equinix.fabric.port.packets_erred_tx.count"),
     
-    PORT_PACKETS_ERRED_RX_COUNT("equinix.fabric.port.packets_erred_rx.count"),
+    EQUINIX_FABRIC_PORT_PACKETS_ERRED_RX_COUNT("equinix.fabric.port.packets_erred_rx.count"),
     
-    PORT_PACKETS_DROPPED_TX_COUNT("equinix.fabric.port.packets_dropped_tx.count"),
+    EQUINIX_FABRIC_PORT_PACKETS_DROPPED_TX_COUNT("equinix.fabric.port.packets_dropped_tx.count"),
     
-    PORT_PACKETS_DROPPED_RX_COUNT("equinix.fabric.port.packets_dropped_rx.count"),
+    EQUINIX_FABRIC_PORT_PACKETS_DROPPED_RX_COUNT("equinix.fabric.port.packets_dropped_rx.count"),
     
-    METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY("equinix.fabric.metro.<source_metro_code>_<destination_metro_code>.latency");
+    EQUINIX_FABRIC_METRO_SOURCE_METRO_CODE___DESTINATION_METRO_CODE_LATENCY("equinix.fabric.metro.<source_metro_code>_<destination_metro_code>.latency");
 
     private String value;
 
@@ -229,18 +248,26 @@ public class StreamAlertRule {
         return MetricNameEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      MetricNameEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_METRIC_NAME = "metricName";
   @SerializedName(SERIALIZED_NAME_METRIC_NAME)
+  @javax.annotation.Nullable
   private MetricNameEnum metricName;
 
   public static final String SERIALIZED_NAME_RESOURCE_SELECTOR = "resourceSelector";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SELECTOR)
+  @javax.annotation.Nullable
   private ResourceSelector resourceSelector;
 
   public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
   @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
+  @javax.annotation.Nullable
   private String windowSize;
 
   /**
@@ -288,28 +315,36 @@ public class StreamAlertRule {
         return OperandEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperandEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OPERAND = "operand";
   @SerializedName(SERIALIZED_NAME_OPERAND)
+  @javax.annotation.Nullable
   private OperandEnum operand;
 
   public static final String SERIALIZED_NAME_WARNING_THRESHOLD = "warningThreshold";
   @SerializedName(SERIALIZED_NAME_WARNING_THRESHOLD)
+  @javax.annotation.Nullable
   private String warningThreshold;
 
   public static final String SERIALIZED_NAME_CRITICAL_THRESHOLD = "criticalThreshold";
   @SerializedName(SERIALIZED_NAME_CRITICAL_THRESHOLD)
+  @javax.annotation.Nullable
   private String criticalThreshold;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public StreamAlertRule() {
   }
 
-  
   public StreamAlertRule(
      URI href
   ) {
@@ -317,301 +352,260 @@ public class StreamAlertRule {
     this.href = href;
   }
 
-   /**
+  /**
    * Stream Alert Rule URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public StreamAlertRule uuid(UUID uuid) {
-    
+  public StreamAlertRule uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned access point identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public StreamAlertRule type(TypeEnum type) {
-    
+  public StreamAlertRule type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Stream subscription type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public StreamAlertRule name(String name) {
-    
+  public StreamAlertRule name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream alert rule name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public StreamAlertRule description(String description) {
-    
+  public StreamAlertRule description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream alert rule description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public StreamAlertRule state(StateEnum state) {
-    
+  public StreamAlertRule state(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Steam subscription provision state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public StateEnum getState() {
     return state;
   }
 
-
-  public void setState(StateEnum state) {
+  public void setState(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
   }
 
 
-  public StreamAlertRule enabled(Boolean enabled) {
-    
+  public StreamAlertRule enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule enabled status
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public StreamAlertRule metricName(MetricNameEnum metricName) {
-    
+  public StreamAlertRule metricName(@javax.annotation.Nullable MetricNameEnum metricName) {
     this.metricName = metricName;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric name
    * @return metricName
-  **/
+   */
   @javax.annotation.Nullable
-
   public MetricNameEnum getMetricName() {
     return metricName;
   }
 
-
-  public void setMetricName(MetricNameEnum metricName) {
+  public void setMetricName(@javax.annotation.Nullable MetricNameEnum metricName) {
     this.metricName = metricName;
   }
 
 
-  public StreamAlertRule resourceSelector(ResourceSelector resourceSelector) {
-    
+  public StreamAlertRule resourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
     return this;
   }
 
-   /**
+  /**
    * Get resourceSelector
    * @return resourceSelector
-  **/
+   */
   @javax.annotation.Nullable
-
   public ResourceSelector getResourceSelector() {
     return resourceSelector;
   }
 
-
-  public void setResourceSelector(ResourceSelector resourceSelector) {
+  public void setResourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
   }
 
 
-  public StreamAlertRule windowSize(String windowSize) {
-    
+  public StreamAlertRule windowSize(@javax.annotation.Nullable String windowSize) {
     this.windowSize = windowSize;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric window size
    * @return windowSize
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getWindowSize() {
     return windowSize;
   }
 
-
-  public void setWindowSize(String windowSize) {
+  public void setWindowSize(@javax.annotation.Nullable String windowSize) {
     this.windowSize = windowSize;
   }
 
 
-  public StreamAlertRule operand(OperandEnum operand) {
-    
+  public StreamAlertRule operand(@javax.annotation.Nullable OperandEnum operand) {
     this.operand = operand;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric operand
    * @return operand
-  **/
+   */
   @javax.annotation.Nullable
-
   public OperandEnum getOperand() {
     return operand;
   }
 
-
-  public void setOperand(OperandEnum operand) {
+  public void setOperand(@javax.annotation.Nullable OperandEnum operand) {
     this.operand = operand;
   }
 
 
-  public StreamAlertRule warningThreshold(String warningThreshold) {
-    
+  public StreamAlertRule warningThreshold(@javax.annotation.Nullable String warningThreshold) {
     this.warningThreshold = warningThreshold;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric warning threshold
    * @return warningThreshold
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getWarningThreshold() {
     return warningThreshold;
   }
 
-
-  public void setWarningThreshold(String warningThreshold) {
+  public void setWarningThreshold(@javax.annotation.Nullable String warningThreshold) {
     this.warningThreshold = warningThreshold;
   }
 
 
-  public StreamAlertRule criticalThreshold(String criticalThreshold) {
-    
+  public StreamAlertRule criticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
     this.criticalThreshold = criticalThreshold;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric critical threshold
    * @return criticalThreshold
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCriticalThreshold() {
     return criticalThreshold;
   }
 
-
-  public void setCriticalThreshold(String criticalThreshold) {
+  public void setCriticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
     this.criticalThreshold = criticalThreshold;
   }
 
 
-  public StreamAlertRule changeLog(Changelog changeLog) {
-    
+  public StreamAlertRule changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
@@ -752,18 +746,19 @@ public class StreamAlertRule {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamAlertRule
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamAlertRule.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamAlertRule
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamAlertRule.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamAlertRule is not found in the empty JSON string", StreamAlertRule.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -772,6 +767,10 @@ public class StreamAlertRule {
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -782,18 +781,30 @@ public class StreamAlertRule {
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
+      }
       if ((jsonObj.get("metricName") != null && !jsonObj.get("metricName").isJsonNull()) && !jsonObj.get("metricName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `metricName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricName").toString()));
       }
+      // validate the optional field `metricName`
+      if (jsonObj.get("metricName") != null && !jsonObj.get("metricName").isJsonNull()) {
+        MetricNameEnum.validateJsonElement(jsonObj.get("metricName"));
+      }
       // validate the optional field `resourceSelector`
       if (jsonObj.get("resourceSelector") != null && !jsonObj.get("resourceSelector").isJsonNull()) {
-        ResourceSelector.validateJsonObject(jsonObj.getAsJsonObject("resourceSelector"));
+        ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
       }
       if ((jsonObj.get("windowSize") != null && !jsonObj.get("windowSize").isJsonNull()) && !jsonObj.get("windowSize").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `windowSize` to be a primitive type in the JSON string but got `%s`", jsonObj.get("windowSize").toString()));
       }
       if ((jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) && !jsonObj.get("operand").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `operand` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operand").toString()));
+      }
+      // validate the optional field `operand`
+      if (jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) {
+        OperandEnum.validateJsonElement(jsonObj.get("operand"));
       }
       if ((jsonObj.get("warningThreshold") != null && !jsonObj.get("warningThreshold").isJsonNull()) && !jsonObj.get("warningThreshold").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `warningThreshold` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warningThreshold").toString()));
@@ -803,7 +814,7 @@ public class StreamAlertRule {
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 
@@ -835,7 +846,12 @@ public class StreamAlertRule {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -844,8 +860,9 @@ public class StreamAlertRule {
 
            @Override
            public StreamAlertRule read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamAlertRule instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -873,22 +890,22 @@ public class StreamAlertRule {
     }
   }
 
- /**
-  * Create an instance of StreamAlertRule given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamAlertRule
-  * @throws IOException if the JSON string is invalid with respect to StreamAlertRule
-  */
+  /**
+   * Create an instance of StreamAlertRule given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamAlertRule
+   * @throws IOException if the JSON string is invalid with respect to StreamAlertRule
+   */
   public static StreamAlertRule fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamAlertRule.class);
   }
 
- /**
-  * Convert an instance of StreamAlertRule to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamAlertRule to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

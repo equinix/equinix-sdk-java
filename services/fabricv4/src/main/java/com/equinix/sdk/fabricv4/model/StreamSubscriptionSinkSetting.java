@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,189 +46,175 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Stream subscription sink settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamSubscriptionSinkSetting {
   public static final String SERIALIZED_NAME_EVENT_INDEX = "eventIndex";
   @SerializedName(SERIALIZED_NAME_EVENT_INDEX)
+  @javax.annotation.Nullable
   private String eventIndex;
 
   public static final String SERIALIZED_NAME_METRIC_INDEX = "metricIndex";
   @SerializedName(SERIALIZED_NAME_METRIC_INDEX)
+  @javax.annotation.Nullable
   private String metricIndex;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private String source;
 
   public static final String SERIALIZED_NAME_APPLICATION_KEY = "applicationKey";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KEY)
+  @javax.annotation.Nullable
   private String applicationKey;
 
   public static final String SERIALIZED_NAME_EVENT_URI = "eventUri";
   @SerializedName(SERIALIZED_NAME_EVENT_URI)
+  @javax.annotation.Nullable
   private String eventUri;
 
   public static final String SERIALIZED_NAME_METRIC_URI = "metricUri";
   @SerializedName(SERIALIZED_NAME_METRIC_URI)
+  @javax.annotation.Nullable
   private String metricUri;
 
   public static final String SERIALIZED_NAME_TRANSFORM_ALERTS = "transformAlerts";
   @SerializedName(SERIALIZED_NAME_TRANSFORM_ALERTS)
+  @javax.annotation.Nullable
   private Boolean transformAlerts;
 
   public StreamSubscriptionSinkSetting() {
   }
 
-  public StreamSubscriptionSinkSetting eventIndex(String eventIndex) {
-    
+  public StreamSubscriptionSinkSetting eventIndex(@javax.annotation.Nullable String eventIndex) {
     this.eventIndex = eventIndex;
     return this;
   }
 
-   /**
+  /**
    * event index
    * @return eventIndex
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEventIndex() {
     return eventIndex;
   }
 
-
-  public void setEventIndex(String eventIndex) {
+  public void setEventIndex(@javax.annotation.Nullable String eventIndex) {
     this.eventIndex = eventIndex;
   }
 
 
-  public StreamSubscriptionSinkSetting metricIndex(String metricIndex) {
-    
+  public StreamSubscriptionSinkSetting metricIndex(@javax.annotation.Nullable String metricIndex) {
     this.metricIndex = metricIndex;
     return this;
   }
 
-   /**
+  /**
    * metric index
    * @return metricIndex
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetricIndex() {
     return metricIndex;
   }
 
-
-  public void setMetricIndex(String metricIndex) {
+  public void setMetricIndex(@javax.annotation.Nullable String metricIndex) {
     this.metricIndex = metricIndex;
   }
 
 
-  public StreamSubscriptionSinkSetting source(String source) {
-    
+  public StreamSubscriptionSinkSetting source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSource() {
     return source;
   }
 
-
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
 
-  public StreamSubscriptionSinkSetting applicationKey(String applicationKey) {
-    
+  public StreamSubscriptionSinkSetting applicationKey(@javax.annotation.Nullable String applicationKey) {
     this.applicationKey = applicationKey;
     return this;
   }
 
-   /**
+  /**
    * Application key
    * @return applicationKey
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getApplicationKey() {
     return applicationKey;
   }
 
-
-  public void setApplicationKey(String applicationKey) {
+  public void setApplicationKey(@javax.annotation.Nullable String applicationKey) {
     this.applicationKey = applicationKey;
   }
 
 
-  public StreamSubscriptionSinkSetting eventUri(String eventUri) {
-    
+  public StreamSubscriptionSinkSetting eventUri(@javax.annotation.Nullable String eventUri) {
     this.eventUri = eventUri;
     return this;
   }
 
-   /**
+  /**
    * event uri
    * @return eventUri
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEventUri() {
     return eventUri;
   }
 
-
-  public void setEventUri(String eventUri) {
+  public void setEventUri(@javax.annotation.Nullable String eventUri) {
     this.eventUri = eventUri;
   }
 
 
-  public StreamSubscriptionSinkSetting metricUri(String metricUri) {
-    
+  public StreamSubscriptionSinkSetting metricUri(@javax.annotation.Nullable String metricUri) {
     this.metricUri = metricUri;
     return this;
   }
 
-   /**
+  /**
    * metric uri
    * @return metricUri
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetricUri() {
     return metricUri;
   }
 
-
-  public void setMetricUri(String metricUri) {
+  public void setMetricUri(@javax.annotation.Nullable String metricUri) {
     this.metricUri = metricUri;
   }
 
 
-  public StreamSubscriptionSinkSetting transformAlerts(Boolean transformAlerts) {
-    
+  public StreamSubscriptionSinkSetting transformAlerts(@javax.annotation.Nullable Boolean transformAlerts) {
     this.transformAlerts = transformAlerts;
     return this;
   }
 
-   /**
+  /**
    * transform alerts
    * @return transformAlerts
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getTransformAlerts() {
     return transformAlerts;
   }
 
-
-  public void setTransformAlerts(Boolean transformAlerts) {
+  public void setTransformAlerts(@javax.annotation.Nullable Boolean transformAlerts) {
     this.transformAlerts = transformAlerts;
   }
 
@@ -346,18 +334,19 @@ public class StreamSubscriptionSinkSetting {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamSubscriptionSinkSetting
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamSubscriptionSinkSetting.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamSubscriptionSinkSetting
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamSubscriptionSinkSetting.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionSinkSetting is not found in the empty JSON string", StreamSubscriptionSinkSetting.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("eventIndex") != null && !jsonObj.get("eventIndex").isJsonNull()) && !jsonObj.get("eventIndex").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `eventIndex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventIndex").toString()));
       }
@@ -406,7 +395,12 @@ public class StreamSubscriptionSinkSetting {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -415,8 +409,9 @@ public class StreamSubscriptionSinkSetting {
 
            @Override
            public StreamSubscriptionSinkSetting read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamSubscriptionSinkSetting instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -444,22 +439,22 @@ public class StreamSubscriptionSinkSetting {
     }
   }
 
- /**
-  * Create an instance of StreamSubscriptionSinkSetting given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamSubscriptionSinkSetting
-  * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSinkSetting
-  */
+  /**
+   * Create an instance of StreamSubscriptionSinkSetting given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamSubscriptionSinkSetting
+   * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSinkSetting
+   */
   public static StreamSubscriptionSinkSetting fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamSubscriptionSinkSetting.class);
   }
 
- /**
-  * Convert an instance of StreamSubscriptionSinkSetting to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamSubscriptionSinkSetting to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

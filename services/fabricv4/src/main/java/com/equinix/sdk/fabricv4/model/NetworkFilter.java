@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.NetworkSearchFieldName;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,18 +49,21 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * NetworkFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class NetworkFilter {
   public static final String SERIALIZED_NAME_AND = "and";
   @SerializedName(SERIALIZED_NAME_AND)
+  @javax.annotation.Nullable
   private List<NetworkFilter> and = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OR = "or";
   @SerializedName(SERIALIZED_NAME_OR)
+  @javax.annotation.Nullable
   private List<NetworkFilter> or = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
+  @javax.annotation.Nullable
   private NetworkSearchFieldName property;
 
   /**
@@ -130,21 +135,27 @@ public class NetworkFilter {
         return OperatorEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperatorEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
+  @javax.annotation.Nullable
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
+  @javax.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public NetworkFilter() {
   }
 
-  public NetworkFilter and(List<NetworkFilter> and) {
-    
+  public NetworkFilter and(@javax.annotation.Nullable List<NetworkFilter> and) {
     this.and = and;
     return this;
   }
@@ -157,24 +168,21 @@ public class NetworkFilter {
     return this;
   }
 
-   /**
+  /**
    * Get and
    * @return and
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<NetworkFilter> getAnd() {
     return and;
   }
 
-
-  public void setAnd(List<NetworkFilter> and) {
+  public void setAnd(@javax.annotation.Nullable List<NetworkFilter> and) {
     this.and = and;
   }
 
 
-  public NetworkFilter or(List<NetworkFilter> or) {
-    
+  public NetworkFilter or(@javax.annotation.Nullable List<NetworkFilter> or) {
     this.or = or;
     return this;
   }
@@ -187,68 +195,59 @@ public class NetworkFilter {
     return this;
   }
 
-   /**
+  /**
    * Get or
    * @return or
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<NetworkFilter> getOr() {
     return or;
   }
 
-
-  public void setOr(List<NetworkFilter> or) {
+  public void setOr(@javax.annotation.Nullable List<NetworkFilter> or) {
     this.or = or;
   }
 
 
-  public NetworkFilter property(NetworkSearchFieldName property) {
-    
+  public NetworkFilter property(@javax.annotation.Nullable NetworkSearchFieldName property) {
     this.property = property;
     return this;
   }
 
-   /**
+  /**
    * Get property
    * @return property
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkSearchFieldName getProperty() {
     return property;
   }
 
-
-  public void setProperty(NetworkSearchFieldName property) {
+  public void setProperty(@javax.annotation.Nullable NetworkSearchFieldName property) {
     this.property = property;
   }
 
 
-  public NetworkFilter operator(OperatorEnum operator) {
-    
+  public NetworkFilter operator(@javax.annotation.Nullable OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
 
-   /**
+  /**
    * Get operator
    * @return operator
-  **/
+   */
   @javax.annotation.Nullable
-
   public OperatorEnum getOperator() {
     return operator;
   }
 
-
-  public void setOperator(OperatorEnum operator) {
+  public void setOperator(@javax.annotation.Nullable OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public NetworkFilter values(List<String> values) {
-    
+  public NetworkFilter values(@javax.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -261,18 +260,16 @@ public class NetworkFilter {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getValues() {
     return values;
   }
 
-
-  public void setValues(List<String> values) {
+  public void setValues(@javax.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
@@ -386,18 +383,19 @@ public class NetworkFilter {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NetworkFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!NetworkFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NetworkFilter
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!NetworkFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkFilter is not found in the empty JSON string", NetworkFilter.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("and") != null && !jsonObj.get("and").isJsonNull()) {
         JsonArray jsonArrayand = jsonObj.getAsJsonArray("and");
         if (jsonArrayand != null) {
@@ -408,7 +406,7 @@ public class NetworkFilter {
 
           // validate the optional field `and` (array)
           for (int i = 0; i < jsonArrayand.size(); i++) {
-            NetworkFilter.validateJsonObject(jsonArrayand.get(i).getAsJsonObject());
+            NetworkFilter.validateJsonElement(jsonArrayand.get(i));
           };
         }
       }
@@ -422,15 +420,23 @@ public class NetworkFilter {
 
           // validate the optional field `or` (array)
           for (int i = 0; i < jsonArrayor.size(); i++) {
-            NetworkFilter.validateJsonObject(jsonArrayor.get(i).getAsJsonObject());
+            NetworkFilter.validateJsonElement(jsonArrayor.get(i));
           };
         }
+      }
+      // validate the optional field `property`
+      if (jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) {
+        NetworkSearchFieldName.validateJsonElement(jsonObj.get("property"));
       }
       if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
+      // validate the optional field `operator`
+      if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
+        OperatorEnum.validateJsonElement(jsonObj.get("operator"));
+      }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonArray()) {
+      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
@@ -463,7 +469,12 @@ public class NetworkFilter {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -472,8 +483,9 @@ public class NetworkFilter {
 
            @Override
            public NetworkFilter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              NetworkFilter instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -501,22 +513,22 @@ public class NetworkFilter {
     }
   }
 
- /**
-  * Create an instance of NetworkFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NetworkFilter
-  * @throws IOException if the JSON string is invalid with respect to NetworkFilter
-  */
+  /**
+   * Create an instance of NetworkFilter given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NetworkFilter
+   * @throws IOException if the JSON string is invalid with respect to NetworkFilter
+   */
   public static NetworkFilter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NetworkFilter.class);
   }
 
- /**
-  * Convert an instance of NetworkFilter to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NetworkFilter to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterSortBy;
 import com.equinix.sdk.fabricv4.model.CloudRouterSortDirection;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,59 +48,55 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * CloudRouterSortCriteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterSortCriteria {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
+  @javax.annotation.Nullable
   private CloudRouterSortDirection direction = CloudRouterSortDirection.DESC;
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
-  private CloudRouterSortBy property = CloudRouterSortBy.CHANGELOG_UPDATEDDATETIME;
+  @javax.annotation.Nullable
+  private CloudRouterSortBy property = CloudRouterSortBy._CHANGE_LOG_UPDATED_DATE_TIME;
 
   public CloudRouterSortCriteria() {
   }
 
-  public CloudRouterSortCriteria direction(CloudRouterSortDirection direction) {
-    
+  public CloudRouterSortCriteria direction(@javax.annotation.Nullable CloudRouterSortDirection direction) {
     this.direction = direction;
     return this;
   }
 
-   /**
+  /**
    * Get direction
    * @return direction
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterSortDirection getDirection() {
     return direction;
   }
 
-
-  public void setDirection(CloudRouterSortDirection direction) {
+  public void setDirection(@javax.annotation.Nullable CloudRouterSortDirection direction) {
     this.direction = direction;
   }
 
 
-  public CloudRouterSortCriteria property(CloudRouterSortBy property) {
-    
+  public CloudRouterSortCriteria property(@javax.annotation.Nullable CloudRouterSortBy property) {
     this.property = property;
     return this;
   }
 
-   /**
+  /**
    * Get property
    * @return property
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterSortBy getProperty() {
     return property;
   }
 
-
-  public void setProperty(CloudRouterSortBy property) {
+  public void setProperty(@javax.annotation.Nullable CloudRouterSortBy property) {
     this.property = property;
   }
 
@@ -203,17 +201,26 @@ public class CloudRouterSortCriteria {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterSortCriteria
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterSortCriteria.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterSortCriteria
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterSortCriteria.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterSortCriteria is not found in the empty JSON string", CloudRouterSortCriteria.openapiRequiredFields.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `direction`
+      if (jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) {
+        CloudRouterSortDirection.validateJsonElement(jsonObj.get("direction"));
+      }
+      // validate the optional field `property`
+      if (jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) {
+        CloudRouterSortBy.validateJsonElement(jsonObj.get("property"));
       }
   }
 
@@ -245,7 +252,12 @@ public class CloudRouterSortCriteria {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -254,8 +266,9 @@ public class CloudRouterSortCriteria {
 
            @Override
            public CloudRouterSortCriteria read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterSortCriteria instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -283,22 +296,22 @@ public class CloudRouterSortCriteria {
     }
   }
 
- /**
-  * Create an instance of CloudRouterSortCriteria given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterSortCriteria
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterSortCriteria
-  */
+  /**
+   * Create an instance of CloudRouterSortCriteria given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterSortCriteria
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterSortCriteria
+   */
   public static CloudRouterSortCriteria fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterSortCriteria.class);
   }
 
- /**
-  * Convert an instance of CloudRouterSortCriteria to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterSortCriteria to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

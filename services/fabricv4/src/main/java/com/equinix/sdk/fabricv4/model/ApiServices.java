@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,85 +46,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Available services details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ApiServices {
   public static final String SERIALIZED_NAME_ROUTE = "route";
   @SerializedName(SERIALIZED_NAME_ROUTE)
+  @javax.annotation.Nullable
   private String route;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_CHANGED_DATE_TIME = "changedDateTime";
   @SerializedName(SERIALIZED_NAME_CHANGED_DATE_TIME)
+  @javax.annotation.Nullable
   private String changedDateTime;
 
   public ApiServices() {
   }
 
-  public ApiServices route(String route) {
-    
+  public ApiServices route(@javax.annotation.Nullable String route) {
     this.route = route;
     return this;
   }
 
-   /**
+  /**
    * service routes
    * @return route
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRoute() {
     return route;
   }
 
-
-  public void setRoute(String route) {
+  public void setRoute(@javax.annotation.Nullable String route) {
     this.route = route;
   }
 
 
-  public ApiServices status(String status) {
-    
+  public ApiServices status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * service status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getStatus() {
     return status;
   }
 
-
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public ApiServices changedDateTime(String changedDateTime) {
-    
+  public ApiServices changedDateTime(@javax.annotation.Nullable String changedDateTime) {
     this.changedDateTime = changedDateTime;
     return this;
   }
 
-   /**
+  /**
    * service status change date
    * @return changedDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getChangedDateTime() {
     return changedDateTime;
   }
 
-
-  public void setChangedDateTime(String changedDateTime) {
+  public void setChangedDateTime(@javax.annotation.Nullable String changedDateTime) {
     this.changedDateTime = changedDateTime;
   }
 
@@ -230,18 +226,19 @@ public class ApiServices {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ApiServices
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ApiServices.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApiServices
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ApiServices.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ApiServices is not found in the empty JSON string", ApiServices.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("route") != null && !jsonObj.get("route").isJsonNull()) && !jsonObj.get("route").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `route` to be a primitive type in the JSON string but got `%s`", jsonObj.get("route").toString()));
       }
@@ -281,7 +278,12 @@ public class ApiServices {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -290,8 +292,9 @@ public class ApiServices {
 
            @Override
            public ApiServices read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ApiServices instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -319,22 +322,22 @@ public class ApiServices {
     }
   }
 
- /**
-  * Create an instance of ApiServices given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApiServices
-  * @throws IOException if the JSON string is invalid with respect to ApiServices
-  */
+  /**
+   * Create an instance of ApiServices given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApiServices
+   * @throws IOException if the JSON string is invalid with respect to ApiServices
+   */
   public static ApiServices fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApiServices.class);
   }
 
- /**
-  * Convert an instance of ApiServices to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApiServices to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

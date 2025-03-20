@@ -13,7 +13,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**validateConnections**](ConnectionsApi.md#validateConnections) | **POST** /fabric/v4/connections/validate | Validate Connection |
 
 
-<a name="createConnection"></a>
+<a id="createConnection"></a>
 # **createConnection**
 > Connection createConnection(connectionPostRequest, dryRun)
 
@@ -87,7 +87,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **405** | Method not allowed |  -  |
 
-<a name="createConnectionAction"></a>
+<a id="createConnectionAction"></a>
 # **createConnectionAction**
 > ConnectionAction createConnectionAction(connectionId, connectionActionRequest)
 
@@ -160,7 +160,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="deleteConnectionByUuid"></a>
+<a id="deleteConnectionByUuid"></a>
 # **deleteConnectionByUuid**
 > Connection deleteConnectionByUuid(connectionId)
 
@@ -232,7 +232,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **405** | Method not allowed |  -  |
 
-<a name="getConnectionByUuid"></a>
+<a id="getConnectionByUuid"></a>
 # **getConnectionByUuid**
 > Connection getConnectionByUuid(connectionId, direction)
 
@@ -304,7 +304,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="searchConnections"></a>
+<a id="searchConnections"></a>
 # **searchConnections**
 > ConnectionSearchResponse searchConnections(searchRequest)
 
@@ -375,7 +375,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="updateConnectionByUuid"></a>
+<a id="updateConnectionByUuid"></a>
 # **updateConnectionByUuid**
 > Connection updateConnectionByUuid(connectionId, connectionChangeOperation)
 
@@ -447,7 +447,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="validateConnections"></a>
+<a id="validateConnections"></a>
 # **validateConnections**
 > ConnectionResponse validateConnections(validateRequest)
 

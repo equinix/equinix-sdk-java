@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `PROJECT_PROJECTID` (value: `"/project/projectId"`)
+* `_PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
 
-* `SETTINGS_PRODUCTCODE` (value: `"/settings/productCode"`)
+* `_SETTINGS_PRODUCT_CODE` (value: `"/settings/productCode"`)
 
-* `STATE` (value: `"/state"`)
+* `_STATE` (value: `"/state"`)
 
 
 

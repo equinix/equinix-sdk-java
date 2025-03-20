@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,27 +27,27 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkSearchFieldName.Adapter.class)
 public enum NetworkSearchFieldName {
   
-  NAME("/name"),
+  _NAME("/name"),
   
-  UUID("/uuid"),
+  _UUID("/uuid"),
   
-  SCOPE("/scope"),
+  _SCOPE("/scope"),
   
-  TYPE("/type"),
+  _TYPE("/type"),
   
-  OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
+  _OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
   
-  LOCATION_REGION("/location/region"),
+  _LOCATION_REGION("/location/region"),
   
-  PROJECT_PROJECTID("/project/projectId"),
+  _PROJECT_PROJECT_ID("/project/projectId"),
   
-  ACCOUNT_GLOBALCUSTID("/account/globalCustId"),
+  _ACCOUNT_GLOBAL_CUST_ID("/account/globalCustId"),
   
-  ACCOUNT_ORGID("/account/orgId"),
+  _ACCOUNT_ORG_ID("/account/orgId"),
   
-  DELETEDDATE("/deletedDate"),
+  _DELETED_DATE("/deletedDate"),
   
-  STAR("/_*");
+  u("/_*");
 
   private String value;
 
@@ -84,6 +84,11 @@ public enum NetworkSearchFieldName {
       String value = jsonReader.nextString();
       return NetworkSearchFieldName.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    NetworkSearchFieldName.fromValue(value);
   }
 }
 

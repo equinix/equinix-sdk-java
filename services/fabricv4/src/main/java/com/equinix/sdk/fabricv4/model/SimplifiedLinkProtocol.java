@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.LinkProtocolType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,117 +47,109 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Connection link protocol Configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SimplifiedLinkProtocol {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private LinkProtocolType type;
 
   public static final String SERIALIZED_NAME_VLAN_TAG = "vlanTag";
   @SerializedName(SERIALIZED_NAME_VLAN_TAG)
+  @javax.annotation.Nullable
   private Integer vlanTag;
 
   public static final String SERIALIZED_NAME_VLAN_S_TAG = "vlanSTag";
   @SerializedName(SERIALIZED_NAME_VLAN_S_TAG)
+  @javax.annotation.Nullable
   private Integer vlanSTag;
 
   public static final String SERIALIZED_NAME_VLAN_C_TAG = "vlanCTag";
   @SerializedName(SERIALIZED_NAME_VLAN_C_TAG)
+  @javax.annotation.Nullable
   private Integer vlanCTag;
 
   public SimplifiedLinkProtocol() {
   }
 
-  public SimplifiedLinkProtocol type(LinkProtocolType type) {
-    
+  public SimplifiedLinkProtocol type(@javax.annotation.Nullable LinkProtocolType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkProtocolType getType() {
     return type;
   }
 
-
-  public void setType(LinkProtocolType type) {
+  public void setType(@javax.annotation.Nullable LinkProtocolType type) {
     this.type = type;
   }
 
 
-  public SimplifiedLinkProtocol vlanTag(Integer vlanTag) {
-    
+  public SimplifiedLinkProtocol vlanTag(@javax.annotation.Nullable Integer vlanTag) {
     this.vlanTag = vlanTag;
     return this;
   }
 
-   /**
+  /**
    * vlanTag value specified for DOT1Q connections
    * minimum: 2
    * maximum: 4092
    * @return vlanTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanTag() {
     return vlanTag;
   }
 
-
-  public void setVlanTag(Integer vlanTag) {
+  public void setVlanTag(@javax.annotation.Nullable Integer vlanTag) {
     this.vlanTag = vlanTag;
   }
 
 
-  public SimplifiedLinkProtocol vlanSTag(Integer vlanSTag) {
-    
+  public SimplifiedLinkProtocol vlanSTag(@javax.annotation.Nullable Integer vlanSTag) {
     this.vlanSTag = vlanSTag;
     return this;
   }
 
-   /**
+  /**
    * vlanSTag value specified for QINQ connections
    * minimum: 2
    * maximum: 4092
    * @return vlanSTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanSTag() {
     return vlanSTag;
   }
 
-
-  public void setVlanSTag(Integer vlanSTag) {
+  public void setVlanSTag(@javax.annotation.Nullable Integer vlanSTag) {
     this.vlanSTag = vlanSTag;
   }
 
 
-  public SimplifiedLinkProtocol vlanCTag(Integer vlanCTag) {
-    
+  public SimplifiedLinkProtocol vlanCTag(@javax.annotation.Nullable Integer vlanCTag) {
     this.vlanCTag = vlanCTag;
     return this;
   }
 
-   /**
+  /**
    * vlanCTag value specified for QINQ connections
    * minimum: 2
    * maximum: 4092
    * @return vlanCTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanCTag() {
     return vlanCTag;
   }
 
-
-  public void setVlanCTag(Integer vlanCTag) {
+  public void setVlanCTag(@javax.annotation.Nullable Integer vlanCTag) {
     this.vlanCTag = vlanCTag;
   }
 
@@ -266,17 +260,22 @@ public class SimplifiedLinkProtocol {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SimplifiedLinkProtocol
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SimplifiedLinkProtocol.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SimplifiedLinkProtocol
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SimplifiedLinkProtocol.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedLinkProtocol is not found in the empty JSON string", SimplifiedLinkProtocol.openapiRequiredFields.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        LinkProtocolType.validateJsonElement(jsonObj.get("type"));
       }
   }
 
@@ -308,7 +307,12 @@ public class SimplifiedLinkProtocol {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -317,8 +321,9 @@ public class SimplifiedLinkProtocol {
 
            @Override
            public SimplifiedLinkProtocol read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SimplifiedLinkProtocol instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -346,22 +351,22 @@ public class SimplifiedLinkProtocol {
     }
   }
 
- /**
-  * Create an instance of SimplifiedLinkProtocol given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SimplifiedLinkProtocol
-  * @throws IOException if the JSON string is invalid with respect to SimplifiedLinkProtocol
-  */
+  /**
+   * Create an instance of SimplifiedLinkProtocol given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SimplifiedLinkProtocol
+   * @throws IOException if the JSON string is invalid with respect to SimplifiedLinkProtocol
+   */
   public static SimplifiedLinkProtocol fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SimplifiedLinkProtocol.class);
   }
 
- /**
-  * Convert an instance of SimplifiedLinkProtocol to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SimplifiedLinkProtocol to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

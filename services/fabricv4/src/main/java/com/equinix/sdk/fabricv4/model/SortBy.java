@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,55 +27,55 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(SortBy.Adapter.class)
 public enum SortBy {
   
-  NAME("/name"),
+  _NAME("/name"),
   
-  DIRECTION("/direction"),
+  _DIRECTION("/direction"),
   
-  ASIDE_ACCESSPOINT_NAME("/aSide/accessPoint/name"),
+  _A_SIDE_ACCESS_POINT_NAME("/aSide/accessPoint/name"),
   
-  ASIDE_ACCESSPOINT_TYPE("/aSide/accessPoint/type"),
+  _A_SIDE_ACCESS_POINT_TYPE("/aSide/accessPoint/type"),
   
-  ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/aSide/accessPoint/account/accountName"),
+  _A_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/aSide/accessPoint/account/accountName"),
   
-  ASIDE_ACCESSPOINT_LOCATION_METRONAME("/aSide/accessPoint/location/metroName"),
+  _A_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/aSide/accessPoint/location/metroName"),
   
-  ASIDE_ACCESSPOINT_LOCATION_METROCODE("/aSide/accessPoint/location/metroCode"),
+  _A_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/aSide/accessPoint/location/metroCode"),
   
-  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
+  _A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
   
-  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
+  _A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
   
-  ZSIDE_ACCESSPOINT_NAME("/zSide/accessPoint/name"),
+  _Z_SIDE_ACCESS_POINT_NAME("/zSide/accessPoint/name"),
   
-  ZSIDE_ACCESSPOINT_TYPE("/zSide/accessPoint/type"),
+  _Z_SIDE_ACCESS_POINT_TYPE("/zSide/accessPoint/type"),
   
-  ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
+  _Z_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/zSide/accessPoint/account/accountName"),
   
-  ZSIDE_ACCESSPOINT_LOCATION_METRONAME("/zSide/accessPoint/location/metroName"),
+  _Z_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/zSide/accessPoint/location/metroName"),
   
-  ZSIDE_ACCESSPOINT_LOCATION_METROCODE("/zSide/accessPoint/location/metroCode"),
+  _Z_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/zSide/accessPoint/location/metroCode"),
   
-  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
+  _Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
   
-  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
+  _Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
   
-  ZSIDE_ACCESSPOINT_AUTHENTICATIONKEY("/zSide/accessPoint/authenticationKey"),
+  _Z_SIDE_ACCESS_POINT_AUTHENTICATION_KEY("/zSide/accessPoint/authenticationKey"),
   
-  BANDWIDTH("/bandwidth"),
+  _BANDWIDTH("/bandwidth"),
   
-  GEOSCOPE("/geoScope"),
+  _GEO_SCOPE("/geoScope"),
   
-  UUID("/uuid"),
+  _UUID("/uuid"),
   
-  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
   
-  OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
+  _OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
   
-  OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
+  _OPERATION_PROVIDER_STATUS("/operation/providerStatus"),
   
-  REDUNDANCY_PRIORITY("/redundancy/priority");
+  _REDUNDANCY_PRIORITY("/redundancy/priority");
 
   private String value;
 
@@ -112,6 +112,11 @@ public enum SortBy {
       String value = jsonReader.nextString();
       return SortBy.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    SortBy.fromValue(value);
   }
 }
 

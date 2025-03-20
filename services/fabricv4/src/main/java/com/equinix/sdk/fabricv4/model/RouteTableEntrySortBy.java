@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,17 +27,17 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(RouteTableEntrySortBy.Adapter.class)
 public enum RouteTableEntrySortBy {
   
-  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+  _CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
   
-  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  _CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
   
-  PREFIX("/prefix"),
+  _PREFIX("/prefix"),
   
-  NEXTHOP("/nextHop"),
+  _NEXT_HOP("/nextHop"),
   
-  CONNECTION_NAME("/connection/name"),
+  _CONNECTION_NAME("/connection/name"),
   
-  TYPE("/type");
+  _TYPE("/type");
 
   private String value;
 
@@ -74,6 +74,11 @@ public enum RouteTableEntrySortBy {
       String value = jsonReader.nextString();
       return RouteTableEntrySortBy.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    RouteTableEntrySortBy.fromValue(value);
   }
 }
 

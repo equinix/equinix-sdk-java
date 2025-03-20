@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,191 +46,177 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Configuration for API based Integration for Service Profile
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ApiConfig {
   public static final String SERIALIZED_NAME_API_AVAILABLE = "apiAvailable";
   @SerializedName(SERIALIZED_NAME_API_AVAILABLE)
+  @javax.annotation.Nullable
   private Boolean apiAvailable = false;
 
   public static final String SERIALIZED_NAME_INTEGRATION_ID = "integrationId";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_ID)
+  @javax.annotation.Nullable
   private String integrationId;
 
   public static final String SERIALIZED_NAME_EQUINIX_MANAGED_PORT = "equinixManagedPort";
   @SerializedName(SERIALIZED_NAME_EQUINIX_MANAGED_PORT)
+  @javax.annotation.Nullable
   private Boolean equinixManagedPort = false;
 
   public static final String SERIALIZED_NAME_EQUINIX_MANAGED_VLAN = "equinixManagedVlan";
   @SerializedName(SERIALIZED_NAME_EQUINIX_MANAGED_VLAN)
+  @javax.annotation.Nullable
   private Boolean equinixManagedVlan = false;
 
   public static final String SERIALIZED_NAME_ALLOW_OVER_SUBSCRIPTION = "allowOverSubscription";
   @SerializedName(SERIALIZED_NAME_ALLOW_OVER_SUBSCRIPTION)
+  @javax.annotation.Nullable
   private Boolean allowOverSubscription = false;
 
   public static final String SERIALIZED_NAME_OVER_SUBSCRIPTION_LIMIT = "overSubscriptionLimit";
   @SerializedName(SERIALIZED_NAME_OVER_SUBSCRIPTION_LIMIT)
+  @javax.annotation.Nullable
   private Integer overSubscriptionLimit = 1;
 
   public static final String SERIALIZED_NAME_BANDWIDTH_FROM_API = "bandwidthFromApi";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH_FROM_API)
+  @javax.annotation.Nullable
   private Boolean bandwidthFromApi = false;
 
   public ApiConfig() {
   }
 
-  public ApiConfig apiAvailable(Boolean apiAvailable) {
-    
+  public ApiConfig apiAvailable(@javax.annotation.Nullable Boolean apiAvailable) {
     this.apiAvailable = apiAvailable;
     return this;
   }
 
-   /**
+  /**
    * Setting indicating whether the API is available (true) or not (false).
    * @return apiAvailable
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getApiAvailable() {
     return apiAvailable;
   }
 
-
-  public void setApiAvailable(Boolean apiAvailable) {
+  public void setApiAvailable(@javax.annotation.Nullable Boolean apiAvailable) {
     this.apiAvailable = apiAvailable;
   }
 
 
-  public ApiConfig integrationId(String integrationId) {
-    
+  public ApiConfig integrationId(@javax.annotation.Nullable String integrationId) {
     this.integrationId = integrationId;
     return this;
   }
 
-   /**
+  /**
    * Get integrationId
    * @return integrationId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getIntegrationId() {
     return integrationId;
   }
 
-
-  public void setIntegrationId(String integrationId) {
+  public void setIntegrationId(@javax.annotation.Nullable String integrationId) {
     this.integrationId = integrationId;
   }
 
 
-  public ApiConfig equinixManagedPort(Boolean equinixManagedPort) {
-    
+  public ApiConfig equinixManagedPort(@javax.annotation.Nullable Boolean equinixManagedPort) {
     this.equinixManagedPort = equinixManagedPort;
     return this;
   }
 
-   /**
+  /**
    * Setting indicating that the port is managed by Equinix (true) or not (false).
    * @return equinixManagedPort
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEquinixManagedPort() {
     return equinixManagedPort;
   }
 
-
-  public void setEquinixManagedPort(Boolean equinixManagedPort) {
+  public void setEquinixManagedPort(@javax.annotation.Nullable Boolean equinixManagedPort) {
     this.equinixManagedPort = equinixManagedPort;
   }
 
 
-  public ApiConfig equinixManagedVlan(Boolean equinixManagedVlan) {
-    
+  public ApiConfig equinixManagedVlan(@javax.annotation.Nullable Boolean equinixManagedVlan) {
     this.equinixManagedVlan = equinixManagedVlan;
     return this;
   }
 
-   /**
+  /**
    * Setting indicating that the VLAN is managed by Equinix (true) or not (false).
    * @return equinixManagedVlan
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEquinixManagedVlan() {
     return equinixManagedVlan;
   }
 
-
-  public void setEquinixManagedVlan(Boolean equinixManagedVlan) {
+  public void setEquinixManagedVlan(@javax.annotation.Nullable Boolean equinixManagedVlan) {
     this.equinixManagedVlan = equinixManagedVlan;
   }
 
 
-  public ApiConfig allowOverSubscription(Boolean allowOverSubscription) {
-    
+  public ApiConfig allowOverSubscription(@javax.annotation.Nullable Boolean allowOverSubscription) {
     this.allowOverSubscription = allowOverSubscription;
     return this;
   }
 
-   /**
+  /**
    * Setting showing that oversubscription support is available (true) or not (false). The default is false. Oversubscription is the sale of more than the available network bandwidth. This practice is common and legitimate. After all, many customers use less bandwidth than they&#39;ve purchased. And network users don&#39;t consume bandwidth all at the same time. The leftover bandwidth can be sold to other customers. When demand surges, operational and engineering resources can be shifted to accommodate the load. 
    * @return allowOverSubscription
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowOverSubscription() {
     return allowOverSubscription;
   }
 
-
-  public void setAllowOverSubscription(Boolean allowOverSubscription) {
+  public void setAllowOverSubscription(@javax.annotation.Nullable Boolean allowOverSubscription) {
     this.allowOverSubscription = allowOverSubscription;
   }
 
 
-  public ApiConfig overSubscriptionLimit(Integer overSubscriptionLimit) {
-    
+  public ApiConfig overSubscriptionLimit(@javax.annotation.Nullable Integer overSubscriptionLimit) {
     this.overSubscriptionLimit = overSubscriptionLimit;
     return this;
   }
 
-   /**
+  /**
    * A cap on oversubscription.
    * minimum: 1
    * maximum: 20
    * @return overSubscriptionLimit
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getOverSubscriptionLimit() {
     return overSubscriptionLimit;
   }
 
-
-  public void setOverSubscriptionLimit(Integer overSubscriptionLimit) {
+  public void setOverSubscriptionLimit(@javax.annotation.Nullable Integer overSubscriptionLimit) {
     this.overSubscriptionLimit = overSubscriptionLimit;
   }
 
 
-  public ApiConfig bandwidthFromApi(Boolean bandwidthFromApi) {
-    
+  public ApiConfig bandwidthFromApi(@javax.annotation.Nullable Boolean bandwidthFromApi) {
     this.bandwidthFromApi = bandwidthFromApi;
     return this;
   }
 
-   /**
+  /**
    * Get bandwidthFromApi
    * @return bandwidthFromApi
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getBandwidthFromApi() {
     return bandwidthFromApi;
   }
 
-
-  public void setBandwidthFromApi(Boolean bandwidthFromApi) {
+  public void setBandwidthFromApi(@javax.annotation.Nullable Boolean bandwidthFromApi) {
     this.bandwidthFromApi = bandwidthFromApi;
   }
 
@@ -348,18 +336,19 @@ public class ApiConfig {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ApiConfig
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ApiConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApiConfig
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ApiConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ApiConfig is not found in the empty JSON string", ApiConfig.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("integrationId") != null && !jsonObj.get("integrationId").isJsonNull()) && !jsonObj.get("integrationId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `integrationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationId").toString()));
       }
@@ -393,7 +382,12 @@ public class ApiConfig {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -402,8 +396,9 @@ public class ApiConfig {
 
            @Override
            public ApiConfig read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ApiConfig instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -431,22 +426,22 @@ public class ApiConfig {
     }
   }
 
- /**
-  * Create an instance of ApiConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApiConfig
-  * @throws IOException if the JSON string is invalid with respect to ApiConfig
-  */
+  /**
+   * Create an instance of ApiConfig given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApiConfig
+   * @throws IOException if the JSON string is invalid with respect to ApiConfig
+   */
   public static ApiConfig fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApiConfig.class);
   }
 
- /**
-  * Convert an instance of ApiConfig to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApiConfig to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,22 +48,22 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * RouteFiltersSearchFilterItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteFiltersSearchFilterItem {
   /**
    * Gets or Sets property
    */
   @JsonAdapter(PropertyEnum.Adapter.class)
   public enum PropertyEnum {
-    TYPE("/type"),
+    _TYPE("/type"),
     
-    NAME("/name"),
+    _NAME("/name"),
     
-    PROJECT_PROJECTID("/project/projectId"),
+    _PROJECT_PROJECT_ID("/project/projectId"),
     
-    UUID("/uuid"),
+    _UUID("/uuid"),
     
-    STATE("/state");
+    _STATE("/state");
 
     private String value;
 
@@ -99,69 +101,70 @@ public class RouteFiltersSearchFilterItem {
         return PropertyEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PropertyEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
+  @javax.annotation.Nullable
   private PropertyEnum property;
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
+  @javax.annotation.Nullable
   private String operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
+  @javax.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public RouteFiltersSearchFilterItem() {
   }
 
-  public RouteFiltersSearchFilterItem property(PropertyEnum property) {
-    
+  public RouteFiltersSearchFilterItem property(@javax.annotation.Nullable PropertyEnum property) {
     this.property = property;
     return this;
   }
 
-   /**
+  /**
    * Get property
    * @return property
-  **/
+   */
   @javax.annotation.Nullable
-
   public PropertyEnum getProperty() {
     return property;
   }
 
-
-  public void setProperty(PropertyEnum property) {
+  public void setProperty(@javax.annotation.Nullable PropertyEnum property) {
     this.property = property;
   }
 
 
-  public RouteFiltersSearchFilterItem operator(String operator) {
-    
+  public RouteFiltersSearchFilterItem operator(@javax.annotation.Nullable String operator) {
     this.operator = operator;
     return this;
   }
 
-   /**
+  /**
    * Get operator
    * @return operator
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOperator() {
     return operator;
   }
 
-
-  public void setOperator(String operator) {
+  public void setOperator(@javax.annotation.Nullable String operator) {
     this.operator = operator;
   }
 
 
-  public RouteFiltersSearchFilterItem values(List<String> values) {
-    
+  public RouteFiltersSearchFilterItem values(@javax.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -174,18 +177,16 @@ public class RouteFiltersSearchFilterItem {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getValues() {
     return values;
   }
 
-
-  public void setValues(List<String> values) {
+  public void setValues(@javax.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
@@ -293,26 +294,31 @@ public class RouteFiltersSearchFilterItem {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteFiltersSearchFilterItem
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteFiltersSearchFilterItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteFiltersSearchFilterItem
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteFiltersSearchFilterItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteFiltersSearchFilterItem is not found in the empty JSON string", RouteFiltersSearchFilterItem.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) && !jsonObj.get("property").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `property` to be a primitive type in the JSON string but got `%s`", jsonObj.get("property").toString()));
+      }
+      // validate the optional field `property`
+      if (jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) {
+        PropertyEnum.validateJsonElement(jsonObj.get("property"));
       }
       if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonArray()) {
+      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
@@ -345,7 +351,12 @@ public class RouteFiltersSearchFilterItem {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -354,8 +365,9 @@ public class RouteFiltersSearchFilterItem {
 
            @Override
            public RouteFiltersSearchFilterItem read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteFiltersSearchFilterItem instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -383,22 +395,22 @@ public class RouteFiltersSearchFilterItem {
     }
   }
 
- /**
-  * Create an instance of RouteFiltersSearchFilterItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteFiltersSearchFilterItem
-  * @throws IOException if the JSON string is invalid with respect to RouteFiltersSearchFilterItem
-  */
+  /**
+   * Create an instance of RouteFiltersSearchFilterItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteFiltersSearchFilterItem
+   * @throws IOException if the JSON string is invalid with respect to RouteFiltersSearchFilterItem
+   */
   public static RouteFiltersSearchFilterItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteFiltersSearchFilterItem.class);
   }
 
- /**
-  * Convert an instance of RouteFiltersSearchFilterItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteFiltersSearchFilterItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,13 +27,13 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ServiceTokenSearchFieldName.Adapter.class)
 public enum ServiceTokenSearchFieldName {
   
-  UUID("/uuid"),
+  _UUID("/uuid"),
   
-  STATE("/state"),
+  _STATE("/state"),
   
-  NAME("/name"),
+  _NAME("/name"),
   
-  PROJECT_PROJECTID("/project/projectId");
+  _PROJECT_PROJECT_ID("/project/projectId");
 
   private String value;
 
@@ -70,6 +70,11 @@ public enum ServiceTokenSearchFieldName {
       String value = jsonReader.nextString();
       return ServiceTokenSearchFieldName.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    ServiceTokenSearchFieldName.fromValue(value);
   }
 }
 

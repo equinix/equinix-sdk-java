@@ -5,17 +5,17 @@
 ## Enum
 
 
-* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
+* `_CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
 
-* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+* `_CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
 
-* `PREFIX` (value: `"/prefix"`)
+* `_PREFIX` (value: `"/prefix"`)
 
-* `NEXTHOP` (value: `"/nextHop"`)
+* `_NEXT_HOP` (value: `"/nextHop"`)
 
-* `CONNECTION_NAME` (value: `"/connection/name"`)
+* `_CONNECTION_NAME` (value: `"/connection/name"`)
 
-* `TYPE` (value: `"/type"`)
+* `_TYPE` (value: `"/type"`)
 
 
 

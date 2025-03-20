@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,85 +46,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * EndCustomer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class EndCustomer {
   public static final String SERIALIZED_NAME_IS_DISCLOSED = "isDisclosed";
   @SerializedName(SERIALIZED_NAME_IS_DISCLOSED)
+  @javax.annotation.Nullable
   private Boolean isDisclosed = false;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_MDM_ID = "mdmId";
   @SerializedName(SERIALIZED_NAME_MDM_ID)
+  @javax.annotation.Nullable
   private String mdmId;
 
   public EndCustomer() {
   }
 
-  public EndCustomer isDisclosed(Boolean isDisclosed) {
-    
+  public EndCustomer isDisclosed(@javax.annotation.Nullable Boolean isDisclosed) {
     this.isDisclosed = isDisclosed;
     return this;
   }
 
-   /**
+  /**
    * Indicate if endCustomer info should be disclosed or not
    * @return isDisclosed
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getIsDisclosed() {
     return isDisclosed;
   }
 
-
-  public void setIsDisclosed(Boolean isDisclosed) {
+  public void setIsDisclosed(@javax.annotation.Nullable Boolean isDisclosed) {
     this.isDisclosed = isDisclosed;
   }
 
 
-  public EndCustomer name(String name) {
-    
+  public EndCustomer name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public EndCustomer mdmId(String mdmId) {
-    
+  public EndCustomer mdmId(@javax.annotation.Nullable String mdmId) {
     this.mdmId = mdmId;
     return this;
   }
 
-   /**
+  /**
    * Get mdmId
    * @return mdmId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMdmId() {
     return mdmId;
   }
 
-
-  public void setMdmId(String mdmId) {
+  public void setMdmId(@javax.annotation.Nullable String mdmId) {
     this.mdmId = mdmId;
   }
 
@@ -230,18 +226,19 @@ public class EndCustomer {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to EndCustomer
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!EndCustomer.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EndCustomer
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!EndCustomer.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in EndCustomer is not found in the empty JSON string", EndCustomer.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -278,7 +275,12 @@ public class EndCustomer {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -287,8 +289,9 @@ public class EndCustomer {
 
            @Override
            public EndCustomer read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              EndCustomer instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -316,22 +319,22 @@ public class EndCustomer {
     }
   }
 
- /**
-  * Create an instance of EndCustomer given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EndCustomer
-  * @throws IOException if the JSON string is invalid with respect to EndCustomer
-  */
+  /**
+   * Create an instance of EndCustomer given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EndCustomer
+   * @throws IOException if the JSON string is invalid with respect to EndCustomer
+   */
   public static EndCustomer fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EndCustomer.class);
   }
 
- /**
-  * Convert an instance of EndCustomer to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EndCustomer to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

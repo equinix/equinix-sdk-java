@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,10 +48,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * ConnectionRouteAggregationData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionRouteAggregationData {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   /**
@@ -95,14 +98,21 @@ public class ConnectionRouteAggregationData {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   /**
@@ -158,99 +168,93 @@ public class ConnectionRouteAggregationData {
         return AttachmentStatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AttachmentStatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ATTACHMENT_STATUS = "attachmentStatus";
   @SerializedName(SERIALIZED_NAME_ATTACHMENT_STATUS)
+  @javax.annotation.Nullable
   private AttachmentStatusEnum attachmentStatus;
 
   public ConnectionRouteAggregationData() {
   }
 
-  public ConnectionRouteAggregationData href(URI href) {
-    
+  public ConnectionRouteAggregationData href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Route Aggregation URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public ConnectionRouteAggregationData type(TypeEnum type) {
-    
+  public ConnectionRouteAggregationData type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Route Aggregation type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public ConnectionRouteAggregationData uuid(UUID uuid) {
-    
+  public ConnectionRouteAggregationData uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Route Aggregation identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public ConnectionRouteAggregationData attachmentStatus(AttachmentStatusEnum attachmentStatus) {
-    
+  public ConnectionRouteAggregationData attachmentStatus(@javax.annotation.Nullable AttachmentStatusEnum attachmentStatus) {
     this.attachmentStatus = attachmentStatus;
     return this;
   }
 
-   /**
+  /**
    * Get attachmentStatus
    * @return attachmentStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public AttachmentStatusEnum getAttachmentStatus() {
     return attachmentStatus;
   }
 
-
-  public void setAttachmentStatus(AttachmentStatusEnum attachmentStatus) {
+  public void setAttachmentStatus(@javax.annotation.Nullable AttachmentStatusEnum attachmentStatus) {
     this.attachmentStatus = attachmentStatus;
   }
 
@@ -361,29 +365,38 @@ public class ConnectionRouteAggregationData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionRouteAggregationData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionRouteAggregationData.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionRouteAggregationData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionRouteAggregationData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionRouteAggregationData is not found in the empty JSON string", ConnectionRouteAggregationData.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) && !jsonObj.get("attachmentStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `attachmentStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attachmentStatus").toString()));
+      }
+      // validate the optional field `attachmentStatus`
+      if (jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) {
+        AttachmentStatusEnum.validateJsonElement(jsonObj.get("attachmentStatus"));
       }
   }
 
@@ -415,7 +428,12 @@ public class ConnectionRouteAggregationData {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -424,8 +442,9 @@ public class ConnectionRouteAggregationData {
 
            @Override
            public ConnectionRouteAggregationData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionRouteAggregationData instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -453,22 +472,22 @@ public class ConnectionRouteAggregationData {
     }
   }
 
- /**
-  * Create an instance of ConnectionRouteAggregationData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionRouteAggregationData
-  * @throws IOException if the JSON string is invalid with respect to ConnectionRouteAggregationData
-  */
+  /**
+   * Create an instance of ConnectionRouteAggregationData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionRouteAggregationData
+   * @throws IOException if the JSON string is invalid with respect to ConnectionRouteAggregationData
+   */
   public static ConnectionRouteAggregationData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionRouteAggregationData.class);
   }
 
- /**
-  * Convert an instance of ConnectionRouteAggregationData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionRouteAggregationData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

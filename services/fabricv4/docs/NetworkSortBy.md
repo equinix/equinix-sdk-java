@@ -5,19 +5,19 @@
 ## Enum
 
 
-* `NAME` (value: `"/name"`)
+* `_NAME` (value: `"/name"`)
 
-* `UUID` (value: `"/uuid"`)
+* `_UUID` (value: `"/uuid"`)
 
-* `SCOPE` (value: `"/scope"`)
+* `_SCOPE` (value: `"/scope"`)
 
-* `OPERATION_EQUINIXSTATUS` (value: `"/operation/equinixStatus"`)
+* `_OPERATION_EQUINIX_STATUS` (value: `"/operation/equinixStatus"`)
 
-* `LOCATION_REGION` (value: `"/location/region"`)
+* `_LOCATION_REGION` (value: `"/location/region"`)
 
-* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
+* `_CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
 
-* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+* `_CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
 
 
 

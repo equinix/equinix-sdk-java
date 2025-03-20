@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ConnectedMetro;
 import com.equinix.sdk.fabricv4.model.GeoCoordinates;
 import com.equinix.sdk.fabricv4.model.GeoScopeType;
@@ -23,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -35,13 +35,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -49,229 +51,214 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * GET Metros retrieves all Equinix? Fabric? metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Metro {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private String code;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_EQUINIX_ASN = "equinixAsn";
   @SerializedName(SERIALIZED_NAME_EQUINIX_ASN)
+  @javax.annotation.Nullable
   private Long equinixAsn;
 
   public static final String SERIALIZED_NAME_LOCAL_V_C_BANDWIDTH_MAX = "localVCBandwidthMax";
   @SerializedName(SERIALIZED_NAME_LOCAL_V_C_BANDWIDTH_MAX)
+  @javax.annotation.Nullable
   private Long localVCBandwidthMax;
 
   public static final String SERIALIZED_NAME_GEO_COORDINATES = "geoCoordinates";
   @SerializedName(SERIALIZED_NAME_GEO_COORDINATES)
+  @javax.annotation.Nullable
   private GeoCoordinates geoCoordinates;
 
   public static final String SERIALIZED_NAME_CONNECTED_METROS = "connectedMetros";
   @SerializedName(SERIALIZED_NAME_CONNECTED_METROS)
+  @javax.annotation.Nullable
   private List<ConnectedMetro> connectedMetros = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_GEO_SCOPES = "geoScopes";
   @SerializedName(SERIALIZED_NAME_GEO_SCOPES)
+  @javax.annotation.Nullable
   private List<GeoScopeType> geoScopes = new ArrayList<>();
 
   public Metro() {
   }
 
-  public Metro href(String href) {
-    
+  public Metro href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * The Canonical URL at which the resource resides.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHref() {
     return href;
   }
 
-
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public Metro type(String type) {
-    
+  public Metro type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Indicator of a Fabric Metro
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public Metro code(String code) {
-    
+  public Metro code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Code Assigned to an Equinix IBX data center in a specified metropolitan area.
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCode() {
     return code;
   }
 
-
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public Metro region(String region) {
-    
+  public Metro region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
 
-   /**
+  /**
    * Board geographic area in which the data center is located
    * @return region
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRegion() {
     return region;
   }
 
-
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public Metro name(String name) {
-    
+  public Metro name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the region in which the data center is located.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Metro equinixAsn(Long equinixAsn) {
-    
+  public Metro equinixAsn(@javax.annotation.Nullable Long equinixAsn) {
     this.equinixAsn = equinixAsn;
     return this;
   }
 
-   /**
+  /**
    * Autonomous system number (ASN) for a specified Fabric metro. The ASN is a unique identifier that carries the network routing protocol and exchanges that data with other internal systems via border gateway protocol.
    * @return equinixAsn
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getEquinixAsn() {
     return equinixAsn;
   }
 
-
-  public void setEquinixAsn(Long equinixAsn) {
+  public void setEquinixAsn(@javax.annotation.Nullable Long equinixAsn) {
     this.equinixAsn = equinixAsn;
   }
 
 
-  public Metro localVCBandwidthMax(Long localVCBandwidthMax) {
-    
+  public Metro localVCBandwidthMax(@javax.annotation.Nullable Long localVCBandwidthMax) {
     this.localVCBandwidthMax = localVCBandwidthMax;
     return this;
   }
 
-   /**
+  /**
    * This field holds Max Connection speed with in the metro
    * @return localVCBandwidthMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getLocalVCBandwidthMax() {
     return localVCBandwidthMax;
   }
 
-
-  public void setLocalVCBandwidthMax(Long localVCBandwidthMax) {
+  public void setLocalVCBandwidthMax(@javax.annotation.Nullable Long localVCBandwidthMax) {
     this.localVCBandwidthMax = localVCBandwidthMax;
   }
 
 
-  public Metro geoCoordinates(GeoCoordinates geoCoordinates) {
-    
+  public Metro geoCoordinates(@javax.annotation.Nullable GeoCoordinates geoCoordinates) {
     this.geoCoordinates = geoCoordinates;
     return this;
   }
 
-   /**
+  /**
    * Get geoCoordinates
    * @return geoCoordinates
-  **/
+   */
   @javax.annotation.Nullable
-
   public GeoCoordinates getGeoCoordinates() {
     return geoCoordinates;
   }
 
-
-  public void setGeoCoordinates(GeoCoordinates geoCoordinates) {
+  public void setGeoCoordinates(@javax.annotation.Nullable GeoCoordinates geoCoordinates) {
     this.geoCoordinates = geoCoordinates;
   }
 
 
-  public Metro connectedMetros(List<ConnectedMetro> connectedMetros) {
-    
+  public Metro connectedMetros(@javax.annotation.Nullable List<ConnectedMetro> connectedMetros) {
     this.connectedMetros = connectedMetros;
     return this;
   }
@@ -284,24 +271,21 @@ public class Metro {
     return this;
   }
 
-   /**
+  /**
    * Get connectedMetros
    * @return connectedMetros
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ConnectedMetro> getConnectedMetros() {
     return connectedMetros;
   }
 
-
-  public void setConnectedMetros(List<ConnectedMetro> connectedMetros) {
+  public void setConnectedMetros(@javax.annotation.Nullable List<ConnectedMetro> connectedMetros) {
     this.connectedMetros = connectedMetros;
   }
 
 
-  public Metro geoScopes(List<GeoScopeType> geoScopes) {
-    
+  public Metro geoScopes(@javax.annotation.Nullable List<GeoScopeType> geoScopes) {
     this.geoScopes = geoScopes;
     return this;
   }
@@ -314,18 +298,16 @@ public class Metro {
     return this;
   }
 
-   /**
+  /**
    * List of supported geographic boundaries of a Fabric Metro.
    * @return geoScopes
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<GeoScopeType> getGeoScopes() {
     return geoScopes;
   }
 
-
-  public void setGeoScopes(List<GeoScopeType> geoScopes) {
+  public void setGeoScopes(@javax.annotation.Nullable List<GeoScopeType> geoScopes) {
     this.geoScopes = geoScopes;
   }
 
@@ -454,18 +436,19 @@ public class Metro {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Metro
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Metro.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Metro
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Metro.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Metro is not found in the empty JSON string", Metro.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -483,7 +466,7 @@ public class Metro {
       }
       // validate the optional field `geoCoordinates`
       if (jsonObj.get("geoCoordinates") != null && !jsonObj.get("geoCoordinates").isJsonNull()) {
-        GeoCoordinates.validateJsonObject(jsonObj.getAsJsonObject("geoCoordinates"));
+        GeoCoordinates.validateJsonElement(jsonObj.get("geoCoordinates"));
       }
       if (jsonObj.get("connectedMetros") != null && !jsonObj.get("connectedMetros").isJsonNull()) {
         JsonArray jsonArrayconnectedMetros = jsonObj.getAsJsonArray("connectedMetros");
@@ -495,12 +478,12 @@ public class Metro {
 
           // validate the optional field `connectedMetros` (array)
           for (int i = 0; i < jsonArrayconnectedMetros.size(); i++) {
-            ConnectedMetro.validateJsonObject(jsonArrayconnectedMetros.get(i).getAsJsonObject());
+            ConnectedMetro.validateJsonElement(jsonArrayconnectedMetros.get(i));
           };
         }
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("geoScopes") != null && !jsonObj.get("geoScopes").isJsonArray()) {
+      if (jsonObj.get("geoScopes") != null && !jsonObj.get("geoScopes").isJsonNull() && !jsonObj.get("geoScopes").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `geoScopes` to be an array in the JSON string but got `%s`", jsonObj.get("geoScopes").toString()));
       }
   }
@@ -533,7 +516,12 @@ public class Metro {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -542,8 +530,9 @@ public class Metro {
 
            @Override
            public Metro read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Metro instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -571,22 +560,22 @@ public class Metro {
     }
   }
 
- /**
-  * Create an instance of Metro given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Metro
-  * @throws IOException if the JSON string is invalid with respect to Metro
-  */
+  /**
+   * Create an instance of Metro given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Metro
+   * @throws IOException if the JSON string is invalid with respect to Metro
+   */
   public static Metro fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Metro.class);
   }
 
- /**
-  * Convert an instance of Metro to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Metro to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -257,7 +257,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.ModelInterface.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.ModelPackage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.Network.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkAllOf.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChange.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChangeOperation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChangeResponse.CustomTypeAdapterFactory());

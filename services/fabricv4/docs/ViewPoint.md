@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `ASIDE` (value: `"aSide"`)
+* `A_SIDE` (value: `"aSide"`)
 
-* `ZSIDE` (value: `"zSide"`)
+* `Z_SIDE` (value: `"zSide"`)
 
 
 

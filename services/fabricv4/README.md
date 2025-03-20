@@ -2,6 +2,7 @@
 
 Equinix Fabric API v4
 - API version: 4.20
+  - Generator version: 7.12.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://deploy.equinix.com/labs/fabric-java\\\">Fabric Java SDK</a> </br> <a href=\"https://deploy.equinix.com/labs/equinix-sdk-go\\\">Fabric Go SDK</a> </br> <a href=\"https://deploy.equinix.com/labs/equinix-sdk-python\\\">Fabric Python SDK</a> </br> <a href=\"https://deploy.equinix.com/labs/terraform-provider-equinix\\\">Equinix Terraform Provider</a> </br> <a href=\"https://deploy.equinix.com/labs/terraform-equinix-fabric\\\">Fabric Terraform Modules</a> </br> <a href=\"https://deploy.equinix.com/labs/pulumi-provider-equinix/\">Equinix Pulumi Provider</a> </br>
 
@@ -84,7 +85,7 @@ import com.equinix.sdk.fabricv4.ApiClient;
 import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.sdk.fabricv4.Configuration;
 import com.equinix.sdk.fabricv4.auth.*;
-import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.model.*;
 import com.equinix.sdk.fabricv4.api.CloudRoutersApi;
 
 public class Example {
@@ -410,7 +411,6 @@ Class | Method | HTTP request | Description
  - [ModelInterface](docs/ModelInterface.md)
  - [ModelPackage](docs/ModelPackage.md)
  - [Network](docs/Network.md)
- - [NetworkAllOf](docs/NetworkAllOf.md)
  - [NetworkChange](docs/NetworkChange.md)
  - [NetworkChangeOperation](docs/NetworkChangeOperation.md)
  - [NetworkChangeResponse](docs/NetworkChangeResponse.md)
@@ -708,12 +708,15 @@ Class | Method | HTTP request | Description
  - [VpicInterface](docs/VpicInterface.md)
 
 
+<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
+
 Authentication schemes defined for the API:
+<a id="BearerAuth"></a>
 ### BearerAuth
 
-- **Type**: HTTP basic authentication
+- **Type**: HTTP Bearer Token authentication (JWT)
 
 
 ## Recommendation

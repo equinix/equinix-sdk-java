@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,10 +47,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Current state of latest route filter change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteFiltersChange {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private String uuid;
 
   /**
@@ -56,17 +59,17 @@ public class RouteFiltersChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    IPV4_PREFIX_FILTER_UPDATE("BGP_IPv4_PREFIX_FILTER_UPDATE"),
+    BGP_IPV4_PREFIX_FILTER_UPDATE("BGP_IPv4_PREFIX_FILTER_UPDATE"),
     
-    IPV4_PREFIX_FILTER_CREATION("BGP_IPv4_PREFIX_FILTER_CREATION"),
+    BGP_IPV4_PREFIX_FILTER_CREATION("BGP_IPv4_PREFIX_FILTER_CREATION"),
     
-    IPV4_PREFIX_FILTER_DELETION("BGP_IPv4_PREFIX_FILTER_DELETION"),
+    BGP_IPV4_PREFIX_FILTER_DELETION("BGP_IPv4_PREFIX_FILTER_DELETION"),
     
-    IPV6_PREFIX_FILTER_UPDATE("BGP_IPv6_PREFIX_FILTER_UPDATE"),
+    BGP_IPV6_PREFIX_FILTER_UPDATE("BGP_IPv6_PREFIX_FILTER_UPDATE"),
     
-    IPV6_PREFIX_FILTER_CREATION("BGP_IPv6_PREFIX_FILTER_CREATION"),
+    BGP_IPV6_PREFIX_FILTER_CREATION("BGP_IPv6_PREFIX_FILTER_CREATION"),
     
-    IPV6_PREFIX_FILTER_DELETION("BGP_IPv6_PREFIX_FILTER_DELETION");
+    BGP_IPV6_PREFIX_FILTER_DELETION("BGP_IPv6_PREFIX_FILTER_DELETION");
 
     private String value;
 
@@ -104,81 +107,79 @@ public class RouteFiltersChange {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public RouteFiltersChange() {
   }
 
-  public RouteFiltersChange uuid(String uuid) {
-    
+  public RouteFiltersChange uuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Uniquely identifies a change
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
   }
 
 
-  public RouteFiltersChange type(TypeEnum type) {
-    
+  public RouteFiltersChange type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of change
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public RouteFiltersChange href(URI href) {
-    
+  public RouteFiltersChange href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Route filter change URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
@@ -288,31 +289,34 @@ public class RouteFiltersChange {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteFiltersChange
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteFiltersChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteFiltersChange
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteFiltersChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteFiltersChange is not found in the empty JSON string", RouteFiltersChange.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RouteFiltersChange.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -346,7 +350,12 @@ public class RouteFiltersChange {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -355,8 +364,9 @@ public class RouteFiltersChange {
 
            @Override
            public RouteFiltersChange read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteFiltersChange instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -384,22 +394,22 @@ public class RouteFiltersChange {
     }
   }
 
- /**
-  * Create an instance of RouteFiltersChange given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteFiltersChange
-  * @throws IOException if the JSON string is invalid with respect to RouteFiltersChange
-  */
+  /**
+   * Create an instance of RouteFiltersChange given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteFiltersChange
+   * @throws IOException if the JSON string is invalid with respect to RouteFiltersChange
+   */
   public static RouteFiltersChange fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteFiltersChange.class);
   }
 
- /**
-  * Convert an instance of RouteFiltersChange to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteFiltersChange to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PrecisionTimePackageRequest;
 import com.equinix.sdk.fabricv4.model.TimeServicePriceConnection;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,7 +48,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Time Service Product configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TimeServicePrice {
   /**
    * Precision Time Service Type refers to the corresponding Protocol.
@@ -93,85 +95,84 @@ public class TimeServicePrice {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nullable
   private PrecisionTimePackageRequest _package;
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
   private TimeServicePriceConnection connection;
 
   public TimeServicePrice() {
   }
 
-  public TimeServicePrice type(TypeEnum type) {
-    
+  public TimeServicePrice type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service Type refers to the corresponding Protocol.
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public TimeServicePrice _package(PrecisionTimePackageRequest _package) {
-    
+  public TimeServicePrice _package(@javax.annotation.Nullable PrecisionTimePackageRequest _package) {
     this._package = _package;
     return this;
   }
 
-   /**
+  /**
    * Get _package
    * @return _package
-  **/
+   */
   @javax.annotation.Nullable
-
   public PrecisionTimePackageRequest getPackage() {
     return _package;
   }
 
-
-  public void setPackage(PrecisionTimePackageRequest _package) {
+  public void setPackage(@javax.annotation.Nullable PrecisionTimePackageRequest _package) {
     this._package = _package;
   }
 
 
-  public TimeServicePrice connection(TimeServicePriceConnection connection) {
-    
+  public TimeServicePrice connection(@javax.annotation.Nullable TimeServicePriceConnection connection) {
     this.connection = connection;
     return this;
   }
 
-   /**
+  /**
    * Get connection
    * @return connection
-  **/
+   */
   @javax.annotation.Nullable
-
   public TimeServicePriceConnection getConnection() {
     return connection;
   }
 
-
-  public void setConnection(TimeServicePriceConnection connection) {
+  public void setConnection(@javax.annotation.Nullable TimeServicePriceConnection connection) {
     this.connection = connection;
   }
 
@@ -279,28 +280,33 @@ public class TimeServicePrice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to TimeServicePrice
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!TimeServicePrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TimeServicePrice
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!TimeServicePrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in TimeServicePrice is not found in the empty JSON string", TimeServicePrice.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
-        PrecisionTimePackageRequest.validateJsonObject(jsonObj.getAsJsonObject("package"));
+        PrecisionTimePackageRequest.validateJsonElement(jsonObj.get("package"));
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        TimeServicePriceConnection.validateJsonObject(jsonObj.getAsJsonObject("connection"));
+        TimeServicePriceConnection.validateJsonElement(jsonObj.get("connection"));
       }
   }
 
@@ -332,7 +338,12 @@ public class TimeServicePrice {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -341,8 +352,9 @@ public class TimeServicePrice {
 
            @Override
            public TimeServicePrice read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              TimeServicePrice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -370,22 +382,22 @@ public class TimeServicePrice {
     }
   }
 
- /**
-  * Create an instance of TimeServicePrice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TimeServicePrice
-  * @throws IOException if the JSON string is invalid with respect to TimeServicePrice
-  */
+  /**
+   * Create an instance of TimeServicePrice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TimeServicePrice
+   * @throws IOException if the JSON string is invalid with respect to TimeServicePrice
+   */
   public static TimeServicePrice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TimeServicePrice.class);
   }
 
- /**
-  * Convert an instance of TimeServicePrice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TimeServicePrice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

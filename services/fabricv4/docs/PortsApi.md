@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updatePortByUuid**](PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update by UUID |
 
 
-<a name="addToLag"></a>
+<a id="addToLag"></a>
 # **addToLag**
 > AllPhysicalPortsResponse addToLag(portId, bulkPhysicalPort)
 
@@ -87,7 +87,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createBulkPort"></a>
+<a id="createBulkPort"></a>
 # **createBulkPort**
 > BulkPort createBulkPort(bulkPortRequest)
 
@@ -154,7 +154,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Successful operation for COLO Bulk Port |  -  |
 
-<a name="createPort"></a>
+<a id="createPort"></a>
 # **createPort**
 > Port createPort(portRequest)
 
@@ -223,7 +223,7 @@ public class Example {
 | **400** | Bad request |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="deletePort"></a>
+<a id="deletePort"></a>
 # **deletePort**
 > Port deletePort(portId)
 
@@ -293,7 +293,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
-<a name="getPortByUuid"></a>
+<a id="getPortByUuid"></a>
 # **getPortByUuid**
 > Port getPortByUuid(portId)
 
@@ -363,7 +363,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getPorts"></a>
+<a id="getPorts"></a>
 # **getPorts**
 > AllPortsResponse getPorts(name)
 
@@ -431,7 +431,7 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="getVlans"></a>
+<a id="getVlans"></a>
 # **getVlans**
 > LinkProtocolGetResponse getVlans(portUuid)
 
@@ -500,7 +500,7 @@ public class Example {
 | **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="searchPorts"></a>
+<a id="searchPorts"></a>
 # **searchPorts**
 > AllPortsResponse searchPorts(portV4SearchRequest)
 
@@ -570,7 +570,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | Not Found |  -  |
 
-<a name="updatePortByUuid"></a>
+<a id="updatePortByUuid"></a>
 # **updatePortByUuid**
 > AllPortsResponse updatePortByUuid(portId, portChangeOperation)
 

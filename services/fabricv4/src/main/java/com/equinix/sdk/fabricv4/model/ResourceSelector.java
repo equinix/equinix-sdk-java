@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,17 +48,17 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * ResourceSelector
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ResourceSelector {
   public static final String SERIALIZED_NAME_INCLUDE = "include";
   @SerializedName(SERIALIZED_NAME_INCLUDE)
+  @javax.annotation.Nullable
   private List<String> include = new ArrayList<>();
 
   public ResourceSelector() {
   }
 
-  public ResourceSelector include(List<String> include) {
-    
+  public ResourceSelector include(@javax.annotation.Nullable List<String> include) {
     this.include = include;
     return this;
   }
@@ -69,18 +71,16 @@ public class ResourceSelector {
     return this;
   }
 
-   /**
+  /**
    * ### Supported metric names to use on filters with property /subject:   * &#x60;*&#x60; - all events or metrics   * &#x60;*_/ports/&lt;uuid&gt;&#x60; - port metrics   * &#x60;*_/connections/&lt;uuid&gt;&#x60; - connection metrics   * &#x60;*_/metros/&lt;metroCode&gt;&#x60; - metro latency metrics 
    * @return include
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getInclude() {
     return include;
   }
 
-
-  public void setInclude(List<String> include) {
+  public void setInclude(@javax.annotation.Nullable List<String> include) {
     this.include = include;
   }
 
@@ -182,20 +182,21 @@ public class ResourceSelector {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ResourceSelector
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ResourceSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ResourceSelector
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ResourceSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSelector is not found in the empty JSON string", ResourceSelector.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
-      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonArray()) {
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }
@@ -228,7 +229,12 @@ public class ResourceSelector {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -237,8 +243,9 @@ public class ResourceSelector {
 
            @Override
            public ResourceSelector read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ResourceSelector instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -266,22 +273,22 @@ public class ResourceSelector {
     }
   }
 
- /**
-  * Create an instance of ResourceSelector given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ResourceSelector
-  * @throws IOException if the JSON string is invalid with respect to ResourceSelector
-  */
+  /**
+   * Create an instance of ResourceSelector given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ResourceSelector
+   * @throws IOException if the JSON string is invalid with respect to ResourceSelector
+   */
   public static ResourceSelector fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ResourceSelector.class);
   }
 
- /**
-  * Convert an instance of ResourceSelector to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ResourceSelector to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -16,15 +16,15 @@
 
 | Name | Value |
 |---- | -----|
-| TYPE | &quot;/type&quot; |
-| UUID | &quot;/uuid&quot; |
-| NAME | &quot;/name&quot; |
-| PROJECT_PROJECTID | &quot;/project/projectId&quot; |
-| STATE | &quot;/state&quot; |
-| NOTMATCHEDRULEACTION | &quot;/notMatchedRuleAction&quot; |
-| CONNECTIONSCOUNT | &quot;/connectionsCount&quot; |
-| CHANGELOG_CREATEDDATETIME | &quot;/changeLog/createdDateTime&quot; |
-| CHANGELOG_UPDATEDDATETIME | &quot;/changeLog/updatedDateTime&quot; |
+| _TYPE | &quot;/type&quot; |
+| _UUID | &quot;/uuid&quot; |
+| _NAME | &quot;/name&quot; |
+| _PROJECT_PROJECT_ID | &quot;/project/projectId&quot; |
+| _STATE | &quot;/state&quot; |
+| _NOT_MATCHED_RULE_ACTION | &quot;/notMatchedRuleAction&quot; |
+| _CONNECTIONS_COUNT | &quot;/connectionsCount&quot; |
+| _CHANGE_LOG_CREATED_DATE_TIME | &quot;/changeLog/createdDateTime&quot; |
+| _CHANGE_LOG_UPDATED_DATE_TIME | &quot;/changeLog/updatedDateTime&quot; |
 
 
 

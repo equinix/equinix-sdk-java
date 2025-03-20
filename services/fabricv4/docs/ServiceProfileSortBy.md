@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `NAME` (value: `"/name"`)
+* `_NAME` (value: `"/name"`)
 
-* `STATE` (value: `"/state"`)
+* `_STATE` (value: `"/state"`)
 
-* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
+* `_CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
 
-* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+* `_CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
 
 
 

@@ -19,7 +19,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**validateRoutingProtocol**](RoutingProtocolsApi.md#validateRoutingProtocol) | **POST** /fabric/v4/routers/{routerId}/validate | Validate Subnet |
 
 
-<a name="createConnectionRoutingProtocol"></a>
+<a id="createConnectionRoutingProtocol"></a>
 # **createConnectionRoutingProtocol**
 > RoutingProtocolData createConnectionRoutingProtocol(connectionId, routingProtocolBase)
 
@@ -94,7 +94,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createConnectionRoutingProtocolsInBulk"></a>
+<a id="createConnectionRoutingProtocolsInBulk"></a>
 # **createConnectionRoutingProtocolsInBulk**
 > GetResponse createConnectionRoutingProtocolsInBulk(connectionId, connectionRoutingProtocolPostRequest)
 
@@ -169,7 +169,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteConnectionRoutingProtocolByUuid"></a>
+<a id="deleteConnectionRoutingProtocolByUuid"></a>
 # **deleteConnectionRoutingProtocolByUuid**
 > RoutingProtocolData deleteConnectionRoutingProtocolByUuid(routingProtocolId, connectionId)
 
@@ -244,7 +244,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocolAllBgpActions"></a>
+<a id="getConnectionRoutingProtocolAllBgpActions"></a>
 # **getConnectionRoutingProtocolAllBgpActions**
 > BGPActionsBulkData getConnectionRoutingProtocolAllBgpActions(routingProtocolId, connectionId, offset, limit)
 
@@ -323,7 +323,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocolByUuid"></a>
+<a id="getConnectionRoutingProtocolByUuid"></a>
 # **getConnectionRoutingProtocolByUuid**
 > RoutingProtocolData getConnectionRoutingProtocolByUuid(routingProtocolId, connectionId)
 
@@ -398,7 +398,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocols"></a>
+<a id="getConnectionRoutingProtocols"></a>
 # **getConnectionRoutingProtocols**
 > GetResponse getConnectionRoutingProtocols(connectionId, offset, limit)
 
@@ -474,7 +474,7 @@ public class Example {
 | **404** | Connection ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocolsBgpActionByUuid"></a>
+<a id="getConnectionRoutingProtocolsBgpActionByUuid"></a>
 # **getConnectionRoutingProtocolsBgpActionByUuid**
 > BGPActionData getConnectionRoutingProtocolsBgpActionByUuid(connectionId, routingProtocolId, actionId)
 
@@ -550,7 +550,7 @@ public class Example {
 | **404** | Connection ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocolsChangeByUuid"></a>
+<a id="getConnectionRoutingProtocolsChangeByUuid"></a>
 # **getConnectionRoutingProtocolsChangeByUuid**
 > RoutingProtocolChangeData getConnectionRoutingProtocolsChangeByUuid(connectionId, routingProtocolId, changeId)
 
@@ -626,7 +626,7 @@ public class Example {
 | **404** | Connection ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRoutingProtocolsChanges"></a>
+<a id="getConnectionRoutingProtocolsChanges"></a>
 # **getConnectionRoutingProtocolsChanges**
 > RoutingProtocolChangeDataResponse getConnectionRoutingProtocolsChanges(connectionId, routingProtocolId, offset, limit)
 
@@ -704,7 +704,7 @@ public class Example {
 | **404** | Connection ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="patchConnectionRoutingProtocolByUuid"></a>
+<a id="patchConnectionRoutingProtocolByUuid"></a>
 # **patchConnectionRoutingProtocolByUuid**
 > RoutingProtocolData patchConnectionRoutingProtocolByUuid(routingProtocolId, connectionId, connectionChangeOperation)
 
@@ -781,7 +781,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="postConnectionRoutingProtocolBgpActionByUuid"></a>
+<a id="postConnectionRoutingProtocolBgpActionByUuid"></a>
 # **postConnectionRoutingProtocolBgpActionByUuid**
 > BGPActionData postConnectionRoutingProtocolBgpActionByUuid(routingProtocolId, connectionId, bgPActionRequest)
 
@@ -858,7 +858,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="replaceConnectionRoutingProtocolByUuid"></a>
+<a id="replaceConnectionRoutingProtocolByUuid"></a>
 # **replaceConnectionRoutingProtocolByUuid**
 > RoutingProtocolData replaceConnectionRoutingProtocolByUuid(routingProtocolId, connectionId, routingProtocolBase)
 
@@ -935,7 +935,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="validateRoutingProtocol"></a>
+<a id="validateRoutingProtocol"></a>
 # **validateRoutingProtocol**
 > ValidateSubnetResponse validateRoutingProtocol(routerId, validateRequest)
 

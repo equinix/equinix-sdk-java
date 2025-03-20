@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,11 +27,11 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(PortSearchFieldName.Adapter.class)
 public enum PortSearchFieldName {
   
-  PROJECT_PROJECTID("/project/projectId"),
+  _PROJECT_PROJECT_ID("/project/projectId"),
   
-  SETTINGS_PRODUCTCODE("/settings/productCode"),
+  _SETTINGS_PRODUCT_CODE("/settings/productCode"),
   
-  STATE("/state");
+  _STATE("/state");
 
   private String value;
 
@@ -68,6 +68,11 @@ public enum PortSearchFieldName {
       String value = jsonReader.nextString();
       return PortSearchFieldName.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    PortSearchFieldName.fromValue(value);
   }
 }
 

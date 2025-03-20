@@ -19,8 +19,8 @@ This API provides service-level traffic metrics so that you can view access and 
 
 | Name | Value |
 |---- | -----|
-| ASIDE | &quot;aSide&quot; |
-| ZSIDE | &quot;zSide&quot; |
+| A_SIDE | &quot;aSide&quot; |
+| Z_SIDE | &quot;zSide&quot; |
 
 
 

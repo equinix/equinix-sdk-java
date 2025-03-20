@@ -18,9 +18,9 @@ Current state of latest Routing Protocol change
 
 | Name | Value |
 |---- | -----|
-| UPDATE | &quot;ROUTING_PROTOCOL_UPDATE&quot; |
-| CREATION | &quot;ROUTING_PROTOCOL_CREATION&quot; |
-| DELETION | &quot;ROUTING_PROTOCOL_DELETION&quot; |
+| ROUTING_PROTOCOL_UPDATE | &quot;ROUTING_PROTOCOL_UPDATE&quot; |
+| ROUTING_PROTOCOL_CREATION | &quot;ROUTING_PROTOCOL_CREATION&quot; |
+| ROUTING_PROTOCOL_DELETION | &quot;ROUTING_PROTOCOL_DELETION&quot; |
 
 
 

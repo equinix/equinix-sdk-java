@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,85 +46,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Authentication Key Support and Customization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class AuthenticationKey {
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
+  @javax.annotation.Nullable
   private Boolean required = false;
 
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
+  @javax.annotation.Nullable
   private String label;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public AuthenticationKey() {
   }
 
-  public AuthenticationKey required(Boolean required) {
-    
+  public AuthenticationKey required(@javax.annotation.Nullable Boolean required) {
     this.required = required;
     return this;
   }
 
-   /**
+  /**
    * Get required
    * @return required
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getRequired() {
     return required;
   }
 
-
-  public void setRequired(Boolean required) {
+  public void setRequired(@javax.annotation.Nullable Boolean required) {
     this.required = required;
   }
 
 
-  public AuthenticationKey label(String label) {
-    
+  public AuthenticationKey label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
 
-   /**
+  /**
    * Get label
    * @return label
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getLabel() {
     return label;
   }
 
-
-  public void setLabel(String label) {
+  public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
 
 
-  public AuthenticationKey description(String description) {
-    
+  public AuthenticationKey description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
@@ -230,18 +226,19 @@ public class AuthenticationKey {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AuthenticationKey
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!AuthenticationKey.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AuthenticationKey
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AuthenticationKey.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in AuthenticationKey is not found in the empty JSON string", AuthenticationKey.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
       }
@@ -278,7 +275,12 @@ public class AuthenticationKey {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -287,8 +289,9 @@ public class AuthenticationKey {
 
            @Override
            public AuthenticationKey read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              AuthenticationKey instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -316,22 +319,22 @@ public class AuthenticationKey {
     }
   }
 
- /**
-  * Create an instance of AuthenticationKey given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AuthenticationKey
-  * @throws IOException if the JSON string is invalid with respect to AuthenticationKey
-  */
+  /**
+   * Create an instance of AuthenticationKey given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AuthenticationKey
+   * @throws IOException if the JSON string is invalid with respect to AuthenticationKey
+   */
   public static AuthenticationKey fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AuthenticationKey.class);
   }
 
- /**
-  * Convert an instance of AuthenticationKey to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AuthenticationKey to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -56,11 +56,11 @@ Port specification
 
 | Name | Value |
 |---- | -----|
-| _1000BASE_LX | &quot;1000BASE_LX&quot; |
-| _10GBASE_LR | &quot;10GBASE_LR&quot; |
-| _100GBASE_LR4 | &quot;100GBASE_LR4&quot; |
-| _10GBASE_ER | &quot;10GBASE_ER&quot; |
-| _1000BASE_SX | &quot;1000BASE_SX&quot; |
+| _1000_BASE_LX | &quot;1000BASE_LX&quot; |
+| _10_GBASE_LR | &quot;10GBASE_LR&quot; |
+| _100_GBASE_LR4 | &quot;100GBASE_LR4&quot; |
+| _10_GBASE_ER | &quot;10GBASE_ER&quot; |
+| _1000_BASE_SX | &quot;1000BASE_SX&quot; |
 
 
 

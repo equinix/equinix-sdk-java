@@ -31,7 +31,7 @@ Configuration for dot1q to qinq translation support
 | Name | Value |
 |---- | -----|
 | QINQ | &quot;QINQ&quot; |
-| DOT1Q | &quot;DOT1Q&quot; |
+| DOT1_Q | &quot;DOT1Q&quot; |
 | UNTAGGED | &quot;UNTAGGED&quot; |
 
 

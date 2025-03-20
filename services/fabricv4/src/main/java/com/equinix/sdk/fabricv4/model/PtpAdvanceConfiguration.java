@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,7 +46,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * PTP Advanced Configuration.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PtpAdvanceConfiguration {
   /**
    * Time Scale value, ARB denotes Arbitrary and PTP denotes Precision Time Protocol.
@@ -91,22 +93,31 @@ public class PtpAdvanceConfiguration {
         return TimeScaleEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TimeScaleEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TIME_SCALE = "timeScale";
   @SerializedName(SERIALIZED_NAME_TIME_SCALE)
+  @javax.annotation.Nullable
   private TimeScaleEnum timeScale;
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private Integer domain;
 
   public static final String SERIALIZED_NAME_PRIORITY1 = "priority1";
   @SerializedName(SERIALIZED_NAME_PRIORITY1)
+  @javax.annotation.Nullable
   private Integer priority1;
 
   public static final String SERIALIZED_NAME_PRIORITY2 = "priority2";
   @SerializedName(SERIALIZED_NAME_PRIORITY2)
+  @javax.annotation.Nullable
   private Integer priority2;
 
   /**
@@ -160,10 +171,16 @@ public class PtpAdvanceConfiguration {
         return LogAnnounceIntervalEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      LogAnnounceIntervalEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_LOG_ANNOUNCE_INTERVAL = "logAnnounceInterval";
   @SerializedName(SERIALIZED_NAME_LOG_ANNOUNCE_INTERVAL)
+  @javax.annotation.Nullable
   private LogAnnounceIntervalEnum logAnnounceInterval;
 
   /**
@@ -221,10 +238,16 @@ public class PtpAdvanceConfiguration {
         return LogSyncIntervalEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      LogSyncIntervalEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_LOG_SYNC_INTERVAL = "logSyncInterval";
   @SerializedName(SERIALIZED_NAME_LOG_SYNC_INTERVAL)
+  @javax.annotation.Nullable
   private LogSyncIntervalEnum logSyncInterval;
 
   /**
@@ -282,10 +305,16 @@ public class PtpAdvanceConfiguration {
         return LogDelayReqIntervalEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      LogDelayReqIntervalEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_LOG_DELAY_REQ_INTERVAL = "logDelayReqInterval";
   @SerializedName(SERIALIZED_NAME_LOG_DELAY_REQ_INTERVAL)
+  @javax.annotation.Nullable
   private LogDelayReqIntervalEnum logDelayReqInterval;
 
   /**
@@ -335,221 +364,201 @@ public class PtpAdvanceConfiguration {
         return TransportModeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TransportModeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TRANSPORT_MODE = "transportMode";
   @SerializedName(SERIALIZED_NAME_TRANSPORT_MODE)
+  @javax.annotation.Nullable
   private TransportModeEnum transportMode;
 
   public static final String SERIALIZED_NAME_GRANT_TIME = "grantTime";
   @SerializedName(SERIALIZED_NAME_GRANT_TIME)
+  @javax.annotation.Nullable
   private Integer grantTime;
 
   public PtpAdvanceConfiguration() {
   }
 
-  public PtpAdvanceConfiguration timeScale(TimeScaleEnum timeScale) {
-    
+  public PtpAdvanceConfiguration timeScale(@javax.annotation.Nullable TimeScaleEnum timeScale) {
     this.timeScale = timeScale;
     return this;
   }
 
-   /**
+  /**
    * Time Scale value, ARB denotes Arbitrary and PTP denotes Precision Time Protocol.
    * @return timeScale
-  **/
+   */
   @javax.annotation.Nullable
-
   public TimeScaleEnum getTimeScale() {
     return timeScale;
   }
 
-
-  public void setTimeScale(TimeScaleEnum timeScale) {
+  public void setTimeScale(@javax.annotation.Nullable TimeScaleEnum timeScale) {
     this.timeScale = timeScale;
   }
 
 
-  public PtpAdvanceConfiguration domain(Integer domain) {
-    
+  public PtpAdvanceConfiguration domain(@javax.annotation.Nullable Integer domain) {
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * The PTP domain value.
    * minimum: 0
    * maximum: 127
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getDomain() {
     return domain;
   }
 
-
-  public void setDomain(Integer domain) {
+  public void setDomain(@javax.annotation.Nullable Integer domain) {
     this.domain = domain;
   }
 
 
-  public PtpAdvanceConfiguration priority1(Integer priority1) {
-    
+  public PtpAdvanceConfiguration priority1(@javax.annotation.Nullable Integer priority1) {
     this.priority1 = priority1;
     return this;
   }
 
-   /**
+  /**
    * The priority1 value determines the best primary clock, Lower value indicates higher priority.
    * minimum: 0
    * maximum: 248
    * @return priority1
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getPriority1() {
     return priority1;
   }
 
-
-  public void setPriority1(Integer priority1) {
+  public void setPriority1(@javax.annotation.Nullable Integer priority1) {
     this.priority1 = priority1;
   }
 
 
-  public PtpAdvanceConfiguration priority2(Integer priority2) {
-    
+  public PtpAdvanceConfiguration priority2(@javax.annotation.Nullable Integer priority2) {
     this.priority2 = priority2;
     return this;
   }
 
-   /**
+  /**
    * The priority2 value differentiates and prioritizes the primary clock to avoid confusion when priority1-value is the same for different primary clocks in a network.
    * minimum: 0
    * maximum: 248
    * @return priority2
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getPriority2() {
     return priority2;
   }
 
-
-  public void setPriority2(Integer priority2) {
+  public void setPriority2(@javax.annotation.Nullable Integer priority2) {
     this.priority2 = priority2;
   }
 
 
-  public PtpAdvanceConfiguration logAnnounceInterval(LogAnnounceIntervalEnum logAnnounceInterval) {
-    
+  public PtpAdvanceConfiguration logAnnounceInterval(@javax.annotation.Nullable LogAnnounceIntervalEnum logAnnounceInterval) {
     this.logAnnounceInterval = logAnnounceInterval;
     return this;
   }
 
-   /**
+  /**
    * Logarithmic value that controls the rate of PTP Announce packets from the PTP time server. Default is 1 (1 packet every 2 seconds), Unit packets/second.
    * @return logAnnounceInterval
-  **/
+   */
   @javax.annotation.Nullable
-
   public LogAnnounceIntervalEnum getLogAnnounceInterval() {
     return logAnnounceInterval;
   }
 
-
-  public void setLogAnnounceInterval(LogAnnounceIntervalEnum logAnnounceInterval) {
+  public void setLogAnnounceInterval(@javax.annotation.Nullable LogAnnounceIntervalEnum logAnnounceInterval) {
     this.logAnnounceInterval = logAnnounceInterval;
   }
 
 
-  public PtpAdvanceConfiguration logSyncInterval(LogSyncIntervalEnum logSyncInterval) {
-    
+  public PtpAdvanceConfiguration logSyncInterval(@javax.annotation.Nullable LogSyncIntervalEnum logSyncInterval) {
     this.logSyncInterval = logSyncInterval;
     return this;
   }
 
-   /**
+  /**
    * Logarithmic value that controls the rate of PTP Sync packets. Default is -4 (16 packets per second), Unit packets/second..
    * @return logSyncInterval
-  **/
+   */
   @javax.annotation.Nullable
-
   public LogSyncIntervalEnum getLogSyncInterval() {
     return logSyncInterval;
   }
 
-
-  public void setLogSyncInterval(LogSyncIntervalEnum logSyncInterval) {
+  public void setLogSyncInterval(@javax.annotation.Nullable LogSyncIntervalEnum logSyncInterval) {
     this.logSyncInterval = logSyncInterval;
   }
 
 
-  public PtpAdvanceConfiguration logDelayReqInterval(LogDelayReqIntervalEnum logDelayReqInterval) {
-    
+  public PtpAdvanceConfiguration logDelayReqInterval(@javax.annotation.Nullable LogDelayReqIntervalEnum logDelayReqInterval) {
     this.logDelayReqInterval = logDelayReqInterval;
     return this;
   }
 
-   /**
+  /**
    * Logarithmic value that controls the rate of PTP DelayReq packets. Default is -4 (16 packets per second), Unit packets/second..
    * @return logDelayReqInterval
-  **/
+   */
   @javax.annotation.Nullable
-
   public LogDelayReqIntervalEnum getLogDelayReqInterval() {
     return logDelayReqInterval;
   }
 
-
-  public void setLogDelayReqInterval(LogDelayReqIntervalEnum logDelayReqInterval) {
+  public void setLogDelayReqInterval(@javax.annotation.Nullable LogDelayReqIntervalEnum logDelayReqInterval) {
     this.logDelayReqInterval = logDelayReqInterval;
   }
 
 
-  public PtpAdvanceConfiguration transportMode(TransportModeEnum transportMode) {
-    
+  public PtpAdvanceConfiguration transportMode(@javax.annotation.Nullable TransportModeEnum transportMode) {
     this.transportMode = transportMode;
     return this;
   }
 
-   /**
+  /**
    * Get transportMode
    * @return transportMode
-  **/
+   */
   @javax.annotation.Nullable
-
   public TransportModeEnum getTransportMode() {
     return transportMode;
   }
 
-
-  public void setTransportMode(TransportModeEnum transportMode) {
+  public void setTransportMode(@javax.annotation.Nullable TransportModeEnum transportMode) {
     this.transportMode = transportMode;
   }
 
 
-  public PtpAdvanceConfiguration grantTime(Integer grantTime) {
-    
+  public PtpAdvanceConfiguration grantTime(@javax.annotation.Nullable Integer grantTime) {
     this.grantTime = grantTime;
     return this;
   }
 
-   /**
+  /**
    * Unicast Grant Time in seconds. For Multicast and Hybrid transport modes, grant time defaults to 300 seconds. For Unicast mode, grant time can be between 30 to 7200.
    * minimum: 30
    * maximum: 7200
    * @return grantTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getGrantTime() {
     return grantTime;
   }
 
-
-  public void setGrantTime(Integer grantTime) {
+  public void setGrantTime(@javax.annotation.Nullable Integer grantTime) {
     this.grantTime = grantTime;
   }
 
@@ -675,23 +684,44 @@ public class PtpAdvanceConfiguration {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PtpAdvanceConfiguration
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PtpAdvanceConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PtpAdvanceConfiguration
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PtpAdvanceConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PtpAdvanceConfiguration is not found in the empty JSON string", PtpAdvanceConfiguration.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("timeScale") != null && !jsonObj.get("timeScale").isJsonNull()) && !jsonObj.get("timeScale").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `timeScale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeScale").toString()));
       }
+      // validate the optional field `timeScale`
+      if (jsonObj.get("timeScale") != null && !jsonObj.get("timeScale").isJsonNull()) {
+        TimeScaleEnum.validateJsonElement(jsonObj.get("timeScale"));
+      }
+      // validate the optional field `logAnnounceInterval`
+      if (jsonObj.get("logAnnounceInterval") != null && !jsonObj.get("logAnnounceInterval").isJsonNull()) {
+        LogAnnounceIntervalEnum.validateJsonElement(jsonObj.get("logAnnounceInterval"));
+      }
+      // validate the optional field `logSyncInterval`
+      if (jsonObj.get("logSyncInterval") != null && !jsonObj.get("logSyncInterval").isJsonNull()) {
+        LogSyncIntervalEnum.validateJsonElement(jsonObj.get("logSyncInterval"));
+      }
+      // validate the optional field `logDelayReqInterval`
+      if (jsonObj.get("logDelayReqInterval") != null && !jsonObj.get("logDelayReqInterval").isJsonNull()) {
+        LogDelayReqIntervalEnum.validateJsonElement(jsonObj.get("logDelayReqInterval"));
+      }
       if ((jsonObj.get("transportMode") != null && !jsonObj.get("transportMode").isJsonNull()) && !jsonObj.get("transportMode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `transportMode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transportMode").toString()));
+      }
+      // validate the optional field `transportMode`
+      if (jsonObj.get("transportMode") != null && !jsonObj.get("transportMode").isJsonNull()) {
+        TransportModeEnum.validateJsonElement(jsonObj.get("transportMode"));
       }
   }
 
@@ -723,7 +753,12 @@ public class PtpAdvanceConfiguration {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -732,8 +767,9 @@ public class PtpAdvanceConfiguration {
 
            @Override
            public PtpAdvanceConfiguration read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PtpAdvanceConfiguration instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -761,22 +797,22 @@ public class PtpAdvanceConfiguration {
     }
   }
 
- /**
-  * Create an instance of PtpAdvanceConfiguration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PtpAdvanceConfiguration
-  * @throws IOException if the JSON string is invalid with respect to PtpAdvanceConfiguration
-  */
+  /**
+   * Create an instance of PtpAdvanceConfiguration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PtpAdvanceConfiguration
+   * @throws IOException if the JSON string is invalid with respect to PtpAdvanceConfiguration
+   */
   public static PtpAdvanceConfiguration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PtpAdvanceConfiguration.class);
   }
 
- /**
-  * Convert an instance of PtpAdvanceConfiguration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PtpAdvanceConfiguration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

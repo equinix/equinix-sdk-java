@@ -5,27 +5,27 @@
 ## Enum
 
 
-* `NAME` (value: `"/name"`)
+* `_NAME` (value: `"/name"`)
 
-* `UUID` (value: `"/uuid"`)
+* `_UUID` (value: `"/uuid"`)
 
-* `SCOPE` (value: `"/scope"`)
+* `_SCOPE` (value: `"/scope"`)
 
-* `TYPE` (value: `"/type"`)
+* `_TYPE` (value: `"/type"`)
 
-* `OPERATION_EQUINIXSTATUS` (value: `"/operation/equinixStatus"`)
+* `_OPERATION_EQUINIX_STATUS` (value: `"/operation/equinixStatus"`)
 
-* `LOCATION_REGION` (value: `"/location/region"`)
+* `_LOCATION_REGION` (value: `"/location/region"`)
 
-* `PROJECT_PROJECTID` (value: `"/project/projectId"`)
+* `_PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
 
-* `ACCOUNT_GLOBALCUSTID` (value: `"/account/globalCustId"`)
+* `_ACCOUNT_GLOBAL_CUST_ID` (value: `"/account/globalCustId"`)
 
-* `ACCOUNT_ORGID` (value: `"/account/orgId"`)
+* `_ACCOUNT_ORG_ID` (value: `"/account/orgId"`)
 
-* `DELETEDDATE` (value: `"/deletedDate"`)
+* `_DELETED_DATE` (value: `"/deletedDate"`)
 
-* `STAR` (value: `"/_*"`)
+* `u` (value: `"/_*"`)
 
 
 

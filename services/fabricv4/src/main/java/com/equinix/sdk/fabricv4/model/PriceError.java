@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PriceErrorAdditionalInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,18 +49,18 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Error with details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PriceError {
   /**
    * Gets or Sets errorCode
    */
   @JsonAdapter(ErrorCodeEnum.Adapter.class)
   public enum ErrorCodeEnum {
-    _3038010("EQ-3038010"),
+    EQ_3038010("EQ-3038010"),
     
-    _3038022("EQ-3038022"),
+    EQ_3038022("EQ-3038022"),
     
-    _3038030("EQ-3038030");
+    EQ_3038030("EQ-3038030");
 
     private String value;
 
@@ -96,10 +98,16 @@ public class PriceError {
         return ErrorCodeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ErrorCodeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "errorCode";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nonnull
   protected ErrorCodeEnum errorCode;
 
   /**
@@ -149,143 +157,138 @@ public class PriceError {
         return ErrorMessageEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ErrorMessageEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nonnull
   private ErrorMessageEnum errorMessage;
 
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlationId";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
+  @javax.annotation.Nullable
   private String correlationId;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
+  @javax.annotation.Nullable
   private String details;
 
   public static final String SERIALIZED_NAME_HELP = "help";
   @SerializedName(SERIALIZED_NAME_HELP)
+  @javax.annotation.Nullable
   private String help;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<PriceErrorAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public PriceError() {
+
   }
 
-  public PriceError errorCode(ErrorCodeEnum errorCode) {
-    
+  public PriceError errorCode(@javax.annotation.Nonnull ErrorCodeEnum errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * Get errorCode
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ErrorCodeEnum getErrorCode() {
     return errorCode;
   }
 
-
-  public void setErrorCode(ErrorCodeEnum errorCode) {
+  public void setErrorCode(@javax.annotation.Nonnull ErrorCodeEnum errorCode) {
     this.errorCode = errorCode;
   }
 
 
-  public PriceError errorMessage(ErrorMessageEnum errorMessage) {
-    
+  public PriceError errorMessage(@javax.annotation.Nonnull ErrorMessageEnum errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * Get errorMessage
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ErrorMessageEnum getErrorMessage() {
     return errorMessage;
   }
 
-
-  public void setErrorMessage(ErrorMessageEnum errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nonnull ErrorMessageEnum errorMessage) {
     this.errorMessage = errorMessage;
   }
 
 
-  public PriceError correlationId(String correlationId) {
-    
+  public PriceError correlationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
     return this;
   }
 
-   /**
+  /**
    * Get correlationId
    * @return correlationId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCorrelationId() {
     return correlationId;
   }
 
-
-  public void setCorrelationId(String correlationId) {
+  public void setCorrelationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
   }
 
 
-  public PriceError details(String details) {
-    
+  public PriceError details(@javax.annotation.Nullable String details) {
     this.details = details;
     return this;
   }
 
-   /**
+  /**
    * Get details
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDetails() {
     return details;
   }
 
-
-  public void setDetails(String details) {
+  public void setDetails(@javax.annotation.Nullable String details) {
     this.details = details;
   }
 
 
-  public PriceError help(String help) {
-    
+  public PriceError help(@javax.annotation.Nullable String help) {
     this.help = help;
     return this;
   }
 
-   /**
+  /**
    * Get help
    * @return help
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHelp() {
     return help;
   }
 
-
-  public void setHelp(String help) {
+  public void setHelp(@javax.annotation.Nullable String help) {
     this.help = help;
   }
 
 
-  public PriceError additionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
-    
+  public PriceError additionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -298,18 +301,16 @@ public class PriceError {
     return this;
   }
 
-   /**
+  /**
    * Get additionalInfo
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PriceErrorAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
@@ -428,23 +429,23 @@ public class PriceError {
     openapiRequiredFields.add("errorMessage");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PriceError
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PriceError.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PriceError
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PriceError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PriceError is not found in the empty JSON string", PriceError.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PriceError.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
   }
@@ -477,7 +478,12 @@ public class PriceError {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -486,8 +492,9 @@ public class PriceError {
 
            @Override
            public PriceError read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PriceError instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -515,22 +522,22 @@ public class PriceError {
     }
   }
 
- /**
-  * Create an instance of PriceError given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PriceError
-  * @throws IOException if the JSON string is invalid with respect to PriceError
-  */
+  /**
+   * Create an instance of PriceError given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PriceError
+   * @throws IOException if the JSON string is invalid with respect to PriceError
+   */
   public static PriceError fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PriceError.class);
   }
 
- /**
-  * Convert an instance of PriceError to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PriceError to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

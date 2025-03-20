@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.BGPConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.BGPConnectionIpv6;
 import com.equinix.sdk.fabricv4.model.RoutingProtocolBFD;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,7 +49,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * RoutingProtocolBGPType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RoutingProtocolBGPType {
   /**
    * Routing protocol type
@@ -92,241 +94,228 @@ public class RoutingProtocolBGPType {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_BGP_IPV4 = "bgpIpv4";
   @SerializedName(SERIALIZED_NAME_BGP_IPV4)
+  @javax.annotation.Nullable
   private BGPConnectionIpv4 bgpIpv4;
 
   public static final String SERIALIZED_NAME_BGP_IPV6 = "bgpIpv6";
   @SerializedName(SERIALIZED_NAME_BGP_IPV6)
+  @javax.annotation.Nullable
   private BGPConnectionIpv6 bgpIpv6;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ASN = "customerAsn";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ASN)
+  @javax.annotation.Nullable
   private Long customerAsn;
 
   public static final String SERIALIZED_NAME_EQUINIX_ASN = "equinixAsn";
   @SerializedName(SERIALIZED_NAME_EQUINIX_ASN)
+  @javax.annotation.Nullable
   private Long equinixAsn;
 
   public static final String SERIALIZED_NAME_BGP_AUTH_KEY = "bgpAuthKey";
   @SerializedName(SERIALIZED_NAME_BGP_AUTH_KEY)
+  @javax.annotation.Nullable
   private String bgpAuthKey;
 
   public static final String SERIALIZED_NAME_AS_OVERRIDE_ENABLED = "asOverrideEnabled";
   @SerializedName(SERIALIZED_NAME_AS_OVERRIDE_ENABLED)
+  @javax.annotation.Nullable
   private Boolean asOverrideEnabled;
 
   public static final String SERIALIZED_NAME_BFD = "bfd";
   @SerializedName(SERIALIZED_NAME_BFD)
+  @javax.annotation.Nullable
   private RoutingProtocolBFD bfd;
 
   public RoutingProtocolBGPType() {
   }
 
-  public RoutingProtocolBGPType type(TypeEnum type) {
-    
+  public RoutingProtocolBGPType type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Routing protocol type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public RoutingProtocolBGPType name(String name) {
-    
+  public RoutingProtocolBGPType name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutingProtocolBGPType bgpIpv4(BGPConnectionIpv4 bgpIpv4) {
-    
+  public RoutingProtocolBGPType bgpIpv4(@javax.annotation.Nullable BGPConnectionIpv4 bgpIpv4) {
     this.bgpIpv4 = bgpIpv4;
     return this;
   }
 
-   /**
+  /**
    * Get bgpIpv4
    * @return bgpIpv4
-  **/
+   */
   @javax.annotation.Nullable
-
   public BGPConnectionIpv4 getBgpIpv4() {
     return bgpIpv4;
   }
 
-
-  public void setBgpIpv4(BGPConnectionIpv4 bgpIpv4) {
+  public void setBgpIpv4(@javax.annotation.Nullable BGPConnectionIpv4 bgpIpv4) {
     this.bgpIpv4 = bgpIpv4;
   }
 
 
-  public RoutingProtocolBGPType bgpIpv6(BGPConnectionIpv6 bgpIpv6) {
-    
+  public RoutingProtocolBGPType bgpIpv6(@javax.annotation.Nullable BGPConnectionIpv6 bgpIpv6) {
     this.bgpIpv6 = bgpIpv6;
     return this;
   }
 
-   /**
+  /**
    * Get bgpIpv6
    * @return bgpIpv6
-  **/
+   */
   @javax.annotation.Nullable
-
   public BGPConnectionIpv6 getBgpIpv6() {
     return bgpIpv6;
   }
 
-
-  public void setBgpIpv6(BGPConnectionIpv6 bgpIpv6) {
+  public void setBgpIpv6(@javax.annotation.Nullable BGPConnectionIpv6 bgpIpv6) {
     this.bgpIpv6 = bgpIpv6;
   }
 
 
-  public RoutingProtocolBGPType customerAsn(Long customerAsn) {
-    
+  public RoutingProtocolBGPType customerAsn(@javax.annotation.Nullable Long customerAsn) {
     this.customerAsn = customerAsn;
     return this;
   }
 
-   /**
+  /**
    * Customer asn
    * @return customerAsn
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getCustomerAsn() {
     return customerAsn;
   }
 
-
-  public void setCustomerAsn(Long customerAsn) {
+  public void setCustomerAsn(@javax.annotation.Nullable Long customerAsn) {
     this.customerAsn = customerAsn;
   }
 
 
-  public RoutingProtocolBGPType equinixAsn(Long equinixAsn) {
-    
+  public RoutingProtocolBGPType equinixAsn(@javax.annotation.Nullable Long equinixAsn) {
     this.equinixAsn = equinixAsn;
     return this;
   }
 
-   /**
+  /**
    * Equinix asn
    * @return equinixAsn
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getEquinixAsn() {
     return equinixAsn;
   }
 
-
-  public void setEquinixAsn(Long equinixAsn) {
+  public void setEquinixAsn(@javax.annotation.Nullable Long equinixAsn) {
     this.equinixAsn = equinixAsn;
   }
 
 
-  public RoutingProtocolBGPType bgpAuthKey(String bgpAuthKey) {
-    
+  public RoutingProtocolBGPType bgpAuthKey(@javax.annotation.Nullable String bgpAuthKey) {
     this.bgpAuthKey = bgpAuthKey;
     return this;
   }
 
-   /**
+  /**
    * BGP authorization key
    * @return bgpAuthKey
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getBgpAuthKey() {
     return bgpAuthKey;
   }
 
-
-  public void setBgpAuthKey(String bgpAuthKey) {
+  public void setBgpAuthKey(@javax.annotation.Nullable String bgpAuthKey) {
     this.bgpAuthKey = bgpAuthKey;
   }
 
 
-  public RoutingProtocolBGPType asOverrideEnabled(Boolean asOverrideEnabled) {
-    
+  public RoutingProtocolBGPType asOverrideEnabled(@javax.annotation.Nullable Boolean asOverrideEnabled) {
     this.asOverrideEnabled = asOverrideEnabled;
     return this;
   }
 
-   /**
+  /**
    * Enable AS number override
    * @return asOverrideEnabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAsOverrideEnabled() {
     return asOverrideEnabled;
   }
 
-
-  public void setAsOverrideEnabled(Boolean asOverrideEnabled) {
+  public void setAsOverrideEnabled(@javax.annotation.Nullable Boolean asOverrideEnabled) {
     this.asOverrideEnabled = asOverrideEnabled;
   }
 
 
-  public RoutingProtocolBGPType bfd(RoutingProtocolBFD bfd) {
-    
+  public RoutingProtocolBGPType bfd(@javax.annotation.Nullable RoutingProtocolBFD bfd) {
     this.bfd = bfd;
     return this;
   }
 
-   /**
+  /**
    * Get bfd
    * @return bfd
-  **/
+   */
   @javax.annotation.Nullable
-
   public RoutingProtocolBFD getBfd() {
     return bfd;
   }
 
-
-  public void setBfd(RoutingProtocolBFD bfd) {
+  public void setBfd(@javax.annotation.Nullable RoutingProtocolBFD bfd) {
     this.bfd = bfd;
   }
 
@@ -453,45 +442,48 @@ public class RoutingProtocolBGPType {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RoutingProtocolBGPType
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RoutingProtocolBGPType.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RoutingProtocolBGPType
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RoutingProtocolBGPType.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RoutingProtocolBGPType is not found in the empty JSON string", RoutingProtocolBGPType.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RoutingProtocolBGPType.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `bgpIpv4`
       if (jsonObj.get("bgpIpv4") != null && !jsonObj.get("bgpIpv4").isJsonNull()) {
-        BGPConnectionIpv4.validateJsonObject(jsonObj.getAsJsonObject("bgpIpv4"));
+        BGPConnectionIpv4.validateJsonElement(jsonObj.get("bgpIpv4"));
       }
       // validate the optional field `bgpIpv6`
       if (jsonObj.get("bgpIpv6") != null && !jsonObj.get("bgpIpv6").isJsonNull()) {
-        BGPConnectionIpv6.validateJsonObject(jsonObj.getAsJsonObject("bgpIpv6"));
+        BGPConnectionIpv6.validateJsonElement(jsonObj.get("bgpIpv6"));
       }
       if ((jsonObj.get("bgpAuthKey") != null && !jsonObj.get("bgpAuthKey").isJsonNull()) && !jsonObj.get("bgpAuthKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));
       }
       // validate the optional field `bfd`
       if (jsonObj.get("bfd") != null && !jsonObj.get("bfd").isJsonNull()) {
-        RoutingProtocolBFD.validateJsonObject(jsonObj.getAsJsonObject("bfd"));
+        RoutingProtocolBFD.validateJsonElement(jsonObj.get("bfd"));
       }
   }
 
@@ -523,7 +515,12 @@ public class RoutingProtocolBGPType {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -532,8 +529,9 @@ public class RoutingProtocolBGPType {
 
            @Override
            public RoutingProtocolBGPType read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RoutingProtocolBGPType instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -561,22 +559,22 @@ public class RoutingProtocolBGPType {
     }
   }
 
- /**
-  * Create an instance of RoutingProtocolBGPType given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RoutingProtocolBGPType
-  * @throws IOException if the JSON string is invalid with respect to RoutingProtocolBGPType
-  */
+  /**
+   * Create an instance of RoutingProtocolBGPType given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RoutingProtocolBGPType
+   * @throws IOException if the JSON string is invalid with respect to RoutingProtocolBGPType
+   */
   public static RoutingProtocolBGPType fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RoutingProtocolBGPType.class);
   }
 
- /**
-  * Convert an instance of RoutingProtocolBGPType to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RoutingProtocolBGPType to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

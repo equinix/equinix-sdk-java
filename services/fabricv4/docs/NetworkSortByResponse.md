@@ -5,21 +5,21 @@
 ## Enum
 
 
-* `NAME` (value: `"/name"`)
+* `_NAME` (value: `"/name"`)
 
-* `TYPE` (value: `"/type"`)
+* `_TYPE` (value: `"/type"`)
 
-* `UUID` (value: `"/uuid"`)
+* `_UUID` (value: `"/uuid"`)
 
-* `STATE` (value: `"/state"`)
+* `_STATE` (value: `"/state"`)
 
-* `SCOPE` (value: `"/scope"`)
+* `_SCOPE` (value: `"/scope"`)
 
-* `LOCATION_REGION` (value: `"/location/region"`)
+* `_LOCATION_REGION` (value: `"/location/region"`)
 
-* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
+* `_CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
 
-* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+* `_CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
 
 
 

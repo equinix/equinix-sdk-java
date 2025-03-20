@@ -14,7 +14,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateServiceProfileByUuid**](ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile |
 
 
-<a name="createServiceProfile"></a>
+<a id="createServiceProfile"></a>
 # **createServiceProfile**
 > ServiceProfile createServiceProfile(serviceProfileRequest)
 
@@ -85,7 +85,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="deleteServiceProfileByUuid"></a>
+<a id="deleteServiceProfileByUuid"></a>
 # **deleteServiceProfileByUuid**
 > ServiceProfile deleteServiceProfileByUuid(serviceProfileId)
 
@@ -157,7 +157,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="getServiceProfileByUuid"></a>
+<a id="getServiceProfileByUuid"></a>
 # **getServiceProfileByUuid**
 > ServiceProfile getServiceProfileByUuid(serviceProfileId, viewPoint)
 
@@ -230,7 +230,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="getServiceProfileMetrosByUuid"></a>
+<a id="getServiceProfileMetrosByUuid"></a>
 # **getServiceProfileMetrosByUuid**
 > ServiceMetros getServiceProfileMetrosByUuid(serviceProfileId, offset, limit)
 
@@ -305,7 +305,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="getServiceProfiles"></a>
+<a id="getServiceProfiles"></a>
 # **getServiceProfiles**
 > ServiceProfiles getServiceProfiles(offset, limit, viewPoint)
 
@@ -380,7 +380,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="putServiceProfileByUuid"></a>
+<a id="putServiceProfileByUuid"></a>
 # **putServiceProfileByUuid**
 > ServiceProfile putServiceProfileByUuid(serviceProfileId, ifMatch, serviceProfileRequest)
 
@@ -456,7 +456,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="searchServiceProfiles"></a>
+<a id="searchServiceProfiles"></a>
 # **searchServiceProfiles**
 > ServiceProfiles searchServiceProfiles(serviceProfileSearchRequest, viewPoint)
 
@@ -528,7 +528,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="updateServiceProfileByUuid"></a>
+<a id="updateServiceProfileByUuid"></a>
 # **updateServiceProfileByUuid**
 > ServiceProfile updateServiceProfileByUuid(serviceProfileId, ifMatch, jsonPatchOperation)
 

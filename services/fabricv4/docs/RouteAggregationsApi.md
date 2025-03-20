@@ -18,7 +18,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**searchRouteAggregations**](RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations |
 
 
-<a name="attachConnectionRouteAggregation"></a>
+<a id="attachConnectionRouteAggregation"></a>
 # **attachConnectionRouteAggregation**
 > ConnectionRouteAggregationData attachConnectionRouteAggregation(routeAggregationId, connectionId)
 
@@ -93,7 +93,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createRouteAggregation"></a>
+<a id="createRouteAggregation"></a>
 # **createRouteAggregation**
 > RouteAggregationsData createRouteAggregation(routeAggregationsBase)
 
@@ -166,7 +166,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteRouteAggregationByUuid"></a>
+<a id="deleteRouteAggregationByUuid"></a>
 # **deleteRouteAggregationByUuid**
 > RouteAggregationsData deleteRouteAggregationByUuid(routeAggregationId)
 
@@ -239,7 +239,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="detachConnectionRouteAggregation"></a>
+<a id="detachConnectionRouteAggregation"></a>
 # **detachConnectionRouteAggregation**
 > ConnectionRouteAggregationData detachConnectionRouteAggregation(routeAggregationId, connectionId)
 
@@ -314,7 +314,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRouteAggregationByUuid"></a>
+<a id="getConnectionRouteAggregationByUuid"></a>
 # **getConnectionRouteAggregationByUuid**
 > ConnectionRouteAggregationData getConnectionRouteAggregationByUuid(routeAggregationId, connectionId)
 
@@ -389,7 +389,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRouteAggregations"></a>
+<a id="getConnectionRouteAggregations"></a>
 # **getConnectionRouteAggregations**
 > GetAllConnectionRouteAggregationsResponse getConnectionRouteAggregations(connectionId)
 
@@ -462,7 +462,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationByUuid"></a>
+<a id="getRouteAggregationByUuid"></a>
 # **getRouteAggregationByUuid**
 > RouteAggregationsData getRouteAggregationByUuid(routeAggregationId)
 
@@ -535,7 +535,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationChangeByUuid"></a>
+<a id="getRouteAggregationChangeByUuid"></a>
 # **getRouteAggregationChangeByUuid**
 > RouteAggregationChangeData getRouteAggregationChangeByUuid(routeAggregationId, changeId)
 
@@ -609,7 +609,7 @@ public class Example {
 | **404** | Route Aggregation ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationChanges"></a>
+<a id="getRouteAggregationChanges"></a>
 # **getRouteAggregationChanges**
 > RouteAggregationChangeDataResponse getRouteAggregationChanges(routeAggregationId, offset, limit)
 
@@ -685,7 +685,7 @@ public class Example {
 | **404** | Route Aggregation ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationConnections"></a>
+<a id="getRouteAggregationConnections"></a>
 # **getRouteAggregationConnections**
 > GetRouteAggregationGetConnectionsResponse getRouteAggregationConnections(routeAggregationId)
 
@@ -758,7 +758,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="patchRouteAggregationByUuid"></a>
+<a id="patchRouteAggregationByUuid"></a>
 # **patchRouteAggregationByUuid**
 > RouteAggregationsData patchRouteAggregationByUuid(routeAggregationId, routeAggregationsPatchRequestItem)
 
@@ -833,7 +833,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchRouteAggregations"></a>
+<a id="searchRouteAggregations"></a>
 # **searchRouteAggregations**
 > RouteAggregationsSearchResponse searchRouteAggregations(routeAggregationsSearchBase)
 

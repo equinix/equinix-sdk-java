@@ -12,11 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -27,11 +27,11 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(NetworkChangeType.Adapter.class)
 public enum NetworkChangeType {
   
-  CREATION("NETWORK_CREATION"),
+  NETWORK_CREATION("NETWORK_CREATION"),
   
-  UPDATE("NETWORK_UPDATE"),
+  NETWORK_UPDATE("NETWORK_UPDATE"),
   
-  DELETION("NETWORK_DELETION");
+  NETWORK_DELETION("NETWORK_DELETION");
 
   private String value;
 
@@ -68,6 +68,11 @@ public enum NetworkChangeType {
       String value = jsonReader.nextString();
       return NetworkChangeType.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    NetworkChangeType.fromValue(value);
   }
 }
 
