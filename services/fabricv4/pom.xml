@@ -5,7 +5,7 @@
     <artifactId>fabricv4</artifactId>
     <packaging>jar</packaging>
     <name>fabricv4</name>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <url>https://github.com/equinix/equinix-sdk-java</url>
     <description>Equinix Java SDK</description>
     <scm>
