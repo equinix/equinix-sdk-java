@@ -1,8 +1,9 @@
-name: Sync fabricv4 API spec
-
 on:
   workflow_dispatch:
-
+    inputs:
+      new_api_spec_version_number:
+        required: true
+name: Sync fabricv4 API spec
 jobs:
   sync:
     strategy:
@@ -24,7 +25,15 @@ jobs:
           distribution: ${{ matrix.java-distribution }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
+
+      - name: Get next API Spec Version
+        id: spec_versions
+        run: |
+          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
+          CURRENT_VERSION_NUM=$(echo $API_SPEC_LINE | cut -d / -f7)
+          echo "api_spec_line=$API_SPEC_LINE" >> "$GITHUB_OUTPUT"
+          echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
 
       - name: GitHub user
         run: |
@@ -35,6 +44,8 @@ jobs:
       - name: Fetch latest spec
         id: fetch
         run: |
+          VERSION_UPDATE="SPEC_BASE_URL:=https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}"
+          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile.fabricv4
           make -f Makefile.fabricv4 fetch
           git add spec/services/fabricv4
           echo `git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec'`
@@ -55,6 +66,17 @@ jobs:
           git add services/fabricv4
           echo `git commit -m 'sync: generate client with ${{ steps.date.outputs.date }} spec'`
 
+      - name: Tests
+        env:
+          TEST_HOST_URL: https://uatapi.equinix.com
+          CLIENT_ID: ${{ secrets.TEST_USER_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.TEST_USER_CLIENT_SECRET }}
+          TEST_USER_NAME: ${{ secrets.TEST_USER_NAME }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+        shell: bash
+        run: |-
+          mvn clean package -DskipTests -DenvUrl=${{ env.TEST_HOST_URL }} -DuserName=${{ env.TEST_USER_NAME }}
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
@@ -64,14 +86,27 @@ jobs:
           branch-suffix: timestamp
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           commit-message: "sync: uncommitted changes detected when opening PR"
-          title: "feat: API Sync by GitHub Action for @${{ github.event.sender.login }}"
+          title: "feat: Fabric API Sync ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }} by GitHub Action for @${{ github.event.sender.login }}"
           body: |
             This API Sync PR was triggered by @${{ github.event.sender.login }} through [GitHub Actions workflow_displatch](https://github.com/equinix/equinix-sdk-go/actions?query=event%3Aworkflow_dispatch)
             on ${{ steps.date.outputs.date }}.
 
-            * latest Swagger is fetched
-            * patches have been applied
-            * generated client has been updated
+            This PR updates the SDK API Spec Version:
+            from ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }}
+
+            * Latest Swaggerhub API Spec is fetched - version ${{ github.event.inputs.new_api_spec_version_number }}
+            * Patches have been applied
+            * Generated client has been updated
+
+            ## Changes in SDK
+
+            ### Enhancements
+
+            -Add enhancements here-
+
+            ### Breaking Changes
+
+            -Add breaking changes here-
           delete-branch: true
           draft: ${{ steps.patch.conclusion == 'failure' || steps.generate.conclusion == 'failure' }}
 
