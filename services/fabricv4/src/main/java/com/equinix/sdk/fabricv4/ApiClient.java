@@ -141,7 +141,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("equinix-sdk-java/0.11.0");
+        setUserAgent("equinix-sdk-java/0.1.0");
 
         authentications = new HashMap<String, Authentication>();
     }
