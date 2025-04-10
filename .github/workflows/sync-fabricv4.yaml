@@ -60,7 +60,7 @@ jobs:
 
       - name: Generate code
         id: generate
-        if: ${{ always() && steps.patch.conclusion == 'success' }}
+        if: ${{ always() && steps.fetch.conclusion == 'success' }}
         run: |
           make -f Makefile.fabricv4 generate
           git add services/fabricv4
@@ -115,7 +115,7 @@ jobs:
         if: ${{ always() && steps.patch.conclusion == 'failure' && steps.cpr.conclusion == 'success' }}
         with:
           issue: ${{ steps.cpr.outputs.pull-request-number }}
-          message: Failed to patch latest spec.  Someone with write access must fix this PR manually and then convert it from Draft status to Ready for Review.
+          message: Failed to patch latest spec.  Someone with write access must review and, if necessary, fix this PR manually and then convert it from Draft status to Ready for Review.
 
       - name: Comment for failed generate
         uses: mshick/add-pr-comment@v2
