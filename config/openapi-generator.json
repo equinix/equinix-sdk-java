@@ -17,5 +17,6 @@
     "modelTests": false,
     "apiTests": false
   },
-  "removeEnumValuePrefix": true
+  "removeEnumValuePrefix": true,
+  "enumPropertyNaming": "legacy"
 }
