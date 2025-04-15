@@ -131,7 +131,7 @@ public class ServiceProfileLinkProtocolConfig {
   public enum EncapsulationEnum {
     QINQ("QINQ"),
     
-    DOT1_Q("DOT1Q"),
+    DOT1Q("DOT1Q"),
     
     UNTAGGED("UNTAGGED");
 

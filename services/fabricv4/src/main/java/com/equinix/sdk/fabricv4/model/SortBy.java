@@ -31,49 +31,49 @@ public enum SortBy {
   
   DIRECTION("/direction"),
   
-  A_SIDE_ACCESS_POINT_NAME("/aSide/accessPoint/name"),
+  ASIDE_ACCESSPOINT_NAME("/aSide/accessPoint/name"),
   
-  A_SIDE_ACCESS_POINT_TYPE("/aSide/accessPoint/type"),
+  ASIDE_ACCESSPOINT_TYPE("/aSide/accessPoint/type"),
   
-  A_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/aSide/accessPoint/account/accountName"),
+  ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/aSide/accessPoint/account/accountName"),
   
-  A_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/aSide/accessPoint/location/metroName"),
+  ASIDE_ACCESSPOINT_LOCATION_METRONAME("/aSide/accessPoint/location/metroName"),
   
-  A_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/aSide/accessPoint/location/metroCode"),
+  ASIDE_ACCESSPOINT_LOCATION_METROCODE("/aSide/accessPoint/location/metroCode"),
   
-  A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
   
-  A_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
   
-  Z_SIDE_ACCESS_POINT_NAME("/zSide/accessPoint/name"),
+  ZSIDE_ACCESSPOINT_NAME("/zSide/accessPoint/name"),
   
-  Z_SIDE_ACCESS_POINT_TYPE("/zSide/accessPoint/type"),
+  ZSIDE_ACCESSPOINT_TYPE("/zSide/accessPoint/type"),
   
-  Z_SIDE_ACCESS_POINT_ACCOUNT_ACCOUNT_NAME("/zSide/accessPoint/account/accountName"),
+  ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
   
-  Z_SIDE_ACCESS_POINT_LOCATION_METRO_NAME("/zSide/accessPoint/location/metroName"),
+  ZSIDE_ACCESSPOINT_LOCATION_METRONAME("/zSide/accessPoint/location/metroName"),
   
-  Z_SIDE_ACCESS_POINT_LOCATION_METRO_CODE("/zSide/accessPoint/location/metroCode"),
+  ZSIDE_ACCESSPOINT_LOCATION_METROCODE("/zSide/accessPoint/location/metroCode"),
   
-  Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_C_TAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
   
-  Z_SIDE_ACCESS_POINT_LINK_PROTOCOL_VLAN_S_TAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
   
-  Z_SIDE_ACCESS_POINT_AUTHENTICATION_KEY("/zSide/accessPoint/authenticationKey"),
+  ZSIDE_ACCESSPOINT_AUTHENTICATIONKEY("/zSide/accessPoint/authenticationKey"),
   
   BANDWIDTH("/bandwidth"),
   
-  GEO_SCOPE("/geoScope"),
+  GEOSCOPE("/geoScope"),
   
   UUID("/uuid"),
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
   
-  OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
-  OPERATION_PROVIDER_STATUS("/operation/providerStatus"),
+  OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
   
   REDUNDANCY_PRIORITY("/redundancy/priority");
 

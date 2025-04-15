@@ -11,7 +11,7 @@
 
 * `NAME` (value: `"/name"`)
 
-* `PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
+* `PROJECT_PROJECTID` (value: `"/project/projectId"`)
 
 
 

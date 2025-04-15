@@ -27,9 +27,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(PortSearchFieldName.Adapter.class)
 public enum PortSearchFieldName {
   
-  PROJECT_PROJECT_ID("/project/projectId"),
+  PROJECT_PROJECTID("/project/projectId"),
   
-  SETTINGS_PRODUCT_CODE("/settings/productCode"),
+  SETTINGS_PRODUCTCODE("/settings/productCode"),
   
   STATE("/state");
 

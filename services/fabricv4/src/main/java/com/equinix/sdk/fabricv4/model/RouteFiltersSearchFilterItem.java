@@ -59,7 +59,7 @@ public class RouteFiltersSearchFilterItem {
     
     NAME("/name"),
     
-    PROJECT_PROJECT_ID("/project/projectId"),
+    PROJECT_PROJECTID("/project/projectId"),
     
     UUID("/uuid"),
     

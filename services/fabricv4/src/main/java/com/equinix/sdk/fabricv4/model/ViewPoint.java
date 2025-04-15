@@ -27,9 +27,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ViewPoint.Adapter.class)
 public enum ViewPoint {
   
-  A_SIDE("aSide"),
+  ASIDE("aSide"),
   
-  Z_SIDE("zSide");
+  ZSIDE("zSide");
 
   private String value;
 

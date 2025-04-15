@@ -27,9 +27,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ConnectionRouteEntrySortBy.Adapter.class)
 public enum ConnectionRouteEntrySortBy {
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
   
   MED("/med"),
   
@@ -39,7 +39,7 @@ public enum ConnectionRouteEntrySortBy {
   
   PREFIX("/prefix"),
   
-  NEXT_HOP("/nextHop");
+  NEXTHOP("/nextHop");
 
   private String value;
 

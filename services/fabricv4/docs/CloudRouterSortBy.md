@@ -11,15 +11,15 @@
 
 * `STATE` (value: `"/state"`)
 
-* `LOCATION_METRO_CODE` (value: `"/location/metroCode"`)
+* `LOCATION_METROCODE` (value: `"/location/metroCode"`)
 
-* `LOCATION_METRO_NAME` (value: `"/location/metroName"`)
+* `LOCATION_METRONAME` (value: `"/location/metroName"`)
 
 * `PACKAGE_CODE` (value: `"/package/code"`)
 
-* `CHANGE_LOG_CREATED_DATE_TIME` (value: `"/changeLog/createdDateTime"`)
+* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
 
-* `CHANGE_LOG_UPDATED_DATE_TIME` (value: `"/changeLog/updatedDateTime"`)
+* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
 
 
 

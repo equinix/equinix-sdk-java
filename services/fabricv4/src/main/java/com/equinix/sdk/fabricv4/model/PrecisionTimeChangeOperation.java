@@ -118,9 +118,9 @@ public class PrecisionTimeChangeOperation {
     
     IPV4("/ipv4"),
     
-    NTP_ADVANCED_CONFIGURATION("/ntpAdvancedConfiguration"),
+    NTPADVANCEDCONFIGURATION("/ntpAdvancedConfiguration"),
     
-    PTP_ADVANCED_CONFIGURATION("/ptpAdvancedConfiguration");
+    PTPADVANCEDCONFIGURATION("/ptpAdvancedConfiguration");
 
     private String value;
 

@@ -33,15 +33,15 @@ public enum CloudRouterSortBy {
   
   STATE("/state"),
   
-  LOCATION_METRO_CODE("/location/metroCode"),
+  LOCATION_METROCODE("/location/metroCode"),
   
-  LOCATION_METRO_NAME("/location/metroName"),
+  LOCATION_METRONAME("/location/metroName"),
   
   PACKAGE_CODE("/package/code"),
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
   private String value;
 

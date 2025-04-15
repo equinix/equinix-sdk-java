@@ -58,7 +58,7 @@ public class RouteTableEntrySortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private RouteTableEntrySortBy property = RouteTableEntrySortBy.CHANGE_LOG_UPDATED_DATE_TIME;
+  private RouteTableEntrySortBy property = RouteTableEntrySortBy.CHANGELOG_UPDATEDDATETIME;
 
   public RouteTableEntrySortCriteria() {
   }

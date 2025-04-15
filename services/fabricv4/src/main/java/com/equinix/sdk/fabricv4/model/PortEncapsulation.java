@@ -55,7 +55,7 @@ public class PortEncapsulation {
   public enum TypeEnum {
     NULL("NULL"),
     
-    DOT1_Q("DOT1Q"),
+    DOT1Q("DOT1Q"),
     
     QINQ("QINQ"),
     

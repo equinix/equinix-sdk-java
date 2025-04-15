@@ -37,9 +37,9 @@ public enum TimeServiceSortBy {
   
   PACKAGE_CODE("/package/code"),
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
   private String value;
 

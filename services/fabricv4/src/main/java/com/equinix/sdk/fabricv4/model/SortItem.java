@@ -59,17 +59,17 @@ public class SortItem {
     
     NAME("/name"),
     
-    PROJECT_PROJECT_ID("/project/projectId"),
+    PROJECT_PROJECTID("/project/projectId"),
     
     STATE("/state"),
     
-    NOT_MATCHED_RULE_ACTION("/notMatchedRuleAction"),
+    NOTMATCHEDRULEACTION("/notMatchedRuleAction"),
     
-    CONNECTIONS_COUNT("/connectionsCount"),
+    CONNECTIONSCOUNT("/connectionsCount"),
     
-    CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+    CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
     
-    CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime");
+    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
     private String value;
 
@@ -117,7 +117,7 @@ public class SortItem {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private PropertyEnum property = PropertyEnum.CHANGE_LOG_UPDATED_DATE_TIME;
+  private PropertyEnum property = PropertyEnum.CHANGELOG_UPDATEDDATETIME;
 
   /**
    * Sorting direction

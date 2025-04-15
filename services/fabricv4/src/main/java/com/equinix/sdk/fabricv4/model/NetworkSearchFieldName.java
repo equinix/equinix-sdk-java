@@ -35,17 +35,17 @@ public enum NetworkSearchFieldName {
   
   TYPE("/type"),
   
-  OPERATION_EQUINIX_STATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
   LOCATION_REGION("/location/region"),
   
-  PROJECT_PROJECT_ID("/project/projectId"),
+  PROJECT_PROJECTID("/project/projectId"),
   
-  ACCOUNT_GLOBAL_CUST_ID("/account/globalCustId"),
+  ACCOUNT_GLOBALCUSTID("/account/globalCustId"),
   
-  ACCOUNT_ORG_ID("/account/orgId"),
+  ACCOUNT_ORGID("/account/orgId"),
   
-  DELETED_DATE("/deletedDate"),
+  DELETEDDATE("/deletedDate"),
   
   STAR("/_*");
 

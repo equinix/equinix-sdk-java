@@ -29,7 +29,7 @@ public enum LinkProtocolType {
   
   UNTAGGED("UNTAGGED"),
   
-  DOT1_Q("DOT1Q"),
+  DOT1Q("DOT1Q"),
   
   QINQ("QINQ"),
   

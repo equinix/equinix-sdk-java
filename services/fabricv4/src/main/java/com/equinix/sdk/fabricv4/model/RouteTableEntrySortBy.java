@@ -27,13 +27,13 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(RouteTableEntrySortBy.Adapter.class)
 public enum RouteTableEntrySortBy {
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
   
   PREFIX("/prefix"),
   
-  NEXT_HOP("/nextHop"),
+  NEXTHOP("/nextHop"),
   
   CONNECTION_NAME("/connection/name"),
   

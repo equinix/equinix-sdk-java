@@ -31,8 +31,8 @@ Fabric Precision Timing change operation data
 | NAME | &quot;/name&quot; |
 | PACKAGE_CODE | &quot;/package/code&quot; |
 | IPV4 | &quot;/ipv4&quot; |
-| NTP_ADVANCED_CONFIGURATION | &quot;/ntpAdvancedConfiguration&quot; |
-| PTP_ADVANCED_CONFIGURATION | &quot;/ptpAdvancedConfiguration&quot; |
+| NTPADVANCEDCONFIGURATION | &quot;/ntpAdvancedConfiguration&quot; |
+| PTPADVANCEDCONFIGURATION | &quot;/ptpAdvancedConfiguration&quot; |
 
 
 

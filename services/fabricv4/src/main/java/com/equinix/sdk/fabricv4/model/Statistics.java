@@ -65,9 +65,9 @@ public class Statistics {
    */
   @JsonAdapter(ViewPointEnum.Adapter.class)
   public enum ViewPointEnum {
-    A_SIDE("aSide"),
+    ASIDE("aSide"),
     
-    Z_SIDE("zSide");
+    ZSIDE("zSide");
 
     private String value;
 

@@ -19,7 +19,7 @@
 |---- | -----|
 | TYPE | &quot;/type&quot; |
 | NAME | &quot;/name&quot; |
-| PROJECT_PROJECT_ID | &quot;/project/projectId&quot; |
+| PROJECT_PROJECTID | &quot;/project/projectId&quot; |
 | UUID | &quot;/uuid&quot; |
 | STATE | &quot;/state&quot; |
 

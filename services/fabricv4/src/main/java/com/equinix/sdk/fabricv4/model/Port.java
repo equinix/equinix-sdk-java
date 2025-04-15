@@ -118,15 +118,15 @@ public class Port {
    */
   @JsonAdapter(PhysicalPortsTypeEnum.Adapter.class)
   public enum PhysicalPortsTypeEnum {
-    _1000_BASE_LX("1000BASE_LX"),
+    _1000BASE_LX("1000BASE_LX"),
     
-    _10_GBASE_LR("10GBASE_LR"),
+    _10GBASE_LR("10GBASE_LR"),
     
-    _100_GBASE_LR4("100GBASE_LR4"),
+    _100GBASE_LR4("100GBASE_LR4"),
     
-    _10_GBASE_ER("10GBASE_ER"),
+    _10GBASE_ER("10GBASE_ER"),
     
-    _1000_BASE_SX("1000BASE_SX");
+    _1000BASE_SX("1000BASE_SX");
 
     private String value;
 

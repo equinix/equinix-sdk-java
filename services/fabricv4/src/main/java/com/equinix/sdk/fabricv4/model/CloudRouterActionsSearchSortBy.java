@@ -27,9 +27,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(CloudRouterActionsSearchSortBy.Adapter.class)
 public enum CloudRouterActionsSearchSortBy {
   
-  CHANGE_LOG_CREATED_DATE_TIME("/changeLog/createdDateTime"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGE_LOG_UPDATED_DATE_TIME("/changeLog/updatedDateTime"),
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
   
   CONNECTION_NAME("/connection/name"),
   

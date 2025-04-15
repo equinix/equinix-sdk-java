@@ -13,17 +13,17 @@
 
 * `TYPE` (value: `"/type"`)
 
-* `OPERATION_EQUINIX_STATUS` (value: `"/operation/equinixStatus"`)
+* `OPERATION_EQUINIXSTATUS` (value: `"/operation/equinixStatus"`)
 
 * `LOCATION_REGION` (value: `"/location/region"`)
 
-* `PROJECT_PROJECT_ID` (value: `"/project/projectId"`)
+* `PROJECT_PROJECTID` (value: `"/project/projectId"`)
 
-* `ACCOUNT_GLOBAL_CUST_ID` (value: `"/account/globalCustId"`)
+* `ACCOUNT_GLOBALCUSTID` (value: `"/account/globalCustId"`)
 
-* `ACCOUNT_ORG_ID` (value: `"/account/orgId"`)
+* `ACCOUNT_ORGID` (value: `"/account/orgId"`)
 
-* `DELETED_DATE` (value: `"/deletedDate"`)
+* `DELETEDDATE` (value: `"/deletedDate"`)
 
 * `STAR` (value: `"/_*"`)
 

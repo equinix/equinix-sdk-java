@@ -7,7 +7,7 @@
 
 * `UNTAGGED` (value: `"UNTAGGED"`)
 
-* `DOT1_Q` (value: `"DOT1Q"`)
+* `DOT1Q` (value: `"DOT1Q"`)
 
 * `QINQ` (value: `"QINQ"`)
 

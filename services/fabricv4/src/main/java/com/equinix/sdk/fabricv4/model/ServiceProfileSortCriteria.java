@@ -58,7 +58,7 @@ public class ServiceProfileSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private ServiceProfileSortBy property = ServiceProfileSortBy.CHANGE_LOG_UPDATED_DATE_TIME;
+  private ServiceProfileSortBy property = ServiceProfileSortBy.CHANGELOG_UPDATEDDATETIME;
 
   public ServiceProfileSortCriteria() {
   }
