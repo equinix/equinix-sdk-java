@@ -90,7 +90,7 @@ public class NetworksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Fabric Network Access point object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -170,7 +170,7 @@ public class NetworksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Fabric Network Access point object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -195,7 +195,7 @@ public class NetworksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Fabric Network Access point object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -222,7 +222,7 @@ public class NetworksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Fabric Network Access point object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>

@@ -16,7 +16,7 @@ import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Ipv4;
 import com.equinix.sdk.fabricv4.model.Md5;
 import com.equinix.sdk.fabricv4.model.PrecisionTimeOrder;
-import com.equinix.sdk.fabricv4.model.PrecisionTimePackageResponse;
+import com.equinix.sdk.fabricv4.model.PrecisionTimePackagePostResponse;
 import com.equinix.sdk.fabricv4.model.PrecisionTimePrice;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.PtpAdvanceConfiguration;
@@ -218,7 +218,7 @@ public class PrecisionTimeServiceResponse {
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
   @javax.annotation.Nonnull
-  private PrecisionTimePackageResponse _package;
+  private PrecisionTimePackagePostResponse _package;
 
   public static final String SERIALIZED_NAME_CONNECTIONS = "connections";
   @SerializedName(SERIALIZED_NAME_CONNECTIONS)
@@ -363,7 +363,7 @@ public class PrecisionTimeServiceResponse {
   }
 
 
-  public PrecisionTimeServiceResponse _package(@javax.annotation.Nonnull PrecisionTimePackageResponse _package) {
+  public PrecisionTimeServiceResponse _package(@javax.annotation.Nonnull PrecisionTimePackagePostResponse _package) {
     this._package = _package;
     return this;
   }
@@ -373,11 +373,11 @@ public class PrecisionTimeServiceResponse {
    * @return _package
    */
   @javax.annotation.Nonnull
-  public PrecisionTimePackageResponse getPackage() {
+  public PrecisionTimePackagePostResponse getPackage() {
     return _package;
   }
 
-  public void setPackage(@javax.annotation.Nonnull PrecisionTimePackageResponse _package) {
+  public void setPackage(@javax.annotation.Nonnull PrecisionTimePackagePostResponse _package) {
     this._package = _package;
   }
 
@@ -753,7 +753,7 @@ public class PrecisionTimeServiceResponse {
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
       // validate the required field `package`
-      PrecisionTimePackageResponse.validateJsonElement(jsonObj.get("package"));
+      PrecisionTimePackagePostResponse.validateJsonElement(jsonObj.get("package"));
       if (jsonObj.get("connections") != null && !jsonObj.get("connections").isJsonNull()) {
         JsonArray jsonArrayconnections = jsonObj.getAsJsonArray("connections");
         if (jsonArrayconnections != null) {

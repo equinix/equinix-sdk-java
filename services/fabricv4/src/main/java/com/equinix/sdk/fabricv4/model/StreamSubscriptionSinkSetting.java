@@ -78,11 +78,6 @@ public class StreamSubscriptionSinkSetting {
   @javax.annotation.Nullable
   private String metricUri;
 
-  public static final String SERIALIZED_NAME_TRANSFORM_ALERTS = "transformAlerts";
-  @SerializedName(SERIALIZED_NAME_TRANSFORM_ALERTS)
-  @javax.annotation.Nullable
-  private Boolean transformAlerts;
-
   public StreamSubscriptionSinkSetting() {
   }
 
@@ -199,25 +194,6 @@ public class StreamSubscriptionSinkSetting {
     this.metricUri = metricUri;
   }
 
-
-  public StreamSubscriptionSinkSetting transformAlerts(@javax.annotation.Nullable Boolean transformAlerts) {
-    this.transformAlerts = transformAlerts;
-    return this;
-  }
-
-  /**
-   * transform alerts
-   * @return transformAlerts
-   */
-  @javax.annotation.Nullable
-  public Boolean getTransformAlerts() {
-    return transformAlerts;
-  }
-
-  public void setTransformAlerts(@javax.annotation.Nullable Boolean transformAlerts) {
-    this.transformAlerts = transformAlerts;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -278,14 +254,13 @@ public class StreamSubscriptionSinkSetting {
         Objects.equals(this.source, streamSubscriptionSinkSetting.source) &&
         Objects.equals(this.applicationKey, streamSubscriptionSinkSetting.applicationKey) &&
         Objects.equals(this.eventUri, streamSubscriptionSinkSetting.eventUri) &&
-        Objects.equals(this.metricUri, streamSubscriptionSinkSetting.metricUri) &&
-        Objects.equals(this.transformAlerts, streamSubscriptionSinkSetting.transformAlerts)&&
+        Objects.equals(this.metricUri, streamSubscriptionSinkSetting.metricUri)&&
         Objects.equals(this.additionalProperties, streamSubscriptionSinkSetting.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventIndex, metricIndex, source, applicationKey, eventUri, metricUri, transformAlerts, additionalProperties);
+    return Objects.hash(eventIndex, metricIndex, source, applicationKey, eventUri, metricUri, additionalProperties);
   }
 
   @Override
@@ -298,7 +273,6 @@ public class StreamSubscriptionSinkSetting {
     sb.append("    applicationKey: ").append(toIndentedString(applicationKey)).append("\n");
     sb.append("    eventUri: ").append(toIndentedString(eventUri)).append("\n");
     sb.append("    metricUri: ").append(toIndentedString(metricUri)).append("\n");
-    sb.append("    transformAlerts: ").append(toIndentedString(transformAlerts)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -328,7 +302,6 @@ public class StreamSubscriptionSinkSetting {
     openapiFields.add("applicationKey");
     openapiFields.add("eventUri");
     openapiFields.add("metricUri");
-    openapiFields.add("transformAlerts");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
