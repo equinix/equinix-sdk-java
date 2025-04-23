@@ -27,9 +27,6 @@ jobs:
           git config --global user.name 'equinix-labs@auto-commit-workflow'
           git config --global user.email 'bot@equinix.noreply.github.com'
           git config advice.addIgnoredFile false
-          git fetch
-          echo -e "\nThis is executing for branch: ${GITHUB_REF##*/}."
-          git checkout ${GITHUB_REF##*/}          
           make generate-all
 
       - name: Commit to branch.
