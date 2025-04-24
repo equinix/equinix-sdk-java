@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <name>equinix-sdk-java-pom</name>
     <!-- This version is updated by the update-manual-versions task -->
-    <version>0.2.0</version>
+    <version>0.3.0</version>
 
     <!--
     TODO: this modules section needs to be regenerated
