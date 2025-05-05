@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSinkCredential;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSinkSetting;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,10 +48,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create Stream destination
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamSubscriptionSink {
   public static final String SERIALIZED_NAME_URI = "uri";
   @SerializedName(SERIALIZED_NAME_URI)
+  @javax.annotation.Nullable
   private String uri;
 
   /**
@@ -105,211 +108,199 @@ public class StreamSubscriptionSink {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_BATCH_ENABLED = "batchEnabled";
   @SerializedName(SERIALIZED_NAME_BATCH_ENABLED)
+  @javax.annotation.Nullable
   private Boolean batchEnabled;
 
   public static final String SERIALIZED_NAME_BATCH_SIZE_MAX = "batchSizeMax";
   @SerializedName(SERIALIZED_NAME_BATCH_SIZE_MAX)
+  @javax.annotation.Nullable
   private Integer batchSizeMax;
 
   public static final String SERIALIZED_NAME_BATCH_WAIT_TIME_MAX = "batchWaitTimeMax";
   @SerializedName(SERIALIZED_NAME_BATCH_WAIT_TIME_MAX)
+  @javax.annotation.Nullable
   private Integer batchWaitTimeMax;
 
   public static final String SERIALIZED_NAME_CREDENTIAL = "credential";
   @SerializedName(SERIALIZED_NAME_CREDENTIAL)
+  @javax.annotation.Nullable
   private StreamSubscriptionSinkCredential credential;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nullable
   private StreamSubscriptionSinkSetting settings;
 
   public static final String SERIALIZED_NAME_HOST = "host";
   @SerializedName(SERIALIZED_NAME_HOST)
+  @javax.annotation.Nullable
   private String host;
 
   public StreamSubscriptionSink() {
   }
 
-  public StreamSubscriptionSink uri(String uri) {
-    
+  public StreamSubscriptionSink uri(@javax.annotation.Nullable String uri) {
     this.uri = uri;
     return this;
   }
 
-   /**
+  /**
    * any publicly reachable http endpoint
    * @return uri
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUri() {
     return uri;
   }
 
-
-  public void setUri(String uri) {
+  public void setUri(@javax.annotation.Nullable String uri) {
     this.uri = uri;
   }
 
 
-  public StreamSubscriptionSink type(TypeEnum type) {
-    
+  public StreamSubscriptionSink type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * destination type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public StreamSubscriptionSink batchEnabled(Boolean batchEnabled) {
-    
+  public StreamSubscriptionSink batchEnabled(@javax.annotation.Nullable Boolean batchEnabled) {
     this.batchEnabled = batchEnabled;
     return this;
   }
 
-   /**
+  /**
    * batch mode on/off
    * @return batchEnabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getBatchEnabled() {
     return batchEnabled;
   }
 
-
-  public void setBatchEnabled(Boolean batchEnabled) {
+  public void setBatchEnabled(@javax.annotation.Nullable Boolean batchEnabled) {
     this.batchEnabled = batchEnabled;
   }
 
 
-  public StreamSubscriptionSink batchSizeMax(Integer batchSizeMax) {
-    
+  public StreamSubscriptionSink batchSizeMax(@javax.annotation.Nullable Integer batchSizeMax) {
     this.batchSizeMax = batchSizeMax;
     return this;
   }
 
-   /**
+  /**
    * maximum batch size
    * @return batchSizeMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBatchSizeMax() {
     return batchSizeMax;
   }
 
-
-  public void setBatchSizeMax(Integer batchSizeMax) {
+  public void setBatchSizeMax(@javax.annotation.Nullable Integer batchSizeMax) {
     this.batchSizeMax = batchSizeMax;
   }
 
 
-  public StreamSubscriptionSink batchWaitTimeMax(Integer batchWaitTimeMax) {
-    
+  public StreamSubscriptionSink batchWaitTimeMax(@javax.annotation.Nullable Integer batchWaitTimeMax) {
     this.batchWaitTimeMax = batchWaitTimeMax;
     return this;
   }
 
-   /**
+  /**
    * maximum batch waiting time
    * @return batchWaitTimeMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBatchWaitTimeMax() {
     return batchWaitTimeMax;
   }
 
-
-  public void setBatchWaitTimeMax(Integer batchWaitTimeMax) {
+  public void setBatchWaitTimeMax(@javax.annotation.Nullable Integer batchWaitTimeMax) {
     this.batchWaitTimeMax = batchWaitTimeMax;
   }
 
 
-  public StreamSubscriptionSink credential(StreamSubscriptionSinkCredential credential) {
-    
+  public StreamSubscriptionSink credential(@javax.annotation.Nullable StreamSubscriptionSinkCredential credential) {
     this.credential = credential;
     return this;
   }
 
-   /**
+  /**
    * Get credential
    * @return credential
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionSinkCredential getCredential() {
     return credential;
   }
 
-
-  public void setCredential(StreamSubscriptionSinkCredential credential) {
+  public void setCredential(@javax.annotation.Nullable StreamSubscriptionSinkCredential credential) {
     this.credential = credential;
   }
 
 
-  public StreamSubscriptionSink settings(StreamSubscriptionSinkSetting settings) {
-    
+  public StreamSubscriptionSink settings(@javax.annotation.Nullable StreamSubscriptionSinkSetting settings) {
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionSinkSetting getSettings() {
     return settings;
   }
 
-
-  public void setSettings(StreamSubscriptionSinkSetting settings) {
+  public void setSettings(@javax.annotation.Nullable StreamSubscriptionSinkSetting settings) {
     this.settings = settings;
   }
 
 
-  public StreamSubscriptionSink host(String host) {
-    
+  public StreamSubscriptionSink host(@javax.annotation.Nullable String host) {
     this.host = host;
     return this;
   }
 
-   /**
+  /**
    * sink host
    * @return host
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHost() {
     return host;
   }
 
-
-  public void setHost(String host) {
+  public void setHost(@javax.annotation.Nullable String host) {
     this.host = host;
   }
 
@@ -432,31 +423,36 @@ public class StreamSubscriptionSink {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamSubscriptionSink
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamSubscriptionSink.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamSubscriptionSink
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamSubscriptionSink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionSink is not found in the empty JSON string", StreamSubscriptionSink.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uri") != null && !jsonObj.get("uri").isJsonNull()) && !jsonObj.get("uri").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uri").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `credential`
       if (jsonObj.get("credential") != null && !jsonObj.get("credential").isJsonNull()) {
-        StreamSubscriptionSinkCredential.validateJsonObject(jsonObj.getAsJsonObject("credential"));
+        StreamSubscriptionSinkCredential.validateJsonElement(jsonObj.get("credential"));
       }
       // validate the optional field `settings`
       if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        StreamSubscriptionSinkSetting.validateJsonObject(jsonObj.getAsJsonObject("settings"));
+        StreamSubscriptionSinkSetting.validateJsonElement(jsonObj.get("settings"));
       }
       if ((jsonObj.get("host") != null && !jsonObj.get("host").isJsonNull()) && !jsonObj.get("host").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host").toString()));
@@ -491,7 +487,12 @@ public class StreamSubscriptionSink {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -500,8 +501,9 @@ public class StreamSubscriptionSink {
 
            @Override
            public StreamSubscriptionSink read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamSubscriptionSink instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -529,22 +531,22 @@ public class StreamSubscriptionSink {
     }
   }
 
- /**
-  * Create an instance of StreamSubscriptionSink given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamSubscriptionSink
-  * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSink
-  */
+  /**
+   * Create an instance of StreamSubscriptionSink given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamSubscriptionSink
+   * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSink
+   */
   public static StreamSubscriptionSink fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamSubscriptionSink.class);
   }
 
- /**
-  * Convert an instance of StreamSubscriptionSink to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamSubscriptionSink to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

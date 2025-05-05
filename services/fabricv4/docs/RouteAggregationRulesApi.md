@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**replaceRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | ReplaceRARule |
 
 
-<a name="createRouteAggregationRule"></a>
+<a id="createRouteAggregationRule"></a>
 # **createRouteAggregationRule**
 > RouteAggregationRulesData createRouteAggregationRule(routeAggregationId, routeAggregationRulesBase)
 
@@ -90,7 +90,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createRouteAggregationRulesInBulk"></a>
+<a id="createRouteAggregationRulesInBulk"></a>
 # **createRouteAggregationRulesInBulk**
 > GetRouteAggregationRulesResponse createRouteAggregationRulesInBulk(routeAggregationId, routeAggregationRulesPostRequest)
 
@@ -165,7 +165,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteRouteAggregationRuleByUuid"></a>
+<a id="deleteRouteAggregationRuleByUuid"></a>
 # **deleteRouteAggregationRuleByUuid**
 > RouteAggregationRulesData deleteRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId)
 
@@ -240,7 +240,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationRuleByUuid"></a>
+<a id="getRouteAggregationRuleByUuid"></a>
 # **getRouteAggregationRuleByUuid**
 > RouteAggregationRulesData getRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId)
 
@@ -315,7 +315,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationRuleChangeByUuid"></a>
+<a id="getRouteAggregationRuleChangeByUuid"></a>
 # **getRouteAggregationRuleChangeByUuid**
 > RouteAggregationRulesChangeData getRouteAggregationRuleChangeByUuid(routeAggregationId, routeAggregationRuleId, changeId)
 
@@ -391,7 +391,7 @@ public class Example {
 | **404** | Route Aggregation ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationRuleChanges"></a>
+<a id="getRouteAggregationRuleChanges"></a>
 # **getRouteAggregationRuleChanges**
 > RouteAggregationRulesChangeDataResponse getRouteAggregationRuleChanges(routeAggregationId, routeAggregationRuleId, offset, limit)
 
@@ -469,7 +469,7 @@ public class Example {
 | **404** | Route Aggregation ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteAggregationRules"></a>
+<a id="getRouteAggregationRules"></a>
 # **getRouteAggregationRules**
 > GetRouteAggregationRulesResponse getRouteAggregationRules(routeAggregationId, offset, limit)
 
@@ -545,7 +545,7 @@ public class Example {
 | **404** | Route Aggregation Rule ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="patchRouteAggregationRuleByUuid"></a>
+<a id="patchRouteAggregationRuleByUuid"></a>
 # **patchRouteAggregationRuleByUuid**
 > RouteAggregationRulesData patchRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem)
 
@@ -622,7 +622,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="replaceRouteAggregationRuleByUuid"></a>
+<a id="replaceRouteAggregationRuleByUuid"></a>
 # **replaceRouteAggregationRuleByUuid**
 > RouteAggregationRulesData replaceRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase)
 

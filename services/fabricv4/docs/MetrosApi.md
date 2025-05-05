@@ -8,7 +8,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getMetros**](MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get all Metros |
 
 
-<a name="getMetroByCode"></a>
+<a id="getMetroByCode"></a>
 # **getMetroByCode**
 > Metro getMetroByCode(metroCode)
 
@@ -78,7 +78,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a name="getMetros"></a>
+<a id="getMetros"></a>
 # **getMetros**
 > MetroResponse getMetros(presence, offset, limit)
 

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ApiServices;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,137 +47,127 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * GET Services Health
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class HealthResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private String version;
 
   public static final String SERIALIZED_NAME_RELEASE = "release";
   @SerializedName(SERIALIZED_NAME_RELEASE)
+  @javax.annotation.Nullable
   private String release;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private String state;
 
   public static final String SERIALIZED_NAME_API_SERVICES = "apiServices";
   @SerializedName(SERIALIZED_NAME_API_SERVICES)
+  @javax.annotation.Nullable
   private ApiServices apiServices;
 
   public HealthResponse() {
   }
 
-  public HealthResponse href(String href) {
-    
+  public HealthResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * The Canonical URL at which the resource resides.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHref() {
     return href;
   }
 
-
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public HealthResponse version(String version) {
-    
+  public HealthResponse version(@javax.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Indicator of a version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getVersion() {
     return version;
   }
 
-
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
 
 
-  public HealthResponse release(String release) {
-    
+  public HealthResponse release(@javax.annotation.Nullable String release) {
     this.release = release;
     return this;
   }
 
-   /**
+  /**
    * release details.
    * @return release
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRelease() {
     return release;
   }
 
-
-  public void setRelease(String release) {
+  public void setRelease(@javax.annotation.Nullable String release) {
     this.release = release;
   }
 
 
-  public HealthResponse state(String state) {
-    
+  public HealthResponse state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * status of a service
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getState() {
     return state;
   }
 
-
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public HealthResponse apiServices(ApiServices apiServices) {
-    
+  public HealthResponse apiServices(@javax.annotation.Nullable ApiServices apiServices) {
     this.apiServices = apiServices;
     return this;
   }
 
-   /**
+  /**
    * Get apiServices
    * @return apiServices
-  **/
+   */
   @javax.annotation.Nullable
-
   public ApiServices getApiServices() {
     return apiServices;
   }
 
-
-  public void setApiServices(ApiServices apiServices) {
+  public void setApiServices(@javax.annotation.Nullable ApiServices apiServices) {
     this.apiServices = apiServices;
   }
 
@@ -289,18 +281,19 @@ public class HealthResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to HealthResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!HealthResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HealthResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!HealthResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in HealthResponse is not found in the empty JSON string", HealthResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -315,7 +308,7 @@ public class HealthResponse {
       }
       // validate the optional field `apiServices`
       if (jsonObj.get("apiServices") != null && !jsonObj.get("apiServices").isJsonNull()) {
-        ApiServices.validateJsonObject(jsonObj.getAsJsonObject("apiServices"));
+        ApiServices.validateJsonElement(jsonObj.get("apiServices"));
       }
   }
 
@@ -347,7 +340,12 @@ public class HealthResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -356,8 +354,9 @@ public class HealthResponse {
 
            @Override
            public HealthResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              HealthResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -385,22 +384,22 @@ public class HealthResponse {
     }
   }
 
- /**
-  * Create an instance of HealthResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HealthResponse
-  * @throws IOException if the JSON string is invalid with respect to HealthResponse
-  */
+  /**
+   * Create an instance of HealthResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HealthResponse
+   * @throws IOException if the JSON string is invalid with respect to HealthResponse
+   */
   public static HealthResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HealthResponse.class);
   }
 
- /**
-  * Convert an instance of HealthResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HealthResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

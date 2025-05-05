@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.OutputStructuredPing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,59 +47,55 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * CloudRouterCommandResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterCommandResponse {
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private String output;
 
   public static final String SERIALIZED_NAME_OUTPUT_STRUCTURED_PING = "outputStructuredPing";
   @SerializedName(SERIALIZED_NAME_OUTPUT_STRUCTURED_PING)
+  @javax.annotation.Nullable
   private OutputStructuredPing outputStructuredPing;
 
   public CloudRouterCommandResponse() {
   }
 
-  public CloudRouterCommandResponse output(String output) {
-    
+  public CloudRouterCommandResponse output(@javax.annotation.Nullable String output) {
     this.output = output;
     return this;
   }
 
-   /**
+  /**
    * Get output
    * @return output
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOutput() {
     return output;
   }
 
-
-  public void setOutput(String output) {
+  public void setOutput(@javax.annotation.Nullable String output) {
     this.output = output;
   }
 
 
-  public CloudRouterCommandResponse outputStructuredPing(OutputStructuredPing outputStructuredPing) {
-    
+  public CloudRouterCommandResponse outputStructuredPing(@javax.annotation.Nullable OutputStructuredPing outputStructuredPing) {
     this.outputStructuredPing = outputStructuredPing;
     return this;
   }
 
-   /**
+  /**
    * Get outputStructuredPing
    * @return outputStructuredPing
-  **/
+   */
   @javax.annotation.Nullable
-
   public OutputStructuredPing getOutputStructuredPing() {
     return outputStructuredPing;
   }
 
-
-  public void setOutputStructuredPing(OutputStructuredPing outputStructuredPing) {
+  public void setOutputStructuredPing(@javax.annotation.Nullable OutputStructuredPing outputStructuredPing) {
     this.outputStructuredPing = outputStructuredPing;
   }
 
@@ -202,24 +200,25 @@ public class CloudRouterCommandResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterCommandResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterCommandResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterCommandResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterCommandResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterCommandResponse is not found in the empty JSON string", CloudRouterCommandResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("output") != null && !jsonObj.get("output").isJsonNull()) && !jsonObj.get("output").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `output` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output").toString()));
       }
       // validate the optional field `outputStructuredPing`
       if (jsonObj.get("outputStructuredPing") != null && !jsonObj.get("outputStructuredPing").isJsonNull()) {
-        OutputStructuredPing.validateJsonObject(jsonObj.getAsJsonObject("outputStructuredPing"));
+        OutputStructuredPing.validateJsonElement(jsonObj.get("outputStructuredPing"));
       }
   }
 
@@ -251,7 +250,12 @@ public class CloudRouterCommandResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -260,8 +264,9 @@ public class CloudRouterCommandResponse {
 
            @Override
            public CloudRouterCommandResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterCommandResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -289,22 +294,22 @@ public class CloudRouterCommandResponse {
     }
   }
 
- /**
-  * Create an instance of CloudRouterCommandResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterCommandResponse
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandResponse
-  */
+  /**
+   * Create an instance of CloudRouterCommandResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterCommandResponse
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandResponse
+   */
   public static CloudRouterCommandResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterCommandResponse.class);
   }
 
- /**
-  * Convert an instance of CloudRouterCommandResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterCommandResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
