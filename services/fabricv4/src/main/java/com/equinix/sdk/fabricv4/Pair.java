@@ -11,7 +11,7 @@
 
 package com.equinix.sdk.fabricv4;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Pair {
     private String name = "";
     private String value = "";

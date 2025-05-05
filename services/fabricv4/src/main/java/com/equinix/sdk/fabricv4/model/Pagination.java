@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,140 +46,130 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Pagination response information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Pagination {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
+  @javax.annotation.Nullable
   private Integer offset = 0;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
+  @javax.annotation.Nonnull
   private Integer limit = 20;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
+  @javax.annotation.Nonnull
   private Integer total;
 
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
+  @javax.annotation.Nullable
   private String next;
 
   public static final String SERIALIZED_NAME_PREVIOUS = "previous";
   @SerializedName(SERIALIZED_NAME_PREVIOUS)
+  @javax.annotation.Nullable
   private String previous;
 
   public Pagination() {
   }
 
-  public Pagination offset(Integer offset) {
-    
+  public Pagination offset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
     return this;
   }
 
-   /**
+  /**
    * Index of the first item returned in the response. The default is 0.
    * minimum: 0
    * @return offset
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getOffset() {
     return offset;
   }
 
-
-  public void setOffset(Integer offset) {
+  public void setOffset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
   }
 
 
-  public Pagination limit(Integer limit) {
-    
+  public Pagination limit(@javax.annotation.Nonnull Integer limit) {
     this.limit = limit;
     return this;
   }
 
-   /**
+  /**
    * Maximum number of search results returned per page. Number must be between 1 and 100, and the default is 20.
    * minimum: 0
    * @return limit
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Integer getLimit() {
     return limit;
   }
 
-
-  public void setLimit(Integer limit) {
+  public void setLimit(@javax.annotation.Nonnull Integer limit) {
     this.limit = limit;
   }
 
 
-  public Pagination total(Integer total) {
-    
+  public Pagination total(@javax.annotation.Nonnull Integer total) {
     this.total = total;
     return this;
   }
 
-   /**
+  /**
    * Total number of elements returned.
    * minimum: 0
    * @return total
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Integer getTotal() {
     return total;
   }
 
-
-  public void setTotal(Integer total) {
+  public void setTotal(@javax.annotation.Nonnull Integer total) {
     this.total = total;
   }
 
 
-  public Pagination next(String next) {
-    
+  public Pagination next(@javax.annotation.Nullable String next) {
     this.next = next;
     return this;
   }
 
-   /**
+  /**
    * URL relative to the next item in the response.
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getNext() {
     return next;
   }
 
-
-  public void setNext(String next) {
+  public void setNext(@javax.annotation.Nullable String next) {
     this.next = next;
   }
 
 
-  public Pagination previous(String previous) {
-    
+  public Pagination previous(@javax.annotation.Nullable String previous) {
     this.previous = previous;
     return this;
   }
 
-   /**
+  /**
    * URL relative to the previous item in the response.
    * @return previous
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPrevious() {
     return previous;
   }
 
-
-  public void setPrevious(String previous) {
+  public void setPrevious(@javax.annotation.Nullable String previous) {
     this.previous = previous;
   }
 
@@ -293,25 +285,26 @@ public class Pagination {
     openapiRequiredFields.add("total");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Pagination
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Pagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Pagination
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Pagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Pagination is not found in the empty JSON string", Pagination.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Pagination.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
       }
@@ -348,7 +341,12 @@ public class Pagination {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -357,8 +355,9 @@ public class Pagination {
 
            @Override
            public Pagination read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Pagination instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -386,22 +385,22 @@ public class Pagination {
     }
   }
 
- /**
-  * Create an instance of Pagination given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Pagination
-  * @throws IOException if the JSON string is invalid with respect to Pagination
-  */
+  /**
+   * Create an instance of Pagination given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Pagination
+   * @throws IOException if the JSON string is invalid with respect to Pagination
+   */
   public static Pagination fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Pagination.class);
   }
 
- /**
-  * Convert an instance of Pagination to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Pagination to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

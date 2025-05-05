@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.SimplifiedLocation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,267 +50,247 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Configuration details for port used at the access point.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SimplifiedMetadataEntity {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_CVP_ID = "cvpId";
   @SerializedName(SERIALIZED_NAME_CVP_ID)
+  @javax.annotation.Nullable
   private Integer cvpId;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nullable
   private BigDecimal bandwidth;
 
   public static final String SERIALIZED_NAME_PORT_NAME = "portName";
   @SerializedName(SERIALIZED_NAME_PORT_NAME)
+  @javax.annotation.Nullable
   private String portName;
 
   public static final String SERIALIZED_NAME_ENCAPSULATION_PROTOCOL_TYPE = "encapsulationProtocolType";
   @SerializedName(SERIALIZED_NAME_ENCAPSULATION_PROTOCOL_TYPE)
+  @javax.annotation.Nullable
   private String encapsulationProtocolType;
 
   public static final String SERIALIZED_NAME_ACCOUNT_NAME = "accountName";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NAME)
+  @javax.annotation.Nullable
   private String accountName;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
+  @javax.annotation.Nullable
   private String priority;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocation location;
 
   public SimplifiedMetadataEntity() {
   }
 
-  public SimplifiedMetadataEntity href(URI href) {
-    
+  public SimplifiedMetadataEntity href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * url to entity
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public SimplifiedMetadataEntity uuid(UUID uuid) {
-    
+  public SimplifiedMetadataEntity uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix assigned Identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public SimplifiedMetadataEntity type(String type) {
-    
+  public SimplifiedMetadataEntity type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of Port
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public SimplifiedMetadataEntity cvpId(Integer cvpId) {
-    
+  public SimplifiedMetadataEntity cvpId(@javax.annotation.Nullable Integer cvpId) {
     this.cvpId = cvpId;
     return this;
   }
 
-   /**
+  /**
    * Customer virtual port Id
    * @return cvpId
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getCvpId() {
     return cvpId;
   }
 
-
-  public void setCvpId(Integer cvpId) {
+  public void setCvpId(@javax.annotation.Nullable Integer cvpId) {
     this.cvpId = cvpId;
   }
 
 
-  public SimplifiedMetadataEntity bandwidth(BigDecimal bandwidth) {
-    
+  public SimplifiedMetadataEntity bandwidth(@javax.annotation.Nullable BigDecimal bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Port Bandwidth
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public BigDecimal getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(BigDecimal bandwidth) {
+  public void setBandwidth(@javax.annotation.Nullable BigDecimal bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public SimplifiedMetadataEntity portName(String portName) {
-    
+  public SimplifiedMetadataEntity portName(@javax.annotation.Nullable String portName) {
     this.portName = portName;
     return this;
   }
 
-   /**
+  /**
    * Port Name
    * @return portName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPortName() {
     return portName;
   }
 
-
-  public void setPortName(String portName) {
+  public void setPortName(@javax.annotation.Nullable String portName) {
     this.portName = portName;
   }
 
 
-  public SimplifiedMetadataEntity encapsulationProtocolType(String encapsulationProtocolType) {
-    
+  public SimplifiedMetadataEntity encapsulationProtocolType(@javax.annotation.Nullable String encapsulationProtocolType) {
     this.encapsulationProtocolType = encapsulationProtocolType;
     return this;
   }
 
-   /**
+  /**
    * Port Encapsulation
    * @return encapsulationProtocolType
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEncapsulationProtocolType() {
     return encapsulationProtocolType;
   }
 
-
-  public void setEncapsulationProtocolType(String encapsulationProtocolType) {
+  public void setEncapsulationProtocolType(@javax.annotation.Nullable String encapsulationProtocolType) {
     this.encapsulationProtocolType = encapsulationProtocolType;
   }
 
 
-  public SimplifiedMetadataEntity accountName(String accountName) {
-    
+  public SimplifiedMetadataEntity accountName(@javax.annotation.Nullable String accountName) {
     this.accountName = accountName;
     return this;
   }
 
-   /**
+  /**
    * Account Name
    * @return accountName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAccountName() {
     return accountName;
   }
 
-
-  public void setAccountName(String accountName) {
+  public void setAccountName(@javax.annotation.Nullable String accountName) {
     this.accountName = accountName;
   }
 
 
-  public SimplifiedMetadataEntity priority(String priority) {
-    
+  public SimplifiedMetadataEntity priority(@javax.annotation.Nullable String priority) {
     this.priority = priority;
     return this;
   }
 
-   /**
+  /**
    * Port Priority
    * @return priority
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPriority() {
     return priority;
   }
 
-
-  public void setPriority(String priority) {
+  public void setPriority(@javax.annotation.Nullable String priority) {
     this.priority = priority;
   }
 
 
-  public SimplifiedMetadataEntity location(SimplifiedLocation location) {
-    
+  public SimplifiedMetadataEntity location(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocation location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
   }
 
@@ -437,18 +419,19 @@ public class SimplifiedMetadataEntity {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SimplifiedMetadataEntity
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SimplifiedMetadataEntity.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SimplifiedMetadataEntity
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SimplifiedMetadataEntity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedMetadataEntity is not found in the empty JSON string", SimplifiedMetadataEntity.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -472,7 +455,7 @@ public class SimplifiedMetadataEntity {
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
       }
   }
 
@@ -504,7 +487,12 @@ public class SimplifiedMetadataEntity {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -513,8 +501,9 @@ public class SimplifiedMetadataEntity {
 
            @Override
            public SimplifiedMetadataEntity read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SimplifiedMetadataEntity instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -542,22 +531,22 @@ public class SimplifiedMetadataEntity {
     }
   }
 
- /**
-  * Create an instance of SimplifiedMetadataEntity given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SimplifiedMetadataEntity
-  * @throws IOException if the JSON string is invalid with respect to SimplifiedMetadataEntity
-  */
+  /**
+   * Create an instance of SimplifiedMetadataEntity given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SimplifiedMetadataEntity
+   * @throws IOException if the JSON string is invalid with respect to SimplifiedMetadataEntity
+   */
   public static SimplifiedMetadataEntity fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SimplifiedMetadataEntity.class);
   }
 
- /**
-  * Convert an instance of SimplifiedMetadataEntity to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SimplifiedMetadataEntity to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

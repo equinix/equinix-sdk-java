@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointTypeEnum;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,77 +49,75 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * VirtualDevice Access Point Type
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileAccessPointTypeVD {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private String uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private ServiceProfileAccessPointTypeEnum type;
 
   public static final String SERIALIZED_NAME_SUPPORTED_BANDWIDTHS = "supportedBandwidths";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_BANDWIDTHS)
+  @javax.annotation.Nullable
   private List<Integer> supportedBandwidths = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALLOW_REMOTE_CONNECTIONS = "allowRemoteConnections";
   @SerializedName(SERIALIZED_NAME_ALLOW_REMOTE_CONNECTIONS)
+  @javax.annotation.Nullable
   private Boolean allowRemoteConnections;
 
   public static final String SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH = "allowCustomBandwidth";
   @SerializedName(SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH)
+  @javax.annotation.Nullable
   private Boolean allowCustomBandwidth;
 
   public ServiceProfileAccessPointTypeVD() {
   }
 
-  public ServiceProfileAccessPointTypeVD uuid(String uuid) {
-    
+  public ServiceProfileAccessPointTypeVD uuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Get uuid
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public ServiceProfileAccessPointTypeVD type(ServiceProfileAccessPointTypeEnum type) {
-    
+  public ServiceProfileAccessPointTypeVD type(@javax.annotation.Nonnull ServiceProfileAccessPointTypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ServiceProfileAccessPointTypeEnum getType() {
     return type;
   }
 
-
-  public void setType(ServiceProfileAccessPointTypeEnum type) {
+  public void setType(@javax.annotation.Nonnull ServiceProfileAccessPointTypeEnum type) {
     this.type = type;
   }
 
 
-  public ServiceProfileAccessPointTypeVD supportedBandwidths(List<Integer> supportedBandwidths) {
-    
+  public ServiceProfileAccessPointTypeVD supportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
     return this;
   }
@@ -130,62 +130,54 @@ public class ServiceProfileAccessPointTypeVD {
     return this;
   }
 
-   /**
+  /**
    * Get supportedBandwidths
    * @return supportedBandwidths
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Integer> getSupportedBandwidths() {
     return supportedBandwidths;
   }
 
-
-  public void setSupportedBandwidths(List<Integer> supportedBandwidths) {
+  public void setSupportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
   }
 
 
-  public ServiceProfileAccessPointTypeVD allowRemoteConnections(Boolean allowRemoteConnections) {
-    
+  public ServiceProfileAccessPointTypeVD allowRemoteConnections(@javax.annotation.Nullable Boolean allowRemoteConnections) {
     this.allowRemoteConnections = allowRemoteConnections;
     return this;
   }
 
-   /**
+  /**
    * Allow remote connections to Service Profile
    * @return allowRemoteConnections
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowRemoteConnections() {
     return allowRemoteConnections;
   }
 
-
-  public void setAllowRemoteConnections(Boolean allowRemoteConnections) {
+  public void setAllowRemoteConnections(@javax.annotation.Nullable Boolean allowRemoteConnections) {
     this.allowRemoteConnections = allowRemoteConnections;
   }
 
 
-  public ServiceProfileAccessPointTypeVD allowCustomBandwidth(Boolean allowCustomBandwidth) {
-    
+  public ServiceProfileAccessPointTypeVD allowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
     return this;
   }
 
-   /**
+  /**
    * Get allowCustomBandwidth
    * @return allowCustomBandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowCustomBandwidth() {
     return allowCustomBandwidth;
   }
 
-
-  public void setAllowCustomBandwidth(Boolean allowCustomBandwidth) {
+  public void setAllowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
   }
 
@@ -254,38 +246,41 @@ public class ServiceProfileAccessPointTypeVD {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileAccessPointTypeVD
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfileAccessPointTypeVD.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfileAccessPointTypeVD
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfileAccessPointTypeVD.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileAccessPointTypeVD is not found in the empty JSON string", ServiceProfileAccessPointTypeVD.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ServiceProfileAccessPointTypeVD.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ServiceProfileAccessPointTypeVD` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ServiceProfileAccessPointTypeVD` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ServiceProfileAccessPointTypeVD.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the required field `type`
+      ServiceProfileAccessPointTypeEnum.validateJsonElement(jsonObj.get("type"));
       // ensure the optional json data is an array if present
-      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonArray()) {
+      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
       }
   }
@@ -310,31 +305,31 @@ public class ServiceProfileAccessPointTypeVD {
 
            @Override
            public ServiceProfileAccessPointTypeVD read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
     }
   }
 
- /**
-  * Create an instance of ServiceProfileAccessPointTypeVD given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileAccessPointTypeVD
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointTypeVD
-  */
+  /**
+   * Create an instance of ServiceProfileAccessPointTypeVD given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfileAccessPointTypeVD
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointTypeVD
+   */
   public static ServiceProfileAccessPointTypeVD fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfileAccessPointTypeVD.class);
   }
 
- /**
-  * Convert an instance of ServiceProfileAccessPointTypeVD to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfileAccessPointTypeVD to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

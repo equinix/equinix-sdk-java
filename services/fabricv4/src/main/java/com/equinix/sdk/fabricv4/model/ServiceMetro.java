@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,107 +50,104 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * ServiceMetro
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceMetro {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private String code;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_VC_BANDWIDTH_MAX = "vcBandwidthMax";
   @SerializedName(SERIALIZED_NAME_VC_BANDWIDTH_MAX)
+  @javax.annotation.Nullable
   private Integer vcBandwidthMax;
 
   public static final String SERIALIZED_NAME_IBXS = "ibxs";
   @SerializedName(SERIALIZED_NAME_IBXS)
+  @javax.annotation.Nullable
   private List<String> ibxs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IN_TRAIL = "inTrail";
   @SerializedName(SERIALIZED_NAME_IN_TRAIL)
+  @javax.annotation.Nullable
   private Boolean inTrail;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
+  @javax.annotation.Nullable
   private String displayName;
 
   public static final String SERIALIZED_NAME_SELLER_REGIONS = "sellerRegions";
   @SerializedName(SERIALIZED_NAME_SELLER_REGIONS)
+  @javax.annotation.Nullable
   private Map<String, String> sellerRegions = new HashMap<>();
 
   public ServiceMetro() {
   }
 
-  public ServiceMetro code(String code) {
-    
+  public ServiceMetro code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * metro code
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCode() {
     return code;
   }
 
-
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public ServiceMetro name(String name) {
-    
+  public ServiceMetro name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * metro name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ServiceMetro vcBandwidthMax(Integer vcBandwidthMax) {
-    
+  public ServiceMetro vcBandwidthMax(@javax.annotation.Nullable Integer vcBandwidthMax) {
     this.vcBandwidthMax = vcBandwidthMax;
     return this;
   }
 
-   /**
+  /**
    * max VC speed supported in Mbps
    * @return vcBandwidthMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVcBandwidthMax() {
     return vcBandwidthMax;
   }
 
-
-  public void setVcBandwidthMax(Integer vcBandwidthMax) {
+  public void setVcBandwidthMax(@javax.annotation.Nullable Integer vcBandwidthMax) {
     this.vcBandwidthMax = vcBandwidthMax;
   }
 
 
-  public ServiceMetro ibxs(List<String> ibxs) {
-    
+  public ServiceMetro ibxs(@javax.annotation.Nullable List<String> ibxs) {
     this.ibxs = ibxs;
     return this;
   }
@@ -161,68 +160,59 @@ public class ServiceMetro {
     return this;
   }
 
-   /**
+  /**
    * Get ibxs
    * @return ibxs
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getIbxs() {
     return ibxs;
   }
 
-
-  public void setIbxs(List<String> ibxs) {
+  public void setIbxs(@javax.annotation.Nullable List<String> ibxs) {
     this.ibxs = ibxs;
   }
 
 
-  public ServiceMetro inTrail(Boolean inTrail) {
-    
+  public ServiceMetro inTrail(@javax.annotation.Nullable Boolean inTrail) {
     this.inTrail = inTrail;
     return this;
   }
 
-   /**
+  /**
    * Get inTrail
    * @return inTrail
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getInTrail() {
     return inTrail;
   }
 
-
-  public void setInTrail(Boolean inTrail) {
+  public void setInTrail(@javax.annotation.Nullable Boolean inTrail) {
     this.inTrail = inTrail;
   }
 
 
-  public ServiceMetro displayName(String displayName) {
-    
+  public ServiceMetro displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
   }
 
-   /**
+  /**
    * service metro display name
    * @return displayName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDisplayName() {
     return displayName;
   }
 
-
-  public void setDisplayName(String displayName) {
+  public void setDisplayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
   }
 
 
-  public ServiceMetro sellerRegions(Map<String, String> sellerRegions) {
-    
+  public ServiceMetro sellerRegions(@javax.annotation.Nullable Map<String, String> sellerRegions) {
     this.sellerRegions = sellerRegions;
     return this;
   }
@@ -235,18 +225,16 @@ public class ServiceMetro {
     return this;
   }
 
-   /**
+  /**
    * Get sellerRegions
    * @return sellerRegions
-  **/
+   */
   @javax.annotation.Nullable
-
   public Map<String, String> getSellerRegions() {
     return sellerRegions;
   }
 
-
-  public void setSellerRegions(Map<String, String> sellerRegions) {
+  public void setSellerRegions(@javax.annotation.Nullable Map<String, String> sellerRegions) {
     this.sellerRegions = sellerRegions;
   }
 
@@ -366,18 +354,19 @@ public class ServiceMetro {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceMetro
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceMetro.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceMetro
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceMetro.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceMetro is not found in the empty JSON string", ServiceMetro.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
@@ -385,7 +374,7 @@ public class ServiceMetro {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("ibxs") != null && !jsonObj.get("ibxs").isJsonArray()) {
+      if (jsonObj.get("ibxs") != null && !jsonObj.get("ibxs").isJsonNull() && !jsonObj.get("ibxs").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `ibxs` to be an array in the JSON string but got `%s`", jsonObj.get("ibxs").toString()));
       }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
@@ -421,7 +410,12 @@ public class ServiceMetro {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -430,8 +424,9 @@ public class ServiceMetro {
 
            @Override
            public ServiceMetro read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceMetro instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -459,22 +454,22 @@ public class ServiceMetro {
     }
   }
 
- /**
-  * Create an instance of ServiceMetro given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceMetro
-  * @throws IOException if the JSON string is invalid with respect to ServiceMetro
-  */
+  /**
+   * Create an instance of ServiceMetro given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceMetro
+   * @throws IOException if the JSON string is invalid with respect to ServiceMetro
+   */
   public static ServiceMetro fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceMetro.class);
   }
 
- /**
-  * Convert an instance of ServiceMetro to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceMetro to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

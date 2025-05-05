@@ -7,7 +7,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getSubscriptionById**](MarketplaceSubscriptionsApi.md#getSubscriptionById) | **GET** /fabric/v4/marketplaceSubscriptions/{subscriptionId} | Get Subscription |
 
 
-<a name="getSubscriptionById"></a>
+<a id="getSubscriptionById"></a>
 # **getSubscriptionById**
 > SubscriptionResponse getSubscriptionById(subscriptionId)
 
