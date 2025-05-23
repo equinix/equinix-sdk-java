@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,59 +47,55 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Cloud Router package change log
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PackageChangeLog {
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedDateTime;
 
   public PackageChangeLog() {
   }
 
-  public PackageChangeLog createdDateTime(OffsetDateTime createdDateTime) {
-    
+  public PackageChangeLog createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
 
-   /**
+  /**
    * Get createdDateTime
    * @return createdDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-
-  public void setCreatedDateTime(OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public PackageChangeLog updatedDateTime(OffsetDateTime updatedDateTime) {
-    
+  public PackageChangeLog updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
 
-   /**
+  /**
    * Get updatedDateTime
    * @return updatedDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-
-  public void setUpdatedDateTime(OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 
@@ -202,18 +200,19 @@ public class PackageChangeLog {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PackageChangeLog
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PackageChangeLog.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PackageChangeLog
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PackageChangeLog.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PackageChangeLog is not found in the empty JSON string", PackageChangeLog.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -244,7 +243,12 @@ public class PackageChangeLog {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -253,8 +257,9 @@ public class PackageChangeLog {
 
            @Override
            public PackageChangeLog read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PackageChangeLog instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -282,22 +287,22 @@ public class PackageChangeLog {
     }
   }
 
- /**
-  * Create an instance of PackageChangeLog given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PackageChangeLog
-  * @throws IOException if the JSON string is invalid with respect to PackageChangeLog
-  */
+  /**
+   * Create an instance of PackageChangeLog given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PackageChangeLog
+   * @throws IOException if the JSON string is invalid with respect to PackageChangeLog
+   */
   public static PackageChangeLog fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PackageChangeLog.class);
   }
 
- /**
-  * Convert an instance of PackageChangeLog to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PackageChangeLog to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

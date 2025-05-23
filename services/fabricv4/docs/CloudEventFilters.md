@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**and** | [**List&lt;CloudEventFilter&gt;**](CloudEventFilter.md) |  |  [optional] |
+|**and** | [**List&lt;CloudEventSimpleExpression&gt;**](CloudEventSimpleExpression.md) |  |  [optional] |
 
 
 

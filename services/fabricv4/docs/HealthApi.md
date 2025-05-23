@@ -7,7 +7,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getStatus**](HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get service status |
 
 
-<a name="getStatus"></a>
+<a id="getStatus"></a>
 # **getStatus**
 > HealthResponse getStatus()
 

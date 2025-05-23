@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,10 +48,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * EPT Service Package Information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PrecisionTimePackageResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   /**
@@ -95,10 +98,16 @@ public class PrecisionTimePackageResponse {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   /**
@@ -150,314 +159,293 @@ public class PrecisionTimePackageResponse {
         return CodeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CodeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nonnull
   private CodeEnum code;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nonnull
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_CLIENTS_PER_SECOND_MAX = "clientsPerSecondMax";
   @SerializedName(SERIALIZED_NAME_CLIENTS_PER_SECOND_MAX)
+  @javax.annotation.Nullable
   private Integer clientsPerSecondMax;
 
   public static final String SERIALIZED_NAME_REDUNDANCY_SUPPORTED = "redundancySupported";
   @SerializedName(SERIALIZED_NAME_REDUNDANCY_SUPPORTED)
+  @javax.annotation.Nullable
   private Boolean redundancySupported;
 
   public static final String SERIALIZED_NAME_MULTI_SUBNET_SUPPORTED = "multiSubnetSupported";
   @SerializedName(SERIALIZED_NAME_MULTI_SUBNET_SUPPORTED)
+  @javax.annotation.Nullable
   private Boolean multiSubnetSupported;
 
   public static final String SERIALIZED_NAME_ACCURACY_SLA_UNIT = "accuracySlaUnit";
   @SerializedName(SERIALIZED_NAME_ACCURACY_SLA_UNIT)
+  @javax.annotation.Nullable
   private String accuracySlaUnit;
 
   public static final String SERIALIZED_NAME_ACCURACY_SLA = "accuracySla";
   @SerializedName(SERIALIZED_NAME_ACCURACY_SLA)
+  @javax.annotation.Nullable
   private Integer accuracySla;
 
   public static final String SERIALIZED_NAME_ACCURACY_SLA_MIN = "accuracySlaMin";
   @SerializedName(SERIALIZED_NAME_ACCURACY_SLA_MIN)
+  @javax.annotation.Nullable
   private Integer accuracySlaMin;
 
   public static final String SERIALIZED_NAME_ACCURACY_SLA_MAX = "accuracySlaMax";
   @SerializedName(SERIALIZED_NAME_ACCURACY_SLA_MAX)
+  @javax.annotation.Nullable
   private Integer accuracySlaMax;
 
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
+  @javax.annotation.Nullable
   private Changelog changelog;
 
   public PrecisionTimePackageResponse() {
   }
 
-  public PrecisionTimePackageResponse href(URI href) {
-    
+  public PrecisionTimePackageResponse href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Get href
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public PrecisionTimePackageResponse type(TypeEnum type) {
-    
+  public PrecisionTimePackageResponse type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public PrecisionTimePackageResponse code(CodeEnum code) {
-    
+  public PrecisionTimePackageResponse code(@javax.annotation.Nonnull CodeEnum code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
    * @return code
-  **/
+   */
   @javax.annotation.Nonnull
-
   public CodeEnum getCode() {
     return code;
   }
 
-
-  public void setCode(CodeEnum code) {
+  public void setCode(@javax.annotation.Nonnull CodeEnum code) {
     this.code = code;
   }
 
 
-  public PrecisionTimePackageResponse bandwidth(Integer bandwidth) {
-    
+  public PrecisionTimePackageResponse bandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Connection bandwidth in Mbps.
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public PrecisionTimePackageResponse clientsPerSecondMax(Integer clientsPerSecondMax) {
-    
+  public PrecisionTimePackageResponse clientsPerSecondMax(@javax.annotation.Nullable Integer clientsPerSecondMax) {
     this.clientsPerSecondMax = clientsPerSecondMax;
     return this;
   }
 
-   /**
+  /**
    * Max. number of clients that can be synchronized per second at a packet rate of 1 per second.
    * minimum: 0
    * @return clientsPerSecondMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getClientsPerSecondMax() {
     return clientsPerSecondMax;
   }
 
-
-  public void setClientsPerSecondMax(Integer clientsPerSecondMax) {
+  public void setClientsPerSecondMax(@javax.annotation.Nullable Integer clientsPerSecondMax) {
     this.clientsPerSecondMax = clientsPerSecondMax;
   }
 
 
-  public PrecisionTimePackageResponse redundancySupported(Boolean redundancySupported) {
-    
+  public PrecisionTimePackageResponse redundancySupported(@javax.annotation.Nullable Boolean redundancySupported) {
     this.redundancySupported = redundancySupported;
     return this;
   }
 
-   /**
+  /**
    * Is Redundant virtual connection supported for the package code.
    * @return redundancySupported
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getRedundancySupported() {
     return redundancySupported;
   }
 
-
-  public void setRedundancySupported(Boolean redundancySupported) {
+  public void setRedundancySupported(@javax.annotation.Nullable Boolean redundancySupported) {
     this.redundancySupported = redundancySupported;
   }
 
 
-  public PrecisionTimePackageResponse multiSubnetSupported(Boolean multiSubnetSupported) {
-    
+  public PrecisionTimePackageResponse multiSubnetSupported(@javax.annotation.Nullable Boolean multiSubnetSupported) {
     this.multiSubnetSupported = multiSubnetSupported;
     return this;
   }
 
-   /**
+  /**
    * Is Multiple subnet supported for the package code.
    * @return multiSubnetSupported
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getMultiSubnetSupported() {
     return multiSubnetSupported;
   }
 
-
-  public void setMultiSubnetSupported(Boolean multiSubnetSupported) {
+  public void setMultiSubnetSupported(@javax.annotation.Nullable Boolean multiSubnetSupported) {
     this.multiSubnetSupported = multiSubnetSupported;
   }
 
 
-  public PrecisionTimePackageResponse accuracySlaUnit(String accuracySlaUnit) {
-    
+  public PrecisionTimePackageResponse accuracySlaUnit(@javax.annotation.Nullable String accuracySlaUnit) {
     this.accuracySlaUnit = accuracySlaUnit;
     return this;
   }
 
-   /**
+  /**
    * Accuracy SLA unit.
    * @return accuracySlaUnit
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAccuracySlaUnit() {
     return accuracySlaUnit;
   }
 
-
-  public void setAccuracySlaUnit(String accuracySlaUnit) {
+  public void setAccuracySlaUnit(@javax.annotation.Nullable String accuracySlaUnit) {
     this.accuracySlaUnit = accuracySlaUnit;
   }
 
 
-  public PrecisionTimePackageResponse accuracySla(Integer accuracySla) {
-    
+  public PrecisionTimePackageResponse accuracySla(@javax.annotation.Nullable Integer accuracySla) {
     this.accuracySla = accuracySla;
     return this;
   }
 
-   /**
+  /**
    * Accuracy SLA for the package code, -1 value denotes the accuracySla is not published.
    * @return accuracySla
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getAccuracySla() {
     return accuracySla;
   }
 
-
-  public void setAccuracySla(Integer accuracySla) {
+  public void setAccuracySla(@javax.annotation.Nullable Integer accuracySla) {
     this.accuracySla = accuracySla;
   }
 
 
-  public PrecisionTimePackageResponse accuracySlaMin(Integer accuracySlaMin) {
-    
+  public PrecisionTimePackageResponse accuracySlaMin(@javax.annotation.Nullable Integer accuracySlaMin) {
     this.accuracySlaMin = accuracySlaMin;
     return this;
   }
 
-   /**
+  /**
    * Typical minimum Accuracy for the package code.
    * minimum: 1
    * @return accuracySlaMin
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getAccuracySlaMin() {
     return accuracySlaMin;
   }
 
-
-  public void setAccuracySlaMin(Integer accuracySlaMin) {
+  public void setAccuracySlaMin(@javax.annotation.Nullable Integer accuracySlaMin) {
     this.accuracySlaMin = accuracySlaMin;
   }
 
 
-  public PrecisionTimePackageResponse accuracySlaMax(Integer accuracySlaMax) {
-    
+  public PrecisionTimePackageResponse accuracySlaMax(@javax.annotation.Nullable Integer accuracySlaMax) {
     this.accuracySlaMax = accuracySlaMax;
     return this;
   }
 
-   /**
+  /**
    * Typical maximum Accuracy for the package code.
    * minimum: 1
    * @return accuracySlaMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getAccuracySlaMax() {
     return accuracySlaMax;
   }
 
-
-  public void setAccuracySlaMax(Integer accuracySlaMax) {
+  public void setAccuracySlaMax(@javax.annotation.Nullable Integer accuracySlaMax) {
     this.accuracySlaMax = accuracySlaMax;
   }
 
 
-  public PrecisionTimePackageResponse changelog(Changelog changelog) {
-    
+  public PrecisionTimePackageResponse changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
   }
 
-   /**
+  /**
    * Get changelog
    * @return changelog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangelog() {
     return changelog;
   }
 
-
-  public void setChangelog(Changelog changelog) {
+  public void setChangelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
   }
 
@@ -595,40 +583,45 @@ public class PrecisionTimePackageResponse {
     openapiRequiredFields.add("bandwidth");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PrecisionTimePackageResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PrecisionTimePackageResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PrecisionTimePackageResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PrecisionTimePackageResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PrecisionTimePackageResponse is not found in the empty JSON string", PrecisionTimePackageResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PrecisionTimePackageResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
+      // validate the required field `code`
+      CodeEnum.validateJsonElement(jsonObj.get("code"));
       if ((jsonObj.get("accuracySlaUnit") != null && !jsonObj.get("accuracySlaUnit").isJsonNull()) && !jsonObj.get("accuracySlaUnit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `accuracySlaUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accuracySlaUnit").toString()));
       }
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changelog"));
+        Changelog.validateJsonElement(jsonObj.get("changelog"));
       }
   }
 
@@ -660,7 +653,12 @@ public class PrecisionTimePackageResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -669,8 +667,9 @@ public class PrecisionTimePackageResponse {
 
            @Override
            public PrecisionTimePackageResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PrecisionTimePackageResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -698,22 +697,22 @@ public class PrecisionTimePackageResponse {
     }
   }
 
- /**
-  * Create an instance of PrecisionTimePackageResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PrecisionTimePackageResponse
-  * @throws IOException if the JSON string is invalid with respect to PrecisionTimePackageResponse
-  */
+  /**
+   * Create an instance of PrecisionTimePackageResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PrecisionTimePackageResponse
+   * @throws IOException if the JSON string is invalid with respect to PrecisionTimePackageResponse
+   */
   public static PrecisionTimePackageResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PrecisionTimePackageResponse.class);
   }
 
- /**
-  * Convert an instance of PrecisionTimePackageResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PrecisionTimePackageResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

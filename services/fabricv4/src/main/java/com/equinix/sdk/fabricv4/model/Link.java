@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,32 +47,36 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Link
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Link {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_REL = "rel";
   @SerializedName(SERIALIZED_NAME_REL)
+  @javax.annotation.Nullable
   private String rel;
 
   public static final String SERIALIZED_NAME_METHOD = "method";
   @SerializedName(SERIALIZED_NAME_METHOD)
+  @javax.annotation.Nullable
   private String method;
 
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "contentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  @javax.annotation.Nullable
   private String contentType;
 
   public static final String SERIALIZED_NAME_AUTHENTICATE = "authenticate";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATE)
+  @javax.annotation.Nullable
   private Boolean authenticate;
 
   public Link() {
   }
 
-  
   public Link(
      URI href
   ) {
@@ -78,103 +84,89 @@ public class Link {
     this.href = href;
   }
 
-   /**
+  /**
    * Resource URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public Link rel(String rel) {
-    
+  public Link rel(@javax.annotation.Nullable String rel) {
     this.rel = rel;
     return this;
   }
 
-   /**
+  /**
    * OperationId from Swagger hub spec
    * @return rel
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRel() {
     return rel;
   }
 
-
-  public void setRel(String rel) {
+  public void setRel(@javax.annotation.Nullable String rel) {
     this.rel = rel;
   }
 
 
-  public Link method(String method) {
-    
+  public Link method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Http method type
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMethod() {
     return method;
   }
 
-
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public Link contentType(String contentType) {
-    
+  public Link contentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
     return this;
   }
 
-   /**
+  /**
    * Content type for the response
    * @return contentType
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getContentType() {
     return contentType;
   }
 
-
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
   }
 
 
-  public Link authenticate(Boolean authenticate) {
-    
+  public Link authenticate(@javax.annotation.Nullable Boolean authenticate) {
     this.authenticate = authenticate;
     return this;
   }
 
-   /**
+  /**
    * Authentication required or not
    * @return authenticate
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAuthenticate() {
     return authenticate;
   }
 
-
-  public void setAuthenticate(Boolean authenticate) {
+  public void setAuthenticate(@javax.annotation.Nullable Boolean authenticate) {
     this.authenticate = authenticate;
   }
 
@@ -288,18 +280,19 @@ public class Link {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Link
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Link.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Link
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Link.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Link is not found in the empty JSON string", Link.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -342,7 +335,12 @@ public class Link {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -351,8 +349,9 @@ public class Link {
 
            @Override
            public Link read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Link instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -380,22 +379,22 @@ public class Link {
     }
   }
 
- /**
-  * Create an instance of Link given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Link
-  * @throws IOException if the JSON string is invalid with respect to Link
-  */
+  /**
+   * Create an instance of Link given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Link
+   * @throws IOException if the JSON string is invalid with respect to Link
+   */
   public static Link fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Link.class);
   }
 
- /**
-  * Convert an instance of Link to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Link to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

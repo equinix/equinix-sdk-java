@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Pagination;
 import com.equinix.sdk.fabricv4.model.Stream;
 import com.google.gson.TypeAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,43 +50,41 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * GetAllStreamResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class GetAllStreamResponse {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private Pagination pagination;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<Stream> data = new ArrayList<>();
 
   public GetAllStreamResponse() {
   }
 
-  public GetAllStreamResponse pagination(Pagination pagination) {
-    
+  public GetAllStreamResponse pagination(@javax.annotation.Nullable Pagination pagination) {
     this.pagination = pagination;
     return this;
   }
 
-   /**
+  /**
    * Get pagination
    * @return pagination
-  **/
+   */
   @javax.annotation.Nullable
-
   public Pagination getPagination() {
     return pagination;
   }
 
-
-  public void setPagination(Pagination pagination) {
+  public void setPagination(@javax.annotation.Nullable Pagination pagination) {
     this.pagination = pagination;
   }
 
 
-  public GetAllStreamResponse data(List<Stream> data) {
-    
+  public GetAllStreamResponse data(@javax.annotation.Nullable List<Stream> data) {
     this.data = data;
     return this;
   }
@@ -97,18 +97,16 @@ public class GetAllStreamResponse {
     return this;
   }
 
-   /**
+  /**
    * Data returned from the API call.
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Stream> getData() {
     return data;
   }
 
-
-  public void setData(List<Stream> data) {
+  public void setData(@javax.annotation.Nullable List<Stream> data) {
     this.data = data;
   }
 
@@ -213,21 +211,22 @@ public class GetAllStreamResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GetAllStreamResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!GetAllStreamResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GetAllStreamResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GetAllStreamResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in GetAllStreamResponse is not found in the empty JSON string", GetAllStreamResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        Pagination.validateJsonObject(jsonObj.getAsJsonObject("pagination"));
+        Pagination.validateJsonElement(jsonObj.get("pagination"));
       }
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
         JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
@@ -239,7 +238,7 @@ public class GetAllStreamResponse {
 
           // validate the optional field `data` (array)
           for (int i = 0; i < jsonArraydata.size(); i++) {
-            Stream.validateJsonObject(jsonArraydata.get(i).getAsJsonObject());
+            Stream.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }
@@ -273,7 +272,12 @@ public class GetAllStreamResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -282,8 +286,9 @@ public class GetAllStreamResponse {
 
            @Override
            public GetAllStreamResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              GetAllStreamResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -311,22 +316,22 @@ public class GetAllStreamResponse {
     }
   }
 
- /**
-  * Create an instance of GetAllStreamResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GetAllStreamResponse
-  * @throws IOException if the JSON string is invalid with respect to GetAllStreamResponse
-  */
+  /**
+   * Create an instance of GetAllStreamResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GetAllStreamResponse
+   * @throws IOException if the JSON string is invalid with respect to GetAllStreamResponse
+   */
   public static GetAllStreamResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GetAllStreamResponse.class);
   }
 
- /**
-  * Convert an instance of GetAllStreamResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GetAllStreamResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

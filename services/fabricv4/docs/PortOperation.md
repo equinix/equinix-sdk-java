@@ -2,6 +2,7 @@
 
 # PortOperation
 
+Operational specifications for ports.
 
 ## Properties
 

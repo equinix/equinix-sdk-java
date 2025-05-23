@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Actions;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.ConnectionAcceptanceData;
@@ -23,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,36 +50,41 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Connection action
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionAction {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private Actions type;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private String uuid;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nonnull
   private ConnectionAcceptanceData data;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public ConnectionAction() {
   }
 
-  
   public ConnectionAction(
      URI href
   ) {
@@ -85,125 +92,108 @@ public class ConnectionAction {
     this.href = href;
   }
 
-  public ConnectionAction type(Actions type) {
-    
+  public ConnectionAction type(@javax.annotation.Nonnull Actions type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Actions getType() {
     return type;
   }
 
-
-  public void setType(Actions type) {
+  public void setType(@javax.annotation.Nonnull Actions type) {
     this.type = type;
   }
 
 
-   /**
+  /**
    * Connection action URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public ConnectionAction uuid(String uuid) {
-    
+  public ConnectionAction uuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned connection identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
   }
 
 
-  public ConnectionAction description(String description) {
-    
+  public ConnectionAction description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Connection rejection reason detail
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ConnectionAction data(ConnectionAcceptanceData data) {
-    
+  public ConnectionAction data(@javax.annotation.Nonnull ConnectionAcceptanceData data) {
     this.data = data;
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionAcceptanceData getData() {
     return data;
   }
 
-
-  public void setData(ConnectionAcceptanceData data) {
+  public void setData(@javax.annotation.Nonnull ConnectionAcceptanceData data) {
     this.data = data;
   }
 
 
-  public ConnectionAction changeLog(Changelog changeLog) {
-    
+  public ConnectionAction changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
@@ -323,25 +313,28 @@ public class ConnectionAction {
     openapiRequiredFields.add("data");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionAction
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionAction
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionAction is not found in the empty JSON string", ConnectionAction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConnectionAction.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      Actions.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -352,10 +345,10 @@ public class ConnectionAction {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the required field `data`
-      ConnectionAcceptanceData.validateJsonObject(jsonObj.getAsJsonObject("data"));
+      ConnectionAcceptanceData.validateJsonElement(jsonObj.get("data"));
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 
@@ -387,7 +380,12 @@ public class ConnectionAction {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -396,8 +394,9 @@ public class ConnectionAction {
 
            @Override
            public ConnectionAction read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionAction instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -425,22 +424,22 @@ public class ConnectionAction {
     }
   }
 
- /**
-  * Create an instance of ConnectionAction given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionAction
-  * @throws IOException if the JSON string is invalid with respect to ConnectionAction
-  */
+  /**
+   * Create an instance of ConnectionAction given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionAction
+   * @throws IOException if the JSON string is invalid with respect to ConnectionAction
+   */
   public static ConnectionAction fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionAction.class);
   }
 
- /**
-  * Convert an instance of ConnectionAction to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionAction to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
