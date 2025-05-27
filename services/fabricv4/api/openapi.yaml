@@ -36897,7 +36897,6 @@ components:
           $ref: '#/components/schemas/Changelog'
       required:
       - data
-      - href
       - type
       - uuid
       type: object
@@ -47661,12 +47660,6 @@ components:
           type: array
         marketplaceSubscription:
           $ref: '#/components/schemas/marketplaceSubscription'
-      required:
-      - location
-      - name
-      - notification
-      - package
-      - type
       type: object
     CloudRouter:
       allOf:
