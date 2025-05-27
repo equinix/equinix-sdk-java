@@ -12566,7 +12566,6 @@ components:
     ConnectionAction:
       required:
         - data
-        - href
         - type
         - uuid
       type: object
