@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PhysicalPortSettings;
 import com.equinix.sdk.fabricv4.model.PhysicalPortType;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
@@ -33,6 +32,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -46,13 +46,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -60,80 +62,97 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Physical Port specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PhysicalPort {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private PhysicalPortType type;
 
   public static final String SERIALIZED_NAME_ID = "id";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private Integer id;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private PortState state;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_INTERFACE_SPEED = "interfaceSpeed";
   @SerializedName(SERIALIZED_NAME_INTERFACE_SPEED)
+  @javax.annotation.Nullable
   private Integer interfaceSpeed;
 
   public static final String SERIALIZED_NAME_INTERFACE_TYPE = "interfaceType";
   @SerializedName(SERIALIZED_NAME_INTERFACE_TYPE)
+  @javax.annotation.Nullable
   private String interfaceType;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TETHER = "tether";
   @SerializedName(SERIALIZED_NAME_TETHER)
+  @javax.annotation.Nullable
   private PortTether tether;
 
   public static final String SERIALIZED_NAME_DEMARCATION_POINT = "demarcationPoint";
   @SerializedName(SERIALIZED_NAME_DEMARCATION_POINT)
+  @javax.annotation.Nullable
   private PortDemarcationPoint demarcationPoint;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nullable
   private PhysicalPortSettings settings;
 
   public static final String SERIALIZED_NAME_INTERFACE = "interface";
   @SerializedName(SERIALIZED_NAME_INTERFACE)
+  @javax.annotation.Nullable
   private PortInterface _interface;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
   private List<PortNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<PortAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private PortOrder order;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private PortOperation operation;
 
   public static final String SERIALIZED_NAME_LOAS = "loas";
   @SerializedName(SERIALIZED_NAME_LOAS)
+  @javax.annotation.Nullable
   private List<PortLoa> loas = new ArrayList<>();
 
   public PhysicalPort() {
   }
 
-  
   public PhysicalPort(
      URI href
   ) {
@@ -141,266 +160,232 @@ public class PhysicalPort {
     this.href = href;
   }
 
-   /**
+  /**
    * Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public PhysicalPort type(PhysicalPortType type) {
-    
+  public PhysicalPort type(@javax.annotation.Nullable PhysicalPortType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public PhysicalPortType getType() {
     return type;
   }
 
-
-  public void setType(PhysicalPortType type) {
+  public void setType(@javax.annotation.Nullable PhysicalPortType type) {
     this.type = type;
   }
 
 
-  public PhysicalPort id(Integer id) {
-    
+  @Deprecated
+  public PhysicalPort id(@javax.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Equinix assigned response attribute for Physical Port Id
    * @return id
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Integer getId() {
     return id;
   }
 
-
-  public void setId(Integer id) {
+  @Deprecated
+  public void setId(@javax.annotation.Nullable Integer id) {
     this.id = id;
   }
 
 
-  public PhysicalPort state(PortState state) {
-    
+  public PhysicalPort state(@javax.annotation.Nullable PortState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortState getState() {
     return state;
   }
 
-
-  public void setState(PortState state) {
+  public void setState(@javax.annotation.Nullable PortState state) {
     this.state = state;
   }
 
 
-  public PhysicalPort account(SimplifiedAccount account) {
-    
+  public PhysicalPort account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public PhysicalPort interfaceSpeed(Integer interfaceSpeed) {
-    
+  public PhysicalPort interfaceSpeed(@javax.annotation.Nullable Integer interfaceSpeed) {
     this.interfaceSpeed = interfaceSpeed;
     return this;
   }
 
-   /**
+  /**
    * Physical Port Speed in Mbps
    * minimum: 0
    * @return interfaceSpeed
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getInterfaceSpeed() {
     return interfaceSpeed;
   }
 
-
-  public void setInterfaceSpeed(Integer interfaceSpeed) {
+  public void setInterfaceSpeed(@javax.annotation.Nullable Integer interfaceSpeed) {
     this.interfaceSpeed = interfaceSpeed;
   }
 
 
-  public PhysicalPort interfaceType(String interfaceType) {
-    
+  public PhysicalPort interfaceType(@javax.annotation.Nullable String interfaceType) {
     this.interfaceType = interfaceType;
     return this;
   }
 
-   /**
+  /**
    * Physical Port Interface Type
    * @return interfaceType
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getInterfaceType() {
     return interfaceType;
   }
 
-
-  public void setInterfaceType(String interfaceType) {
+  public void setInterfaceType(@javax.annotation.Nullable String interfaceType) {
     this.interfaceType = interfaceType;
   }
 
 
-  public PhysicalPort uuid(UUID uuid) {
-    
+  public PhysicalPort uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix assigned response attribute for physical port identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public PhysicalPort tether(PortTether tether) {
-    
+  public PhysicalPort tether(@javax.annotation.Nullable PortTether tether) {
     this.tether = tether;
     return this;
   }
 
-   /**
+  /**
    * Get tether
    * @return tether
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortTether getTether() {
     return tether;
   }
 
-
-  public void setTether(PortTether tether) {
+  public void setTether(@javax.annotation.Nullable PortTether tether) {
     this.tether = tether;
   }
 
 
-  public PhysicalPort demarcationPoint(PortDemarcationPoint demarcationPoint) {
-    
+  public PhysicalPort demarcationPoint(@javax.annotation.Nullable PortDemarcationPoint demarcationPoint) {
     this.demarcationPoint = demarcationPoint;
     return this;
   }
 
-   /**
+  /**
    * Get demarcationPoint
    * @return demarcationPoint
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortDemarcationPoint getDemarcationPoint() {
     return demarcationPoint;
   }
 
-
-  public void setDemarcationPoint(PortDemarcationPoint demarcationPoint) {
+  public void setDemarcationPoint(@javax.annotation.Nullable PortDemarcationPoint demarcationPoint) {
     this.demarcationPoint = demarcationPoint;
   }
 
 
-  public PhysicalPort settings(PhysicalPortSettings settings) {
-    
+  public PhysicalPort settings(@javax.annotation.Nullable PhysicalPortSettings settings) {
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
-
   public PhysicalPortSettings getSettings() {
     return settings;
   }
 
-
-  public void setSettings(PhysicalPortSettings settings) {
+  public void setSettings(@javax.annotation.Nullable PhysicalPortSettings settings) {
     this.settings = settings;
   }
 
 
-  public PhysicalPort _interface(PortInterface _interface) {
-    
+  public PhysicalPort _interface(@javax.annotation.Nullable PortInterface _interface) {
     this._interface = _interface;
     return this;
   }
 
-   /**
+  /**
    * Get _interface
    * @return _interface
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortInterface getInterface() {
     return _interface;
   }
 
-
-  public void setInterface(PortInterface _interface) {
+  public void setInterface(@javax.annotation.Nullable PortInterface _interface) {
     this._interface = _interface;
   }
 
 
-  public PhysicalPort notifications(List<PortNotification> notifications) {
-    
+  public PhysicalPort notifications(@javax.annotation.Nullable List<PortNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -413,24 +398,21 @@ public class PhysicalPort {
     return this;
   }
 
-   /**
+  /**
    * Notification preferences
    * @return notifications
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PortNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<PortNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<PortNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public PhysicalPort additionalInfo(List<PortAdditionalInfo> additionalInfo) {
-    
+  public PhysicalPort additionalInfo(@javax.annotation.Nullable List<PortAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -443,68 +425,59 @@ public class PhysicalPort {
     return this;
   }
 
-   /**
+  /**
    * Physical Port additional information
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PortAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<PortAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<PortAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
 
-  public PhysicalPort order(PortOrder order) {
-    
+  public PhysicalPort order(@javax.annotation.Nullable PortOrder order) {
     this.order = order;
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortOrder getOrder() {
     return order;
   }
 
-
-  public void setOrder(PortOrder order) {
+  public void setOrder(@javax.annotation.Nullable PortOrder order) {
     this.order = order;
   }
 
 
-  public PhysicalPort operation(PortOperation operation) {
-    
+  public PhysicalPort operation(@javax.annotation.Nullable PortOperation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortOperation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(PortOperation operation) {
+  public void setOperation(@javax.annotation.Nullable PortOperation operation) {
     this.operation = operation;
   }
 
 
-  public PhysicalPort loas(List<PortLoa> loas) {
-    
+  public PhysicalPort loas(@javax.annotation.Nullable List<PortLoa> loas) {
     this.loas = loas;
     return this;
   }
@@ -517,18 +490,16 @@ public class PhysicalPort {
     return this;
   }
 
-   /**
+  /**
    * Port Loas
    * @return loas
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PortLoa> getLoas() {
     return loas;
   }
 
-
-  public void setLoas(List<PortLoa> loas) {
+  public void setLoas(@javax.annotation.Nullable List<PortLoa> loas) {
     this.loas = loas;
   }
 
@@ -678,24 +649,33 @@ public class PhysicalPort {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PhysicalPort
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PhysicalPort.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PhysicalPort
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PhysicalPort.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PhysicalPort is not found in the empty JSON string", PhysicalPort.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        PhysicalPortType.validateJsonElement(jsonObj.get("type"));
+      }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        PortState.validateJsonElement(jsonObj.get("state"));
+      }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       if ((jsonObj.get("interfaceType") != null && !jsonObj.get("interfaceType").isJsonNull()) && !jsonObj.get("interfaceType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `interfaceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("interfaceType").toString()));
@@ -705,19 +685,19 @@ public class PhysicalPort {
       }
       // validate the optional field `tether`
       if (jsonObj.get("tether") != null && !jsonObj.get("tether").isJsonNull()) {
-        PortTether.validateJsonObject(jsonObj.getAsJsonObject("tether"));
+        PortTether.validateJsonElement(jsonObj.get("tether"));
       }
       // validate the optional field `demarcationPoint`
       if (jsonObj.get("demarcationPoint") != null && !jsonObj.get("demarcationPoint").isJsonNull()) {
-        PortDemarcationPoint.validateJsonObject(jsonObj.getAsJsonObject("demarcationPoint"));
+        PortDemarcationPoint.validateJsonElement(jsonObj.get("demarcationPoint"));
       }
       // validate the optional field `settings`
       if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        PhysicalPortSettings.validateJsonObject(jsonObj.getAsJsonObject("settings"));
+        PhysicalPortSettings.validateJsonElement(jsonObj.get("settings"));
       }
       // validate the optional field `interface`
       if (jsonObj.get("interface") != null && !jsonObj.get("interface").isJsonNull()) {
-        PortInterface.validateJsonObject(jsonObj.getAsJsonObject("interface"));
+        PortInterface.validateJsonElement(jsonObj.get("interface"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
@@ -729,7 +709,7 @@ public class PhysicalPort {
 
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            PortNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+            PortNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }
@@ -743,17 +723,17 @@ public class PhysicalPort {
 
           // validate the optional field `additionalInfo` (array)
           for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            PortAdditionalInfo.validateJsonObject(jsonArrayadditionalInfo.get(i).getAsJsonObject());
+            PortAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        PortOrder.validateJsonObject(jsonObj.getAsJsonObject("order"));
+        PortOrder.validateJsonElement(jsonObj.get("order"));
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        PortOperation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        PortOperation.validateJsonElement(jsonObj.get("operation"));
       }
       if (jsonObj.get("loas") != null && !jsonObj.get("loas").isJsonNull()) {
         JsonArray jsonArrayloas = jsonObj.getAsJsonArray("loas");
@@ -765,7 +745,7 @@ public class PhysicalPort {
 
           // validate the optional field `loas` (array)
           for (int i = 0; i < jsonArrayloas.size(); i++) {
-            PortLoa.validateJsonObject(jsonArrayloas.get(i).getAsJsonObject());
+            PortLoa.validateJsonElement(jsonArrayloas.get(i));
           };
         }
       }
@@ -799,7 +779,12 @@ public class PhysicalPort {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -808,8 +793,9 @@ public class PhysicalPort {
 
            @Override
            public PhysicalPort read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PhysicalPort instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -837,22 +823,22 @@ public class PhysicalPort {
     }
   }
 
- /**
-  * Create an instance of PhysicalPort given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PhysicalPort
-  * @throws IOException if the JSON string is invalid with respect to PhysicalPort
-  */
+  /**
+   * Create an instance of PhysicalPort given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PhysicalPort
+   * @throws IOException if the JSON string is invalid with respect to PhysicalPort
+   */
   public static PhysicalPort fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PhysicalPort.class);
   }
 
- /**
-  * Convert an instance of PhysicalPort to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PhysicalPort to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

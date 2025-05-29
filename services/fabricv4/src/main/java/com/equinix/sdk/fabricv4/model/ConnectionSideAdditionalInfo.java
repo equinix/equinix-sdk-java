@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,59 +46,55 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Additional information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionSideAdditionalInfo {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public ConnectionSideAdditionalInfo() {
   }
 
-  public ConnectionSideAdditionalInfo key(String key) {
-    
+  public ConnectionSideAdditionalInfo key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getKey() {
     return key;
   }
 
-
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public ConnectionSideAdditionalInfo value(String value) {
-    
+  public ConnectionSideAdditionalInfo value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Value
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getValue() {
     return value;
   }
 
-
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
@@ -201,18 +199,19 @@ public class ConnectionSideAdditionalInfo {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionSideAdditionalInfo
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionSideAdditionalInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionSideAdditionalInfo
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionSideAdditionalInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionSideAdditionalInfo is not found in the empty JSON string", ConnectionSideAdditionalInfo.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
@@ -249,7 +248,12 @@ public class ConnectionSideAdditionalInfo {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -258,8 +262,9 @@ public class ConnectionSideAdditionalInfo {
 
            @Override
            public ConnectionSideAdditionalInfo read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionSideAdditionalInfo instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -287,22 +292,22 @@ public class ConnectionSideAdditionalInfo {
     }
   }
 
- /**
-  * Create an instance of ConnectionSideAdditionalInfo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionSideAdditionalInfo
-  * @throws IOException if the JSON string is invalid with respect to ConnectionSideAdditionalInfo
-  */
+  /**
+   * Create an instance of ConnectionSideAdditionalInfo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionSideAdditionalInfo
+   * @throws IOException if the JSON string is invalid with respect to ConnectionSideAdditionalInfo
+   */
   public static ConnectionSideAdditionalInfo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionSideAdditionalInfo.class);
   }
 
- /**
-  * Convert an instance of ConnectionSideAdditionalInfo to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionSideAdditionalInfo to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

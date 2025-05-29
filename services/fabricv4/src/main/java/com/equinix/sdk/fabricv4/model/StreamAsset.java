@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,14 +48,16 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Stream object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamAsset {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   /**
@@ -113,14 +117,21 @@ public class StreamAsset {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_METRICS_ENABLED = "metricsEnabled";
   @SerializedName(SERIALIZED_NAME_METRICS_ENABLED)
+  @javax.annotation.Nullable
   private Boolean metricsEnabled;
 
   /**
@@ -174,16 +185,21 @@ public class StreamAsset {
         return AttachmentStatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AttachmentStatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ATTACHMENT_STATUS = "attachmentStatus";
   @SerializedName(SERIALIZED_NAME_ATTACHMENT_STATUS)
+  @javax.annotation.Nullable
   private AttachmentStatusEnum attachmentStatus;
 
   public StreamAsset() {
   }
 
-  
   public StreamAsset(
      URI href
   ) {
@@ -191,103 +207,89 @@ public class StreamAsset {
     this.href = href;
   }
 
-   /**
+  /**
    * Stream Asset URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public StreamAsset uuid(UUID uuid) {
-    
+  public StreamAsset uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned access point identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public StreamAsset type(TypeEnum type) {
-    
+  public StreamAsset type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Asset types
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public StreamAsset metricsEnabled(Boolean metricsEnabled) {
-    
+  public StreamAsset metricsEnabled(@javax.annotation.Nullable Boolean metricsEnabled) {
     this.metricsEnabled = metricsEnabled;
     return this;
   }
 
-   /**
+  /**
    * enable metric
    * @return metricsEnabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getMetricsEnabled() {
     return metricsEnabled;
   }
 
-
-  public void setMetricsEnabled(Boolean metricsEnabled) {
+  public void setMetricsEnabled(@javax.annotation.Nullable Boolean metricsEnabled) {
     this.metricsEnabled = metricsEnabled;
   }
 
 
-  public StreamAsset attachmentStatus(AttachmentStatusEnum attachmentStatus) {
-    
+  public StreamAsset attachmentStatus(@javax.annotation.Nullable AttachmentStatusEnum attachmentStatus) {
     this.attachmentStatus = attachmentStatus;
     return this;
   }
 
-   /**
+  /**
    * asset status
    * @return attachmentStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public AttachmentStatusEnum getAttachmentStatus() {
     return attachmentStatus;
   }
 
-
-  public void setAttachmentStatus(AttachmentStatusEnum attachmentStatus) {
+  public void setAttachmentStatus(@javax.annotation.Nullable AttachmentStatusEnum attachmentStatus) {
     this.attachmentStatus = attachmentStatus;
   }
 
@@ -401,18 +403,19 @@ public class StreamAsset {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamAsset
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamAsset.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamAsset
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamAsset.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamAsset is not found in the empty JSON string", StreamAsset.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -422,8 +425,16 @@ public class StreamAsset {
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       if ((jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) && !jsonObj.get("attachmentStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `attachmentStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attachmentStatus").toString()));
+      }
+      // validate the optional field `attachmentStatus`
+      if (jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) {
+        AttachmentStatusEnum.validateJsonElement(jsonObj.get("attachmentStatus"));
       }
   }
 
@@ -455,7 +466,12 @@ public class StreamAsset {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -464,8 +480,9 @@ public class StreamAsset {
 
            @Override
            public StreamAsset read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamAsset instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -493,22 +510,22 @@ public class StreamAsset {
     }
   }
 
- /**
-  * Create an instance of StreamAsset given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamAsset
-  * @throws IOException if the JSON string is invalid with respect to StreamAsset
-  */
+  /**
+   * Create an instance of StreamAsset given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamAsset
+   * @throws IOException if the JSON string is invalid with respect to StreamAsset
+   */
   public static StreamAsset fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamAsset.class);
   }
 
- /**
-  * Convert an instance of StreamAsset to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamAsset to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

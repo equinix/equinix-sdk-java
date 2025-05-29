@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ServiceProfileSimpleExpression;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,17 +49,17 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * ServiceProfileAndFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileAndFilter {
   public static final String SERIALIZED_NAME_AND = "and";
   @SerializedName(SERIALIZED_NAME_AND)
+  @javax.annotation.Nullable
   private List<ServiceProfileSimpleExpression> and = new ArrayList<>();
 
   public ServiceProfileAndFilter() {
   }
 
-  public ServiceProfileAndFilter and(List<ServiceProfileSimpleExpression> and) {
-    
+  public ServiceProfileAndFilter and(@javax.annotation.Nullable List<ServiceProfileSimpleExpression> and) {
     this.and = and;
     return this;
   }
@@ -70,18 +72,16 @@ public class ServiceProfileAndFilter {
     return this;
   }
 
-   /**
+  /**
    * Get and
    * @return and
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ServiceProfileSimpleExpression> getAnd() {
     return and;
   }
 
-
-  public void setAnd(List<ServiceProfileSimpleExpression> and) {
+  public void setAnd(@javax.annotation.Nullable List<ServiceProfileSimpleExpression> and) {
     this.and = and;
   }
 
@@ -183,18 +183,19 @@ public class ServiceProfileAndFilter {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileAndFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfileAndFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfileAndFilter
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfileAndFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileAndFilter is not found in the empty JSON string", ServiceProfileAndFilter.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("and") != null && !jsonObj.get("and").isJsonNull()) {
         JsonArray jsonArrayand = jsonObj.getAsJsonArray("and");
         if (jsonArrayand != null) {
@@ -205,7 +206,7 @@ public class ServiceProfileAndFilter {
 
           // validate the optional field `and` (array)
           for (int i = 0; i < jsonArrayand.size(); i++) {
-            ServiceProfileSimpleExpression.validateJsonObject(jsonArrayand.get(i).getAsJsonObject());
+            ServiceProfileSimpleExpression.validateJsonElement(jsonArrayand.get(i));
           };
         }
       }
@@ -239,7 +240,12 @@ public class ServiceProfileAndFilter {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -248,8 +254,9 @@ public class ServiceProfileAndFilter {
 
            @Override
            public ServiceProfileAndFilter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceProfileAndFilter instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -277,22 +284,22 @@ public class ServiceProfileAndFilter {
     }
   }
 
- /**
-  * Create an instance of ServiceProfileAndFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileAndFilter
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileAndFilter
-  */
+  /**
+   * Create an instance of ServiceProfileAndFilter given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfileAndFilter
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfileAndFilter
+   */
   public static ServiceProfileAndFilter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfileAndFilter.class);
   }
 
- /**
-  * Convert an instance of ServiceProfileAndFilter to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfileAndFilter to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

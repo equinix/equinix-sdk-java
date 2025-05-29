@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.AccessPoint;
 import com.equinix.sdk.fabricv4.model.ConnectionCompanyProfile;
 import com.equinix.sdk.fabricv4.model.ConnectionInvitation;
@@ -26,6 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,147 +54,137 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Connection configuration object for each side of multi-segment connection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionSide {
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
+  @javax.annotation.Nullable
   private ServiceToken serviceToken;
 
   public static final String SERIALIZED_NAME_ACCESS_POINT = "accessPoint";
   @SerializedName(SERIALIZED_NAME_ACCESS_POINT)
+  @javax.annotation.Nullable
   private AccessPoint accessPoint;
 
   public static final String SERIALIZED_NAME_INTERNET_ACCESS = "internetAccess";
   @SerializedName(SERIALIZED_NAME_INTERNET_ACCESS)
+  @javax.annotation.Nullable
   private InternetAccess internetAccess;
 
   public static final String SERIALIZED_NAME_COMPANY_PROFILE = "companyProfile";
   @SerializedName(SERIALIZED_NAME_COMPANY_PROFILE)
+  @javax.annotation.Nullable
   private ConnectionCompanyProfile companyProfile;
 
   public static final String SERIALIZED_NAME_INVITATION = "invitation";
   @SerializedName(SERIALIZED_NAME_INVITATION)
+  @javax.annotation.Nullable
   private ConnectionInvitation invitation;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<ConnectionSideAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public ConnectionSide() {
   }
 
-  public ConnectionSide serviceToken(ServiceToken serviceToken) {
-    
+  public ConnectionSide serviceToken(@javax.annotation.Nullable ServiceToken serviceToken) {
     this.serviceToken = serviceToken;
     return this;
   }
 
-   /**
+  /**
    * Get serviceToken
    * @return serviceToken
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceToken getServiceToken() {
     return serviceToken;
   }
 
-
-  public void setServiceToken(ServiceToken serviceToken) {
+  public void setServiceToken(@javax.annotation.Nullable ServiceToken serviceToken) {
     this.serviceToken = serviceToken;
   }
 
 
-  public ConnectionSide accessPoint(AccessPoint accessPoint) {
-    
+  public ConnectionSide accessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
     this.accessPoint = accessPoint;
     return this;
   }
 
-   /**
+  /**
    * Get accessPoint
    * @return accessPoint
-  **/
+   */
   @javax.annotation.Nullable
-
   public AccessPoint getAccessPoint() {
     return accessPoint;
   }
 
-
-  public void setAccessPoint(AccessPoint accessPoint) {
+  public void setAccessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
     this.accessPoint = accessPoint;
   }
 
 
-  public ConnectionSide internetAccess(InternetAccess internetAccess) {
-    
+  public ConnectionSide internetAccess(@javax.annotation.Nullable InternetAccess internetAccess) {
     this.internetAccess = internetAccess;
     return this;
   }
 
-   /**
+  /**
    * Get internetAccess
    * @return internetAccess
-  **/
+   */
   @javax.annotation.Nullable
-
   public InternetAccess getInternetAccess() {
     return internetAccess;
   }
 
-
-  public void setInternetAccess(InternetAccess internetAccess) {
+  public void setInternetAccess(@javax.annotation.Nullable InternetAccess internetAccess) {
     this.internetAccess = internetAccess;
   }
 
 
-  public ConnectionSide companyProfile(ConnectionCompanyProfile companyProfile) {
-    
+  public ConnectionSide companyProfile(@javax.annotation.Nullable ConnectionCompanyProfile companyProfile) {
     this.companyProfile = companyProfile;
     return this;
   }
 
-   /**
+  /**
    * Get companyProfile
    * @return companyProfile
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionCompanyProfile getCompanyProfile() {
     return companyProfile;
   }
 
-
-  public void setCompanyProfile(ConnectionCompanyProfile companyProfile) {
+  public void setCompanyProfile(@javax.annotation.Nullable ConnectionCompanyProfile companyProfile) {
     this.companyProfile = companyProfile;
   }
 
 
-  public ConnectionSide invitation(ConnectionInvitation invitation) {
-    
+  public ConnectionSide invitation(@javax.annotation.Nullable ConnectionInvitation invitation) {
     this.invitation = invitation;
     return this;
   }
 
-   /**
+  /**
    * Get invitation
    * @return invitation
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionInvitation getInvitation() {
     return invitation;
   }
 
-
-  public void setInvitation(ConnectionInvitation invitation) {
+  public void setInvitation(@javax.annotation.Nullable ConnectionInvitation invitation) {
     this.invitation = invitation;
   }
 
 
-  public ConnectionSide additionalInfo(List<ConnectionSideAdditionalInfo> additionalInfo) {
-    
+  public ConnectionSide additionalInfo(@javax.annotation.Nullable List<ConnectionSideAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -205,18 +197,16 @@ public class ConnectionSide {
     return this;
   }
 
-   /**
+  /**
    * Any additional information, which is not part of connection metadata or configuration
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ConnectionSideAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<ConnectionSideAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<ConnectionSideAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
@@ -333,37 +323,38 @@ public class ConnectionSide {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionSide
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionSide.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionSide
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionSide.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionSide is not found in the empty JSON string", ConnectionSide.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `serviceToken`
       if (jsonObj.get("serviceToken") != null && !jsonObj.get("serviceToken").isJsonNull()) {
-        ServiceToken.validateJsonObject(jsonObj.getAsJsonObject("serviceToken"));
+        ServiceToken.validateJsonElement(jsonObj.get("serviceToken"));
       }
       // validate the optional field `accessPoint`
       if (jsonObj.get("accessPoint") != null && !jsonObj.get("accessPoint").isJsonNull()) {
-        AccessPoint.validateJsonObject(jsonObj.getAsJsonObject("accessPoint"));
+        AccessPoint.validateJsonElement(jsonObj.get("accessPoint"));
       }
       // validate the optional field `internetAccess`
       if (jsonObj.get("internetAccess") != null && !jsonObj.get("internetAccess").isJsonNull()) {
-        InternetAccess.validateJsonObject(jsonObj.getAsJsonObject("internetAccess"));
+        InternetAccess.validateJsonElement(jsonObj.get("internetAccess"));
       }
       // validate the optional field `companyProfile`
       if (jsonObj.get("companyProfile") != null && !jsonObj.get("companyProfile").isJsonNull()) {
-        ConnectionCompanyProfile.validateJsonObject(jsonObj.getAsJsonObject("companyProfile"));
+        ConnectionCompanyProfile.validateJsonElement(jsonObj.get("companyProfile"));
       }
       // validate the optional field `invitation`
       if (jsonObj.get("invitation") != null && !jsonObj.get("invitation").isJsonNull()) {
-        ConnectionInvitation.validateJsonObject(jsonObj.getAsJsonObject("invitation"));
+        ConnectionInvitation.validateJsonElement(jsonObj.get("invitation"));
       }
       if (jsonObj.get("additionalInfo") != null && !jsonObj.get("additionalInfo").isJsonNull()) {
         JsonArray jsonArrayadditionalInfo = jsonObj.getAsJsonArray("additionalInfo");
@@ -375,7 +366,7 @@ public class ConnectionSide {
 
           // validate the optional field `additionalInfo` (array)
           for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            ConnectionSideAdditionalInfo.validateJsonObject(jsonArrayadditionalInfo.get(i).getAsJsonObject());
+            ConnectionSideAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }
@@ -409,7 +400,12 @@ public class ConnectionSide {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -418,8 +414,9 @@ public class ConnectionSide {
 
            @Override
            public ConnectionSide read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionSide instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -447,22 +444,22 @@ public class ConnectionSide {
     }
   }
 
- /**
-  * Create an instance of ConnectionSide given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionSide
-  * @throws IOException if the JSON string is invalid with respect to ConnectionSide
-  */
+  /**
+   * Create an instance of ConnectionSide given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionSide
+   * @throws IOException if the JSON string is invalid with respect to ConnectionSide
+   */
   public static ConnectionSide fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionSide.class);
   }
 
- /**
-  * Convert an instance of ConnectionSide to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionSide to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

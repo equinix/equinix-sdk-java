@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PortPriority;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,87 +47,84 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Port redundancy configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortRedundancy {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_GROUP = "group";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP)
+  @javax.annotation.Nullable
   private String group;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
+  @javax.annotation.Nullable
   private PortPriority priority;
 
   public PortRedundancy() {
   }
 
-  public PortRedundancy enabled(Boolean enabled) {
-    
+  public PortRedundancy enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Access point redundancy
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public PortRedundancy group(String group) {
-    
+  @Deprecated
+  public PortRedundancy group(@javax.annotation.Nullable String group) {
     this.group = group;
     return this;
   }
 
-   /**
+  /**
    * Port UUID of respective primary port
    * @return group
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public String getGroup() {
     return group;
   }
 
-
-  public void setGroup(String group) {
+  @Deprecated
+  public void setGroup(@javax.annotation.Nullable String group) {
     this.group = group;
   }
 
 
-  public PortRedundancy priority(PortPriority priority) {
-    
+  public PortRedundancy priority(@javax.annotation.Nullable PortPriority priority) {
     this.priority = priority;
     return this;
   }
 
-   /**
+  /**
    * Get priority
    * @return priority
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortPriority getPriority() {
     return priority;
   }
 
-
-  public void setPriority(PortPriority priority) {
+  public void setPriority(@javax.annotation.Nullable PortPriority priority) {
     this.priority = priority;
   }
 
@@ -233,20 +232,25 @@ public class PortRedundancy {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortRedundancy
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortRedundancy.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortRedundancy
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortRedundancy.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortRedundancy is not found in the empty JSON string", PortRedundancy.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("group") != null && !jsonObj.get("group").isJsonNull()) && !jsonObj.get("group").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `group` to be a primitive type in the JSON string but got `%s`", jsonObj.get("group").toString()));
+      }
+      // validate the optional field `priority`
+      if (jsonObj.get("priority") != null && !jsonObj.get("priority").isJsonNull()) {
+        PortPriority.validateJsonElement(jsonObj.get("priority"));
       }
   }
 
@@ -278,7 +282,12 @@ public class PortRedundancy {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -287,8 +296,9 @@ public class PortRedundancy {
 
            @Override
            public PortRedundancy read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortRedundancy instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -316,22 +326,22 @@ public class PortRedundancy {
     }
   }
 
- /**
-  * Create an instance of PortRedundancy given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortRedundancy
-  * @throws IOException if the JSON string is invalid with respect to PortRedundancy
-  */
+  /**
+   * Create an instance of PortRedundancy given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortRedundancy
+   * @throws IOException if the JSON string is invalid with respect to PortRedundancy
+   */
   public static PortRedundancy fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortRedundancy.class);
   }
 
- /**
-  * Convert an instance of PortRedundancy to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortRedundancy to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

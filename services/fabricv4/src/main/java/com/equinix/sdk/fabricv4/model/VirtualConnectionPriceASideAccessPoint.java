@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PriceLocation;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceASideAccessPointPort;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceAccessPointType;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,111 +50,103 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * VirtualConnectionPriceASideAccessPoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class VirtualConnectionPriceASideAccessPoint {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceAccessPointType type;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private PriceLocation location;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceASideAccessPointPort port;
 
   public VirtualConnectionPriceASideAccessPoint() {
   }
 
-  public VirtualConnectionPriceASideAccessPoint uuid(UUID uuid) {
-    
+  public VirtualConnectionPriceASideAccessPoint uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Get uuid
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public VirtualConnectionPriceASideAccessPoint type(VirtualConnectionPriceAccessPointType type) {
-    
+  public VirtualConnectionPriceASideAccessPoint type(@javax.annotation.Nullable VirtualConnectionPriceAccessPointType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceAccessPointType getType() {
     return type;
   }
 
-
-  public void setType(VirtualConnectionPriceAccessPointType type) {
+  public void setType(@javax.annotation.Nullable VirtualConnectionPriceAccessPointType type) {
     this.type = type;
   }
 
 
-  public VirtualConnectionPriceASideAccessPoint location(PriceLocation location) {
-    
+  public VirtualConnectionPriceASideAccessPoint location(@javax.annotation.Nullable PriceLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public PriceLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(PriceLocation location) {
+  public void setLocation(@javax.annotation.Nullable PriceLocation location) {
     this.location = location;
   }
 
 
-  public VirtualConnectionPriceASideAccessPoint port(VirtualConnectionPriceASideAccessPointPort port) {
-    
+  public VirtualConnectionPriceASideAccessPoint port(@javax.annotation.Nullable VirtualConnectionPriceASideAccessPointPort port) {
     this.port = port;
     return this;
   }
 
-   /**
+  /**
    * Get port
    * @return port
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceASideAccessPointPort getPort() {
     return port;
   }
 
-
-  public void setPort(VirtualConnectionPriceASideAccessPointPort port) {
+  public void setPort(@javax.annotation.Nullable VirtualConnectionPriceASideAccessPointPort port) {
     this.port = port;
   }
 
@@ -263,28 +257,33 @@ public class VirtualConnectionPriceASideAccessPoint {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to VirtualConnectionPriceASideAccessPoint
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!VirtualConnectionPriceASideAccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VirtualConnectionPriceASideAccessPoint
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VirtualConnectionPriceASideAccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in VirtualConnectionPriceASideAccessPoint is not found in the empty JSON string", VirtualConnectionPriceASideAccessPoint.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        VirtualConnectionPriceAccessPointType.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        PriceLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        PriceLocation.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `port`
       if (jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) {
-        VirtualConnectionPriceASideAccessPointPort.validateJsonObject(jsonObj.getAsJsonObject("port"));
+        VirtualConnectionPriceASideAccessPointPort.validateJsonElement(jsonObj.get("port"));
       }
   }
 
@@ -316,7 +315,12 @@ public class VirtualConnectionPriceASideAccessPoint {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -325,8 +329,9 @@ public class VirtualConnectionPriceASideAccessPoint {
 
            @Override
            public VirtualConnectionPriceASideAccessPoint read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              VirtualConnectionPriceASideAccessPoint instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -354,22 +359,22 @@ public class VirtualConnectionPriceASideAccessPoint {
     }
   }
 
- /**
-  * Create an instance of VirtualConnectionPriceASideAccessPoint given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VirtualConnectionPriceASideAccessPoint
-  * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPriceASideAccessPoint
-  */
+  /**
+   * Create an instance of VirtualConnectionPriceASideAccessPoint given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VirtualConnectionPriceASideAccessPoint
+   * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPriceASideAccessPoint
+   */
   public static VirtualConnectionPriceASideAccessPoint fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VirtualConnectionPriceASideAccessPoint.class);
   }
 
- /**
-  * Convert an instance of VirtualConnectionPriceASideAccessPoint to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VirtualConnectionPriceASideAccessPoint to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

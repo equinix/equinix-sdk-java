@@ -11,7 +11,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateStreamSubscriptionByUuid**](StreamSubscriptionsApi.md#updateStreamSubscriptionByUuid) | **PUT** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Update Subscription |
 
 
-<a name="createStreamSubscriptions"></a>
+<a id="createStreamSubscriptions"></a>
 # **createStreamSubscriptions**
 > StreamSubscription createStreamSubscriptions(streamId, streamSubscriptionPostRequest)
 
@@ -85,7 +85,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteStreamSubscriptionByUuid"></a>
+<a id="deleteStreamSubscriptionByUuid"></a>
 # **deleteStreamSubscriptionByUuid**
 > StreamSubscription deleteStreamSubscriptionByUuid(streamId, subscriptionId)
 
@@ -159,7 +159,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamSubscriptionByUuid"></a>
+<a id="getStreamSubscriptionByUuid"></a>
 # **getStreamSubscriptionByUuid**
 > StreamSubscription getStreamSubscriptionByUuid(streamId, subscriptionId)
 
@@ -233,7 +233,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamSubscriptions"></a>
+<a id="getStreamSubscriptions"></a>
 # **getStreamSubscriptions**
 > GetAllStreamSubscriptionResponse getStreamSubscriptions(streamId, offset, limit)
 
@@ -308,7 +308,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateStreamSubscriptionByUuid"></a>
+<a id="updateStreamSubscriptionByUuid"></a>
 # **updateStreamSubscriptionByUuid**
 > StreamSubscription updateStreamSubscriptionByUuid(streamId, subscriptionId, streamSubscriptionPutRequest)
 

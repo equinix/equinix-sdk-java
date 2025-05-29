@@ -8,7 +8,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getPortStatsByPortUuid**](StatisticsApi.md#getPortStatsByPortUuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid |
 
 
-<a name="getConnectionStatsByPortUuid"></a>
+<a id="getConnectionStatsByPortUuid"></a>
 # **getConnectionStatsByPortUuid**
 > Statistics getConnectionStatsByPortUuid(connectionId, startDateTime, endDateTime, viewPoint)
 
@@ -83,7 +83,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="getPortStatsByPortUuid"></a>
+<a id="getPortStatsByPortUuid"></a>
 # **getPortStatsByPortUuid**
 > Statistics getPortStatsByPortUuid(portId, startDateTime, endDateTime)
 

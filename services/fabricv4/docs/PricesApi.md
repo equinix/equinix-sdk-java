@@ -7,7 +7,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**searchPrices**](PricesApi.md#searchPrices) | **POST** /fabric/v4/prices/search | Get Prices |
 
 
-<a name="searchPrices"></a>
+<a id="searchPrices"></a>
 # **searchPrices**
 > PriceSearchResponse searchPrices(filterBody)
 

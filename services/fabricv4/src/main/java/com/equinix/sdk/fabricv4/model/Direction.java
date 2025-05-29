@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Metrics;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,69 +49,65 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Directional statistics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Direction {
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
+  @javax.annotation.Nullable
   private Float max;
 
   public static final String SERIALIZED_NAME_MEAN = "mean";
   @SerializedName(SERIALIZED_NAME_MEAN)
+  @javax.annotation.Nullable
   private Float mean;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private List<Metrics> metrics = new ArrayList<>();
 
   public Direction() {
   }
 
-  public Direction max(Float max) {
-    
+  public Direction max(@javax.annotation.Nullable Float max) {
     this.max = max;
     return this;
   }
 
-   /**
+  /**
    * Max bandwidth within request time range, represented in units specified by response \&quot;units\&quot; field
    * @return max
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getMax() {
     return max;
   }
 
-
-  public void setMax(Float max) {
+  public void setMax(@javax.annotation.Nullable Float max) {
     this.max = max;
   }
 
 
-  public Direction mean(Float mean) {
-    
+  public Direction mean(@javax.annotation.Nullable Float mean) {
     this.mean = mean;
     return this;
   }
 
-   /**
+  /**
    * Mean bandwidth within request time range, represented in units specified by response \&quot;units\&quot; field
    * @return mean
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getMean() {
     return mean;
   }
 
-
-  public void setMean(Float mean) {
+  public void setMean(@javax.annotation.Nullable Float mean) {
     this.mean = mean;
   }
 
 
-  public Direction metrics(List<Metrics> metrics) {
-    
+  public Direction metrics(@javax.annotation.Nullable List<Metrics> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -122,18 +120,16 @@ public class Direction {
     return this;
   }
 
-   /**
+  /**
    * Bandwidth utilization statistics for a specified interval.
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Metrics> getMetrics() {
     return metrics;
   }
 
-
-  public void setMetrics(List<Metrics> metrics) {
+  public void setMetrics(@javax.annotation.Nullable List<Metrics> metrics) {
     this.metrics = metrics;
   }
 
@@ -241,18 +237,19 @@ public class Direction {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Direction
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Direction.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Direction
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Direction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Direction is not found in the empty JSON string", Direction.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("metrics") != null && !jsonObj.get("metrics").isJsonNull()) {
         JsonArray jsonArraymetrics = jsonObj.getAsJsonArray("metrics");
         if (jsonArraymetrics != null) {
@@ -263,7 +260,7 @@ public class Direction {
 
           // validate the optional field `metrics` (array)
           for (int i = 0; i < jsonArraymetrics.size(); i++) {
-            Metrics.validateJsonObject(jsonArraymetrics.get(i).getAsJsonObject());
+            Metrics.validateJsonElement(jsonArraymetrics.get(i));
           };
         }
       }
@@ -297,7 +294,12 @@ public class Direction {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -306,8 +308,9 @@ public class Direction {
 
            @Override
            public Direction read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Direction instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -335,22 +338,22 @@ public class Direction {
     }
   }
 
- /**
-  * Create an instance of Direction given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Direction
-  * @throws IOException if the JSON string is invalid with respect to Direction
-  */
+  /**
+   * Create an instance of Direction given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Direction
+   * @throws IOException if the JSON string is invalid with respect to Direction
+   */
   public static Direction fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Direction.class);
   }
 
- /**
-  * Convert an instance of Direction to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Direction to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
