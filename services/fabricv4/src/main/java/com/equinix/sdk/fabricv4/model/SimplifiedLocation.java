@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,139 +46,132 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * SimplifiedLocation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SimplifiedLocation {
   public static final String SERIALIZED_NAME_METRO_HREF = "metroHref";
   @SerializedName(SERIALIZED_NAME_METRO_HREF)
+  @javax.annotation.Nullable
   private String metroHref;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_METRO_NAME = "metroName";
   @SerializedName(SERIALIZED_NAME_METRO_NAME)
+  @javax.annotation.Nullable
   private String metroName;
 
   public static final String SERIALIZED_NAME_METRO_CODE = "metroCode";
   @SerializedName(SERIALIZED_NAME_METRO_CODE)
+  @javax.annotation.Nullable
   private String metroCode;
 
   public static final String SERIALIZED_NAME_IBX = "ibx";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_IBX)
+  @javax.annotation.Nullable
   private String ibx;
 
   public SimplifiedLocation() {
   }
 
-  public SimplifiedLocation metroHref(String metroHref) {
-    
+  public SimplifiedLocation metroHref(@javax.annotation.Nullable String metroHref) {
     this.metroHref = metroHref;
     return this;
   }
 
-   /**
+  /**
    * Get metroHref
    * @return metroHref
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetroHref() {
     return metroHref;
   }
 
-
-  public void setMetroHref(String metroHref) {
+  public void setMetroHref(@javax.annotation.Nullable String metroHref) {
     this.metroHref = metroHref;
   }
 
 
-  public SimplifiedLocation region(String region) {
-    
+  public SimplifiedLocation region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
 
-   /**
+  /**
    * Get region
    * @return region
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRegion() {
     return region;
   }
 
-
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public SimplifiedLocation metroName(String metroName) {
-    
+  public SimplifiedLocation metroName(@javax.annotation.Nullable String metroName) {
     this.metroName = metroName;
     return this;
   }
 
-   /**
+  /**
    * Get metroName
    * @return metroName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetroName() {
     return metroName;
   }
 
-
-  public void setMetroName(String metroName) {
+  public void setMetroName(@javax.annotation.Nullable String metroName) {
     this.metroName = metroName;
   }
 
 
-  public SimplifiedLocation metroCode(String metroCode) {
-    
+  public SimplifiedLocation metroCode(@javax.annotation.Nullable String metroCode) {
     this.metroCode = metroCode;
     return this;
   }
 
-   /**
+  /**
    * Get metroCode
    * @return metroCode
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetroCode() {
     return metroCode;
   }
 
-
-  public void setMetroCode(String metroCode) {
+  public void setMetroCode(@javax.annotation.Nullable String metroCode) {
     this.metroCode = metroCode;
   }
 
 
-  public SimplifiedLocation ibx(String ibx) {
-    
+  @Deprecated
+  public SimplifiedLocation ibx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
     return this;
   }
 
-   /**
+  /**
    * Get ibx
    * @return ibx
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public String getIbx() {
     return ibx;
   }
 
-
-  public void setIbx(String ibx) {
+  @Deprecated
+  public void setIbx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
   }
 
@@ -290,18 +285,19 @@ public class SimplifiedLocation {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SimplifiedLocation
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SimplifiedLocation.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SimplifiedLocation
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SimplifiedLocation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedLocation is not found in the empty JSON string", SimplifiedLocation.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("metroHref") != null && !jsonObj.get("metroHref").isJsonNull()) && !jsonObj.get("metroHref").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `metroHref` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroHref").toString()));
       }
@@ -347,7 +343,12 @@ public class SimplifiedLocation {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -356,8 +357,9 @@ public class SimplifiedLocation {
 
            @Override
            public SimplifiedLocation read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SimplifiedLocation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -385,22 +387,22 @@ public class SimplifiedLocation {
     }
   }
 
- /**
-  * Create an instance of SimplifiedLocation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SimplifiedLocation
-  * @throws IOException if the JSON string is invalid with respect to SimplifiedLocation
-  */
+  /**
+   * Create an instance of SimplifiedLocation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SimplifiedLocation
+   * @throws IOException if the JSON string is invalid with respect to SimplifiedLocation
+   */
   public static SimplifiedLocation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SimplifiedLocation.class);
   }
 
- /**
-  * Convert an instance of SimplifiedLocation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SimplifiedLocation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

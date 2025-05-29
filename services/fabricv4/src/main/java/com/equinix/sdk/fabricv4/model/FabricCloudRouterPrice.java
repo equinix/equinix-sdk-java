@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.FabricCloudRouterPackages;
 import com.equinix.sdk.fabricv4.model.PriceLocation;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,85 +49,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Cloud Router  Product configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricCloudRouterPrice {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private PriceLocation location;
 
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nullable
   private FabricCloudRouterPackages _package;
 
   public FabricCloudRouterPrice() {
   }
 
-  public FabricCloudRouterPrice uuid(UUID uuid) {
-    
+  public FabricCloudRouterPrice uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier assigned to the Cloud Router
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public FabricCloudRouterPrice location(PriceLocation location) {
-    
+  public FabricCloudRouterPrice location(@javax.annotation.Nullable PriceLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public PriceLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(PriceLocation location) {
+  public void setLocation(@javax.annotation.Nullable PriceLocation location) {
     this.location = location;
   }
 
 
-  public FabricCloudRouterPrice _package(FabricCloudRouterPackages _package) {
-    
+  public FabricCloudRouterPrice _package(@javax.annotation.Nullable FabricCloudRouterPackages _package) {
     this._package = _package;
     return this;
   }
 
-   /**
+  /**
    * Get _package
    * @return _package
-  **/
+   */
   @javax.annotation.Nullable
-
   public FabricCloudRouterPackages getPackage() {
     return _package;
   }
 
-
-  public void setPackage(FabricCloudRouterPackages _package) {
+  public void setPackage(@javax.annotation.Nullable FabricCloudRouterPackages _package) {
     this._package = _package;
   }
 
@@ -233,28 +229,29 @@ public class FabricCloudRouterPrice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricCloudRouterPrice
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FabricCloudRouterPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricCloudRouterPrice
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricCloudRouterPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FabricCloudRouterPrice is not found in the empty JSON string", FabricCloudRouterPrice.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        PriceLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        PriceLocation.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
-        FabricCloudRouterPackages.validateJsonObject(jsonObj.getAsJsonObject("package"));
+        FabricCloudRouterPackages.validateJsonElement(jsonObj.get("package"));
       }
   }
 
@@ -286,7 +283,12 @@ public class FabricCloudRouterPrice {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -295,8 +297,9 @@ public class FabricCloudRouterPrice {
 
            @Override
            public FabricCloudRouterPrice read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FabricCloudRouterPrice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -324,22 +327,22 @@ public class FabricCloudRouterPrice {
     }
   }
 
- /**
-  * Create an instance of FabricCloudRouterPrice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricCloudRouterPrice
-  * @throws IOException if the JSON string is invalid with respect to FabricCloudRouterPrice
-  */
+  /**
+   * Create an instance of FabricCloudRouterPrice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricCloudRouterPrice
+   * @throws IOException if the JSON string is invalid with respect to FabricCloudRouterPrice
+   */
   public static FabricCloudRouterPrice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FabricCloudRouterPrice.class);
   }
 
- /**
-  * Convert an instance of FabricCloudRouterPrice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FabricCloudRouterPrice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

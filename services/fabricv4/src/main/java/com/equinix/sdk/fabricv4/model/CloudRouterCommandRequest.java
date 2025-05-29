@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandRequestConnection;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,36 +47,41 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Fabric Cloud Router Command Request
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterCommandRequest {
   public static final String SERIALIZED_NAME_DESTINATION = "destination";
   @SerializedName(SERIALIZED_NAME_DESTINATION)
+  @javax.annotation.Nonnull
   private String destination;
 
   public static final String SERIALIZED_NAME_SOURCE_CONNECTION = "sourceConnection";
   @SerializedName(SERIALIZED_NAME_SOURCE_CONNECTION)
+  @javax.annotation.Nullable
   private CloudRouterCommandRequestConnection sourceConnection;
 
   public static final String SERIALIZED_NAME_TIMEOUT = "timeout";
   @SerializedName(SERIALIZED_NAME_TIMEOUT)
+  @javax.annotation.Nullable
   private Integer timeout;
 
   public static final String SERIALIZED_NAME_DATA_BYTES = "dataBytes";
   @SerializedName(SERIALIZED_NAME_DATA_BYTES)
+  @javax.annotation.Nullable
   private Integer dataBytes = 64;
 
   public static final String SERIALIZED_NAME_INTERVAL = "interval";
   @SerializedName(SERIALIZED_NAME_INTERVAL)
+  @javax.annotation.Nullable
   private Integer interval = 1000;
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
+  @javax.annotation.Nullable
   private Integer count = 5;
 
   public CloudRouterCommandRequest() {
   }
 
-  
   public CloudRouterCommandRequest(
      Integer interval, 
      Integer count
@@ -84,119 +91,103 @@ public class CloudRouterCommandRequest {
     this.count = count;
   }
 
-  public CloudRouterCommandRequest destination(String destination) {
-    
+  public CloudRouterCommandRequest destination(@javax.annotation.Nonnull String destination) {
     this.destination = destination;
     return this;
   }
 
-   /**
+  /**
    * Fabric Cloud Router Ping Command Destination
    * @return destination
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getDestination() {
     return destination;
   }
 
-
-  public void setDestination(String destination) {
+  public void setDestination(@javax.annotation.Nonnull String destination) {
     this.destination = destination;
   }
 
 
-  public CloudRouterCommandRequest sourceConnection(CloudRouterCommandRequestConnection sourceConnection) {
-    
+  public CloudRouterCommandRequest sourceConnection(@javax.annotation.Nullable CloudRouterCommandRequestConnection sourceConnection) {
     this.sourceConnection = sourceConnection;
     return this;
   }
 
-   /**
+  /**
    * Get sourceConnection
    * @return sourceConnection
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterCommandRequestConnection getSourceConnection() {
     return sourceConnection;
   }
 
-
-  public void setSourceConnection(CloudRouterCommandRequestConnection sourceConnection) {
+  public void setSourceConnection(@javax.annotation.Nullable CloudRouterCommandRequestConnection sourceConnection) {
     this.sourceConnection = sourceConnection;
   }
 
 
-  public CloudRouterCommandRequest timeout(Integer timeout) {
-    
+  public CloudRouterCommandRequest timeout(@javax.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
     return this;
   }
 
-   /**
+  /**
    * Fabric Cloud Router Ping Command Timeout
    * @return timeout
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getTimeout() {
     return timeout;
   }
 
-
-  public void setTimeout(Integer timeout) {
+  public void setTimeout(@javax.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
   }
 
 
-  public CloudRouterCommandRequest dataBytes(Integer dataBytes) {
-    
+  public CloudRouterCommandRequest dataBytes(@javax.annotation.Nullable Integer dataBytes) {
     this.dataBytes = dataBytes;
     return this;
   }
 
-   /**
+  /**
    * Fabric Cloud Router Ping Command DataBytes
    * minimum: 16
    * maximum: 9000
    * @return dataBytes
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getDataBytes() {
     return dataBytes;
   }
 
-
-  public void setDataBytes(Integer dataBytes) {
+  public void setDataBytes(@javax.annotation.Nullable Integer dataBytes) {
     this.dataBytes = dataBytes;
   }
 
 
-   /**
+  /**
    * Time in milliseconds between sending each packet
    * @return interval
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getInterval() {
     return interval;
   }
 
 
 
-
-   /**
+  /**
    * Total number of ping requests
    * @return count
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getCount() {
     return count;
   }
-
 
 
   /**
@@ -313,31 +304,32 @@ public class CloudRouterCommandRequest {
     openapiRequiredFields.add("destination");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterCommandRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterCommandRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterCommandRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterCommandRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterCommandRequest is not found in the empty JSON string", CloudRouterCommandRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CloudRouterCommandRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("destination").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `destination` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destination").toString()));
       }
       // validate the optional field `sourceConnection`
       if (jsonObj.get("sourceConnection") != null && !jsonObj.get("sourceConnection").isJsonNull()) {
-        CloudRouterCommandRequestConnection.validateJsonObject(jsonObj.getAsJsonObject("sourceConnection"));
+        CloudRouterCommandRequestConnection.validateJsonElement(jsonObj.get("sourceConnection"));
       }
   }
 
@@ -369,7 +361,12 @@ public class CloudRouterCommandRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -378,8 +375,9 @@ public class CloudRouterCommandRequest {
 
            @Override
            public CloudRouterCommandRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterCommandRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -407,22 +405,22 @@ public class CloudRouterCommandRequest {
     }
   }
 
- /**
-  * Create an instance of CloudRouterCommandRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterCommandRequest
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandRequest
-  */
+  /**
+   * Create an instance of CloudRouterCommandRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterCommandRequest
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandRequest
+   */
   public static CloudRouterCommandRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterCommandRequest.class);
   }
 
- /**
-  * Convert an instance of CloudRouterCommandRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterCommandRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

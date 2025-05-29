@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateTimeServicesById**](PrecisionTimeApi.md#updateTimeServicesById) | **PATCH** /fabric/v4/timeServices/{serviceId} | Update By ID. |
 
 
-<a name="createTimeServices"></a>
+<a id="createTimeServices"></a>
 # **createTimeServices**
 > PrecisionTimeServiceResponse createTimeServices(precisionTimeServiceRequest)
 
@@ -87,7 +87,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteTimeServiceById"></a>
+<a id="deleteTimeServiceById"></a>
 # **deleteTimeServiceById**
 > PrecisionTimeServiceResponse deleteTimeServiceById(serviceId)
 
@@ -159,7 +159,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="fulfillTimeServices"></a>
+<a id="fulfillTimeServices"></a>
 # **fulfillTimeServices**
 > PrecisionTimeServiceResponse fulfillTimeServices(serviceId, precisionTimeServiceRequest)
 
@@ -234,7 +234,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getTimeServicesById"></a>
+<a id="getTimeServicesById"></a>
 # **getTimeServicesById**
 > PrecisionTimeServiceResponse getTimeServicesById(serviceId)
 
@@ -307,7 +307,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getTimeServicesConnectionsByServiceId"></a>
+<a id="getTimeServicesConnectionsByServiceId"></a>
 # **getTimeServicesConnectionsByServiceId**
 > PrecisionTimeServiceConnectionsResponse getTimeServicesConnectionsByServiceId(serviceId)
 
@@ -378,7 +378,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getTimeServicesPackageByCode"></a>
+<a id="getTimeServicesPackageByCode"></a>
 # **getTimeServicesPackageByCode**
 > PrecisionTimePackageResponse getTimeServicesPackageByCode(packageCode)
 
@@ -447,7 +447,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getTimeServicesPackages"></a>
+<a id="getTimeServicesPackages"></a>
 # **getTimeServicesPackages**
 > PrecisionTimeServicePackagesResponse getTimeServicesPackages()
 
@@ -512,7 +512,7 @@ This endpoint does not need any parameter.
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchTimeServices"></a>
+<a id="searchTimeServices"></a>
 # **searchTimeServices**
 > ServiceSearchResponse searchTimeServices(timeServicesSearchRequest)
 
@@ -584,7 +584,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateTimeServicesById"></a>
+<a id="updateTimeServicesById"></a>
 # **updateTimeServicesById**
 > PrecisionTimeServiceResponse updateTimeServicesById(serviceId, precisionTimeChangeOperation)
 

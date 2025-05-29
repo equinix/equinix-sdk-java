@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.StreamFilterSimpleExpression;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,17 +49,17 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * StreamFilterOrFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamFilterOrFilter {
   public static final String SERIALIZED_NAME_OR = "or";
   @SerializedName(SERIALIZED_NAME_OR)
+  @javax.annotation.Nullable
   private List<StreamFilterSimpleExpression> or = new ArrayList<>();
 
   public StreamFilterOrFilter() {
   }
 
-  public StreamFilterOrFilter or(List<StreamFilterSimpleExpression> or) {
-    
+  public StreamFilterOrFilter or(@javax.annotation.Nullable List<StreamFilterSimpleExpression> or) {
     this.or = or;
     return this;
   }
@@ -70,18 +72,16 @@ public class StreamFilterOrFilter {
     return this;
   }
 
-   /**
+  /**
    * Get or
    * @return or
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<StreamFilterSimpleExpression> getOr() {
     return or;
   }
 
-
-  public void setOr(List<StreamFilterSimpleExpression> or) {
+  public void setOr(@javax.annotation.Nullable List<StreamFilterSimpleExpression> or) {
     this.or = or;
   }
 
@@ -183,18 +183,19 @@ public class StreamFilterOrFilter {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamFilterOrFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamFilterOrFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamFilterOrFilter
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamFilterOrFilter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamFilterOrFilter is not found in the empty JSON string", StreamFilterOrFilter.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("or") != null && !jsonObj.get("or").isJsonNull()) {
         JsonArray jsonArrayor = jsonObj.getAsJsonArray("or");
         if (jsonArrayor != null) {
@@ -205,7 +206,7 @@ public class StreamFilterOrFilter {
 
           // validate the optional field `or` (array)
           for (int i = 0; i < jsonArrayor.size(); i++) {
-            StreamFilterSimpleExpression.validateJsonObject(jsonArrayor.get(i).getAsJsonObject());
+            StreamFilterSimpleExpression.validateJsonElement(jsonArrayor.get(i));
           };
         }
       }
@@ -239,7 +240,12 @@ public class StreamFilterOrFilter {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -248,8 +254,9 @@ public class StreamFilterOrFilter {
 
            @Override
            public StreamFilterOrFilter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamFilterOrFilter instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -277,22 +284,22 @@ public class StreamFilterOrFilter {
     }
   }
 
- /**
-  * Create an instance of StreamFilterOrFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamFilterOrFilter
-  * @throws IOException if the JSON string is invalid with respect to StreamFilterOrFilter
-  */
+  /**
+   * Create an instance of StreamFilterOrFilter given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamFilterOrFilter
+   * @throws IOException if the JSON string is invalid with respect to StreamFilterOrFilter
+   */
   public static StreamFilterOrFilter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamFilterOrFilter.class);
   }
 
- /**
-  * Convert an instance of StreamFilterOrFilter to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamFilterOrFilter to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

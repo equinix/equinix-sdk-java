@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateStreamByUuid**](StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream |
 
 
-<a name="createStreams"></a>
+<a id="createStreams"></a>
 # **createStreams**
 > Stream createStreams(streamPostRequest)
 
@@ -87,7 +87,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteStreamAssetByUuid"></a>
+<a id="deleteStreamAssetByUuid"></a>
 # **deleteStreamAssetByUuid**
 > StreamAsset deleteStreamAssetByUuid(assetId, asset, streamId)
 
@@ -163,7 +163,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteStreamByUuid"></a>
+<a id="deleteStreamByUuid"></a>
 # **deleteStreamByUuid**
 > Stream deleteStreamByUuid(streamId)
 
@@ -235,7 +235,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamAssetByUuid"></a>
+<a id="getStreamAssetByUuid"></a>
 # **getStreamAssetByUuid**
 > StreamAsset getStreamAssetByUuid(assetId, asset, streamId)
 
@@ -311,7 +311,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamByUuid"></a>
+<a id="getStreamByUuid"></a>
 # **getStreamByUuid**
 > Stream getStreamByUuid(streamId)
 
@@ -383,7 +383,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreams"></a>
+<a id="getStreams"></a>
 # **getStreams**
 > GetAllStreamResponse getStreams(offset, limit)
 
@@ -456,7 +456,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamsAssets"></a>
+<a id="getStreamsAssets"></a>
 # **getStreamsAssets**
 > GetAllStreamAssetResponse getStreamsAssets(streamAssetSearchRequest, offset, limit)
 
@@ -531,7 +531,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateStreamAssetByUuid"></a>
+<a id="updateStreamAssetByUuid"></a>
 # **updateStreamAssetByUuid**
 > StreamAsset updateStreamAssetByUuid(assetId, asset, streamId, streamAssetPutRequest)
 
@@ -610,7 +610,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateStreamByUuid"></a>
+<a id="updateStreamByUuid"></a>
 # **updateStreamByUuid**
 > Stream updateStreamByUuid(streamId, streamPutRequest)
 

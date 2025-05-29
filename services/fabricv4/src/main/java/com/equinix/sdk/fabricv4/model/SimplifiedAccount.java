@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,319 +46,295 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * SimplifiedAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SimplifiedAccount {
   public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "accountNumber";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
+  @javax.annotation.Nullable
   private Long accountNumber;
 
   public static final String SERIALIZED_NAME_ACCOUNT_NAME = "accountName";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NAME)
+  @javax.annotation.Nullable
   private String accountName;
 
   public static final String SERIALIZED_NAME_ORG_ID = "orgId";
   @SerializedName(SERIALIZED_NAME_ORG_ID)
+  @javax.annotation.Nullable
   private Long orgId;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_NAME = "organizationName";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
   private String organizationName;
 
   public static final String SERIALIZED_NAME_GLOBAL_ORG_ID = "globalOrgId";
   @SerializedName(SERIALIZED_NAME_GLOBAL_ORG_ID)
+  @javax.annotation.Nullable
   private String globalOrgId;
 
   public static final String SERIALIZED_NAME_GLOBAL_ORGANIZATION_NAME = "globalOrganizationName";
   @SerializedName(SERIALIZED_NAME_GLOBAL_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
   private String globalOrganizationName;
 
   public static final String SERIALIZED_NAME_UCM_ID = "ucmId";
   @SerializedName(SERIALIZED_NAME_UCM_ID)
+  @javax.annotation.Nullable
   private String ucmId;
 
   public static final String SERIALIZED_NAME_GLOBAL_CUST_ID = "globalCustId";
   @SerializedName(SERIALIZED_NAME_GLOBAL_CUST_ID)
+  @javax.annotation.Nullable
   private String globalCustId;
 
   public static final String SERIALIZED_NAME_RESELLER_ACCOUNT_NUMBER = "resellerAccountNumber";
   @SerializedName(SERIALIZED_NAME_RESELLER_ACCOUNT_NUMBER)
+  @javax.annotation.Nullable
   private Long resellerAccountNumber;
 
   public static final String SERIALIZED_NAME_RESELLER_ACCOUNT_NAME = "resellerAccountName";
   @SerializedName(SERIALIZED_NAME_RESELLER_ACCOUNT_NAME)
+  @javax.annotation.Nullable
   private String resellerAccountName;
 
   public static final String SERIALIZED_NAME_RESELLER_UCM_ID = "resellerUcmId";
   @SerializedName(SERIALIZED_NAME_RESELLER_UCM_ID)
+  @javax.annotation.Nullable
   private String resellerUcmId;
 
   public static final String SERIALIZED_NAME_RESELLER_ORG_ID = "resellerOrgId";
   @SerializedName(SERIALIZED_NAME_RESELLER_ORG_ID)
+  @javax.annotation.Nullable
   private Long resellerOrgId;
 
   public SimplifiedAccount() {
   }
 
-  public SimplifiedAccount accountNumber(Long accountNumber) {
-    
+  public SimplifiedAccount accountNumber(@javax.annotation.Nullable Long accountNumber) {
     this.accountNumber = accountNumber;
     return this;
   }
 
-   /**
+  /**
    * Account number
    * @return accountNumber
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getAccountNumber() {
     return accountNumber;
   }
 
-
-  public void setAccountNumber(Long accountNumber) {
+  public void setAccountNumber(@javax.annotation.Nullable Long accountNumber) {
     this.accountNumber = accountNumber;
   }
 
 
-  public SimplifiedAccount accountName(String accountName) {
-    
+  public SimplifiedAccount accountName(@javax.annotation.Nullable String accountName) {
     this.accountName = accountName;
     return this;
   }
 
-   /**
+  /**
    * Account name
    * @return accountName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAccountName() {
     return accountName;
   }
 
-
-  public void setAccountName(String accountName) {
+  public void setAccountName(@javax.annotation.Nullable String accountName) {
     this.accountName = accountName;
   }
 
 
-  public SimplifiedAccount orgId(Long orgId) {
-    
+  public SimplifiedAccount orgId(@javax.annotation.Nullable Long orgId) {
     this.orgId = orgId;
     return this;
   }
 
-   /**
+  /**
    * Customer organization identifier
    * @return orgId
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getOrgId() {
     return orgId;
   }
 
-
-  public void setOrgId(Long orgId) {
+  public void setOrgId(@javax.annotation.Nullable Long orgId) {
     this.orgId = orgId;
   }
 
 
-  public SimplifiedAccount organizationName(String organizationName) {
-    
+  public SimplifiedAccount organizationName(@javax.annotation.Nullable String organizationName) {
     this.organizationName = organizationName;
     return this;
   }
 
-   /**
+  /**
    * Customer organization name
    * @return organizationName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOrganizationName() {
     return organizationName;
   }
 
-
-  public void setOrganizationName(String organizationName) {
+  public void setOrganizationName(@javax.annotation.Nullable String organizationName) {
     this.organizationName = organizationName;
   }
 
 
-  public SimplifiedAccount globalOrgId(String globalOrgId) {
-    
+  public SimplifiedAccount globalOrgId(@javax.annotation.Nullable String globalOrgId) {
     this.globalOrgId = globalOrgId;
     return this;
   }
 
-   /**
+  /**
    * Global organization identifier
    * @return globalOrgId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getGlobalOrgId() {
     return globalOrgId;
   }
 
-
-  public void setGlobalOrgId(String globalOrgId) {
+  public void setGlobalOrgId(@javax.annotation.Nullable String globalOrgId) {
     this.globalOrgId = globalOrgId;
   }
 
 
-  public SimplifiedAccount globalOrganizationName(String globalOrganizationName) {
-    
+  public SimplifiedAccount globalOrganizationName(@javax.annotation.Nullable String globalOrganizationName) {
     this.globalOrganizationName = globalOrganizationName;
     return this;
   }
 
-   /**
+  /**
    * Global organization name
    * @return globalOrganizationName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getGlobalOrganizationName() {
     return globalOrganizationName;
   }
 
-
-  public void setGlobalOrganizationName(String globalOrganizationName) {
+  public void setGlobalOrganizationName(@javax.annotation.Nullable String globalOrganizationName) {
     this.globalOrganizationName = globalOrganizationName;
   }
 
 
-  public SimplifiedAccount ucmId(String ucmId) {
-    
+  public SimplifiedAccount ucmId(@javax.annotation.Nullable String ucmId) {
     this.ucmId = ucmId;
     return this;
   }
 
-   /**
+  /**
    * Account ucmId
    * @return ucmId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUcmId() {
     return ucmId;
   }
 
-
-  public void setUcmId(String ucmId) {
+  public void setUcmId(@javax.annotation.Nullable String ucmId) {
     this.ucmId = ucmId;
   }
 
 
-  public SimplifiedAccount globalCustId(String globalCustId) {
-    
+  public SimplifiedAccount globalCustId(@javax.annotation.Nullable String globalCustId) {
     this.globalCustId = globalCustId;
     return this;
   }
 
-   /**
+  /**
    * Account name
    * @return globalCustId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getGlobalCustId() {
     return globalCustId;
   }
 
-
-  public void setGlobalCustId(String globalCustId) {
+  public void setGlobalCustId(@javax.annotation.Nullable String globalCustId) {
     this.globalCustId = globalCustId;
   }
 
 
-  public SimplifiedAccount resellerAccountNumber(Long resellerAccountNumber) {
-    
+  public SimplifiedAccount resellerAccountNumber(@javax.annotation.Nullable Long resellerAccountNumber) {
     this.resellerAccountNumber = resellerAccountNumber;
     return this;
   }
 
-   /**
+  /**
    * Reseller account number
    * @return resellerAccountNumber
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getResellerAccountNumber() {
     return resellerAccountNumber;
   }
 
-
-  public void setResellerAccountNumber(Long resellerAccountNumber) {
+  public void setResellerAccountNumber(@javax.annotation.Nullable Long resellerAccountNumber) {
     this.resellerAccountNumber = resellerAccountNumber;
   }
 
 
-  public SimplifiedAccount resellerAccountName(String resellerAccountName) {
-    
+  public SimplifiedAccount resellerAccountName(@javax.annotation.Nullable String resellerAccountName) {
     this.resellerAccountName = resellerAccountName;
     return this;
   }
 
-   /**
+  /**
    * Reseller account name
    * @return resellerAccountName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getResellerAccountName() {
     return resellerAccountName;
   }
 
-
-  public void setResellerAccountName(String resellerAccountName) {
+  public void setResellerAccountName(@javax.annotation.Nullable String resellerAccountName) {
     this.resellerAccountName = resellerAccountName;
   }
 
 
-  public SimplifiedAccount resellerUcmId(String resellerUcmId) {
-    
+  public SimplifiedAccount resellerUcmId(@javax.annotation.Nullable String resellerUcmId) {
     this.resellerUcmId = resellerUcmId;
     return this;
   }
 
-   /**
+  /**
    * Reseller account ucmId
    * @return resellerUcmId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getResellerUcmId() {
     return resellerUcmId;
   }
 
-
-  public void setResellerUcmId(String resellerUcmId) {
+  public void setResellerUcmId(@javax.annotation.Nullable String resellerUcmId) {
     this.resellerUcmId = resellerUcmId;
   }
 
 
-  public SimplifiedAccount resellerOrgId(Long resellerOrgId) {
-    
+  public SimplifiedAccount resellerOrgId(@javax.annotation.Nullable Long resellerOrgId) {
     this.resellerOrgId = resellerOrgId;
     return this;
   }
 
-   /**
+  /**
    * Reseller customer organization identifier
    * @return resellerOrgId
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getResellerOrgId() {
     return resellerOrgId;
   }
 
-
-  public void setResellerOrgId(Long resellerOrgId) {
+  public void setResellerOrgId(@javax.annotation.Nullable Long resellerOrgId) {
     this.resellerOrgId = resellerOrgId;
   }
 
@@ -491,18 +469,19 @@ public class SimplifiedAccount {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SimplifiedAccount
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SimplifiedAccount.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SimplifiedAccount
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SimplifiedAccount.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedAccount is not found in the empty JSON string", SimplifiedAccount.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("accountName") != null && !jsonObj.get("accountName").isJsonNull()) && !jsonObj.get("accountName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `accountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountName").toString()));
       }
@@ -557,7 +536,12 @@ public class SimplifiedAccount {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -566,8 +550,9 @@ public class SimplifiedAccount {
 
            @Override
            public SimplifiedAccount read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SimplifiedAccount instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -595,22 +580,22 @@ public class SimplifiedAccount {
     }
   }
 
- /**
-  * Create an instance of SimplifiedAccount given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SimplifiedAccount
-  * @throws IOException if the JSON string is invalid with respect to SimplifiedAccount
-  */
+  /**
+   * Create an instance of SimplifiedAccount given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SimplifiedAccount
+   * @throws IOException if the JSON string is invalid with respect to SimplifiedAccount
+   */
   public static SimplifiedAccount fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SimplifiedAccount.class);
   }
 
- /**
-  * Convert an instance of SimplifiedAccount to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SimplifiedAccount to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

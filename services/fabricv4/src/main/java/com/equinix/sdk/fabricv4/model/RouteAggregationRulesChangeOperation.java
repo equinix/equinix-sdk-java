@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.RouteAggregationRulesBase;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,7 +47,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Route Aggregation Rule change operation data
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteAggregationRulesChangeOperation {
   /**
    * Handy shortcut for operation name
@@ -94,85 +96,84 @@ public class RouteAggregationRulesChangeOperation {
         return OpEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OpEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OP = "op";
   @SerializedName(SERIALIZED_NAME_OP)
+  @javax.annotation.Nonnull
   private OpEnum op;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nonnull
   private String path;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private RouteAggregationRulesBase value;
 
   public RouteAggregationRulesChangeOperation() {
   }
 
-  public RouteAggregationRulesChangeOperation op(OpEnum op) {
-    
+  public RouteAggregationRulesChangeOperation op(@javax.annotation.Nonnull OpEnum op) {
     this.op = op;
     return this;
   }
 
-   /**
+  /**
    * Handy shortcut for operation name
    * @return op
-  **/
+   */
   @javax.annotation.Nonnull
-
   public OpEnum getOp() {
     return op;
   }
 
-
-  public void setOp(OpEnum op) {
+  public void setOp(@javax.annotation.Nonnull OpEnum op) {
     this.op = op;
   }
 
 
-  public RouteAggregationRulesChangeOperation path(String path) {
-    
+  public RouteAggregationRulesChangeOperation path(@javax.annotation.Nonnull String path) {
     this.path = path;
     return this;
   }
 
-   /**
+  /**
    * path inside document leading to updated parameter
    * @return path
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getPath() {
     return path;
   }
 
-
-  public void setPath(String path) {
+  public void setPath(@javax.annotation.Nonnull String path) {
     this.path = path;
   }
 
 
-  public RouteAggregationRulesChangeOperation value(RouteAggregationRulesBase value) {
-    
+  public RouteAggregationRulesChangeOperation value(@javax.annotation.Nonnull RouteAggregationRulesBase value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Get value
    * @return value
-  **/
+   */
   @javax.annotation.Nonnull
-
   public RouteAggregationRulesBase getValue() {
     return value;
   }
 
-
-  public void setValue(RouteAggregationRulesBase value) {
+  public void setValue(@javax.annotation.Nonnull RouteAggregationRulesBase value) {
     this.value = value;
   }
 
@@ -283,33 +284,36 @@ public class RouteAggregationRulesChangeOperation {
     openapiRequiredFields.add("value");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteAggregationRulesChangeOperation
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteAggregationRulesChangeOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteAggregationRulesChangeOperation
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteAggregationRulesChangeOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteAggregationRulesChangeOperation is not found in the empty JSON string", RouteAggregationRulesChangeOperation.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RouteAggregationRulesChangeOperation.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("op").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
       }
+      // validate the required field `op`
+      OpEnum.validateJsonElement(jsonObj.get("op"));
       if (!jsonObj.get("path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
       // validate the required field `value`
-      RouteAggregationRulesBase.validateJsonObject(jsonObj.getAsJsonObject("value"));
+      RouteAggregationRulesBase.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -340,7 +344,12 @@ public class RouteAggregationRulesChangeOperation {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -349,8 +358,9 @@ public class RouteAggregationRulesChangeOperation {
 
            @Override
            public RouteAggregationRulesChangeOperation read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteAggregationRulesChangeOperation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -378,22 +388,22 @@ public class RouteAggregationRulesChangeOperation {
     }
   }
 
- /**
-  * Create an instance of RouteAggregationRulesChangeOperation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteAggregationRulesChangeOperation
-  * @throws IOException if the JSON string is invalid with respect to RouteAggregationRulesChangeOperation
-  */
+  /**
+   * Create an instance of RouteAggregationRulesChangeOperation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteAggregationRulesChangeOperation
+   * @throws IOException if the JSON string is invalid with respect to RouteAggregationRulesChangeOperation
+   */
   public static RouteAggregationRulesChangeOperation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteAggregationRulesChangeOperation.class);
   }
 
- /**
-  * Convert an instance of RouteAggregationRulesChangeOperation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteAggregationRulesChangeOperation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,501 +46,463 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Metadata. Response attribute. Ignored on request payload.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileMetadata {
   public static final String SERIALIZED_NAME_PROPS = "props";
   @SerializedName(SERIALIZED_NAME_PROPS)
+  @javax.annotation.Nullable
   private String props;
 
   public static final String SERIALIZED_NAME_REG_EX = "regEx";
   @SerializedName(SERIALIZED_NAME_REG_EX)
+  @javax.annotation.Nullable
   private String regEx;
 
   public static final String SERIALIZED_NAME_REG_EX_MSG = "regExMsg";
   @SerializedName(SERIALIZED_NAME_REG_EX_MSG)
+  @javax.annotation.Nullable
   private String regExMsg;
 
   public static final String SERIALIZED_NAME_VLAN_RANGE_MAX_VALUE = "vlanRangeMaxValue";
   @SerializedName(SERIALIZED_NAME_VLAN_RANGE_MAX_VALUE)
+  @javax.annotation.Nullable
   private Integer vlanRangeMaxValue;
 
   public static final String SERIALIZED_NAME_VLAN_RANGE_MIN_VALUE = "vlanRangeMinValue";
   @SerializedName(SERIALIZED_NAME_VLAN_RANGE_MIN_VALUE)
+  @javax.annotation.Nullable
   private Integer vlanRangeMinValue;
 
   public static final String SERIALIZED_NAME_MAX_QINQ = "maxQinq";
   @SerializedName(SERIALIZED_NAME_MAX_QINQ)
+  @javax.annotation.Nullable
   private String maxQinq;
 
   public static final String SERIALIZED_NAME_MAX_DOT1Q = "maxDot1q";
   @SerializedName(SERIALIZED_NAME_MAX_DOT1Q)
+  @javax.annotation.Nullable
   private Integer maxDot1q;
 
   public static final String SERIALIZED_NAME_VARIABLE_BILLING = "variableBilling";
   @SerializedName(SERIALIZED_NAME_VARIABLE_BILLING)
+  @javax.annotation.Nullable
   private Boolean variableBilling;
 
   public static final String SERIALIZED_NAME_GLOBAL_ORGANIZATION = "globalOrganization";
   @SerializedName(SERIALIZED_NAME_GLOBAL_ORGANIZATION)
+  @javax.annotation.Nullable
   private String globalOrganization;
 
   public static final String SERIALIZED_NAME_LIMIT_AUTH_KEY_CONN = "limitAuthKeyConn";
   @SerializedName(SERIALIZED_NAME_LIMIT_AUTH_KEY_CONN)
+  @javax.annotation.Nullable
   private Boolean limitAuthKeyConn;
 
   public static final String SERIALIZED_NAME_ALLOW_SECONDARY_LOCATION = "allowSecondaryLocation";
   @SerializedName(SERIALIZED_NAME_ALLOW_SECONDARY_LOCATION)
+  @javax.annotation.Nullable
   private Boolean allowSecondaryLocation;
 
   public static final String SERIALIZED_NAME_REDUNDANT_PROFILE_ID = "redundantProfileId";
   @SerializedName(SERIALIZED_NAME_REDUNDANT_PROFILE_ID)
+  @javax.annotation.Nullable
   private String redundantProfileId;
 
   public static final String SERIALIZED_NAME_ALLOW_VC_MIGRATION = "allowVcMigration";
   @SerializedName(SERIALIZED_NAME_ALLOW_VC_MIGRATION)
+  @javax.annotation.Nullable
   private Boolean allowVcMigration;
 
   public static final String SERIALIZED_NAME_CONNECTION_EDITABLE = "connectionEditable";
   @SerializedName(SERIALIZED_NAME_CONNECTION_EDITABLE)
+  @javax.annotation.Nullable
   private Boolean connectionEditable;
 
   public static final String SERIALIZED_NAME_RELEASE_VLAN = "releaseVlan";
   @SerializedName(SERIALIZED_NAME_RELEASE_VLAN)
+  @javax.annotation.Nullable
   private Boolean releaseVlan;
 
   public static final String SERIALIZED_NAME_MAX_CONNECTIONS_ON_PORT = "maxConnectionsOnPort";
   @SerializedName(SERIALIZED_NAME_MAX_CONNECTIONS_ON_PORT)
+  @javax.annotation.Nullable
   private Integer maxConnectionsOnPort;
 
   public static final String SERIALIZED_NAME_PORT_ASSIGNMENT_STRATEGY = "portAssignmentStrategy";
   @SerializedName(SERIALIZED_NAME_PORT_ASSIGNMENT_STRATEGY)
+  @javax.annotation.Nullable
   private String portAssignmentStrategy;
 
   public static final String SERIALIZED_NAME_EQX_MANAGED_PORT = "eqxManagedPort";
   @SerializedName(SERIALIZED_NAME_EQX_MANAGED_PORT)
+  @javax.annotation.Nullable
   private Boolean eqxManagedPort;
 
   public static final String SERIALIZED_NAME_CONNECTION_NAME_EDITABLE = "connectionNameEditable";
   @SerializedName(SERIALIZED_NAME_CONNECTION_NAME_EDITABLE)
+  @javax.annotation.Nullable
   private Boolean connectionNameEditable;
 
   public ServiceProfileMetadata() {
   }
 
-  public ServiceProfileMetadata props(String props) {
-    
+  public ServiceProfileMetadata props(@javax.annotation.Nullable String props) {
     this.props = props;
     return this;
   }
 
-   /**
+  /**
    * Get props
    * @return props
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getProps() {
     return props;
   }
 
-
-  public void setProps(String props) {
+  public void setProps(@javax.annotation.Nullable String props) {
     this.props = props;
   }
 
 
-  public ServiceProfileMetadata regEx(String regEx) {
-    
+  public ServiceProfileMetadata regEx(@javax.annotation.Nullable String regEx) {
     this.regEx = regEx;
     return this;
   }
 
-   /**
+  /**
    * Get regEx
    * @return regEx
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRegEx() {
     return regEx;
   }
 
-
-  public void setRegEx(String regEx) {
+  public void setRegEx(@javax.annotation.Nullable String regEx) {
     this.regEx = regEx;
   }
 
 
-  public ServiceProfileMetadata regExMsg(String regExMsg) {
-    
+  public ServiceProfileMetadata regExMsg(@javax.annotation.Nullable String regExMsg) {
     this.regExMsg = regExMsg;
     return this;
   }
 
-   /**
+  /**
    * Get regExMsg
    * @return regExMsg
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRegExMsg() {
     return regExMsg;
   }
 
-
-  public void setRegExMsg(String regExMsg) {
+  public void setRegExMsg(@javax.annotation.Nullable String regExMsg) {
     this.regExMsg = regExMsg;
   }
 
 
-  public ServiceProfileMetadata vlanRangeMaxValue(Integer vlanRangeMaxValue) {
-    
+  public ServiceProfileMetadata vlanRangeMaxValue(@javax.annotation.Nullable Integer vlanRangeMaxValue) {
     this.vlanRangeMaxValue = vlanRangeMaxValue;
     return this;
   }
 
-   /**
+  /**
    * Get vlanRangeMaxValue
    * @return vlanRangeMaxValue
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanRangeMaxValue() {
     return vlanRangeMaxValue;
   }
 
-
-  public void setVlanRangeMaxValue(Integer vlanRangeMaxValue) {
+  public void setVlanRangeMaxValue(@javax.annotation.Nullable Integer vlanRangeMaxValue) {
     this.vlanRangeMaxValue = vlanRangeMaxValue;
   }
 
 
-  public ServiceProfileMetadata vlanRangeMinValue(Integer vlanRangeMinValue) {
-    
+  public ServiceProfileMetadata vlanRangeMinValue(@javax.annotation.Nullable Integer vlanRangeMinValue) {
     this.vlanRangeMinValue = vlanRangeMinValue;
     return this;
   }
 
-   /**
+  /**
    * Get vlanRangeMinValue
    * @return vlanRangeMinValue
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanRangeMinValue() {
     return vlanRangeMinValue;
   }
 
-
-  public void setVlanRangeMinValue(Integer vlanRangeMinValue) {
+  public void setVlanRangeMinValue(@javax.annotation.Nullable Integer vlanRangeMinValue) {
     this.vlanRangeMinValue = vlanRangeMinValue;
   }
 
 
-  public ServiceProfileMetadata maxQinq(String maxQinq) {
-    
+  public ServiceProfileMetadata maxQinq(@javax.annotation.Nullable String maxQinq) {
     this.maxQinq = maxQinq;
     return this;
   }
 
-   /**
+  /**
    * Get maxQinq
    * @return maxQinq
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMaxQinq() {
     return maxQinq;
   }
 
-
-  public void setMaxQinq(String maxQinq) {
+  public void setMaxQinq(@javax.annotation.Nullable String maxQinq) {
     this.maxQinq = maxQinq;
   }
 
 
-  public ServiceProfileMetadata maxDot1q(Integer maxDot1q) {
-    
+  public ServiceProfileMetadata maxDot1q(@javax.annotation.Nullable Integer maxDot1q) {
     this.maxDot1q = maxDot1q;
     return this;
   }
 
-   /**
+  /**
    * Get maxDot1q
    * @return maxDot1q
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getMaxDot1q() {
     return maxDot1q;
   }
 
-
-  public void setMaxDot1q(Integer maxDot1q) {
+  public void setMaxDot1q(@javax.annotation.Nullable Integer maxDot1q) {
     this.maxDot1q = maxDot1q;
   }
 
 
-  public ServiceProfileMetadata variableBilling(Boolean variableBilling) {
-    
+  public ServiceProfileMetadata variableBilling(@javax.annotation.Nullable Boolean variableBilling) {
     this.variableBilling = variableBilling;
     return this;
   }
 
-   /**
+  /**
    * Get variableBilling
    * @return variableBilling
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getVariableBilling() {
     return variableBilling;
   }
 
-
-  public void setVariableBilling(Boolean variableBilling) {
+  public void setVariableBilling(@javax.annotation.Nullable Boolean variableBilling) {
     this.variableBilling = variableBilling;
   }
 
 
-  public ServiceProfileMetadata globalOrganization(String globalOrganization) {
-    
+  public ServiceProfileMetadata globalOrganization(@javax.annotation.Nullable String globalOrganization) {
     this.globalOrganization = globalOrganization;
     return this;
   }
 
-   /**
+  /**
    * Get globalOrganization
    * @return globalOrganization
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getGlobalOrganization() {
     return globalOrganization;
   }
 
-
-  public void setGlobalOrganization(String globalOrganization) {
+  public void setGlobalOrganization(@javax.annotation.Nullable String globalOrganization) {
     this.globalOrganization = globalOrganization;
   }
 
 
-  public ServiceProfileMetadata limitAuthKeyConn(Boolean limitAuthKeyConn) {
-    
+  public ServiceProfileMetadata limitAuthKeyConn(@javax.annotation.Nullable Boolean limitAuthKeyConn) {
     this.limitAuthKeyConn = limitAuthKeyConn;
     return this;
   }
 
-   /**
+  /**
    * Get limitAuthKeyConn
    * @return limitAuthKeyConn
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getLimitAuthKeyConn() {
     return limitAuthKeyConn;
   }
 
-
-  public void setLimitAuthKeyConn(Boolean limitAuthKeyConn) {
+  public void setLimitAuthKeyConn(@javax.annotation.Nullable Boolean limitAuthKeyConn) {
     this.limitAuthKeyConn = limitAuthKeyConn;
   }
 
 
-  public ServiceProfileMetadata allowSecondaryLocation(Boolean allowSecondaryLocation) {
-    
+  public ServiceProfileMetadata allowSecondaryLocation(@javax.annotation.Nullable Boolean allowSecondaryLocation) {
     this.allowSecondaryLocation = allowSecondaryLocation;
     return this;
   }
 
-   /**
+  /**
    * Get allowSecondaryLocation
    * @return allowSecondaryLocation
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowSecondaryLocation() {
     return allowSecondaryLocation;
   }
 
-
-  public void setAllowSecondaryLocation(Boolean allowSecondaryLocation) {
+  public void setAllowSecondaryLocation(@javax.annotation.Nullable Boolean allowSecondaryLocation) {
     this.allowSecondaryLocation = allowSecondaryLocation;
   }
 
 
-  public ServiceProfileMetadata redundantProfileId(String redundantProfileId) {
-    
+  public ServiceProfileMetadata redundantProfileId(@javax.annotation.Nullable String redundantProfileId) {
     this.redundantProfileId = redundantProfileId;
     return this;
   }
 
-   /**
+  /**
    * Get redundantProfileId
    * @return redundantProfileId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRedundantProfileId() {
     return redundantProfileId;
   }
 
-
-  public void setRedundantProfileId(String redundantProfileId) {
+  public void setRedundantProfileId(@javax.annotation.Nullable String redundantProfileId) {
     this.redundantProfileId = redundantProfileId;
   }
 
 
-  public ServiceProfileMetadata allowVcMigration(Boolean allowVcMigration) {
-    
+  public ServiceProfileMetadata allowVcMigration(@javax.annotation.Nullable Boolean allowVcMigration) {
     this.allowVcMigration = allowVcMigration;
     return this;
   }
 
-   /**
+  /**
    * Get allowVcMigration
    * @return allowVcMigration
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowVcMigration() {
     return allowVcMigration;
   }
 
-
-  public void setAllowVcMigration(Boolean allowVcMigration) {
+  public void setAllowVcMigration(@javax.annotation.Nullable Boolean allowVcMigration) {
     this.allowVcMigration = allowVcMigration;
   }
 
 
-  public ServiceProfileMetadata connectionEditable(Boolean connectionEditable) {
-    
+  public ServiceProfileMetadata connectionEditable(@javax.annotation.Nullable Boolean connectionEditable) {
     this.connectionEditable = connectionEditable;
     return this;
   }
 
-   /**
+  /**
    * Get connectionEditable
    * @return connectionEditable
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getConnectionEditable() {
     return connectionEditable;
   }
 
-
-  public void setConnectionEditable(Boolean connectionEditable) {
+  public void setConnectionEditable(@javax.annotation.Nullable Boolean connectionEditable) {
     this.connectionEditable = connectionEditable;
   }
 
 
-  public ServiceProfileMetadata releaseVlan(Boolean releaseVlan) {
-    
+  public ServiceProfileMetadata releaseVlan(@javax.annotation.Nullable Boolean releaseVlan) {
     this.releaseVlan = releaseVlan;
     return this;
   }
 
-   /**
+  /**
    * Get releaseVlan
    * @return releaseVlan
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getReleaseVlan() {
     return releaseVlan;
   }
 
-
-  public void setReleaseVlan(Boolean releaseVlan) {
+  public void setReleaseVlan(@javax.annotation.Nullable Boolean releaseVlan) {
     this.releaseVlan = releaseVlan;
   }
 
 
-  public ServiceProfileMetadata maxConnectionsOnPort(Integer maxConnectionsOnPort) {
-    
+  public ServiceProfileMetadata maxConnectionsOnPort(@javax.annotation.Nullable Integer maxConnectionsOnPort) {
     this.maxConnectionsOnPort = maxConnectionsOnPort;
     return this;
   }
 
-   /**
+  /**
    * Get maxConnectionsOnPort
    * @return maxConnectionsOnPort
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getMaxConnectionsOnPort() {
     return maxConnectionsOnPort;
   }
 
-
-  public void setMaxConnectionsOnPort(Integer maxConnectionsOnPort) {
+  public void setMaxConnectionsOnPort(@javax.annotation.Nullable Integer maxConnectionsOnPort) {
     this.maxConnectionsOnPort = maxConnectionsOnPort;
   }
 
 
-  public ServiceProfileMetadata portAssignmentStrategy(String portAssignmentStrategy) {
-    
+  public ServiceProfileMetadata portAssignmentStrategy(@javax.annotation.Nullable String portAssignmentStrategy) {
     this.portAssignmentStrategy = portAssignmentStrategy;
     return this;
   }
 
-   /**
+  /**
    * Get portAssignmentStrategy
    * @return portAssignmentStrategy
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPortAssignmentStrategy() {
     return portAssignmentStrategy;
   }
 
-
-  public void setPortAssignmentStrategy(String portAssignmentStrategy) {
+  public void setPortAssignmentStrategy(@javax.annotation.Nullable String portAssignmentStrategy) {
     this.portAssignmentStrategy = portAssignmentStrategy;
   }
 
 
-  public ServiceProfileMetadata eqxManagedPort(Boolean eqxManagedPort) {
-    
+  public ServiceProfileMetadata eqxManagedPort(@javax.annotation.Nullable Boolean eqxManagedPort) {
     this.eqxManagedPort = eqxManagedPort;
     return this;
   }
 
-   /**
+  /**
    * Get eqxManagedPort
    * @return eqxManagedPort
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEqxManagedPort() {
     return eqxManagedPort;
   }
 
-
-  public void setEqxManagedPort(Boolean eqxManagedPort) {
+  public void setEqxManagedPort(@javax.annotation.Nullable Boolean eqxManagedPort) {
     this.eqxManagedPort = eqxManagedPort;
   }
 
 
-  public ServiceProfileMetadata connectionNameEditable(Boolean connectionNameEditable) {
-    
+  public ServiceProfileMetadata connectionNameEditable(@javax.annotation.Nullable Boolean connectionNameEditable) {
     this.connectionNameEditable = connectionNameEditable;
     return this;
   }
 
-   /**
+  /**
    * Get connectionNameEditable
    * @return connectionNameEditable
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getConnectionNameEditable() {
     return connectionNameEditable;
   }
 
-
-  public void setConnectionNameEditable(Boolean connectionNameEditable) {
+  public void setConnectionNameEditable(@javax.annotation.Nullable Boolean connectionNameEditable) {
     this.connectionNameEditable = connectionNameEditable;
   }
 
@@ -694,18 +658,19 @@ public class ServiceProfileMetadata {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileMetadata
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfileMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfileMetadata
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfileMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileMetadata is not found in the empty JSON string", ServiceProfileMetadata.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("props") != null && !jsonObj.get("props").isJsonNull()) && !jsonObj.get("props").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `props` to be a primitive type in the JSON string but got `%s`", jsonObj.get("props").toString()));
       }
@@ -757,7 +722,12 @@ public class ServiceProfileMetadata {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -766,8 +736,9 @@ public class ServiceProfileMetadata {
 
            @Override
            public ServiceProfileMetadata read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceProfileMetadata instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -795,22 +766,22 @@ public class ServiceProfileMetadata {
     }
   }
 
- /**
-  * Create an instance of ServiceProfileMetadata given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileMetadata
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileMetadata
-  */
+  /**
+   * Create an instance of ServiceProfileMetadata given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfileMetadata
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfileMetadata
+   */
   public static ServiceProfileMetadata fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfileMetadata.class);
   }
 
- /**
-  * Convert an instance of ServiceProfileMetadata to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfileMetadata to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.OutputStructuredPingResponseItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,277 +49,257 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * OutputStructuredPing
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OutputStructuredPing {
   public static final String SERIALIZED_NAME_DESTINATION_IP = "destinationIp";
   @SerializedName(SERIALIZED_NAME_DESTINATION_IP)
+  @javax.annotation.Nullable
   private String destinationIp;
 
   public static final String SERIALIZED_NAME_DESTINATION_NAME = "destinationName";
   @SerializedName(SERIALIZED_NAME_DESTINATION_NAME)
+  @javax.annotation.Nullable
   private String destinationName;
 
   public static final String SERIALIZED_NAME_DATA_BYTES = "dataBytes";
   @SerializedName(SERIALIZED_NAME_DATA_BYTES)
+  @javax.annotation.Nullable
   private Integer dataBytes;
 
   public static final String SERIALIZED_NAME_PACKETS_TRANSMITTED = "packetsTransmitted";
   @SerializedName(SERIALIZED_NAME_PACKETS_TRANSMITTED)
+  @javax.annotation.Nullable
   private Integer packetsTransmitted;
 
   public static final String SERIALIZED_NAME_PACKETS_RECEIVED = "packetsReceived";
   @SerializedName(SERIALIZED_NAME_PACKETS_RECEIVED)
+  @javax.annotation.Nullable
   private Integer packetsReceived;
 
   public static final String SERIALIZED_NAME_PACKETS_LOSS_PERCENT = "packetsLossPercent";
   @SerializedName(SERIALIZED_NAME_PACKETS_LOSS_PERCENT)
+  @javax.annotation.Nullable
   private Float packetsLossPercent;
 
   public static final String SERIALIZED_NAME_RTT_MIN = "rttMin";
   @SerializedName(SERIALIZED_NAME_RTT_MIN)
+  @javax.annotation.Nullable
   private Float rttMin;
 
   public static final String SERIALIZED_NAME_RTT_AVG = "rttAvg";
   @SerializedName(SERIALIZED_NAME_RTT_AVG)
+  @javax.annotation.Nullable
   private Float rttAvg;
 
   public static final String SERIALIZED_NAME_RTT_MAX = "rttMax";
   @SerializedName(SERIALIZED_NAME_RTT_MAX)
+  @javax.annotation.Nullable
   private Float rttMax;
 
   public static final String SERIALIZED_NAME_RTT_STD_DEV = "rttStdDev";
   @SerializedName(SERIALIZED_NAME_RTT_STD_DEV)
+  @javax.annotation.Nullable
   private Float rttStdDev;
 
   public static final String SERIALIZED_NAME_RESPONSES = "responses";
   @SerializedName(SERIALIZED_NAME_RESPONSES)
+  @javax.annotation.Nullable
   private List<OutputStructuredPingResponseItem> responses = new ArrayList<>();
 
   public OutputStructuredPing() {
   }
 
-  public OutputStructuredPing destinationIp(String destinationIp) {
-    
+  public OutputStructuredPing destinationIp(@javax.annotation.Nullable String destinationIp) {
     this.destinationIp = destinationIp;
     return this;
   }
 
-   /**
+  /**
    * Get destinationIp
    * @return destinationIp
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDestinationIp() {
     return destinationIp;
   }
 
-
-  public void setDestinationIp(String destinationIp) {
+  public void setDestinationIp(@javax.annotation.Nullable String destinationIp) {
     this.destinationIp = destinationIp;
   }
 
 
-  public OutputStructuredPing destinationName(String destinationName) {
-    
+  public OutputStructuredPing destinationName(@javax.annotation.Nullable String destinationName) {
     this.destinationName = destinationName;
     return this;
   }
 
-   /**
+  /**
    * Get destinationName
    * @return destinationName
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDestinationName() {
     return destinationName;
   }
 
-
-  public void setDestinationName(String destinationName) {
+  public void setDestinationName(@javax.annotation.Nullable String destinationName) {
     this.destinationName = destinationName;
   }
 
 
-  public OutputStructuredPing dataBytes(Integer dataBytes) {
-    
+  public OutputStructuredPing dataBytes(@javax.annotation.Nullable Integer dataBytes) {
     this.dataBytes = dataBytes;
     return this;
   }
 
-   /**
+  /**
    * Get dataBytes
    * @return dataBytes
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getDataBytes() {
     return dataBytes;
   }
 
-
-  public void setDataBytes(Integer dataBytes) {
+  public void setDataBytes(@javax.annotation.Nullable Integer dataBytes) {
     this.dataBytes = dataBytes;
   }
 
 
-  public OutputStructuredPing packetsTransmitted(Integer packetsTransmitted) {
-    
+  public OutputStructuredPing packetsTransmitted(@javax.annotation.Nullable Integer packetsTransmitted) {
     this.packetsTransmitted = packetsTransmitted;
     return this;
   }
 
-   /**
+  /**
    * Get packetsTransmitted
    * @return packetsTransmitted
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getPacketsTransmitted() {
     return packetsTransmitted;
   }
 
-
-  public void setPacketsTransmitted(Integer packetsTransmitted) {
+  public void setPacketsTransmitted(@javax.annotation.Nullable Integer packetsTransmitted) {
     this.packetsTransmitted = packetsTransmitted;
   }
 
 
-  public OutputStructuredPing packetsReceived(Integer packetsReceived) {
-    
+  public OutputStructuredPing packetsReceived(@javax.annotation.Nullable Integer packetsReceived) {
     this.packetsReceived = packetsReceived;
     return this;
   }
 
-   /**
+  /**
    * Get packetsReceived
    * @return packetsReceived
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getPacketsReceived() {
     return packetsReceived;
   }
 
-
-  public void setPacketsReceived(Integer packetsReceived) {
+  public void setPacketsReceived(@javax.annotation.Nullable Integer packetsReceived) {
     this.packetsReceived = packetsReceived;
   }
 
 
-  public OutputStructuredPing packetsLossPercent(Float packetsLossPercent) {
-    
+  public OutputStructuredPing packetsLossPercent(@javax.annotation.Nullable Float packetsLossPercent) {
     this.packetsLossPercent = packetsLossPercent;
     return this;
   }
 
-   /**
+  /**
    * Get packetsLossPercent
    * @return packetsLossPercent
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getPacketsLossPercent() {
     return packetsLossPercent;
   }
 
-
-  public void setPacketsLossPercent(Float packetsLossPercent) {
+  public void setPacketsLossPercent(@javax.annotation.Nullable Float packetsLossPercent) {
     this.packetsLossPercent = packetsLossPercent;
   }
 
 
-  public OutputStructuredPing rttMin(Float rttMin) {
-    
+  public OutputStructuredPing rttMin(@javax.annotation.Nullable Float rttMin) {
     this.rttMin = rttMin;
     return this;
   }
 
-   /**
+  /**
    * Get rttMin
    * @return rttMin
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getRttMin() {
     return rttMin;
   }
 
-
-  public void setRttMin(Float rttMin) {
+  public void setRttMin(@javax.annotation.Nullable Float rttMin) {
     this.rttMin = rttMin;
   }
 
 
-  public OutputStructuredPing rttAvg(Float rttAvg) {
-    
+  public OutputStructuredPing rttAvg(@javax.annotation.Nullable Float rttAvg) {
     this.rttAvg = rttAvg;
     return this;
   }
 
-   /**
+  /**
    * Get rttAvg
    * @return rttAvg
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getRttAvg() {
     return rttAvg;
   }
 
-
-  public void setRttAvg(Float rttAvg) {
+  public void setRttAvg(@javax.annotation.Nullable Float rttAvg) {
     this.rttAvg = rttAvg;
   }
 
 
-  public OutputStructuredPing rttMax(Float rttMax) {
-    
+  public OutputStructuredPing rttMax(@javax.annotation.Nullable Float rttMax) {
     this.rttMax = rttMax;
     return this;
   }
 
-   /**
+  /**
    * Get rttMax
    * @return rttMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getRttMax() {
     return rttMax;
   }
 
-
-  public void setRttMax(Float rttMax) {
+  public void setRttMax(@javax.annotation.Nullable Float rttMax) {
     this.rttMax = rttMax;
   }
 
 
-  public OutputStructuredPing rttStdDev(Float rttStdDev) {
-    
+  public OutputStructuredPing rttStdDev(@javax.annotation.Nullable Float rttStdDev) {
     this.rttStdDev = rttStdDev;
     return this;
   }
 
-   /**
+  /**
    * Get rttStdDev
    * @return rttStdDev
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getRttStdDev() {
     return rttStdDev;
   }
 
-
-  public void setRttStdDev(Float rttStdDev) {
+  public void setRttStdDev(@javax.annotation.Nullable Float rttStdDev) {
     this.rttStdDev = rttStdDev;
   }
 
 
-  public OutputStructuredPing responses(List<OutputStructuredPingResponseItem> responses) {
-    
+  public OutputStructuredPing responses(@javax.annotation.Nullable List<OutputStructuredPingResponseItem> responses) {
     this.responses = responses;
     return this;
   }
@@ -330,18 +312,16 @@ public class OutputStructuredPing {
     return this;
   }
 
-   /**
+  /**
    * Get responses
    * @return responses
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<OutputStructuredPingResponseItem> getResponses() {
     return responses;
   }
 
-
-  public void setResponses(List<OutputStructuredPingResponseItem> responses) {
+  public void setResponses(@javax.annotation.Nullable List<OutputStructuredPingResponseItem> responses) {
     this.responses = responses;
   }
 
@@ -473,18 +453,19 @@ public class OutputStructuredPing {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OutputStructuredPing
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!OutputStructuredPing.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to OutputStructuredPing
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!OutputStructuredPing.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in OutputStructuredPing is not found in the empty JSON string", OutputStructuredPing.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("destinationIp") != null && !jsonObj.get("destinationIp").isJsonNull()) && !jsonObj.get("destinationIp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `destinationIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("destinationIp").toString()));
       }
@@ -501,7 +482,7 @@ public class OutputStructuredPing {
 
           // validate the optional field `responses` (array)
           for (int i = 0; i < jsonArrayresponses.size(); i++) {
-            OutputStructuredPingResponseItem.validateJsonObject(jsonArrayresponses.get(i).getAsJsonObject());
+            OutputStructuredPingResponseItem.validateJsonElement(jsonArrayresponses.get(i));
           };
         }
       }
@@ -535,7 +516,12 @@ public class OutputStructuredPing {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -544,8 +530,9 @@ public class OutputStructuredPing {
 
            @Override
            public OutputStructuredPing read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              OutputStructuredPing instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -573,22 +560,22 @@ public class OutputStructuredPing {
     }
   }
 
- /**
-  * Create an instance of OutputStructuredPing given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OutputStructuredPing
-  * @throws IOException if the JSON string is invalid with respect to OutputStructuredPing
-  */
+  /**
+   * Create an instance of OutputStructuredPing given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of OutputStructuredPing
+   * @throws IOException if the JSON string is invalid with respect to OutputStructuredPing
+   */
   public static OutputStructuredPing fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, OutputStructuredPing.class);
   }
 
- /**
-  * Convert an instance of OutputStructuredPing to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of OutputStructuredPing to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
