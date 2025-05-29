@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterFilters;
 import com.equinix.sdk.fabricv4.model.CloudRouterSortCriteria;
 import com.equinix.sdk.fabricv4.model.PaginationRequest;
@@ -23,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -35,13 +35,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -49,69 +51,65 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Search requests containing criteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterSearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
   private CloudRouterFilters filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
+  @javax.annotation.Nullable
   private PaginationRequest pagination;
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
+  @javax.annotation.Nullable
   private List<CloudRouterSortCriteria> sort = new ArrayList<>();
 
   public CloudRouterSearchRequest() {
   }
 
-  public CloudRouterSearchRequest filter(CloudRouterFilters filter) {
-    
+  public CloudRouterSearchRequest filter(@javax.annotation.Nullable CloudRouterFilters filter) {
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * Get filter
    * @return filter
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterFilters getFilter() {
     return filter;
   }
 
-
-  public void setFilter(CloudRouterFilters filter) {
+  public void setFilter(@javax.annotation.Nullable CloudRouterFilters filter) {
     this.filter = filter;
   }
 
 
-  public CloudRouterSearchRequest pagination(PaginationRequest pagination) {
-    
+  public CloudRouterSearchRequest pagination(@javax.annotation.Nullable PaginationRequest pagination) {
     this.pagination = pagination;
     return this;
   }
 
-   /**
+  /**
    * Get pagination
    * @return pagination
-  **/
+   */
   @javax.annotation.Nullable
-
   public PaginationRequest getPagination() {
     return pagination;
   }
 
-
-  public void setPagination(PaginationRequest pagination) {
+  public void setPagination(@javax.annotation.Nullable PaginationRequest pagination) {
     this.pagination = pagination;
   }
 
 
-  public CloudRouterSearchRequest sort(List<CloudRouterSortCriteria> sort) {
-    
+  public CloudRouterSearchRequest sort(@javax.annotation.Nullable List<CloudRouterSortCriteria> sort) {
     this.sort = sort;
     return this;
   }
@@ -124,18 +122,16 @@ public class CloudRouterSearchRequest {
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<CloudRouterSortCriteria> getSort() {
     return sort;
   }
 
-
-  public void setSort(List<CloudRouterSortCriteria> sort) {
+  public void setSort(@javax.annotation.Nullable List<CloudRouterSortCriteria> sort) {
     this.sort = sort;
   }
 
@@ -243,25 +239,26 @@ public class CloudRouterSearchRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterSearchRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterSearchRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterSearchRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterSearchRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterSearchRequest is not found in the empty JSON string", CloudRouterSearchRequest.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `filter`
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        CloudRouterFilters.validateJsonObject(jsonObj.getAsJsonObject("filter"));
+        CloudRouterFilters.validateJsonElement(jsonObj.get("filter"));
       }
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        PaginationRequest.validateJsonObject(jsonObj.getAsJsonObject("pagination"));
+        PaginationRequest.validateJsonElement(jsonObj.get("pagination"));
       }
       if (jsonObj.get("sort") != null && !jsonObj.get("sort").isJsonNull()) {
         JsonArray jsonArraysort = jsonObj.getAsJsonArray("sort");
@@ -273,7 +270,7 @@ public class CloudRouterSearchRequest {
 
           // validate the optional field `sort` (array)
           for (int i = 0; i < jsonArraysort.size(); i++) {
-            CloudRouterSortCriteria.validateJsonObject(jsonArraysort.get(i).getAsJsonObject());
+            CloudRouterSortCriteria.validateJsonElement(jsonArraysort.get(i));
           };
         }
       }
@@ -307,7 +304,12 @@ public class CloudRouterSearchRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -316,8 +318,9 @@ public class CloudRouterSearchRequest {
 
            @Override
            public CloudRouterSearchRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterSearchRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -345,22 +348,22 @@ public class CloudRouterSearchRequest {
     }
   }
 
- /**
-  * Create an instance of CloudRouterSearchRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterSearchRequest
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterSearchRequest
-  */
+  /**
+   * Create an instance of CloudRouterSearchRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterSearchRequest
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterSearchRequest
+   */
   public static CloudRouterSearchRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterSearchRequest.class);
   }
 
- /**
-  * Convert an instance of CloudRouterSearchRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterSearchRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

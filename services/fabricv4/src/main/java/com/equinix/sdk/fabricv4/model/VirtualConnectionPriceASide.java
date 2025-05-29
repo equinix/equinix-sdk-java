@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceASideAccessPoint;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,33 +47,31 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * VirtualConnectionPriceASide
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class VirtualConnectionPriceASide {
   public static final String SERIALIZED_NAME_ACCESS_POINT = "accessPoint";
   @SerializedName(SERIALIZED_NAME_ACCESS_POINT)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceASideAccessPoint accessPoint;
 
   public VirtualConnectionPriceASide() {
   }
 
-  public VirtualConnectionPriceASide accessPoint(VirtualConnectionPriceASideAccessPoint accessPoint) {
-    
+  public VirtualConnectionPriceASide accessPoint(@javax.annotation.Nullable VirtualConnectionPriceASideAccessPoint accessPoint) {
     this.accessPoint = accessPoint;
     return this;
   }
 
-   /**
+  /**
    * Get accessPoint
    * @return accessPoint
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceASideAccessPoint getAccessPoint() {
     return accessPoint;
   }
 
-
-  public void setAccessPoint(VirtualConnectionPriceASideAccessPoint accessPoint) {
+  public void setAccessPoint(@javax.annotation.Nullable VirtualConnectionPriceASideAccessPoint accessPoint) {
     this.accessPoint = accessPoint;
   }
 
@@ -173,21 +173,22 @@ public class VirtualConnectionPriceASide {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to VirtualConnectionPriceASide
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!VirtualConnectionPriceASide.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VirtualConnectionPriceASide
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VirtualConnectionPriceASide.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in VirtualConnectionPriceASide is not found in the empty JSON string", VirtualConnectionPriceASide.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `accessPoint`
       if (jsonObj.get("accessPoint") != null && !jsonObj.get("accessPoint").isJsonNull()) {
-        VirtualConnectionPriceASideAccessPoint.validateJsonObject(jsonObj.getAsJsonObject("accessPoint"));
+        VirtualConnectionPriceASideAccessPoint.validateJsonElement(jsonObj.get("accessPoint"));
       }
   }
 
@@ -219,7 +220,12 @@ public class VirtualConnectionPriceASide {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -228,8 +234,9 @@ public class VirtualConnectionPriceASide {
 
            @Override
            public VirtualConnectionPriceASide read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              VirtualConnectionPriceASide instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -257,22 +264,22 @@ public class VirtualConnectionPriceASide {
     }
   }
 
- /**
-  * Create an instance of VirtualConnectionPriceASide given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VirtualConnectionPriceASide
-  * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPriceASide
-  */
+  /**
+   * Create an instance of VirtualConnectionPriceASide given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VirtualConnectionPriceASide
+   * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPriceASide
+   */
   public static VirtualConnectionPriceASide fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VirtualConnectionPriceASide.class);
   }
 
- /**
-  * Convert an instance of VirtualConnectionPriceASide to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VirtualConnectionPriceASide to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

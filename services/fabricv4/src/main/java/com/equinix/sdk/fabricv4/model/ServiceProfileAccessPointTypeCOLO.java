@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ApiConfig;
 import com.equinix.sdk.fabricv4.model.AuthenticationKey;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointTypeEnum;
@@ -26,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,117 +54,125 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Colo Access Point Type
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileAccessPointTypeCOLO {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private String uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private ServiceProfileAccessPointTypeEnum type;
 
   public static final String SERIALIZED_NAME_SUPPORTED_BANDWIDTHS = "supportedBandwidths";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_BANDWIDTHS)
+  @javax.annotation.Nullable
   private List<Integer> supportedBandwidths = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALLOW_REMOTE_CONNECTIONS = "allowRemoteConnections";
   @SerializedName(SERIALIZED_NAME_ALLOW_REMOTE_CONNECTIONS)
+  @javax.annotation.Nullable
   private Boolean allowRemoteConnections = false;
 
   public static final String SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH = "allowCustomBandwidth";
   @SerializedName(SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH)
+  @javax.annotation.Nullable
   private Boolean allowCustomBandwidth = false;
 
   public static final String SERIALIZED_NAME_BANDWIDTH_ALERT_THRESHOLD = "bandwidthAlertThreshold";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH_ALERT_THRESHOLD)
+  @javax.annotation.Nullable
   private BigDecimal bandwidthAlertThreshold;
 
   public static final String SERIALIZED_NAME_ALLOW_BANDWIDTH_AUTO_APPROVAL = "allowBandwidthAutoApproval";
   @SerializedName(SERIALIZED_NAME_ALLOW_BANDWIDTH_AUTO_APPROVAL)
+  @javax.annotation.Nullable
   private Boolean allowBandwidthAutoApproval = false;
 
   public static final String SERIALIZED_NAME_ALLOW_BANDWIDTH_UPGRADE = "allowBandwidthUpgrade";
   @SerializedName(SERIALIZED_NAME_ALLOW_BANDWIDTH_UPGRADE)
+  @javax.annotation.Nullable
   private Boolean allowBandwidthUpgrade;
 
   public static final String SERIALIZED_NAME_LINK_PROTOCOL_CONFIG = "linkProtocolConfig";
   @SerializedName(SERIALIZED_NAME_LINK_PROTOCOL_CONFIG)
+  @javax.annotation.Nullable
   private ServiceProfileLinkProtocolConfig linkProtocolConfig;
 
   public static final String SERIALIZED_NAME_ENABLE_AUTO_GENERATE_SERVICE_KEY = "enableAutoGenerateServiceKey";
   @SerializedName(SERIALIZED_NAME_ENABLE_AUTO_GENERATE_SERVICE_KEY)
+  @javax.annotation.Nullable
   private Boolean enableAutoGenerateServiceKey;
 
   public static final String SERIALIZED_NAME_CONNECTION_REDUNDANCY_REQUIRED = "connectionRedundancyRequired";
   @SerializedName(SERIALIZED_NAME_CONNECTION_REDUNDANCY_REQUIRED)
+  @javax.annotation.Nullable
   private Boolean connectionRedundancyRequired = false;
 
   public static final String SERIALIZED_NAME_API_CONFIG = "apiConfig";
   @SerializedName(SERIALIZED_NAME_API_CONFIG)
+  @javax.annotation.Nullable
   private ApiConfig apiConfig;
 
   public static final String SERIALIZED_NAME_CONNECTION_LABEL = "connectionLabel";
   @SerializedName(SERIALIZED_NAME_CONNECTION_LABEL)
+  @javax.annotation.Nullable
   private String connectionLabel;
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_KEY = "authenticationKey";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_KEY)
+  @javax.annotation.Nullable
   private AuthenticationKey authenticationKey;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
   private ServiceProfileMetadata metadata;
 
   public ServiceProfileAccessPointTypeCOLO() {
   }
 
-  public ServiceProfileAccessPointTypeCOLO uuid(String uuid) {
-    
+  public ServiceProfileAccessPointTypeCOLO uuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Get uuid
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO type(ServiceProfileAccessPointTypeEnum type) {
-    
+  public ServiceProfileAccessPointTypeCOLO type(@javax.annotation.Nonnull ServiceProfileAccessPointTypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ServiceProfileAccessPointTypeEnum getType() {
     return type;
   }
 
-
-  public void setType(ServiceProfileAccessPointTypeEnum type) {
+  public void setType(@javax.annotation.Nonnull ServiceProfileAccessPointTypeEnum type) {
     this.type = type;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO supportedBandwidths(List<Integer> supportedBandwidths) {
-    
+  public ServiceProfileAccessPointTypeCOLO supportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
     return this;
   }
@@ -175,282 +185,244 @@ public class ServiceProfileAccessPointTypeCOLO {
     return this;
   }
 
-   /**
+  /**
    * Get supportedBandwidths
    * @return supportedBandwidths
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Integer> getSupportedBandwidths() {
     return supportedBandwidths;
   }
 
-
-  public void setSupportedBandwidths(List<Integer> supportedBandwidths) {
+  public void setSupportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO allowRemoteConnections(Boolean allowRemoteConnections) {
-    
+  public ServiceProfileAccessPointTypeCOLO allowRemoteConnections(@javax.annotation.Nullable Boolean allowRemoteConnections) {
     this.allowRemoteConnections = allowRemoteConnections;
     return this;
   }
 
-   /**
+  /**
    * Setting to allow or prohibit remote connections to the service profile.
    * @return allowRemoteConnections
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowRemoteConnections() {
     return allowRemoteConnections;
   }
 
-
-  public void setAllowRemoteConnections(Boolean allowRemoteConnections) {
+  public void setAllowRemoteConnections(@javax.annotation.Nullable Boolean allowRemoteConnections) {
     this.allowRemoteConnections = allowRemoteConnections;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO allowCustomBandwidth(Boolean allowCustomBandwidth) {
-    
+  public ServiceProfileAccessPointTypeCOLO allowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
     return this;
   }
 
-   /**
+  /**
    * Setting to enable or disable the ability of the buyer to customize the bandwidth.
    * @return allowCustomBandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowCustomBandwidth() {
     return allowCustomBandwidth;
   }
 
-
-  public void setAllowCustomBandwidth(Boolean allowCustomBandwidth) {
+  public void setAllowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO bandwidthAlertThreshold(BigDecimal bandwidthAlertThreshold) {
-    
+  public ServiceProfileAccessPointTypeCOLO bandwidthAlertThreshold(@javax.annotation.Nullable BigDecimal bandwidthAlertThreshold) {
     this.bandwidthAlertThreshold = bandwidthAlertThreshold;
     return this;
   }
 
-   /**
+  /**
    * percentage of port bandwidth at which an allocation alert is generated - missing on wiki.
    * @return bandwidthAlertThreshold
-  **/
+   */
   @javax.annotation.Nullable
-
   public BigDecimal getBandwidthAlertThreshold() {
     return bandwidthAlertThreshold;
   }
 
-
-  public void setBandwidthAlertThreshold(BigDecimal bandwidthAlertThreshold) {
+  public void setBandwidthAlertThreshold(@javax.annotation.Nullable BigDecimal bandwidthAlertThreshold) {
     this.bandwidthAlertThreshold = bandwidthAlertThreshold;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO allowBandwidthAutoApproval(Boolean allowBandwidthAutoApproval) {
-    
+  public ServiceProfileAccessPointTypeCOLO allowBandwidthAutoApproval(@javax.annotation.Nullable Boolean allowBandwidthAutoApproval) {
     this.allowBandwidthAutoApproval = allowBandwidthAutoApproval;
     return this;
   }
 
-   /**
+  /**
    * Setting to enable or disable the ability of the buyer to change connection bandwidth without approval of the seller.
    * @return allowBandwidthAutoApproval
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowBandwidthAutoApproval() {
     return allowBandwidthAutoApproval;
   }
 
-
-  public void setAllowBandwidthAutoApproval(Boolean allowBandwidthAutoApproval) {
+  public void setAllowBandwidthAutoApproval(@javax.annotation.Nullable Boolean allowBandwidthAutoApproval) {
     this.allowBandwidthAutoApproval = allowBandwidthAutoApproval;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO allowBandwidthUpgrade(Boolean allowBandwidthUpgrade) {
-    
+  public ServiceProfileAccessPointTypeCOLO allowBandwidthUpgrade(@javax.annotation.Nullable Boolean allowBandwidthUpgrade) {
     this.allowBandwidthUpgrade = allowBandwidthUpgrade;
     return this;
   }
 
-   /**
+  /**
    * Availability of a bandwidth upgrade. The default is false.
    * @return allowBandwidthUpgrade
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowBandwidthUpgrade() {
     return allowBandwidthUpgrade;
   }
 
-
-  public void setAllowBandwidthUpgrade(Boolean allowBandwidthUpgrade) {
+  public void setAllowBandwidthUpgrade(@javax.annotation.Nullable Boolean allowBandwidthUpgrade) {
     this.allowBandwidthUpgrade = allowBandwidthUpgrade;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO linkProtocolConfig(ServiceProfileLinkProtocolConfig linkProtocolConfig) {
-    
+  public ServiceProfileAccessPointTypeCOLO linkProtocolConfig(@javax.annotation.Nullable ServiceProfileLinkProtocolConfig linkProtocolConfig) {
     this.linkProtocolConfig = linkProtocolConfig;
     return this;
   }
 
-   /**
+  /**
    * Get linkProtocolConfig
    * @return linkProtocolConfig
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceProfileLinkProtocolConfig getLinkProtocolConfig() {
     return linkProtocolConfig;
   }
 
-
-  public void setLinkProtocolConfig(ServiceProfileLinkProtocolConfig linkProtocolConfig) {
+  public void setLinkProtocolConfig(@javax.annotation.Nullable ServiceProfileLinkProtocolConfig linkProtocolConfig) {
     this.linkProtocolConfig = linkProtocolConfig;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO enableAutoGenerateServiceKey(Boolean enableAutoGenerateServiceKey) {
-    
+  public ServiceProfileAccessPointTypeCOLO enableAutoGenerateServiceKey(@javax.annotation.Nullable Boolean enableAutoGenerateServiceKey) {
     this.enableAutoGenerateServiceKey = enableAutoGenerateServiceKey;
     return this;
   }
 
-   /**
+  /**
    * for verizon only.
    * @return enableAutoGenerateServiceKey
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEnableAutoGenerateServiceKey() {
     return enableAutoGenerateServiceKey;
   }
 
-
-  public void setEnableAutoGenerateServiceKey(Boolean enableAutoGenerateServiceKey) {
+  public void setEnableAutoGenerateServiceKey(@javax.annotation.Nullable Boolean enableAutoGenerateServiceKey) {
     this.enableAutoGenerateServiceKey = enableAutoGenerateServiceKey;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO connectionRedundancyRequired(Boolean connectionRedundancyRequired) {
-    
+  public ServiceProfileAccessPointTypeCOLO connectionRedundancyRequired(@javax.annotation.Nullable Boolean connectionRedundancyRequired) {
     this.connectionRedundancyRequired = connectionRedundancyRequired;
     return this;
   }
 
-   /**
+  /**
    * Mandate redundant connections
    * @return connectionRedundancyRequired
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getConnectionRedundancyRequired() {
     return connectionRedundancyRequired;
   }
 
-
-  public void setConnectionRedundancyRequired(Boolean connectionRedundancyRequired) {
+  public void setConnectionRedundancyRequired(@javax.annotation.Nullable Boolean connectionRedundancyRequired) {
     this.connectionRedundancyRequired = connectionRedundancyRequired;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO apiConfig(ApiConfig apiConfig) {
-    
+  public ServiceProfileAccessPointTypeCOLO apiConfig(@javax.annotation.Nullable ApiConfig apiConfig) {
     this.apiConfig = apiConfig;
     return this;
   }
 
-   /**
+  /**
    * Get apiConfig
    * @return apiConfig
-  **/
+   */
   @javax.annotation.Nullable
-
   public ApiConfig getApiConfig() {
     return apiConfig;
   }
 
-
-  public void setApiConfig(ApiConfig apiConfig) {
+  public void setApiConfig(@javax.annotation.Nullable ApiConfig apiConfig) {
     this.apiConfig = apiConfig;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO connectionLabel(String connectionLabel) {
-    
+  public ServiceProfileAccessPointTypeCOLO connectionLabel(@javax.annotation.Nullable String connectionLabel) {
     this.connectionLabel = connectionLabel;
     return this;
   }
 
-   /**
+  /**
    * custom name for \&quot;Connection\&quot;
    * @return connectionLabel
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getConnectionLabel() {
     return connectionLabel;
   }
 
-
-  public void setConnectionLabel(String connectionLabel) {
+  public void setConnectionLabel(@javax.annotation.Nullable String connectionLabel) {
     this.connectionLabel = connectionLabel;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO authenticationKey(AuthenticationKey authenticationKey) {
-    
+  public ServiceProfileAccessPointTypeCOLO authenticationKey(@javax.annotation.Nullable AuthenticationKey authenticationKey) {
     this.authenticationKey = authenticationKey;
     return this;
   }
 
-   /**
+  /**
    * Get authenticationKey
    * @return authenticationKey
-  **/
+   */
   @javax.annotation.Nullable
-
   public AuthenticationKey getAuthenticationKey() {
     return authenticationKey;
   }
 
-
-  public void setAuthenticationKey(AuthenticationKey authenticationKey) {
+  public void setAuthenticationKey(@javax.annotation.Nullable AuthenticationKey authenticationKey) {
     this.authenticationKey = authenticationKey;
   }
 
 
-  public ServiceProfileAccessPointTypeCOLO metadata(ServiceProfileMetadata metadata) {
-    
+  public ServiceProfileAccessPointTypeCOLO metadata(@javax.annotation.Nullable ServiceProfileMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceProfileMetadata getMetadata() {
     return metadata;
   }
 
-
-  public void setMetadata(ServiceProfileMetadata metadata) {
+  public void setMetadata(@javax.annotation.Nullable ServiceProfileMetadata metadata) {
     this.metadata = metadata;
   }
 
@@ -595,50 +567,53 @@ public class ServiceProfileAccessPointTypeCOLO {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileAccessPointTypeCOLO
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfileAccessPointTypeCOLO
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileAccessPointTypeCOLO is not found in the empty JSON string", ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ServiceProfileAccessPointTypeCOLO.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the required field `type`
+      ServiceProfileAccessPointTypeEnum.validateJsonElement(jsonObj.get("type"));
       // ensure the optional json data is an array if present
-      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonArray()) {
+      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
       }
       // validate the optional field `linkProtocolConfig`
       if (jsonObj.get("linkProtocolConfig") != null && !jsonObj.get("linkProtocolConfig").isJsonNull()) {
-        ServiceProfileLinkProtocolConfig.validateJsonObject(jsonObj.getAsJsonObject("linkProtocolConfig"));
+        ServiceProfileLinkProtocolConfig.validateJsonElement(jsonObj.get("linkProtocolConfig"));
       }
       // validate the optional field `apiConfig`
       if (jsonObj.get("apiConfig") != null && !jsonObj.get("apiConfig").isJsonNull()) {
-        ApiConfig.validateJsonObject(jsonObj.getAsJsonObject("apiConfig"));
+        ApiConfig.validateJsonElement(jsonObj.get("apiConfig"));
       }
       if ((jsonObj.get("connectionLabel") != null && !jsonObj.get("connectionLabel").isJsonNull()) && !jsonObj.get("connectionLabel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `connectionLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectionLabel").toString()));
       }
       // validate the optional field `authenticationKey`
       if (jsonObj.get("authenticationKey") != null && !jsonObj.get("authenticationKey").isJsonNull()) {
-        AuthenticationKey.validateJsonObject(jsonObj.getAsJsonObject("authenticationKey"));
+        AuthenticationKey.validateJsonElement(jsonObj.get("authenticationKey"));
       }
       // validate the optional field `metadata`
       if (jsonObj.get("metadata") != null && !jsonObj.get("metadata").isJsonNull()) {
-        ServiceProfileMetadata.validateJsonObject(jsonObj.getAsJsonObject("metadata"));
+        ServiceProfileMetadata.validateJsonElement(jsonObj.get("metadata"));
       }
   }
 
@@ -670,7 +645,12 @@ public class ServiceProfileAccessPointTypeCOLO {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -679,8 +659,9 @@ public class ServiceProfileAccessPointTypeCOLO {
 
            @Override
            public ServiceProfileAccessPointTypeCOLO read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceProfileAccessPointTypeCOLO instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -708,22 +689,22 @@ public class ServiceProfileAccessPointTypeCOLO {
     }
   }
 
- /**
-  * Create an instance of ServiceProfileAccessPointTypeCOLO given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileAccessPointTypeCOLO
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointTypeCOLO
-  */
+  /**
+   * Create an instance of ServiceProfileAccessPointTypeCOLO given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfileAccessPointTypeCOLO
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointTypeCOLO
+   */
   public static ServiceProfileAccessPointTypeCOLO fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfileAccessPointTypeCOLO.class);
   }
 
- /**
-  * Convert an instance of ServiceProfileAccessPointTypeCOLO to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfileAccessPointTypeCOLO to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,111 +46,103 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * EPT service network information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Ipv4 {
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
+  @javax.annotation.Nonnull
   private String primary;
 
   public static final String SERIALIZED_NAME_SECONDARY = "secondary";
   @SerializedName(SERIALIZED_NAME_SECONDARY)
+  @javax.annotation.Nonnull
   private String secondary;
 
   public static final String SERIALIZED_NAME_NETWORK_MASK = "networkMask";
   @SerializedName(SERIALIZED_NAME_NETWORK_MASK)
+  @javax.annotation.Nonnull
   private String networkMask;
 
   public static final String SERIALIZED_NAME_DEFAULT_GATEWAY = "defaultGateway";
   @SerializedName(SERIALIZED_NAME_DEFAULT_GATEWAY)
+  @javax.annotation.Nullable
   private String defaultGateway;
 
   public Ipv4() {
   }
 
-  public Ipv4 primary(String primary) {
-    
+  public Ipv4 primary(@javax.annotation.Nonnull String primary) {
     this.primary = primary;
     return this;
   }
 
-   /**
+  /**
    * Primary Timing Server IP Address
    * @return primary
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getPrimary() {
     return primary;
   }
 
-
-  public void setPrimary(String primary) {
+  public void setPrimary(@javax.annotation.Nonnull String primary) {
     this.primary = primary;
   }
 
 
-  public Ipv4 secondary(String secondary) {
-    
+  public Ipv4 secondary(@javax.annotation.Nonnull String secondary) {
     this.secondary = secondary;
     return this;
   }
 
-   /**
+  /**
    * Secondary Timing Server IP Address
    * @return secondary
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getSecondary() {
     return secondary;
   }
 
-
-  public void setSecondary(String secondary) {
+  public void setSecondary(@javax.annotation.Nonnull String secondary) {
     this.secondary = secondary;
   }
 
 
-  public Ipv4 networkMask(String networkMask) {
-    
+  public Ipv4 networkMask(@javax.annotation.Nonnull String networkMask) {
     this.networkMask = networkMask;
     return this;
   }
 
-   /**
+  /**
    * Network Mask
    * @return networkMask
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getNetworkMask() {
     return networkMask;
   }
 
-
-  public void setNetworkMask(String networkMask) {
+  public void setNetworkMask(@javax.annotation.Nonnull String networkMask) {
     this.networkMask = networkMask;
   }
 
 
-  public Ipv4 defaultGateway(String defaultGateway) {
-    
+  public Ipv4 defaultGateway(@javax.annotation.Nullable String defaultGateway) {
     this.defaultGateway = defaultGateway;
     return this;
   }
 
-   /**
+  /**
    * Gateway Interface IP address
    * @return defaultGateway
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDefaultGateway() {
     return defaultGateway;
   }
 
-
-  public void setDefaultGateway(String defaultGateway) {
+  public void setDefaultGateway(@javax.annotation.Nullable String defaultGateway) {
     this.defaultGateway = defaultGateway;
   }
 
@@ -262,25 +256,26 @@ public class Ipv4 {
     openapiRequiredFields.add("networkMask");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Ipv4
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Ipv4.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Ipv4
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Ipv4.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Ipv4 is not found in the empty JSON string", Ipv4.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Ipv4.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("primary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `primary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary").toString()));
       }
@@ -323,7 +318,12 @@ public class Ipv4 {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -332,8 +332,9 @@ public class Ipv4 {
 
            @Override
            public Ipv4 read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Ipv4 instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -361,22 +362,22 @@ public class Ipv4 {
     }
   }
 
- /**
-  * Create an instance of Ipv4 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Ipv4
-  * @throws IOException if the JSON string is invalid with respect to Ipv4
-  */
+  /**
+   * Create an instance of Ipv4 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Ipv4
+   * @throws IOException if the JSON string is invalid with respect to Ipv4
+   */
   public static Ipv4 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Ipv4.class);
   }
 
- /**
-  * Convert an instance of Ipv4 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Ipv4 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

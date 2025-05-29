@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.SimplifiedLinkProtocol;
 import com.equinix.sdk.fabricv4.model.SimplifiedMetadataEntity;
 import com.equinix.sdk.fabricv4.model.SimplifiedTokenNetwork;
@@ -24,6 +23,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,13 +35,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -49,7 +51,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * List of criteria for selecting network access points with optimal efficiency, security, compatibility, and availability.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class AccessPointSelector {
   /**
    * Type of Access point
@@ -98,191 +100,185 @@ public class AccessPointSelector {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_HIDE_ASSET_INFO = "hideAssetInfo";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_HIDE_ASSET_INFO)
+  @javax.annotation.Nullable
   private Boolean hideAssetInfo;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private SimplifiedMetadataEntity port;
 
   public static final String SERIALIZED_NAME_LINK_PROTOCOL = "linkProtocol";
   @SerializedName(SERIALIZED_NAME_LINK_PROTOCOL)
+  @javax.annotation.Nullable
   private SimplifiedLinkProtocol linkProtocol;
 
   public static final String SERIALIZED_NAME_VIRTUAL_DEVICE = "virtualDevice";
   @SerializedName(SERIALIZED_NAME_VIRTUAL_DEVICE)
+  @javax.annotation.Nullable
   private SimplifiedVirtualDevice virtualDevice;
 
   public static final String SERIALIZED_NAME_INTERFACE = "interface";
   @SerializedName(SERIALIZED_NAME_INTERFACE)
+  @javax.annotation.Nullable
   private VirtualDeviceInterface _interface;
 
   public static final String SERIALIZED_NAME_NETWORK = "network";
   @SerializedName(SERIALIZED_NAME_NETWORK)
+  @javax.annotation.Nullable
   private SimplifiedTokenNetwork network;
 
   public AccessPointSelector() {
   }
 
-  public AccessPointSelector type(TypeEnum type) {
-    
+  public AccessPointSelector type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of Access point
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public AccessPointSelector hideAssetInfo(Boolean hideAssetInfo) {
-    
+  @Deprecated
+  public AccessPointSelector hideAssetInfo(@javax.annotation.Nullable Boolean hideAssetInfo) {
     this.hideAssetInfo = hideAssetInfo;
     return this;
   }
 
-   /**
+  /**
    * Get hideAssetInfo
    * @return hideAssetInfo
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getHideAssetInfo() {
     return hideAssetInfo;
   }
 
-
-  public void setHideAssetInfo(Boolean hideAssetInfo) {
+  @Deprecated
+  public void setHideAssetInfo(@javax.annotation.Nullable Boolean hideAssetInfo) {
     this.hideAssetInfo = hideAssetInfo;
   }
 
 
-  public AccessPointSelector port(SimplifiedMetadataEntity port) {
-    
+  public AccessPointSelector port(@javax.annotation.Nullable SimplifiedMetadataEntity port) {
     this.port = port;
     return this;
   }
 
-   /**
+  /**
    * Get port
    * @return port
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedMetadataEntity getPort() {
     return port;
   }
 
-
-  public void setPort(SimplifiedMetadataEntity port) {
+  public void setPort(@javax.annotation.Nullable SimplifiedMetadataEntity port) {
     this.port = port;
   }
 
 
-  public AccessPointSelector linkProtocol(SimplifiedLinkProtocol linkProtocol) {
-    
+  public AccessPointSelector linkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
     this.linkProtocol = linkProtocol;
     return this;
   }
 
-   /**
+  /**
    * Get linkProtocol
    * @return linkProtocol
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLinkProtocol getLinkProtocol() {
     return linkProtocol;
   }
 
-
-  public void setLinkProtocol(SimplifiedLinkProtocol linkProtocol) {
+  public void setLinkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
     this.linkProtocol = linkProtocol;
   }
 
 
-  public AccessPointSelector virtualDevice(SimplifiedVirtualDevice virtualDevice) {
-    
+  public AccessPointSelector virtualDevice(@javax.annotation.Nullable SimplifiedVirtualDevice virtualDevice) {
     this.virtualDevice = virtualDevice;
     return this;
   }
 
-   /**
+  /**
    * Get virtualDevice
    * @return virtualDevice
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedVirtualDevice getVirtualDevice() {
     return virtualDevice;
   }
 
-
-  public void setVirtualDevice(SimplifiedVirtualDevice virtualDevice) {
+  public void setVirtualDevice(@javax.annotation.Nullable SimplifiedVirtualDevice virtualDevice) {
     this.virtualDevice = virtualDevice;
   }
 
 
-  public AccessPointSelector _interface(VirtualDeviceInterface _interface) {
-    
+  public AccessPointSelector _interface(@javax.annotation.Nullable VirtualDeviceInterface _interface) {
     this._interface = _interface;
     return this;
   }
 
-   /**
+  /**
    * Get _interface
    * @return _interface
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualDeviceInterface getInterface() {
     return _interface;
   }
 
-
-  public void setInterface(VirtualDeviceInterface _interface) {
+  public void setInterface(@javax.annotation.Nullable VirtualDeviceInterface _interface) {
     this._interface = _interface;
   }
 
 
-  public AccessPointSelector network(SimplifiedTokenNetwork network) {
-    
+  public AccessPointSelector network(@javax.annotation.Nullable SimplifiedTokenNetwork network) {
     this.network = network;
     return this;
   }
 
-   /**
+  /**
    * Get network
    * @return network
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedTokenNetwork getNetwork() {
     return network;
   }
 
-
-  public void setNetwork(SimplifiedTokenNetwork network) {
+  public void setNetwork(@javax.annotation.Nullable SimplifiedTokenNetwork network) {
     this.network = network;
   }
 
@@ -402,40 +398,45 @@ public class AccessPointSelector {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AccessPointSelector
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!AccessPointSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AccessPointSelector
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AccessPointSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in AccessPointSelector is not found in the empty JSON string", AccessPointSelector.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `port`
       if (jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) {
-        SimplifiedMetadataEntity.validateJsonObject(jsonObj.getAsJsonObject("port"));
+        SimplifiedMetadataEntity.validateJsonElement(jsonObj.get("port"));
       }
       // validate the optional field `linkProtocol`
       if (jsonObj.get("linkProtocol") != null && !jsonObj.get("linkProtocol").isJsonNull()) {
-        SimplifiedLinkProtocol.validateJsonObject(jsonObj.getAsJsonObject("linkProtocol"));
+        SimplifiedLinkProtocol.validateJsonElement(jsonObj.get("linkProtocol"));
       }
       // validate the optional field `virtualDevice`
       if (jsonObj.get("virtualDevice") != null && !jsonObj.get("virtualDevice").isJsonNull()) {
-        SimplifiedVirtualDevice.validateJsonObject(jsonObj.getAsJsonObject("virtualDevice"));
+        SimplifiedVirtualDevice.validateJsonElement(jsonObj.get("virtualDevice"));
       }
       // validate the optional field `interface`
       if (jsonObj.get("interface") != null && !jsonObj.get("interface").isJsonNull()) {
-        VirtualDeviceInterface.validateJsonObject(jsonObj.getAsJsonObject("interface"));
+        VirtualDeviceInterface.validateJsonElement(jsonObj.get("interface"));
       }
       // validate the optional field `network`
       if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonNull()) {
-        SimplifiedTokenNetwork.validateJsonObject(jsonObj.getAsJsonObject("network"));
+        SimplifiedTokenNetwork.validateJsonElement(jsonObj.get("network"));
       }
   }
 
@@ -467,7 +468,12 @@ public class AccessPointSelector {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -476,8 +482,9 @@ public class AccessPointSelector {
 
            @Override
            public AccessPointSelector read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              AccessPointSelector instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -505,22 +512,22 @@ public class AccessPointSelector {
     }
   }
 
- /**
-  * Create an instance of AccessPointSelector given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AccessPointSelector
-  * @throws IOException if the JSON string is invalid with respect to AccessPointSelector
-  */
+  /**
+   * Create an instance of AccessPointSelector given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AccessPointSelector
+   * @throws IOException if the JSON string is invalid with respect to AccessPointSelector
+   */
   public static AccessPointSelector fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AccessPointSelector.class);
   }
 
- /**
-  * Convert an instance of AccessPointSelector to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AccessPointSelector to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

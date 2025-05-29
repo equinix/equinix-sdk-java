@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.ServiceTokenConnection;
@@ -29,6 +28,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,13 +42,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -56,68 +58,83 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create Service Tokens (v4) generates Equinix Fabric service tokens. These tokens authorize users to access protected resources and services. The tokens remove sensitive content from the environment, rather than just masking it, making the protected data impossible to unencrypt or decrypt. Resource owners can distribute the tokens to trusted partners and vendors, allowing selected third parties to work directly with Equinix network assets.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceToken {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private ServiceTokenType type;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_EXPIRY = "expiry";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_EXPIRY)
+  @javax.annotation.Nullable
   private Integer expiry;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_ISSUER_SIDE = "issuerSide";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_ISSUER_SIDE)
+  @javax.annotation.Nullable
   private String issuerSide;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DATE_TIME = "expirationDateTime";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime expirationDateTime;
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
   private ServiceTokenConnection connection;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private ServiceTokenState state;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
+  @javax.annotation.Nullable
   private Changelog changelog;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public ServiceToken() {
   }
 
-  
   public ServiceToken(
      URI href
   ) {
@@ -125,223 +142,197 @@ public class ServiceToken {
     this.href = href;
   }
 
-  public ServiceToken type(ServiceTokenType type) {
-    
+  public ServiceToken type(@javax.annotation.Nullable ServiceTokenType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceTokenType getType() {
     return type;
   }
 
-
-  public void setType(ServiceTokenType type) {
+  public void setType(@javax.annotation.Nullable ServiceTokenType type) {
     this.type = type;
   }
 
 
-   /**
+  /**
    * An absolute URL that is the subject of the link&#39;s context.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public ServiceToken expiry(Integer expiry) {
-    
+  @Deprecated
+  public ServiceToken expiry(@javax.annotation.Nullable Integer expiry) {
     this.expiry = expiry;
     return this;
   }
 
-   /**
+  /**
    * Get expiry
    * @return expiry
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Integer getExpiry() {
     return expiry;
   }
 
-
-  public void setExpiry(Integer expiry) {
+  @Deprecated
+  public void setExpiry(@javax.annotation.Nullable Integer expiry) {
     this.expiry = expiry;
   }
 
 
-  public ServiceToken uuid(UUID uuid) {
-    
+  public ServiceToken uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned service token identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public ServiceToken issuerSide(String issuerSide) {
-    
+  @Deprecated
+  public ServiceToken issuerSide(@javax.annotation.Nullable String issuerSide) {
     this.issuerSide = issuerSide;
     return this;
   }
 
-   /**
+  /**
    * information about token side
    * @return issuerSide
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public String getIssuerSide() {
     return issuerSide;
   }
 
-
-  public void setIssuerSide(String issuerSide) {
+  @Deprecated
+  public void setIssuerSide(@javax.annotation.Nullable String issuerSide) {
     this.issuerSide = issuerSide;
   }
 
 
-  public ServiceToken name(String name) {
-    
+  public ServiceToken name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided service token name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ServiceToken description(String description) {
-    
+  public ServiceToken description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided service token description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ServiceToken expirationDateTime(OffsetDateTime expirationDateTime) {
-    
+  public ServiceToken expirationDateTime(@javax.annotation.Nullable OffsetDateTime expirationDateTime) {
     this.expirationDateTime = expirationDateTime;
     return this;
   }
 
-   /**
+  /**
    * Expiration date and time of the service token.
    * @return expirationDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getExpirationDateTime() {
     return expirationDateTime;
   }
 
-
-  public void setExpirationDateTime(OffsetDateTime expirationDateTime) {
+  public void setExpirationDateTime(@javax.annotation.Nullable OffsetDateTime expirationDateTime) {
     this.expirationDateTime = expirationDateTime;
   }
 
 
-  public ServiceToken connection(ServiceTokenConnection connection) {
-    
+  public ServiceToken connection(@javax.annotation.Nullable ServiceTokenConnection connection) {
     this.connection = connection;
     return this;
   }
 
-   /**
+  /**
    * Get connection
    * @return connection
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceTokenConnection getConnection() {
     return connection;
   }
 
-
-  public void setConnection(ServiceTokenConnection connection) {
+  public void setConnection(@javax.annotation.Nullable ServiceTokenConnection connection) {
     this.connection = connection;
   }
 
 
-  public ServiceToken state(ServiceTokenState state) {
-    
+  public ServiceToken state(@javax.annotation.Nullable ServiceTokenState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceTokenState getState() {
     return state;
   }
 
-
-  public void setState(ServiceTokenState state) {
+  public void setState(@javax.annotation.Nullable ServiceTokenState state) {
     this.state = state;
   }
 
 
-  public ServiceToken notifications(List<SimplifiedNotification> notifications) {
-    
+  public ServiceToken notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -354,84 +345,73 @@ public class ServiceToken {
     return this;
   }
 
-   /**
+  /**
    * Service token related notifications
    * @return notifications
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public ServiceToken account(SimplifiedAccount account) {
-    
+  public ServiceToken account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public ServiceToken changelog(Changelog changelog) {
-    
+  public ServiceToken changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
   }
 
-   /**
+  /**
    * Get changelog
    * @return changelog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangelog() {
     return changelog;
   }
 
-
-  public void setChangelog(Changelog changelog) {
+  public void setChangelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
   }
 
 
-  public ServiceToken project(Project project) {
-    
+  public ServiceToken project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
@@ -572,17 +552,22 @@ public class ServiceToken {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceToken
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceToken.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceToken
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceToken.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceToken is not found in the empty JSON string", ServiceToken.openapiRequiredFields.toString()));
         }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ServiceTokenType.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
@@ -601,7 +586,11 @@ public class ServiceToken {
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        ServiceTokenConnection.validateJsonObject(jsonObj.getAsJsonObject("connection"));
+        ServiceTokenConnection.validateJsonElement(jsonObj.get("connection"));
+      }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        ServiceTokenState.validateJsonElement(jsonObj.get("state"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
@@ -613,21 +602,21 @@ public class ServiceToken {
 
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changelog"));
+        Changelog.validateJsonElement(jsonObj.get("changelog"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
   }
 
@@ -659,7 +648,12 @@ public class ServiceToken {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -668,8 +662,9 @@ public class ServiceToken {
 
            @Override
            public ServiceToken read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceToken instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -697,22 +692,22 @@ public class ServiceToken {
     }
   }
 
- /**
-  * Create an instance of ServiceToken given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceToken
-  * @throws IOException if the JSON string is invalid with respect to ServiceToken
-  */
+  /**
+   * Create an instance of ServiceToken given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceToken
+   * @throws IOException if the JSON string is invalid with respect to ServiceToken
+   */
   public static ServiceToken fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceToken.class);
   }
 
- /**
-  * Convert an instance of ServiceToken to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceToken to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

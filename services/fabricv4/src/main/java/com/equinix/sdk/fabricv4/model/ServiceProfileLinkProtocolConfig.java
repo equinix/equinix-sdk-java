@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,7 +48,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Configuration for dot1q to qinq translation support
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileLinkProtocolConfig {
   /**
    * was tagType - missing on wiki
@@ -95,22 +97,31 @@ public class ServiceProfileLinkProtocolConfig {
         return EncapsulationStrategyEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EncapsulationStrategyEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ENCAPSULATION_STRATEGY = "encapsulationStrategy";
   @SerializedName(SERIALIZED_NAME_ENCAPSULATION_STRATEGY)
+  @javax.annotation.Nullable
   private EncapsulationStrategyEnum encapsulationStrategy;
 
   public static final String SERIALIZED_NAME_NAMED_TAGS = "namedTags";
   @SerializedName(SERIALIZED_NAME_NAMED_TAGS)
+  @javax.annotation.Nullable
   private List<String> namedTags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VLAN_C_TAG_LABEL = "vlanCTagLabel";
   @SerializedName(SERIALIZED_NAME_VLAN_C_TAG_LABEL)
+  @javax.annotation.Nullable
   private String vlanCTagLabel;
 
   public static final String SERIALIZED_NAME_REUSE_VLAN_S_TAG = "reuseVlanSTag";
   @SerializedName(SERIALIZED_NAME_REUSE_VLAN_S_TAG)
+  @javax.annotation.Nullable
   private Boolean reuseVlanSTag = false;
 
   /**
@@ -160,39 +171,41 @@ public class ServiceProfileLinkProtocolConfig {
         return EncapsulationEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EncapsulationEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ENCAPSULATION = "encapsulation";
   @SerializedName(SERIALIZED_NAME_ENCAPSULATION)
+  @javax.annotation.Nullable
   private EncapsulationEnum encapsulation;
 
   public ServiceProfileLinkProtocolConfig() {
   }
 
-  public ServiceProfileLinkProtocolConfig encapsulationStrategy(EncapsulationStrategyEnum encapsulationStrategy) {
-    
+  public ServiceProfileLinkProtocolConfig encapsulationStrategy(@javax.annotation.Nullable EncapsulationStrategyEnum encapsulationStrategy) {
     this.encapsulationStrategy = encapsulationStrategy;
     return this;
   }
 
-   /**
+  /**
    * was tagType - missing on wiki
    * @return encapsulationStrategy
-  **/
+   */
   @javax.annotation.Nullable
-
   public EncapsulationStrategyEnum getEncapsulationStrategy() {
     return encapsulationStrategy;
   }
 
-
-  public void setEncapsulationStrategy(EncapsulationStrategyEnum encapsulationStrategy) {
+  public void setEncapsulationStrategy(@javax.annotation.Nullable EncapsulationStrategyEnum encapsulationStrategy) {
     this.encapsulationStrategy = encapsulationStrategy;
   }
 
 
-  public ServiceProfileLinkProtocolConfig namedTags(List<String> namedTags) {
-    
+  public ServiceProfileLinkProtocolConfig namedTags(@javax.annotation.Nullable List<String> namedTags) {
     this.namedTags = namedTags;
     return this;
   }
@@ -205,84 +218,73 @@ public class ServiceProfileLinkProtocolConfig {
     return this;
   }
 
-   /**
+  /**
    * Get namedTags
    * @return namedTags
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getNamedTags() {
     return namedTags;
   }
 
-
-  public void setNamedTags(List<String> namedTags) {
+  public void setNamedTags(@javax.annotation.Nullable List<String> namedTags) {
     this.namedTags = namedTags;
   }
 
 
-  public ServiceProfileLinkProtocolConfig vlanCTagLabel(String vlanCTagLabel) {
-    
+  public ServiceProfileLinkProtocolConfig vlanCTagLabel(@javax.annotation.Nullable String vlanCTagLabel) {
     this.vlanCTagLabel = vlanCTagLabel;
     return this;
   }
 
-   /**
+  /**
    * was ctagLabel
    * @return vlanCTagLabel
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getVlanCTagLabel() {
     return vlanCTagLabel;
   }
 
-
-  public void setVlanCTagLabel(String vlanCTagLabel) {
+  public void setVlanCTagLabel(@javax.annotation.Nullable String vlanCTagLabel) {
     this.vlanCTagLabel = vlanCTagLabel;
   }
 
 
-  public ServiceProfileLinkProtocolConfig reuseVlanSTag(Boolean reuseVlanSTag) {
-    
+  public ServiceProfileLinkProtocolConfig reuseVlanSTag(@javax.annotation.Nullable Boolean reuseVlanSTag) {
     this.reuseVlanSTag = reuseVlanSTag;
     return this;
   }
 
-   /**
+  /**
    * Get reuseVlanSTag
    * @return reuseVlanSTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getReuseVlanSTag() {
     return reuseVlanSTag;
   }
 
-
-  public void setReuseVlanSTag(Boolean reuseVlanSTag) {
+  public void setReuseVlanSTag(@javax.annotation.Nullable Boolean reuseVlanSTag) {
     this.reuseVlanSTag = reuseVlanSTag;
   }
 
 
-  public ServiceProfileLinkProtocolConfig encapsulation(EncapsulationEnum encapsulation) {
-    
+  public ServiceProfileLinkProtocolConfig encapsulation(@javax.annotation.Nullable EncapsulationEnum encapsulation) {
     this.encapsulation = encapsulation;
     return this;
   }
 
-   /**
+  /**
    * Port encapsulation - Derived response attribute. Ignored on request payloads.
    * @return encapsulation
-  **/
+   */
   @javax.annotation.Nullable
-
   public EncapsulationEnum getEncapsulation() {
     return encapsulation;
   }
 
-
-  public void setEncapsulation(EncapsulationEnum encapsulation) {
+  public void setEncapsulation(@javax.annotation.Nullable EncapsulationEnum encapsulation) {
     this.encapsulation = encapsulation;
   }
 
@@ -396,23 +398,28 @@ public class ServiceProfileLinkProtocolConfig {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileLinkProtocolConfig
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfileLinkProtocolConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfileLinkProtocolConfig
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfileLinkProtocolConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileLinkProtocolConfig is not found in the empty JSON string", ServiceProfileLinkProtocolConfig.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("encapsulationStrategy") != null && !jsonObj.get("encapsulationStrategy").isJsonNull()) && !jsonObj.get("encapsulationStrategy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `encapsulationStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulationStrategy").toString()));
       }
+      // validate the optional field `encapsulationStrategy`
+      if (jsonObj.get("encapsulationStrategy") != null && !jsonObj.get("encapsulationStrategy").isJsonNull()) {
+        EncapsulationStrategyEnum.validateJsonElement(jsonObj.get("encapsulationStrategy"));
+      }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("namedTags") != null && !jsonObj.get("namedTags").isJsonArray()) {
+      if (jsonObj.get("namedTags") != null && !jsonObj.get("namedTags").isJsonNull() && !jsonObj.get("namedTags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `namedTags` to be an array in the JSON string but got `%s`", jsonObj.get("namedTags").toString()));
       }
       if ((jsonObj.get("vlanCTagLabel") != null && !jsonObj.get("vlanCTagLabel").isJsonNull()) && !jsonObj.get("vlanCTagLabel").isJsonPrimitive()) {
@@ -420,6 +427,10 @@ public class ServiceProfileLinkProtocolConfig {
       }
       if ((jsonObj.get("encapsulation") != null && !jsonObj.get("encapsulation").isJsonNull()) && !jsonObj.get("encapsulation").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `encapsulation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulation").toString()));
+      }
+      // validate the optional field `encapsulation`
+      if (jsonObj.get("encapsulation") != null && !jsonObj.get("encapsulation").isJsonNull()) {
+        EncapsulationEnum.validateJsonElement(jsonObj.get("encapsulation"));
       }
   }
 
@@ -451,7 +462,12 @@ public class ServiceProfileLinkProtocolConfig {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -460,8 +476,9 @@ public class ServiceProfileLinkProtocolConfig {
 
            @Override
            public ServiceProfileLinkProtocolConfig read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceProfileLinkProtocolConfig instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -489,22 +506,22 @@ public class ServiceProfileLinkProtocolConfig {
     }
   }
 
- /**
-  * Create an instance of ServiceProfileLinkProtocolConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileLinkProtocolConfig
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileLinkProtocolConfig
-  */
+  /**
+   * Create an instance of ServiceProfileLinkProtocolConfig given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfileLinkProtocolConfig
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfileLinkProtocolConfig
+   */
   public static ServiceProfileLinkProtocolConfig fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfileLinkProtocolConfig.class);
   }
 
- /**
-  * Convert an instance of ServiceProfileLinkProtocolConfig to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfileLinkProtocolConfig to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
