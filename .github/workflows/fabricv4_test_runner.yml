@@ -1,4 +1,4 @@
-name: Test Runner
+name: Test Equinix SDK Java Runner
 
 on:
   workflow_dispatch:
@@ -15,7 +15,11 @@ jobs:
       TEST_HOST_URL: ${{ secrets.TEST_HOST_URL }}
       TEST_DATA_UAT_USERS: ${{ secrets.TEST_DATA_UAT_USERS }}
 
+    outputs:
+      message: ${{ steps.slack_message.outputs.message }}
+
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Set up JDK 11
@@ -26,22 +30,54 @@ jobs:
           cache: maven
 
       - name: Install modules
-        shell: bash
-        run: |-
-          mvn clean install -DskipTests 
+        run: mvn clean install -DskipTests
 
       - name: Tests
-        shell: bash
         working-directory: ./equinix-openapi-fabric-tests
-        run: |-
-          mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
+        run: mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
 
       - name: Generate report
         if: always()
         working-directory: ./equinix-openapi-fabric-tests
+        run: mvn surefire-report:report -DskipTests
+
+      - name: Prepare slack message
+        id: slack_message
+        if: always()
+        working-directory: ./equinix-openapi-fabric-tests
         shell: bash
-        run: |-
-          mvn surefire-report:report -DskipTests    
+        run: |
+          report_dir="target/surefire-reports"
+          file=$(find "$report_dir" -maxdepth 1 -type f -name '*Test.txt' | head -n1)
+          if [[ -f "$file" ]]; then
+            summary=$(grep -m1 "Tests run:" "$file")
+            tests_run=$(echo "$summary" | awk -F'[:,]' '{for(i=1;i<=NF;i++){if($i~"Tests run"){print $(i+1)}}}')
+            errors=$(echo "$summary" | awk -F'[:,]' '{for(i=1;i<=NF;i++){if($i~"Errors"){print $(i+1)}}}')
+            passed=$((tests_run-errors))
+            message="*Results:* $passed Passed, $errors Failed"
+              echo "message<<EOF" >> $GITHUB_OUTPUT
+              echo "$message" >> $GITHUB_OUTPUT
+              echo "EOF" >> $GITHUB_OUTPUT
+              fi
+
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v2
+        if: always()
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          payload: |
+            channel: digin-panthers-gha-automation
+
+            attachments:
+              - color: ${{ job.status == 'success' && 'good' || job.status == 'failure' && 'danger' || 'warning' }}
+                text: |
+                    *Repository:* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|${{ github.repository }}>
+                    *Workflow:* ${{ github.workflow }}
+                    *Test Class:* ${{ matrix.testClass }}            
+                    *Status:* ${{ job.status }}
+                    *Results:* ${{ steps.slack_message.outputs.message }}
+                    *Triggered by:* <@${{ github.actor }}>
 
       - name: attach report as attachment
         if: always()
