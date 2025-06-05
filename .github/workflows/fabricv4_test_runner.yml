@@ -132,7 +132,7 @@ jobs:
           method: chat.postMessage
           token: ${{ secrets.SLACK_ACCESS_TOKEN }}
           payload: |
-            channel: test-results-panthers
+            channel: digin-panthers-gha-automation
             attachments:
               - color: ${{ needs.test.result == 'success' && 'good' || needs.test.result == 'failure' && 'danger' || 'warning' }}
                 text: |
