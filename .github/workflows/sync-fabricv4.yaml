@@ -1,8 +1,6 @@
 on:
   workflow_dispatch:
-    inputs:
-      new_api_spec_version_number:
-        required: true
+
 name: Sync fabricv4 API spec
 jobs:
   sync:
@@ -27,28 +25,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get next API Spec Version
-        id: spec_versions
-        run: |
-          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
-          CURRENT_VERSION_NUM=$(echo $API_SPEC_LINE | cut -d / -f7)
-          echo "api_spec_line=$API_SPEC_LINE" >> "$GITHUB_OUTPUT"
-          echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
-
       - name: GitHub user
         run: |
           # https://api.github.com/users/github-actions[bot]
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
+      - name: Get last API Spec Version
+        id: spec_versions
+        run: |
+          sudo apt install snapd
+          sudo snap install yq     
+          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
+          CURRENT_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
+          echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
+
       - name: Fetch latest spec
         id: fetch
-        run: |
-          VERSION_UPDATE="SPEC_BASE_URL:=https://api.swaggerhub.com/apis/equinix-api/fabric/${{ github.event.inputs.new_api_spec_version_number }}"
-          sed -i 's,${{ steps.spec_versions.outputs.api_spec_line }},'"$VERSION_UPDATE"',' Makefile.fabricv4
+        run: |      
           make -f Makefile.fabricv4 fetch
           git add spec/services/fabricv4
           echo `git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec'`
+          NEW_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
+          echo "new_version=$NEW_VERSION_NUM" >> "$GITHUB_OUTPUT"
 
       - name: Apply spec patches
         id: patch
@@ -86,15 +85,15 @@ jobs:
           branch-suffix: timestamp
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           commit-message: "sync: uncommitted changes detected when opening PR"
-          title: "feat: Fabric API Sync ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }} by GitHub Action for @${{ github.event.sender.login }}"
+          title: "feat: Fabric API Sync ${{ steps.spec_versions.outputs.cur_version }} to ${{ steps.fetch.outputs.new_version }} by GitHub Action for @${{ github.event.sender.login }}"
           body: |
             This API Sync PR was triggered by @${{ github.event.sender.login }} through [GitHub Actions workflow_displatch](https://github.com/equinix/equinix-sdk-go/actions?query=event%3Aworkflow_dispatch)
             on ${{ steps.date.outputs.date }}.
 
             This PR updates the SDK API Spec Version:
-            from ${{ steps.spec_versions.outputs.cur_version }} to ${{ github.event.inputs.new_api_spec_version_number }}
+            from ${{ steps.spec_versions.outputs.cur_version }} to ${{ steps.fetch.outputs.new_version  }}
 
-            * Latest Swaggerhub API Spec is fetched - version ${{ github.event.inputs.new_api_spec_version_number }}
+            * Latest Swaggerhub API Spec is fetched - version ${{ steps.fetch.outputs.new_version  }}
             * Patches have been applied
             * Generated client has been updated
 

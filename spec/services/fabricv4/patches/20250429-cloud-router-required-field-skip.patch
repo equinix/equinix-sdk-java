@@ -1,9 +1,8 @@
-diff --git a/spec/services/fabricv4/oas3.patched/swagger.yaml b/spec/services/fabricv4/oas3.patched/swagger.yaml
-index 7a93cbb..1f2dd4b 100644
---- a/spec/services/fabricv4/oas3.patched/swagger.yaml
-+++ b/spec/services/fabricv4/oas3.patched/swagger.yaml
-@@ -15086,12 +15086,6 @@ components:
-             $ref: "#/components/schemas/RouteAggregationRulesBase"
+diff --git a/spec/services/fabricv4/oas3.patched/openapi.yaml b/spec/services/fabricv4/oas3.patched/openapi.yaml
+index 972a8cc..6447e2a 100644
+--- a/spec/services/fabricv4/oas3.patched/openapi.yaml
++++ b/spec/services/fabricv4/oas3.patched/openapi.yaml
+@@ -15088,11 +15088,6 @@ components:
        description: Create Route Aggregation Rule POST request
      CloudRouterPostRequest:
 -      required:
