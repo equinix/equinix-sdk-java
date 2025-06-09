@@ -47660,6 +47660,12 @@ components:
           type: array
         marketplaceSubscription:
           $ref: '#/components/schemas/marketplaceSubscription'
+      required:
+      - location
+      - name
+      - notification
+      - package
+      - type
       type: object
     CloudRouter:
       allOf:
