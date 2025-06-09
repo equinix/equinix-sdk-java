@@ -34,7 +34,6 @@ jobs:
       - name: Get last API Spec Version
         id: spec_versions
         run: |
-          sudo apt install snapd
           sudo snap install yq     
           API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
           CURRENT_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
