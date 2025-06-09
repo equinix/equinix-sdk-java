@@ -34,7 +34,6 @@ jobs:
       - name: Get last API Spec Version
         id: spec_versions
         run: |  
-          API_SPEC_LINE=$(grep -i api.swaggerhub.com Makefile.fabricv4)
           CURRENT_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
           echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
 
