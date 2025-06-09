@@ -12565,6 +12565,7 @@ components:
     ConnectionAction:
       required:
         - data
+        - href
         - type
         - uuid
       type: object
@@ -15086,6 +15087,12 @@ components:
             $ref: "#/components/schemas/RouteAggregationRulesBase"
       description: Create Route Aggregation Rule POST request
     CloudRouterPostRequest:
+      required:
+        - location
+        - name
+        - notification
+        - package
+        - type
       type: object
       properties:
         type:
