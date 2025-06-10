@@ -1,4 +1,5 @@
 openapi: 3.0.3
+x-eqx-api-linter-skip-rules: [ 3, 24 ] 
 info:
   title: Equinix Fabric API v4
   description: 'Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href="https://deploy.equinix.com/labs/fabric-java\">Fabric Java SDK</a> </br> <a href="https://deploy.equinix.com/labs/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href="https://deploy.equinix.com/labs/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href="https://deploy.equinix.com/labs/terraform-provider-equinix\">Equinix Terraform Provider</a> </br> <a href="https://deploy.equinix.com/labs/terraform-equinix-fabric\">Fabric Terraform Modules</a> </br> <a href="https://deploy.equinix.com/labs/pulumi-provider-equinix/">Equinix Pulumi Provider</a> </br>'
@@ -9,10 +10,10 @@ info:
   license:
     name: Equinix Inc
     url: https://developer.equinix.com/agreement
-  version: '4.21'
+  version: "4.21"
 externalDocs:
-  description: Find more information on Equinix Developer Portal
-  url: https://developer.equinix.com
+  description: Find more information on Equinix Docs Portal
+  url: https://docs.equinix.com/en-us/apis/fabric
 servers:
   - url: https://api.equinix.com
     description: Equinix Inc
@@ -21074,7 +21075,7 @@ components:
             data:
               message: Connection named TEST-CONNECTION state changed to provisioning
               resource:
-                href: http://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
+                href: https://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
                 uuid: dab9fc84-cc95-4cb4-abe3-ca39361285a9
                 type: IP_VC
                 name: TEST-CONNECTION
@@ -21100,7 +21101,7 @@ components:
             data:
               message: Connection named TEST-CONNECTION state changed to provisioned
               resource:
-                href: http://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
+                href: https://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
                 uuid: dab9fc84-cc95-4cb4-abe3-ca39361285a9
                 type: IP_VC
                 name: TEST-CONNECTION
@@ -21126,7 +21127,7 @@ components:
         data:
           message: Connection named TEST-CONNECTION state changed to provisioning
           resource:
-            href: http://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
+            href: https://api.corp.equinix.com/fabric/v4/connections/dab9fc84-cc95-4cb4-abe3-ca39361285a9
             uuid: dab9fc84-cc95-4cb4-abe3-ca39361285a9
             type: IP_VC
             name: TEST-CONNECTION
@@ -24236,7 +24237,7 @@ components:
           createdDateTime: 2022-05-12T17:53:45.401Z
     AsideServiceToken2PortResponseWithDot1q:
       value:
-        href: http://api.equinix.com/fabric/v4/connections/a00cef6f-8e35-4794-9ff9-665e084e4e6d
+        href: https://api.equinix.com/fabric/v4/connections/a00cef6f-8e35-4794-9ff9-665e084e4e6d
         type: EVPL_VC
         uuid: a00cef6f-8e35-4794-9ff9-665e084e4e6d
         name: a-token qinq-dot1q
@@ -24266,10 +24267,10 @@ components:
             uuid: a00cef6f-8e35-4794-9ff9-665e084e4e6d
           accessPoint:
             location:
-              metroHref: http://api.equinix.com/fabric/v4/metros/SV
+              metroHref: https://api.equinix.com/fabric/v4/metros/SV
               metroCode: SV
             port:
-              href: http://api.equinix.com/fabric/v4/ports/a00cef6f-8e35-4794-9ff9-665e084e4e6d
+              href: https://api.equinix.com/fabric/v4/ports/a00cef6f-8e35-4794-9ff9-665e084e4e6d
               uuid: a00cef6f-8e35-4794-9ff9-665e084e4e6d
               name: test-port-name-2
             linkProtocol:
@@ -24330,12 +24331,12 @@ components:
             uuid: a00cef6f-8e35-4794-9ff9-665e084e4e6d
           accessPoint:
             location:
-              metroHref: http://api.equinix.com/fabric/v4/metros/SV
+              metroHref: https://api.equinix.com/fabric/v4/metros/SV
               region: AMER
               metroName: Silicon Valley
               metroCode: SV
             port:
-              href: http://api.equinix.com/fabric/v4/ports/a00cef6f-8e35-4794-9ff9-665e084e4e6d
+              href: https://api.equinix.com/fabric/v4/ports/a00cef6f-8e35-4794-9ff9-665e084e4e6d
               uuid: a00cef6f-8e35-4794-9ff9-665e084e4e6d
               name: test-port-name-2
             linkProtocol:
@@ -24817,7 +24818,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/4c4b8edf-873b-4c6c-805a-edb2c335bd6c
@@ -24862,7 +24863,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/69ee618d-be52-468d-bc99-00566f2dd2b9
@@ -24907,7 +24908,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/bd4570e2-d792-4a00-87f5-3bde040cdcd7
@@ -24952,7 +24953,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/e092ed47-63d2-4f4a-87a0-82e3b08eefe5
@@ -24997,7 +24998,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/a1390b22-bbe0-4e93-ad37-85beef9d254d
@@ -25041,7 +25042,7 @@ components:
         zSide:
           accessPoint:
             location:
-              metroHref: http://api.corp.equinix.com/fabric/v4/metros/DC
+              metroHref: https://api.corp.equinix.com/fabric/v4/metros/DC
               metroCode: DC
             profile:
               href: https://api.equinix.com/fabric/v4/serviceProfiles/60ef0382-cdaa-44e7-bd36-b803731816b8
@@ -29215,7 +29216,7 @@ components:
           details: We couldn't process you request
     200_port:
       value:
-        href: http://api.equinix.com/fabric/v4/ports/xxxxx191-xx70-xxxx-xx04-xxxxxxxa37xx
+        href: https://api.equinix.com/fabric/v4/ports/xxxxx191-xx70-xxxx-xx04-xxxxxxxa37xx
         type: XF_PORT
         uuid: xxxxx191-xx70-xxxx-xx04-xxxxxxxa37xx
         name: Equinix-EM-CX-xxx-L-Dot1q-BO-100G-PRI-xx
@@ -30187,7 +30188,7 @@ components:
           errorMessage: "If-Match : invalid Etag version"
     getServiceToken:
       value:
-        href: http://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
+        href: https://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
         type: VC_TOKEN
         uuid: 13ab7dc7-c18e-4f73-aa35-fc3a83966e79
         name: Az_Aside_Dot1Q_Pri_SV
@@ -30203,7 +30204,7 @@ components:
             accessPointSelectors:
               - type: COLO
                 port:
-                  href: http://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
+                  href: https://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
                   type: XF_PORT
                   uuid: b840a1db-5758-758f-97e0-328a5c00a874
                 linkProtocol:
@@ -30226,7 +30227,7 @@ components:
           projectId: "995072000433550"
     getServiceToken-VD:
       value:
-        href: http://api.equinix.com/fabric/v4/serviceTokens/ea40918e-9b39-4045-8be8-0beaa7eb5ce1
+        href: https://api.equinix.com/fabric/v4/serviceTokens/ea40918e-9b39-4045-8be8-0beaa7eb5ce1
         type: VC_TOKEN
         name: Zside_Virtual_Device_token
         uuid: ea40918e-9b39-4045-8be8-0beaa7eb5ce1
@@ -30317,7 +30318,7 @@ components:
             accessPointSelectors:
               - type: COLO
                 port:
-                  href: http://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
+                  href: https://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
                   type: XF_PORT
                   uuid: b840a1db-5758-758f-97e0-328a5c00a874
                 linkProtocol:
@@ -30437,7 +30438,7 @@ components:
               - type: NOTIFICATION
                 emails:
                   - abc@company.com
-          - href: http://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
+          - href: https://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
             type: VC_TOKEN
             uuid: 13ab7dc7-c18e-4f73-aa35-fc3a83966e79
             name: Az_Aside_Dot1Q_Pri_SV
@@ -30455,7 +30456,7 @@ components:
                 accessPointSelectors:
                   - type: COLO
                     port:
-                      href: http://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
+                      href: https://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
                       type: XF_PORT
                       uuid: b840a1db-5758-758f-97e0-328a5c00a874
                     linkProtocol:
@@ -30775,7 +30776,7 @@ components:
             accessPointSelectors:
               - type: COLO
                 port:
-                  href: http://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
+                  href: https://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
                   uuid: b840a1db-5758-758f-97e0-328a5c00a874
                 linkProtocol:
                   type: DOT1Q
@@ -30790,7 +30791,7 @@ components:
         type: RESEND_EMAIL_NOTIFICATION
     postServiceTokenActionResponse:
       value:
-        href: http://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
+        href: https://api.equinix.com/fabric/v4/serviceTokens/13ab7dc7-c18e-4f73-aa35-fc3a83966e79
         type: VC_TOKEN
         uuid: 13ab7dc7-c18e-4f73-aa35-fc3a83966e79
         name: Az_Aside_Dot1Q_Pri_SV
@@ -30807,7 +30808,7 @@ components:
             accessPointSelectors:
               - type: COLO
                 port:
-                  href: http://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
+                  href: https://api.equinix.com/fabric/v4/ports/b840a1db-5758-758f-97e0-328a5c00a874
                   type: XF_PORT
                   uuid: b840a1db-5758-758f-97e0-328a5c00a874
                 linkProtocol:
@@ -33955,15 +33956,7 @@ components:
             count: 5
             interval: 1000
           response:
-            output: |-
-              PING 8.8.8.8 (8.8.8.8): 100 data bytes
-              108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms
-              108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms
-              108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms
-              108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms 
-              --- 8.8.8.8 ping statistics ---
-              4 packets transmitted, 4 packets received, 0.0% packet loss
-              round-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms
+            output: "PING 8.8.8.8 (8.8.8.8): 100 data bytes\n108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms\n108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms\n108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms\n108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms \n--- 8.8.8.8 ping statistics ---\n4 packets transmitted, 4 packets received, 0.0% packet loss\nround-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms"
             outputStructuredPing:
               destinationIp: 8.8.8.8
               destinationName: 8.8.8.8
@@ -34103,15 +34096,7 @@ components:
             count: 5
             interval: 1000
           response:
-            output: |-
-              PING 8.8.8.8 (8.8.8.8): 100 data bytes
-              108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms
-              108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms
-              108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms
-              108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms 
-              --- 8.8.8.8 ping statistics ---
-              4 packets transmitted, 4 packets received, 0.0% packet loss
-              round-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms
+            output: "PING 8.8.8.8 (8.8.8.8): 100 data bytes\n108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms\n108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms\n108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms\n108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms \n--- 8.8.8.8 ping statistics ---\n4 packets transmitted, 4 packets received, 0.0% packet loss\nround-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms"
             outputStructuredPing:
               destinationIp: 8.8.8.8
               destinationName: 8.8.8.8
@@ -34173,15 +34158,7 @@ components:
           count: 5
           interval: 1000
         response:
-          output: |-
-            PING 8.8.8.8 (8.8.8.8): 100 data bytes
-            108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms
-            108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms
-            108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms
-            108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms 
-            --- 8.8.8.8 ping statistics ---
-            4 packets transmitted, 4 packets received, 0.0% packet loss
-            round-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms
+          output: "PING 8.8.8.8 (8.8.8.8): 100 data bytes\n108 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=9.839 ms\n108 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=16.051 ms\n108 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=9.271 ms\n108 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=26.771 ms \n--- 8.8.8.8 ping statistics ---\n4 packets transmitted, 4 packets received, 0.0% packet loss\nround-trip min/avg/max/stddev = 9.271/15.483/26.771/7.039 ms"
           outputStructuredPing:
             destinationIp: 8.8.8.8
             destinationName: 8.8.8.8
@@ -35194,7 +35171,7 @@ components:
               - test@equinix.com
     Create-Global-EVPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c
+        href: https://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c
         uuid: 0633e83f-116f-481d-b86f-c472271d1a8c
         type: EVPLAN
         name: My-evplan-network-1
@@ -35206,7 +35183,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c/changes/ce7c0bbc-7bd2-431f-903f-de796ea9e858
+          href: https://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c/changes/ce7c0bbc-7bd2-431f-903f-de796ea9e858
           uuid: ce7c0bbc-7bd2-431f-903f-de796ea9e858
           type: NETWORK_CREATION
         operation:
@@ -35217,7 +35194,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T19:37:29.326Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/0633e83f-116f-481d-b86f-c472271d1a8c/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35230,7 +35207,7 @@ components:
               - fabric@gmail.com
     Create-Regional-EVPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef
+        href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef
         uuid: 884254b7-237d-44f7-af0f-84ba324350ef
         type: EVPLAN
         name: My-evplan-network-1
@@ -35244,7 +35221,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/changes/741c0927-d9ed-405b-a4f2-cb61d0dda2c5
+          href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/changes/741c0927-d9ed-405b-a4f2-cb61d0dda2c5
           uuid: 741c0927-d9ed-405b-a4f2-cb61d0dda2c5
           type: NETWORK_CREATION
         operation:
@@ -35255,7 +35232,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T19:21:43.145Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35268,7 +35245,7 @@ components:
               - fabric@gmail.com
     Create-Local-EVPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3
+        href: https://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3
         uuid: 726af704-0b1b-46dc-9efc-00fc938084b3
         type: EVPLAN
         name: My-evplan-network-1
@@ -35280,7 +35257,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3/changes/92e2f236-e77d-4818-bbad-cff6b716a610
+          href: https://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3/changes/92e2f236-e77d-4818-bbad-cff6b716a610
           uuid: 92e2f236-e77d-4818-bbad-cff6b716a610
           type: NETWORK_CREATION
         operation:
@@ -35291,7 +35268,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T19:43:20.145Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/726af704-0b1b-46dc-9efc-00fc938084b3/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35304,7 +35281,7 @@ components:
               - fabric@gmail.com
     Create-Global-EPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa
+        href: https://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa
         uuid: 0d51722e-b080-4943-92ab-9720eaab2cfa
         type: EPLAN
         name: My-eplan-network-1
@@ -35316,7 +35293,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa/changes/e4f9c57f-a1d6-4520-9a31-fddbe69ed592
+          href: https://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa/changes/e4f9c57f-a1d6-4520-9a31-fddbe69ed592
           uuid: e4f9c57f-a1d6-4520-9a31-fddbe69ed592
           type: NETWORK_CREATION
         operation:
@@ -35327,7 +35304,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T20:52:23.469Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/0d51722e-b080-4943-92ab-9720eaab2cfa/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35340,7 +35317,7 @@ components:
               - fabric@gmail.com
     Create-Regional-EPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef
+        href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef
         uuid: 884254b7-237d-44f7-af0f-84ba324350ef
         type: EVPLAN
         name: My-evplan-network-1
@@ -35354,7 +35331,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/changes/741c0927-d9ed-405b-a4f2-cb61d0dda2c5
+          href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/changes/741c0927-d9ed-405b-a4f2-cb61d0dda2c5
           uuid: 741c0927-d9ed-405b-a4f2-cb61d0dda2c5
           type: NETWORK_CREATION
         operation:
@@ -35365,7 +35342,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T19:21:43.145Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/884254b7-237d-44f7-af0f-84ba324350ef/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35378,7 +35355,7 @@ components:
               - fabric@gmail.com
     Create-Local-EPLAN-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b
+        href: https://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b
         uuid: 82402fc0-cb55-4a21-b0b3-1af89f63742b
         type: EPLAN
         name: My-eplan-network-1
@@ -35390,7 +35367,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b/changes/1449105b-7576-4094-aa34-216f3f9ed122
+          href: https://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b/changes/1449105b-7576-4094-aa34-216f3f9ed122
           uuid: 1449105b-7576-4094-aa34-216f3f9ed122
           type: NETWORK_CREATION
         operation:
@@ -35401,7 +35378,7 @@ components:
           createdByEmail: fabric@gmail.com
           createdDateTime: 2025-03-03T20:55:57.858Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/82402fc0-cb55-4a21-b0b3-1af89f63742b/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35414,7 +35391,7 @@ components:
               - fabric@gmail.com
     Create-Global-EVPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5
+        href: https://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5
         uuid: 07659346-9489-42cf-891a-683624e801d5
         type: EVPTREE
         name: My-evptree-network-1
@@ -35426,7 +35403,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5/changes/1caf3efb-7427-4be1-8100-73fcff471654
+          href: https://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5/changes/1caf3efb-7427-4be1-8100-73fcff471654
           uuid: 1caf3efb-7427-4be1-8100-73fcff471654
           type: NETWORK_CREATION
         operation:
@@ -35437,7 +35414,7 @@ components:
           createdByEmail: fabric@equinix.comm
           createdDateTime: 2025-03-05T21:17:46.656Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/07659346-9489-42cf-891a-683624e801d5/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35450,7 +35427,7 @@ components:
               - fabric@equinix.com
     Create-Regional-EVPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0
+        href: https://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0
         uuid: 0ec08139-bae5-44c4-bea2-970b14d7c7c0
         type: EVPTREE
         name: My-evptree-network-1
@@ -35464,7 +35441,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0/changes/0e159ddd-47d2-4fa3-97fe-502f8a70ea0e
+          href: https://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0/changes/0e159ddd-47d2-4fa3-97fe-502f8a70ea0e
           uuid: 0e159ddd-47d2-4fa3-97fe-502f8a70ea0e
           type: NETWORK_CREATION
         operation:
@@ -35475,7 +35452,7 @@ components:
           createdByEmail: fabric@equinix.com
           createdDateTime: 2025-03-05T20:57:07.206Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/0ec08139-bae5-44c4-bea2-970b14d7c7c0/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35488,7 +35465,7 @@ components:
               - fabric@equinix.com
     Create-Local-EVPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3
+        href: https://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3
         uuid: 4622cce8-114b-4432-94f4-060fda044ae3
         type: EVPTREE
         name: My-evptree-network-1
@@ -35500,7 +35477,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3/changes/6eacff89-a363-402f-ae15-84294177a866
+          href: https://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3/changes/6eacff89-a363-402f-ae15-84294177a866
           uuid: 6eacff89-a363-402f-ae15-84294177a866
           type: NETWORK_CREATION
         operation:
@@ -35511,7 +35488,7 @@ components:
           createdByEmail: fabric@equinix.com
           createdDateTime: 2025-03-05T21:22:30.984Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/4622cce8-114b-4432-94f4-060fda044ae3/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35524,7 +35501,7 @@ components:
               - fabric@equinix.com
     Create-Global-EPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c
+        href: https://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c
         uuid: 16ee541c-9e93-428b-9557-3f99907aa21c
         type: EPTREE
         name: My-eptree-network-1
@@ -35536,7 +35513,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c/changes/2f541dcd-c25b-43a1-97fa-8b2be6817899
+          href: https://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c/changes/2f541dcd-c25b-43a1-97fa-8b2be6817899
           uuid: 2f541dcd-c25b-43a1-97fa-8b2be6817899
           type: NETWORK_CREATION
         operation:
@@ -35547,7 +35524,7 @@ components:
           createdByEmail: fabric@equinix.com
           createdDateTime: 2025-03-05T21:37:08.370Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/16ee541c-9e93-428b-9557-3f99907aa21c/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35560,7 +35537,7 @@ components:
               - fabric@equinix.com
     Create-Regional-EPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e
+        href: https://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e
         uuid: 291fc758-91d3-482b-a9b3-3430685c390e
         type: EPTREE
         name: My-eptree-network-1
@@ -35574,7 +35551,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e/changes/8345324b-97cc-4c5c-9f15-40bc82b254ad
+          href: https://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e/changes/8345324b-97cc-4c5c-9f15-40bc82b254ad
           uuid: 8345324b-97cc-4c5c-9f15-40bc82b254ad
           type: NETWORK_CREATION
         operation:
@@ -35585,7 +35562,7 @@ components:
           createdByEmail: fabric@equinix.com
           createdDateTime: 2025-03-06T00:23:29.030Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/291fc758-91d3-482b-a9b3-3430685c390e/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
@@ -35598,7 +35575,7 @@ components:
               - fabric@equinix.com
     Create-Local-EPTREE-Network-Response:
       value:
-        href: http://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d
+        href: https://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d
         uuid: c929924e-5d87-46b2-a82f-91a145c1803d
         type: EPTREE
         name: My-eptree-network-1
@@ -35610,7 +35587,7 @@ components:
           organizationName: fabric
           globalCustId: 0026u00000595sBAAM
         change:
-          href: http://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d/changes/1b32bacb-5898-4efd-9404-b64ec825c652
+          href: https://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d/changes/1b32bacb-5898-4efd-9404-b64ec825c652
           uuid: 1b32bacb-5898-4efd-9404-b64ec825c652
           type: NETWORK_CREATION
         operation:
@@ -35621,7 +35598,7 @@ components:
           createdByEmail: fabric@equinix.com
           createdDateTime: 2025-03-06T00:30:42.972Z
         links:
-          href: http://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d/connections
+          href: https://api.corp.equinix.com/fabric/v4/networks/c929924e-5d87-46b2-a82f-91a145c1803d/connections
           rel: getConnectionsByNetworkUuid
           method: GET
           contentType: application/json
