@@ -8,6 +8,12 @@ Network specification
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**type** | **NetworkType** |  |  |
+|**name** | **String** | Customer-provided network name |  |
+|**scope** | **NetworkScope** |  |  |
+|**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  |  [optional] |
+|**project** | [**Project**](Project.md) |  |  [optional] |
+|**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) | Preferences for notifications on network configuration or status changes |  |
 |**href** | **URI** | Network URI |  [readonly] |
 |**uuid** | **UUID** | Equinix-assigned network identifier |  |
 |**state** | **NetworkState** |  |  |
@@ -17,12 +23,6 @@ Network specification
 |**operation** | [**NetworkOperation**](NetworkOperation.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  |
 |**links** | [**List&lt;Link&gt;**](Link.md) | Network sub-resources links |  [optional] [readonly] |
-|**type** | **NetworkType** |  |  |
-|**name** | **String** | Customer-provided network name |  |
-|**scope** | **NetworkScope** |  |  |
-|**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  |  [optional] |
-|**project** | [**Project**](Project.md) |  |  [optional] |
-|**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) | Preferences for notifications on network configuration or status changes |  |
 
 
 

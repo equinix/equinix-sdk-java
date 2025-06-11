@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,217 +46,204 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Customer physical Port
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortDemarcationPoint {
   public static final String SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID = "cabinetUniqueSpaceId";
   @SerializedName(SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID)
+  @javax.annotation.Nullable
   private String cabinetUniqueSpaceId;
 
   public static final String SERIALIZED_NAME_CAGE_UNIQUE_SPACE_ID = "cageUniqueSpaceId";
   @SerializedName(SERIALIZED_NAME_CAGE_UNIQUE_SPACE_ID)
+  @javax.annotation.Nullable
   private String cageUniqueSpaceId;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL = "patchPanel";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL)
+  @javax.annotation.Nullable
   private String patchPanel;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL_NAME = "patchPanelName";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_NAME)
+  @javax.annotation.Nullable
   private String patchPanelName;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_A = "patchPanelPortA";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_A)
+  @javax.annotation.Nullable
   private String patchPanelPortA;
 
   public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_B = "patchPanelPortB";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_B)
+  @javax.annotation.Nullable
   private String patchPanelPortB;
 
   public static final String SERIALIZED_NAME_CONNECTOR_TYPE = "connectorType";
   @SerializedName(SERIALIZED_NAME_CONNECTOR_TYPE)
+  @javax.annotation.Nullable
   private String connectorType;
 
   public static final String SERIALIZED_NAME_IBX = "ibx";
   @SerializedName(SERIALIZED_NAME_IBX)
+  @javax.annotation.Nullable
   private String ibx;
 
   public PortDemarcationPoint() {
   }
 
-  public PortDemarcationPoint cabinetUniqueSpaceId(String cabinetUniqueSpaceId) {
-    
+  public PortDemarcationPoint cabinetUniqueSpaceId(@javax.annotation.Nullable String cabinetUniqueSpaceId) {
     this.cabinetUniqueSpaceId = cabinetUniqueSpaceId;
     return this;
   }
 
-   /**
+  /**
    * Port cabinet unique space id
    * @return cabinetUniqueSpaceId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCabinetUniqueSpaceId() {
     return cabinetUniqueSpaceId;
   }
 
-
-  public void setCabinetUniqueSpaceId(String cabinetUniqueSpaceId) {
+  public void setCabinetUniqueSpaceId(@javax.annotation.Nullable String cabinetUniqueSpaceId) {
     this.cabinetUniqueSpaceId = cabinetUniqueSpaceId;
   }
 
 
-  public PortDemarcationPoint cageUniqueSpaceId(String cageUniqueSpaceId) {
-    
+  public PortDemarcationPoint cageUniqueSpaceId(@javax.annotation.Nullable String cageUniqueSpaceId) {
     this.cageUniqueSpaceId = cageUniqueSpaceId;
     return this;
   }
 
-   /**
+  /**
    * Port cage unique space id
    * @return cageUniqueSpaceId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCageUniqueSpaceId() {
     return cageUniqueSpaceId;
   }
 
-
-  public void setCageUniqueSpaceId(String cageUniqueSpaceId) {
+  public void setCageUniqueSpaceId(@javax.annotation.Nullable String cageUniqueSpaceId) {
     this.cageUniqueSpaceId = cageUniqueSpaceId;
   }
 
 
-  public PortDemarcationPoint patchPanel(String patchPanel) {
-    
+  public PortDemarcationPoint patchPanel(@javax.annotation.Nullable String patchPanel) {
     this.patchPanel = patchPanel;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel
    * @return patchPanel
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanel() {
     return patchPanel;
   }
 
-
-  public void setPatchPanel(String patchPanel) {
+  public void setPatchPanel(@javax.annotation.Nullable String patchPanel) {
     this.patchPanel = patchPanel;
   }
 
 
-  public PortDemarcationPoint patchPanelName(String patchPanelName) {
-    
+  @Deprecated
+  public PortDemarcationPoint patchPanelName(@javax.annotation.Nullable String patchPanelName) {
     this.patchPanelName = patchPanelName;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel
    * @return patchPanelName
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public String getPatchPanelName() {
     return patchPanelName;
   }
 
-
-  public void setPatchPanelName(String patchPanelName) {
+  @Deprecated
+  public void setPatchPanelName(@javax.annotation.Nullable String patchPanelName) {
     this.patchPanelName = patchPanelName;
   }
 
 
-  public PortDemarcationPoint patchPanelPortA(String patchPanelPortA) {
-    
+  public PortDemarcationPoint patchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
     this.patchPanelPortA = patchPanelPortA;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel port A
    * @return patchPanelPortA
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanelPortA() {
     return patchPanelPortA;
   }
 
-
-  public void setPatchPanelPortA(String patchPanelPortA) {
+  public void setPatchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
     this.patchPanelPortA = patchPanelPortA;
   }
 
 
-  public PortDemarcationPoint patchPanelPortB(String patchPanelPortB) {
-    
+  public PortDemarcationPoint patchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
     this.patchPanelPortB = patchPanelPortB;
     return this;
   }
 
-   /**
+  /**
    * Port patch panel port B
    * @return patchPanelPortB
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPatchPanelPortB() {
     return patchPanelPortB;
   }
 
-
-  public void setPatchPanelPortB(String patchPanelPortB) {
+  public void setPatchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
     this.patchPanelPortB = patchPanelPortB;
   }
 
 
-  public PortDemarcationPoint connectorType(String connectorType) {
-    
+  public PortDemarcationPoint connectorType(@javax.annotation.Nullable String connectorType) {
     this.connectorType = connectorType;
     return this;
   }
 
-   /**
+  /**
    * Port connector type
    * @return connectorType
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getConnectorType() {
     return connectorType;
   }
 
-
-  public void setConnectorType(String connectorType) {
+  public void setConnectorType(@javax.annotation.Nullable String connectorType) {
     this.connectorType = connectorType;
   }
 
 
-  public PortDemarcationPoint ibx(String ibx) {
-    
+  public PortDemarcationPoint ibx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
     return this;
   }
 
-   /**
+  /**
    * Port ibx identifier
    * @return ibx
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getIbx() {
     return ibx;
   }
 
-
-  public void setIbx(String ibx) {
+  public void setIbx(@javax.annotation.Nullable String ibx) {
     this.ibx = ibx;
   }
 
@@ -377,18 +366,19 @@ public class PortDemarcationPoint {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortDemarcationPoint
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortDemarcationPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortDemarcationPoint
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortDemarcationPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortDemarcationPoint is not found in the empty JSON string", PortDemarcationPoint.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cabinetUniqueSpaceId") != null && !jsonObj.get("cabinetUniqueSpaceId").isJsonNull()) && !jsonObj.get("cabinetUniqueSpaceId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cabinetUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cabinetUniqueSpaceId").toString()));
       }
@@ -443,7 +433,12 @@ public class PortDemarcationPoint {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -452,8 +447,9 @@ public class PortDemarcationPoint {
 
            @Override
            public PortDemarcationPoint read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortDemarcationPoint instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -481,22 +477,22 @@ public class PortDemarcationPoint {
     }
   }
 
- /**
-  * Create an instance of PortDemarcationPoint given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortDemarcationPoint
-  * @throws IOException if the JSON string is invalid with respect to PortDemarcationPoint
-  */
+  /**
+   * Create an instance of PortDemarcationPoint given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortDemarcationPoint
+   * @throws IOException if the JSON string is invalid with respect to PortDemarcationPoint
+   */
   public static PortDemarcationPoint fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortDemarcationPoint.class);
   }
 
- /**
-  * Convert an instance of PortDemarcationPoint to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortDemarcationPoint to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

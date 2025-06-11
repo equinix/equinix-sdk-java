@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PriceErrorAdditionalInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,147 +49,137 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Error Response with details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Error {
   public static final String SERIALIZED_NAME_ERROR_CODE = "errorCode";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nonnull
   private String errorCode;
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nonnull
   private String errorMessage;
 
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlationId";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
+  @javax.annotation.Nullable
   private String correlationId;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
+  @javax.annotation.Nullable
   private String details;
 
   public static final String SERIALIZED_NAME_HELP = "help";
   @SerializedName(SERIALIZED_NAME_HELP)
+  @javax.annotation.Nullable
   private String help;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<PriceErrorAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public Error() {
   }
 
-  public Error errorCode(String errorCode) {
-    
+  public Error errorCode(@javax.annotation.Nonnull String errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * Get errorCode
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getErrorCode() {
     return errorCode;
   }
 
-
-  public void setErrorCode(String errorCode) {
+  public void setErrorCode(@javax.annotation.Nonnull String errorCode) {
     this.errorCode = errorCode;
   }
 
 
-  public Error errorMessage(String errorMessage) {
-    
+  public Error errorMessage(@javax.annotation.Nonnull String errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * Get errorMessage
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getErrorMessage() {
     return errorMessage;
   }
 
-
-  public void setErrorMessage(String errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nonnull String errorMessage) {
     this.errorMessage = errorMessage;
   }
 
 
-  public Error correlationId(String correlationId) {
-    
+  public Error correlationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
     return this;
   }
 
-   /**
+  /**
    * Get correlationId
    * @return correlationId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCorrelationId() {
     return correlationId;
   }
 
-
-  public void setCorrelationId(String correlationId) {
+  public void setCorrelationId(@javax.annotation.Nullable String correlationId) {
     this.correlationId = correlationId;
   }
 
 
-  public Error details(String details) {
-    
+  public Error details(@javax.annotation.Nullable String details) {
     this.details = details;
     return this;
   }
 
-   /**
+  /**
    * Get details
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDetails() {
     return details;
   }
 
-
-  public void setDetails(String details) {
+  public void setDetails(@javax.annotation.Nullable String details) {
     this.details = details;
   }
 
 
-  public Error help(String help) {
-    
+  public Error help(@javax.annotation.Nullable String help) {
     this.help = help;
     return this;
   }
 
-   /**
+  /**
    * Get help
    * @return help
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHelp() {
     return help;
   }
 
-
-  public void setHelp(String help) {
+  public void setHelp(@javax.annotation.Nullable String help) {
     this.help = help;
   }
 
 
-  public Error additionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
-    
+  public Error additionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -200,18 +192,16 @@ public class Error {
     return this;
   }
 
-   /**
+  /**
    * Get additionalInfo
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PriceErrorAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<PriceErrorAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
@@ -330,25 +320,26 @@ public class Error {
     openapiRequiredFields.add("errorMessage");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Error
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Error.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Error
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Error.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Error is not found in the empty JSON string", Error.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Error.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("errorCode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `errorCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorCode").toString()));
       }
@@ -374,7 +365,7 @@ public class Error {
 
           // validate the optional field `additionalInfo` (array)
           for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            PriceErrorAdditionalInfo.validateJsonObject(jsonArrayadditionalInfo.get(i).getAsJsonObject());
+            PriceErrorAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }
@@ -408,7 +399,12 @@ public class Error {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -417,8 +413,9 @@ public class Error {
 
            @Override
            public Error read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Error instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -446,22 +443,22 @@ public class Error {
     }
   }
 
- /**
-  * Create an instance of Error given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Error
-  * @throws IOException if the JSON string is invalid with respect to Error
-  */
+  /**
+   * Create an instance of Error given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Error
+   * @throws IOException if the JSON string is invalid with respect to Error
+   */
   public static Error fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Error.class);
   }
 
- /**
-  * Convert an instance of Error to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Error to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

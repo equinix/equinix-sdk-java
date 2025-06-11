@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.RouteFilterRuleState;
 import com.equinix.sdk.fabricv4.model.RouteFilterRulesChange;
@@ -23,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -35,13 +35,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -49,10 +51,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * RouteFilterRulesData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteFilterRulesData {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   /**
@@ -100,34 +103,46 @@ public class RouteFilterRulesData {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private RouteFilterRuleState state;
 
   public static final String SERIALIZED_NAME_PREFIX_MATCH = "prefixMatch";
   @SerializedName(SERIALIZED_NAME_PREFIX_MATCH)
+  @javax.annotation.Nullable
   private String prefixMatch = "orlonger";
 
   public static final String SERIALIZED_NAME_CHANGE = "change";
   @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
   private RouteFilterRulesChange change;
 
   /**
@@ -175,261 +190,236 @@ public class RouteFilterRulesData {
         return ActionEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ActionEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
+  @javax.annotation.Nullable
   private ActionEnum action;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
+  @javax.annotation.Nullable
   private Changelog changelog;
 
   public RouteFilterRulesData() {
   }
 
-  public RouteFilterRulesData href(URI href) {
-    
+  public RouteFilterRulesData href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Route Filter Rules URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public RouteFilterRulesData type(TypeEnum type) {
-    
+  public RouteFilterRulesData type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Route filter type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public RouteFilterRulesData uuid(UUID uuid) {
-    
+  public RouteFilterRulesData uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Route Filter Rule identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public RouteFilterRulesData name(String name) {
-    
+  public RouteFilterRulesData name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RouteFilterRulesData description(String description) {
-    
+  public RouteFilterRulesData description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided Route Filter Rule description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public RouteFilterRulesData state(RouteFilterRuleState state) {
-    
+  public RouteFilterRulesData state(@javax.annotation.Nullable RouteFilterRuleState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public RouteFilterRuleState getState() {
     return state;
   }
 
-
-  public void setState(RouteFilterRuleState state) {
+  public void setState(@javax.annotation.Nullable RouteFilterRuleState state) {
     this.state = state;
   }
 
 
-  public RouteFilterRulesData prefixMatch(String prefixMatch) {
-    
+  public RouteFilterRulesData prefixMatch(@javax.annotation.Nullable String prefixMatch) {
     this.prefixMatch = prefixMatch;
     return this;
   }
 
-   /**
+  /**
    * prefix matching operator
    * @return prefixMatch
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPrefixMatch() {
     return prefixMatch;
   }
 
-
-  public void setPrefixMatch(String prefixMatch) {
+  public void setPrefixMatch(@javax.annotation.Nullable String prefixMatch) {
     this.prefixMatch = prefixMatch;
   }
 
 
-  public RouteFilterRulesData change(RouteFilterRulesChange change) {
-    
+  public RouteFilterRulesData change(@javax.annotation.Nullable RouteFilterRulesChange change) {
     this.change = change;
     return this;
   }
 
-   /**
+  /**
    * Get change
    * @return change
-  **/
+   */
   @javax.annotation.Nullable
-
   public RouteFilterRulesChange getChange() {
     return change;
   }
 
-
-  public void setChange(RouteFilterRulesChange change) {
+  public void setChange(@javax.annotation.Nullable RouteFilterRulesChange change) {
     this.change = change;
   }
 
 
-  public RouteFilterRulesData action(ActionEnum action) {
-    
+  public RouteFilterRulesData action(@javax.annotation.Nullable ActionEnum action) {
     this.action = action;
     return this;
   }
 
-   /**
+  /**
    * Get action
    * @return action
-  **/
+   */
   @javax.annotation.Nullable
-
   public ActionEnum getAction() {
     return action;
   }
 
-
-  public void setAction(ActionEnum action) {
+  public void setAction(@javax.annotation.Nullable ActionEnum action) {
     this.action = action;
   }
 
 
-  public RouteFilterRulesData prefix(String prefix) {
-    
+  public RouteFilterRulesData prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
 
-   /**
+  /**
    * Get prefix
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPrefix() {
     return prefix;
   }
 
-
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public RouteFilterRulesData changelog(Changelog changelog) {
-    
+  public RouteFilterRulesData changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
   }
 
-   /**
+  /**
    * Get changelog
    * @return changelog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangelog() {
     return changelog;
   }
 
-
-  public void setChangelog(Changelog changelog) {
+  public void setChangelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
   }
 
@@ -561,23 +551,28 @@ public class RouteFilterRulesData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteFilterRulesData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteFilterRulesData.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteFilterRulesData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteFilterRulesData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteFilterRulesData is not found in the empty JSON string", RouteFilterRulesData.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
@@ -588,22 +583,30 @@ public class RouteFilterRulesData {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        RouteFilterRuleState.validateJsonElement(jsonObj.get("state"));
+      }
       if ((jsonObj.get("prefixMatch") != null && !jsonObj.get("prefixMatch").isJsonNull()) && !jsonObj.get("prefixMatch").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `prefixMatch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefixMatch").toString()));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        RouteFilterRulesChange.validateJsonObject(jsonObj.getAsJsonObject("change"));
+        RouteFilterRulesChange.validateJsonElement(jsonObj.get("change"));
       }
       if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+      }
+      // validate the optional field `action`
+      if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) {
+        ActionEnum.validateJsonElement(jsonObj.get("action"));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changelog"));
+        Changelog.validateJsonElement(jsonObj.get("changelog"));
       }
   }
 
@@ -635,7 +638,12 @@ public class RouteFilterRulesData {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -644,8 +652,9 @@ public class RouteFilterRulesData {
 
            @Override
            public RouteFilterRulesData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteFilterRulesData instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -673,22 +682,22 @@ public class RouteFilterRulesData {
     }
   }
 
- /**
-  * Create an instance of RouteFilterRulesData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteFilterRulesData
-  * @throws IOException if the JSON string is invalid with respect to RouteFilterRulesData
-  */
+  /**
+   * Create an instance of RouteFilterRulesData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteFilterRulesData
+   * @throws IOException if the JSON string is invalid with respect to RouteFilterRulesData
+   */
   public static RouteFilterRulesData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteFilterRulesData.class);
   }
 
- /**
-  * Convert an instance of RouteFilterRulesData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteFilterRulesData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
