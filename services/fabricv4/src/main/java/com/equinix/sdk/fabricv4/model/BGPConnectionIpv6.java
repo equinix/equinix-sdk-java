@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.BGPConnectionOperation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,215 +47,199 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * BGPConnectionIpv6
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class BGPConnectionIpv6 {
   public static final String SERIALIZED_NAME_CUSTOMER_PEER_IP = "customerPeerIp";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_PEER_IP)
+  @javax.annotation.Nonnull
   private String customerPeerIp;
 
   public static final String SERIALIZED_NAME_EQUINIX_PEER_IP = "equinixPeerIp";
   @SerializedName(SERIALIZED_NAME_EQUINIX_PEER_IP)
+  @javax.annotation.Nullable
   private String equinixPeerIp;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_OUTBOUND_A_S_PREPEND_COUNT = "outboundASPrependCount";
   @SerializedName(SERIALIZED_NAME_OUTBOUND_A_S_PREPEND_COUNT)
+  @javax.annotation.Nullable
   private Long outboundASPrependCount;
 
   public static final String SERIALIZED_NAME_INBOUND_M_E_D = "inboundMED";
   @SerializedName(SERIALIZED_NAME_INBOUND_M_E_D)
+  @javax.annotation.Nullable
   private Long inboundMED;
 
   public static final String SERIALIZED_NAME_OUTBOUND_M_E_D = "outboundMED";
   @SerializedName(SERIALIZED_NAME_OUTBOUND_M_E_D)
+  @javax.annotation.Nullable
   private Long outboundMED;
 
   public static final String SERIALIZED_NAME_ROUTES_MAX = "routesMax";
   @SerializedName(SERIALIZED_NAME_ROUTES_MAX)
+  @javax.annotation.Nullable
   private Long routesMax;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private BGPConnectionOperation operation;
 
   public BGPConnectionIpv6() {
   }
 
-  public BGPConnectionIpv6 customerPeerIp(String customerPeerIp) {
-    
+  public BGPConnectionIpv6 customerPeerIp(@javax.annotation.Nonnull String customerPeerIp) {
     this.customerPeerIp = customerPeerIp;
     return this;
   }
 
-   /**
+  /**
    * Customer side peering ip
    * @return customerPeerIp
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getCustomerPeerIp() {
     return customerPeerIp;
   }
 
-
-  public void setCustomerPeerIp(String customerPeerIp) {
+  public void setCustomerPeerIp(@javax.annotation.Nonnull String customerPeerIp) {
     this.customerPeerIp = customerPeerIp;
   }
 
 
-  public BGPConnectionIpv6 equinixPeerIp(String equinixPeerIp) {
-    
+  public BGPConnectionIpv6 equinixPeerIp(@javax.annotation.Nullable String equinixPeerIp) {
     this.equinixPeerIp = equinixPeerIp;
     return this;
   }
 
-   /**
+  /**
    * Equinix side peering ip
    * @return equinixPeerIp
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEquinixPeerIp() {
     return equinixPeerIp;
   }
 
-
-  public void setEquinixPeerIp(String equinixPeerIp) {
+  public void setEquinixPeerIp(@javax.annotation.Nullable String equinixPeerIp) {
     this.equinixPeerIp = equinixPeerIp;
   }
 
 
-  public BGPConnectionIpv6 enabled(Boolean enabled) {
-    
+  public BGPConnectionIpv6 enabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Admin status for the BGP session
    * @return enabled
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public BGPConnectionIpv6 outboundASPrependCount(Long outboundASPrependCount) {
-    
+  public BGPConnectionIpv6 outboundASPrependCount(@javax.annotation.Nullable Long outboundASPrependCount) {
     this.outboundASPrependCount = outboundASPrependCount;
     return this;
   }
 
-   /**
+  /**
    * AS path prepend count
    * @return outboundASPrependCount
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getOutboundASPrependCount() {
     return outboundASPrependCount;
   }
 
-
-  public void setOutboundASPrependCount(Long outboundASPrependCount) {
+  public void setOutboundASPrependCount(@javax.annotation.Nullable Long outboundASPrependCount) {
     this.outboundASPrependCount = outboundASPrependCount;
   }
 
 
-  public BGPConnectionIpv6 inboundMED(Long inboundMED) {
-    
+  public BGPConnectionIpv6 inboundMED(@javax.annotation.Nullable Long inboundMED) {
     this.inboundMED = inboundMED;
     return this;
   }
 
-   /**
+  /**
    * Inbound Multi Exit Discriminator attribute
    * @return inboundMED
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getInboundMED() {
     return inboundMED;
   }
 
-
-  public void setInboundMED(Long inboundMED) {
+  public void setInboundMED(@javax.annotation.Nullable Long inboundMED) {
     this.inboundMED = inboundMED;
   }
 
 
-  public BGPConnectionIpv6 outboundMED(Long outboundMED) {
-    
+  public BGPConnectionIpv6 outboundMED(@javax.annotation.Nullable Long outboundMED) {
     this.outboundMED = outboundMED;
     return this;
   }
 
-   /**
+  /**
    * Outbound Multi Exit Discriminator attribute
    * @return outboundMED
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getOutboundMED() {
     return outboundMED;
   }
 
-
-  public void setOutboundMED(Long outboundMED) {
+  public void setOutboundMED(@javax.annotation.Nullable Long outboundMED) {
     this.outboundMED = outboundMED;
   }
 
 
-  public BGPConnectionIpv6 routesMax(Long routesMax) {
-    
+  public BGPConnectionIpv6 routesMax(@javax.annotation.Nullable Long routesMax) {
     this.routesMax = routesMax;
     return this;
   }
 
-   /**
+  /**
    * Maximum learnt prefixes limit
    * @return routesMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Long getRoutesMax() {
     return routesMax;
   }
 
-
-  public void setRoutesMax(Long routesMax) {
+  public void setRoutesMax(@javax.annotation.Nullable Long routesMax) {
     this.routesMax = routesMax;
   }
 
 
-  public BGPConnectionIpv6 operation(BGPConnectionOperation operation) {
-    
+  public BGPConnectionIpv6 operation(@javax.annotation.Nullable BGPConnectionOperation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public BGPConnectionOperation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(BGPConnectionOperation operation) {
+  public void setOperation(@javax.annotation.Nullable BGPConnectionOperation operation) {
     this.operation = operation;
   }
 
@@ -378,25 +364,26 @@ public class BGPConnectionIpv6 {
     openapiRequiredFields.add("enabled");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to BGPConnectionIpv6
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!BGPConnectionIpv6.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BGPConnectionIpv6
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!BGPConnectionIpv6.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in BGPConnectionIpv6 is not found in the empty JSON string", BGPConnectionIpv6.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BGPConnectionIpv6.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("customerPeerIp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `customerPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerPeerIp").toString()));
       }
@@ -405,7 +392,7 @@ public class BGPConnectionIpv6 {
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        BGPConnectionOperation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        BGPConnectionOperation.validateJsonElement(jsonObj.get("operation"));
       }
   }
 
@@ -437,7 +424,12 @@ public class BGPConnectionIpv6 {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -446,8 +438,9 @@ public class BGPConnectionIpv6 {
 
            @Override
            public BGPConnectionIpv6 read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              BGPConnectionIpv6 instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -475,22 +468,22 @@ public class BGPConnectionIpv6 {
     }
   }
 
- /**
-  * Create an instance of BGPConnectionIpv6 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BGPConnectionIpv6
-  * @throws IOException if the JSON string is invalid with respect to BGPConnectionIpv6
-  */
+  /**
+   * Create an instance of BGPConnectionIpv6 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BGPConnectionIpv6
+   * @throws IOException if the JSON string is invalid with respect to BGPConnectionIpv6
+   */
   public static BGPConnectionIpv6 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BGPConnectionIpv6.class);
   }
 
- /**
-  * Convert an instance of BGPConnectionIpv6 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BGPConnectionIpv6 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

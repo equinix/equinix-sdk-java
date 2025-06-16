@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,69 +48,65 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * CloudEventSimpleExpression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudEventSimpleExpression {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
+  @javax.annotation.Nullable
   private String property;
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
+  @javax.annotation.Nullable
   private String operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
+  @javax.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public CloudEventSimpleExpression() {
   }
 
-  public CloudEventSimpleExpression property(String property) {
-    
+  public CloudEventSimpleExpression property(@javax.annotation.Nullable String property) {
     this.property = property;
     return this;
   }
 
-   /**
+  /**
    * Possible field names to use on filters:  * &#x60;/subject&#x60; - Cloud Event subject description  * &#x60;/type&#x60; - Cloud Event type  * &#x60;/time&#x60; - Time of Cloud Events 
    * @return property
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getProperty() {
     return property;
   }
 
-
-  public void setProperty(String property) {
+  public void setProperty(@javax.annotation.Nullable String property) {
     this.property = property;
   }
 
 
-  public CloudEventSimpleExpression operator(String operator) {
-    
+  public CloudEventSimpleExpression operator(@javax.annotation.Nullable String operator) {
     this.operator = operator;
     return this;
   }
 
-   /**
+  /**
    * Possible operators to use on filters:  * &#x60;&#x3D;&#x60; - equal  * &#x60;&gt;&#x60; - greater than  * &#x60;&gt;&#x3D;&#x60; - greater than or equal to  * &#x60;&lt;&#x60; - less than  * &#x60;&lt;&#x3D;&#x60; - less than or equal to  * &#x60;BETWEEN&#x60; - between  * &#x60;IN&#x60; - in 
    * @return operator
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOperator() {
     return operator;
   }
 
-
-  public void setOperator(String operator) {
+  public void setOperator(@javax.annotation.Nullable String operator) {
     this.operator = operator;
   }
 
 
-  public CloudEventSimpleExpression values(List<String> values) {
-    
+  public CloudEventSimpleExpression values(@javax.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -121,18 +119,16 @@ public class CloudEventSimpleExpression {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getValues() {
     return values;
   }
 
-
-  public void setValues(List<String> values) {
+  public void setValues(@javax.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
@@ -240,18 +236,19 @@ public class CloudEventSimpleExpression {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudEventSimpleExpression
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudEventSimpleExpression.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudEventSimpleExpression
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudEventSimpleExpression.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudEventSimpleExpression is not found in the empty JSON string", CloudEventSimpleExpression.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) && !jsonObj.get("property").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `property` to be a primitive type in the JSON string but got `%s`", jsonObj.get("property").toString()));
       }
@@ -259,7 +256,7 @@ public class CloudEventSimpleExpression {
         throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonArray()) {
+      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
@@ -292,7 +289,12 @@ public class CloudEventSimpleExpression {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -301,8 +303,9 @@ public class CloudEventSimpleExpression {
 
            @Override
            public CloudEventSimpleExpression read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudEventSimpleExpression instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -330,22 +333,22 @@ public class CloudEventSimpleExpression {
     }
   }
 
- /**
-  * Create an instance of CloudEventSimpleExpression given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudEventSimpleExpression
-  * @throws IOException if the JSON string is invalid with respect to CloudEventSimpleExpression
-  */
+  /**
+   * Create an instance of CloudEventSimpleExpression given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudEventSimpleExpression
+   * @throws IOException if the JSON string is invalid with respect to CloudEventSimpleExpression
+   */
   public static CloudEventSimpleExpression fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudEventSimpleExpression.class);
   }
 
- /**
-  * Convert an instance of CloudEventSimpleExpression to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudEventSimpleExpression to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

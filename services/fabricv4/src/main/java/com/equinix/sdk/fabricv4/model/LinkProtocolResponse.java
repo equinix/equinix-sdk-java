@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.LinkProtocolConnection;
 import com.equinix.sdk.fabricv4.model.LinkProtocolRequestType;
@@ -26,6 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,76 +54,91 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Link Protocol response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class LinkProtocolResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private LinkProtocolState state;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private LinkProtocolRequestType type;
 
   public static final String SERIALIZED_NAME_VLAN_TAG = "vlanTag";
   @SerializedName(SERIALIZED_NAME_VLAN_TAG)
+  @javax.annotation.Nullable
   private Integer vlanTag;
 
   public static final String SERIALIZED_NAME_VNI = "vni";
   @SerializedName(SERIALIZED_NAME_VNI)
+  @javax.annotation.Nullable
   private Integer vni;
 
   public static final String SERIALIZED_NAME_VLAN_TAG_MIN = "vlanTagMin";
   @SerializedName(SERIALIZED_NAME_VLAN_TAG_MIN)
+  @javax.annotation.Nullable
   private Integer vlanTagMin;
 
   public static final String SERIALIZED_NAME_VLAN_TAG_MAX = "vlanTagMax";
   @SerializedName(SERIALIZED_NAME_VLAN_TAG_MAX)
+  @javax.annotation.Nullable
   private Integer vlanTagMax;
 
   public static final String SERIALIZED_NAME_VLAN_S_TAG = "vlanSTag";
   @SerializedName(SERIALIZED_NAME_VLAN_S_TAG)
+  @javax.annotation.Nullable
   private Integer vlanSTag;
 
   public static final String SERIALIZED_NAME_VLAN_C_TAG = "vlanCTag";
   @SerializedName(SERIALIZED_NAME_VLAN_C_TAG)
+  @javax.annotation.Nullable
   private Integer vlanCTag;
 
   public static final String SERIALIZED_NAME_VLAN_C_TAG_MIN = "vlanCTagMin";
   @SerializedName(SERIALIZED_NAME_VLAN_C_TAG_MIN)
+  @javax.annotation.Nullable
   private Integer vlanCTagMin;
 
   public static final String SERIALIZED_NAME_VLAN_C_TAG_MAX = "vlanCTagMax";
   @SerializedName(SERIALIZED_NAME_VLAN_C_TAG_MAX)
+  @javax.annotation.Nullable
   private Integer vlanCTagMax;
 
   public static final String SERIALIZED_NAME_SUB_INTERFACE = "subInterface";
   @SerializedName(SERIALIZED_NAME_SUB_INTERFACE)
+  @javax.annotation.Nullable
   private SubInterface subInterface;
 
   public static final String SERIALIZED_NAME_ASSET = "asset";
   @SerializedName(SERIALIZED_NAME_ASSET)
+  @javax.annotation.Nullable
   private LinkProtocolConnection asset;
 
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
+  @javax.annotation.Nullable
   private LinkProtocolServiceToken serviceToken;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public LinkProtocolResponse() {
   }
 
-  
   public LinkProtocolResponse(
      URI href
   ) {
@@ -129,345 +146,298 @@ public class LinkProtocolResponse {
     this.href = href;
   }
 
-   /**
+  /**
    * LinkProtocol URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public LinkProtocolResponse uuid(UUID uuid) {
-    
+  public LinkProtocolResponse uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned network identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public LinkProtocolResponse state(LinkProtocolState state) {
-    
+  public LinkProtocolResponse state(@javax.annotation.Nullable LinkProtocolState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkProtocolState getState() {
     return state;
   }
 
-
-  public void setState(LinkProtocolState state) {
+  public void setState(@javax.annotation.Nullable LinkProtocolState state) {
     this.state = state;
   }
 
 
-  public LinkProtocolResponse type(LinkProtocolRequestType type) {
-    
+  public LinkProtocolResponse type(@javax.annotation.Nullable LinkProtocolRequestType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkProtocolRequestType getType() {
     return type;
   }
 
-
-  public void setType(LinkProtocolRequestType type) {
+  public void setType(@javax.annotation.Nullable LinkProtocolRequestType type) {
     this.type = type;
   }
 
 
-  public LinkProtocolResponse vlanTag(Integer vlanTag) {
-    
+  public LinkProtocolResponse vlanTag(@javax.annotation.Nullable Integer vlanTag) {
     this.vlanTag = vlanTag;
     return this;
   }
 
-   /**
+  /**
    * Get vlanTag
    * @return vlanTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanTag() {
     return vlanTag;
   }
 
-
-  public void setVlanTag(Integer vlanTag) {
+  public void setVlanTag(@javax.annotation.Nullable Integer vlanTag) {
     this.vlanTag = vlanTag;
   }
 
 
-  public LinkProtocolResponse vni(Integer vni) {
-    
+  public LinkProtocolResponse vni(@javax.annotation.Nullable Integer vni) {
     this.vni = vni;
     return this;
   }
 
-   /**
+  /**
    * Get vni
    * @return vni
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVni() {
     return vni;
   }
 
-
-  public void setVni(Integer vni) {
+  public void setVni(@javax.annotation.Nullable Integer vni) {
     this.vni = vni;
   }
 
 
-  public LinkProtocolResponse vlanTagMin(Integer vlanTagMin) {
-    
+  public LinkProtocolResponse vlanTagMin(@javax.annotation.Nullable Integer vlanTagMin) {
     this.vlanTagMin = vlanTagMin;
     return this;
   }
 
-   /**
+  /**
    * Get vlanTagMin
    * @return vlanTagMin
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanTagMin() {
     return vlanTagMin;
   }
 
-
-  public void setVlanTagMin(Integer vlanTagMin) {
+  public void setVlanTagMin(@javax.annotation.Nullable Integer vlanTagMin) {
     this.vlanTagMin = vlanTagMin;
   }
 
 
-  public LinkProtocolResponse vlanTagMax(Integer vlanTagMax) {
-    
+  public LinkProtocolResponse vlanTagMax(@javax.annotation.Nullable Integer vlanTagMax) {
     this.vlanTagMax = vlanTagMax;
     return this;
   }
 
-   /**
+  /**
    * Get vlanTagMax
    * @return vlanTagMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanTagMax() {
     return vlanTagMax;
   }
 
-
-  public void setVlanTagMax(Integer vlanTagMax) {
+  public void setVlanTagMax(@javax.annotation.Nullable Integer vlanTagMax) {
     this.vlanTagMax = vlanTagMax;
   }
 
 
-  public LinkProtocolResponse vlanSTag(Integer vlanSTag) {
-    
+  public LinkProtocolResponse vlanSTag(@javax.annotation.Nullable Integer vlanSTag) {
     this.vlanSTag = vlanSTag;
     return this;
   }
 
-   /**
+  /**
    * Get vlanSTag
    * @return vlanSTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanSTag() {
     return vlanSTag;
   }
 
-
-  public void setVlanSTag(Integer vlanSTag) {
+  public void setVlanSTag(@javax.annotation.Nullable Integer vlanSTag) {
     this.vlanSTag = vlanSTag;
   }
 
 
-  public LinkProtocolResponse vlanCTag(Integer vlanCTag) {
-    
+  public LinkProtocolResponse vlanCTag(@javax.annotation.Nullable Integer vlanCTag) {
     this.vlanCTag = vlanCTag;
     return this;
   }
 
-   /**
+  /**
    * Get vlanCTag
    * @return vlanCTag
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanCTag() {
     return vlanCTag;
   }
 
-
-  public void setVlanCTag(Integer vlanCTag) {
+  public void setVlanCTag(@javax.annotation.Nullable Integer vlanCTag) {
     this.vlanCTag = vlanCTag;
   }
 
 
-  public LinkProtocolResponse vlanCTagMin(Integer vlanCTagMin) {
-    
+  public LinkProtocolResponse vlanCTagMin(@javax.annotation.Nullable Integer vlanCTagMin) {
     this.vlanCTagMin = vlanCTagMin;
     return this;
   }
 
-   /**
+  /**
    * Get vlanCTagMin
    * @return vlanCTagMin
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanCTagMin() {
     return vlanCTagMin;
   }
 
-
-  public void setVlanCTagMin(Integer vlanCTagMin) {
+  public void setVlanCTagMin(@javax.annotation.Nullable Integer vlanCTagMin) {
     this.vlanCTagMin = vlanCTagMin;
   }
 
 
-  public LinkProtocolResponse vlanCTagMax(Integer vlanCTagMax) {
-    
+  public LinkProtocolResponse vlanCTagMax(@javax.annotation.Nullable Integer vlanCTagMax) {
     this.vlanCTagMax = vlanCTagMax;
     return this;
   }
 
-   /**
+  /**
    * Get vlanCTagMax
    * @return vlanCTagMax
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getVlanCTagMax() {
     return vlanCTagMax;
   }
 
-
-  public void setVlanCTagMax(Integer vlanCTagMax) {
+  public void setVlanCTagMax(@javax.annotation.Nullable Integer vlanCTagMax) {
     this.vlanCTagMax = vlanCTagMax;
   }
 
 
-  public LinkProtocolResponse subInterface(SubInterface subInterface) {
-    
+  public LinkProtocolResponse subInterface(@javax.annotation.Nullable SubInterface subInterface) {
     this.subInterface = subInterface;
     return this;
   }
 
-   /**
+  /**
    * Get subInterface
    * @return subInterface
-  **/
+   */
   @javax.annotation.Nullable
-
   public SubInterface getSubInterface() {
     return subInterface;
   }
 
-
-  public void setSubInterface(SubInterface subInterface) {
+  public void setSubInterface(@javax.annotation.Nullable SubInterface subInterface) {
     this.subInterface = subInterface;
   }
 
 
-  public LinkProtocolResponse asset(LinkProtocolConnection asset) {
-    
+  public LinkProtocolResponse asset(@javax.annotation.Nullable LinkProtocolConnection asset) {
     this.asset = asset;
     return this;
   }
 
-   /**
+  /**
    * Get asset
    * @return asset
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkProtocolConnection getAsset() {
     return asset;
   }
 
-
-  public void setAsset(LinkProtocolConnection asset) {
+  public void setAsset(@javax.annotation.Nullable LinkProtocolConnection asset) {
     this.asset = asset;
   }
 
 
-  public LinkProtocolResponse serviceToken(LinkProtocolServiceToken serviceToken) {
-    
+  public LinkProtocolResponse serviceToken(@javax.annotation.Nullable LinkProtocolServiceToken serviceToken) {
     this.serviceToken = serviceToken;
     return this;
   }
 
-   /**
+  /**
    * Get serviceToken
    * @return serviceToken
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkProtocolServiceToken getServiceToken() {
     return serviceToken;
   }
 
-
-  public void setServiceToken(LinkProtocolServiceToken serviceToken) {
+  public void setServiceToken(@javax.annotation.Nullable LinkProtocolServiceToken serviceToken) {
     this.serviceToken = serviceToken;
   }
 
 
-  public LinkProtocolResponse changeLog(Changelog changeLog) {
-    
+  public LinkProtocolResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
@@ -614,39 +584,48 @@ public class LinkProtocolResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to LinkProtocolResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!LinkProtocolResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LinkProtocolResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!LinkProtocolResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in LinkProtocolResponse is not found in the empty JSON string", LinkProtocolResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        LinkProtocolState.validateJsonElement(jsonObj.get("state"));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        LinkProtocolRequestType.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `subInterface`
       if (jsonObj.get("subInterface") != null && !jsonObj.get("subInterface").isJsonNull()) {
-        SubInterface.validateJsonObject(jsonObj.getAsJsonObject("subInterface"));
+        SubInterface.validateJsonElement(jsonObj.get("subInterface"));
       }
       // validate the optional field `asset`
       if (jsonObj.get("asset") != null && !jsonObj.get("asset").isJsonNull()) {
-        LinkProtocolConnection.validateJsonObject(jsonObj.getAsJsonObject("asset"));
+        LinkProtocolConnection.validateJsonElement(jsonObj.get("asset"));
       }
       // validate the optional field `serviceToken`
       if (jsonObj.get("serviceToken") != null && !jsonObj.get("serviceToken").isJsonNull()) {
-        LinkProtocolServiceToken.validateJsonObject(jsonObj.getAsJsonObject("serviceToken"));
+        LinkProtocolServiceToken.validateJsonElement(jsonObj.get("serviceToken"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 
@@ -678,7 +657,12 @@ public class LinkProtocolResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -687,8 +671,9 @@ public class LinkProtocolResponse {
 
            @Override
            public LinkProtocolResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              LinkProtocolResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -716,22 +701,22 @@ public class LinkProtocolResponse {
     }
   }
 
- /**
-  * Create an instance of LinkProtocolResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LinkProtocolResponse
-  * @throws IOException if the JSON string is invalid with respect to LinkProtocolResponse
-  */
+  /**
+   * Create an instance of LinkProtocolResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LinkProtocolResponse
+   * @throws IOException if the JSON string is invalid with respect to LinkProtocolResponse
+   */
   public static LinkProtocolResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LinkProtocolResponse.class);
   }
 
- /**
-  * Convert an instance of LinkProtocolResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LinkProtocolResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

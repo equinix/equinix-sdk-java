@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ServiceTokenSide;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,13 +35,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -49,7 +51,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Service Token Connection Type Information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceTokenConnection {
   /**
    * Type of Connection
@@ -108,48 +110,61 @@ public class ServiceTokenConnection {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_ALLOW_REMOTE_CONNECTION = "allowRemoteConnection";
   @SerializedName(SERIALIZED_NAME_ALLOW_REMOTE_CONNECTION)
+  @javax.annotation.Nullable
   private Boolean allowRemoteConnection = false;
 
   public static final String SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH = "allowCustomBandwidth";
   @SerializedName(SERIALIZED_NAME_ALLOW_CUSTOM_BANDWIDTH)
+  @javax.annotation.Nullable
   private Boolean allowCustomBandwidth = false;
 
   public static final String SERIALIZED_NAME_BANDWIDTH_LIMIT = "bandwidthLimit";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH_LIMIT)
+  @javax.annotation.Nullable
   private Integer bandwidthLimit;
 
   public static final String SERIALIZED_NAME_SUPPORTED_BANDWIDTHS = "supportedBandwidths";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_BANDWIDTHS)
+  @javax.annotation.Nullable
   private List<Integer> supportedBandwidths = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_A_SIDE = "aSide";
   @SerializedName(SERIALIZED_NAME_A_SIDE)
+  @javax.annotation.Nullable
   private ServiceTokenSide aSide;
 
   public static final String SERIALIZED_NAME_Z_SIDE = "zSide";
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
+  @javax.annotation.Nullable
   private ServiceTokenSide zSide;
 
   public ServiceTokenConnection() {
   }
 
-  
   public ServiceTokenConnection(
      URI href
   ) {
@@ -157,133 +172,115 @@ public class ServiceTokenConnection {
     this.href = href;
   }
 
-  public ServiceTokenConnection type(TypeEnum type) {
-    
+  public ServiceTokenConnection type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of Connection
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-   /**
+  /**
    * An absolute URL that is the subject of the link&#39;s context.
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public ServiceTokenConnection uuid(UUID uuid) {
-    
+  public ServiceTokenConnection uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned connection identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public ServiceTokenConnection allowRemoteConnection(Boolean allowRemoteConnection) {
-    
+  public ServiceTokenConnection allowRemoteConnection(@javax.annotation.Nullable Boolean allowRemoteConnection) {
     this.allowRemoteConnection = allowRemoteConnection;
     return this;
   }
 
-   /**
+  /**
    * Authorization to connect remotely
    * @return allowRemoteConnection
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowRemoteConnection() {
     return allowRemoteConnection;
   }
 
-
-  public void setAllowRemoteConnection(Boolean allowRemoteConnection) {
+  public void setAllowRemoteConnection(@javax.annotation.Nullable Boolean allowRemoteConnection) {
     this.allowRemoteConnection = allowRemoteConnection;
   }
 
 
-  public ServiceTokenConnection allowCustomBandwidth(Boolean allowCustomBandwidth) {
-    
+  public ServiceTokenConnection allowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
     return this;
   }
 
-   /**
+  /**
    * Allow custom bandwidth value
    * @return allowCustomBandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getAllowCustomBandwidth() {
     return allowCustomBandwidth;
   }
 
-
-  public void setAllowCustomBandwidth(Boolean allowCustomBandwidth) {
+  public void setAllowCustomBandwidth(@javax.annotation.Nullable Boolean allowCustomBandwidth) {
     this.allowCustomBandwidth = allowCustomBandwidth;
   }
 
 
-  public ServiceTokenConnection bandwidthLimit(Integer bandwidthLimit) {
-    
+  public ServiceTokenConnection bandwidthLimit(@javax.annotation.Nullable Integer bandwidthLimit) {
     this.bandwidthLimit = bandwidthLimit;
     return this;
   }
 
-   /**
+  /**
    * Connection bandwidth limit in Mbps
    * minimum: 0
    * maximum: 100000
    * @return bandwidthLimit
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBandwidthLimit() {
     return bandwidthLimit;
   }
 
-
-  public void setBandwidthLimit(Integer bandwidthLimit) {
+  public void setBandwidthLimit(@javax.annotation.Nullable Integer bandwidthLimit) {
     this.bandwidthLimit = bandwidthLimit;
   }
 
 
-  public ServiceTokenConnection supportedBandwidths(List<Integer> supportedBandwidths) {
-    
+  public ServiceTokenConnection supportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
     return this;
   }
@@ -296,62 +293,54 @@ public class ServiceTokenConnection {
     return this;
   }
 
-   /**
+  /**
    * List of permitted bandwidths.
    * @return supportedBandwidths
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Integer> getSupportedBandwidths() {
     return supportedBandwidths;
   }
 
-
-  public void setSupportedBandwidths(List<Integer> supportedBandwidths) {
+  public void setSupportedBandwidths(@javax.annotation.Nullable List<Integer> supportedBandwidths) {
     this.supportedBandwidths = supportedBandwidths;
   }
 
 
-  public ServiceTokenConnection aSide(ServiceTokenSide aSide) {
-    
+  public ServiceTokenConnection aSide(@javax.annotation.Nullable ServiceTokenSide aSide) {
     this.aSide = aSide;
     return this;
   }
 
-   /**
+  /**
    * Get aSide
    * @return aSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceTokenSide getaSide() {
     return aSide;
   }
 
-
-  public void setaSide(ServiceTokenSide aSide) {
+  public void setaSide(@javax.annotation.Nullable ServiceTokenSide aSide) {
     this.aSide = aSide;
   }
 
 
-  public ServiceTokenConnection zSide(ServiceTokenSide zSide) {
-    
+  public ServiceTokenConnection zSide(@javax.annotation.Nullable ServiceTokenSide zSide) {
     this.zSide = zSide;
     return this;
   }
 
-   /**
+  /**
    * Get zSide
    * @return zSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceTokenSide getzSide() {
     return zSide;
   }
 
-
-  public void setzSide(ServiceTokenSide zSide) {
+  public void setzSide(@javax.annotation.Nullable ServiceTokenSide zSide) {
     this.zSide = zSide;
   }
 
@@ -477,20 +466,25 @@ public class ServiceTokenConnection {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceTokenConnection
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceTokenConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceTokenConnection
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceTokenConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceTokenConnection is not found in the empty JSON string", ServiceTokenConnection.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
@@ -499,16 +493,16 @@ public class ServiceTokenConnection {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonArray()) {
+      if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
       }
       // validate the optional field `aSide`
       if (jsonObj.get("aSide") != null && !jsonObj.get("aSide").isJsonNull()) {
-        ServiceTokenSide.validateJsonObject(jsonObj.getAsJsonObject("aSide"));
+        ServiceTokenSide.validateJsonElement(jsonObj.get("aSide"));
       }
       // validate the optional field `zSide`
       if (jsonObj.get("zSide") != null && !jsonObj.get("zSide").isJsonNull()) {
-        ServiceTokenSide.validateJsonObject(jsonObj.getAsJsonObject("zSide"));
+        ServiceTokenSide.validateJsonElement(jsonObj.get("zSide"));
       }
   }
 
@@ -540,7 +534,12 @@ public class ServiceTokenConnection {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -549,8 +548,9 @@ public class ServiceTokenConnection {
 
            @Override
            public ServiceTokenConnection read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceTokenConnection instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -578,22 +578,22 @@ public class ServiceTokenConnection {
     }
   }
 
- /**
-  * Create an instance of ServiceTokenConnection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceTokenConnection
-  * @throws IOException if the JSON string is invalid with respect to ServiceTokenConnection
-  */
+  /**
+   * Create an instance of ServiceTokenConnection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceTokenConnection
+   * @throws IOException if the JSON string is invalid with respect to ServiceTokenConnection
+   */
   public static ServiceTokenConnection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceTokenConnection.class);
   }
 
- /**
-  * Convert an instance of ServiceTokenConnection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceTokenConnection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

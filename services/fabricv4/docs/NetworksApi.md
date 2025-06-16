@@ -14,7 +14,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateNetworkByUuid**](NetworksApi.md#updateNetworkByUuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID |
 
 
-<a name="createNetwork"></a>
+<a id="createNetwork"></a>
 # **createNetwork**
 > Network createNetwork(networkPostRequest, dryRun)
 
@@ -89,7 +89,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteNetworkByUuid"></a>
+<a id="deleteNetworkByUuid"></a>
 # **deleteNetworkByUuid**
 > Network deleteNetworkByUuid(networkId)
 
@@ -160,7 +160,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="getConnectionsByNetworkUuid"></a>
+<a id="getConnectionsByNetworkUuid"></a>
 # **getConnectionsByNetworkUuid**
 > NetworkConnections getConnectionsByNetworkUuid(networkId)
 
@@ -231,7 +231,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **415** | Unsupported Media Type |  -  |
 
-<a name="getNetworkByUuid"></a>
+<a id="getNetworkByUuid"></a>
 # **getNetworkByUuid**
 > Network getNetworkByUuid(networkId)
 
@@ -301,7 +301,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="getNetworkChangeByUuid"></a>
+<a id="getNetworkChangeByUuid"></a>
 # **getNetworkChangeByUuid**
 > NetworkChange getNetworkChangeByUuid(networkId, changeId)
 
@@ -374,7 +374,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="getNetworkChanges"></a>
+<a id="getNetworkChanges"></a>
 # **getNetworkChanges**
 > NetworkChangeResponse getNetworkChanges(networkId)
 
@@ -445,7 +445,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **415** | Unsupported Media Type |  -  |
 
-<a name="searchNetworks"></a>
+<a id="searchNetworks"></a>
 # **searchNetworks**
 > NetworkSearchResponse searchNetworks(networkSearchRequest)
 
@@ -516,7 +516,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **415** | Unsupported Media Type |  -  |
 
-<a name="updateNetworkByUuid"></a>
+<a id="updateNetworkByUuid"></a>
 # **updateNetworkByUuid**
 > Network updateNetworkByUuid(networkId, networkChangeOperation)
 

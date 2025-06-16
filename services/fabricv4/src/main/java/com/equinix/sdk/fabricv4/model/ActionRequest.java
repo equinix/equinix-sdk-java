@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.AWSPermission;
 import com.equinix.sdk.fabricv4.model.GCPPermission;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
@@ -22,8 +21,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -52,11 +53,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ActionRequest extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ActionRequest.class.getName());
 
@@ -81,25 +83,23 @@ public class ActionRequest extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `AWSPermission`
                     if (value.getActualInstance() instanceof AWSPermission) {
-                        JsonObject obj = adapterAWSPermission.toJsonTree((AWSPermission)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterAWSPermission.toJsonTree((AWSPermission)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     // check if the actual instance is of the type `GCPPermission`
                     if (value.getActualInstance() instanceof GCPPermission) {
-                        JsonObject obj = adapterGCPPermission.toJsonTree((GCPPermission)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterGCPPermission.toJsonTree((GCPPermission)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AWSPermission, GCPPermission");
                 }
 
                 @Override
                 public ActionRequest read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
@@ -108,7 +108,7 @@ public class ActionRequest extends AbstractOpenApiSchema {
                     // deserialize AWSPermission
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        AWSPermission.validateJsonObject(jsonObject);
+                        AWSPermission.validateJsonElement(jsonElement);
                         actualAdapter = adapterAWSPermission;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'AWSPermission'");
@@ -117,11 +117,10 @@ public class ActionRequest extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AWSPermission'", e);
                     }
-
                     // deserialize GCPPermission
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        GCPPermission.validateJsonObject(jsonObject);
+                        GCPPermission.validateJsonElement(jsonElement);
                         actualAdapter = adapterGCPPermission;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'GCPPermission'");
@@ -133,42 +132,35 @@ public class ActionRequest extends AbstractOpenApiSchema {
 
                     if (match == 1) {
                         ActionRequest ret = new ActionRequest();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ActionRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ActionRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public ActionRequest() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public ActionRequest(AWSPermission o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public ActionRequest(GCPPermission o) {
+    public ActionRequest(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("AWSPermission", new GenericType<AWSPermission>() {
-        });
-        schemas.put("GCPPermission", new GenericType<GCPPermission>() {
-        });
+        schemas.put("AWSPermission", AWSPermission.class);
+        schemas.put("GCPPermission", GCPPermission.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return ActionRequest.schemas;
     }
 
@@ -178,7 +170,6 @@ public class ActionRequest extends AbstractOpenApiSchema {
      * AWSPermission, GCPPermission
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -201,6 +192,7 @@ public class ActionRequest extends AbstractOpenApiSchema {
      *
      * @return The actual instance (AWSPermission, GCPPermission)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -228,56 +220,55 @@ public class ActionRequest extends AbstractOpenApiSchema {
         return (GCPPermission)super.getActualInstance();
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ActionRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with AWSPermission
-    try {
-      AWSPermission.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to ActionRequest
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with AWSPermission
+        try {
+            AWSPermission.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with GCPPermission
+        try {
+            GCPPermission.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for ActionRequest with oneOf schemas: AWSPermission, GCPPermission. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with GCPPermission
-    try {
-      GCPPermission.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ActionRequest with oneOf schemas: AWSPermission, GCPPermission. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of ActionRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ActionRequest
-  * @throws IOException if the JSON string is invalid with respect to ActionRequest
-  */
-  public static ActionRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ActionRequest.class);
-  }
+    /**
+     * Create an instance of ActionRequest given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of ActionRequest
+     * @throws IOException if the JSON string is invalid with respect to ActionRequest
+     */
+    public static ActionRequest fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, ActionRequest.class);
+    }
 
- /**
-  * Convert an instance of ActionRequest to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of ActionRequest to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

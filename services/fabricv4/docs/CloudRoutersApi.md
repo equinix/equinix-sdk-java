@@ -25,7 +25,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateCloudRouterByUuid**](CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers |
 
 
-<a name="createCloudRouter"></a>
+<a id="createCloudRouter"></a>
 # **createCloudRouter**
 > CloudRouter createCloudRouter(cloudRouterPostRequest, dryRun)
 
@@ -99,7 +99,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createCloudRouterAction"></a>
+<a id="createCloudRouterAction"></a>
 # **createCloudRouterAction**
 > CloudRouterActionResponse createCloudRouterAction(routerId, cloudRouterActionRequest)
 
@@ -174,7 +174,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createCloudRouterCommand"></a>
+<a id="createCloudRouterCommand"></a>
 # **createCloudRouterCommand**
 > CloudRouterCommand createCloudRouterCommand(routerId, cloudRouterCommandPostRequest)
 
@@ -249,7 +249,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteCloudRouterByUuid"></a>
+<a id="deleteCloudRouterByUuid"></a>
 # **deleteCloudRouterByUuid**
 > deleteCloudRouterByUuid(routerId)
 
@@ -320,7 +320,7 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteCloudRouterCommandByUuid"></a>
+<a id="deleteCloudRouterCommandByUuid"></a>
 # **deleteCloudRouterCommandByUuid**
 > deleteCloudRouterCommandByUuid(routerId, commandId)
 
@@ -393,7 +393,7 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getAllCloudRouterCommands"></a>
+<a id="getAllCloudRouterCommands"></a>
 # **getAllCloudRouterCommands**
 > GetAllCloudRouterCommands getAllCloudRouterCommands(routerId)
 
@@ -466,7 +466,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterActions"></a>
+<a id="getCloudRouterActions"></a>
 # **getCloudRouterActions**
 > CloudRouterActionResponse getCloudRouterActions(routerId, state)
 
@@ -541,7 +541,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterActionsByUuid"></a>
+<a id="getCloudRouterActionsByUuid"></a>
 # **getCloudRouterActionsByUuid**
 > CloudRouterActionResponse getCloudRouterActionsByUuid(routerId, actionId, state)
 
@@ -618,7 +618,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterByUuid"></a>
+<a id="getCloudRouterByUuid"></a>
 # **getCloudRouterByUuid**
 > CloudRouter getCloudRouterByUuid(routerId)
 
@@ -689,7 +689,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterCommand"></a>
+<a id="getCloudRouterCommand"></a>
 # **getCloudRouterCommand**
 > CloudRouterCommand getCloudRouterCommand(routerId, commandId)
 
@@ -764,7 +764,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterPackageByCode"></a>
+<a id="getCloudRouterPackageByCode"></a>
 # **getCloudRouterPackageByCode**
 > CloudRouterPackage getCloudRouterPackageByCode(routerPackageCode)
 
@@ -836,7 +836,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudRouterPackages"></a>
+<a id="getCloudRouterPackages"></a>
 # **getCloudRouterPackages**
 > PackageResponse getCloudRouterPackages(offset, limit)
 
@@ -909,7 +909,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchCloudRouterCommands"></a>
+<a id="searchCloudRouterCommands"></a>
 # **searchCloudRouterCommands**
 > CloudRouterCommandSearchResponse searchCloudRouterCommands(routerId, cloudRouterCommandSearchRequest)
 
@@ -984,7 +984,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchCloudRouterRoutes"></a>
+<a id="searchCloudRouterRoutes"></a>
 # **searchCloudRouterRoutes**
 > RouteTableEntrySearchResponse searchCloudRouterRoutes(routerId, routeTableEntrySearchRequest)
 
@@ -1059,7 +1059,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchCloudRouters"></a>
+<a id="searchCloudRouters"></a>
 # **searchCloudRouters**
 > SearchResponse searchCloudRouters(cloudRouterSearchRequest)
 
@@ -1131,7 +1131,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchConnectionAdvertisedRoutes"></a>
+<a id="searchConnectionAdvertisedRoutes"></a>
 # **searchConnectionAdvertisedRoutes**
 > ConnectionRouteTableEntrySearchResponse searchConnectionAdvertisedRoutes(connectionId, connectionRouteSearchRequest)
 
@@ -1204,7 +1204,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="searchConnectionReceivedRoutes"></a>
+<a id="searchConnectionReceivedRoutes"></a>
 # **searchConnectionReceivedRoutes**
 > ConnectionRouteTableEntrySearchResponse searchConnectionReceivedRoutes(connectionId, connectionRouteSearchRequest)
 
@@ -1277,7 +1277,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="searchRouterActions"></a>
+<a id="searchRouterActions"></a>
 # **searchRouterActions**
 > CloudRouterActionsSearchResponse searchRouterActions(routerId, cloudRouterActionsSearchRequest)
 
@@ -1352,7 +1352,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateCloudRouterByUuid"></a>
+<a id="updateCloudRouterByUuid"></a>
 # **updateCloudRouterByUuid**
 > CloudRouter updateCloudRouterByUuid(routerId, cloudRouterChangeOperation)
 

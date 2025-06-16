@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,26 +47,31 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * purchase order
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortOrderPurchaseOrder {
   public static final String SERIALIZED_NAME_NUMBER = "number";
   @SerializedName(SERIALIZED_NAME_NUMBER)
+  @javax.annotation.Nullable
   private String number;
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
+  @javax.annotation.Nullable
   private String amount;
 
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
+  @javax.annotation.Nullable
   private String startDate;
 
   public static final String SERIALIZED_NAME_END_DATE = "endDate";
   @SerializedName(SERIALIZED_NAME_END_DATE)
+  @javax.annotation.Nullable
   private String endDate;
 
   public static final String SERIALIZED_NAME_ATTACHMENT_ID = "attachmentId";
   @SerializedName(SERIALIZED_NAME_ATTACHMENT_ID)
+  @javax.annotation.Nullable
   private UUID attachmentId;
 
   /**
@@ -116,10 +123,17 @@ public class PortOrderPurchaseOrder {
         return SelectionTypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SelectionTypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_SELECTION_TYPE = "selectionType";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_SELECTION_TYPE)
+  @javax.annotation.Nullable
   private SelectionTypeEnum selectionType;
 
   /**
@@ -171,167 +185,154 @@ public class PortOrderPurchaseOrder {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public PortOrderPurchaseOrder() {
   }
 
-  public PortOrderPurchaseOrder number(String number) {
-    
+  public PortOrderPurchaseOrder number(@javax.annotation.Nullable String number) {
     this.number = number;
     return this;
   }
 
-   /**
+  /**
    * purchase order number
    * @return number
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getNumber() {
     return number;
   }
 
-
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nullable String number) {
     this.number = number;
   }
 
 
-  public PortOrderPurchaseOrder amount(String amount) {
-    
+  public PortOrderPurchaseOrder amount(@javax.annotation.Nullable String amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * purchase order amount
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAmount() {
     return amount;
   }
 
-
-  public void setAmount(String amount) {
+  public void setAmount(@javax.annotation.Nullable String amount) {
     this.amount = amount;
   }
 
 
-  public PortOrderPurchaseOrder startDate(String startDate) {
-    
+  public PortOrderPurchaseOrder startDate(@javax.annotation.Nullable String startDate) {
     this.startDate = startDate;
     return this;
   }
 
-   /**
+  /**
    * Get startDate
    * @return startDate
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getStartDate() {
     return startDate;
   }
 
-
-  public void setStartDate(String startDate) {
+  public void setStartDate(@javax.annotation.Nullable String startDate) {
     this.startDate = startDate;
   }
 
 
-  public PortOrderPurchaseOrder endDate(String endDate) {
-    
+  public PortOrderPurchaseOrder endDate(@javax.annotation.Nullable String endDate) {
     this.endDate = endDate;
     return this;
   }
 
-   /**
+  /**
    * Get endDate
    * @return endDate
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEndDate() {
     return endDate;
   }
 
-
-  public void setEndDate(String endDate) {
+  public void setEndDate(@javax.annotation.Nullable String endDate) {
     this.endDate = endDate;
   }
 
 
-  public PortOrderPurchaseOrder attachmentId(UUID attachmentId) {
-    
+  public PortOrderPurchaseOrder attachmentId(@javax.annotation.Nullable UUID attachmentId) {
     this.attachmentId = attachmentId;
     return this;
   }
 
-   /**
+  /**
    * Get attachmentId
    * @return attachmentId
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getAttachmentId() {
     return attachmentId;
   }
 
-
-  public void setAttachmentId(UUID attachmentId) {
+  public void setAttachmentId(@javax.annotation.Nullable UUID attachmentId) {
     this.attachmentId = attachmentId;
   }
 
 
-  public PortOrderPurchaseOrder selectionType(SelectionTypeEnum selectionType) {
-    
+  @Deprecated
+  public PortOrderPurchaseOrder selectionType(@javax.annotation.Nullable SelectionTypeEnum selectionType) {
     this.selectionType = selectionType;
     return this;
   }
 
-   /**
+  /**
    * Get selectionType
    * @return selectionType
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public SelectionTypeEnum getSelectionType() {
     return selectionType;
   }
 
-
-  public void setSelectionType(SelectionTypeEnum selectionType) {
+  @Deprecated
+  public void setSelectionType(@javax.annotation.Nullable SelectionTypeEnum selectionType) {
     this.selectionType = selectionType;
   }
 
 
-  public PortOrderPurchaseOrder type(TypeEnum type) {
-    
+  public PortOrderPurchaseOrder type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
@@ -451,18 +452,19 @@ public class PortOrderPurchaseOrder {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortOrderPurchaseOrder
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortOrderPurchaseOrder.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortOrderPurchaseOrder
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortOrderPurchaseOrder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortOrderPurchaseOrder is not found in the empty JSON string", PortOrderPurchaseOrder.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("number") != null && !jsonObj.get("number").isJsonNull()) && !jsonObj.get("number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
       }
@@ -481,8 +483,16 @@ public class PortOrderPurchaseOrder {
       if ((jsonObj.get("selectionType") != null && !jsonObj.get("selectionType").isJsonNull()) && !jsonObj.get("selectionType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `selectionType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selectionType").toString()));
       }
+      // validate the optional field `selectionType`
+      if (jsonObj.get("selectionType") != null && !jsonObj.get("selectionType").isJsonNull()) {
+        SelectionTypeEnum.validateJsonElement(jsonObj.get("selectionType"));
+      }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
   }
 
@@ -514,7 +524,12 @@ public class PortOrderPurchaseOrder {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -523,8 +538,9 @@ public class PortOrderPurchaseOrder {
 
            @Override
            public PortOrderPurchaseOrder read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortOrderPurchaseOrder instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -552,22 +568,22 @@ public class PortOrderPurchaseOrder {
     }
   }
 
- /**
-  * Create an instance of PortOrderPurchaseOrder given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortOrderPurchaseOrder
-  * @throws IOException if the JSON string is invalid with respect to PortOrderPurchaseOrder
-  */
+  /**
+   * Create an instance of PortOrderPurchaseOrder given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortOrderPurchaseOrder
+   * @throws IOException if the JSON string is invalid with respect to PortOrderPurchaseOrder
+   */
   public static PortOrderPurchaseOrder fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortOrderPurchaseOrder.class);
   }
 
- /**
-  * Convert an instance of PortOrderPurchaseOrder to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortOrderPurchaseOrder to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

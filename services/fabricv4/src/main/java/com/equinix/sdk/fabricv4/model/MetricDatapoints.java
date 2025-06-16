@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,85 +48,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * MetricDatapoints
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class MetricDatapoints {
   public static final String SERIALIZED_NAME_END_DATE_TIME = "endDateTime";
   @SerializedName(SERIALIZED_NAME_END_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime endDateTime;
 
   public static final String SERIALIZED_NAME_START_DATE_TIME = "startDateTime";
   @SerializedName(SERIALIZED_NAME_START_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime startDateTime;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private BigDecimal value;
 
   public MetricDatapoints() {
   }
 
-  public MetricDatapoints endDateTime(OffsetDateTime endDateTime) {
-    
+  public MetricDatapoints endDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
 
-   /**
+  /**
    * Datapoint end date and time
    * @return endDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getEndDateTime() {
     return endDateTime;
   }
 
-
-  public void setEndDateTime(OffsetDateTime endDateTime) {
+  public void setEndDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 
 
-  public MetricDatapoints startDateTime(OffsetDateTime startDateTime) {
-    
+  public MetricDatapoints startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
 
-   /**
+  /**
    * Datapoint start date and time
    * @return startDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
 
-
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
 
-  public MetricDatapoints value(BigDecimal value) {
-    
+  public MetricDatapoints value(@javax.annotation.Nullable BigDecimal value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Datapoint value
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
-
   public BigDecimal getValue() {
     return value;
   }
 
-
-  public void setValue(BigDecimal value) {
+  public void setValue(@javax.annotation.Nullable BigDecimal value) {
     this.value = value;
   }
 
@@ -232,18 +228,19 @@ public class MetricDatapoints {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to MetricDatapoints
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!MetricDatapoints.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetricDatapoints
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!MetricDatapoints.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in MetricDatapoints is not found in the empty JSON string", MetricDatapoints.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -274,7 +271,12 @@ public class MetricDatapoints {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -283,8 +285,9 @@ public class MetricDatapoints {
 
            @Override
            public MetricDatapoints read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              MetricDatapoints instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -312,22 +315,22 @@ public class MetricDatapoints {
     }
   }
 
- /**
-  * Create an instance of MetricDatapoints given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetricDatapoints
-  * @throws IOException if the JSON string is invalid with respect to MetricDatapoints
-  */
+  /**
+   * Create an instance of MetricDatapoints given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetricDatapoints
+   * @throws IOException if the JSON string is invalid with respect to MetricDatapoints
+   */
   public static MetricDatapoints fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetricDatapoints.class);
   }
 
- /**
-  * Convert an instance of MetricDatapoints to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetricDatapoints to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateServiceTokenByUuid**](ServiceTokensApi.md#updateServiceTokenByUuid) | **PATCH** /fabric/v4/serviceTokens/{serviceTokenId} | Update Token By ID |
 
 
-<a name="createServiceToken"></a>
+<a id="createServiceToken"></a>
 # **createServiceToken**
 > ServiceToken createServiceToken(serviceToken, dryRun)
 
@@ -86,7 +86,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="createServiceTokenAction"></a>
+<a id="createServiceTokenAction"></a>
 # **createServiceTokenAction**
 > ServiceToken createServiceTokenAction(serviceTokenId, serviceTokenActionRequest)
 
@@ -159,7 +159,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="deleteServiceTokenByUuid"></a>
+<a id="deleteServiceTokenByUuid"></a>
 # **deleteServiceTokenByUuid**
 > ServiceToken deleteServiceTokenByUuid(serviceTokenId)
 
@@ -229,7 +229,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getServiceTokenByUuid"></a>
+<a id="getServiceTokenByUuid"></a>
 # **getServiceTokenByUuid**
 > ServiceToken getServiceTokenByUuid(serviceTokenId)
 
@@ -299,7 +299,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getServiceTokens"></a>
+<a id="getServiceTokens"></a>
 # **getServiceTokens**
 > ServiceTokens getServiceTokens(offset, limit)
 
@@ -369,7 +369,7 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="searchServiceTokens"></a>
+<a id="searchServiceTokens"></a>
 # **searchServiceTokens**
 > ServiceTokens searchServiceTokens(serviceTokenSearchRequest, offset, limit)
 
@@ -444,7 +444,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateServiceTokenByUuid"></a>
+<a id="updateServiceTokenByUuid"></a>
 # **updateServiceTokenByUuid**
 > ServiceToken updateServiceTokenByUuid(serviceTokenId, serviceTokenChangeOperation, dryRun)
 

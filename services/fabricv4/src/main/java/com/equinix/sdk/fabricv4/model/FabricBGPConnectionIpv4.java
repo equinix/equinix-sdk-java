@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,59 +46,55 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Defines the structure for a BGP IPv4 connection, including customer and Equinix peering IP addresses. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricBGPConnectionIpv4 {
   public static final String SERIALIZED_NAME_CUSTOMER_IP = "customerIp";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_IP)
+  @javax.annotation.Nullable
   private String customerIp;
 
   public static final String SERIALIZED_NAME_EQUINIX_IP = "equinixIp";
   @SerializedName(SERIALIZED_NAME_EQUINIX_IP)
+  @javax.annotation.Nonnull
   private String equinixIp;
 
   public FabricBGPConnectionIpv4() {
   }
 
-  public FabricBGPConnectionIpv4 customerIp(String customerIp) {
-    
+  public FabricBGPConnectionIpv4 customerIp(@javax.annotation.Nullable String customerIp) {
     this.customerIp = customerIp;
     return this;
   }
 
-   /**
+  /**
    * Customer side peering ip
    * @return customerIp
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCustomerIp() {
     return customerIp;
   }
 
-
-  public void setCustomerIp(String customerIp) {
+  public void setCustomerIp(@javax.annotation.Nullable String customerIp) {
     this.customerIp = customerIp;
   }
 
 
-  public FabricBGPConnectionIpv4 equinixIp(String equinixIp) {
-    
+  public FabricBGPConnectionIpv4 equinixIp(@javax.annotation.Nonnull String equinixIp) {
     this.equinixIp = equinixIp;
     return this;
   }
 
-   /**
+  /**
    * Equinix side peering ip
    * @return equinixIp
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getEquinixIp() {
     return equinixIp;
   }
 
-
-  public void setEquinixIp(String equinixIp) {
+  public void setEquinixIp(@javax.annotation.Nonnull String equinixIp) {
     this.equinixIp = equinixIp;
   }
 
@@ -202,25 +200,26 @@ public class FabricBGPConnectionIpv4 {
     openapiRequiredFields.add("equinixIp");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricBGPConnectionIpv4
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FabricBGPConnectionIpv4.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricBGPConnectionIpv4
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricBGPConnectionIpv4.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FabricBGPConnectionIpv4 is not found in the empty JSON string", FabricBGPConnectionIpv4.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FabricBGPConnectionIpv4.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("customerIp") != null && !jsonObj.get("customerIp").isJsonNull()) && !jsonObj.get("customerIp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `customerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerIp").toString()));
       }
@@ -257,7 +256,12 @@ public class FabricBGPConnectionIpv4 {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -266,8 +270,9 @@ public class FabricBGPConnectionIpv4 {
 
            @Override
            public FabricBGPConnectionIpv4 read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FabricBGPConnectionIpv4 instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -295,22 +300,22 @@ public class FabricBGPConnectionIpv4 {
     }
   }
 
- /**
-  * Create an instance of FabricBGPConnectionIpv4 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricBGPConnectionIpv4
-  * @throws IOException if the JSON string is invalid with respect to FabricBGPConnectionIpv4
-  */
+  /**
+   * Create an instance of FabricBGPConnectionIpv4 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricBGPConnectionIpv4
+   * @throws IOException if the JSON string is invalid with respect to FabricBGPConnectionIpv4
+   */
   public static FabricBGPConnectionIpv4 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FabricBGPConnectionIpv4.class);
   }
 
- /**
-  * Convert an instance of FabricBGPConnectionIpv4 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FabricBGPConnectionIpv4 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceASide;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceConnectionType;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceZSide;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,138 +50,128 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Virtual Connection Product configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class VirtualConnectionPrice {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceConnectionType type;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nullable
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_A_SIDE = "aSide";
   @SerializedName(SERIALIZED_NAME_A_SIDE)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceASide aSide;
 
   public static final String SERIALIZED_NAME_Z_SIDE = "zSide";
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
+  @javax.annotation.Nullable
   private VirtualConnectionPriceZSide zSide;
 
   public VirtualConnectionPrice() {
   }
 
-  public VirtualConnectionPrice uuid(UUID uuid) {
-    
+  public VirtualConnectionPrice uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Either uuid or rest of attributes are required
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public VirtualConnectionPrice type(VirtualConnectionPriceConnectionType type) {
-    
+  public VirtualConnectionPrice type(@javax.annotation.Nullable VirtualConnectionPriceConnectionType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceConnectionType getType() {
     return type;
   }
 
-
-  public void setType(VirtualConnectionPriceConnectionType type) {
+  public void setType(@javax.annotation.Nullable VirtualConnectionPriceConnectionType type) {
     this.type = type;
   }
 
 
-  public VirtualConnectionPrice bandwidth(Integer bandwidth) {
-    
+  public VirtualConnectionPrice bandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Get bandwidth
    * minimum: 0
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public VirtualConnectionPrice aSide(VirtualConnectionPriceASide aSide) {
-    
+  public VirtualConnectionPrice aSide(@javax.annotation.Nullable VirtualConnectionPriceASide aSide) {
     this.aSide = aSide;
     return this;
   }
 
-   /**
+  /**
    * Get aSide
    * @return aSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceASide getaSide() {
     return aSide;
   }
 
-
-  public void setaSide(VirtualConnectionPriceASide aSide) {
+  public void setaSide(@javax.annotation.Nullable VirtualConnectionPriceASide aSide) {
     this.aSide = aSide;
   }
 
 
-  public VirtualConnectionPrice zSide(VirtualConnectionPriceZSide zSide) {
-    
+  public VirtualConnectionPrice zSide(@javax.annotation.Nullable VirtualConnectionPriceZSide zSide) {
     this.zSide = zSide;
     return this;
   }
 
-   /**
+  /**
    * Get zSide
    * @return zSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPriceZSide getzSide() {
     return zSide;
   }
 
-
-  public void setzSide(VirtualConnectionPriceZSide zSide) {
+  public void setzSide(@javax.annotation.Nullable VirtualConnectionPriceZSide zSide) {
     this.zSide = zSide;
   }
 
@@ -293,28 +285,33 @@ public class VirtualConnectionPrice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to VirtualConnectionPrice
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!VirtualConnectionPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VirtualConnectionPrice
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VirtualConnectionPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in VirtualConnectionPrice is not found in the empty JSON string", VirtualConnectionPrice.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        VirtualConnectionPriceConnectionType.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `aSide`
       if (jsonObj.get("aSide") != null && !jsonObj.get("aSide").isJsonNull()) {
-        VirtualConnectionPriceASide.validateJsonObject(jsonObj.getAsJsonObject("aSide"));
+        VirtualConnectionPriceASide.validateJsonElement(jsonObj.get("aSide"));
       }
       // validate the optional field `zSide`
       if (jsonObj.get("zSide") != null && !jsonObj.get("zSide").isJsonNull()) {
-        VirtualConnectionPriceZSide.validateJsonObject(jsonObj.getAsJsonObject("zSide"));
+        VirtualConnectionPriceZSide.validateJsonElement(jsonObj.get("zSide"));
       }
   }
 
@@ -346,7 +343,12 @@ public class VirtualConnectionPrice {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -355,8 +357,9 @@ public class VirtualConnectionPrice {
 
            @Override
            public VirtualConnectionPrice read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              VirtualConnectionPrice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -384,22 +387,22 @@ public class VirtualConnectionPrice {
     }
   }
 
- /**
-  * Create an instance of VirtualConnectionPrice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VirtualConnectionPrice
-  * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPrice
-  */
+  /**
+   * Create an instance of VirtualConnectionPrice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VirtualConnectionPrice
+   * @throws IOException if the JSON string is invalid with respect to VirtualConnectionPrice
+   */
   public static VirtualConnectionPrice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VirtualConnectionPrice.class);
   }
 
- /**
-  * Convert an instance of VirtualConnectionPrice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VirtualConnectionPrice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

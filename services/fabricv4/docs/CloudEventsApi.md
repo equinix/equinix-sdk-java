@@ -9,7 +9,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**searchCloudEvents**](CloudEventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events |
 
 
-<a name="getCloudEvent"></a>
+<a id="getCloudEvent"></a>
 # **getCloudEvent**
 > CloudEvent getCloudEvent(cloudEventId)
 
@@ -80,7 +80,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getCloudEventByAssetId"></a>
+<a id="getCloudEventByAssetId"></a>
 # **getCloudEventByAssetId**
 > GetCloudEventsByAssetResponse getCloudEventByAssetId(asset, assetId, fromDateTime, toDateTime, offset, limit)
 
@@ -161,7 +161,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchCloudEvents"></a>
+<a id="searchCloudEvents"></a>
 # **searchCloudEvents**
 > GetCloudEventsByAssetResponse searchCloudEvents(cloudEventSearchRequest)
 

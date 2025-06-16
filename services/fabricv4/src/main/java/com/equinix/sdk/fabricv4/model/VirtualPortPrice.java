@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ConnectivitySource;
 import com.equinix.sdk.fabricv4.model.LinkAggregationGroup;
 import com.equinix.sdk.fabricv4.model.VirtualPortConfiguration;
@@ -26,6 +25,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,267 +54,247 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Preferences and settings for a virtual port connected to an internet service provider (ISP) or other Equinix platform entity.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class VirtualPortPrice {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private VirtualPortType type;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private VirtualPortLocation location;
 
   public static final String SERIALIZED_NAME_LAG = "lag";
   @SerializedName(SERIALIZED_NAME_LAG)
+  @javax.annotation.Nullable
   private LinkAggregationGroup lag;
 
   public static final String SERIALIZED_NAME_PHYSICAL_PORTS_QUANTITY = "physicalPortsQuantity";
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS_QUANTITY)
+  @javax.annotation.Nullable
   private Integer physicalPortsQuantity = 1;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nullable
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_REDUNDANCY = "redundancy";
   @SerializedName(SERIALIZED_NAME_REDUNDANCY)
+  @javax.annotation.Nullable
   private VirtualPortRedundancy redundancy;
 
   public static final String SERIALIZED_NAME_CONNECTIVITY_SOURCE = "connectivitySource";
   @SerializedName(SERIALIZED_NAME_CONNECTIVITY_SOURCE)
+  @javax.annotation.Nullable
   private ConnectivitySource connectivitySource;
 
   public static final String SERIALIZED_NAME_SERVICE_TYPE = "serviceType";
   @SerializedName(SERIALIZED_NAME_SERVICE_TYPE)
+  @javax.annotation.Nullable
   private VirtualPortServiceType serviceType = VirtualPortServiceType.MSP;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nullable
   private VirtualPortConfiguration settings;
 
   public VirtualPortPrice() {
   }
 
-  public VirtualPortPrice uuid(UUID uuid) {
-    
+  public VirtualPortPrice uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier assigned to the virtual port. Either the uuid or the remaining attributes must be supplied.
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public VirtualPortPrice type(VirtualPortType type) {
-    
+  public VirtualPortPrice type(@javax.annotation.Nullable VirtualPortType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortType getType() {
     return type;
   }
 
-
-  public void setType(VirtualPortType type) {
+  public void setType(@javax.annotation.Nullable VirtualPortType type) {
     this.type = type;
   }
 
 
-  public VirtualPortPrice location(VirtualPortLocation location) {
-    
+  public VirtualPortPrice location(@javax.annotation.Nullable VirtualPortLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(VirtualPortLocation location) {
+  public void setLocation(@javax.annotation.Nullable VirtualPortLocation location) {
     this.location = location;
   }
 
 
-  public VirtualPortPrice lag(LinkAggregationGroup lag) {
-    
+  public VirtualPortPrice lag(@javax.annotation.Nullable LinkAggregationGroup lag) {
     this.lag = lag;
     return this;
   }
 
-   /**
+  /**
    * Get lag
    * @return lag
-  **/
+   */
   @javax.annotation.Nullable
-
   public LinkAggregationGroup getLag() {
     return lag;
   }
 
-
-  public void setLag(LinkAggregationGroup lag) {
+  public void setLag(@javax.annotation.Nullable LinkAggregationGroup lag) {
     this.lag = lag;
   }
 
 
-  public VirtualPortPrice physicalPortsQuantity(Integer physicalPortsQuantity) {
-    
+  public VirtualPortPrice physicalPortsQuantity(@javax.annotation.Nullable Integer physicalPortsQuantity) {
     this.physicalPortsQuantity = physicalPortsQuantity;
     return this;
   }
 
-   /**
+  /**
    * Number of physical ports requested. The defaults is 1.
    * @return physicalPortsQuantity
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getPhysicalPortsQuantity() {
     return physicalPortsQuantity;
   }
 
-
-  public void setPhysicalPortsQuantity(Integer physicalPortsQuantity) {
+  public void setPhysicalPortsQuantity(@javax.annotation.Nullable Integer physicalPortsQuantity) {
     this.physicalPortsQuantity = physicalPortsQuantity;
   }
 
 
-  public VirtualPortPrice bandwidth(Integer bandwidth) {
-    
+  public VirtualPortPrice bandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Aggregated data transfer capacity,  expressed as follows &lt;br&gt; -&gt; Mbps, megabits (1 million bits) per second &lt;br&gt; -&gt; Gbps, gigabits (1 billion bits) per second &lt;br&gt; Bandwidth must be divisible by physicalPortsQuantity.
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public VirtualPortPrice redundancy(VirtualPortRedundancy redundancy) {
-    
+  public VirtualPortPrice redundancy(@javax.annotation.Nullable VirtualPortRedundancy redundancy) {
     this.redundancy = redundancy;
     return this;
   }
 
-   /**
+  /**
    * Get redundancy
    * @return redundancy
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortRedundancy getRedundancy() {
     return redundancy;
   }
 
-
-  public void setRedundancy(VirtualPortRedundancy redundancy) {
+  public void setRedundancy(@javax.annotation.Nullable VirtualPortRedundancy redundancy) {
     this.redundancy = redundancy;
   }
 
 
-  public VirtualPortPrice connectivitySource(ConnectivitySource connectivitySource) {
-    
+  public VirtualPortPrice connectivitySource(@javax.annotation.Nullable ConnectivitySource connectivitySource) {
     this.connectivitySource = connectivitySource;
     return this;
   }
 
-   /**
+  /**
    * Get connectivitySource
    * @return connectivitySource
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectivitySource getConnectivitySource() {
     return connectivitySource;
   }
 
-
-  public void setConnectivitySource(ConnectivitySource connectivitySource) {
+  public void setConnectivitySource(@javax.annotation.Nullable ConnectivitySource connectivitySource) {
     this.connectivitySource = connectivitySource;
   }
 
 
-  public VirtualPortPrice serviceType(VirtualPortServiceType serviceType) {
-    
+  public VirtualPortPrice serviceType(@javax.annotation.Nullable VirtualPortServiceType serviceType) {
     this.serviceType = serviceType;
     return this;
   }
 
-   /**
+  /**
    * Get serviceType
    * @return serviceType
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortServiceType getServiceType() {
     return serviceType;
   }
 
-
-  public void setServiceType(VirtualPortServiceType serviceType) {
+  public void setServiceType(@javax.annotation.Nullable VirtualPortServiceType serviceType) {
     this.serviceType = serviceType;
   }
 
 
-  public VirtualPortPrice settings(VirtualPortConfiguration settings) {
-    
+  public VirtualPortPrice settings(@javax.annotation.Nullable VirtualPortConfiguration settings) {
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortConfiguration getSettings() {
     return settings;
   }
 
-
-  public void setSettings(VirtualPortConfiguration settings) {
+  public void setSettings(@javax.annotation.Nullable VirtualPortConfiguration settings) {
     this.settings = settings;
   }
 
@@ -441,40 +423,49 @@ public class VirtualPortPrice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to VirtualPortPrice
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!VirtualPortPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VirtualPortPrice
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VirtualPortPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in VirtualPortPrice is not found in the empty JSON string", VirtualPortPrice.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        VirtualPortType.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        VirtualPortLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        VirtualPortLocation.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `lag`
       if (jsonObj.get("lag") != null && !jsonObj.get("lag").isJsonNull()) {
-        LinkAggregationGroup.validateJsonObject(jsonObj.getAsJsonObject("lag"));
+        LinkAggregationGroup.validateJsonElement(jsonObj.get("lag"));
       }
       // validate the optional field `redundancy`
       if (jsonObj.get("redundancy") != null && !jsonObj.get("redundancy").isJsonNull()) {
-        VirtualPortRedundancy.validateJsonObject(jsonObj.getAsJsonObject("redundancy"));
+        VirtualPortRedundancy.validateJsonElement(jsonObj.get("redundancy"));
       }
       // validate the optional field `connectivitySource`
       if (jsonObj.get("connectivitySource") != null && !jsonObj.get("connectivitySource").isJsonNull()) {
-        ConnectivitySource.validateJsonObject(jsonObj.getAsJsonObject("connectivitySource"));
+        ConnectivitySource.validateJsonElement(jsonObj.get("connectivitySource"));
+      }
+      // validate the optional field `serviceType`
+      if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
+        VirtualPortServiceType.validateJsonElement(jsonObj.get("serviceType"));
       }
       // validate the optional field `settings`
       if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        VirtualPortConfiguration.validateJsonObject(jsonObj.getAsJsonObject("settings"));
+        VirtualPortConfiguration.validateJsonElement(jsonObj.get("settings"));
       }
   }
 
@@ -506,7 +497,12 @@ public class VirtualPortPrice {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -515,8 +511,9 @@ public class VirtualPortPrice {
 
            @Override
            public VirtualPortPrice read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              VirtualPortPrice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -544,22 +541,22 @@ public class VirtualPortPrice {
     }
   }
 
- /**
-  * Create an instance of VirtualPortPrice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VirtualPortPrice
-  * @throws IOException if the JSON string is invalid with respect to VirtualPortPrice
-  */
+  /**
+   * Create an instance of VirtualPortPrice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VirtualPortPrice
+   * @throws IOException if the JSON string is invalid with respect to VirtualPortPrice
+   */
   public static VirtualPortPrice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VirtualPortPrice.class);
   }
 
- /**
-  * Convert an instance of VirtualPortPrice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VirtualPortPrice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

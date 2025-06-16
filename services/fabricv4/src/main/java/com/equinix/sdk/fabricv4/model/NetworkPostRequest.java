@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.NetworkScope;
 import com.equinix.sdk.fabricv4.model.NetworkType;
 import com.equinix.sdk.fabricv4.model.Project;
@@ -25,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -37,13 +37,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -51,168 +53,159 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create Network
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class NetworkPostRequest {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private NetworkType type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nonnull
   private NetworkScope scope;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocation location;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nonnull
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public NetworkPostRequest() {
   }
 
-  public NetworkPostRequest type(NetworkType type) {
-    
+  public NetworkPostRequest type(@javax.annotation.Nonnull NetworkType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public NetworkType getType() {
     return type;
   }
 
-
-  public void setType(NetworkType type) {
+  public void setType(@javax.annotation.Nonnull NetworkType type) {
     this.type = type;
   }
 
 
-  public NetworkPostRequest name(String name) {
-    
+  public NetworkPostRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided network name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NetworkPostRequest scope(NetworkScope scope) {
-    
+  public NetworkPostRequest scope(@javax.annotation.Nonnull NetworkScope scope) {
     this.scope = scope;
     return this;
   }
 
-   /**
+  /**
    * Get scope
    * @return scope
-  **/
+   */
   @javax.annotation.Nonnull
-
   public NetworkScope getScope() {
     return scope;
   }
 
-
-  public void setScope(NetworkScope scope) {
+  public void setScope(@javax.annotation.Nonnull NetworkScope scope) {
     this.scope = scope;
   }
 
 
-  public NetworkPostRequest location(SimplifiedLocation location) {
-    
+  public NetworkPostRequest location(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocation location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
   }
 
 
-  public NetworkPostRequest project(Project project) {
-    
+  public NetworkPostRequest project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public NetworkPostRequest notifications(List<SimplifiedNotification> notifications) {
-    
+  public NetworkPostRequest notifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
 
   public NetworkPostRequest addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
     this.notifications.add(notificationsItem);
     return this;
   }
 
-   /**
+  /**
    * Preferences for notifications on network configuration or status changes
    * @return notifications
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
@@ -333,35 +326,40 @@ public class NetworkPostRequest {
     openapiRequiredFields.add("notifications");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NetworkPostRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!NetworkPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NetworkPostRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!NetworkPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkPostRequest is not found in the empty JSON string", NetworkPostRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : NetworkPostRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      NetworkType.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      // validate the required field `scope`
+      NetworkScope.validateJsonElement(jsonObj.get("scope"));
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
       // ensure the json data is an array
       if (!jsonObj.get("notifications").isJsonArray()) {
@@ -371,7 +369,7 @@ public class NetworkPostRequest {
       JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
       // validate the required field `notifications` (array)
       for (int i = 0; i < jsonArraynotifications.size(); i++) {
-        SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+        SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
       };
   }
 
@@ -403,7 +401,12 @@ public class NetworkPostRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -412,8 +415,9 @@ public class NetworkPostRequest {
 
            @Override
            public NetworkPostRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              NetworkPostRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -441,22 +445,22 @@ public class NetworkPostRequest {
     }
   }
 
- /**
-  * Create an instance of NetworkPostRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NetworkPostRequest
-  * @throws IOException if the JSON string is invalid with respect to NetworkPostRequest
-  */
+  /**
+   * Create an instance of NetworkPostRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NetworkPostRequest
+   * @throws IOException if the JSON string is invalid with respect to NetworkPostRequest
+   */
   public static NetworkPostRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NetworkPostRequest.class);
   }
 
- /**
-  * Convert an instance of NetworkPostRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NetworkPostRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

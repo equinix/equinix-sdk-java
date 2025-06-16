@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,85 +46,79 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Connection Invitation Details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionInvitation {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_CTR_DRAFT_ORDER_ID = "ctrDraftOrderId";
   @SerializedName(SERIALIZED_NAME_CTR_DRAFT_ORDER_ID)
+  @javax.annotation.Nullable
   private String ctrDraftOrderId;
 
   public ConnectionInvitation() {
   }
 
-  public ConnectionInvitation email(String email) {
-    
+  public ConnectionInvitation email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * invitee email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getEmail() {
     return email;
   }
 
-
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public ConnectionInvitation message(String message) {
-    
+  public ConnectionInvitation message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * invitation message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMessage() {
     return message;
   }
 
-
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public ConnectionInvitation ctrDraftOrderId(String ctrDraftOrderId) {
-    
+  public ConnectionInvitation ctrDraftOrderId(@javax.annotation.Nullable String ctrDraftOrderId) {
     this.ctrDraftOrderId = ctrDraftOrderId;
     return this;
   }
 
-   /**
+  /**
    * draft order id for invitation
    * @return ctrDraftOrderId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCtrDraftOrderId() {
     return ctrDraftOrderId;
   }
 
-
-  public void setCtrDraftOrderId(String ctrDraftOrderId) {
+  public void setCtrDraftOrderId(@javax.annotation.Nullable String ctrDraftOrderId) {
     this.ctrDraftOrderId = ctrDraftOrderId;
   }
 
@@ -230,18 +226,19 @@ public class ConnectionInvitation {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionInvitation
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionInvitation.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionInvitation
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionInvitation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionInvitation is not found in the empty JSON string", ConnectionInvitation.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
@@ -281,7 +278,12 @@ public class ConnectionInvitation {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -290,8 +292,9 @@ public class ConnectionInvitation {
 
            @Override
            public ConnectionInvitation read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionInvitation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -319,22 +322,22 @@ public class ConnectionInvitation {
     }
   }
 
- /**
-  * Create an instance of ConnectionInvitation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionInvitation
-  * @throws IOException if the JSON string is invalid with respect to ConnectionInvitation
-  */
+  /**
+   * Create an instance of ConnectionInvitation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionInvitation
+   * @throws IOException if the JSON string is invalid with respect to ConnectionInvitation
+   */
   public static ConnectionInvitation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionInvitation.class);
   }
 
- /**
-  * Convert an instance of ConnectionInvitation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionInvitation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

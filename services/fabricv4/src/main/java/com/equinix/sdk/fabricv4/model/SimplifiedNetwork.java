@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Link;
 import com.equinix.sdk.fabricv4.model.NetworkOperation;
@@ -30,6 +29,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -43,13 +43,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -57,60 +59,71 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Network specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SimplifiedNetwork {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private NetworkState state;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_CHANGE = "change";
   @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
   private SimplifiedNetworkChange change;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private NetworkOperation operation;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private List<Link> links = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private NetworkType type;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
   private NetworkScope scope;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocation location;
 
   public SimplifiedNetwork() {
   }
 
-  
   public SimplifiedNetwork(
      URI href, 
      List<Link> links
@@ -120,248 +133,214 @@ public class SimplifiedNetwork {
     this.links = links;
   }
 
-   /**
+  /**
    * Network URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public SimplifiedNetwork uuid(UUID uuid) {
-    
+  public SimplifiedNetwork uuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned network identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public SimplifiedNetwork name(String name) {
-    
+  public SimplifiedNetwork name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-assigned network name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public SimplifiedNetwork state(NetworkState state) {
-    
+  public SimplifiedNetwork state(@javax.annotation.Nullable NetworkState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkState getState() {
     return state;
   }
 
-
-  public void setState(NetworkState state) {
+  public void setState(@javax.annotation.Nullable NetworkState state) {
     this.state = state;
   }
 
 
-  public SimplifiedNetwork account(SimplifiedAccount account) {
-    
+  public SimplifiedNetwork account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public SimplifiedNetwork change(SimplifiedNetworkChange change) {
-    
+  public SimplifiedNetwork change(@javax.annotation.Nullable SimplifiedNetworkChange change) {
     this.change = change;
     return this;
   }
 
-   /**
+  /**
    * Get change
    * @return change
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedNetworkChange getChange() {
     return change;
   }
 
-
-  public void setChange(SimplifiedNetworkChange change) {
+  public void setChange(@javax.annotation.Nullable SimplifiedNetworkChange change) {
     this.change = change;
   }
 
 
-  public SimplifiedNetwork operation(NetworkOperation operation) {
-    
+  public SimplifiedNetwork operation(@javax.annotation.Nullable NetworkOperation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkOperation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(NetworkOperation operation) {
+  public void setOperation(@javax.annotation.Nullable NetworkOperation operation) {
     this.operation = operation;
   }
 
 
-  public SimplifiedNetwork changeLog(Changelog changeLog) {
-    
+  public SimplifiedNetwork changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
 
-   /**
+  /**
    * Network sub-resources links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Link> getLinks() {
     return links;
   }
 
 
 
-
-  public SimplifiedNetwork type(NetworkType type) {
-    
+  public SimplifiedNetwork type(@javax.annotation.Nullable NetworkType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkType getType() {
     return type;
   }
 
-
-  public void setType(NetworkType type) {
+  public void setType(@javax.annotation.Nullable NetworkType type) {
     this.type = type;
   }
 
 
-  public SimplifiedNetwork scope(NetworkScope scope) {
-    
+  public SimplifiedNetwork scope(@javax.annotation.Nullable NetworkScope scope) {
     this.scope = scope;
     return this;
   }
 
-   /**
+  /**
    * Get scope
    * @return scope
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkScope getScope() {
     return scope;
   }
 
-
-  public void setScope(NetworkScope scope) {
+  public void setScope(@javax.annotation.Nullable NetworkScope scope) {
     this.scope = scope;
   }
 
 
-  public SimplifiedNetwork location(SimplifiedLocation location) {
-    
+  public SimplifiedNetwork location(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocation location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
   }
 
@@ -497,25 +476,26 @@ public class SimplifiedNetwork {
     openapiRequiredFields.add("uuid");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SimplifiedNetwork
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SimplifiedNetwork.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SimplifiedNetwork
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SimplifiedNetwork.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedNetwork is not found in the empty JSON string", SimplifiedNetwork.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SimplifiedNetwork.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -525,21 +505,25 @@ public class SimplifiedNetwork {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        NetworkState.validateJsonElement(jsonObj.get("state"));
+      }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        SimplifiedNetworkChange.validateJsonObject(jsonObj.getAsJsonObject("change"));
+        SimplifiedNetworkChange.validateJsonElement(jsonObj.get("change"));
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        NetworkOperation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        NetworkOperation.validateJsonElement(jsonObj.get("operation"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
       if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
         JsonArray jsonArraylinks = jsonObj.getAsJsonArray("links");
@@ -551,13 +535,21 @@ public class SimplifiedNetwork {
 
           // validate the optional field `links` (array)
           for (int i = 0; i < jsonArraylinks.size(); i++) {
-            Link.validateJsonObject(jsonArraylinks.get(i).getAsJsonObject());
+            Link.validateJsonElement(jsonArraylinks.get(i));
           };
         }
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        NetworkType.validateJsonElement(jsonObj.get("type"));
+      }
+      // validate the optional field `scope`
+      if (jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) {
+        NetworkScope.validateJsonElement(jsonObj.get("scope"));
+      }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
       }
   }
 
@@ -589,7 +581,12 @@ public class SimplifiedNetwork {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -598,8 +595,9 @@ public class SimplifiedNetwork {
 
            @Override
            public SimplifiedNetwork read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SimplifiedNetwork instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -627,22 +625,22 @@ public class SimplifiedNetwork {
     }
   }
 
- /**
-  * Create an instance of SimplifiedNetwork given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SimplifiedNetwork
-  * @throws IOException if the JSON string is invalid with respect to SimplifiedNetwork
-  */
+  /**
+   * Create an instance of SimplifiedNetwork given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SimplifiedNetwork
+   * @throws IOException if the JSON string is invalid with respect to SimplifiedNetwork
+   */
   public static SimplifiedNetwork fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SimplifiedNetwork.class);
   }
 
- /**
-  * Convert an instance of SimplifiedNetwork to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SimplifiedNetwork to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
