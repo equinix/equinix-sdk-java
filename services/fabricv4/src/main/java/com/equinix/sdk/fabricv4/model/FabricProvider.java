@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.FabricProviderResource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,7 +49,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * The Orchestrator Fabric Providers schema defines the structure for the orchestrator fabric provider configuration. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricProvider {
   /**
    * Gets or Sets type
@@ -92,64 +94,68 @@ public class FabricProvider {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_RESOURCES = "resources";
   @SerializedName(SERIALIZED_NAME_RESOURCES)
+  @javax.annotation.Nonnull
   private List<FabricProviderResource> resources = new ArrayList<>();
 
   public FabricProvider() {
   }
 
-  public FabricProvider type(TypeEnum type) {
-    
+  public FabricProvider type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public FabricProvider resources(List<FabricProviderResource> resources) {
-    
+  public FabricProvider resources(@javax.annotation.Nonnull List<FabricProviderResource> resources) {
     this.resources = resources;
     return this;
   }
 
   public FabricProvider addResourcesItem(FabricProviderResource resourcesItem) {
+    if (this.resources == null) {
+      this.resources = new ArrayList<>();
+    }
     this.resources.add(resourcesItem);
     return this;
   }
 
-   /**
+  /**
    * Get resources
    * @return resources
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<FabricProviderResource> getResources() {
     return resources;
   }
 
-
-  public void setResources(List<FabricProviderResource> resources) {
+  public void setResources(@javax.annotation.Nonnull List<FabricProviderResource> resources) {
     this.resources = resources;
   }
 
@@ -256,28 +262,31 @@ public class FabricProvider {
     openapiRequiredFields.add("resources");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricProvider
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FabricProvider.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricProvider
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricProvider.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FabricProvider is not found in the empty JSON string", FabricProvider.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FabricProvider.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       // ensure the json data is an array
       if (!jsonObj.get("resources").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `resources` to be an array in the JSON string but got `%s`", jsonObj.get("resources").toString()));
@@ -286,7 +295,7 @@ public class FabricProvider {
       JsonArray jsonArrayresources = jsonObj.getAsJsonArray("resources");
       // validate the required field `resources` (array)
       for (int i = 0; i < jsonArrayresources.size(); i++) {
-        FabricProviderResource.validateJsonObject(jsonArrayresources.get(i).getAsJsonObject());
+        FabricProviderResource.validateJsonElement(jsonArrayresources.get(i));
       };
   }
 
@@ -318,7 +327,12 @@ public class FabricProvider {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -327,8 +341,9 @@ public class FabricProvider {
 
            @Override
            public FabricProvider read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FabricProvider instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -356,22 +371,22 @@ public class FabricProvider {
     }
   }
 
- /**
-  * Create an instance of FabricProvider given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricProvider
-  * @throws IOException if the JSON string is invalid with respect to FabricProvider
-  */
+  /**
+   * Create an instance of FabricProvider given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricProvider
+   * @throws IOException if the JSON string is invalid with respect to FabricProvider
+   */
   public static FabricProvider fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FabricProvider.class);
   }
 
- /**
-  * Convert an instance of FabricProvider to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FabricProvider to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

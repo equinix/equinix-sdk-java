@@ -23,6 +23,7 @@
 
 | Name | Value |
 |---- | -----|
+| PERMISSION | &quot;PERMISSION&quot; |
 | GCP_CLOUD_ROUTER | &quot;GCP_CLOUD_ROUTER&quot; |
 
 

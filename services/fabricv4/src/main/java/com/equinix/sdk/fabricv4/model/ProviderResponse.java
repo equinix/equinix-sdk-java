@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.AWSProviderResponse;
 import com.equinix.sdk.fabricv4.model.FabricProviderResponse;
 import com.equinix.sdk.fabricv4.model.GCPProviderResourceResponse;
@@ -24,9 +23,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -55,11 +56,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ProviderResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ProviderResponse.class.getName());
 
@@ -71,8 +73,8 @@ public class ProviderResponse extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'ProviderResponse' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AWSProviderResponse> adapterAWSProviderResponse = gson.getDelegateAdapter(this, TypeToken.get(AWSProviderResponse.class));
             final TypeAdapter<FabricProviderResponse> adapterFabricProviderResponse = gson.getDelegateAdapter(this, TypeToken.get(FabricProviderResponse.class));
+            final TypeAdapter<AWSProviderResponse> adapterAWSProviderResponse = gson.getDelegateAdapter(this, TypeToken.get(AWSProviderResponse.class));
             final TypeAdapter<GCPProviderResponse> adapterGCPProviderResponse = gson.getDelegateAdapter(this, TypeToken.get(GCPProviderResponse.class));
 
             return (TypeAdapter<T>) new TypeAdapter<ProviderResponse>() {
@@ -83,56 +85,40 @@ public class ProviderResponse extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `AWSProviderResponse`
-                    if (value.getActualInstance() instanceof AWSProviderResponse) {
-                        JsonObject obj = adapterAWSProviderResponse.toJsonTree((AWSProviderResponse)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `FabricProviderResponse`
                     if (value.getActualInstance() instanceof FabricProviderResponse) {
-                        JsonObject obj = adapterFabricProviderResponse.toJsonTree((FabricProviderResponse)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterFabricProviderResponse.toJsonTree((FabricProviderResponse)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
+                    // check if the actual instance is of the type `AWSProviderResponse`
+                    if (value.getActualInstance() instanceof AWSProviderResponse) {
+                        JsonElement element = adapterAWSProviderResponse.toJsonTree((AWSProviderResponse)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `GCPProviderResponse`
                     if (value.getActualInstance() instanceof GCPProviderResponse) {
-                        JsonObject obj = adapterGCPProviderResponse.toJsonTree((GCPProviderResponse)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterGCPProviderResponse.toJsonTree((GCPProviderResponse)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AWSProviderResponse, FabricProviderResponse, GCPProviderResponse");
                 }
 
                 @Override
                 public ProviderResponse read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize AWSProviderResponse
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        AWSProviderResponse.validateJsonObject(jsonObject);
-                        actualAdapter = adapterAWSProviderResponse;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'AWSProviderResponse'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AWSProviderResponse failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'AWSProviderResponse'", e);
-                    }
-
                     // deserialize FabricProviderResponse
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        FabricProviderResponse.validateJsonObject(jsonObject);
+                        FabricProviderResponse.validateJsonElement(jsonElement);
                         actualAdapter = adapterFabricProviderResponse;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'FabricProviderResponse'");
@@ -141,11 +127,22 @@ public class ProviderResponse extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for FabricProviderResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricProviderResponse'", e);
                     }
-
+                    // deserialize AWSProviderResponse
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AWSProviderResponse.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAWSProviderResponse;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AWSProviderResponse'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AWSProviderResponse failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AWSProviderResponse'", e);
+                    }
                     // deserialize GCPProviderResponse
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        GCPProviderResponse.validateJsonObject(jsonObject);
+                        GCPProviderResponse.validateJsonElement(jsonElement);
                         actualAdapter = adapterGCPProviderResponse;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'GCPProviderResponse'");
@@ -157,49 +154,36 @@ public class ProviderResponse extends AbstractOpenApiSchema {
 
                     if (match == 1) {
                         ProviderResponse ret = new ProviderResponse();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ProviderResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ProviderResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public ProviderResponse() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public ProviderResponse(AWSProviderResponse o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public ProviderResponse(FabricProviderResponse o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public ProviderResponse(GCPProviderResponse o) {
+    public ProviderResponse(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("AWSProviderResponse", new GenericType<AWSProviderResponse>() {
-        });
-        schemas.put("FabricProviderResponse", new GenericType<FabricProviderResponse>() {
-        });
-        schemas.put("GCPProviderResponse", new GenericType<GCPProviderResponse>() {
-        });
+        schemas.put("FabricProviderResponse", FabricProviderResponse.class);
+        schemas.put("AWSProviderResponse", AWSProviderResponse.class);
+        schemas.put("GCPProviderResponse", GCPProviderResponse.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return ProviderResponse.schemas;
     }
 
@@ -209,16 +193,15 @@ public class ProviderResponse extends AbstractOpenApiSchema {
      * AWSProviderResponse, FabricProviderResponse, GCPProviderResponse
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof AWSProviderResponse) {
+        if (instance instanceof FabricProviderResponse) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof FabricProviderResponse) {
+        if (instance instanceof AWSProviderResponse) {
             super.setActualInstance(instance);
             return;
         }
@@ -237,20 +220,10 @@ public class ProviderResponse extends AbstractOpenApiSchema {
      *
      * @return The actual instance (AWSProviderResponse, FabricProviderResponse, GCPProviderResponse)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `AWSProviderResponse`. If the actual instance is not `AWSProviderResponse`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `AWSProviderResponse`
-     * @throws ClassCastException if the instance is not `AWSProviderResponse`
-     */
-    public AWSProviderResponse getAWSProviderResponse() throws ClassCastException {
-        return (AWSProviderResponse)super.getActualInstance();
     }
 
     /**
@@ -265,6 +238,17 @@ public class ProviderResponse extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `AWSProviderResponse`. If the actual instance is not `AWSProviderResponse`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AWSProviderResponse`
+     * @throws ClassCastException if the instance is not `AWSProviderResponse`
+     */
+    public AWSProviderResponse getAWSProviderResponse() throws ClassCastException {
+        return (AWSProviderResponse)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `GCPProviderResponse`. If the actual instance is not `GCPProviderResponse`,
      * the ClassCastException will be thrown.
      *
@@ -275,64 +259,63 @@ public class ProviderResponse extends AbstractOpenApiSchema {
         return (GCPProviderResponse)super.getActualInstance();
     }
 
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to ProviderResponse
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with FabricProviderResponse
+        try {
+            FabricProviderResponse.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FabricProviderResponse failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AWSProviderResponse
+        try {
+            AWSProviderResponse.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AWSProviderResponse failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with GCPProviderResponse
+        try {
+            GCPProviderResponse.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for GCPProviderResponse failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for ProviderResponse with oneOf schemas: AWSProviderResponse, FabricProviderResponse, GCPProviderResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
+    }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ProviderResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with AWSProviderResponse
-    try {
-      AWSProviderResponse.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for AWSProviderResponse failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Create an instance of ProviderResponse given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of ProviderResponse
+     * @throws IOException if the JSON string is invalid with respect to ProviderResponse
+     */
+    public static ProviderResponse fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, ProviderResponse.class);
     }
-    // validate the json string with FabricProviderResponse
-    try {
-      FabricProviderResponse.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FabricProviderResponse failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with GCPProviderResponse
-    try {
-      GCPProviderResponse.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for GCPProviderResponse failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ProviderResponse with oneOf schemas: AWSProviderResponse, FabricProviderResponse, GCPProviderResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of ProviderResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProviderResponse
-  * @throws IOException if the JSON string is invalid with respect to ProviderResponse
-  */
-  public static ProviderResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ProviderResponse.class);
-  }
-
- /**
-  * Convert an instance of ProviderResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of ProviderResponse to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

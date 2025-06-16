@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.DirectConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.DirectConnectionIpv6;
@@ -25,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -37,13 +37,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -51,7 +53,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * RoutingProtocolDirectData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RoutingProtocolDirectData {
   /**
    * Routing protocol type
@@ -96,30 +98,41 @@ public class RoutingProtocolDirectData {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DIRECT_IPV4 = "directIpv4";
   @SerializedName(SERIALIZED_NAME_DIRECT_IPV4)
+  @javax.annotation.Nullable
   private DirectConnectionIpv4 directIpv4;
 
   public static final String SERIALIZED_NAME_DIRECT_IPV6 = "directIpv6";
   @SerializedName(SERIALIZED_NAME_DIRECT_IPV6)
+  @javax.annotation.Nullable
   private DirectConnectionIpv6 directIpv6;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   /**
@@ -175,243 +188,222 @@ public class RoutingProtocolDirectData {
         return StateEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StateEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private StateEnum state;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private RoutingProtocolOperation operation;
 
   public static final String SERIALIZED_NAME_CHANGE = "change";
   @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
   private RoutingProtocolChange change;
 
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
+  @javax.annotation.Nullable
   private Changelog changelog;
 
   public RoutingProtocolDirectData() {
   }
 
-  public RoutingProtocolDirectData type(TypeEnum type) {
-    
+  public RoutingProtocolDirectData type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Routing protocol type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public RoutingProtocolDirectData name(String name) {
-    
+  public RoutingProtocolDirectData name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public RoutingProtocolDirectData directIpv4(DirectConnectionIpv4 directIpv4) {
-    
+  public RoutingProtocolDirectData directIpv4(@javax.annotation.Nullable DirectConnectionIpv4 directIpv4) {
     this.directIpv4 = directIpv4;
     return this;
   }
 
-   /**
+  /**
    * Get directIpv4
    * @return directIpv4
-  **/
+   */
   @javax.annotation.Nullable
-
   public DirectConnectionIpv4 getDirectIpv4() {
     return directIpv4;
   }
 
-
-  public void setDirectIpv4(DirectConnectionIpv4 directIpv4) {
+  public void setDirectIpv4(@javax.annotation.Nullable DirectConnectionIpv4 directIpv4) {
     this.directIpv4 = directIpv4;
   }
 
 
-  public RoutingProtocolDirectData directIpv6(DirectConnectionIpv6 directIpv6) {
-    
+  public RoutingProtocolDirectData directIpv6(@javax.annotation.Nullable DirectConnectionIpv6 directIpv6) {
     this.directIpv6 = directIpv6;
     return this;
   }
 
-   /**
+  /**
    * Get directIpv6
    * @return directIpv6
-  **/
+   */
   @javax.annotation.Nullable
-
   public DirectConnectionIpv6 getDirectIpv6() {
     return directIpv6;
   }
 
-
-  public void setDirectIpv6(DirectConnectionIpv6 directIpv6) {
+  public void setDirectIpv6(@javax.annotation.Nullable DirectConnectionIpv6 directIpv6) {
     this.directIpv6 = directIpv6;
   }
 
 
-  public RoutingProtocolDirectData href(URI href) {
-    
+  public RoutingProtocolDirectData href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Routing Protocol URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public RoutingProtocolDirectData uuid(UUID uuid) {
-    
+  public RoutingProtocolDirectData uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Routing protocol identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public RoutingProtocolDirectData state(StateEnum state) {
-    
+  public RoutingProtocolDirectData state(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public StateEnum getState() {
     return state;
   }
 
-
-  public void setState(StateEnum state) {
+  public void setState(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
   }
 
 
-  public RoutingProtocolDirectData operation(RoutingProtocolOperation operation) {
-    
+  public RoutingProtocolDirectData operation(@javax.annotation.Nullable RoutingProtocolOperation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public RoutingProtocolOperation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(RoutingProtocolOperation operation) {
+  public void setOperation(@javax.annotation.Nullable RoutingProtocolOperation operation) {
     this.operation = operation;
   }
 
 
-  public RoutingProtocolDirectData change(RoutingProtocolChange change) {
-    
+  public RoutingProtocolDirectData change(@javax.annotation.Nullable RoutingProtocolChange change) {
     this.change = change;
     return this;
   }
 
-   /**
+  /**
    * Get change
    * @return change
-  **/
+   */
   @javax.annotation.Nullable
-
   public RoutingProtocolChange getChange() {
     return change;
   }
 
-
-  public void setChange(RoutingProtocolChange change) {
+  public void setChange(@javax.annotation.Nullable RoutingProtocolChange change) {
     this.change = change;
   }
 
 
-  public RoutingProtocolDirectData changelog(Changelog changelog) {
-    
+  public RoutingProtocolDirectData changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
   }
 
-   /**
+  /**
    * Get changelog
    * @return changelog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangelog() {
     return changelog;
   }
 
-
-  public void setChangelog(Changelog changelog) {
+  public void setChangelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
   }
 
@@ -540,31 +532,36 @@ public class RoutingProtocolDirectData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RoutingProtocolDirectData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RoutingProtocolDirectData.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RoutingProtocolDirectData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RoutingProtocolDirectData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RoutingProtocolDirectData is not found in the empty JSON string", RoutingProtocolDirectData.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `directIpv4`
       if (jsonObj.get("directIpv4") != null && !jsonObj.get("directIpv4").isJsonNull()) {
-        DirectConnectionIpv4.validateJsonObject(jsonObj.getAsJsonObject("directIpv4"));
+        DirectConnectionIpv4.validateJsonElement(jsonObj.get("directIpv4"));
       }
       // validate the optional field `directIpv6`
       if (jsonObj.get("directIpv6") != null && !jsonObj.get("directIpv6").isJsonNull()) {
-        DirectConnectionIpv6.validateJsonObject(jsonObj.getAsJsonObject("directIpv6"));
+        DirectConnectionIpv6.validateJsonElement(jsonObj.get("directIpv6"));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
@@ -575,17 +572,21 @@ public class RoutingProtocolDirectData {
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
+      }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        RoutingProtocolOperation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        RoutingProtocolOperation.validateJsonElement(jsonObj.get("operation"));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        RoutingProtocolChange.validateJsonObject(jsonObj.getAsJsonObject("change"));
+        RoutingProtocolChange.validateJsonElement(jsonObj.get("change"));
       }
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changelog"));
+        Changelog.validateJsonElement(jsonObj.get("changelog"));
       }
   }
 
@@ -617,7 +618,12 @@ public class RoutingProtocolDirectData {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -626,8 +632,9 @@ public class RoutingProtocolDirectData {
 
            @Override
            public RoutingProtocolDirectData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RoutingProtocolDirectData instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -655,22 +662,22 @@ public class RoutingProtocolDirectData {
     }
   }
 
- /**
-  * Create an instance of RoutingProtocolDirectData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RoutingProtocolDirectData
-  * @throws IOException if the JSON string is invalid with respect to RoutingProtocolDirectData
-  */
+  /**
+   * Create an instance of RoutingProtocolDirectData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RoutingProtocolDirectData
+   * @throws IOException if the JSON string is invalid with respect to RoutingProtocolDirectData
+   */
   public static RoutingProtocolDirectData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RoutingProtocolDirectData.class);
   }
 
- /**
-  * Convert an instance of RoutingProtocolDirectData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RoutingProtocolDirectData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

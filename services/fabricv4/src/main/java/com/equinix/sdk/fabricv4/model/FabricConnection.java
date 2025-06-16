@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,7 +49,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * The OrchestratorProvider schema defines the configuration for a network connection and deployment properties, offering a detailed overview of the connection&#39;s characteristics and requirements. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricConnection {
   /**
    * Gets or Sets type
@@ -92,189 +94,180 @@ public class FabricConnection {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nonnull
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_REDUNDANCY = "redundancy";
   @SerializedName(SERIALIZED_NAME_REDUNDANCY)
+  @javax.annotation.Nonnull
   private ConnectionRedundancy redundancy;
 
   public static final String SERIALIZED_NAME_A_SIDE = "aSide";
   @SerializedName(SERIALIZED_NAME_A_SIDE)
+  @javax.annotation.Nonnull
   private ConnectionSide aSide;
 
   public static final String SERIALIZED_NAME_Z_SIDE = "zSide";
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
+  @javax.annotation.Nonnull
   private ConnectionSide zSide;
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_PROPERTIES = "deploymentProperties";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_PROPERTIES)
+  @javax.annotation.Nonnull
   private TopologyProperties deploymentProperties;
 
   public FabricConnection() {
   }
 
-  public FabricConnection type(TypeEnum type) {
-    
+  public FabricConnection type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public FabricConnection bandwidth(Integer bandwidth) {
-    
+  public FabricConnection bandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Get bandwidth
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public FabricConnection name(String name) {
-    
+  public FabricConnection name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FabricConnection redundancy(ConnectionRedundancy redundancy) {
-    
+  public FabricConnection redundancy(@javax.annotation.Nonnull ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
     return this;
   }
 
-   /**
+  /**
    * Get redundancy
    * @return redundancy
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionRedundancy getRedundancy() {
     return redundancy;
   }
 
-
-  public void setRedundancy(ConnectionRedundancy redundancy) {
+  public void setRedundancy(@javax.annotation.Nonnull ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
   }
 
 
-  public FabricConnection aSide(ConnectionSide aSide) {
-    
+  public FabricConnection aSide(@javax.annotation.Nonnull ConnectionSide aSide) {
     this.aSide = aSide;
     return this;
   }
 
-   /**
+  /**
    * Get aSide
    * @return aSide
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionSide getaSide() {
     return aSide;
   }
 
-
-  public void setaSide(ConnectionSide aSide) {
+  public void setaSide(@javax.annotation.Nonnull ConnectionSide aSide) {
     this.aSide = aSide;
   }
 
 
-  public FabricConnection zSide(ConnectionSide zSide) {
-    
+  public FabricConnection zSide(@javax.annotation.Nonnull ConnectionSide zSide) {
     this.zSide = zSide;
     return this;
   }
 
-   /**
+  /**
    * Get zSide
    * @return zSide
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionSide getzSide() {
     return zSide;
   }
 
-
-  public void setzSide(ConnectionSide zSide) {
+  public void setzSide(@javax.annotation.Nonnull ConnectionSide zSide) {
     this.zSide = zSide;
   }
 
 
-  public FabricConnection deploymentProperties(TopologyProperties deploymentProperties) {
-    
+  public FabricConnection deploymentProperties(@javax.annotation.Nonnull TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
     return this;
   }
 
-   /**
+  /**
    * Get deploymentProperties
    * @return deploymentProperties
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TopologyProperties getDeploymentProperties() {
     return deploymentProperties;
   }
 
-
-  public void setDeploymentProperties(TopologyProperties deploymentProperties) {
+  public void setDeploymentProperties(@javax.annotation.Nonnull TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
   }
 
@@ -400,39 +393,42 @@ public class FabricConnection {
     openapiRequiredFields.add("deploymentProperties");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricConnection
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FabricConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricConnection
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FabricConnection is not found in the empty JSON string", FabricConnection.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FabricConnection.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `redundancy`
-      ConnectionRedundancy.validateJsonObject(jsonObj.getAsJsonObject("redundancy"));
+      ConnectionRedundancy.validateJsonElement(jsonObj.get("redundancy"));
       // validate the required field `aSide`
-      ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("aSide"));
+      ConnectionSide.validateJsonElement(jsonObj.get("aSide"));
       // validate the required field `zSide`
-      ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("zSide"));
+      ConnectionSide.validateJsonElement(jsonObj.get("zSide"));
       // validate the required field `deploymentProperties`
-      TopologyProperties.validateJsonObject(jsonObj.getAsJsonObject("deploymentProperties"));
+      TopologyProperties.validateJsonElement(jsonObj.get("deploymentProperties"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -463,7 +459,12 @@ public class FabricConnection {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -472,8 +473,9 @@ public class FabricConnection {
 
            @Override
            public FabricConnection read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FabricConnection instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -501,22 +503,22 @@ public class FabricConnection {
     }
   }
 
- /**
-  * Create an instance of FabricConnection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricConnection
-  * @throws IOException if the JSON string is invalid with respect to FabricConnection
-  */
+  /**
+   * Create an instance of FabricConnection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricConnection
+   * @throws IOException if the JSON string is invalid with respect to FabricConnection
+   */
   public static FabricConnection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FabricConnection.class);
   }
 
- /**
-  * Convert an instance of FabricConnection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FabricConnection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

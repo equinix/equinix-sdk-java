@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ApiConfig;
 import com.equinix.sdk.fabricv4.model.AuthenticationKey;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointTypeCOLO;
@@ -28,9 +27,10 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -59,11 +60,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ServiceProfileAccessPointType.class.getName());
 
@@ -88,25 +90,23 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `ServiceProfileAccessPointTypeCOLO`
                     if (value.getActualInstance() instanceof ServiceProfileAccessPointTypeCOLO) {
-                        JsonObject obj = adapterServiceProfileAccessPointTypeCOLO.toJsonTree((ServiceProfileAccessPointTypeCOLO)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterServiceProfileAccessPointTypeCOLO.toJsonTree((ServiceProfileAccessPointTypeCOLO)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     // check if the actual instance is of the type `ServiceProfileAccessPointTypeVD`
                     if (value.getActualInstance() instanceof ServiceProfileAccessPointTypeVD) {
-                        JsonObject obj = adapterServiceProfileAccessPointTypeVD.toJsonTree((ServiceProfileAccessPointTypeVD)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterServiceProfileAccessPointTypeVD.toJsonTree((ServiceProfileAccessPointTypeVD)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD");
                 }
 
                 @Override
                 public ServiceProfileAccessPointType read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
@@ -115,7 +115,7 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
                     // deserialize ServiceProfileAccessPointTypeCOLO
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        ServiceProfileAccessPointTypeCOLO.validateJsonObject(jsonObject);
+                        ServiceProfileAccessPointTypeCOLO.validateJsonElement(jsonElement);
                         actualAdapter = adapterServiceProfileAccessPointTypeCOLO;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'ServiceProfileAccessPointTypeCOLO'");
@@ -124,11 +124,10 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for ServiceProfileAccessPointTypeCOLO failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ServiceProfileAccessPointTypeCOLO'", e);
                     }
-
                     // deserialize ServiceProfileAccessPointTypeVD
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        ServiceProfileAccessPointTypeVD.validateJsonObject(jsonObject);
+                        ServiceProfileAccessPointTypeVD.validateJsonElement(jsonElement);
                         actualAdapter = adapterServiceProfileAccessPointTypeVD;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'ServiceProfileAccessPointTypeVD'");
@@ -140,42 +139,35 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
 
                     if (match == 1) {
                         ServiceProfileAccessPointType ret = new ServiceProfileAccessPointType();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ServiceProfileAccessPointType: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ServiceProfileAccessPointType: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public ServiceProfileAccessPointType() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public ServiceProfileAccessPointType(ServiceProfileAccessPointTypeCOLO o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public ServiceProfileAccessPointType(ServiceProfileAccessPointTypeVD o) {
+    public ServiceProfileAccessPointType(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("ServiceProfileAccessPointTypeCOLO", new GenericType<ServiceProfileAccessPointTypeCOLO>() {
-        });
-        schemas.put("ServiceProfileAccessPointTypeVD", new GenericType<ServiceProfileAccessPointTypeVD>() {
-        });
+        schemas.put("ServiceProfileAccessPointTypeCOLO", ServiceProfileAccessPointTypeCOLO.class);
+        schemas.put("ServiceProfileAccessPointTypeVD", ServiceProfileAccessPointTypeVD.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return ServiceProfileAccessPointType.schemas;
     }
 
@@ -185,7 +177,6 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
      * ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -208,6 +199,7 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
      *
      * @return The actual instance (ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -235,56 +227,55 @@ public class ServiceProfileAccessPointType extends AbstractOpenApiSchema {
         return (ServiceProfileAccessPointTypeVD)super.getActualInstance();
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfileAccessPointType
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with ServiceProfileAccessPointTypeCOLO
-    try {
-      ServiceProfileAccessPointTypeCOLO.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for ServiceProfileAccessPointTypeCOLO failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to ServiceProfileAccessPointType
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with ServiceProfileAccessPointTypeCOLO
+        try {
+            ServiceProfileAccessPointTypeCOLO.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ServiceProfileAccessPointTypeCOLO failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with ServiceProfileAccessPointTypeVD
+        try {
+            ServiceProfileAccessPointTypeVD.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ServiceProfileAccessPointTypeVD failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for ServiceProfileAccessPointType with oneOf schemas: ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with ServiceProfileAccessPointTypeVD
-    try {
-      ServiceProfileAccessPointTypeVD.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for ServiceProfileAccessPointTypeVD failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ServiceProfileAccessPointType with oneOf schemas: ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of ServiceProfileAccessPointType given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfileAccessPointType
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointType
-  */
-  public static ServiceProfileAccessPointType fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ServiceProfileAccessPointType.class);
-  }
+    /**
+     * Create an instance of ServiceProfileAccessPointType given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of ServiceProfileAccessPointType
+     * @throws IOException if the JSON string is invalid with respect to ServiceProfileAccessPointType
+     */
+    public static ServiceProfileAccessPointType fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, ServiceProfileAccessPointType.class);
+    }
 
- /**
-  * Convert an instance of ServiceProfileAccessPointType to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of ServiceProfileAccessPointType to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

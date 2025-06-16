@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Direction;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,7 +47,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Bandwidth utilization statistics (octet counters-based)
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class BandwidthUtilization {
   /**
    * Aggregated data transfer capacity. Possible values- Mbps, megabits (1 million bits) per second; Gbps, gigabits (1 billion bits) per second.
@@ -90,111 +92,108 @@ public class BandwidthUtilization {
         return UnitEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      UnitEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nullable
   private UnitEnum unit;
 
   public static final String SERIALIZED_NAME_METRIC_INTERVAL = "metricInterval";
   @SerializedName(SERIALIZED_NAME_METRIC_INTERVAL)
+  @javax.annotation.Nullable
   private String metricInterval;
 
   public static final String SERIALIZED_NAME_INBOUND = "inbound";
   @SerializedName(SERIALIZED_NAME_INBOUND)
+  @javax.annotation.Nullable
   private Direction inbound;
 
   public static final String SERIALIZED_NAME_OUTBOUND = "outbound";
   @SerializedName(SERIALIZED_NAME_OUTBOUND)
+  @javax.annotation.Nullable
   private Direction outbound;
 
   public BandwidthUtilization() {
   }
 
-  public BandwidthUtilization unit(UnitEnum unit) {
-    
+  public BandwidthUtilization unit(@javax.annotation.Nullable UnitEnum unit) {
     this.unit = unit;
     return this;
   }
 
-   /**
+  /**
    * Aggregated data transfer capacity. Possible values- Mbps, megabits (1 million bits) per second; Gbps, gigabits (1 billion bits) per second.
    * @return unit
-  **/
+   */
   @javax.annotation.Nullable
-
   public UnitEnum getUnit() {
     return unit;
   }
 
-
-  public void setUnit(UnitEnum unit) {
+  public void setUnit(@javax.annotation.Nullable UnitEnum unit) {
     this.unit = unit;
   }
 
 
-  public BandwidthUtilization metricInterval(String metricInterval) {
-    
+  public BandwidthUtilization metricInterval(@javax.annotation.Nullable String metricInterval) {
     this.metricInterval = metricInterval;
     return this;
   }
 
-   /**
+  /**
    * An interval formatted value, indicating the time-interval the metric objects within the response represent
    * @return metricInterval
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMetricInterval() {
     return metricInterval;
   }
 
-
-  public void setMetricInterval(String metricInterval) {
+  public void setMetricInterval(@javax.annotation.Nullable String metricInterval) {
     this.metricInterval = metricInterval;
   }
 
 
-  public BandwidthUtilization inbound(Direction inbound) {
-    
+  public BandwidthUtilization inbound(@javax.annotation.Nullable Direction inbound) {
     this.inbound = inbound;
     return this;
   }
 
-   /**
+  /**
    * Get inbound
    * @return inbound
-  **/
+   */
   @javax.annotation.Nullable
-
   public Direction getInbound() {
     return inbound;
   }
 
-
-  public void setInbound(Direction inbound) {
+  public void setInbound(@javax.annotation.Nullable Direction inbound) {
     this.inbound = inbound;
   }
 
 
-  public BandwidthUtilization outbound(Direction outbound) {
-    
+  public BandwidthUtilization outbound(@javax.annotation.Nullable Direction outbound) {
     this.outbound = outbound;
     return this;
   }
 
-   /**
+  /**
    * Get outbound
    * @return outbound
-  **/
+   */
   @javax.annotation.Nullable
-
   public Direction getOutbound() {
     return outbound;
   }
 
-
-  public void setOutbound(Direction outbound) {
+  public void setOutbound(@javax.annotation.Nullable Direction outbound) {
     this.outbound = outbound;
   }
 
@@ -305,31 +304,36 @@ public class BandwidthUtilization {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to BandwidthUtilization
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!BandwidthUtilization.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BandwidthUtilization
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!BandwidthUtilization.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in BandwidthUtilization is not found in the empty JSON string", BandwidthUtilization.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      // validate the optional field `unit`
+      if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) {
+        UnitEnum.validateJsonElement(jsonObj.get("unit"));
       }
       if ((jsonObj.get("metricInterval") != null && !jsonObj.get("metricInterval").isJsonNull()) && !jsonObj.get("metricInterval").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `metricInterval` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricInterval").toString()));
       }
       // validate the optional field `inbound`
       if (jsonObj.get("inbound") != null && !jsonObj.get("inbound").isJsonNull()) {
-        Direction.validateJsonObject(jsonObj.getAsJsonObject("inbound"));
+        Direction.validateJsonElement(jsonObj.get("inbound"));
       }
       // validate the optional field `outbound`
       if (jsonObj.get("outbound") != null && !jsonObj.get("outbound").isJsonNull()) {
-        Direction.validateJsonObject(jsonObj.getAsJsonObject("outbound"));
+        Direction.validateJsonElement(jsonObj.get("outbound"));
       }
   }
 
@@ -361,7 +365,12 @@ public class BandwidthUtilization {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -370,8 +379,9 @@ public class BandwidthUtilization {
 
            @Override
            public BandwidthUtilization read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              BandwidthUtilization instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -399,22 +409,22 @@ public class BandwidthUtilization {
     }
   }
 
- /**
-  * Create an instance of BandwidthUtilization given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BandwidthUtilization
-  * @throws IOException if the JSON string is invalid with respect to BandwidthUtilization
-  */
+  /**
+   * Create an instance of BandwidthUtilization given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BandwidthUtilization
+   * @throws IOException if the JSON string is invalid with respect to BandwidthUtilization
+   */
   public static BandwidthUtilization fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BandwidthUtilization.class);
   }
 
- /**
-  * Convert an instance of BandwidthUtilization to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BandwidthUtilization to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

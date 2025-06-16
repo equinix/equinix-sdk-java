@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ActionRequest;
 import com.equinix.sdk.fabricv4.model.DeploymentActionType;
 import com.google.gson.TypeAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,64 +50,63 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * DeploymentActionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class DeploymentActionRequest {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private DeploymentActionType type;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nonnull
   private List<ActionRequest> data = new ArrayList<>();
 
   public DeploymentActionRequest() {
   }
 
-  public DeploymentActionRequest type(DeploymentActionType type) {
-    
+  public DeploymentActionRequest type(@javax.annotation.Nonnull DeploymentActionType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public DeploymentActionType getType() {
     return type;
   }
 
-
-  public void setType(DeploymentActionType type) {
+  public void setType(@javax.annotation.Nonnull DeploymentActionType type) {
     this.type = type;
   }
 
 
-  public DeploymentActionRequest data(List<ActionRequest> data) {
-    
+  public DeploymentActionRequest data(@javax.annotation.Nonnull List<ActionRequest> data) {
     this.data = data;
     return this;
   }
 
   public DeploymentActionRequest addDataItem(ActionRequest dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
+    }
     this.data.add(dataItem);
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<ActionRequest> getData() {
     return data;
   }
 
-
-  public void setData(List<ActionRequest> data) {
+  public void setData(@javax.annotation.Nonnull List<ActionRequest> data) {
     this.data = data;
   }
 
@@ -212,25 +213,28 @@ public class DeploymentActionRequest {
     openapiRequiredFields.add("data");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to DeploymentActionRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!DeploymentActionRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeploymentActionRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DeploymentActionRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in DeploymentActionRequest is not found in the empty JSON string", DeploymentActionRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DeploymentActionRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      DeploymentActionType.validateJsonElement(jsonObj.get("type"));
       // ensure the json data is an array
       if (!jsonObj.get("data").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
@@ -239,7 +243,7 @@ public class DeploymentActionRequest {
       JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
       // validate the required field `data` (array)
       for (int i = 0; i < jsonArraydata.size(); i++) {
-        ActionRequest.validateJsonObject(jsonArraydata.get(i).getAsJsonObject());
+        ActionRequest.validateJsonElement(jsonArraydata.get(i));
       };
   }
 
@@ -271,7 +275,12 @@ public class DeploymentActionRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -280,8 +289,9 @@ public class DeploymentActionRequest {
 
            @Override
            public DeploymentActionRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              DeploymentActionRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -309,22 +319,22 @@ public class DeploymentActionRequest {
     }
   }
 
- /**
-  * Create an instance of DeploymentActionRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeploymentActionRequest
-  * @throws IOException if the JSON string is invalid with respect to DeploymentActionRequest
-  */
+  /**
+   * Create an instance of DeploymentActionRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeploymentActionRequest
+   * @throws IOException if the JSON string is invalid with respect to DeploymentActionRequest
+   */
   public static DeploymentActionRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeploymentActionRequest.class);
   }
 
- /**
-  * Convert an instance of DeploymentActionRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeploymentActionRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

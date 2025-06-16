@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.OutputStructuredTraceroute;
 import com.google.gson.TypeAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,69 +50,65 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * CloudRouterCommandTracerouteResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterCommandTracerouteResponse {
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
+  @javax.annotation.Nullable
   private String output;
 
   public static final String SERIALIZED_NAME_OUTPUT_STRUCTURED_TRACEROUTE = "outputStructuredTraceroute";
   @SerializedName(SERIALIZED_NAME_OUTPUT_STRUCTURED_TRACEROUTE)
+  @javax.annotation.Nullable
   private OutputStructuredTraceroute outputStructuredTraceroute;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<Error> errors = new ArrayList<>();
 
   public CloudRouterCommandTracerouteResponse() {
   }
 
-  public CloudRouterCommandTracerouteResponse output(String output) {
-    
+  public CloudRouterCommandTracerouteResponse output(@javax.annotation.Nullable String output) {
     this.output = output;
     return this;
   }
 
-   /**
+  /**
    * Get output
    * @return output
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOutput() {
     return output;
   }
 
-
-  public void setOutput(String output) {
+  public void setOutput(@javax.annotation.Nullable String output) {
     this.output = output;
   }
 
 
-  public CloudRouterCommandTracerouteResponse outputStructuredTraceroute(OutputStructuredTraceroute outputStructuredTraceroute) {
-    
+  public CloudRouterCommandTracerouteResponse outputStructuredTraceroute(@javax.annotation.Nullable OutputStructuredTraceroute outputStructuredTraceroute) {
     this.outputStructuredTraceroute = outputStructuredTraceroute;
     return this;
   }
 
-   /**
+  /**
    * Get outputStructuredTraceroute
    * @return outputStructuredTraceroute
-  **/
+   */
   @javax.annotation.Nullable
-
   public OutputStructuredTraceroute getOutputStructuredTraceroute() {
     return outputStructuredTraceroute;
   }
 
-
-  public void setOutputStructuredTraceroute(OutputStructuredTraceroute outputStructuredTraceroute) {
+  public void setOutputStructuredTraceroute(@javax.annotation.Nullable OutputStructuredTraceroute outputStructuredTraceroute) {
     this.outputStructuredTraceroute = outputStructuredTraceroute;
   }
 
 
-  public CloudRouterCommandTracerouteResponse errors(List<Error> errors) {
-    
+  public CloudRouterCommandTracerouteResponse errors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
     return this;
   }
@@ -123,18 +121,16 @@ public class CloudRouterCommandTracerouteResponse {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Error> getErrors() {
     return errors;
   }
 
-
-  public void setErrors(List<Error> errors) {
+  public void setErrors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
   }
 
@@ -242,24 +238,25 @@ public class CloudRouterCommandTracerouteResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterCommandTracerouteResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterCommandTracerouteResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterCommandTracerouteResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterCommandTracerouteResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterCommandTracerouteResponse is not found in the empty JSON string", CloudRouterCommandTracerouteResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("output") != null && !jsonObj.get("output").isJsonNull()) && !jsonObj.get("output").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `output` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output").toString()));
       }
       // validate the optional field `outputStructuredTraceroute`
       if (jsonObj.get("outputStructuredTraceroute") != null && !jsonObj.get("outputStructuredTraceroute").isJsonNull()) {
-        OutputStructuredTraceroute.validateJsonObject(jsonObj.getAsJsonObject("outputStructuredTraceroute"));
+        OutputStructuredTraceroute.validateJsonElement(jsonObj.get("outputStructuredTraceroute"));
       }
       if (jsonObj.get("errors") != null && !jsonObj.get("errors").isJsonNull()) {
         JsonArray jsonArrayerrors = jsonObj.getAsJsonArray("errors");
@@ -271,7 +268,7 @@ public class CloudRouterCommandTracerouteResponse {
 
           // validate the optional field `errors` (array)
           for (int i = 0; i < jsonArrayerrors.size(); i++) {
-            Error.validateJsonObject(jsonArrayerrors.get(i).getAsJsonObject());
+            Error.validateJsonElement(jsonArrayerrors.get(i));
           };
         }
       }
@@ -305,7 +302,12 @@ public class CloudRouterCommandTracerouteResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -314,8 +316,9 @@ public class CloudRouterCommandTracerouteResponse {
 
            @Override
            public CloudRouterCommandTracerouteResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterCommandTracerouteResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -343,22 +346,22 @@ public class CloudRouterCommandTracerouteResponse {
     }
   }
 
- /**
-  * Create an instance of CloudRouterCommandTracerouteResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterCommandTracerouteResponse
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandTracerouteResponse
-  */
+  /**
+   * Create an instance of CloudRouterCommandTracerouteResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterCommandTracerouteResponse
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandTracerouteResponse
+   */
   public static CloudRouterCommandTracerouteResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterCommandTracerouteResponse.class);
   }
 
- /**
-  * Convert an instance of CloudRouterCommandTracerouteResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterCommandTracerouteResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

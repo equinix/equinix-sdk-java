@@ -269,7 +269,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.Changelog.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEvent.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEventData.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEventFilter.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEventFilters.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEventSearchRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.CloudEventSimpleExpression.CustomTypeAdapterFactory());
@@ -417,7 +416,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.ModelInterface.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.ModelPackage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.Network.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkAllOf.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChange.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChangeOperation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.NetworkChangeResponse.CustomTypeAdapterFactory());

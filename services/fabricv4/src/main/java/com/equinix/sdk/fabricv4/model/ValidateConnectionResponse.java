@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,139 +48,129 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Validate Connection specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ValidateConnectionResponse {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private String uuid;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nullable
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_REDUNDANCY = "redundancy";
   @SerializedName(SERIALIZED_NAME_REDUNDANCY)
+  @javax.annotation.Nullable
   private ConnectionRedundancy redundancy;
 
   public static final String SERIALIZED_NAME_A_SIDE = "aSide";
   @SerializedName(SERIALIZED_NAME_A_SIDE)
+  @javax.annotation.Nullable
   private ConnectionSide aSide;
 
   public static final String SERIALIZED_NAME_Z_SIDE = "zSide";
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
+  @javax.annotation.Nullable
   private ConnectionSide zSide;
 
   public ValidateConnectionResponse() {
   }
 
-  public ValidateConnectionResponse uuid(String uuid) {
-    
+  public ValidateConnectionResponse uuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned connection identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public ValidateConnectionResponse bandwidth(Integer bandwidth) {
-    
+  public ValidateConnectionResponse bandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Connection bandwidth in Mbps
    * minimum: 0
    * maximum: 100000
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public ValidateConnectionResponse redundancy(ConnectionRedundancy redundancy) {
-    
+  public ValidateConnectionResponse redundancy(@javax.annotation.Nullable ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
     return this;
   }
 
-   /**
+  /**
    * Get redundancy
    * @return redundancy
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionRedundancy getRedundancy() {
     return redundancy;
   }
 
-
-  public void setRedundancy(ConnectionRedundancy redundancy) {
+  public void setRedundancy(@javax.annotation.Nullable ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
   }
 
 
-  public ValidateConnectionResponse aSide(ConnectionSide aSide) {
-    
+  public ValidateConnectionResponse aSide(@javax.annotation.Nullable ConnectionSide aSide) {
     this.aSide = aSide;
     return this;
   }
 
-   /**
+  /**
    * Get aSide
    * @return aSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionSide getaSide() {
     return aSide;
   }
 
-
-  public void setaSide(ConnectionSide aSide) {
+  public void setaSide(@javax.annotation.Nullable ConnectionSide aSide) {
     this.aSide = aSide;
   }
 
 
-  public ValidateConnectionResponse zSide(ConnectionSide zSide) {
-    
+  public ValidateConnectionResponse zSide(@javax.annotation.Nullable ConnectionSide zSide) {
     this.zSide = zSide;
     return this;
   }
 
-   /**
+  /**
    * Get zSide
    * @return zSide
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionSide getzSide() {
     return zSide;
   }
 
-
-  public void setzSide(ConnectionSide zSide) {
+  public void setzSide(@javax.annotation.Nullable ConnectionSide zSide) {
     this.zSide = zSide;
   }
 
@@ -292,32 +284,33 @@ public class ValidateConnectionResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ValidateConnectionResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ValidateConnectionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ValidateConnectionResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ValidateConnectionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ValidateConnectionResponse is not found in the empty JSON string", ValidateConnectionResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the optional field `redundancy`
       if (jsonObj.get("redundancy") != null && !jsonObj.get("redundancy").isJsonNull()) {
-        ConnectionRedundancy.validateJsonObject(jsonObj.getAsJsonObject("redundancy"));
+        ConnectionRedundancy.validateJsonElement(jsonObj.get("redundancy"));
       }
       // validate the optional field `aSide`
       if (jsonObj.get("aSide") != null && !jsonObj.get("aSide").isJsonNull()) {
-        ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("aSide"));
+        ConnectionSide.validateJsonElement(jsonObj.get("aSide"));
       }
       // validate the optional field `zSide`
       if (jsonObj.get("zSide") != null && !jsonObj.get("zSide").isJsonNull()) {
-        ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("zSide"));
+        ConnectionSide.validateJsonElement(jsonObj.get("zSide"));
       }
   }
 
@@ -349,7 +342,12 @@ public class ValidateConnectionResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -358,8 +356,9 @@ public class ValidateConnectionResponse {
 
            @Override
            public ValidateConnectionResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ValidateConnectionResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -387,22 +386,22 @@ public class ValidateConnectionResponse {
     }
   }
 
- /**
-  * Create an instance of ValidateConnectionResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ValidateConnectionResponse
-  * @throws IOException if the JSON string is invalid with respect to ValidateConnectionResponse
-  */
+  /**
+   * Create an instance of ValidateConnectionResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ValidateConnectionResponse
+   * @throws IOException if the JSON string is invalid with respect to ValidateConnectionResponse
+   */
   public static ValidateConnectionResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ValidateConnectionResponse.class);
   }
 
- /**
-  * Convert an instance of ValidateConnectionResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ValidateConnectionResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
