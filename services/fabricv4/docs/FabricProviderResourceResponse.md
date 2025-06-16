@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**href** | **URI** | Connection URI |  [optional] [readonly] |
-|**type** | [**TypeEnum**](#TypeEnum) | Routing protocol type |  |
+|**href** | **URI** | Route Protocol URI |  [optional] [readonly] |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**uuid** | **UUID** | Equinix-assigned route protocol identifier |  [optional] |
 |**state** | **DeploymentState** |  |  |
 |**name** | **String** |  |  |
@@ -30,6 +30,8 @@
 
 | Name | Value |
 |---- | -----|
+| XF_ROUTER | &quot;XF_ROUTER&quot; |
+| IP_VC | &quot;IP_VC&quot; |
 | BGP | &quot;BGP&quot; |
 
 

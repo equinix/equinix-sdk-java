@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.FabricBGPConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.FabricRoutingProtocolBGPType;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
@@ -22,9 +21,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -53,11 +54,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricRouteProtocols extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(FabricRouteProtocols.class.getName());
 
@@ -81,18 +83,17 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `FabricRoutingProtocolBGPType`
                     if (value.getActualInstance() instanceof FabricRoutingProtocolBGPType) {
-                        JsonObject obj = adapterFabricRoutingProtocolBGPType.toJsonTree((FabricRoutingProtocolBGPType)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterFabricRoutingProtocolBGPType.toJsonTree((FabricRoutingProtocolBGPType)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: FabricRoutingProtocolBGPType");
                 }
 
                 @Override
                 public FabricRouteProtocols read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
@@ -101,7 +102,7 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
                     // deserialize FabricRoutingProtocolBGPType
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        FabricRoutingProtocolBGPType.validateJsonObject(jsonObject);
+                        FabricRoutingProtocolBGPType.validateJsonElement(jsonElement);
                         actualAdapter = adapterFabricRoutingProtocolBGPType;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'FabricRoutingProtocolBGPType'");
@@ -113,35 +114,34 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
 
                     if (match == 1) {
                         FabricRouteProtocols ret = new FabricRouteProtocols();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for FabricRouteProtocols: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for FabricRouteProtocols: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public FabricRouteProtocols() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public FabricRouteProtocols(FabricRoutingProtocolBGPType o) {
+    public FabricRouteProtocols(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("FabricRoutingProtocolBGPType", new GenericType<FabricRoutingProtocolBGPType>() {
-        });
+        schemas.put("FabricRoutingProtocolBGPType", FabricRoutingProtocolBGPType.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return FabricRouteProtocols.schemas;
     }
 
@@ -151,7 +151,6 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
      * FabricRoutingProtocolBGPType
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -169,6 +168,7 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
      *
      * @return The actual instance (FabricRoutingProtocolBGPType)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -185,48 +185,47 @@ public class FabricRouteProtocols extends AbstractOpenApiSchema {
         return (FabricRoutingProtocolBGPType)super.getActualInstance();
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricRouteProtocols
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with FabricRoutingProtocolBGPType
-    try {
-      FabricRoutingProtocolBGPType.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for FabricRoutingProtocolBGPType failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to FabricRouteProtocols
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with FabricRoutingProtocolBGPType
+        try {
+            FabricRoutingProtocolBGPType.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for FabricRoutingProtocolBGPType failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for FabricRouteProtocols with oneOf schemas: FabricRoutingProtocolBGPType. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for FabricRouteProtocols with oneOf schemas: FabricRoutingProtocolBGPType. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
+
+    /**
+     * Create an instance of FabricRouteProtocols given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of FabricRouteProtocols
+     * @throws IOException if the JSON string is invalid with respect to FabricRouteProtocols
+     */
+    public static FabricRouteProtocols fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, FabricRouteProtocols.class);
     }
-  }
 
- /**
-  * Create an instance of FabricRouteProtocols given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricRouteProtocols
-  * @throws IOException if the JSON string is invalid with respect to FabricRouteProtocols
-  */
-  public static FabricRouteProtocols fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, FabricRouteProtocols.class);
-  }
-
- /**
-  * Convert an instance of FabricRouteProtocols to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of FabricRouteProtocols to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

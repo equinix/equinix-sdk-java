@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandPingResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandTracerouteResponse;
 import com.equinix.sdk.fabricv4.model.Error;
@@ -25,9 +24,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -56,11 +57,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CloudRouterCommandResponse.class.getName());
 
@@ -85,25 +87,23 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
 
                     // check if the actual instance is of the type `CloudRouterCommandPingResponse`
                     if (value.getActualInstance() instanceof CloudRouterCommandPingResponse) {
-                        JsonObject obj = adapterCloudRouterCommandPingResponse.toJsonTree((CloudRouterCommandPingResponse)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterCloudRouterCommandPingResponse.toJsonTree((CloudRouterCommandPingResponse)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     // check if the actual instance is of the type `CloudRouterCommandTracerouteResponse`
                     if (value.getActualInstance() instanceof CloudRouterCommandTracerouteResponse) {
-                        JsonObject obj = adapterCloudRouterCommandTracerouteResponse.toJsonTree((CloudRouterCommandTracerouteResponse)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterCloudRouterCommandTracerouteResponse.toJsonTree((CloudRouterCommandTracerouteResponse)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CloudRouterCommandPingResponse, CloudRouterCommandTracerouteResponse");
                 }
 
                 @Override
                 public CloudRouterCommandResponse read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
@@ -112,7 +112,7 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
                     // deserialize CloudRouterCommandPingResponse
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        CloudRouterCommandPingResponse.validateJsonObject(jsonObject);
+                        CloudRouterCommandPingResponse.validateJsonElement(jsonElement);
                         actualAdapter = adapterCloudRouterCommandPingResponse;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'CloudRouterCommandPingResponse'");
@@ -121,11 +121,10 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for CloudRouterCommandPingResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CloudRouterCommandPingResponse'", e);
                     }
-
                     // deserialize CloudRouterCommandTracerouteResponse
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        CloudRouterCommandTracerouteResponse.validateJsonObject(jsonObject);
+                        CloudRouterCommandTracerouteResponse.validateJsonElement(jsonElement);
                         actualAdapter = adapterCloudRouterCommandTracerouteResponse;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'CloudRouterCommandTracerouteResponse'");
@@ -137,42 +136,35 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
 
                     if (match == 1) {
                         CloudRouterCommandResponse ret = new CloudRouterCommandResponse();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for CloudRouterCommandResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for CloudRouterCommandResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public CloudRouterCommandResponse() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public CloudRouterCommandResponse(CloudRouterCommandPingResponse o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public CloudRouterCommandResponse(CloudRouterCommandTracerouteResponse o) {
+    public CloudRouterCommandResponse(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("CloudRouterCommandPingResponse", new GenericType<CloudRouterCommandPingResponse>() {
-        });
-        schemas.put("CloudRouterCommandTracerouteResponse", new GenericType<CloudRouterCommandTracerouteResponse>() {
-        });
+        schemas.put("CloudRouterCommandPingResponse", CloudRouterCommandPingResponse.class);
+        schemas.put("CloudRouterCommandTracerouteResponse", CloudRouterCommandTracerouteResponse.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return CloudRouterCommandResponse.schemas;
     }
 
@@ -182,7 +174,6 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
      * CloudRouterCommandPingResponse, CloudRouterCommandTracerouteResponse
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -205,6 +196,7 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
      *
      * @return The actual instance (CloudRouterCommandPingResponse, CloudRouterCommandTracerouteResponse)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
@@ -232,56 +224,55 @@ public class CloudRouterCommandResponse extends AbstractOpenApiSchema {
         return (CloudRouterCommandTracerouteResponse)super.getActualInstance();
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterCommandResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with CloudRouterCommandPingResponse
-    try {
-      CloudRouterCommandPingResponse.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for CloudRouterCommandPingResponse failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to CloudRouterCommandResponse
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with CloudRouterCommandPingResponse
+        try {
+            CloudRouterCommandPingResponse.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CloudRouterCommandPingResponse failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with CloudRouterCommandTracerouteResponse
+        try {
+            CloudRouterCommandTracerouteResponse.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CloudRouterCommandTracerouteResponse failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for CloudRouterCommandResponse with oneOf schemas: CloudRouterCommandPingResponse, CloudRouterCommandTracerouteResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with CloudRouterCommandTracerouteResponse
-    try {
-      CloudRouterCommandTracerouteResponse.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for CloudRouterCommandTracerouteResponse failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for CloudRouterCommandResponse with oneOf schemas: CloudRouterCommandPingResponse, CloudRouterCommandTracerouteResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of CloudRouterCommandResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterCommandResponse
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandResponse
-  */
-  public static CloudRouterCommandResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CloudRouterCommandResponse.class);
-  }
+    /**
+     * Create an instance of CloudRouterCommandResponse given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of CloudRouterCommandResponse
+     * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandResponse
+     */
+    public static CloudRouterCommandResponse fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, CloudRouterCommandResponse.class);
+    }
 
- /**
-  * Convert an instance of CloudRouterCommandResponse to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of CloudRouterCommandResponse to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

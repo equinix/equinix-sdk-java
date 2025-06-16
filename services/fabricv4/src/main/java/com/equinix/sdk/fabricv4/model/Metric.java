@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.MetricDatapoints;
 import com.equinix.sdk.fabricv4.model.MetricResource;
 import com.google.gson.TypeAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,147 +50,137 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Metric object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Metric {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nullable
   private String unit;
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
+  @javax.annotation.Nullable
   private MetricResource resource;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
+  @javax.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_DATAPOINTS = "datapoints";
   @SerializedName(SERIALIZED_NAME_DATAPOINTS)
+  @javax.annotation.Nullable
   private List<MetricDatapoints> datapoints = new ArrayList<>();
 
   public Metric() {
   }
 
-  public Metric type(String type) {
-    
+  public Metric type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Equinix supported metric type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public Metric name(String name) {
-    
+  public Metric name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Metric name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Metric unit(String unit) {
-    
+  public Metric unit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
     return this;
   }
 
-   /**
+  /**
    * Metric unit
    * @return unit
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUnit() {
     return unit;
   }
 
-
-  public void setUnit(String unit) {
+  public void setUnit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
   }
 
 
-  public Metric resource(MetricResource resource) {
-    
+  public Metric resource(@javax.annotation.Nullable MetricResource resource) {
     this.resource = resource;
     return this;
   }
 
-   /**
+  /**
    * Get resource
    * @return resource
-  **/
+   */
   @javax.annotation.Nullable
-
   public MetricResource getResource() {
     return resource;
   }
 
-
-  public void setResource(MetricResource resource) {
+  public void setResource(@javax.annotation.Nullable MetricResource resource) {
     this.resource = resource;
   }
 
 
-  public Metric summary(String summary) {
-    
+  public Metric summary(@javax.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
 
-   /**
+  /**
    * Metric summary
    * @return summary
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSummary() {
     return summary;
   }
 
-
-  public void setSummary(String summary) {
+  public void setSummary(@javax.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public Metric datapoints(List<MetricDatapoints> datapoints) {
-    
+  public Metric datapoints(@javax.annotation.Nullable List<MetricDatapoints> datapoints) {
     this.datapoints = datapoints;
     return this;
   }
@@ -201,18 +193,16 @@ public class Metric {
     return this;
   }
 
-   /**
+  /**
    * Metric data points
    * @return datapoints
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<MetricDatapoints> getDatapoints() {
     return datapoints;
   }
 
-
-  public void setDatapoints(List<MetricDatapoints> datapoints) {
+  public void setDatapoints(@javax.annotation.Nullable List<MetricDatapoints> datapoints) {
     this.datapoints = datapoints;
   }
 
@@ -329,18 +319,19 @@ public class Metric {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Metric
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Metric.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Metric
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Metric.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Metric is not found in the empty JSON string", Metric.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
@@ -352,7 +343,7 @@ public class Metric {
       }
       // validate the optional field `resource`
       if (jsonObj.get("resource") != null && !jsonObj.get("resource").isJsonNull()) {
-        MetricResource.validateJsonObject(jsonObj.getAsJsonObject("resource"));
+        MetricResource.validateJsonElement(jsonObj.get("resource"));
       }
       if ((jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) && !jsonObj.get("summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("summary").toString()));
@@ -367,7 +358,7 @@ public class Metric {
 
           // validate the optional field `datapoints` (array)
           for (int i = 0; i < jsonArraydatapoints.size(); i++) {
-            MetricDatapoints.validateJsonObject(jsonArraydatapoints.get(i).getAsJsonObject());
+            MetricDatapoints.validateJsonElement(jsonArraydatapoints.get(i));
           };
         }
       }
@@ -401,7 +392,12 @@ public class Metric {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -410,8 +406,9 @@ public class Metric {
 
            @Override
            public Metric read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Metric instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -439,22 +436,22 @@ public class Metric {
     }
   }
 
- /**
-  * Create an instance of Metric given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Metric
-  * @throws IOException if the JSON string is invalid with respect to Metric
-  */
+  /**
+   * Create an instance of Metric given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Metric
+   * @throws IOException if the JSON string is invalid with respect to Metric
+   */
   public static Metric fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Metric.class);
   }
 
- /**
-  * Convert an instance of Metric to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Metric to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

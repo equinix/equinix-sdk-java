@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.SubscriptionAsset;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,140 +48,130 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Subscription entitlement
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SubscriptionEntitlementResponse {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_QUANTITY_ENTITLED = "quantityEntitled";
   @SerializedName(SERIALIZED_NAME_QUANTITY_ENTITLED)
+  @javax.annotation.Nullable
   private Integer quantityEntitled;
 
   public static final String SERIALIZED_NAME_QUANTITY_CONSUMED = "quantityConsumed";
   @SerializedName(SERIALIZED_NAME_QUANTITY_CONSUMED)
+  @javax.annotation.Nullable
   private Integer quantityConsumed;
 
   public static final String SERIALIZED_NAME_QUANTITY_AVAILABLE = "quantityAvailable";
   @SerializedName(SERIALIZED_NAME_QUANTITY_AVAILABLE)
+  @javax.annotation.Nullable
   private Integer quantityAvailable;
 
   public static final String SERIALIZED_NAME_ASSET = "asset";
   @SerializedName(SERIALIZED_NAME_ASSET)
+  @javax.annotation.Nullable
   private SubscriptionAsset asset;
 
   public SubscriptionEntitlementResponse() {
   }
 
-  public SubscriptionEntitlementResponse uuid(UUID uuid) {
-    
+  public SubscriptionEntitlementResponse uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Subscription Entitlement Id
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public SubscriptionEntitlementResponse quantityEntitled(Integer quantityEntitled) {
-    
+  public SubscriptionEntitlementResponse quantityEntitled(@javax.annotation.Nullable Integer quantityEntitled) {
     this.quantityEntitled = quantityEntitled;
     return this;
   }
 
-   /**
+  /**
    * Quantity entitled for the subscription
    * minimum: 0
    * @return quantityEntitled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getQuantityEntitled() {
     return quantityEntitled;
   }
 
-
-  public void setQuantityEntitled(Integer quantityEntitled) {
+  public void setQuantityEntitled(@javax.annotation.Nullable Integer quantityEntitled) {
     this.quantityEntitled = quantityEntitled;
   }
 
 
-  public SubscriptionEntitlementResponse quantityConsumed(Integer quantityConsumed) {
-    
+  public SubscriptionEntitlementResponse quantityConsumed(@javax.annotation.Nullable Integer quantityConsumed) {
     this.quantityConsumed = quantityConsumed;
     return this;
   }
 
-   /**
+  /**
    * Quantity consumed from the entitlement
    * minimum: 0
    * @return quantityConsumed
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getQuantityConsumed() {
     return quantityConsumed;
   }
 
-
-  public void setQuantityConsumed(Integer quantityConsumed) {
+  public void setQuantityConsumed(@javax.annotation.Nullable Integer quantityConsumed) {
     this.quantityConsumed = quantityConsumed;
   }
 
 
-  public SubscriptionEntitlementResponse quantityAvailable(Integer quantityAvailable) {
-    
+  public SubscriptionEntitlementResponse quantityAvailable(@javax.annotation.Nullable Integer quantityAvailable) {
     this.quantityAvailable = quantityAvailable;
     return this;
   }
 
-   /**
+  /**
    * Quantity available from the entitlement
    * minimum: 0
    * @return quantityAvailable
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getQuantityAvailable() {
     return quantityAvailable;
   }
 
-
-  public void setQuantityAvailable(Integer quantityAvailable) {
+  public void setQuantityAvailable(@javax.annotation.Nullable Integer quantityAvailable) {
     this.quantityAvailable = quantityAvailable;
   }
 
 
-  public SubscriptionEntitlementResponse asset(SubscriptionAsset asset) {
-    
+  public SubscriptionEntitlementResponse asset(@javax.annotation.Nullable SubscriptionAsset asset) {
     this.asset = asset;
     return this;
   }
 
-   /**
+  /**
    * Get asset
    * @return asset
-  **/
+   */
   @javax.annotation.Nullable
-
   public SubscriptionAsset getAsset() {
     return asset;
   }
 
-
-  public void setAsset(SubscriptionAsset asset) {
+  public void setAsset(@javax.annotation.Nullable SubscriptionAsset asset) {
     this.asset = asset;
   }
 
@@ -293,24 +285,25 @@ public class SubscriptionEntitlementResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SubscriptionEntitlementResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SubscriptionEntitlementResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubscriptionEntitlementResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SubscriptionEntitlementResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SubscriptionEntitlementResponse is not found in the empty JSON string", SubscriptionEntitlementResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the optional field `asset`
       if (jsonObj.get("asset") != null && !jsonObj.get("asset").isJsonNull()) {
-        SubscriptionAsset.validateJsonObject(jsonObj.getAsJsonObject("asset"));
+        SubscriptionAsset.validateJsonElement(jsonObj.get("asset"));
       }
   }
 
@@ -342,7 +335,12 @@ public class SubscriptionEntitlementResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -351,8 +349,9 @@ public class SubscriptionEntitlementResponse {
 
            @Override
            public SubscriptionEntitlementResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SubscriptionEntitlementResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -380,22 +379,22 @@ public class SubscriptionEntitlementResponse {
     }
   }
 
- /**
-  * Create an instance of SubscriptionEntitlementResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubscriptionEntitlementResponse
-  * @throws IOException if the JSON string is invalid with respect to SubscriptionEntitlementResponse
-  */
+  /**
+   * Create an instance of SubscriptionEntitlementResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubscriptionEntitlementResponse
+   * @throws IOException if the JSON string is invalid with respect to SubscriptionEntitlementResponse
+   */
   public static SubscriptionEntitlementResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubscriptionEntitlementResponse.class);
   }
 
- /**
-  * Convert an instance of SubscriptionEntitlementResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubscriptionEntitlementResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

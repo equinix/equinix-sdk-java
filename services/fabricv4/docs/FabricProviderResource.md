@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | [**TypeEnum**](#TypeEnum) | Routing protocol type |  |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**name** | **String** |  |  [optional] |
 |**uuid** | **UUID** | Equinix-assigned route protocol identifier |  [optional] |
 |**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  |  [optional] |
@@ -28,6 +28,8 @@
 
 | Name | Value |
 |---- | -----|
+| XF_ROUTER | &quot;XF_ROUTER&quot; |
+| IP_VC | &quot;IP_VC&quot; |
 | BGP | &quot;BGP&quot; |
 
 

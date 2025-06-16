@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,127 +30,124 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * PortLag
+ * Port Lag
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortLag {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_MEMBER_STATUS = "memberStatus";
   @SerializedName(SERIALIZED_NAME_MEMBER_STATUS)
+  @javax.annotation.Nullable
   private String memberStatus;
 
   public PortLag() {
   }
 
-  public PortLag id(String id) {
-    
+  public PortLag id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getId() {
     return id;
   }
 
-
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public PortLag enabled(Boolean enabled) {
-    
+  @Deprecated
+  public PortLag enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * enabled
    * @return enabled
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  @Deprecated
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public PortLag name(String name) {
-    
+  public PortLag name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PortLag memberStatus(String memberStatus) {
-    
+  public PortLag memberStatus(@javax.annotation.Nullable String memberStatus) {
     this.memberStatus = memberStatus;
     return this;
   }
 
-   /**
+  /**
    * member status
    * @return memberStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getMemberStatus() {
     return memberStatus;
   }
 
-
-  public void setMemberStatus(String memberStatus) {
+  public void setMemberStatus(@javax.annotation.Nullable String memberStatus) {
     this.memberStatus = memberStatus;
   }
 
@@ -261,18 +258,19 @@ public class PortLag {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortLag
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortLag.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortLag
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortLag.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortLag is not found in the empty JSON string", PortLag.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
@@ -312,7 +310,12 @@ public class PortLag {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -321,8 +324,9 @@ public class PortLag {
 
            @Override
            public PortLag read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortLag instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -350,22 +354,22 @@ public class PortLag {
     }
   }
 
- /**
-  * Create an instance of PortLag given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortLag
-  * @throws IOException if the JSON string is invalid with respect to PortLag
-  */
+  /**
+   * Create an instance of PortLag given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortLag
+   * @throws IOException if the JSON string is invalid with respect to PortLag
+   */
   public static PortLag fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortLag.class);
   }
 
- /**
-  * Convert an instance of PortLag to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortLag to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

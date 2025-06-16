@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.HopProbes;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,43 +49,41 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Hop
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Hop {
   public static final String SERIALIZED_NAME_HOP = "hop";
   @SerializedName(SERIALIZED_NAME_HOP)
+  @javax.annotation.Nullable
   private Integer hop;
 
   public static final String SERIALIZED_NAME_PROBES = "probes";
   @SerializedName(SERIALIZED_NAME_PROBES)
+  @javax.annotation.Nullable
   private List<HopProbes> probes = new ArrayList<>();
 
   public Hop() {
   }
 
-  public Hop hop(Integer hop) {
-    
+  public Hop hop(@javax.annotation.Nullable Integer hop) {
     this.hop = hop;
     return this;
   }
 
-   /**
+  /**
    * Get hop
    * @return hop
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getHop() {
     return hop;
   }
 
-
-  public void setHop(Integer hop) {
+  public void setHop(@javax.annotation.Nullable Integer hop) {
     this.hop = hop;
   }
 
 
-  public Hop probes(List<HopProbes> probes) {
-    
+  public Hop probes(@javax.annotation.Nullable List<HopProbes> probes) {
     this.probes = probes;
     return this;
   }
@@ -96,18 +96,16 @@ public class Hop {
     return this;
   }
 
-   /**
+  /**
    * Get probes
    * @return probes
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<HopProbes> getProbes() {
     return probes;
   }
 
-
-  public void setProbes(List<HopProbes> probes) {
+  public void setProbes(@javax.annotation.Nullable List<HopProbes> probes) {
     this.probes = probes;
   }
 
@@ -212,18 +210,19 @@ public class Hop {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Hop
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Hop.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Hop
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Hop.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Hop is not found in the empty JSON string", Hop.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("probes") != null && !jsonObj.get("probes").isJsonNull()) {
         JsonArray jsonArrayprobes = jsonObj.getAsJsonArray("probes");
         if (jsonArrayprobes != null) {
@@ -234,7 +233,7 @@ public class Hop {
 
           // validate the optional field `probes` (array)
           for (int i = 0; i < jsonArrayprobes.size(); i++) {
-            HopProbes.validateJsonObject(jsonArrayprobes.get(i).getAsJsonObject());
+            HopProbes.validateJsonElement(jsonArrayprobes.get(i));
           };
         }
       }
@@ -268,7 +267,12 @@ public class Hop {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -277,8 +281,9 @@ public class Hop {
 
            @Override
            public Hop read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Hop instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -306,22 +311,22 @@ public class Hop {
     }
   }
 
- /**
-  * Create an instance of Hop given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Hop
-  * @throws IOException if the JSON string is invalid with respect to Hop
-  */
+  /**
+   * Create an instance of Hop given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Hop
+   * @throws IOException if the JSON string is invalid with respect to Hop
+   */
   public static Hop fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Hop.class);
   }
 
- /**
-  * Convert an instance of Hop to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Hop to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

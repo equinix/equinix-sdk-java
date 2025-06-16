@@ -22,6 +22,8 @@
 
 | Name | Value |
 |---- | -----|
+| PERMISSION | &quot;PERMISSION&quot; |
+| DIRECT_CONNECT | &quot;DIRECT_CONNECT&quot; |
 | VIRTUAL_PRIVATE_GATEWAY | &quot;VIRTUAL_PRIVATE_GATEWAY&quot; |
 
 

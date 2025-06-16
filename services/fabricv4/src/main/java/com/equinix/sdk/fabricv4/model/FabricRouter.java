@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequestPackage;
 import com.equinix.sdk.fabricv4.model.SimplifiedLocationWithoutIBX;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -34,13 +34,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -48,7 +50,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * The Router schema defines the structure for a network router within the orchestrator system.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FabricRouter {
   /**
    * Gets or Sets type
@@ -93,163 +95,156 @@ public class FabricRouter {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocationWithoutIBX location;
 
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nullable
   private CloudRouterPostRequestPackage _package;
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_PROPERTIES = "deploymentProperties";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_PROPERTIES)
+  @javax.annotation.Nonnull
   private TopologyProperties deploymentProperties;
 
   public FabricRouter() {
   }
 
-  public FabricRouter type(TypeEnum type) {
-    
+  public FabricRouter type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public FabricRouter name(String name) {
-    
+  public FabricRouter name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FabricRouter uuid(UUID uuid) {
-    
+  public FabricRouter uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned access point identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public FabricRouter location(SimplifiedLocationWithoutIBX location) {
-    
+  public FabricRouter location(@javax.annotation.Nullable SimplifiedLocationWithoutIBX location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocationWithoutIBX getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocationWithoutIBX location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocationWithoutIBX location) {
     this.location = location;
   }
 
 
-  public FabricRouter _package(CloudRouterPostRequestPackage _package) {
-    
+  public FabricRouter _package(@javax.annotation.Nullable CloudRouterPostRequestPackage _package) {
     this._package = _package;
     return this;
   }
 
-   /**
+  /**
    * Get _package
    * @return _package
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterPostRequestPackage getPackage() {
     return _package;
   }
 
-
-  public void setPackage(CloudRouterPostRequestPackage _package) {
+  public void setPackage(@javax.annotation.Nullable CloudRouterPostRequestPackage _package) {
     this._package = _package;
   }
 
 
-  public FabricRouter deploymentProperties(TopologyProperties deploymentProperties) {
-    
+  public FabricRouter deploymentProperties(@javax.annotation.Nonnull TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
     return this;
   }
 
-   /**
+  /**
    * Get deploymentProperties
    * @return deploymentProperties
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TopologyProperties getDeploymentProperties() {
     return deploymentProperties;
   }
 
-
-  public void setDeploymentProperties(TopologyProperties deploymentProperties) {
+  public void setDeploymentProperties(@javax.annotation.Nonnull TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
   }
 
@@ -368,28 +363,31 @@ public class FabricRouter {
     openapiRequiredFields.add("deploymentProperties");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FabricRouter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FabricRouter.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricRouter
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricRouter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FabricRouter is not found in the empty JSON string", FabricRouter.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FabricRouter.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -398,14 +396,14 @@ public class FabricRouter {
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocationWithoutIBX.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocationWithoutIBX.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
-        CloudRouterPostRequestPackage.validateJsonObject(jsonObj.getAsJsonObject("package"));
+        CloudRouterPostRequestPackage.validateJsonElement(jsonObj.get("package"));
       }
       // validate the required field `deploymentProperties`
-      TopologyProperties.validateJsonObject(jsonObj.getAsJsonObject("deploymentProperties"));
+      TopologyProperties.validateJsonElement(jsonObj.get("deploymentProperties"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -436,7 +434,12 @@ public class FabricRouter {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -445,8 +448,9 @@ public class FabricRouter {
 
            @Override
            public FabricRouter read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FabricRouter instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -474,22 +478,22 @@ public class FabricRouter {
     }
   }
 
- /**
-  * Create an instance of FabricRouter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FabricRouter
-  * @throws IOException if the JSON string is invalid with respect to FabricRouter
-  */
+  /**
+   * Create an instance of FabricRouter given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricRouter
+   * @throws IOException if the JSON string is invalid with respect to FabricRouter
+   */
   public static FabricRouter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FabricRouter.class);
   }
 
- /**
-  * Convert an instance of FabricRouter to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FabricRouter to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

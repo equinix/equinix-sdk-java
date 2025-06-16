@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionFilter;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSelector;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSink;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,189 +49,175 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Update Stream Subscription
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamSubscriptionPutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
+  @javax.annotation.Nullable
   private StreamSubscriptionFilter filters;
 
   public static final String SERIALIZED_NAME_METRIC_SELECTOR = "metricSelector";
   @SerializedName(SERIALIZED_NAME_METRIC_SELECTOR)
+  @javax.annotation.Nullable
   private StreamSubscriptionSelector metricSelector;
 
   public static final String SERIALIZED_NAME_EVENT_SELECTOR = "eventSelector";
   @SerializedName(SERIALIZED_NAME_EVENT_SELECTOR)
+  @javax.annotation.Nullable
   private StreamSubscriptionSelector eventSelector;
 
   public static final String SERIALIZED_NAME_SINK = "sink";
   @SerializedName(SERIALIZED_NAME_SINK)
+  @javax.annotation.Nullable
   private StreamSubscriptionSink sink;
 
   public StreamSubscriptionPutRequest() {
   }
 
-  public StreamSubscriptionPutRequest name(String name) {
-    
+  public StreamSubscriptionPutRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream subscription name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public StreamSubscriptionPutRequest description(String description) {
-    
+  public StreamSubscriptionPutRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream subscription description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public StreamSubscriptionPutRequest enabled(Boolean enabled) {
-    
+  public StreamSubscriptionPutRequest enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Stream subscription enabled status
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public StreamSubscriptionPutRequest filters(StreamSubscriptionFilter filters) {
-    
+  public StreamSubscriptionPutRequest filters(@javax.annotation.Nullable StreamSubscriptionFilter filters) {
     this.filters = filters;
     return this;
   }
 
-   /**
+  /**
    * Get filters
    * @return filters
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionFilter getFilters() {
     return filters;
   }
 
-
-  public void setFilters(StreamSubscriptionFilter filters) {
+  public void setFilters(@javax.annotation.Nullable StreamSubscriptionFilter filters) {
     this.filters = filters;
   }
 
 
-  public StreamSubscriptionPutRequest metricSelector(StreamSubscriptionSelector metricSelector) {
-    
+  public StreamSubscriptionPutRequest metricSelector(@javax.annotation.Nullable StreamSubscriptionSelector metricSelector) {
     this.metricSelector = metricSelector;
     return this;
   }
 
-   /**
+  /**
    * Get metricSelector
    * @return metricSelector
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionSelector getMetricSelector() {
     return metricSelector;
   }
 
-
-  public void setMetricSelector(StreamSubscriptionSelector metricSelector) {
+  public void setMetricSelector(@javax.annotation.Nullable StreamSubscriptionSelector metricSelector) {
     this.metricSelector = metricSelector;
   }
 
 
-  public StreamSubscriptionPutRequest eventSelector(StreamSubscriptionSelector eventSelector) {
-    
+  public StreamSubscriptionPutRequest eventSelector(@javax.annotation.Nullable StreamSubscriptionSelector eventSelector) {
     this.eventSelector = eventSelector;
     return this;
   }
 
-   /**
+  /**
    * Get eventSelector
    * @return eventSelector
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionSelector getEventSelector() {
     return eventSelector;
   }
 
-
-  public void setEventSelector(StreamSubscriptionSelector eventSelector) {
+  public void setEventSelector(@javax.annotation.Nullable StreamSubscriptionSelector eventSelector) {
     this.eventSelector = eventSelector;
   }
 
 
-  public StreamSubscriptionPutRequest sink(StreamSubscriptionSink sink) {
-    
+  public StreamSubscriptionPutRequest sink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
     this.sink = sink;
     return this;
   }
 
-   /**
+  /**
    * Get sink
    * @return sink
-  **/
+   */
   @javax.annotation.Nullable
-
   public StreamSubscriptionSink getSink() {
     return sink;
   }
 
-
-  public void setSink(StreamSubscriptionSink sink) {
+  public void setSink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
     this.sink = sink;
   }
 
@@ -349,18 +337,19 @@ public class StreamSubscriptionPutRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamSubscriptionPutRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamSubscriptionPutRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamSubscriptionPutRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamSubscriptionPutRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionPutRequest is not found in the empty JSON string", StreamSubscriptionPutRequest.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -369,19 +358,19 @@ public class StreamSubscriptionPutRequest {
       }
       // validate the optional field `filters`
       if (jsonObj.get("filters") != null && !jsonObj.get("filters").isJsonNull()) {
-        StreamSubscriptionFilter.validateJsonObject(jsonObj.getAsJsonObject("filters"));
+        StreamSubscriptionFilter.validateJsonElement(jsonObj.get("filters"));
       }
       // validate the optional field `metricSelector`
       if (jsonObj.get("metricSelector") != null && !jsonObj.get("metricSelector").isJsonNull()) {
-        StreamSubscriptionSelector.validateJsonObject(jsonObj.getAsJsonObject("metricSelector"));
+        StreamSubscriptionSelector.validateJsonElement(jsonObj.get("metricSelector"));
       }
       // validate the optional field `eventSelector`
       if (jsonObj.get("eventSelector") != null && !jsonObj.get("eventSelector").isJsonNull()) {
-        StreamSubscriptionSelector.validateJsonObject(jsonObj.getAsJsonObject("eventSelector"));
+        StreamSubscriptionSelector.validateJsonElement(jsonObj.get("eventSelector"));
       }
       // validate the optional field `sink`
       if (jsonObj.get("sink") != null && !jsonObj.get("sink").isJsonNull()) {
-        StreamSubscriptionSink.validateJsonObject(jsonObj.getAsJsonObject("sink"));
+        StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
       }
   }
 
@@ -413,7 +402,12 @@ public class StreamSubscriptionPutRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -422,8 +416,9 @@ public class StreamSubscriptionPutRequest {
 
            @Override
            public StreamSubscriptionPutRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamSubscriptionPutRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -451,22 +446,22 @@ public class StreamSubscriptionPutRequest {
     }
   }
 
- /**
-  * Create an instance of StreamSubscriptionPutRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamSubscriptionPutRequest
-  * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionPutRequest
-  */
+  /**
+   * Create an instance of StreamSubscriptionPutRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamSubscriptionPutRequest
+   * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionPutRequest
+   */
   public static StreamSubscriptionPutRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamSubscriptionPutRequest.class);
   }
 
- /**
-  * Convert an instance of StreamSubscriptionPutRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamSubscriptionPutRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.DeploymentState;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
 import com.google.gson.TypeAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,14 +49,16 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * GCPCloudRouterResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class GCPCloudRouterResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private DeploymentState state;
 
   /**
@@ -100,155 +104,146 @@ public class GCPCloudRouterResponse {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_VPC_ID = "vpcId";
   @SerializedName(SERIALIZED_NAME_VPC_ID)
+  @javax.annotation.Nullable
   private UUID vpcId;
 
   public static final String SERIALIZED_NAME_SUBNET_ID = "subnetId";
   @SerializedName(SERIALIZED_NAME_SUBNET_ID)
+  @javax.annotation.Nullable
   private UUID subnetId;
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_PROPERTIES = "deploymentProperties";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_PROPERTIES)
+  @javax.annotation.Nullable
   private TopologyProperties deploymentProperties;
 
   public GCPCloudRouterResponse() {
   }
 
-  public GCPCloudRouterResponse id(String id) {
-    
+  public GCPCloudRouterResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Cloud Router id.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getId() {
     return id;
   }
 
-
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public GCPCloudRouterResponse state(DeploymentState state) {
-    
+  public GCPCloudRouterResponse state(@javax.annotation.Nullable DeploymentState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public DeploymentState getState() {
     return state;
   }
 
-
-  public void setState(DeploymentState state) {
+  public void setState(@javax.annotation.Nullable DeploymentState state) {
     this.state = state;
   }
 
 
-  public GCPCloudRouterResponse type(TypeEnum type) {
-    
+  public GCPCloudRouterResponse type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public GCPCloudRouterResponse vpcId(UUID vpcId) {
-    
+  public GCPCloudRouterResponse vpcId(@javax.annotation.Nullable UUID vpcId) {
     this.vpcId = vpcId;
     return this;
   }
 
-   /**
+  /**
    * Get vpcId
    * @return vpcId
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getVpcId() {
     return vpcId;
   }
 
-
-  public void setVpcId(UUID vpcId) {
+  public void setVpcId(@javax.annotation.Nullable UUID vpcId) {
     this.vpcId = vpcId;
   }
 
 
-  public GCPCloudRouterResponse subnetId(UUID subnetId) {
-    
+  public GCPCloudRouterResponse subnetId(@javax.annotation.Nullable UUID subnetId) {
     this.subnetId = subnetId;
     return this;
   }
 
-   /**
+  /**
    * Get subnetId
    * @return subnetId
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getSubnetId() {
     return subnetId;
   }
 
-
-  public void setSubnetId(UUID subnetId) {
+  public void setSubnetId(@javax.annotation.Nullable UUID subnetId) {
     this.subnetId = subnetId;
   }
 
 
-  public GCPCloudRouterResponse deploymentProperties(TopologyProperties deploymentProperties) {
-    
+  public GCPCloudRouterResponse deploymentProperties(@javax.annotation.Nullable TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
     return this;
   }
 
-   /**
+  /**
    * Get deploymentProperties
    * @return deploymentProperties
-  **/
+   */
   @javax.annotation.Nullable
-
   public TopologyProperties getDeploymentProperties() {
     return deploymentProperties;
   }
 
-
-  public void setDeploymentProperties(TopologyProperties deploymentProperties) {
+  public void setDeploymentProperties(@javax.annotation.Nullable TopologyProperties deploymentProperties) {
     this.deploymentProperties = deploymentProperties;
   }
 
@@ -365,23 +360,32 @@ public class GCPCloudRouterResponse {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GCPCloudRouterResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!GCPCloudRouterResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GCPCloudRouterResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GCPCloudRouterResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in GCPCloudRouterResponse is not found in the empty JSON string", GCPCloudRouterResponse.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        DeploymentState.validateJsonElement(jsonObj.get("state"));
+      }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("vpcId") != null && !jsonObj.get("vpcId").isJsonNull()) && !jsonObj.get("vpcId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `vpcId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vpcId").toString()));
@@ -391,7 +395,7 @@ public class GCPCloudRouterResponse {
       }
       // validate the optional field `deploymentProperties`
       if (jsonObj.get("deploymentProperties") != null && !jsonObj.get("deploymentProperties").isJsonNull()) {
-        TopologyProperties.validateJsonObject(jsonObj.getAsJsonObject("deploymentProperties"));
+        TopologyProperties.validateJsonElement(jsonObj.get("deploymentProperties"));
       }
   }
 
@@ -423,7 +427,12 @@ public class GCPCloudRouterResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -432,8 +441,9 @@ public class GCPCloudRouterResponse {
 
            @Override
            public GCPCloudRouterResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              GCPCloudRouterResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -461,22 +471,22 @@ public class GCPCloudRouterResponse {
     }
   }
 
- /**
-  * Create an instance of GCPCloudRouterResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GCPCloudRouterResponse
-  * @throws IOException if the JSON string is invalid with respect to GCPCloudRouterResponse
-  */
+  /**
+   * Create an instance of GCPCloudRouterResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GCPCloudRouterResponse
+   * @throws IOException if the JSON string is invalid with respect to GCPCloudRouterResponse
+   */
   public static GCPCloudRouterResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GCPCloudRouterResponse.class);
   }
 
- /**
-  * Convert an instance of GCPCloudRouterResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GCPCloudRouterResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
