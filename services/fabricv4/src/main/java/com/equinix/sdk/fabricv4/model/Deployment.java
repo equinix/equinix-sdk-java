@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.DeploymentTopology;
 import com.equinix.sdk.fabricv4.model.OrchestratorProviders;
 import com.equinix.sdk.fabricv4.model.Order;
@@ -26,6 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,230 +54,217 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Deployment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Deployment {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TOPOLOGY = "topology";
   @SerializedName(SERIALIZED_NAME_TOPOLOGY)
+  @javax.annotation.Nullable
   private DeploymentTopology topology;
 
   public static final String SERIALIZED_NAME_PROVIDERS = "providers";
   @SerializedName(SERIALIZED_NAME_PROVIDERS)
+  @javax.annotation.Nonnull
   private List<OrchestratorProviders> providers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nonnull
   private Project project;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nonnull
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private Order order;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public Deployment() {
   }
 
-  public Deployment type(String type) {
-    
+  public Deployment type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public Deployment name(String name) {
-    
+  public Deployment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Deployment description(String description) {
-    
+  public Deployment description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Deployment topology(DeploymentTopology topology) {
-    
+  public Deployment topology(@javax.annotation.Nullable DeploymentTopology topology) {
     this.topology = topology;
     return this;
   }
 
-   /**
+  /**
    * Get topology
    * @return topology
-  **/
+   */
   @javax.annotation.Nullable
-
   public DeploymentTopology getTopology() {
     return topology;
   }
 
-
-  public void setTopology(DeploymentTopology topology) {
+  public void setTopology(@javax.annotation.Nullable DeploymentTopology topology) {
     this.topology = topology;
   }
 
 
-  public Deployment providers(List<OrchestratorProviders> providers) {
-    
+  public Deployment providers(@javax.annotation.Nonnull List<OrchestratorProviders> providers) {
     this.providers = providers;
     return this;
   }
 
   public Deployment addProvidersItem(OrchestratorProviders providersItem) {
+    if (this.providers == null) {
+      this.providers = new ArrayList<>();
+    }
     this.providers.add(providersItem);
     return this;
   }
 
-   /**
+  /**
    * Get providers
    * @return providers
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<OrchestratorProviders> getProviders() {
     return providers;
   }
 
-
-  public void setProviders(List<OrchestratorProviders> providers) {
+  public void setProviders(@javax.annotation.Nonnull List<OrchestratorProviders> providers) {
     this.providers = providers;
   }
 
 
-  public Deployment project(Project project) {
-    
+  public Deployment project(@javax.annotation.Nonnull Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nonnull Project project) {
     this.project = project;
   }
 
 
-  public Deployment account(SimplifiedAccount account) {
-    
+  public Deployment account(@javax.annotation.Nonnull SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nonnull
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nonnull SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public Deployment order(Order order) {
-    
+  public Deployment order(@javax.annotation.Nullable Order order) {
     this.order = order;
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
-
   public Order getOrder() {
     return order;
   }
 
-
-  public void setOrder(Order order) {
+  public void setOrder(@javax.annotation.Nullable Order order) {
     this.order = order;
   }
 
 
-  public Deployment notifications(List<SimplifiedNotification> notifications) {
-    
+  public Deployment notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -288,18 +277,16 @@ public class Deployment {
     return this;
   }
 
-   /**
+  /**
    * Preferences for notifications on deployement status changes
    * @return notifications
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
@@ -430,25 +417,26 @@ public class Deployment {
     openapiRequiredFields.add("account");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Deployment
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Deployment.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Deployment
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Deployment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Deployment is not found in the empty JSON string", Deployment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Deployment.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
@@ -460,7 +448,7 @@ public class Deployment {
       }
       // validate the optional field `topology`
       if (jsonObj.get("topology") != null && !jsonObj.get("topology").isJsonNull()) {
-        DeploymentTopology.validateJsonObject(jsonObj.getAsJsonObject("topology"));
+        DeploymentTopology.validateJsonElement(jsonObj.get("topology"));
       }
       // ensure the json data is an array
       if (!jsonObj.get("providers").isJsonArray()) {
@@ -470,15 +458,15 @@ public class Deployment {
       JsonArray jsonArrayproviders = jsonObj.getAsJsonArray("providers");
       // validate the required field `providers` (array)
       for (int i = 0; i < jsonArrayproviders.size(); i++) {
-        OrchestratorProviders.validateJsonObject(jsonArrayproviders.get(i).getAsJsonObject());
+        OrchestratorProviders.validateJsonElement(jsonArrayproviders.get(i));
       };
       // validate the required field `project`
-      Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+      Project.validateJsonElement(jsonObj.get("project"));
       // validate the required field `account`
-      SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+      SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        Order.validateJsonObject(jsonObj.getAsJsonObject("order"));
+        Order.validateJsonElement(jsonObj.get("order"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
@@ -490,7 +478,7 @@ public class Deployment {
 
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }
@@ -524,7 +512,12 @@ public class Deployment {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -533,8 +526,9 @@ public class Deployment {
 
            @Override
            public Deployment read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Deployment instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -562,22 +556,22 @@ public class Deployment {
     }
   }
 
- /**
-  * Create an instance of Deployment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Deployment
-  * @throws IOException if the JSON string is invalid with respect to Deployment
-  */
+  /**
+   * Create an instance of Deployment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Deployment
+   * @throws IOException if the JSON string is invalid with respect to Deployment
+   */
   public static Deployment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Deployment.class);
   }
 
- /**
-  * Convert an instance of Deployment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Deployment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

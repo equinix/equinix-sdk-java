@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequestPackage;
 import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.Order;
@@ -27,6 +26,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -39,13 +39,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -53,7 +55,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create Cloud Router
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterPostRequest {
   /**
    * Gets or Sets type
@@ -98,203 +100,195 @@ public class CloudRouterPostRequest {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocationWithoutIBX location;
 
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nullable
   private CloudRouterPostRequestPackage _package;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private Order order;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
   @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
+  @javax.annotation.Nullable
   private MarketplaceSubscription marketplaceSubscription;
 
   public CloudRouterPostRequest() {
   }
 
-  public CloudRouterPostRequest type(TypeEnum type) {
-    
+  public CloudRouterPostRequest type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public CloudRouterPostRequest name(String name) {
-    
+  public CloudRouterPostRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided Cloud Router name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CloudRouterPostRequest location(SimplifiedLocationWithoutIBX location) {
-    
+  public CloudRouterPostRequest location(@javax.annotation.Nullable SimplifiedLocationWithoutIBX location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocationWithoutIBX getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocationWithoutIBX location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocationWithoutIBX location) {
     this.location = location;
   }
 
 
-  public CloudRouterPostRequest _package(CloudRouterPostRequestPackage _package) {
-    
+  public CloudRouterPostRequest _package(@javax.annotation.Nullable CloudRouterPostRequestPackage _package) {
     this._package = _package;
     return this;
   }
 
-   /**
+  /**
    * Get _package
    * @return _package
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouterPostRequestPackage getPackage() {
     return _package;
   }
 
-
-  public void setPackage(CloudRouterPostRequestPackage _package) {
+  public void setPackage(@javax.annotation.Nullable CloudRouterPostRequestPackage _package) {
     this._package = _package;
   }
 
 
-  public CloudRouterPostRequest order(Order order) {
-    
+  public CloudRouterPostRequest order(@javax.annotation.Nullable Order order) {
     this.order = order;
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
-
   public Order getOrder() {
     return order;
   }
 
-
-  public void setOrder(Order order) {
+  public void setOrder(@javax.annotation.Nullable Order order) {
     this.order = order;
   }
 
 
-  public CloudRouterPostRequest project(Project project) {
-    
+  public CloudRouterPostRequest project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public CloudRouterPostRequest account(SimplifiedAccount account) {
-    
+  public CloudRouterPostRequest account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public CloudRouterPostRequest notifications(List<SimplifiedNotification> notifications) {
-    
+  public CloudRouterPostRequest notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -307,40 +301,35 @@ public class CloudRouterPostRequest {
     return this;
   }
 
-   /**
+  /**
    * Preferences for notifications on connection configuration or status changes
    * @return notifications
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public CloudRouterPostRequest marketplaceSubscription(MarketplaceSubscription marketplaceSubscription) {
-    
+  public CloudRouterPostRequest marketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
     this.marketplaceSubscription = marketplaceSubscription;
     return this;
   }
 
-   /**
+  /**
    * Get marketplaceSubscription
    * @return marketplaceSubscription
-  **/
+   */
   @javax.annotation.Nullable
-
   public MarketplaceSubscription getMarketplaceSubscription() {
     return marketplaceSubscription;
   }
 
-
-  public void setMarketplaceSubscription(MarketplaceSubscription marketplaceSubscription) {
+  public void setMarketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
     this.marketplaceSubscription = marketplaceSubscription;
   }
 
@@ -466,43 +455,48 @@ public class CloudRouterPostRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterPostRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterPostRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterPostRequest is not found in the empty JSON string", CloudRouterPostRequest.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocationWithoutIBX.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocationWithoutIBX.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
-        CloudRouterPostRequestPackage.validateJsonObject(jsonObj.getAsJsonObject("package"));
+        CloudRouterPostRequestPackage.validateJsonElement(jsonObj.get("package"));
       }
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        Order.validateJsonObject(jsonObj.getAsJsonObject("order"));
+        Order.validateJsonElement(jsonObj.get("order"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
@@ -514,13 +508,13 @@ public class CloudRouterPostRequest {
 
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }
       // validate the optional field `marketplaceSubscription`
       if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
-        MarketplaceSubscription.validateJsonObject(jsonObj.getAsJsonObject("marketplaceSubscription"));
+        MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
       }
   }
 
@@ -552,7 +546,12 @@ public class CloudRouterPostRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -561,8 +560,9 @@ public class CloudRouterPostRequest {
 
            @Override
            public CloudRouterPostRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterPostRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -590,22 +590,22 @@ public class CloudRouterPostRequest {
     }
   }
 
- /**
-  * Create an instance of CloudRouterPostRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterPostRequest
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterPostRequest
-  */
+  /**
+   * Create an instance of CloudRouterPostRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterPostRequest
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterPostRequest
+   */
   public static CloudRouterPostRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterPostRequest.class);
   }
 
- /**
-  * Convert an instance of CloudRouterPostRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterPostRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

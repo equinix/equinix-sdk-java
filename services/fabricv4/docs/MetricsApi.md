@@ -7,7 +7,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getMetricByAssetId**](MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id |
 
 
-<a name="getMetricByAssetId"></a>
+<a id="getMetricByAssetId"></a>
 # **getMetricByAssetId**
 > GetMetricsByAssetResponse getMetricByAssetId(asset, assetId, fromDateTime, toDateTime, offset, limit)
 

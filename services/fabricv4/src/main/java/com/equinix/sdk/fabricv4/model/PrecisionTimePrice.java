@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PriceCharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,43 +49,41 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Precision Time Price
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PrecisionTimePrice {
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String SERIALIZED_NAME_CHARGES = "charges";
   @SerializedName(SERIALIZED_NAME_CHARGES)
+  @javax.annotation.Nullable
   private List<PriceCharge> charges = new ArrayList<>();
 
   public PrecisionTimePrice() {
   }
 
-  public PrecisionTimePrice currency(String currency) {
-    
+  public PrecisionTimePrice currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * offering price currency
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCurrency() {
     return currency;
   }
 
-
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public PrecisionTimePrice charges(List<PriceCharge> charges) {
-    
+  public PrecisionTimePrice charges(@javax.annotation.Nullable List<PriceCharge> charges) {
     this.charges = charges;
     return this;
   }
@@ -96,18 +96,16 @@ public class PrecisionTimePrice {
     return this;
   }
 
-   /**
+  /**
    * Get charges
    * @return charges
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PriceCharge> getCharges() {
     return charges;
   }
 
-
-  public void setCharges(List<PriceCharge> charges) {
+  public void setCharges(@javax.annotation.Nullable List<PriceCharge> charges) {
     this.charges = charges;
   }
 
@@ -212,18 +210,19 @@ public class PrecisionTimePrice {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PrecisionTimePrice
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PrecisionTimePrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PrecisionTimePrice
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PrecisionTimePrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PrecisionTimePrice is not found in the empty JSON string", PrecisionTimePrice.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonNull()) && !jsonObj.get("currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
@@ -237,7 +236,7 @@ public class PrecisionTimePrice {
 
           // validate the optional field `charges` (array)
           for (int i = 0; i < jsonArraycharges.size(); i++) {
-            PriceCharge.validateJsonObject(jsonArraycharges.get(i).getAsJsonObject());
+            PriceCharge.validateJsonElement(jsonArraycharges.get(i));
           };
         }
       }
@@ -271,7 +270,12 @@ public class PrecisionTimePrice {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -280,8 +284,9 @@ public class PrecisionTimePrice {
 
            @Override
            public PrecisionTimePrice read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PrecisionTimePrice instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -309,22 +314,22 @@ public class PrecisionTimePrice {
     }
   }
 
- /**
-  * Create an instance of PrecisionTimePrice given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PrecisionTimePrice
-  * @throws IOException if the JSON string is invalid with respect to PrecisionTimePrice
-  */
+  /**
+   * Create an instance of PrecisionTimePrice given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PrecisionTimePrice
+   * @throws IOException if the JSON string is invalid with respect to PrecisionTimePrice
+   */
   public static PrecisionTimePrice fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PrecisionTimePrice.class);
   }
 
- /**
-  * Convert an instance of PrecisionTimePrice to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PrecisionTimePrice to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

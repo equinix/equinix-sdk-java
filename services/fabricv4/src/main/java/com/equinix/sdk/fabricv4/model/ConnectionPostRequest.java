@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.equinix.sdk.fabricv4.model.ConnectionSideAdditionalInfo;
@@ -30,6 +29,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -42,13 +42,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -56,292 +58,277 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create connection post request
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionPostRequest {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private ConnectionType type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private Order order;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nonnull
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
+  @javax.annotation.Nonnull
   private Integer bandwidth;
 
   public static final String SERIALIZED_NAME_GEO_SCOPE = "geoScope";
   @SerializedName(SERIALIZED_NAME_GEO_SCOPE)
+  @javax.annotation.Nullable
   private GeoScopeType geoScope;
 
   public static final String SERIALIZED_NAME_REDUNDANCY = "redundancy";
   @SerializedName(SERIALIZED_NAME_REDUNDANCY)
+  @javax.annotation.Nullable
   private ConnectionRedundancy redundancy;
 
   public static final String SERIALIZED_NAME_A_SIDE = "aSide";
   @SerializedName(SERIALIZED_NAME_A_SIDE)
+  @javax.annotation.Nonnull
   private ConnectionSide aSide;
 
   public static final String SERIALIZED_NAME_Z_SIDE = "zSide";
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
+  @javax.annotation.Nonnull
   private ConnectionSide zSide;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
   private List<ConnectionSideAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
   @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
+  @javax.annotation.Nullable
   private MarketplaceSubscription marketplaceSubscription;
 
   public static final String SERIALIZED_NAME_END_CUSTOMER = "endCustomer";
   @SerializedName(SERIALIZED_NAME_END_CUSTOMER)
+  @javax.annotation.Nullable
   private EndCustomer endCustomer;
 
   public ConnectionPostRequest() {
   }
 
-  public ConnectionPostRequest type(ConnectionType type) {
-    
+  public ConnectionPostRequest type(@javax.annotation.Nonnull ConnectionType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionType getType() {
     return type;
   }
 
-
-  public void setType(ConnectionType type) {
+  public void setType(@javax.annotation.Nonnull ConnectionType type) {
     this.type = type;
   }
 
 
-  public ConnectionPostRequest name(String name) {
-    
+  public ConnectionPostRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided connection name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ConnectionPostRequest order(Order order) {
-    
+  public ConnectionPostRequest order(@javax.annotation.Nullable Order order) {
     this.order = order;
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
-
   public Order getOrder() {
     return order;
   }
 
-
-  public void setOrder(Order order) {
+  public void setOrder(@javax.annotation.Nullable Order order) {
     this.order = order;
   }
 
 
-  public ConnectionPostRequest notifications(List<SimplifiedNotification> notifications) {
-    
+  public ConnectionPostRequest notifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
 
   public ConnectionPostRequest addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
     this.notifications.add(notificationsItem);
     return this;
   }
 
-   /**
+  /**
    * Preferences for notifications on connection configuration or status changes
    * @return notifications
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public ConnectionPostRequest bandwidth(Integer bandwidth) {
-    
+  public ConnectionPostRequest bandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
     return this;
   }
 
-   /**
+  /**
    * Connection bandwidth in Mbps
    * minimum: 0
    * maximum: 100000
    * @return bandwidth
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Integer getBandwidth() {
     return bandwidth;
   }
 
-
-  public void setBandwidth(Integer bandwidth) {
+  public void setBandwidth(@javax.annotation.Nonnull Integer bandwidth) {
     this.bandwidth = bandwidth;
   }
 
 
-  public ConnectionPostRequest geoScope(GeoScopeType geoScope) {
-    
+  public ConnectionPostRequest geoScope(@javax.annotation.Nullable GeoScopeType geoScope) {
     this.geoScope = geoScope;
     return this;
   }
 
-   /**
+  /**
    * Get geoScope
    * @return geoScope
-  **/
+   */
   @javax.annotation.Nullable
-
   public GeoScopeType getGeoScope() {
     return geoScope;
   }
 
-
-  public void setGeoScope(GeoScopeType geoScope) {
+  public void setGeoScope(@javax.annotation.Nullable GeoScopeType geoScope) {
     this.geoScope = geoScope;
   }
 
 
-  public ConnectionPostRequest redundancy(ConnectionRedundancy redundancy) {
-    
+  public ConnectionPostRequest redundancy(@javax.annotation.Nullable ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
     return this;
   }
 
-   /**
+  /**
    * Get redundancy
    * @return redundancy
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionRedundancy getRedundancy() {
     return redundancy;
   }
 
-
-  public void setRedundancy(ConnectionRedundancy redundancy) {
+  public void setRedundancy(@javax.annotation.Nullable ConnectionRedundancy redundancy) {
     this.redundancy = redundancy;
   }
 
 
-  public ConnectionPostRequest aSide(ConnectionSide aSide) {
-    
+  public ConnectionPostRequest aSide(@javax.annotation.Nonnull ConnectionSide aSide) {
     this.aSide = aSide;
     return this;
   }
 
-   /**
+  /**
    * Get aSide
    * @return aSide
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionSide getaSide() {
     return aSide;
   }
 
-
-  public void setaSide(ConnectionSide aSide) {
+  public void setaSide(@javax.annotation.Nonnull ConnectionSide aSide) {
     this.aSide = aSide;
   }
 
 
-  public ConnectionPostRequest zSide(ConnectionSide zSide) {
-    
+  public ConnectionPostRequest zSide(@javax.annotation.Nonnull ConnectionSide zSide) {
     this.zSide = zSide;
     return this;
   }
 
-   /**
+  /**
    * Get zSide
    * @return zSide
-  **/
+   */
   @javax.annotation.Nonnull
-
   public ConnectionSide getzSide() {
     return zSide;
   }
 
-
-  public void setzSide(ConnectionSide zSide) {
+  public void setzSide(@javax.annotation.Nonnull ConnectionSide zSide) {
     this.zSide = zSide;
   }
 
 
-  public ConnectionPostRequest project(Project project) {
-    
+  public ConnectionPostRequest project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public ConnectionPostRequest additionalInfo(List<ConnectionSideAdditionalInfo> additionalInfo) {
-    
+  public ConnectionPostRequest additionalInfo(@javax.annotation.Nullable List<ConnectionSideAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -354,62 +341,54 @@ public class ConnectionPostRequest {
     return this;
   }
 
-   /**
+  /**
    * Connection additional information
    * @return additionalInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ConnectionSideAdditionalInfo> getAdditionalInfo() {
     return additionalInfo;
   }
 
-
-  public void setAdditionalInfo(List<ConnectionSideAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<ConnectionSideAdditionalInfo> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
 
-  public ConnectionPostRequest marketplaceSubscription(MarketplaceSubscription marketplaceSubscription) {
-    
+  public ConnectionPostRequest marketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
     this.marketplaceSubscription = marketplaceSubscription;
     return this;
   }
 
-   /**
+  /**
    * Get marketplaceSubscription
    * @return marketplaceSubscription
-  **/
+   */
   @javax.annotation.Nullable
-
   public MarketplaceSubscription getMarketplaceSubscription() {
     return marketplaceSubscription;
   }
 
-
-  public void setMarketplaceSubscription(MarketplaceSubscription marketplaceSubscription) {
+  public void setMarketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
     this.marketplaceSubscription = marketplaceSubscription;
   }
 
 
-  public ConnectionPostRequest endCustomer(EndCustomer endCustomer) {
-    
+  public ConnectionPostRequest endCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
     this.endCustomer = endCustomer;
     return this;
   }
 
-   /**
+  /**
    * Get endCustomer
    * @return endCustomer
-  **/
+   */
   @javax.annotation.Nullable
-
   public EndCustomer getEndCustomer() {
     return endCustomer;
   }
 
-
-  public void setEndCustomer(EndCustomer endCustomer) {
+  public void setEndCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
     this.endCustomer = endCustomer;
   }
 
@@ -553,31 +532,34 @@ public class ConnectionPostRequest {
     openapiRequiredFields.add("zSide");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionPostRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionPostRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionPostRequest is not found in the empty JSON string", ConnectionPostRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConnectionPostRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      ConnectionType.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        Order.validateJsonObject(jsonObj.getAsJsonObject("order"));
+        Order.validateJsonElement(jsonObj.get("order"));
       }
       // ensure the json data is an array
       if (!jsonObj.get("notifications").isJsonArray()) {
@@ -587,19 +569,23 @@ public class ConnectionPostRequest {
       JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
       // validate the required field `notifications` (array)
       for (int i = 0; i < jsonArraynotifications.size(); i++) {
-        SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+        SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
       };
+      // validate the optional field `geoScope`
+      if (jsonObj.get("geoScope") != null && !jsonObj.get("geoScope").isJsonNull()) {
+        GeoScopeType.validateJsonElement(jsonObj.get("geoScope"));
+      }
       // validate the optional field `redundancy`
       if (jsonObj.get("redundancy") != null && !jsonObj.get("redundancy").isJsonNull()) {
-        ConnectionRedundancy.validateJsonObject(jsonObj.getAsJsonObject("redundancy"));
+        ConnectionRedundancy.validateJsonElement(jsonObj.get("redundancy"));
       }
       // validate the required field `aSide`
-      ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("aSide"));
+      ConnectionSide.validateJsonElement(jsonObj.get("aSide"));
       // validate the required field `zSide`
-      ConnectionSide.validateJsonObject(jsonObj.getAsJsonObject("zSide"));
+      ConnectionSide.validateJsonElement(jsonObj.get("zSide"));
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
       if (jsonObj.get("additionalInfo") != null && !jsonObj.get("additionalInfo").isJsonNull()) {
         JsonArray jsonArrayadditionalInfo = jsonObj.getAsJsonArray("additionalInfo");
@@ -611,17 +597,17 @@ public class ConnectionPostRequest {
 
           // validate the optional field `additionalInfo` (array)
           for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            ConnectionSideAdditionalInfo.validateJsonObject(jsonArrayadditionalInfo.get(i).getAsJsonObject());
+            ConnectionSideAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }
       // validate the optional field `marketplaceSubscription`
       if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
-        MarketplaceSubscription.validateJsonObject(jsonObj.getAsJsonObject("marketplaceSubscription"));
+        MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
       }
       // validate the optional field `endCustomer`
       if (jsonObj.get("endCustomer") != null && !jsonObj.get("endCustomer").isJsonNull()) {
-        EndCustomer.validateJsonObject(jsonObj.getAsJsonObject("endCustomer"));
+        EndCustomer.validateJsonElement(jsonObj.get("endCustomer"));
       }
   }
 
@@ -653,7 +639,12 @@ public class ConnectionPostRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -662,8 +653,9 @@ public class ConnectionPostRequest {
 
            @Override
            public ConnectionPostRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionPostRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -691,22 +683,22 @@ public class ConnectionPostRequest {
     }
   }
 
- /**
-  * Create an instance of ConnectionPostRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionPostRequest
-  * @throws IOException if the JSON string is invalid with respect to ConnectionPostRequest
-  */
+  /**
+   * Create an instance of ConnectionPostRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionPostRequest
+   * @throws IOException if the JSON string is invalid with respect to ConnectionPostRequest
+   */
   public static ConnectionPostRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionPostRequest.class);
   }
 
- /**
-  * Convert an instance of ConnectionPostRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionPostRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

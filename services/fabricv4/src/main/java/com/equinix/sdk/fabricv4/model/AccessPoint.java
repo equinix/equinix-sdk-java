@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.AccessPointType;
 import com.equinix.sdk.fabricv4.model.CloudRouter;
 import com.equinix.sdk.fabricv4.model.MetalInterconnection;
@@ -33,6 +32,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,13 +44,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -58,74 +60,91 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Access point object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class AccessPoint {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private AccessPointType type;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocation location;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private SimplifiedPort port;
 
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)
+  @javax.annotation.Nullable
   private SimplifiedServiceProfile profile;
 
   public static final String SERIALIZED_NAME_ROUTER = "router";
   @SerializedName(SERIALIZED_NAME_ROUTER)
+  @javax.annotation.Nullable
   private CloudRouter router;
 
   public static final String SERIALIZED_NAME_LINK_PROTOCOL = "linkProtocol";
   @SerializedName(SERIALIZED_NAME_LINK_PROTOCOL)
+  @javax.annotation.Nullable
   private SimplifiedLinkProtocol linkProtocol;
 
   public static final String SERIALIZED_NAME_VIRTUAL_DEVICE = "virtualDevice";
   @SerializedName(SERIALIZED_NAME_VIRTUAL_DEVICE)
+  @javax.annotation.Nullable
   private VirtualDevice virtualDevice;
 
   public static final String SERIALIZED_NAME_INTERFACE = "interface";
   @SerializedName(SERIALIZED_NAME_INTERFACE)
+  @javax.annotation.Nullable
   private ModelInterface _interface;
 
   public static final String SERIALIZED_NAME_NETWORK = "network";
   @SerializedName(SERIALIZED_NAME_NETWORK)
+  @javax.annotation.Nullable
   private SimplifiedNetwork network;
 
   public static final String SERIALIZED_NAME_SELLER_REGION = "sellerRegion";
   @SerializedName(SERIALIZED_NAME_SELLER_REGION)
+  @javax.annotation.Nullable
   private String sellerRegion;
 
   public static final String SERIALIZED_NAME_PEERING_TYPE = "peeringType";
   @SerializedName(SERIALIZED_NAME_PEERING_TYPE)
+  @javax.annotation.Nullable
   private PeeringType peeringType;
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_KEY = "authenticationKey";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_KEY)
+  @javax.annotation.Nullable
   private String authenticationKey;
 
   public static final String SERIALIZED_NAME_PROVIDER_CONNECTION_ID = "providerConnectionId";
   @SerializedName(SERIALIZED_NAME_PROVIDER_CONNECTION_ID)
+  @javax.annotation.Nullable
   private String providerConnectionId;
 
   public static final String SERIALIZED_NAME_VIRTUAL_NETWORK = "virtualNetwork";
   @SerializedName(SERIALIZED_NAME_VIRTUAL_NETWORK)
+  @javax.annotation.Nullable
   private VirtualNetwork virtualNetwork;
 
   public static final String SERIALIZED_NAME_INTERCONNECTION = "interconnection";
   @SerializedName(SERIALIZED_NAME_INTERCONNECTION)
+  @javax.annotation.Nullable
   private MetalInterconnection interconnection;
 
   public static final String SERIALIZED_NAME_VPIC_INTERFACE = "vpic_interface";
   @SerializedName(SERIALIZED_NAME_VPIC_INTERFACE)
+  @javax.annotation.Nullable
   private VpicInterface vpicInterface;
 
   /**
@@ -173,407 +192,359 @@ public class AccessPoint {
         return RoleEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RoleEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
   private RoleEnum role;
 
   public AccessPoint() {
   }
 
-  public AccessPoint type(AccessPointType type) {
-    
+  public AccessPoint type(@javax.annotation.Nullable AccessPointType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public AccessPointType getType() {
     return type;
   }
 
-
-  public void setType(AccessPointType type) {
+  public void setType(@javax.annotation.Nullable AccessPointType type) {
     this.type = type;
   }
 
 
-  public AccessPoint account(SimplifiedAccount account) {
-    
+  public AccessPoint account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public AccessPoint location(SimplifiedLocation location) {
-    
+  public AccessPoint location(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
     return this;
   }
 
-   /**
+  /**
    * Get location
    * @return location
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLocation getLocation() {
     return location;
   }
 
-
-  public void setLocation(SimplifiedLocation location) {
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
   }
 
 
-  public AccessPoint port(SimplifiedPort port) {
-    
+  public AccessPoint port(@javax.annotation.Nullable SimplifiedPort port) {
     this.port = port;
     return this;
   }
 
-   /**
+  /**
    * Get port
    * @return port
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedPort getPort() {
     return port;
   }
 
-
-  public void setPort(SimplifiedPort port) {
+  public void setPort(@javax.annotation.Nullable SimplifiedPort port) {
     this.port = port;
   }
 
 
-  public AccessPoint profile(SimplifiedServiceProfile profile) {
-    
+  public AccessPoint profile(@javax.annotation.Nullable SimplifiedServiceProfile profile) {
     this.profile = profile;
     return this;
   }
 
-   /**
+  /**
    * Get profile
    * @return profile
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedServiceProfile getProfile() {
     return profile;
   }
 
-
-  public void setProfile(SimplifiedServiceProfile profile) {
+  public void setProfile(@javax.annotation.Nullable SimplifiedServiceProfile profile) {
     this.profile = profile;
   }
 
 
-  public AccessPoint router(CloudRouter router) {
-    
+  public AccessPoint router(@javax.annotation.Nullable CloudRouter router) {
     this.router = router;
     return this;
   }
 
-   /**
+  /**
    * Get router
    * @return router
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudRouter getRouter() {
     return router;
   }
 
-
-  public void setRouter(CloudRouter router) {
+  public void setRouter(@javax.annotation.Nullable CloudRouter router) {
     this.router = router;
   }
 
 
-  public AccessPoint linkProtocol(SimplifiedLinkProtocol linkProtocol) {
-    
+  public AccessPoint linkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
     this.linkProtocol = linkProtocol;
     return this;
   }
 
-   /**
+  /**
    * Get linkProtocol
    * @return linkProtocol
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedLinkProtocol getLinkProtocol() {
     return linkProtocol;
   }
 
-
-  public void setLinkProtocol(SimplifiedLinkProtocol linkProtocol) {
+  public void setLinkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
     this.linkProtocol = linkProtocol;
   }
 
 
-  public AccessPoint virtualDevice(VirtualDevice virtualDevice) {
-    
+  public AccessPoint virtualDevice(@javax.annotation.Nullable VirtualDevice virtualDevice) {
     this.virtualDevice = virtualDevice;
     return this;
   }
 
-   /**
+  /**
    * Get virtualDevice
    * @return virtualDevice
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualDevice getVirtualDevice() {
     return virtualDevice;
   }
 
-
-  public void setVirtualDevice(VirtualDevice virtualDevice) {
+  public void setVirtualDevice(@javax.annotation.Nullable VirtualDevice virtualDevice) {
     this.virtualDevice = virtualDevice;
   }
 
 
-  public AccessPoint _interface(ModelInterface _interface) {
-    
+  public AccessPoint _interface(@javax.annotation.Nullable ModelInterface _interface) {
     this._interface = _interface;
     return this;
   }
 
-   /**
+  /**
    * Get _interface
    * @return _interface
-  **/
+   */
   @javax.annotation.Nullable
-
   public ModelInterface getInterface() {
     return _interface;
   }
 
-
-  public void setInterface(ModelInterface _interface) {
+  public void setInterface(@javax.annotation.Nullable ModelInterface _interface) {
     this._interface = _interface;
   }
 
 
-  public AccessPoint network(SimplifiedNetwork network) {
-    
+  public AccessPoint network(@javax.annotation.Nullable SimplifiedNetwork network) {
     this.network = network;
     return this;
   }
 
-   /**
+  /**
    * Get network
    * @return network
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedNetwork getNetwork() {
     return network;
   }
 
-
-  public void setNetwork(SimplifiedNetwork network) {
+  public void setNetwork(@javax.annotation.Nullable SimplifiedNetwork network) {
     this.network = network;
   }
 
 
-  public AccessPoint sellerRegion(String sellerRegion) {
-    
+  public AccessPoint sellerRegion(@javax.annotation.Nullable String sellerRegion) {
     this.sellerRegion = sellerRegion;
     return this;
   }
 
-   /**
+  /**
    * Access point seller region
    * @return sellerRegion
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSellerRegion() {
     return sellerRegion;
   }
 
-
-  public void setSellerRegion(String sellerRegion) {
+  public void setSellerRegion(@javax.annotation.Nullable String sellerRegion) {
     this.sellerRegion = sellerRegion;
   }
 
 
-  public AccessPoint peeringType(PeeringType peeringType) {
-    
+  public AccessPoint peeringType(@javax.annotation.Nullable PeeringType peeringType) {
     this.peeringType = peeringType;
     return this;
   }
 
-   /**
+  /**
    * Get peeringType
    * @return peeringType
-  **/
+   */
   @javax.annotation.Nullable
-
   public PeeringType getPeeringType() {
     return peeringType;
   }
 
-
-  public void setPeeringType(PeeringType peeringType) {
+  public void setPeeringType(@javax.annotation.Nullable PeeringType peeringType) {
     this.peeringType = peeringType;
   }
 
 
-  public AccessPoint authenticationKey(String authenticationKey) {
-    
+  public AccessPoint authenticationKey(@javax.annotation.Nullable String authenticationKey) {
     this.authenticationKey = authenticationKey;
     return this;
   }
 
-   /**
+  /**
    * Access point authentication key
    * @return authenticationKey
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAuthenticationKey() {
     return authenticationKey;
   }
 
-
-  public void setAuthenticationKey(String authenticationKey) {
+  public void setAuthenticationKey(@javax.annotation.Nullable String authenticationKey) {
     this.authenticationKey = authenticationKey;
   }
 
 
-  public AccessPoint providerConnectionId(String providerConnectionId) {
-    
+  public AccessPoint providerConnectionId(@javax.annotation.Nullable String providerConnectionId) {
     this.providerConnectionId = providerConnectionId;
     return this;
   }
 
-   /**
+  /**
    * Provider assigned Connection Id
    * @return providerConnectionId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getProviderConnectionId() {
     return providerConnectionId;
   }
 
-
-  public void setProviderConnectionId(String providerConnectionId) {
+  public void setProviderConnectionId(@javax.annotation.Nullable String providerConnectionId) {
     this.providerConnectionId = providerConnectionId;
   }
 
 
-  public AccessPoint virtualNetwork(VirtualNetwork virtualNetwork) {
-    
+  public AccessPoint virtualNetwork(@javax.annotation.Nullable VirtualNetwork virtualNetwork) {
     this.virtualNetwork = virtualNetwork;
     return this;
   }
 
-   /**
+  /**
    * Get virtualNetwork
    * @return virtualNetwork
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualNetwork getVirtualNetwork() {
     return virtualNetwork;
   }
 
-
-  public void setVirtualNetwork(VirtualNetwork virtualNetwork) {
+  public void setVirtualNetwork(@javax.annotation.Nullable VirtualNetwork virtualNetwork) {
     this.virtualNetwork = virtualNetwork;
   }
 
 
-  public AccessPoint interconnection(MetalInterconnection interconnection) {
-    
+  public AccessPoint interconnection(@javax.annotation.Nullable MetalInterconnection interconnection) {
     this.interconnection = interconnection;
     return this;
   }
 
-   /**
+  /**
    * Get interconnection
    * @return interconnection
-  **/
+   */
   @javax.annotation.Nullable
-
   public MetalInterconnection getInterconnection() {
     return interconnection;
   }
 
-
-  public void setInterconnection(MetalInterconnection interconnection) {
+  public void setInterconnection(@javax.annotation.Nullable MetalInterconnection interconnection) {
     this.interconnection = interconnection;
   }
 
 
-  public AccessPoint vpicInterface(VpicInterface vpicInterface) {
-    
+  public AccessPoint vpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
     this.vpicInterface = vpicInterface;
     return this;
   }
 
-   /**
+  /**
    * Get vpicInterface
    * @return vpicInterface
-  **/
+   */
   @javax.annotation.Nullable
-
   public VpicInterface getVpicInterface() {
     return vpicInterface;
   }
 
-
-  public void setVpicInterface(VpicInterface vpicInterface) {
+  public void setVpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
     this.vpicInterface = vpicInterface;
   }
 
 
-  public AccessPoint role(RoleEnum role) {
-    
+  public AccessPoint role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * E-Tree network connection role
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
-
   public RoleEnum getRole() {
     return role;
   }
 
-
-  public void setRole(RoleEnum role) {
+  public void setRole(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
   }
 
@@ -726,56 +697,65 @@ public class AccessPoint {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AccessPoint
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!AccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AccessPoint
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in AccessPoint is not found in the empty JSON string", AccessPoint.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        AccessPointType.validateJsonElement(jsonObj.get("type"));
+      }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
+        SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
       }
       // validate the optional field `port`
       if (jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) {
-        SimplifiedPort.validateJsonObject(jsonObj.getAsJsonObject("port"));
+        SimplifiedPort.validateJsonElement(jsonObj.get("port"));
       }
       // validate the optional field `profile`
       if (jsonObj.get("profile") != null && !jsonObj.get("profile").isJsonNull()) {
-        SimplifiedServiceProfile.validateJsonObject(jsonObj.getAsJsonObject("profile"));
+        SimplifiedServiceProfile.validateJsonElement(jsonObj.get("profile"));
       }
       // validate the optional field `router`
       if (jsonObj.get("router") != null && !jsonObj.get("router").isJsonNull()) {
-        CloudRouter.validateJsonObject(jsonObj.getAsJsonObject("router"));
+        CloudRouter.validateJsonElement(jsonObj.get("router"));
       }
       // validate the optional field `linkProtocol`
       if (jsonObj.get("linkProtocol") != null && !jsonObj.get("linkProtocol").isJsonNull()) {
-        SimplifiedLinkProtocol.validateJsonObject(jsonObj.getAsJsonObject("linkProtocol"));
+        SimplifiedLinkProtocol.validateJsonElement(jsonObj.get("linkProtocol"));
       }
       // validate the optional field `virtualDevice`
       if (jsonObj.get("virtualDevice") != null && !jsonObj.get("virtualDevice").isJsonNull()) {
-        VirtualDevice.validateJsonObject(jsonObj.getAsJsonObject("virtualDevice"));
+        VirtualDevice.validateJsonElement(jsonObj.get("virtualDevice"));
       }
       // validate the optional field `interface`
       if (jsonObj.get("interface") != null && !jsonObj.get("interface").isJsonNull()) {
-        ModelInterface.validateJsonObject(jsonObj.getAsJsonObject("interface"));
+        ModelInterface.validateJsonElement(jsonObj.get("interface"));
       }
       // validate the optional field `network`
       if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonNull()) {
-        SimplifiedNetwork.validateJsonObject(jsonObj.getAsJsonObject("network"));
+        SimplifiedNetwork.validateJsonElement(jsonObj.get("network"));
       }
       if ((jsonObj.get("sellerRegion") != null && !jsonObj.get("sellerRegion").isJsonNull()) && !jsonObj.get("sellerRegion").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sellerRegion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerRegion").toString()));
+      }
+      // validate the optional field `peeringType`
+      if (jsonObj.get("peeringType") != null && !jsonObj.get("peeringType").isJsonNull()) {
+        PeeringType.validateJsonElement(jsonObj.get("peeringType"));
       }
       if ((jsonObj.get("authenticationKey") != null && !jsonObj.get("authenticationKey").isJsonNull()) && !jsonObj.get("authenticationKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `authenticationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authenticationKey").toString()));
@@ -785,18 +765,22 @@ public class AccessPoint {
       }
       // validate the optional field `virtualNetwork`
       if (jsonObj.get("virtualNetwork") != null && !jsonObj.get("virtualNetwork").isJsonNull()) {
-        VirtualNetwork.validateJsonObject(jsonObj.getAsJsonObject("virtualNetwork"));
+        VirtualNetwork.validateJsonElement(jsonObj.get("virtualNetwork"));
       }
       // validate the optional field `interconnection`
       if (jsonObj.get("interconnection") != null && !jsonObj.get("interconnection").isJsonNull()) {
-        MetalInterconnection.validateJsonObject(jsonObj.getAsJsonObject("interconnection"));
+        MetalInterconnection.validateJsonElement(jsonObj.get("interconnection"));
       }
       // validate the optional field `vpic_interface`
       if (jsonObj.get("vpic_interface") != null && !jsonObj.get("vpic_interface").isJsonNull()) {
-        VpicInterface.validateJsonObject(jsonObj.getAsJsonObject("vpic_interface"));
+        VpicInterface.validateJsonElement(jsonObj.get("vpic_interface"));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+      }
+      // validate the optional field `role`
+      if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
+        RoleEnum.validateJsonElement(jsonObj.get("role"));
       }
   }
 
@@ -828,7 +812,12 @@ public class AccessPoint {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -837,8 +826,9 @@ public class AccessPoint {
 
            @Override
            public AccessPoint read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              AccessPoint instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -866,22 +856,22 @@ public class AccessPoint {
     }
   }
 
- /**
-  * Create an instance of AccessPoint given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AccessPoint
-  * @throws IOException if the JSON string is invalid with respect to AccessPoint
-  */
+  /**
+   * Create an instance of AccessPoint given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AccessPoint
+   * @throws IOException if the JSON string is invalid with respect to AccessPoint
+   */
   public static AccessPoint fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AccessPoint.class);
   }
 
- /**
-  * Convert an instance of AccessPoint to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AccessPoint to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,7 +46,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Md5
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Md5 {
   /**
    * Gets or Sets type
@@ -91,87 +93,86 @@ public class Md5 {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_KEY_NUMBER = "keyNumber";
   @SerializedName(SERIALIZED_NAME_KEY_NUMBER)
+  @javax.annotation.Nullable
   private Integer keyNumber;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private byte[] key;
 
   public Md5() {
   }
 
-  public Md5 type(TypeEnum type) {
-    
+  public Md5 type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public Md5 keyNumber(Integer keyNumber) {
-    
+  public Md5 keyNumber(@javax.annotation.Nullable Integer keyNumber) {
     this.keyNumber = keyNumber;
     return this;
   }
 
-   /**
+  /**
    * The authentication Key ID.
    * minimum: 1
    * maximum: 65535
    * @return keyNumber
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getKeyNumber() {
     return keyNumber;
   }
 
-
-  public void setKeyNumber(Integer keyNumber) {
+  public void setKeyNumber(@javax.annotation.Nullable Integer keyNumber) {
     this.keyNumber = keyNumber;
   }
 
 
-  public Md5 key(byte[] key) {
-    
+  public Md5 key(@javax.annotation.Nullable byte[] key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The plaintext authentication key. Must be Base64 encoded. For ASCII type, the key must contain printable ASCII characters, range 10-20 characters. For HEX type, range should be 10-40 characters.
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
-
   public byte[] getKey() {
     return key;
   }
 
-
-  public void setKey(byte[] key) {
+  public void setKey(@javax.annotation.Nullable byte[] key) {
     this.key = key;
   }
 
@@ -279,20 +280,25 @@ public class Md5 {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Md5
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Md5.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Md5
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Md5.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Md5 is not found in the empty JSON string", Md5.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
   }
 
@@ -324,7 +330,12 @@ public class Md5 {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -333,8 +344,9 @@ public class Md5 {
 
            @Override
            public Md5 read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Md5 instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -362,22 +374,22 @@ public class Md5 {
     }
   }
 
- /**
-  * Create an instance of Md5 given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Md5
-  * @throws IOException if the JSON string is invalid with respect to Md5
-  */
+  /**
+   * Create an instance of Md5 given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Md5
+   * @throws IOException if the JSON string is invalid with respect to Md5
+   */
   public static Md5 fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Md5.class);
   }
 
- /**
-  * Convert an instance of Md5 to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Md5 to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

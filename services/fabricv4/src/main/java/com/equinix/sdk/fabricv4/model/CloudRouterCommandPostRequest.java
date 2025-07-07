@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandType;
 import com.equinix.sdk.fabricv4.model.Project;
@@ -22,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,137 +49,127 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Execute Cloud Router Command Request
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterCommandPostRequest {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private CloudRouterCommandType type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nonnull
   private Project project;
 
   public static final String SERIALIZED_NAME_REQUEST = "request";
   @SerializedName(SERIALIZED_NAME_REQUEST)
+  @javax.annotation.Nonnull
   private CloudRouterCommandRequest request;
 
   public CloudRouterCommandPostRequest() {
   }
 
-  public CloudRouterCommandPostRequest type(CloudRouterCommandType type) {
-    
+  public CloudRouterCommandPostRequest type(@javax.annotation.Nonnull CloudRouterCommandType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public CloudRouterCommandType getType() {
     return type;
   }
 
-
-  public void setType(CloudRouterCommandType type) {
+  public void setType(@javax.annotation.Nonnull CloudRouterCommandType type) {
     this.type = type;
   }
 
 
-  public CloudRouterCommandPostRequest name(String name) {
-    
+  public CloudRouterCommandPostRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided Cloud Router Command name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CloudRouterCommandPostRequest description(String description) {
-    
+  public CloudRouterCommandPostRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided Cloud Router Command description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CloudRouterCommandPostRequest project(Project project) {
-    
+  public CloudRouterCommandPostRequest project(@javax.annotation.Nonnull Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nonnull Project project) {
     this.project = project;
   }
 
 
-  public CloudRouterCommandPostRequest request(CloudRouterCommandRequest request) {
-    
+  public CloudRouterCommandPostRequest request(@javax.annotation.Nonnull CloudRouterCommandRequest request) {
     this.request = request;
     return this;
   }
 
-   /**
+  /**
    * Get request
    * @return request
-  **/
+   */
   @javax.annotation.Nonnull
-
   public CloudRouterCommandRequest getRequest() {
     return request;
   }
 
-
-  public void setRequest(CloudRouterCommandRequest request) {
+  public void setRequest(@javax.annotation.Nonnull CloudRouterCommandRequest request) {
     this.request = request;
   }
 
@@ -294,25 +286,28 @@ public class CloudRouterCommandPostRequest {
     openapiRequiredFields.add("request");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterCommandPostRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterCommandPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterCommandPostRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterCommandPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterCommandPostRequest is not found in the empty JSON string", CloudRouterCommandPostRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CloudRouterCommandPostRequest.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      CloudRouterCommandType.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -320,9 +315,9 @@ public class CloudRouterCommandPostRequest {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the required field `project`
-      Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+      Project.validateJsonElement(jsonObj.get("project"));
       // validate the required field `request`
-      CloudRouterCommandRequest.validateJsonObject(jsonObj.getAsJsonObject("request"));
+      CloudRouterCommandRequest.validateJsonElement(jsonObj.get("request"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -353,7 +348,12 @@ public class CloudRouterCommandPostRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -362,8 +362,9 @@ public class CloudRouterCommandPostRequest {
 
            @Override
            public CloudRouterCommandPostRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterCommandPostRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -391,22 +392,22 @@ public class CloudRouterCommandPostRequest {
     }
   }
 
- /**
-  * Create an instance of CloudRouterCommandPostRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterCommandPostRequest
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandPostRequest
-  */
+  /**
+   * Create an instance of CloudRouterCommandPostRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterCommandPostRequest
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterCommandPostRequest
+   */
   public static CloudRouterCommandPostRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterCommandPostRequest.class);
   }
 
- /**
-  * Convert an instance of CloudRouterCommandPostRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterCommandPostRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

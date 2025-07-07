@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.PortChangeOperation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,10 +48,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Current state of latest port change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortChange {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private String uuid;
 
   /**
@@ -99,10 +102,16 @@ public class PortChange {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   /**
@@ -152,181 +161,170 @@ public class PortChange {
         return StatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_INFORMATION = "information";
   @SerializedName(SERIALIZED_NAME_INFORMATION)
+  @javax.annotation.Nullable
   private String information;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private PortChangeOperation data;
 
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedDateTime;
 
   public PortChange() {
   }
 
-  public PortChange uuid(String uuid) {
-    
+  public PortChange uuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Uniquely identifies a change
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public PortChange type(TypeEnum type) {
-    
+  public PortChange type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of change
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public PortChange status(StatusEnum status) {
-    
+  public PortChange status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Current outcome of the change flow
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-
   public StatusEnum getStatus() {
     return status;
   }
 
-
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public PortChange information(String information) {
-    
+  public PortChange information(@javax.annotation.Nullable String information) {
     this.information = information;
     return this;
   }
 
-   /**
+  /**
    * Additional information
    * @return information
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getInformation() {
     return information;
   }
 
-
-  public void setInformation(String information) {
+  public void setInformation(@javax.annotation.Nullable String information) {
     this.information = information;
   }
 
 
-  public PortChange data(PortChangeOperation data) {
-    
+  public PortChange data(@javax.annotation.Nullable PortChangeOperation data) {
     this.data = data;
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-
   public PortChangeOperation getData() {
     return data;
   }
 
-
-  public void setData(PortChangeOperation data) {
+  public void setData(@javax.annotation.Nullable PortChangeOperation data) {
     this.data = data;
   }
 
 
-  public PortChange createdDateTime(OffsetDateTime createdDateTime) {
-    
+  public PortChange createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change flow starts
    * @return createdDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-
-  public void setCreatedDateTime(OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public PortChange updatedDateTime(OffsetDateTime updatedDateTime) {
-    
+  public PortChange updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change object is updated
    * @return updatedDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-
-  public void setUpdatedDateTime(OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 
@@ -446,33 +444,42 @@ public class PortChange {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortChange
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortChange
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortChange is not found in the empty JSON string", PortChange.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        TypeEnum.validateJsonElement(jsonObj.get("type"));
+      }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("information") != null && !jsonObj.get("information").isJsonNull()) && !jsonObj.get("information").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `information` to be a primitive type in the JSON string but got `%s`", jsonObj.get("information").toString()));
       }
       // validate the optional field `data`
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
-        PortChangeOperation.validateJsonObject(jsonObj.getAsJsonObject("data"));
+        PortChangeOperation.validateJsonElement(jsonObj.get("data"));
       }
   }
 
@@ -504,7 +511,12 @@ public class PortChange {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -513,8 +525,9 @@ public class PortChange {
 
            @Override
            public PortChange read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortChange instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -542,22 +555,22 @@ public class PortChange {
     }
   }
 
- /**
-  * Create an instance of PortChange given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortChange
-  * @throws IOException if the JSON string is invalid with respect to PortChange
-  */
+  /**
+   * Create an instance of PortChange given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortChange
+   * @throws IOException if the JSON string is invalid with respect to PortChange
+   */
   public static PortChange fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortChange.class);
   }
 
- /**
-  * Convert an instance of PortChange to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortChange to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

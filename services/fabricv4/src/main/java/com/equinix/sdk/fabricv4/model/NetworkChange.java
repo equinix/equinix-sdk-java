@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.NetworkChangeOperation;
 import com.equinix.sdk.fabricv4.model.NetworkChangeStatus;
 import com.equinix.sdk.fabricv4.model.NetworkChangeType;
@@ -25,6 +24,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,40 +54,46 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Current state of latest network change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class NetworkChange {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private NetworkChangeType type;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private NetworkChangeStatus status;
 
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<NetworkChangeOperation> data = new ArrayList<>();
 
   public NetworkChange() {
   }
 
-  
   public NetworkChange(
      URI href
   ) {
@@ -93,131 +101,113 @@ public class NetworkChange {
     this.href = href;
   }
 
-   /**
+  /**
    * Network URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public NetworkChange uuid(UUID uuid) {
-    
+  public NetworkChange uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Uniquely identifies a change
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public NetworkChange type(NetworkChangeType type) {
-    
+  public NetworkChange type(@javax.annotation.Nullable NetworkChangeType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkChangeType getType() {
     return type;
   }
 
-
-  public void setType(NetworkChangeType type) {
+  public void setType(@javax.annotation.Nullable NetworkChangeType type) {
     this.type = type;
   }
 
 
-  public NetworkChange status(NetworkChangeStatus status) {
-    
+  public NetworkChange status(@javax.annotation.Nullable NetworkChangeStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkChangeStatus getStatus() {
     return status;
   }
 
-
-  public void setStatus(NetworkChangeStatus status) {
+  public void setStatus(@javax.annotation.Nullable NetworkChangeStatus status) {
     this.status = status;
   }
 
 
-  public NetworkChange createdDateTime(OffsetDateTime createdDateTime) {
-    
+  public NetworkChange createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change flow starts
    * @return createdDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-
-  public void setCreatedDateTime(OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public NetworkChange updatedDateTime(OffsetDateTime updatedDateTime) {
-    
+  public NetworkChange updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change object is updated
    * @return updatedDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-
-  public void setUpdatedDateTime(OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 
 
-  public NetworkChange data(List<NetworkChangeOperation> data) {
-    
+  public NetworkChange data(@javax.annotation.Nullable List<NetworkChangeOperation> data) {
     this.data = data;
     return this;
   }
@@ -230,18 +220,16 @@ public class NetworkChange {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<NetworkChangeOperation> getData() {
     return data;
   }
 
-
-  public void setData(List<NetworkChangeOperation> data) {
+  public void setData(@javax.annotation.Nullable List<NetworkChangeOperation> data) {
     this.data = data;
   }
 
@@ -361,23 +349,32 @@ public class NetworkChange {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to NetworkChange
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!NetworkChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NetworkChange
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!NetworkChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkChange is not found in the empty JSON string", NetworkChange.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        NetworkChangeType.validateJsonElement(jsonObj.get("type"));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        NetworkChangeStatus.validateJsonElement(jsonObj.get("status"));
       }
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
         JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
@@ -389,7 +386,7 @@ public class NetworkChange {
 
           // validate the optional field `data` (array)
           for (int i = 0; i < jsonArraydata.size(); i++) {
-            NetworkChangeOperation.validateJsonObject(jsonArraydata.get(i).getAsJsonObject());
+            NetworkChangeOperation.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }
@@ -423,7 +420,12 @@ public class NetworkChange {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -432,8 +434,9 @@ public class NetworkChange {
 
            @Override
            public NetworkChange read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              NetworkChange instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -461,22 +464,22 @@ public class NetworkChange {
     }
   }
 
- /**
-  * Create an instance of NetworkChange given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NetworkChange
-  * @throws IOException if the JSON string is invalid with respect to NetworkChange
-  */
+  /**
+   * Create an instance of NetworkChange given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NetworkChange
+   * @throws IOException if the JSON string is invalid with respect to NetworkChange
+   */
   public static NetworkChange fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NetworkChange.class);
   }
 
- /**
-  * Convert an instance of NetworkChange to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NetworkChange to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

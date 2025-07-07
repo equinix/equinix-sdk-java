@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.SearchExpression;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,33 +47,31 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Search requests containing criteria
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FilterBody {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
   private SearchExpression filter;
 
   public FilterBody() {
   }
 
-  public FilterBody filter(SearchExpression filter) {
-    
+  public FilterBody filter(@javax.annotation.Nullable SearchExpression filter) {
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * Get filter
    * @return filter
-  **/
+   */
   @javax.annotation.Nullable
-
   public SearchExpression getFilter() {
     return filter;
   }
 
-
-  public void setFilter(SearchExpression filter) {
+  public void setFilter(@javax.annotation.Nullable SearchExpression filter) {
     this.filter = filter;
   }
 
@@ -173,21 +173,22 @@ public class FilterBody {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to FilterBody
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!FilterBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FilterBody
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FilterBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FilterBody is not found in the empty JSON string", FilterBody.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `filter`
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        SearchExpression.validateJsonObject(jsonObj.getAsJsonObject("filter"));
+        SearchExpression.validateJsonElement(jsonObj.get("filter"));
       }
   }
 
@@ -219,7 +220,12 @@ public class FilterBody {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -228,8 +234,9 @@ public class FilterBody {
 
            @Override
            public FilterBody read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              FilterBody instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -257,22 +264,22 @@ public class FilterBody {
     }
   }
 
- /**
-  * Create an instance of FilterBody given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FilterBody
-  * @throws IOException if the JSON string is invalid with respect to FilterBody
-  */
+  /**
+   * Create an instance of FilterBody given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FilterBody
+   * @throws IOException if the JSON string is invalid with respect to FilterBody
+   */
   public static FilterBody fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FilterBody.class);
   }
 
- /**
-  * Convert an instance of FilterBody to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FilterBody to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.FabricCloudRouterPrice;
 import com.equinix.sdk.fabricv4.model.IpBlockPrice;
 import com.equinix.sdk.fabricv4.model.PriceCategory;
@@ -29,6 +28,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -41,13 +41,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -55,38 +57,46 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Price
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Price {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private ProductType type;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private String code;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_CHARGES = "charges";
   @SerializedName(SERIALIZED_NAME_CHARGES)
+  @javax.annotation.Nullable
   private List<PriceCharge> charges = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
+  @javax.annotation.Nullable
   private String currency;
 
   /**
@@ -138,173 +148,166 @@ public class Price {
         return TermLengthEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      TermLengthEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TERM_LENGTH = "termLength";
   @SerializedName(SERIALIZED_NAME_TERM_LENGTH)
+  @javax.annotation.Nullable
   private TermLengthEnum termLength;
 
   public static final String SERIALIZED_NAME_CATGORY = "catgory";
   @SerializedName(SERIALIZED_NAME_CATGORY)
+  @javax.annotation.Nullable
   private PriceCategory catgory;
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
   private VirtualConnectionPrice connection;
 
   public static final String SERIALIZED_NAME_IP_BLOCK = "ipBlock";
   @SerializedName(SERIALIZED_NAME_IP_BLOCK)
+  @javax.annotation.Nullable
   private IpBlockPrice ipBlock;
 
   public static final String SERIALIZED_NAME_ROUTER = "router";
   @SerializedName(SERIALIZED_NAME_ROUTER)
+  @javax.annotation.Nullable
   private FabricCloudRouterPrice router;
 
   public static final String SERIALIZED_NAME_PORT = "port";
   @SerializedName(SERIALIZED_NAME_PORT)
+  @javax.annotation.Nullable
   private VirtualPortPrice port;
 
   public static final String SERIALIZED_NAME_TIME_SERVICE = "timeService";
   @SerializedName(SERIALIZED_NAME_TIME_SERVICE)
+  @javax.annotation.Nullable
   private TimeServicePrice timeService;
 
   public Price() {
   }
 
-  public Price href(String href) {
-    
+  public Price href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * An absolute URL that returns specified pricing data
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHref() {
     return href;
   }
 
-
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public Price type(ProductType type) {
-    
+  public Price type(@javax.annotation.Nullable ProductType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public ProductType getType() {
     return type;
   }
 
-
-  public void setType(ProductType type) {
+  public void setType(@javax.annotation.Nullable ProductType type) {
     this.type = type;
   }
 
 
-  public Price code(String code) {
-    
+  public Price code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned product code
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCode() {
     return code;
   }
 
-
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public Price name(String name) {
-    
+  public Price name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Full product name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Price description(String description) {
-    
+  public Price description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Product description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Price account(SimplifiedAccount account) {
-    
+  public Price account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public Price charges(List<PriceCharge> charges) {
-    
+  public Price charges(@javax.annotation.Nullable List<PriceCharge> charges) {
     this.charges = charges;
     return this;
   }
@@ -317,194 +320,168 @@ public class Price {
     return this;
   }
 
-   /**
+  /**
    * Get charges
    * @return charges
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<PriceCharge> getCharges() {
     return charges;
   }
 
-
-  public void setCharges(List<PriceCharge> charges) {
+  public void setCharges(@javax.annotation.Nullable List<PriceCharge> charges) {
     this.charges = charges;
   }
 
 
-  public Price currency(String currency) {
-    
+  public Price currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * Product offering price currency
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCurrency() {
     return currency;
   }
 
-
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public Price termLength(TermLengthEnum termLength) {
-    
+  public Price termLength(@javax.annotation.Nullable TermLengthEnum termLength) {
     this.termLength = termLength;
     return this;
   }
 
-   /**
+  /**
    * In months. No value or value of 1 means on-demand
    * @return termLength
-  **/
+   */
   @javax.annotation.Nullable
-
   public TermLengthEnum getTermLength() {
     return termLength;
   }
 
-
-  public void setTermLength(TermLengthEnum termLength) {
+  public void setTermLength(@javax.annotation.Nullable TermLengthEnum termLength) {
     this.termLength = termLength;
   }
 
 
-  public Price catgory(PriceCategory catgory) {
-    
+  public Price catgory(@javax.annotation.Nullable PriceCategory catgory) {
     this.catgory = catgory;
     return this;
   }
 
-   /**
+  /**
    * Get catgory
    * @return catgory
-  **/
+   */
   @javax.annotation.Nullable
-
   public PriceCategory getCatgory() {
     return catgory;
   }
 
-
-  public void setCatgory(PriceCategory catgory) {
+  public void setCatgory(@javax.annotation.Nullable PriceCategory catgory) {
     this.catgory = catgory;
   }
 
 
-  public Price connection(VirtualConnectionPrice connection) {
-    
+  public Price connection(@javax.annotation.Nullable VirtualConnectionPrice connection) {
     this.connection = connection;
     return this;
   }
 
-   /**
+  /**
    * Get connection
    * @return connection
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualConnectionPrice getConnection() {
     return connection;
   }
 
-
-  public void setConnection(VirtualConnectionPrice connection) {
+  public void setConnection(@javax.annotation.Nullable VirtualConnectionPrice connection) {
     this.connection = connection;
   }
 
 
-  public Price ipBlock(IpBlockPrice ipBlock) {
-    
+  public Price ipBlock(@javax.annotation.Nullable IpBlockPrice ipBlock) {
     this.ipBlock = ipBlock;
     return this;
   }
 
-   /**
+  /**
    * Get ipBlock
    * @return ipBlock
-  **/
+   */
   @javax.annotation.Nullable
-
   public IpBlockPrice getIpBlock() {
     return ipBlock;
   }
 
-
-  public void setIpBlock(IpBlockPrice ipBlock) {
+  public void setIpBlock(@javax.annotation.Nullable IpBlockPrice ipBlock) {
     this.ipBlock = ipBlock;
   }
 
 
-  public Price router(FabricCloudRouterPrice router) {
-    
+  public Price router(@javax.annotation.Nullable FabricCloudRouterPrice router) {
     this.router = router;
     return this;
   }
 
-   /**
+  /**
    * Get router
    * @return router
-  **/
+   */
   @javax.annotation.Nullable
-
   public FabricCloudRouterPrice getRouter() {
     return router;
   }
 
-
-  public void setRouter(FabricCloudRouterPrice router) {
+  public void setRouter(@javax.annotation.Nullable FabricCloudRouterPrice router) {
     this.router = router;
   }
 
 
-  public Price port(VirtualPortPrice port) {
-    
+  public Price port(@javax.annotation.Nullable VirtualPortPrice port) {
     this.port = port;
     return this;
   }
 
-   /**
+  /**
    * Get port
    * @return port
-  **/
+   */
   @javax.annotation.Nullable
-
   public VirtualPortPrice getPort() {
     return port;
   }
 
-
-  public void setPort(VirtualPortPrice port) {
+  public void setPort(@javax.annotation.Nullable VirtualPortPrice port) {
     this.port = port;
   }
 
 
-  public Price timeService(TimeServicePrice timeService) {
-    
+  public Price timeService(@javax.annotation.Nullable TimeServicePrice timeService) {
     this.timeService = timeService;
     return this;
   }
 
-   /**
+  /**
    * Get timeService
    * @return timeService
-  **/
+   */
   @javax.annotation.Nullable
-
   public TimeServicePrice getTimeService() {
     return timeService;
   }
 
-
-  public void setTimeService(TimeServicePrice timeService) {
+  public void setTimeService(@javax.annotation.Nullable TimeServicePrice timeService) {
     this.timeService = timeService;
   }
 
@@ -648,20 +625,25 @@ public class Price {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Price
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Price.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Price
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Price.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Price is not found in the empty JSON string", Price.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ProductType.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
@@ -674,7 +656,7 @@ public class Price {
       }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       if (jsonObj.get("charges") != null && !jsonObj.get("charges").isJsonNull()) {
         JsonArray jsonArraycharges = jsonObj.getAsJsonArray("charges");
@@ -686,32 +668,40 @@ public class Price {
 
           // validate the optional field `charges` (array)
           for (int i = 0; i < jsonArraycharges.size(); i++) {
-            PriceCharge.validateJsonObject(jsonArraycharges.get(i).getAsJsonObject());
+            PriceCharge.validateJsonElement(jsonArraycharges.get(i));
           };
         }
       }
       if ((jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonNull()) && !jsonObj.get("currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
+      // validate the optional field `termLength`
+      if (jsonObj.get("termLength") != null && !jsonObj.get("termLength").isJsonNull()) {
+        TermLengthEnum.validateJsonElement(jsonObj.get("termLength"));
+      }
+      // validate the optional field `catgory`
+      if (jsonObj.get("catgory") != null && !jsonObj.get("catgory").isJsonNull()) {
+        PriceCategory.validateJsonElement(jsonObj.get("catgory"));
+      }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        VirtualConnectionPrice.validateJsonObject(jsonObj.getAsJsonObject("connection"));
+        VirtualConnectionPrice.validateJsonElement(jsonObj.get("connection"));
       }
       // validate the optional field `ipBlock`
       if (jsonObj.get("ipBlock") != null && !jsonObj.get("ipBlock").isJsonNull()) {
-        IpBlockPrice.validateJsonObject(jsonObj.getAsJsonObject("ipBlock"));
+        IpBlockPrice.validateJsonElement(jsonObj.get("ipBlock"));
       }
       // validate the optional field `router`
       if (jsonObj.get("router") != null && !jsonObj.get("router").isJsonNull()) {
-        FabricCloudRouterPrice.validateJsonObject(jsonObj.getAsJsonObject("router"));
+        FabricCloudRouterPrice.validateJsonElement(jsonObj.get("router"));
       }
       // validate the optional field `port`
       if (jsonObj.get("port") != null && !jsonObj.get("port").isJsonNull()) {
-        VirtualPortPrice.validateJsonObject(jsonObj.getAsJsonObject("port"));
+        VirtualPortPrice.validateJsonElement(jsonObj.get("port"));
       }
       // validate the optional field `timeService`
       if (jsonObj.get("timeService") != null && !jsonObj.get("timeService").isJsonNull()) {
-        TimeServicePrice.validateJsonObject(jsonObj.getAsJsonObject("timeService"));
+        TimeServicePrice.validateJsonElement(jsonObj.get("timeService"));
       }
   }
 
@@ -743,7 +733,12 @@ public class Price {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -752,8 +747,9 @@ public class Price {
 
            @Override
            public Price read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Price instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -781,22 +777,22 @@ public class Price {
     }
   }
 
- /**
-  * Create an instance of Price given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Price
-  * @throws IOException if the JSON string is invalid with respect to Price
-  */
+  /**
+   * Create an instance of Price given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Price
+   * @throws IOException if the JSON string is invalid with respect to Price
+   */
   public static Price fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Price.class);
   }
 
- /**
-  * Convert an instance of Price to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Price to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

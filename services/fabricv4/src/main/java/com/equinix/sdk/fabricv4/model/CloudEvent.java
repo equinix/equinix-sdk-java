@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudEventData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,64 +48,76 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Cloud Event object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudEvent {
   public static final String SERIALIZED_NAME_SPEC = "spec";
   @SerializedName(SERIALIZED_NAME_SPEC)
+  @javax.annotation.Nullable
   private String spec;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private String source;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String SERIALIZED_NAME_DATASCHEMA = "dataschema";
   @SerializedName(SERIALIZED_NAME_DATASCHEMA)
+  @javax.annotation.Nullable
   private String dataschema;
 
   public static final String SERIALIZED_NAME_DATACONTENTTYPE = "datacontenttype";
   @SerializedName(SERIALIZED_NAME_DATACONTENTTYPE)
+  @javax.annotation.Nullable
   private String datacontenttype;
 
   public static final String SERIALIZED_NAME_SEVERITYNUMBER = "severitynumber";
   @SerializedName(SERIALIZED_NAME_SEVERITYNUMBER)
+  @javax.annotation.Nullable
   private String severitynumber;
 
   public static final String SERIALIZED_NAME_SEVERITYTEXT = "severitytext";
   @SerializedName(SERIALIZED_NAME_SEVERITYTEXT)
+  @javax.annotation.Nullable
   private String severitytext;
 
   public static final String SERIALIZED_NAME_EQUINIXPROJECT = "equinixproject";
   @SerializedName(SERIALIZED_NAME_EQUINIXPROJECT)
+  @javax.annotation.Nullable
   private UUID equinixproject;
 
   public static final String SERIALIZED_NAME_AUTHTYPE = "authtype";
   @SerializedName(SERIALIZED_NAME_AUTHTYPE)
+  @javax.annotation.Nullable
   private String authtype;
 
   public static final String SERIALIZED_NAME_AUTHID = "authid";
   @SerializedName(SERIALIZED_NAME_AUTHID)
+  @javax.annotation.Nullable
   private String authid;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private CloudEventData data;
 
   public CloudEvent() {
   }
 
-  
   public CloudEvent(
      String spec
   ) {
@@ -111,279 +125,241 @@ public class CloudEvent {
     this.spec = spec;
   }
 
-   /**
+  /**
    * Cloud Event Open Telemetry specification
    * @return spec
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSpec() {
     return spec;
   }
 
 
 
-
-  public CloudEvent source(String source) {
-    
+  public CloudEvent source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSource() {
     return source;
   }
 
-
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
 
-  public CloudEvent id(UUID id) {
-    
+  public CloudEvent id(@javax.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event identifier
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getId() {
     return id;
   }
 
-
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public CloudEvent type(String type) {
-    
+  public CloudEvent type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Equinix supported event type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getType() {
     return type;
   }
 
-
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public CloudEvent subject(String subject) {
-    
+  public CloudEvent subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSubject() {
     return subject;
   }
 
-
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public CloudEvent dataschema(String dataschema) {
-    
+  public CloudEvent dataschema(@javax.annotation.Nullable String dataschema) {
     this.dataschema = dataschema;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event dataschema reference
    * @return dataschema
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDataschema() {
     return dataschema;
   }
 
-
-  public void setDataschema(String dataschema) {
+  public void setDataschema(@javax.annotation.Nullable String dataschema) {
     this.dataschema = dataschema;
   }
 
 
-  public CloudEvent datacontenttype(String datacontenttype) {
-    
+  public CloudEvent datacontenttype(@javax.annotation.Nullable String datacontenttype) {
     this.datacontenttype = datacontenttype;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event data content type
    * @return datacontenttype
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDatacontenttype() {
     return datacontenttype;
   }
 
-
-  public void setDatacontenttype(String datacontenttype) {
+  public void setDatacontenttype(@javax.annotation.Nullable String datacontenttype) {
     this.datacontenttype = datacontenttype;
   }
 
 
-  public CloudEvent severitynumber(String severitynumber) {
-    
+  public CloudEvent severitynumber(@javax.annotation.Nullable String severitynumber) {
     this.severitynumber = severitynumber;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event severity number
    * @return severitynumber
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSeveritynumber() {
     return severitynumber;
   }
 
-
-  public void setSeveritynumber(String severitynumber) {
+  public void setSeveritynumber(@javax.annotation.Nullable String severitynumber) {
     this.severitynumber = severitynumber;
   }
 
 
-  public CloudEvent severitytext(String severitytext) {
-    
+  public CloudEvent severitytext(@javax.annotation.Nullable String severitytext) {
     this.severitytext = severitytext;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event severity text
    * @return severitytext
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getSeveritytext() {
     return severitytext;
   }
 
-
-  public void setSeveritytext(String severitytext) {
+  public void setSeveritytext(@javax.annotation.Nullable String severitytext) {
     this.severitytext = severitytext;
   }
 
 
-  public CloudEvent equinixproject(UUID equinixproject) {
-    
+  public CloudEvent equinixproject(@javax.annotation.Nullable UUID equinixproject) {
     this.equinixproject = equinixproject;
     return this;
   }
 
-   /**
+  /**
    * Equinix project identifier
    * @return equinixproject
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getEquinixproject() {
     return equinixproject;
   }
 
-
-  public void setEquinixproject(UUID equinixproject) {
+  public void setEquinixproject(@javax.annotation.Nullable UUID equinixproject) {
     this.equinixproject = equinixproject;
   }
 
 
-  public CloudEvent authtype(String authtype) {
-    
+  public CloudEvent authtype(@javax.annotation.Nullable String authtype) {
     this.authtype = authtype;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event auth type
    * @return authtype
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAuthtype() {
     return authtype;
   }
 
-
-  public void setAuthtype(String authtype) {
+  public void setAuthtype(@javax.annotation.Nullable String authtype) {
     this.authtype = authtype;
   }
 
 
-  public CloudEvent authid(String authid) {
-    
+  public CloudEvent authid(@javax.annotation.Nullable String authid) {
     this.authid = authid;
     return this;
   }
 
-   /**
+  /**
    * Cloud Event user identifier
    * @return authid
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAuthid() {
     return authid;
   }
 
-
-  public void setAuthid(String authid) {
+  public void setAuthid(@javax.annotation.Nullable String authid) {
     this.authid = authid;
   }
 
 
-  public CloudEvent data(CloudEventData data) {
-    
+  public CloudEvent data(@javax.annotation.Nullable CloudEventData data) {
     this.data = data;
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-
   public CloudEventData getData() {
     return data;
   }
 
-
-  public void setData(CloudEventData data) {
+  public void setData(@javax.annotation.Nullable CloudEventData data) {
     this.data = data;
   }
 
@@ -521,18 +497,19 @@ public class CloudEvent {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudEvent
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudEvent.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudEvent
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudEvent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudEvent is not found in the empty JSON string", CloudEvent.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("spec") != null && !jsonObj.get("spec").isJsonNull()) && !jsonObj.get("spec").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `spec` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spec").toString()));
       }
@@ -571,7 +548,7 @@ public class CloudEvent {
       }
       // validate the optional field `data`
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
-        CloudEventData.validateJsonObject(jsonObj.getAsJsonObject("data"));
+        CloudEventData.validateJsonElement(jsonObj.get("data"));
       }
   }
 
@@ -603,7 +580,12 @@ public class CloudEvent {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -612,8 +594,9 @@ public class CloudEvent {
 
            @Override
            public CloudEvent read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudEvent instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -641,22 +624,22 @@ public class CloudEvent {
     }
   }
 
- /**
-  * Create an instance of CloudEvent given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudEvent
-  * @throws IOException if the JSON string is invalid with respect to CloudEvent
-  */
+  /**
+   * Create an instance of CloudEvent given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudEvent
+   * @throws IOException if the JSON string is invalid with respect to CloudEvent
+   */
   public static CloudEvent fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudEvent.class);
   }
 
- /**
-  * Convert an instance of CloudEvent to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudEvent to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

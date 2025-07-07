@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**replaceRouteFilterRuleByUuid**](RouteFilterRulesApi.md#replaceRouteFilterRuleByUuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule |
 
 
-<a name="createRouteFilterRule"></a>
+<a id="createRouteFilterRule"></a>
 # **createRouteFilterRule**
 > RouteFilterRulesData createRouteFilterRule(routeFilterId, routeFilterRulesBase)
 
@@ -90,7 +90,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createRouteFilterRulesInBulk"></a>
+<a id="createRouteFilterRulesInBulk"></a>
 # **createRouteFilterRulesInBulk**
 > GetRouteFilterRulesResponse createRouteFilterRulesInBulk(routeFilterId, routeFilterRulesPostRequest)
 
@@ -165,7 +165,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteRouteFilterRuleByUuid"></a>
+<a id="deleteRouteFilterRuleByUuid"></a>
 # **deleteRouteFilterRuleByUuid**
 > RouteFilterRulesData deleteRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId)
 
@@ -240,7 +240,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterRuleByUuid"></a>
+<a id="getRouteFilterRuleByUuid"></a>
 # **getRouteFilterRuleByUuid**
 > RouteFilterRulesData getRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId)
 
@@ -315,7 +315,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterRuleChangeByUuid"></a>
+<a id="getRouteFilterRuleChangeByUuid"></a>
 # **getRouteFilterRuleChangeByUuid**
 > RouteFilterRulesChangeData getRouteFilterRuleChangeByUuid(routeFilterId, routeFilterRuleId, changeId)
 
@@ -391,7 +391,7 @@ public class Example {
 | **404** | Route Filter ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterRuleChanges"></a>
+<a id="getRouteFilterRuleChanges"></a>
 # **getRouteFilterRuleChanges**
 > RouteFilterRulesChangeDataResponse getRouteFilterRuleChanges(routeFilterId, routeFilterRuleId, offset, limit)
 
@@ -469,7 +469,7 @@ public class Example {
 | **404** | Route Filter ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterRules"></a>
+<a id="getRouteFilterRules"></a>
 # **getRouteFilterRules**
 > GetRouteFilterRulesResponse getRouteFilterRules(routeFilterId, offset, limit)
 
@@ -545,7 +545,7 @@ public class Example {
 | **404** | Route Filter Rule ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="patchRouteFilterRuleByUuid"></a>
+<a id="patchRouteFilterRuleByUuid"></a>
 # **patchRouteFilterRuleByUuid**
 > RouteFilterRulesData patchRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId, routeFilterRulesPatchRequestItem)
 
@@ -622,7 +622,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="replaceRouteFilterRuleByUuid"></a>
+<a id="replaceRouteFilterRuleByUuid"></a>
 # **replaceRouteFilterRuleByUuid**
 > RouteFilterRulesData replaceRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId, routeFilterRulesBase)
 

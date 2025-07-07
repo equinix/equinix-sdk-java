@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,26 +46,35 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Port configuration settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortSettings {
   public static final String SERIALIZED_NAME_BUYOUT = "buyout";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_BUYOUT)
+  @javax.annotation.Nullable
   private Boolean buyout;
 
   public static final String SERIALIZED_NAME_VIEW_PORT_PERMISSION = "viewPortPermission";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_VIEW_PORT_PERMISSION)
+  @javax.annotation.Nullable
   private Boolean viewPortPermission;
 
   public static final String SERIALIZED_NAME_PLACE_VC_ORDER_PERMISSION = "placeVcOrderPermission";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_PLACE_VC_ORDER_PERMISSION)
+  @javax.annotation.Nullable
   private Boolean placeVcOrderPermission;
 
   public static final String SERIALIZED_NAME_LAYER3_ENABLED = "layer3Enabled";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_LAYER3_ENABLED)
+  @javax.annotation.Nullable
   private Boolean layer3Enabled;
 
   public static final String SERIALIZED_NAME_SHARED_PORT_TYPE = "sharedPortType";
   @SerializedName(SERIALIZED_NAME_SHARED_PORT_TYPE)
+  @javax.annotation.Nullable
   private Boolean sharedPortType;
 
   /**
@@ -115,10 +126,16 @@ public class PortSettings {
         return SharedPortProductEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SharedPortProductEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_SHARED_PORT_PRODUCT = "sharedPortProduct";
   @SerializedName(SERIALIZED_NAME_SHARED_PORT_PRODUCT)
+  @javax.annotation.Nullable
   private SharedPortProductEnum sharedPortProduct;
 
   /**
@@ -168,175 +185,171 @@ public class PortSettings {
         return PackageTypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PackageTypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_PACKAGE_TYPE = "packageType";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_PACKAGE_TYPE)
+  @javax.annotation.Nullable
   private PackageTypeEnum packageType;
 
   public PortSettings() {
   }
 
-  public PortSettings buyout(Boolean buyout) {
-    
+  @Deprecated
+  public PortSettings buyout(@javax.annotation.Nullable Boolean buyout) {
     this.buyout = buyout;
     return this;
   }
 
-   /**
+  /**
    * Get buyout
    * @return buyout
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getBuyout() {
     return buyout;
   }
 
-
-  public void setBuyout(Boolean buyout) {
+  @Deprecated
+  public void setBuyout(@javax.annotation.Nullable Boolean buyout) {
     this.buyout = buyout;
   }
 
 
-  public PortSettings viewPortPermission(Boolean viewPortPermission) {
-    
+  @Deprecated
+  public PortSettings viewPortPermission(@javax.annotation.Nullable Boolean viewPortPermission) {
     this.viewPortPermission = viewPortPermission;
     return this;
   }
 
-   /**
+  /**
    * Get viewPortPermission
    * @return viewPortPermission
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getViewPortPermission() {
     return viewPortPermission;
   }
 
-
-  public void setViewPortPermission(Boolean viewPortPermission) {
+  @Deprecated
+  public void setViewPortPermission(@javax.annotation.Nullable Boolean viewPortPermission) {
     this.viewPortPermission = viewPortPermission;
   }
 
 
-  public PortSettings placeVcOrderPermission(Boolean placeVcOrderPermission) {
-    
+  @Deprecated
+  public PortSettings placeVcOrderPermission(@javax.annotation.Nullable Boolean placeVcOrderPermission) {
     this.placeVcOrderPermission = placeVcOrderPermission;
     return this;
   }
 
-   /**
+  /**
    * Get placeVcOrderPermission
    * @return placeVcOrderPermission
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getPlaceVcOrderPermission() {
     return placeVcOrderPermission;
   }
 
-
-  public void setPlaceVcOrderPermission(Boolean placeVcOrderPermission) {
+  @Deprecated
+  public void setPlaceVcOrderPermission(@javax.annotation.Nullable Boolean placeVcOrderPermission) {
     this.placeVcOrderPermission = placeVcOrderPermission;
   }
 
 
-  public PortSettings layer3Enabled(Boolean layer3Enabled) {
-    
+  @Deprecated
+  public PortSettings layer3Enabled(@javax.annotation.Nullable Boolean layer3Enabled) {
     this.layer3Enabled = layer3Enabled;
     return this;
   }
 
-   /**
+  /**
    * Get layer3Enabled
    * @return layer3Enabled
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public Boolean getLayer3Enabled() {
     return layer3Enabled;
   }
 
-
-  public void setLayer3Enabled(Boolean layer3Enabled) {
+  @Deprecated
+  public void setLayer3Enabled(@javax.annotation.Nullable Boolean layer3Enabled) {
     this.layer3Enabled = layer3Enabled;
   }
 
 
-  public PortSettings sharedPortType(Boolean sharedPortType) {
-    
+  public PortSettings sharedPortType(@javax.annotation.Nullable Boolean sharedPortType) {
     this.sharedPortType = sharedPortType;
     return this;
   }
 
-   /**
+  /**
    * Get sharedPortType
    * @return sharedPortType
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getSharedPortType() {
     return sharedPortType;
   }
 
-
-  public void setSharedPortType(Boolean sharedPortType) {
+  public void setSharedPortType(@javax.annotation.Nullable Boolean sharedPortType) {
     this.sharedPortType = sharedPortType;
   }
 
 
-  public PortSettings sharedPortProduct(SharedPortProductEnum sharedPortProduct) {
-    
+  public PortSettings sharedPortProduct(@javax.annotation.Nullable SharedPortProductEnum sharedPortProduct) {
     this.sharedPortProduct = sharedPortProduct;
     return this;
   }
 
-   /**
+  /**
    * Get sharedPortProduct
    * @return sharedPortProduct
-  **/
+   */
   @javax.annotation.Nullable
-
   public SharedPortProductEnum getSharedPortProduct() {
     return sharedPortProduct;
   }
 
-
-  public void setSharedPortProduct(SharedPortProductEnum sharedPortProduct) {
+  public void setSharedPortProduct(@javax.annotation.Nullable SharedPortProductEnum sharedPortProduct) {
     this.sharedPortProduct = sharedPortProduct;
   }
 
 
-  public PortSettings packageType(PackageTypeEnum packageType) {
-    
+  @Deprecated
+  public PortSettings packageType(@javax.annotation.Nullable PackageTypeEnum packageType) {
     this.packageType = packageType;
     return this;
   }
 
-   /**
+  /**
    * Type of Port Package
    * @return packageType
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-
   public PackageTypeEnum getPackageType() {
     return packageType;
   }
 
-
-  public void setPackageType(PackageTypeEnum packageType) {
+  @Deprecated
+  public void setPackageType(@javax.annotation.Nullable PackageTypeEnum packageType) {
     this.packageType = packageType;
   }
 
@@ -456,23 +469,32 @@ public class PortSettings {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PortSettings
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PortSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PortSettings
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PortSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortSettings is not found in the empty JSON string", PortSettings.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) && !jsonObj.get("sharedPortProduct").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sharedPortProduct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharedPortProduct").toString()));
       }
+      // validate the optional field `sharedPortProduct`
+      if (jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) {
+        SharedPortProductEnum.validateJsonElement(jsonObj.get("sharedPortProduct"));
+      }
       if ((jsonObj.get("packageType") != null && !jsonObj.get("packageType").isJsonNull()) && !jsonObj.get("packageType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `packageType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("packageType").toString()));
+      }
+      // validate the optional field `packageType`
+      if (jsonObj.get("packageType") != null && !jsonObj.get("packageType").isJsonNull()) {
+        PackageTypeEnum.validateJsonElement(jsonObj.get("packageType"));
       }
   }
 
@@ -504,7 +526,12 @@ public class PortSettings {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -513,8 +540,9 @@ public class PortSettings {
 
            @Override
            public PortSettings read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PortSettings instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -542,22 +570,22 @@ public class PortSettings {
     }
   }
 
- /**
-  * Create an instance of PortSettings given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PortSettings
-  * @throws IOException if the JSON string is invalid with respect to PortSettings
-  */
+  /**
+   * Create an instance of PortSettings given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PortSettings
+   * @throws IOException if the JSON string is invalid with respect to PortSettings
+   */
   public static PortSettings fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PortSettings.class);
   }
 
- /**
-  * Convert an instance of PortSettings to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PortSettings to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

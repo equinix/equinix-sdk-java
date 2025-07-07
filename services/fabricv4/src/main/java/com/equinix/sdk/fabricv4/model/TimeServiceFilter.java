@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.TimeServiceOrFilter;
 import com.equinix.sdk.fabricv4.model.TimeServiceSimpleExpression;
 import com.google.gson.TypeAdapter;
@@ -22,9 +21,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -53,11 +54,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TimeServiceFilter extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(TimeServiceFilter.class.getName());
 
@@ -69,8 +71,8 @@ public class TimeServiceFilter extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'TimeServiceFilter' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TimeServiceOrFilter> adapterTimeServiceOrFilter = gson.getDelegateAdapter(this, TypeToken.get(TimeServiceOrFilter.class));
             final TypeAdapter<TimeServiceSimpleExpression> adapterTimeServiceSimpleExpression = gson.getDelegateAdapter(this, TypeToken.get(TimeServiceSimpleExpression.class));
+            final TypeAdapter<TimeServiceOrFilter> adapterTimeServiceOrFilter = gson.getDelegateAdapter(this, TypeToken.get(TimeServiceOrFilter.class));
 
             return (TypeAdapter<T>) new TypeAdapter<TimeServiceFilter>() {
                 @Override
@@ -80,87 +82,81 @@ public class TimeServiceFilter extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `TimeServiceOrFilter`
-                    if (value.getActualInstance() instanceof TimeServiceOrFilter) {
-                        JsonObject obj = adapterTimeServiceOrFilter.toJsonTree((TimeServiceOrFilter)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `TimeServiceSimpleExpression`
                     if (value.getActualInstance() instanceof TimeServiceSimpleExpression) {
-                        JsonObject obj = adapterTimeServiceSimpleExpression.toJsonTree((TimeServiceSimpleExpression)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterTimeServiceSimpleExpression.toJsonTree((TimeServiceSimpleExpression)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
+                    // check if the actual instance is of the type `TimeServiceOrFilter`
+                    if (value.getActualInstance() instanceof TimeServiceOrFilter) {
+                        JsonElement element = adapterTimeServiceOrFilter.toJsonTree((TimeServiceOrFilter)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: TimeServiceOrFilter, TimeServiceSimpleExpression");
                 }
 
                 @Override
                 public TimeServiceFilter read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
-                    // deserialize TimeServiceOrFilter
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        TimeServiceOrFilter.validateJsonObject(jsonObject);
-                        log.log(Level.FINER, "Input data matches schema 'TimeServiceOrFilter'");
-                        TimeServiceFilter ret = new TimeServiceFilter();
-                        ret.setActualInstance(adapterTimeServiceOrFilter.fromJsonTree(jsonObject));
-                        return ret;
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        log.log(Level.FINER, "Input data does not match schema 'TimeServiceOrFilter'", e);
-                    }
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize TimeServiceSimpleExpression
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        TimeServiceSimpleExpression.validateJsonObject(jsonObject);
-                        log.log(Level.FINER, "Input data matches schema 'TimeServiceSimpleExpression'");
+                        TimeServiceSimpleExpression.validateJsonElement(jsonElement);
+                        actualAdapter = adapterTimeServiceSimpleExpression;
                         TimeServiceFilter ret = new TimeServiceFilter();
-                        ret.setActualInstance(adapterTimeServiceSimpleExpression.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for TimeServiceSimpleExpression failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'TimeServiceSimpleExpression'", e);
                     }
+                    // deserialize TimeServiceOrFilter
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        TimeServiceOrFilter.validateJsonElement(jsonElement);
+                        actualAdapter = adapterTimeServiceOrFilter;
+                        TimeServiceFilter ret = new TimeServiceFilter();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for TimeServiceOrFilter failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'TimeServiceOrFilter'", e);
+                    }
 
-
-                    throw new IOException(String.format("Failed deserialization for TimeServiceFilter: no class matched. JSON: %s", jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for TimeServiceFilter: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in anyOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public TimeServiceFilter() {
         super("anyOf", Boolean.FALSE);
     }
 
-    public TimeServiceFilter(TimeServiceOrFilter o) {
-        super("anyOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public TimeServiceFilter(TimeServiceSimpleExpression o) {
+    public TimeServiceFilter(Object o) {
         super("anyOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("TimeServiceOrFilter", new GenericType<TimeServiceOrFilter>() {
-        });
-        schemas.put("TimeServiceSimpleExpression", new GenericType<TimeServiceSimpleExpression>() {
-        });
+        schemas.put("TimeServiceSimpleExpression", TimeServiceSimpleExpression.class);
+        schemas.put("TimeServiceOrFilter", TimeServiceOrFilter.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return TimeServiceFilter.schemas;
     }
 
@@ -170,16 +166,15 @@ public class TimeServiceFilter extends AbstractOpenApiSchema {
      * TimeServiceOrFilter, TimeServiceSimpleExpression
      *
      * It could be an instance of the 'anyOf' schemas.
-     * The anyOf child schemas may themselves be a composed schema (allOf, anyOf, anyOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof TimeServiceOrFilter) {
+        if (instance instanceof TimeServiceSimpleExpression) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof TimeServiceSimpleExpression) {
+        if (instance instanceof TimeServiceOrFilter) {
             super.setActualInstance(instance);
             return;
         }
@@ -193,9 +188,21 @@ public class TimeServiceFilter extends AbstractOpenApiSchema {
      *
      * @return The actual instance (TimeServiceOrFilter, TimeServiceSimpleExpression)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `TimeServiceSimpleExpression`. If the actual instance is not `TimeServiceSimpleExpression`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `TimeServiceSimpleExpression`
+     * @throws ClassCastException if the instance is not `TimeServiceSimpleExpression`
+     */
+    public TimeServiceSimpleExpression getTimeServiceSimpleExpression() throws ClassCastException {
+        return (TimeServiceSimpleExpression)super.getActualInstance();
     }
 
     /**
@@ -210,65 +217,51 @@ public class TimeServiceFilter extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `TimeServiceSimpleExpression`. If the actual instance is not `TimeServiceSimpleExpression`,
-     * the ClassCastException will be thrown.
+     * Validates the JSON Element and throws an exception if issues found
      *
-     * @return The actual instance of `TimeServiceSimpleExpression`
-     * @throws ClassCastException if the instance is not `TimeServiceSimpleExpression`
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to TimeServiceFilter
      */
-    public TimeServiceSimpleExpression getTimeServiceSimpleExpression() throws ClassCastException {
-        return (TimeServiceSimpleExpression)super.getActualInstance();
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with TimeServiceSimpleExpression
+        try {
+            TimeServiceSimpleExpression.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for TimeServiceSimpleExpression failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with TimeServiceOrFilter
+        try {
+            TimeServiceOrFilter.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for TimeServiceOrFilter failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for TimeServiceFilter with anyOf schemas: TimeServiceOrFilter, TimeServiceSimpleExpression. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to TimeServiceFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate anyOf schemas one by one
-    int validCount = 0;
-    // validate the json string with TimeServiceOrFilter
-    try {
-      TimeServiceOrFilter.validateJsonObject(jsonObj);
-      return; // return earlier as at least one schema is valid with respect to the Json object
-      //validCount++;
-    } catch (Exception e) {
-      // continue to the next one
+    /**
+     * Create an instance of TimeServiceFilter given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of TimeServiceFilter
+     * @throws IOException if the JSON string is invalid with respect to TimeServiceFilter
+     */
+    public static TimeServiceFilter fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, TimeServiceFilter.class);
     }
-    // validate the json string with TimeServiceSimpleExpression
-    try {
-      TimeServiceSimpleExpression.validateJsonObject(jsonObj);
-      return; // return earlier as at least one schema is valid with respect to the Json object
-      //validCount++;
-    } catch (Exception e) {
-      // continue to the next one
-    }
-    if (validCount == 0) {
-      throw new IOException(String.format("The JSON string is invalid for TimeServiceFilter with anyOf schemas: TimeServiceOrFilter, TimeServiceSimpleExpression. JSON: %s", jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of TimeServiceFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TimeServiceFilter
-  * @throws IOException if the JSON string is invalid with respect to TimeServiceFilter
-  */
-  public static TimeServiceFilter fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TimeServiceFilter.class);
-  }
-
- /**
-  * Convert an instance of TimeServiceFilter to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of TimeServiceFilter to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Link;
 import com.equinix.sdk.fabricv4.model.NetworkOperation;
@@ -33,6 +32,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -46,13 +46,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -60,72 +62,86 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Network specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Network {
-  public static final String SERIALIZED_NAME_HREF = "href";
-  @SerializedName(SERIALIZED_NAME_HREF)
-  private URI href;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private UUID uuid;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  private NetworkState state;
-
-  public static final String SERIALIZED_NAME_CONNECTIONS_COUNT = "connectionsCount";
-  @SerializedName(SERIALIZED_NAME_CONNECTIONS_COUNT)
-  private BigDecimal connectionsCount;
-
-  public static final String SERIALIZED_NAME_ACCOUNT = "account";
-  @SerializedName(SERIALIZED_NAME_ACCOUNT)
-  private SimplifiedAccount account;
-
-  public static final String SERIALIZED_NAME_CHANGE = "change";
-  @SerializedName(SERIALIZED_NAME_CHANGE)
-  private SimplifiedNetworkChange change;
-
-  public static final String SERIALIZED_NAME_OPERATION = "operation";
-  @SerializedName(SERIALIZED_NAME_OPERATION)
-  private NetworkOperation operation;
-
-  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
-  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
-  private Changelog changeLog;
-
-  public static final String SERIALIZED_NAME_LINKS = "links";
-  @SerializedName(SERIALIZED_NAME_LINKS)
-  private List<Link> links = new ArrayList<>();
-
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private NetworkType type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nonnull
   private NetworkScope scope;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private SimplifiedLocation location;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nonnull
   private List<SimplifiedNotification> notifications = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nonnull
+  private URI href;
+
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
+  private UUID uuid;
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
+  private NetworkState state;
+
+  public static final String SERIALIZED_NAME_CONNECTIONS_COUNT = "connectionsCount";
+  @SerializedName(SERIALIZED_NAME_CONNECTIONS_COUNT)
+  @javax.annotation.Nullable
+  private BigDecimal connectionsCount;
+
+  public static final String SERIALIZED_NAME_ACCOUNT = "account";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
+  private SimplifiedAccount account;
+
+  public static final String SERIALIZED_NAME_CHANGE = "change";
+  @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
+  private SimplifiedNetworkChange change;
+
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private NetworkOperation operation;
+
+  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
+  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nonnull
+  private Changelog changeLog;
+
+  public static final String SERIALIZED_NAME_LINKS = "links";
+  @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
+  private List<Link> links = new ArrayList<>();
 
   public Network() {
   }
 
-  
   public Network(
      URI href, 
      List<Link> links
@@ -135,321 +151,281 @@ public class Network {
     this.links = links;
   }
 
-   /**
+  public Network type(@javax.annotation.Nonnull NetworkType type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nonnull
+  public NetworkType getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nonnull NetworkType type) {
+    this.type = type;
+  }
+
+
+  public Network name(@javax.annotation.Nonnull String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Customer-provided network name
+   * @return name
+   */
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nonnull String name) {
+    this.name = name;
+  }
+
+
+  public Network scope(@javax.annotation.Nonnull NetworkScope scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * Get scope
+   * @return scope
+   */
+  @javax.annotation.Nonnull
+  public NetworkScope getScope() {
+    return scope;
+  }
+
+  public void setScope(@javax.annotation.Nonnull NetworkScope scope) {
+    this.scope = scope;
+  }
+
+
+  public Network location(@javax.annotation.Nullable SimplifiedLocation location) {
+    this.location = location;
+    return this;
+  }
+
+  /**
+   * Get location
+   * @return location
+   */
+  @javax.annotation.Nullable
+  public SimplifiedLocation getLocation() {
+    return location;
+  }
+
+  public void setLocation(@javax.annotation.Nullable SimplifiedLocation location) {
+    this.location = location;
+  }
+
+
+  public Network project(@javax.annotation.Nullable Project project) {
+    this.project = project;
+    return this;
+  }
+
+  /**
+   * Get project
+   * @return project
+   */
+  @javax.annotation.Nullable
+  public Project getProject() {
+    return project;
+  }
+
+  public void setProject(@javax.annotation.Nullable Project project) {
+    this.project = project;
+  }
+
+
+  public Network notifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+
+  public Network addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
+    return this;
+  }
+
+  /**
+   * Preferences for notifications on network configuration or status changes
+   * @return notifications
+   */
+  @javax.annotation.Nonnull
+  public List<SimplifiedNotification> getNotifications() {
+    return notifications;
+  }
+
+  public void setNotifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+  }
+
+
+  /**
    * Network URI
    * @return href
-  **/
+   */
   @javax.annotation.Nonnull
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public Network uuid(UUID uuid) {
-    
+  public Network uuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned network identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public Network state(NetworkState state) {
-    
+  public Network state(@javax.annotation.Nonnull NetworkState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nonnull
-
   public NetworkState getState() {
     return state;
   }
 
-
-  public void setState(NetworkState state) {
+  public void setState(@javax.annotation.Nonnull NetworkState state) {
     this.state = state;
   }
 
 
-  public Network connectionsCount(BigDecimal connectionsCount) {
-    
+  public Network connectionsCount(@javax.annotation.Nullable BigDecimal connectionsCount) {
     this.connectionsCount = connectionsCount;
     return this;
   }
 
-   /**
+  /**
    * number of connections created on the network
    * @return connectionsCount
-  **/
+   */
   @javax.annotation.Nullable
-
   public BigDecimal getConnectionsCount() {
     return connectionsCount;
   }
 
-
-  public void setConnectionsCount(BigDecimal connectionsCount) {
+  public void setConnectionsCount(@javax.annotation.Nullable BigDecimal connectionsCount) {
     this.connectionsCount = connectionsCount;
   }
 
 
-  public Network account(SimplifiedAccount account) {
-    
+  public Network account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public Network change(SimplifiedNetworkChange change) {
-    
+  public Network change(@javax.annotation.Nullable SimplifiedNetworkChange change) {
     this.change = change;
     return this;
   }
 
-   /**
+  /**
    * Get change
    * @return change
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedNetworkChange getChange() {
     return change;
   }
 
-
-  public void setChange(SimplifiedNetworkChange change) {
+  public void setChange(@javax.annotation.Nullable SimplifiedNetworkChange change) {
     this.change = change;
   }
 
 
-  public Network operation(NetworkOperation operation) {
-    
+  public Network operation(@javax.annotation.Nullable NetworkOperation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public NetworkOperation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(NetworkOperation operation) {
+  public void setOperation(@javax.annotation.Nullable NetworkOperation operation) {
     this.operation = operation;
   }
 
 
-  public Network changeLog(Changelog changeLog) {
-    
+  public Network changeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
 
-   /**
+  /**
    * Network sub-resources links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Link> getLinks() {
     return links;
   }
 
-
-
-
-  public Network type(NetworkType type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @javax.annotation.Nonnull
-
-  public NetworkType getType() {
-    return type;
-  }
-
-
-  public void setType(NetworkType type) {
-    this.type = type;
-  }
-
-
-  public Network name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Customer-provided network name
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public Network scope(NetworkScope scope) {
-    
-    this.scope = scope;
-    return this;
-  }
-
-   /**
-   * Get scope
-   * @return scope
-  **/
-  @javax.annotation.Nonnull
-
-  public NetworkScope getScope() {
-    return scope;
-  }
-
-
-  public void setScope(NetworkScope scope) {
-    this.scope = scope;
-  }
-
-
-  public Network location(SimplifiedLocation location) {
-    
-    this.location = location;
-    return this;
-  }
-
-   /**
-   * Get location
-   * @return location
-  **/
-  @javax.annotation.Nullable
-
-  public SimplifiedLocation getLocation() {
-    return location;
-  }
-
-
-  public void setLocation(SimplifiedLocation location) {
-    this.location = location;
-  }
-
-
-  public Network project(Project project) {
-    
-    this.project = project;
-    return this;
-  }
-
-   /**
-   * Get project
-   * @return project
-  **/
-  @javax.annotation.Nullable
-
-  public Project getProject() {
-    return project;
-  }
-
-
-  public void setProject(Project project) {
-    this.project = project;
-  }
-
-
-  public Network notifications(List<SimplifiedNotification> notifications) {
-    
-    this.notifications = notifications;
-    return this;
-  }
-
-  public Network addNotificationsItem(SimplifiedNotification notificationsItem) {
-    this.notifications.add(notificationsItem);
-    return this;
-  }
-
-   /**
-   * Preferences for notifications on network configuration or status changes
-   * @return notifications
-  **/
-  @javax.annotation.Nonnull
-
-  public List<SimplifiedNotification> getNotifications() {
-    return notifications;
-  }
-
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
-    this.notifications = notifications;
-  }
 
   /**
    * A container for additional, undeclared properties.
@@ -506,7 +482,13 @@ public class Network {
       return false;
     }
     Network network = (Network) o;
-    return Objects.equals(this.href, network.href) &&
+    return Objects.equals(this.type, network.type) &&
+        Objects.equals(this.name, network.name) &&
+        Objects.equals(this.scope, network.scope) &&
+        Objects.equals(this.location, network.location) &&
+        Objects.equals(this.project, network.project) &&
+        Objects.equals(this.notifications, network.notifications) &&
+        Objects.equals(this.href, network.href) &&
         Objects.equals(this.uuid, network.uuid) &&
         Objects.equals(this.state, network.state) &&
         Objects.equals(this.connectionsCount, network.connectionsCount) &&
@@ -514,25 +496,25 @@ public class Network {
         Objects.equals(this.change, network.change) &&
         Objects.equals(this.operation, network.operation) &&
         Objects.equals(this.changeLog, network.changeLog) &&
-        Objects.equals(this.links, network.links) &&
-        Objects.equals(this.type, network.type) &&
-        Objects.equals(this.name, network.name) &&
-        Objects.equals(this.scope, network.scope) &&
-        Objects.equals(this.location, network.location) &&
-        Objects.equals(this.project, network.project) &&
-        Objects.equals(this.notifications, network.notifications)&&
+        Objects.equals(this.links, network.links)&&
         Objects.equals(this.additionalProperties, network.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, state, connectionsCount, account, change, operation, changeLog, links, type, name, scope, location, project, notifications, additionalProperties);
+    return Objects.hash(type, name, scope, location, project, notifications, href, uuid, state, connectionsCount, account, change, operation, changeLog, links, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Network {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
@@ -542,12 +524,6 @@ public class Network {
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
-    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -571,6 +547,12 @@ public class Network {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("type");
+    openapiFields.add("name");
+    openapiFields.add("scope");
+    openapiFields.add("location");
+    openapiFields.add("project");
+    openapiFields.add("notifications");
     openapiFields.add("href");
     openapiFields.add("uuid");
     openapiFields.add("state");
@@ -580,64 +562,86 @@ public class Network {
     openapiFields.add("operation");
     openapiFields.add("changeLog");
     openapiFields.add("links");
-    openapiFields.add("type");
-    openapiFields.add("name");
-    openapiFields.add("scope");
-    openapiFields.add("location");
-    openapiFields.add("project");
-    openapiFields.add("notifications");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("href");
-    openapiRequiredFields.add("uuid");
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("changeLog");
     openapiRequiredFields.add("type");
     openapiRequiredFields.add("name");
     openapiRequiredFields.add("scope");
     openapiRequiredFields.add("notifications");
+    openapiRequiredFields.add("href");
+    openapiRequiredFields.add("uuid");
+    openapiRequiredFields.add("state");
+    openapiRequiredFields.add("changeLog");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Network
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Network.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Network
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Network.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Network is not found in the empty JSON string", Network.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Network.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      NetworkType.validateJsonElement(jsonObj.get("type"));
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the required field `scope`
+      NetworkScope.validateJsonElement(jsonObj.get("scope"));
+      // validate the optional field `location`
+      if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
+        SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
+      }
+      // validate the optional field `project`
+      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
+        Project.validateJsonElement(jsonObj.get("project"));
+      }
+      // ensure the json data is an array
+      if (!jsonObj.get("notifications").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+      }
+
+      JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+      // validate the required field `notifications` (array)
+      for (int i = 0; i < jsonArraynotifications.size(); i++) {
+        SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+      };
       if (!jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the required field `state`
+      NetworkState.validateJsonElement(jsonObj.get("state"));
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        SimplifiedNetworkChange.validateJsonObject(jsonObj.getAsJsonObject("change"));
+        SimplifiedNetworkChange.validateJsonElement(jsonObj.get("change"));
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        NetworkOperation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        NetworkOperation.validateJsonElement(jsonObj.get("operation"));
       }
       // validate the required field `changeLog`
-      Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+      Changelog.validateJsonElement(jsonObj.get("changeLog"));
       if (jsonObj.get("links") != null && !jsonObj.get("links").isJsonNull()) {
         JsonArray jsonArraylinks = jsonObj.getAsJsonArray("links");
         if (jsonArraylinks != null) {
@@ -648,31 +652,10 @@ public class Network {
 
           // validate the optional field `links` (array)
           for (int i = 0; i < jsonArraylinks.size(); i++) {
-            Link.validateJsonObject(jsonArraylinks.get(i).getAsJsonObject());
+            Link.validateJsonElement(jsonArraylinks.get(i));
           };
         }
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // validate the optional field `location`
-      if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
-        SimplifiedLocation.validateJsonObject(jsonObj.getAsJsonObject("location"));
-      }
-      // validate the optional field `project`
-      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
-      }
-      // ensure the json data is an array
-      if (!jsonObj.get("notifications").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
-      }
-
-      JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
-      // validate the required field `notifications` (array)
-      for (int i = 0; i < jsonArraynotifications.size(); i++) {
-        SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -703,7 +686,12 @@ public class Network {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -712,8 +700,9 @@ public class Network {
 
            @Override
            public Network read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Network instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -741,22 +730,22 @@ public class Network {
     }
   }
 
- /**
-  * Create an instance of Network given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Network
-  * @throws IOException if the JSON string is invalid with respect to Network
-  */
+  /**
+   * Create an instance of Network given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Network
+   * @throws IOException if the JSON string is invalid with respect to Network
+   */
   public static Network fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Network.class);
   }
 
- /**
-  * Convert an instance of Network to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Network to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

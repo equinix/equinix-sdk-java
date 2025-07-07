@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,137 +46,127 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * HopProbes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class HopProbes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_IP = "ip";
   @SerializedName(SERIALIZED_NAME_IP)
+  @javax.annotation.Nullable
   private String ip;
 
   public static final String SERIALIZED_NAME_ASN = "asn";
   @SerializedName(SERIALIZED_NAME_ASN)
+  @javax.annotation.Nullable
   private Integer asn;
 
   public static final String SERIALIZED_NAME_RTT = "rtt";
   @SerializedName(SERIALIZED_NAME_RTT)
+  @javax.annotation.Nullable
   private String rtt;
 
   public static final String SERIALIZED_NAME_ANNOTATION = "annotation";
   @SerializedName(SERIALIZED_NAME_ANNOTATION)
+  @javax.annotation.Nullable
   private String annotation;
 
   public HopProbes() {
   }
 
-  public HopProbes name(String name) {
-    
+  public HopProbes name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public HopProbes ip(String ip) {
-    
+  public HopProbes ip(@javax.annotation.Nullable String ip) {
     this.ip = ip;
     return this;
   }
 
-   /**
+  /**
    * Get ip
    * @return ip
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getIp() {
     return ip;
   }
 
-
-  public void setIp(String ip) {
+  public void setIp(@javax.annotation.Nullable String ip) {
     this.ip = ip;
   }
 
 
-  public HopProbes asn(Integer asn) {
-    
+  public HopProbes asn(@javax.annotation.Nullable Integer asn) {
     this.asn = asn;
     return this;
   }
 
-   /**
+  /**
    * Get asn
    * @return asn
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getAsn() {
     return asn;
   }
 
-
-  public void setAsn(Integer asn) {
+  public void setAsn(@javax.annotation.Nullable Integer asn) {
     this.asn = asn;
   }
 
 
-  public HopProbes rtt(String rtt) {
-    
+  public HopProbes rtt(@javax.annotation.Nullable String rtt) {
     this.rtt = rtt;
     return this;
   }
 
-   /**
+  /**
    * Get rtt
    * @return rtt
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getRtt() {
     return rtt;
   }
 
-
-  public void setRtt(String rtt) {
+  public void setRtt(@javax.annotation.Nullable String rtt) {
     this.rtt = rtt;
   }
 
 
-  public HopProbes annotation(String annotation) {
-    
+  public HopProbes annotation(@javax.annotation.Nullable String annotation) {
     this.annotation = annotation;
     return this;
   }
 
-   /**
+  /**
    * Get annotation
    * @return annotation
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAnnotation() {
     return annotation;
   }
 
-
-  public void setAnnotation(String annotation) {
+  public void setAnnotation(@javax.annotation.Nullable String annotation) {
     this.annotation = annotation;
   }
 
@@ -288,18 +280,19 @@ public class HopProbes {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to HopProbes
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!HopProbes.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HopProbes
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!HopProbes.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in HopProbes is not found in the empty JSON string", HopProbes.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -342,7 +335,12 @@ public class HopProbes {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -351,8 +349,9 @@ public class HopProbes {
 
            @Override
            public HopProbes read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              HopProbes instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -380,22 +379,22 @@ public class HopProbes {
     }
   }
 
- /**
-  * Create an instance of HopProbes given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HopProbes
-  * @throws IOException if the JSON string is invalid with respect to HopProbes
-  */
+  /**
+   * Create an instance of HopProbes given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HopProbes
+   * @throws IOException if the JSON string is invalid with respect to HopProbes
+   */
   public static HopProbes fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HopProbes.class);
   }
 
- /**
-  * Convert an instance of HopProbes to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HopProbes to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

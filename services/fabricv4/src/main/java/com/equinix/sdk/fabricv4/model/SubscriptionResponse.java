@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.SubscriptionEntitlementResponse;
 import com.equinix.sdk.fabricv4.model.SubscriptionState;
@@ -25,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,13 +38,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -52,18 +54,21 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Subscription Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SubscriptionResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
   private SubscriptionState state;
 
   /**
@@ -115,10 +120,16 @@ public class SubscriptionResponse {
         return MarketplaceEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      MarketplaceEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_MARKETPLACE = "marketplace";
   @SerializedName(SERIALIZED_NAME_MARKETPLACE)
+  @javax.annotation.Nonnull
   private MarketplaceEnum marketplace;
 
   /**
@@ -166,217 +177,204 @@ public class SubscriptionResponse {
         return OfferTypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OfferTypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OFFER_TYPE = "offerType";
   @SerializedName(SERIALIZED_NAME_OFFER_TYPE)
+  @javax.annotation.Nullable
   private OfferTypeEnum offerType;
 
   public static final String SERIALIZED_NAME_IS_AUTO_RENEW = "isAutoRenew";
   @SerializedName(SERIALIZED_NAME_IS_AUTO_RENEW)
+  @javax.annotation.Nullable
   private Boolean isAutoRenew;
 
   public static final String SERIALIZED_NAME_OFFER_ID = "offerId";
   @SerializedName(SERIALIZED_NAME_OFFER_ID)
+  @javax.annotation.Nullable
   private String offerId;
 
   public static final String SERIALIZED_NAME_TRIAL = "trial";
   @SerializedName(SERIALIZED_NAME_TRIAL)
+  @javax.annotation.Nullable
   private SubscriptionTrial trial;
 
   public static final String SERIALIZED_NAME_METRO_CODES = "metroCodes";
   @SerializedName(SERIALIZED_NAME_METRO_CODES)
+  @javax.annotation.Nullable
   private List<String> metroCodes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENTITLEMENTS = "entitlements";
   @SerializedName(SERIALIZED_NAME_ENTITLEMENTS)
+  @javax.annotation.Nonnull
   private List<SubscriptionEntitlementResponse> entitlements = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
+  @javax.annotation.Nullable
   private Changelog changelog;
 
   public SubscriptionResponse() {
   }
 
-  public SubscriptionResponse href(URI href) {
-    
+  public SubscriptionResponse href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Subscription URL
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
 
-  public SubscriptionResponse uuid(UUID uuid) {
-    
+  public SubscriptionResponse uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the Subscription
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public SubscriptionResponse state(SubscriptionState state) {
-    
+  public SubscriptionResponse state(@javax.annotation.Nonnull SubscriptionState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nonnull
-
   public SubscriptionState getState() {
     return state;
   }
 
-
-  public void setState(SubscriptionState state) {
+  public void setState(@javax.annotation.Nonnull SubscriptionState state) {
     this.state = state;
   }
 
 
-  public SubscriptionResponse marketplace(MarketplaceEnum marketplace) {
-    
+  public SubscriptionResponse marketplace(@javax.annotation.Nonnull MarketplaceEnum marketplace) {
     this.marketplace = marketplace;
     return this;
   }
 
-   /**
+  /**
    * Marketplace Type
    * @return marketplace
-  **/
+   */
   @javax.annotation.Nonnull
-
   public MarketplaceEnum getMarketplace() {
     return marketplace;
   }
 
-
-  public void setMarketplace(MarketplaceEnum marketplace) {
+  public void setMarketplace(@javax.annotation.Nonnull MarketplaceEnum marketplace) {
     this.marketplace = marketplace;
   }
 
 
-  public SubscriptionResponse offerType(OfferTypeEnum offerType) {
-    
+  public SubscriptionResponse offerType(@javax.annotation.Nullable OfferTypeEnum offerType) {
     this.offerType = offerType;
     return this;
   }
 
-   /**
+  /**
    * Marketplace Offer Type
    * @return offerType
-  **/
+   */
   @javax.annotation.Nullable
-
   public OfferTypeEnum getOfferType() {
     return offerType;
   }
 
-
-  public void setOfferType(OfferTypeEnum offerType) {
+  public void setOfferType(@javax.annotation.Nullable OfferTypeEnum offerType) {
     this.offerType = offerType;
   }
 
 
-  public SubscriptionResponse isAutoRenew(Boolean isAutoRenew) {
-    
+  public SubscriptionResponse isAutoRenew(@javax.annotation.Nullable Boolean isAutoRenew) {
     this.isAutoRenew = isAutoRenew;
     return this;
   }
 
-   /**
+  /**
    * Is Auto Renewal Enabled
    * @return isAutoRenew
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getIsAutoRenew() {
     return isAutoRenew;
   }
 
-
-  public void setIsAutoRenew(Boolean isAutoRenew) {
+  public void setIsAutoRenew(@javax.annotation.Nullable Boolean isAutoRenew) {
     this.isAutoRenew = isAutoRenew;
   }
 
 
-  public SubscriptionResponse offerId(String offerId) {
-    
+  public SubscriptionResponse offerId(@javax.annotation.Nullable String offerId) {
     this.offerId = offerId;
     return this;
   }
 
-   /**
+  /**
    * Marketplace Offer Id
    * @return offerId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getOfferId() {
     return offerId;
   }
 
-
-  public void setOfferId(String offerId) {
+  public void setOfferId(@javax.annotation.Nullable String offerId) {
     this.offerId = offerId;
   }
 
 
-  public SubscriptionResponse trial(SubscriptionTrial trial) {
-    
+  public SubscriptionResponse trial(@javax.annotation.Nullable SubscriptionTrial trial) {
     this.trial = trial;
     return this;
   }
 
-   /**
+  /**
    * Get trial
    * @return trial
-  **/
+   */
   @javax.annotation.Nullable
-
   public SubscriptionTrial getTrial() {
     return trial;
   }
 
-
-  public void setTrial(SubscriptionTrial trial) {
+  public void setTrial(@javax.annotation.Nullable SubscriptionTrial trial) {
     this.trial = trial;
   }
 
 
-  public SubscriptionResponse metroCodes(List<String> metroCodes) {
-    
+  public SubscriptionResponse metroCodes(@javax.annotation.Nullable List<String> metroCodes) {
     this.metroCodes = metroCodes;
     return this;
   }
@@ -389,67 +387,62 @@ public class SubscriptionResponse {
     return this;
   }
 
-   /**
+  /**
    * List of available metro
    * @return metroCodes
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getMetroCodes() {
     return metroCodes;
   }
 
-
-  public void setMetroCodes(List<String> metroCodes) {
+  public void setMetroCodes(@javax.annotation.Nullable List<String> metroCodes) {
     this.metroCodes = metroCodes;
   }
 
 
-  public SubscriptionResponse entitlements(List<SubscriptionEntitlementResponse> entitlements) {
-    
+  public SubscriptionResponse entitlements(@javax.annotation.Nonnull List<SubscriptionEntitlementResponse> entitlements) {
     this.entitlements = entitlements;
     return this;
   }
 
   public SubscriptionResponse addEntitlementsItem(SubscriptionEntitlementResponse entitlementsItem) {
+    if (this.entitlements == null) {
+      this.entitlements = new ArrayList<>();
+    }
     this.entitlements.add(entitlementsItem);
     return this;
   }
 
-   /**
+  /**
    * List of entitlements associated with the subscription
    * @return entitlements
-  **/
+   */
   @javax.annotation.Nonnull
-
   public List<SubscriptionEntitlementResponse> getEntitlements() {
     return entitlements;
   }
 
-
-  public void setEntitlements(List<SubscriptionEntitlementResponse> entitlements) {
+  public void setEntitlements(@javax.annotation.Nonnull List<SubscriptionEntitlementResponse> entitlements) {
     this.entitlements = entitlements;
   }
 
 
-  public SubscriptionResponse changelog(Changelog changelog) {
-    
+  public SubscriptionResponse changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
   }
 
-   /**
+  /**
    * Get changelog
    * @return changelog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangelog() {
     return changelog;
   }
 
-
-  public void setChangelog(Changelog changelog) {
+  public void setChangelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
   }
 
@@ -584,46 +577,55 @@ public class SubscriptionResponse {
     openapiRequiredFields.add("entitlements");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SubscriptionResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!SubscriptionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubscriptionResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SubscriptionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SubscriptionResponse is not found in the empty JSON string", SubscriptionResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SubscriptionResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
+      // validate the required field `state`
+      SubscriptionState.validateJsonElement(jsonObj.get("state"));
       if (!jsonObj.get("marketplace").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `marketplace` to be a primitive type in the JSON string but got `%s`", jsonObj.get("marketplace").toString()));
       }
+      // validate the required field `marketplace`
+      MarketplaceEnum.validateJsonElement(jsonObj.get("marketplace"));
       if ((jsonObj.get("offerType") != null && !jsonObj.get("offerType").isJsonNull()) && !jsonObj.get("offerType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `offerType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("offerType").toString()));
+      }
+      // validate the optional field `offerType`
+      if (jsonObj.get("offerType") != null && !jsonObj.get("offerType").isJsonNull()) {
+        OfferTypeEnum.validateJsonElement(jsonObj.get("offerType"));
       }
       if ((jsonObj.get("offerId") != null && !jsonObj.get("offerId").isJsonNull()) && !jsonObj.get("offerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `offerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("offerId").toString()));
       }
       // validate the optional field `trial`
       if (jsonObj.get("trial") != null && !jsonObj.get("trial").isJsonNull()) {
-        SubscriptionTrial.validateJsonObject(jsonObj.getAsJsonObject("trial"));
+        SubscriptionTrial.validateJsonElement(jsonObj.get("trial"));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("metroCodes") != null && !jsonObj.get("metroCodes").isJsonArray()) {
+      if (jsonObj.get("metroCodes") != null && !jsonObj.get("metroCodes").isJsonNull() && !jsonObj.get("metroCodes").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `metroCodes` to be an array in the JSON string but got `%s`", jsonObj.get("metroCodes").toString()));
       }
       // ensure the json data is an array
@@ -634,11 +636,11 @@ public class SubscriptionResponse {
       JsonArray jsonArrayentitlements = jsonObj.getAsJsonArray("entitlements");
       // validate the required field `entitlements` (array)
       for (int i = 0; i < jsonArrayentitlements.size(); i++) {
-        SubscriptionEntitlementResponse.validateJsonObject(jsonArrayentitlements.get(i).getAsJsonObject());
+        SubscriptionEntitlementResponse.validateJsonElement(jsonArrayentitlements.get(i));
       };
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changelog"));
+        Changelog.validateJsonElement(jsonObj.get("changelog"));
       }
   }
 
@@ -670,7 +672,12 @@ public class SubscriptionResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -679,8 +686,9 @@ public class SubscriptionResponse {
 
            @Override
            public SubscriptionResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              SubscriptionResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -708,22 +716,22 @@ public class SubscriptionResponse {
     }
   }
 
- /**
-  * Create an instance of SubscriptionResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubscriptionResponse
-  * @throws IOException if the JSON string is invalid with respect to SubscriptionResponse
-  */
+  /**
+   * Create an instance of SubscriptionResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubscriptionResponse
+   * @throws IOException if the JSON string is invalid with respect to SubscriptionResponse
+   */
   public static SubscriptionResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubscriptionResponse.class);
   }
 
- /**
-  * Convert an instance of SubscriptionResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubscriptionResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
