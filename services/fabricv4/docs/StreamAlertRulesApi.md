@@ -11,7 +11,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**updateStreamAlertRuleByUuid**](StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules |
 
 
-<a name="createStreamAlertRules"></a>
+<a id="createStreamAlertRules"></a>
 # **createStreamAlertRules**
 > StreamAlertRule createStreamAlertRules(streamId, alertRulePostRequest)
 
@@ -85,7 +85,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteStreamAlertRuleByUuid"></a>
+<a id="deleteStreamAlertRuleByUuid"></a>
 # **deleteStreamAlertRuleByUuid**
 > StreamAlertRule deleteStreamAlertRuleByUuid(streamId, alertRuleId)
 
@@ -159,7 +159,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamAlertRuleByUuid"></a>
+<a id="getStreamAlertRuleByUuid"></a>
 # **getStreamAlertRuleByUuid**
 > StreamAlertRule getStreamAlertRuleByUuid(streamId, alertRuleId)
 
@@ -233,7 +233,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getStreamAlertRules"></a>
+<a id="getStreamAlertRules"></a>
 # **getStreamAlertRules**
 > GetAllStreamAlertRuleResponse getStreamAlertRules(streamId, offset, limit)
 
@@ -308,7 +308,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateStreamAlertRuleByUuid"></a>
+<a id="updateStreamAlertRuleByUuid"></a>
 # **updateStreamAlertRuleByUuid**
 > StreamAlertRule updateStreamAlertRuleByUuid(streamId, alertRuleId, alertRulePutRequest)
 

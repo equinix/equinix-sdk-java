@@ -17,6 +17,8 @@ The OrchestratorProvider schema defines the structure for the orchestrator provi
 
 | Name | Value |
 |---- | -----|
+| FABRIC_PROVIDER | &quot;FABRIC_PROVIDER&quot; |
+| AWS_PROVIDER | &quot;AWS_PROVIDER&quot; |
 | GCP_PROVIDER | &quot;GCP_PROVIDER&quot; |
 
 

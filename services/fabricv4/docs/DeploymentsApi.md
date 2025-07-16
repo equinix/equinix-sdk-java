@@ -12,7 +12,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**searchProviderResources**](DeploymentsApi.md#searchProviderResources) | **POST** /fabric/v4/providerResources/search | Search provider resources |
 
 
-<a name="actionDeployment"></a>
+<a id="actionDeployment"></a>
 # **actionDeployment**
 > CloudRouterActionResponse actionDeployment(deploymentId, deploymentActionRequest)
 
@@ -87,7 +87,7 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createTopologyDeployment"></a>
+<a id="createTopologyDeployment"></a>
 # **createTopologyDeployment**
 > DeploymentResponse createTopologyDeployment(deployment)
 
@@ -159,7 +159,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteDeployment"></a>
+<a id="deleteDeployment"></a>
 # **deleteDeployment**
 > DeploymentResponse deleteDeployment(deploymentId)
 
@@ -231,7 +231,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getDeployment"></a>
+<a id="getDeployment"></a>
 # **getDeployment**
 > DeploymentResponse getDeployment(deploymentId)
 
@@ -302,7 +302,7 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchDeployments"></a>
+<a id="searchDeployments"></a>
 # **searchDeployments**
 > DeploymentSearchResponse searchDeployments(deploymentSearchRequest)
 
@@ -373,7 +373,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
 
-<a name="searchProviderResources"></a>
+<a id="searchProviderResources"></a>
 # **searchProviderResources**
 > ProviderSearchResponse searchProviderResources(providerSearchRequest)
 

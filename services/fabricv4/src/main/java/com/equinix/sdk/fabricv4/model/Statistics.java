@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.BandwidthUtilization;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,14 +48,16 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Statistics {
   public static final String SERIALIZED_NAME_START_DATE_TIME = "startDateTime";
   @SerializedName(SERIALIZED_NAME_START_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime startDateTime;
 
   public static final String SERIALIZED_NAME_END_DATE_TIME = "endDateTime";
   @SerializedName(SERIALIZED_NAME_END_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime endDateTime;
 
   /**
@@ -101,103 +105,98 @@ public class Statistics {
         return ViewPointEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ViewPointEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_VIEW_POINT = "viewPoint";
   @SerializedName(SERIALIZED_NAME_VIEW_POINT)
+  @javax.annotation.Nullable
   private ViewPointEnum viewPoint;
 
   public static final String SERIALIZED_NAME_BANDWIDTH_UTILIZATION = "bandwidthUtilization";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH_UTILIZATION)
+  @javax.annotation.Nullable
   private BandwidthUtilization bandwidthUtilization;
 
   public Statistics() {
   }
 
-  public Statistics startDateTime(OffsetDateTime startDateTime) {
-    
+  public Statistics startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
 
-   /**
+  /**
    * Start and duration of the statistical analysis interval.
    * @return startDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
 
-
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
 
-  public Statistics endDateTime(OffsetDateTime endDateTime) {
-    
+  public Statistics endDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
 
-   /**
+  /**
    * End and duration of the statistical analysis interval.
    * @return endDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getEndDateTime() {
     return endDateTime;
   }
 
-
-  public void setEndDateTime(OffsetDateTime endDateTime) {
+  public void setEndDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 
 
-  public Statistics viewPoint(ViewPointEnum viewPoint) {
-    
+  public Statistics viewPoint(@javax.annotation.Nullable ViewPointEnum viewPoint) {
     this.viewPoint = viewPoint;
     return this;
   }
 
-   /**
+  /**
    * Point of view for connection metrics - aSide or zSide
    * @return viewPoint
-  **/
+   */
   @javax.annotation.Nullable
-
   public ViewPointEnum getViewPoint() {
     return viewPoint;
   }
 
-
-  public void setViewPoint(ViewPointEnum viewPoint) {
+  public void setViewPoint(@javax.annotation.Nullable ViewPointEnum viewPoint) {
     this.viewPoint = viewPoint;
   }
 
 
-  public Statistics bandwidthUtilization(BandwidthUtilization bandwidthUtilization) {
-    
+  public Statistics bandwidthUtilization(@javax.annotation.Nullable BandwidthUtilization bandwidthUtilization) {
     this.bandwidthUtilization = bandwidthUtilization;
     return this;
   }
 
-   /**
+  /**
    * Get bandwidthUtilization
    * @return bandwidthUtilization
-  **/
+   */
   @javax.annotation.Nullable
-
   public BandwidthUtilization getBandwidthUtilization() {
     return bandwidthUtilization;
   }
 
-
-  public void setBandwidthUtilization(BandwidthUtilization bandwidthUtilization) {
+  public void setBandwidthUtilization(@javax.annotation.Nullable BandwidthUtilization bandwidthUtilization) {
     this.bandwidthUtilization = bandwidthUtilization;
   }
 
@@ -308,24 +307,29 @@ public class Statistics {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Statistics
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!Statistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Statistics
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Statistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Statistics is not found in the empty JSON string", Statistics.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("viewPoint") != null && !jsonObj.get("viewPoint").isJsonNull()) && !jsonObj.get("viewPoint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `viewPoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("viewPoint").toString()));
       }
+      // validate the optional field `viewPoint`
+      if (jsonObj.get("viewPoint") != null && !jsonObj.get("viewPoint").isJsonNull()) {
+        ViewPointEnum.validateJsonElement(jsonObj.get("viewPoint"));
+      }
       // validate the optional field `bandwidthUtilization`
       if (jsonObj.get("bandwidthUtilization") != null && !jsonObj.get("bandwidthUtilization").isJsonNull()) {
-        BandwidthUtilization.validateJsonObject(jsonObj.getAsJsonObject("bandwidthUtilization"));
+        BandwidthUtilization.validateJsonElement(jsonObj.get("bandwidthUtilization"));
       }
   }
 
@@ -357,7 +361,12 @@ public class Statistics {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -366,8 +375,9 @@ public class Statistics {
 
            @Override
            public Statistics read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              Statistics instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -395,22 +405,22 @@ public class Statistics {
     }
   }
 
- /**
-  * Create an instance of Statistics given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Statistics
-  * @throws IOException if the JSON string is invalid with respect to Statistics
-  */
+  /**
+   * Create an instance of Statistics given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Statistics
+   * @throws IOException if the JSON string is invalid with respect to Statistics
+   */
   public static Statistics fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Statistics.class);
   }
 
- /**
-  * Convert an instance of Statistics to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Statistics to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

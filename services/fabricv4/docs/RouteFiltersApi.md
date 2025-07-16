@@ -18,7 +18,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**searchRouteFilters**](RouteFiltersApi.md#searchRouteFilters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters |
 
 
-<a name="attachConnectionRouteFilter"></a>
+<a id="attachConnectionRouteFilter"></a>
 # **attachConnectionRouteFilter**
 > ConnectionRouteFilterData attachConnectionRouteFilter(routeFilterId, connectionId, connectionRouteFiltersBase)
 
@@ -95,7 +95,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="createRouteFilter"></a>
+<a id="createRouteFilter"></a>
 # **createRouteFilter**
 > RouteFiltersData createRouteFilter(routeFiltersBase)
 
@@ -168,7 +168,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteRouteFilterByUuid"></a>
+<a id="deleteRouteFilterByUuid"></a>
 # **deleteRouteFilterByUuid**
 > RouteFiltersData deleteRouteFilterByUuid(routeFilterId)
 
@@ -241,7 +241,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="detachConnectionRouteFilter"></a>
+<a id="detachConnectionRouteFilter"></a>
 # **detachConnectionRouteFilter**
 > ConnectionRouteFilterData detachConnectionRouteFilter(routeFilterId, connectionId)
 
@@ -316,7 +316,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRouteFilterByUuid"></a>
+<a id="getConnectionRouteFilterByUuid"></a>
 # **getConnectionRouteFilterByUuid**
 > ConnectionRouteFilterData getConnectionRouteFilterByUuid(routeFilterId, connectionId)
 
@@ -391,7 +391,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getConnectionRouteFilters"></a>
+<a id="getConnectionRouteFilters"></a>
 # **getConnectionRouteFilters**
 > GetAllConnectionRouteFiltersResponse getConnectionRouteFilters(connectionId)
 
@@ -464,7 +464,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterByUuid"></a>
+<a id="getRouteFilterByUuid"></a>
 # **getRouteFilterByUuid**
 > RouteFiltersData getRouteFilterByUuid(routeFilterId)
 
@@ -537,7 +537,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterChangeByUuid"></a>
+<a id="getRouteFilterChangeByUuid"></a>
 # **getRouteFilterChangeByUuid**
 > RouteFilterChangeData getRouteFilterChangeByUuid(routeFilterId, changeId)
 
@@ -611,7 +611,7 @@ public class Example {
 | **404** | Route Filter ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterChanges"></a>
+<a id="getRouteFilterChanges"></a>
 # **getRouteFilterChanges**
 > RouteFilterChangeDataResponse getRouteFilterChanges(routeFilterId, offset, limit)
 
@@ -687,7 +687,7 @@ public class Example {
 | **404** | Route Filter ID Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getRouteFilterConnections"></a>
+<a id="getRouteFilterConnections"></a>
 # **getRouteFilterConnections**
 > GetRouteFilterGetConnectionsResponse getRouteFilterConnections(routeFilterId)
 
@@ -760,7 +760,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="patchRouteFilterByUuid"></a>
+<a id="patchRouteFilterByUuid"></a>
 # **patchRouteFilterByUuid**
 > RouteFiltersData patchRouteFilterByUuid(routeFilterId, routeFiltersPatchRequestItem)
 
@@ -835,7 +835,7 @@ public class Example {
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="searchRouteFilters"></a>
+<a id="searchRouteFilters"></a>
 # **searchRouteFilters**
 > RouteFiltersSearchResponse searchRouteFilters(routeFiltersSearchBase)
 

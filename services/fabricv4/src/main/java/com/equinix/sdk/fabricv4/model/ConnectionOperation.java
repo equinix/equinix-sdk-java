@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.EquinixStatus;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.ProviderStatus;
@@ -24,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -36,13 +36,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -50,14 +52,16 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Connection type-specific operational data
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ConnectionOperation {
   public static final String SERIALIZED_NAME_PROVIDER_STATUS = "providerStatus";
   @SerializedName(SERIALIZED_NAME_PROVIDER_STATUS)
+  @javax.annotation.Nullable
   private ProviderStatus providerStatus;
 
   public static final String SERIALIZED_NAME_EQUINIX_STATUS = "equinixStatus";
   @SerializedName(SERIALIZED_NAME_EQUINIX_STATUS)
+  @javax.annotation.Nullable
   private EquinixStatus equinixStatus;
 
   /**
@@ -105,91 +109,89 @@ public class ConnectionOperation {
         return OperationalStatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperationalStatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OPERATIONAL_STATUS = "operationalStatus";
   @SerializedName(SERIALIZED_NAME_OPERATIONAL_STATUS)
+  @javax.annotation.Nullable
   private OperationalStatusEnum operationalStatus;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<Error> errors = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OP_STATUS_CHANGED_AT = "opStatusChangedAt";
   @SerializedName(SERIALIZED_NAME_OP_STATUS_CHANGED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime opStatusChangedAt;
 
   public ConnectionOperation() {
   }
 
-  public ConnectionOperation providerStatus(ProviderStatus providerStatus) {
-    
+  public ConnectionOperation providerStatus(@javax.annotation.Nullable ProviderStatus providerStatus) {
     this.providerStatus = providerStatus;
     return this;
   }
 
-   /**
+  /**
    * Get providerStatus
    * @return providerStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public ProviderStatus getProviderStatus() {
     return providerStatus;
   }
 
-
-  public void setProviderStatus(ProviderStatus providerStatus) {
+  public void setProviderStatus(@javax.annotation.Nullable ProviderStatus providerStatus) {
     this.providerStatus = providerStatus;
   }
 
 
-  public ConnectionOperation equinixStatus(EquinixStatus equinixStatus) {
-    
+  public ConnectionOperation equinixStatus(@javax.annotation.Nullable EquinixStatus equinixStatus) {
     this.equinixStatus = equinixStatus;
     return this;
   }
 
-   /**
+  /**
    * Get equinixStatus
    * @return equinixStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public EquinixStatus getEquinixStatus() {
     return equinixStatus;
   }
 
-
-  public void setEquinixStatus(EquinixStatus equinixStatus) {
+  public void setEquinixStatus(@javax.annotation.Nullable EquinixStatus equinixStatus) {
     this.equinixStatus = equinixStatus;
   }
 
 
-  public ConnectionOperation operationalStatus(OperationalStatusEnum operationalStatus) {
-    
+  public ConnectionOperation operationalStatus(@javax.annotation.Nullable OperationalStatusEnum operationalStatus) {
     this.operationalStatus = operationalStatus;
     return this;
   }
 
-   /**
+  /**
    * Connection operational status
    * @return operationalStatus
-  **/
+   */
   @javax.annotation.Nullable
-
   public OperationalStatusEnum getOperationalStatus() {
     return operationalStatus;
   }
 
-
-  public void setOperationalStatus(OperationalStatusEnum operationalStatus) {
+  public void setOperationalStatus(@javax.annotation.Nullable OperationalStatusEnum operationalStatus) {
     this.operationalStatus = operationalStatus;
   }
 
 
-  public ConnectionOperation errors(List<Error> errors) {
-    
+  public ConnectionOperation errors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
     return this;
   }
@@ -202,40 +204,35 @@ public class ConnectionOperation {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Error> getErrors() {
     return errors;
   }
 
-
-  public void setErrors(List<Error> errors) {
+  public void setErrors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
   }
 
 
-  public ConnectionOperation opStatusChangedAt(OffsetDateTime opStatusChangedAt) {
-    
+  public ConnectionOperation opStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
     return this;
   }
 
-   /**
+  /**
    * When connection transitioned into current operational status
    * @return opStatusChangedAt
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getOpStatusChangedAt() {
     return opStatusChangedAt;
   }
 
-
-  public void setOpStatusChangedAt(OffsetDateTime opStatusChangedAt) {
+  public void setOpStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 
@@ -349,20 +346,33 @@ public class ConnectionOperation {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ConnectionOperation
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ConnectionOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConnectionOperation
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConnectionOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionOperation is not found in the empty JSON string", ConnectionOperation.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `providerStatus`
+      if (jsonObj.get("providerStatus") != null && !jsonObj.get("providerStatus").isJsonNull()) {
+        ProviderStatus.validateJsonElement(jsonObj.get("providerStatus"));
+      }
+      // validate the optional field `equinixStatus`
+      if (jsonObj.get("equinixStatus") != null && !jsonObj.get("equinixStatus").isJsonNull()) {
+        EquinixStatus.validateJsonElement(jsonObj.get("equinixStatus"));
+      }
       if ((jsonObj.get("operationalStatus") != null && !jsonObj.get("operationalStatus").isJsonNull()) && !jsonObj.get("operationalStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `operationalStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operationalStatus").toString()));
+      }
+      // validate the optional field `operationalStatus`
+      if (jsonObj.get("operationalStatus") != null && !jsonObj.get("operationalStatus").isJsonNull()) {
+        OperationalStatusEnum.validateJsonElement(jsonObj.get("operationalStatus"));
       }
       if (jsonObj.get("errors") != null && !jsonObj.get("errors").isJsonNull()) {
         JsonArray jsonArrayerrors = jsonObj.getAsJsonArray("errors");
@@ -374,7 +384,7 @@ public class ConnectionOperation {
 
           // validate the optional field `errors` (array)
           for (int i = 0; i < jsonArrayerrors.size(); i++) {
-            Error.validateJsonObject(jsonArrayerrors.get(i).getAsJsonObject());
+            Error.validateJsonElement(jsonArrayerrors.get(i));
           };
         }
       }
@@ -408,7 +418,12 @@ public class ConnectionOperation {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -417,8 +432,9 @@ public class ConnectionOperation {
 
            @Override
            public ConnectionOperation read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ConnectionOperation instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -446,22 +462,22 @@ public class ConnectionOperation {
     }
   }
 
- /**
-  * Create an instance of ConnectionOperation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConnectionOperation
-  * @throws IOException if the JSON string is invalid with respect to ConnectionOperation
-  */
+  /**
+   * Create an instance of ConnectionOperation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConnectionOperation
+   * @throws IOException if the JSON string is invalid with respect to ConnectionOperation
+   */
   public static ConnectionOperation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConnectionOperation.class);
   }
 
- /**
-  * Convert an instance of ConnectionOperation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConnectionOperation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

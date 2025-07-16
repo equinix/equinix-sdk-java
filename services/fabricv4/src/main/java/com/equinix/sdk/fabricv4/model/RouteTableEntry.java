@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteTableEntryConnection;
 import com.equinix.sdk.fabricv4.model.RouteTableEntryProtocolType;
@@ -25,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -37,13 +37,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -51,233 +53,219 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Route table entry object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteTableEntry {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private RouteTableEntryType type;
 
   public static final String SERIALIZED_NAME_PROTOCOL_TYPE = "protocolType";
   @SerializedName(SERIALIZED_NAME_PROTOCOL_TYPE)
+  @javax.annotation.Nullable
   private RouteTableEntryProtocolType protocolType;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
   private RouteTableEntryState state;
 
   public static final String SERIALIZED_NAME_AGE = "age";
   @SerializedName(SERIALIZED_NAME_AGE)
+  @javax.annotation.Nullable
   private String age;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_NEXT_HOP = "nextHop";
   @SerializedName(SERIALIZED_NAME_NEXT_HOP)
+  @javax.annotation.Nullable
   private String nextHop;
 
   public static final String SERIALIZED_NAME_M_E_D = "MED";
   @SerializedName(SERIALIZED_NAME_M_E_D)
+  @javax.annotation.Nullable
   private Integer MED;
 
   public static final String SERIALIZED_NAME_LOCAL_PREFERENCE = "localPreference";
   @SerializedName(SERIALIZED_NAME_LOCAL_PREFERENCE)
+  @javax.annotation.Nullable
   private Integer localPreference;
 
   public static final String SERIALIZED_NAME_AS_PATH = "asPath";
   @SerializedName(SERIALIZED_NAME_AS_PATH)
+  @javax.annotation.Nullable
   private List<String> asPath = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
   private ConnectionRouteTableEntryConnection connection;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nonnull
   private Changelog changeLog;
 
   public RouteTableEntry() {
   }
 
-  public RouteTableEntry type(RouteTableEntryType type) {
-    
+  public RouteTableEntry type(@javax.annotation.Nonnull RouteTableEntryType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public RouteTableEntryType getType() {
     return type;
   }
 
-
-  public void setType(RouteTableEntryType type) {
+  public void setType(@javax.annotation.Nonnull RouteTableEntryType type) {
     this.type = type;
   }
 
 
-  public RouteTableEntry protocolType(RouteTableEntryProtocolType protocolType) {
-    
+  public RouteTableEntry protocolType(@javax.annotation.Nullable RouteTableEntryProtocolType protocolType) {
     this.protocolType = protocolType;
     return this;
   }
 
-   /**
+  /**
    * Get protocolType
    * @return protocolType
-  **/
+   */
   @javax.annotation.Nullable
-
   public RouteTableEntryProtocolType getProtocolType() {
     return protocolType;
   }
 
-
-  public void setProtocolType(RouteTableEntryProtocolType protocolType) {
+  public void setProtocolType(@javax.annotation.Nullable RouteTableEntryProtocolType protocolType) {
     this.protocolType = protocolType;
   }
 
 
-  public RouteTableEntry state(RouteTableEntryState state) {
-    
+  public RouteTableEntry state(@javax.annotation.Nonnull RouteTableEntryState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nonnull
-
   public RouteTableEntryState getState() {
     return state;
   }
 
-
-  public void setState(RouteTableEntryState state) {
+  public void setState(@javax.annotation.Nonnull RouteTableEntryState state) {
     this.state = state;
   }
 
 
-  public RouteTableEntry age(String age) {
-    
+  public RouteTableEntry age(@javax.annotation.Nullable String age) {
     this.age = age;
     return this;
   }
 
-   /**
+  /**
    * Get age
    * @return age
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getAge() {
     return age;
   }
 
-
-  public void setAge(String age) {
+  public void setAge(@javax.annotation.Nullable String age) {
     this.age = age;
   }
 
 
-  public RouteTableEntry prefix(String prefix) {
-    
+  public RouteTableEntry prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
 
-   /**
+  /**
    * Get prefix
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getPrefix() {
     return prefix;
   }
 
-
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public RouteTableEntry nextHop(String nextHop) {
-    
+  public RouteTableEntry nextHop(@javax.annotation.Nullable String nextHop) {
     this.nextHop = nextHop;
     return this;
   }
 
-   /**
+  /**
    * Get nextHop
    * @return nextHop
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getNextHop() {
     return nextHop;
   }
 
-
-  public void setNextHop(String nextHop) {
+  public void setNextHop(@javax.annotation.Nullable String nextHop) {
     this.nextHop = nextHop;
   }
 
 
-  public RouteTableEntry MED(Integer MED) {
-    
+  public RouteTableEntry MED(@javax.annotation.Nullable Integer MED) {
     this.MED = MED;
     return this;
   }
 
-   /**
+  /**
    * Get MED
    * @return MED
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getMED() {
     return MED;
   }
 
-
-  public void setMED(Integer MED) {
+  public void setMED(@javax.annotation.Nullable Integer MED) {
     this.MED = MED;
   }
 
 
-  public RouteTableEntry localPreference(Integer localPreference) {
-    
+  public RouteTableEntry localPreference(@javax.annotation.Nullable Integer localPreference) {
     this.localPreference = localPreference;
     return this;
   }
 
-   /**
+  /**
    * Get localPreference
    * @return localPreference
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getLocalPreference() {
     return localPreference;
   }
 
-
-  public void setLocalPreference(Integer localPreference) {
+  public void setLocalPreference(@javax.annotation.Nullable Integer localPreference) {
     this.localPreference = localPreference;
   }
 
 
-  public RouteTableEntry asPath(List<String> asPath) {
-    
+  public RouteTableEntry asPath(@javax.annotation.Nullable List<String> asPath) {
     this.asPath = asPath;
     return this;
   }
@@ -290,62 +278,54 @@ public class RouteTableEntry {
     return this;
   }
 
-   /**
+  /**
    * Get asPath
    * @return asPath
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getAsPath() {
     return asPath;
   }
 
-
-  public void setAsPath(List<String> asPath) {
+  public void setAsPath(@javax.annotation.Nullable List<String> asPath) {
     this.asPath = asPath;
   }
 
 
-  public RouteTableEntry connection(ConnectionRouteTableEntryConnection connection) {
-    
+  public RouteTableEntry connection(@javax.annotation.Nullable ConnectionRouteTableEntryConnection connection) {
     this.connection = connection;
     return this;
   }
 
-   /**
+  /**
    * Get connection
    * @return connection
-  **/
+   */
   @javax.annotation.Nullable
-
   public ConnectionRouteTableEntryConnection getConnection() {
     return connection;
   }
 
-
-  public void setConnection(ConnectionRouteTableEntryConnection connection) {
+  public void setConnection(@javax.annotation.Nullable ConnectionRouteTableEntryConnection connection) {
     this.connection = connection;
   }
 
 
-  public RouteTableEntry changeLog(Changelog changeLog) {
-    
+  public RouteTableEntry changeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
@@ -480,25 +460,34 @@ public class RouteTableEntry {
     openapiRequiredFields.add("changeLog");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteTableEntry
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteTableEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteTableEntry
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteTableEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteTableEntry is not found in the empty JSON string", RouteTableEntry.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RouteTableEntry.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      RouteTableEntryType.validateJsonElement(jsonObj.get("type"));
+      // validate the optional field `protocolType`
+      if (jsonObj.get("protocolType") != null && !jsonObj.get("protocolType").isJsonNull()) {
+        RouteTableEntryProtocolType.validateJsonElement(jsonObj.get("protocolType"));
+      }
+      // validate the required field `state`
+      RouteTableEntryState.validateJsonElement(jsonObj.get("state"));
       if ((jsonObj.get("age") != null && !jsonObj.get("age").isJsonNull()) && !jsonObj.get("age").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `age` to be a primitive type in the JSON string but got `%s`", jsonObj.get("age").toString()));
       }
@@ -509,15 +498,15 @@ public class RouteTableEntry {
         throw new IllegalArgumentException(String.format("Expected the field `nextHop` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nextHop").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("asPath") != null && !jsonObj.get("asPath").isJsonArray()) {
+      if (jsonObj.get("asPath") != null && !jsonObj.get("asPath").isJsonNull() && !jsonObj.get("asPath").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `asPath` to be an array in the JSON string but got `%s`", jsonObj.get("asPath").toString()));
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        ConnectionRouteTableEntryConnection.validateJsonObject(jsonObj.getAsJsonObject("connection"));
+        ConnectionRouteTableEntryConnection.validateJsonElement(jsonObj.get("connection"));
       }
       // validate the required field `changeLog`
-      Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+      Changelog.validateJsonElement(jsonObj.get("changeLog"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -548,7 +537,12 @@ public class RouteTableEntry {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -557,8 +551,9 @@ public class RouteTableEntry {
 
            @Override
            public RouteTableEntry read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteTableEntry instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -586,22 +581,22 @@ public class RouteTableEntry {
     }
   }
 
- /**
-  * Create an instance of RouteTableEntry given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteTableEntry
-  * @throws IOException if the JSON string is invalid with respect to RouteTableEntry
-  */
+  /**
+   * Create an instance of RouteTableEntry given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteTableEntry
+   * @throws IOException if the JSON string is invalid with respect to RouteTableEntry
+   */
   public static RouteTableEntry fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteTableEntry.class);
   }
 
- /**
-  * Convert an instance of RouteTableEntry to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteTableEntry to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

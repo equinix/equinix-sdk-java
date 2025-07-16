@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsChangeOperation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -33,13 +33,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -47,7 +49,7 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Current state of latest Route Aggregation change
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class RouteAggregationChangeData {
   /**
    * Current outcome of the change flow
@@ -96,38 +98,51 @@ public class RouteAggregationChangeData {
         return StatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_CREATED_BY = "createdBy";
   @SerializedName(SERIALIZED_NAME_CREATED_BY)
+  @javax.annotation.Nullable
   private String createdBy;
 
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_BY = "updatedBy";
   @SerializedName(SERIALIZED_NAME_UPDATED_BY)
+  @javax.annotation.Nullable
   private String updatedBy;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_INFORMATION = "information";
   @SerializedName(SERIALIZED_NAME_INFORMATION)
+  @javax.annotation.Nullable
   private String information;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private RouteAggregationsChangeOperation data;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private String uuid;
 
   /**
@@ -183,235 +198,212 @@ public class RouteAggregationChangeData {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public RouteAggregationChangeData() {
   }
 
-  public RouteAggregationChangeData status(StatusEnum status) {
-    
+  public RouteAggregationChangeData status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Current outcome of the change flow
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-
   public StatusEnum getStatus() {
     return status;
   }
 
-
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public RouteAggregationChangeData createdBy(String createdBy) {
-    
+  public RouteAggregationChangeData createdBy(@javax.annotation.Nullable String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
 
-   /**
+  /**
    * Created by User Key
    * @return createdBy
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCreatedBy() {
     return createdBy;
   }
 
-
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(@javax.annotation.Nullable String createdBy) {
     this.createdBy = createdBy;
   }
 
 
-  public RouteAggregationChangeData createdDateTime(OffsetDateTime createdDateTime) {
-    
+  public RouteAggregationChangeData createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change flow starts
    * @return createdDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-
-  public void setCreatedDateTime(OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public RouteAggregationChangeData updatedBy(String updatedBy) {
-    
+  public RouteAggregationChangeData updatedBy(@javax.annotation.Nullable String updatedBy) {
     this.updatedBy = updatedBy;
     return this;
   }
 
-   /**
+  /**
    * Updated by User Key
    * @return updatedBy
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getUpdatedBy() {
     return updatedBy;
   }
 
-
-  public void setUpdatedBy(String updatedBy) {
+  public void setUpdatedBy(@javax.annotation.Nullable String updatedBy) {
     this.updatedBy = updatedBy;
   }
 
 
-  public RouteAggregationChangeData updatedDateTime(OffsetDateTime updatedDateTime) {
-    
+  public RouteAggregationChangeData updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
 
-   /**
+  /**
    * Set when change object is updated
    * @return updatedDateTime
-  **/
+   */
   @javax.annotation.Nullable
-
   public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-
-  public void setUpdatedDateTime(OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 
 
-  public RouteAggregationChangeData information(String information) {
-    
+  public RouteAggregationChangeData information(@javax.annotation.Nullable String information) {
     this.information = information;
     return this;
   }
 
-   /**
+  /**
    * Additional information
    * @return information
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getInformation() {
     return information;
   }
 
-
-  public void setInformation(String information) {
+  public void setInformation(@javax.annotation.Nullable String information) {
     this.information = information;
   }
 
 
-  public RouteAggregationChangeData data(RouteAggregationsChangeOperation data) {
-    
+  public RouteAggregationChangeData data(@javax.annotation.Nullable RouteAggregationsChangeOperation data) {
     this.data = data;
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-
   public RouteAggregationsChangeOperation getData() {
     return data;
   }
 
-
-  public void setData(RouteAggregationsChangeOperation data) {
+  public void setData(@javax.annotation.Nullable RouteAggregationsChangeOperation data) {
     this.data = data;
   }
 
 
-  public RouteAggregationChangeData uuid(String uuid) {
-    
+  public RouteAggregationChangeData uuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Uniquely identifies a change
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public String getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(String uuid) {
+  public void setUuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
   }
 
 
-  public RouteAggregationChangeData type(TypeEnum type) {
-    
+  public RouteAggregationChangeData type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of change
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public RouteAggregationChangeData href(URI href) {
-    
+  public RouteAggregationChangeData href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Route AGGREGATION Change URI
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 
@@ -535,27 +527,32 @@ public class RouteAggregationChangeData {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to RouteAggregationChangeData
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!RouteAggregationChangeData.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RouteAggregationChangeData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RouteAggregationChangeData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in RouteAggregationChangeData is not found in the empty JSON string", RouteAggregationChangeData.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RouteAggregationChangeData.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
       }
       if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
@@ -568,7 +565,7 @@ public class RouteAggregationChangeData {
       }
       // validate the optional field `data`
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
-        RouteAggregationsChangeOperation.validateJsonObject(jsonObj.getAsJsonObject("data"));
+        RouteAggregationsChangeOperation.validateJsonElement(jsonObj.get("data"));
       }
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
@@ -576,6 +573,8 @@ public class RouteAggregationChangeData {
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
@@ -609,7 +608,12 @@ public class RouteAggregationChangeData {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -618,8 +622,9 @@ public class RouteAggregationChangeData {
 
            @Override
            public RouteAggregationChangeData read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              RouteAggregationChangeData instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -647,22 +652,22 @@ public class RouteAggregationChangeData {
     }
   }
 
- /**
-  * Create an instance of RouteAggregationChangeData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RouteAggregationChangeData
-  * @throws IOException if the JSON string is invalid with respect to RouteAggregationChangeData
-  */
+  /**
+   * Create an instance of RouteAggregationChangeData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RouteAggregationChangeData
+   * @throws IOException if the JSON string is invalid with respect to RouteAggregationChangeData
+   */
   public static RouteAggregationChangeData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RouteAggregationChangeData.class);
   }
 
- /**
-  * Convert an instance of RouteAggregationChangeData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RouteAggregationChangeData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

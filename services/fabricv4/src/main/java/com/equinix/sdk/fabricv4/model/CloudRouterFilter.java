@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.CloudRouterOrFilter;
 import com.equinix.sdk.fabricv4.model.CloudRouterSimpleExpression;
 import com.google.gson.TypeAdapter;
@@ -22,9 +21,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -53,11 +54,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterFilter extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CloudRouterFilter.class.getName());
 
@@ -69,8 +71,8 @@ public class CloudRouterFilter extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'CloudRouterFilter' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<CloudRouterOrFilter> adapterCloudRouterOrFilter = gson.getDelegateAdapter(this, TypeToken.get(CloudRouterOrFilter.class));
             final TypeAdapter<CloudRouterSimpleExpression> adapterCloudRouterSimpleExpression = gson.getDelegateAdapter(this, TypeToken.get(CloudRouterSimpleExpression.class));
+            final TypeAdapter<CloudRouterOrFilter> adapterCloudRouterOrFilter = gson.getDelegateAdapter(this, TypeToken.get(CloudRouterOrFilter.class));
 
             return (TypeAdapter<T>) new TypeAdapter<CloudRouterFilter>() {
                 @Override
@@ -80,87 +82,81 @@ public class CloudRouterFilter extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `CloudRouterOrFilter`
-                    if (value.getActualInstance() instanceof CloudRouterOrFilter) {
-                        JsonObject obj = adapterCloudRouterOrFilter.toJsonTree((CloudRouterOrFilter)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `CloudRouterSimpleExpression`
                     if (value.getActualInstance() instanceof CloudRouterSimpleExpression) {
-                        JsonObject obj = adapterCloudRouterSimpleExpression.toJsonTree((CloudRouterSimpleExpression)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterCloudRouterSimpleExpression.toJsonTree((CloudRouterSimpleExpression)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
+                    // check if the actual instance is of the type `CloudRouterOrFilter`
+                    if (value.getActualInstance() instanceof CloudRouterOrFilter) {
+                        JsonElement element = adapterCloudRouterOrFilter.toJsonTree((CloudRouterOrFilter)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: CloudRouterOrFilter, CloudRouterSimpleExpression");
                 }
 
                 @Override
                 public CloudRouterFilter read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
-                    // deserialize CloudRouterOrFilter
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        CloudRouterOrFilter.validateJsonObject(jsonObject);
-                        log.log(Level.FINER, "Input data matches schema 'CloudRouterOrFilter'");
-                        CloudRouterFilter ret = new CloudRouterFilter();
-                        ret.setActualInstance(adapterCloudRouterOrFilter.fromJsonTree(jsonObject));
-                        return ret;
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        log.log(Level.FINER, "Input data does not match schema 'CloudRouterOrFilter'", e);
-                    }
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize CloudRouterSimpleExpression
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        CloudRouterSimpleExpression.validateJsonObject(jsonObject);
-                        log.log(Level.FINER, "Input data matches schema 'CloudRouterSimpleExpression'");
+                        CloudRouterSimpleExpression.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCloudRouterSimpleExpression;
                         CloudRouterFilter ret = new CloudRouterFilter();
-                        ret.setActualInstance(adapterCloudRouterSimpleExpression.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CloudRouterSimpleExpression failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CloudRouterSimpleExpression'", e);
                     }
+                    // deserialize CloudRouterOrFilter
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CloudRouterOrFilter.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCloudRouterOrFilter;
+                        CloudRouterFilter ret = new CloudRouterFilter();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CloudRouterOrFilter failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CloudRouterOrFilter'", e);
+                    }
 
-
-                    throw new IOException(String.format("Failed deserialization for CloudRouterFilter: no class matched. JSON: %s", jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for CloudRouterFilter: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in anyOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public CloudRouterFilter() {
         super("anyOf", Boolean.FALSE);
     }
 
-    public CloudRouterFilter(CloudRouterOrFilter o) {
-        super("anyOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public CloudRouterFilter(CloudRouterSimpleExpression o) {
+    public CloudRouterFilter(Object o) {
         super("anyOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("CloudRouterOrFilter", new GenericType<CloudRouterOrFilter>() {
-        });
-        schemas.put("CloudRouterSimpleExpression", new GenericType<CloudRouterSimpleExpression>() {
-        });
+        schemas.put("CloudRouterSimpleExpression", CloudRouterSimpleExpression.class);
+        schemas.put("CloudRouterOrFilter", CloudRouterOrFilter.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return CloudRouterFilter.schemas;
     }
 
@@ -170,16 +166,15 @@ public class CloudRouterFilter extends AbstractOpenApiSchema {
      * CloudRouterOrFilter, CloudRouterSimpleExpression
      *
      * It could be an instance of the 'anyOf' schemas.
-     * The anyOf child schemas may themselves be a composed schema (allOf, anyOf, anyOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof CloudRouterOrFilter) {
+        if (instance instanceof CloudRouterSimpleExpression) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof CloudRouterSimpleExpression) {
+        if (instance instanceof CloudRouterOrFilter) {
             super.setActualInstance(instance);
             return;
         }
@@ -193,9 +188,21 @@ public class CloudRouterFilter extends AbstractOpenApiSchema {
      *
      * @return The actual instance (CloudRouterOrFilter, CloudRouterSimpleExpression)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CloudRouterSimpleExpression`. If the actual instance is not `CloudRouterSimpleExpression`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CloudRouterSimpleExpression`
+     * @throws ClassCastException if the instance is not `CloudRouterSimpleExpression`
+     */
+    public CloudRouterSimpleExpression getCloudRouterSimpleExpression() throws ClassCastException {
+        return (CloudRouterSimpleExpression)super.getActualInstance();
     }
 
     /**
@@ -210,65 +217,51 @@ public class CloudRouterFilter extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `CloudRouterSimpleExpression`. If the actual instance is not `CloudRouterSimpleExpression`,
-     * the ClassCastException will be thrown.
+     * Validates the JSON Element and throws an exception if issues found
      *
-     * @return The actual instance of `CloudRouterSimpleExpression`
-     * @throws ClassCastException if the instance is not `CloudRouterSimpleExpression`
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to CloudRouterFilter
      */
-    public CloudRouterSimpleExpression getCloudRouterSimpleExpression() throws ClassCastException {
-        return (CloudRouterSimpleExpression)super.getActualInstance();
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with CloudRouterSimpleExpression
+        try {
+            CloudRouterSimpleExpression.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CloudRouterSimpleExpression failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with CloudRouterOrFilter
+        try {
+            CloudRouterOrFilter.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CloudRouterOrFilter failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for CloudRouterFilter with anyOf schemas: CloudRouterOrFilter, CloudRouterSimpleExpression. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
-
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterFilter
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate anyOf schemas one by one
-    int validCount = 0;
-    // validate the json string with CloudRouterOrFilter
-    try {
-      CloudRouterOrFilter.validateJsonObject(jsonObj);
-      return; // return earlier as at least one schema is valid with respect to the Json object
-      //validCount++;
-    } catch (Exception e) {
-      // continue to the next one
+    /**
+     * Create an instance of CloudRouterFilter given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of CloudRouterFilter
+     * @throws IOException if the JSON string is invalid with respect to CloudRouterFilter
+     */
+    public static CloudRouterFilter fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, CloudRouterFilter.class);
     }
-    // validate the json string with CloudRouterSimpleExpression
-    try {
-      CloudRouterSimpleExpression.validateJsonObject(jsonObj);
-      return; // return earlier as at least one schema is valid with respect to the Json object
-      //validCount++;
-    } catch (Exception e) {
-      // continue to the next one
-    }
-    if (validCount == 0) {
-      throw new IOException(String.format("The JSON string is invalid for CloudRouterFilter with anyOf schemas: CloudRouterOrFilter, CloudRouterSimpleExpression. JSON: %s", jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of CloudRouterFilter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterFilter
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterFilter
-  */
-  public static CloudRouterFilter fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CloudRouterFilter.class);
-  }
-
- /**
-  * Convert an instance of CloudRouterFilter to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of CloudRouterFilter to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

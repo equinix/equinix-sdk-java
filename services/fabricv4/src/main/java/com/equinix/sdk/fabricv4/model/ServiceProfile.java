@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CustomField;
 import com.equinix.sdk.fabricv4.model.MarketingInfo;
@@ -34,6 +33,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,13 +47,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -61,96 +63,116 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Service Profile is a software definition for a named provider service and it&#39;s network connectivity requirements. This includes the basic marketing information and one or more sets of access points (a set per each access point type) fulfilling the provider service. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ServiceProfile {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
   private ServiceProfileStateEnum state;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private URI href;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private ServiceProfileTypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
   @SerializedName(SERIALIZED_NAME_VISIBILITY)
+  @javax.annotation.Nullable
   private ServiceProfileVisibilityEnum visibility;
 
   public static final String SERIALIZED_NAME_ALLOWED_EMAILS = "allowedEmails";
   @SerializedName(SERIALIZED_NAME_ALLOWED_EMAILS)
+  @javax.annotation.Nullable
   private List<String> allowedEmails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACCESS_POINT_TYPE_CONFIGS = "accessPointTypeConfigs";
   @SerializedName(SERIALIZED_NAME_ACCESS_POINT_TYPE_CONFIGS)
+  @javax.annotation.Nullable
   private List<ServiceProfileAccessPointType> accessPointTypeConfigs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "customFields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
+  @javax.annotation.Nullable
   private List<CustomField> customFields = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MARKETING_INFO = "marketingInfo";
   @SerializedName(SERIALIZED_NAME_MARKETING_INFO)
+  @javax.annotation.Nullable
   private MarketingInfo marketingInfo;
 
   public static final String SERIALIZED_NAME_PORTS = "ports";
   @SerializedName(SERIALIZED_NAME_PORTS)
+  @javax.annotation.Nullable
   private List<ServiceProfileAccessPointCOLO> ports = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VIRTUAL_DEVICES = "virtualDevices";
   @SerializedName(SERIALIZED_NAME_VIRTUAL_DEVICES)
+  @javax.annotation.Nullable
   private List<ServiceProfileAccessPointVD> virtualDevices = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_METROS = "metros";
   @SerializedName(SERIALIZED_NAME_METROS)
+  @javax.annotation.Nullable
   private List<ServiceMetro> metros = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELF_PROFILE = "selfProfile";
   @SerializedName(SERIALIZED_NAME_SELF_PROFILE)
+  @javax.annotation.Nullable
   private Boolean selfProfile;
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "projectId";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
+  @javax.annotation.Nullable
   private String projectId;
 
   public ServiceProfile() {
   }
 
-  
   public ServiceProfile(
      URI href
   ) {
@@ -158,197 +180,170 @@ public class ServiceProfile {
     this.href = href;
   }
 
-  public ServiceProfile state(ServiceProfileStateEnum state) {
-    
+  public ServiceProfile state(@javax.annotation.Nullable ServiceProfileStateEnum state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceProfileStateEnum getState() {
     return state;
   }
 
-
-  public void setState(ServiceProfileStateEnum state) {
+  public void setState(@javax.annotation.Nullable ServiceProfileStateEnum state) {
     this.state = state;
   }
 
 
-  public ServiceProfile account(SimplifiedAccount account) {
-    
+  public ServiceProfile account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Seller Account for Service Profile.
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public ServiceProfile project(Project project) {
-    
+  public ServiceProfile project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public ServiceProfile changeLog(Changelog changeLog) {
-    
+  public ServiceProfile changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Seller Account for Service Profile.
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
 
-   /**
+  /**
    * Service Profile URI response attribute
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public URI getHref() {
     return href;
   }
 
 
 
-
-  public ServiceProfile type(ServiceProfileTypeEnum type) {
-    
+  public ServiceProfile type(@javax.annotation.Nullable ServiceProfileTypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceProfileTypeEnum getType() {
     return type;
   }
 
-
-  public void setType(ServiceProfileTypeEnum type) {
+  public void setType(@javax.annotation.Nullable ServiceProfileTypeEnum type) {
     this.type = type;
   }
 
 
-  public ServiceProfile name(String name) {
-    
+  public ServiceProfile name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-assigned service profile name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ServiceProfile uuid(UUID uuid) {
-    
+  public ServiceProfile uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Equinix-assigned service profile identifier
    * @return uuid
-  **/
+   */
   @javax.annotation.Nullable
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public ServiceProfile description(String description) {
-    
+  public ServiceProfile description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * User-provided service description should be of maximum length 375
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ServiceProfile notifications(List<SimplifiedNotification> notifications) {
-    
+  public ServiceProfile notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -361,24 +356,21 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Recipients of notifications on service profile change
    * @return notifications
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-
-  public void setNotifications(List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public ServiceProfile tags(List<String> tags) {
-    
+  public ServiceProfile tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -391,46 +383,40 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getTags() {
     return tags;
   }
 
-
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ServiceProfile visibility(ServiceProfileVisibilityEnum visibility) {
-    
+  public ServiceProfile visibility(@javax.annotation.Nullable ServiceProfileVisibilityEnum visibility) {
     this.visibility = visibility;
     return this;
   }
 
-   /**
+  /**
    * Get visibility
    * @return visibility
-  **/
+   */
   @javax.annotation.Nullable
-
   public ServiceProfileVisibilityEnum getVisibility() {
     return visibility;
   }
 
-
-  public void setVisibility(ServiceProfileVisibilityEnum visibility) {
+  public void setVisibility(@javax.annotation.Nullable ServiceProfileVisibilityEnum visibility) {
     this.visibility = visibility;
   }
 
 
-  public ServiceProfile allowedEmails(List<String> allowedEmails) {
-    
+  public ServiceProfile allowedEmails(@javax.annotation.Nullable List<String> allowedEmails) {
     this.allowedEmails = allowedEmails;
     return this;
   }
@@ -443,24 +429,21 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get allowedEmails
    * @return allowedEmails
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getAllowedEmails() {
     return allowedEmails;
   }
 
-
-  public void setAllowedEmails(List<String> allowedEmails) {
+  public void setAllowedEmails(@javax.annotation.Nullable List<String> allowedEmails) {
     this.allowedEmails = allowedEmails;
   }
 
 
-  public ServiceProfile accessPointTypeConfigs(List<ServiceProfileAccessPointType> accessPointTypeConfigs) {
-    
+  public ServiceProfile accessPointTypeConfigs(@javax.annotation.Nullable List<ServiceProfileAccessPointType> accessPointTypeConfigs) {
     this.accessPointTypeConfigs = accessPointTypeConfigs;
     return this;
   }
@@ -473,24 +456,21 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get accessPointTypeConfigs
    * @return accessPointTypeConfigs
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ServiceProfileAccessPointType> getAccessPointTypeConfigs() {
     return accessPointTypeConfigs;
   }
 
-
-  public void setAccessPointTypeConfigs(List<ServiceProfileAccessPointType> accessPointTypeConfigs) {
+  public void setAccessPointTypeConfigs(@javax.annotation.Nullable List<ServiceProfileAccessPointType> accessPointTypeConfigs) {
     this.accessPointTypeConfigs = accessPointTypeConfigs;
   }
 
 
-  public ServiceProfile customFields(List<CustomField> customFields) {
-    
+  public ServiceProfile customFields(@javax.annotation.Nullable List<CustomField> customFields) {
     this.customFields = customFields;
     return this;
   }
@@ -503,46 +483,40 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get customFields
    * @return customFields
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<CustomField> getCustomFields() {
     return customFields;
   }
 
-
-  public void setCustomFields(List<CustomField> customFields) {
+  public void setCustomFields(@javax.annotation.Nullable List<CustomField> customFields) {
     this.customFields = customFields;
   }
 
 
-  public ServiceProfile marketingInfo(MarketingInfo marketingInfo) {
-    
+  public ServiceProfile marketingInfo(@javax.annotation.Nullable MarketingInfo marketingInfo) {
     this.marketingInfo = marketingInfo;
     return this;
   }
 
-   /**
+  /**
    * Get marketingInfo
    * @return marketingInfo
-  **/
+   */
   @javax.annotation.Nullable
-
   public MarketingInfo getMarketingInfo() {
     return marketingInfo;
   }
 
-
-  public void setMarketingInfo(MarketingInfo marketingInfo) {
+  public void setMarketingInfo(@javax.annotation.Nullable MarketingInfo marketingInfo) {
     this.marketingInfo = marketingInfo;
   }
 
 
-  public ServiceProfile ports(List<ServiceProfileAccessPointCOLO> ports) {
-    
+  public ServiceProfile ports(@javax.annotation.Nullable List<ServiceProfileAccessPointCOLO> ports) {
     this.ports = ports;
     return this;
   }
@@ -555,24 +529,21 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get ports
    * @return ports
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ServiceProfileAccessPointCOLO> getPorts() {
     return ports;
   }
 
-
-  public void setPorts(List<ServiceProfileAccessPointCOLO> ports) {
+  public void setPorts(@javax.annotation.Nullable List<ServiceProfileAccessPointCOLO> ports) {
     this.ports = ports;
   }
 
 
-  public ServiceProfile virtualDevices(List<ServiceProfileAccessPointVD> virtualDevices) {
-    
+  public ServiceProfile virtualDevices(@javax.annotation.Nullable List<ServiceProfileAccessPointVD> virtualDevices) {
     this.virtualDevices = virtualDevices;
     return this;
   }
@@ -585,24 +556,21 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Get virtualDevices
    * @return virtualDevices
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ServiceProfileAccessPointVD> getVirtualDevices() {
     return virtualDevices;
   }
 
-
-  public void setVirtualDevices(List<ServiceProfileAccessPointVD> virtualDevices) {
+  public void setVirtualDevices(@javax.annotation.Nullable List<ServiceProfileAccessPointVD> virtualDevices) {
     this.virtualDevices = virtualDevices;
   }
 
 
-  public ServiceProfile metros(List<ServiceMetro> metros) {
-    
+  public ServiceProfile metros(@javax.annotation.Nullable List<ServiceMetro> metros) {
     this.metros = metros;
     return this;
   }
@@ -615,62 +583,54 @@ public class ServiceProfile {
     return this;
   }
 
-   /**
+  /**
    * Derived response attribute.
    * @return metros
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<ServiceMetro> getMetros() {
     return metros;
   }
 
-
-  public void setMetros(List<ServiceMetro> metros) {
+  public void setMetros(@javax.annotation.Nullable List<ServiceMetro> metros) {
     this.metros = metros;
   }
 
 
-  public ServiceProfile selfProfile(Boolean selfProfile) {
-    
+  public ServiceProfile selfProfile(@javax.annotation.Nullable Boolean selfProfile) {
     this.selfProfile = selfProfile;
     return this;
   }
 
-   /**
+  /**
    * response attribute indicates whether the profile belongs to the same organization as the api-invoker.
    * @return selfProfile
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getSelfProfile() {
     return selfProfile;
   }
 
-
-  public void setSelfProfile(Boolean selfProfile) {
+  public void setSelfProfile(@javax.annotation.Nullable Boolean selfProfile) {
     this.selfProfile = selfProfile;
   }
 
 
-  public ServiceProfile projectId(String projectId) {
-    
+  public ServiceProfile projectId(@javax.annotation.Nullable String projectId) {
     this.projectId = projectId;
     return this;
   }
 
-   /**
+  /**
    * Get projectId
    * @return projectId
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getProjectId() {
     return projectId;
   }
 
-
-  public void setProjectId(String projectId) {
+  public void setProjectId(@javax.annotation.Nullable String projectId) {
     this.projectId = projectId;
   }
 
@@ -828,32 +788,41 @@ public class ServiceProfile {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ServiceProfile
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!ServiceProfile.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ServiceProfile
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ServiceProfile.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfile is not found in the empty JSON string", ServiceProfile.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        ServiceProfileStateEnum.validateJsonElement(jsonObj.get("state"));
+      }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ServiceProfileTypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
@@ -874,16 +843,20 @@ public class ServiceProfile {
 
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            SimplifiedNotification.validateJsonObject(jsonArraynotifications.get(i).getAsJsonObject());
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
+      // validate the optional field `visibility`
+      if (jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) {
+        ServiceProfileVisibilityEnum.validateJsonElement(jsonObj.get("visibility"));
+      }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("allowedEmails") != null && !jsonObj.get("allowedEmails").isJsonArray()) {
+      if (jsonObj.get("allowedEmails") != null && !jsonObj.get("allowedEmails").isJsonNull() && !jsonObj.get("allowedEmails").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `allowedEmails` to be an array in the JSON string but got `%s`", jsonObj.get("allowedEmails").toString()));
       }
       if (jsonObj.get("accessPointTypeConfigs") != null && !jsonObj.get("accessPointTypeConfigs").isJsonNull()) {
@@ -896,7 +869,7 @@ public class ServiceProfile {
 
           // validate the optional field `accessPointTypeConfigs` (array)
           for (int i = 0; i < jsonArrayaccessPointTypeConfigs.size(); i++) {
-            ServiceProfileAccessPointType.validateJsonObject(jsonArrayaccessPointTypeConfigs.get(i).getAsJsonObject());
+            ServiceProfileAccessPointType.validateJsonElement(jsonArrayaccessPointTypeConfigs.get(i));
           };
         }
       }
@@ -910,13 +883,13 @@ public class ServiceProfile {
 
           // validate the optional field `customFields` (array)
           for (int i = 0; i < jsonArraycustomFields.size(); i++) {
-            CustomField.validateJsonObject(jsonArraycustomFields.get(i).getAsJsonObject());
+            CustomField.validateJsonElement(jsonArraycustomFields.get(i));
           };
         }
       }
       // validate the optional field `marketingInfo`
       if (jsonObj.get("marketingInfo") != null && !jsonObj.get("marketingInfo").isJsonNull()) {
-        MarketingInfo.validateJsonObject(jsonObj.getAsJsonObject("marketingInfo"));
+        MarketingInfo.validateJsonElement(jsonObj.get("marketingInfo"));
       }
       if (jsonObj.get("ports") != null && !jsonObj.get("ports").isJsonNull()) {
         JsonArray jsonArrayports = jsonObj.getAsJsonArray("ports");
@@ -928,7 +901,7 @@ public class ServiceProfile {
 
           // validate the optional field `ports` (array)
           for (int i = 0; i < jsonArrayports.size(); i++) {
-            ServiceProfileAccessPointCOLO.validateJsonObject(jsonArrayports.get(i).getAsJsonObject());
+            ServiceProfileAccessPointCOLO.validateJsonElement(jsonArrayports.get(i));
           };
         }
       }
@@ -942,7 +915,7 @@ public class ServiceProfile {
 
           // validate the optional field `virtualDevices` (array)
           for (int i = 0; i < jsonArrayvirtualDevices.size(); i++) {
-            ServiceProfileAccessPointVD.validateJsonObject(jsonArrayvirtualDevices.get(i).getAsJsonObject());
+            ServiceProfileAccessPointVD.validateJsonElement(jsonArrayvirtualDevices.get(i));
           };
         }
       }
@@ -956,7 +929,7 @@ public class ServiceProfile {
 
           // validate the optional field `metros` (array)
           for (int i = 0; i < jsonArraymetros.size(); i++) {
-            ServiceMetro.validateJsonObject(jsonArraymetros.get(i).getAsJsonObject());
+            ServiceMetro.validateJsonElement(jsonArraymetros.get(i));
           };
         }
       }
@@ -993,7 +966,12 @@ public class ServiceProfile {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -1002,8 +980,9 @@ public class ServiceProfile {
 
            @Override
            public ServiceProfile read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              ServiceProfile instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -1031,22 +1010,22 @@ public class ServiceProfile {
     }
   }
 
- /**
-  * Create an instance of ServiceProfile given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ServiceProfile
-  * @throws IOException if the JSON string is invalid with respect to ServiceProfile
-  */
+  /**
+   * Create an instance of ServiceProfile given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ServiceProfile
+   * @throws IOException if the JSON string is invalid with respect to ServiceProfile
+   */
   public static ServiceProfile fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ServiceProfile.class);
   }
 
- /**
-  * Convert an instance of ServiceProfile to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ServiceProfile to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

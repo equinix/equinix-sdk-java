@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,6 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -32,13 +32,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -46,21 +48,22 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * StreamSubscriptionSelector
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamSubscriptionSelector {
   public static final String SERIALIZED_NAME_INCLUDE = "include";
   @SerializedName(SERIALIZED_NAME_INCLUDE)
+  @javax.annotation.Nullable
   private List<String> include = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXCEPT = "except";
   @SerializedName(SERIALIZED_NAME_EXCEPT)
+  @javax.annotation.Nullable
   private List<String> except = new ArrayList<>();
 
   public StreamSubscriptionSelector() {
   }
 
-  public StreamSubscriptionSelector include(List<String> include) {
-    
+  public StreamSubscriptionSelector include(@javax.annotation.Nullable List<String> include) {
     this.include = include;
     return this;
   }
@@ -73,24 +76,21 @@ public class StreamSubscriptionSelector {
     return this;
   }
 
-   /**
+  /**
    * Get include
    * @return include
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getInclude() {
     return include;
   }
 
-
-  public void setInclude(List<String> include) {
+  public void setInclude(@javax.annotation.Nullable List<String> include) {
     this.include = include;
   }
 
 
-  public StreamSubscriptionSelector except(List<String> except) {
-    
+  public StreamSubscriptionSelector except(@javax.annotation.Nullable List<String> except) {
     this.except = except;
     return this;
   }
@@ -103,18 +103,16 @@ public class StreamSubscriptionSelector {
     return this;
   }
 
-   /**
+  /**
    * Get except
    * @return except
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<String> getExcept() {
     return except;
   }
 
-
-  public void setExcept(List<String> except) {
+  public void setExcept(@javax.annotation.Nullable List<String> except) {
     this.except = except;
   }
 
@@ -219,24 +217,25 @@ public class StreamSubscriptionSelector {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StreamSubscriptionSelector
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!StreamSubscriptionSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StreamSubscriptionSelector
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StreamSubscriptionSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionSelector is not found in the empty JSON string", StreamSubscriptionSelector.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
-      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonArray()) {
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("except") != null && !jsonObj.get("except").isJsonArray()) {
+      if (jsonObj.get("except") != null && !jsonObj.get("except").isJsonNull() && !jsonObj.get("except").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `except` to be an array in the JSON string but got `%s`", jsonObj.get("except").toString()));
       }
   }
@@ -269,7 +268,12 @@ public class StreamSubscriptionSelector {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -278,8 +282,9 @@ public class StreamSubscriptionSelector {
 
            @Override
            public StreamSubscriptionSelector read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              StreamSubscriptionSelector instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -307,22 +312,22 @@ public class StreamSubscriptionSelector {
     }
   }
 
- /**
-  * Create an instance of StreamSubscriptionSelector given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StreamSubscriptionSelector
-  * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSelector
-  */
+  /**
+   * Create an instance of StreamSubscriptionSelector given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StreamSubscriptionSelector
+   * @throws IOException if the JSON string is invalid with respect to StreamSubscriptionSelector
+   */
   public static StreamSubscriptionSelector fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StreamSubscriptionSelector.class);
   }
 
- /**
-  * Convert an instance of StreamSubscriptionSelector to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StreamSubscriptionSelector to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

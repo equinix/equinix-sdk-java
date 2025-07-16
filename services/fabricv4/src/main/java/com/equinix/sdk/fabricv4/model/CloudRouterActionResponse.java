@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CloudRouterActionState;
 import com.equinix.sdk.fabricv4.model.CloudRouterActionType;
@@ -24,6 +23,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -36,13 +36,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -50,215 +52,199 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Cloud router actions response object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CloudRouterActionResponse {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private CloudRouterActionType type;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private UUID uuid;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
   private CloudRouterActionState state;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nonnull
   private Changelog changeLog;
 
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
   private String href;
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
   private RouterActionsConnection connection;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
   private Operation operation;
 
   public CloudRouterActionResponse() {
   }
 
-  public CloudRouterActionResponse type(CloudRouterActionType type) {
-    
+  public CloudRouterActionResponse type(@javax.annotation.Nonnull CloudRouterActionType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public CloudRouterActionType getType() {
     return type;
   }
 
-
-  public void setType(CloudRouterActionType type) {
+  public void setType(@javax.annotation.Nonnull CloudRouterActionType type) {
     this.type = type;
   }
 
 
-  public CloudRouterActionResponse uuid(UUID uuid) {
-    
+  public CloudRouterActionResponse uuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Get uuid
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public CloudRouterActionResponse description(String description) {
-    
+  public CloudRouterActionResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CloudRouterActionResponse state(CloudRouterActionState state) {
-    
+  public CloudRouterActionResponse state(@javax.annotation.Nonnull CloudRouterActionState state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nonnull
-
   public CloudRouterActionState getState() {
     return state;
   }
 
-
-  public void setState(CloudRouterActionState state) {
+  public void setState(@javax.annotation.Nonnull CloudRouterActionState state) {
     this.state = state;
   }
 
 
-  public CloudRouterActionResponse changeLog(Changelog changeLog) {
-    
+  public CloudRouterActionResponse changeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nonnull
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nonnull Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
 
-  public CloudRouterActionResponse href(String href) {
-    
+  public CloudRouterActionResponse href(@javax.annotation.Nullable String href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Get href
    * @return href
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getHref() {
     return href;
   }
 
-
-  public void setHref(String href) {
+  public void setHref(@javax.annotation.Nullable String href) {
     this.href = href;
   }
 
 
-  public CloudRouterActionResponse connection(RouterActionsConnection connection) {
-    
+  public CloudRouterActionResponse connection(@javax.annotation.Nullable RouterActionsConnection connection) {
     this.connection = connection;
     return this;
   }
 
-   /**
+  /**
    * Get connection
    * @return connection
-  **/
+   */
   @javax.annotation.Nullable
-
   public RouterActionsConnection getConnection() {
     return connection;
   }
 
-
-  public void setConnection(RouterActionsConnection connection) {
+  public void setConnection(@javax.annotation.Nullable RouterActionsConnection connection) {
     this.connection = connection;
   }
 
 
-  public CloudRouterActionResponse operation(Operation operation) {
-    
+  public CloudRouterActionResponse operation(@javax.annotation.Nullable Operation operation) {
     this.operation = operation;
     return this;
   }
 
-   /**
+  /**
    * Get operation
    * @return operation
-  **/
+   */
   @javax.annotation.Nullable
-
   public Operation getOperation() {
     return operation;
   }
 
-
-  public void setOperation(Operation operation) {
+  public void setOperation(@javax.annotation.Nullable Operation operation) {
     this.operation = operation;
   }
 
@@ -385,43 +371,48 @@ public class CloudRouterActionResponse {
     openapiRequiredFields.add("changeLog");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to CloudRouterActionResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!CloudRouterActionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CloudRouterActionResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CloudRouterActionResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudRouterActionResponse is not found in the empty JSON string", CloudRouterActionResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CloudRouterActionResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `type`
+      CloudRouterActionType.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // validate the required field `state`
+      CloudRouterActionState.validateJsonElement(jsonObj.get("state"));
       // validate the required field `changeLog`
-      Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+      Changelog.validateJsonElement(jsonObj.get("changeLog"));
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        RouterActionsConnection.validateJsonObject(jsonObj.getAsJsonObject("connection"));
+        RouterActionsConnection.validateJsonElement(jsonObj.get("connection"));
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        Operation.validateJsonObject(jsonObj.getAsJsonObject("operation"));
+        Operation.validateJsonElement(jsonObj.get("operation"));
       }
   }
 
@@ -453,7 +444,12 @@ public class CloudRouterActionResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -462,8 +458,9 @@ public class CloudRouterActionResponse {
 
            @Override
            public CloudRouterActionResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              CloudRouterActionResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -491,22 +488,22 @@ public class CloudRouterActionResponse {
     }
   }
 
- /**
-  * Create an instance of CloudRouterActionResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CloudRouterActionResponse
-  * @throws IOException if the JSON string is invalid with respect to CloudRouterActionResponse
-  */
+  /**
+   * Create an instance of CloudRouterActionResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CloudRouterActionResponse
+   * @throws IOException if the JSON string is invalid with respect to CloudRouterActionResponse
+   */
   public static CloudRouterActionResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CloudRouterActionResponse.class);
   }
 
- /**
-  * Convert an instance of CloudRouterActionResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CloudRouterActionResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

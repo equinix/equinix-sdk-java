@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Ipv4;
 import com.equinix.sdk.fabricv4.model.Md5;
@@ -31,6 +30,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -46,13 +46,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -60,10 +62,11 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Precision Time Service Response Schema.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PrecisionTimeServiceResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nonnull
   private URI href;
 
   /**
@@ -111,18 +114,26 @@ public class PrecisionTimeServiceResponse {
         return TypeEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nonnull
   private UUID uuid;
 
   /**
@@ -192,189 +203,186 @@ public class PrecisionTimeServiceResponse {
         return StateEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StateEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
   private StateEnum state;
 
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nonnull
   private PrecisionTimePackagePostResponse _package;
 
   public static final String SERIALIZED_NAME_CONNECTIONS = "connections";
   @SerializedName(SERIALIZED_NAME_CONNECTIONS)
+  @javax.annotation.Nullable
   private Set<VirtualConnectionTimeServiceResponse> connections = new LinkedHashSet<>();
 
   public static final String SERIALIZED_NAME_IPV4 = "ipv4";
   @SerializedName(SERIALIZED_NAME_IPV4)
+  @javax.annotation.Nullable
   private Ipv4 ipv4;
 
   public static final String SERIALIZED_NAME_NTP_ADVANCED_CONFIGURATION = "ntpAdvancedConfiguration";
   @SerializedName(SERIALIZED_NAME_NTP_ADVANCED_CONFIGURATION)
+  @javax.annotation.Nullable
   private List<Md5> ntpAdvancedConfiguration = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PTP_ADVANCED_CONFIGURATION = "ptpAdvancedConfiguration";
   @SerializedName(SERIALIZED_NAME_PTP_ADVANCED_CONFIGURATION)
+  @javax.annotation.Nullable
   private PtpAdvanceConfiguration ptpAdvancedConfiguration;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private SimplifiedAccount account;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private PrecisionTimeOrder order;
 
   public static final String SERIALIZED_NAME_PRICING = "pricing";
   @SerializedName(SERIALIZED_NAME_PRICING)
+  @javax.annotation.Nullable
   private PrecisionTimePrice pricing;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
   private Changelog changeLog;
 
   public PrecisionTimeServiceResponse() {
   }
 
-  public PrecisionTimeServiceResponse href(URI href) {
-    
+  public PrecisionTimeServiceResponse href(@javax.annotation.Nonnull URI href) {
     this.href = href;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service URI.
    * @return href
-  **/
+   */
   @javax.annotation.Nonnull
-
   public URI getHref() {
     return href;
   }
 
-
-  public void setHref(URI href) {
+  public void setHref(@javax.annotation.Nonnull URI href) {
     this.href = href;
   }
 
 
-  public PrecisionTimeServiceResponse type(TypeEnum type) {
-    
+  public PrecisionTimeServiceResponse type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service type refers to the corresponding protocol.
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-
   public TypeEnum getType() {
     return type;
   }
 
-
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public PrecisionTimeServiceResponse name(String name) {
-    
+  public PrecisionTimeServiceResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service Name.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PrecisionTimeServiceResponse uuid(UUID uuid) {
-    
+  public PrecisionTimeServiceResponse uuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service UUID.
    * @return uuid
-  **/
+   */
   @javax.annotation.Nonnull
-
   public UUID getUuid() {
     return uuid;
   }
 
-
-  public void setUuid(UUID uuid) {
+  public void setUuid(@javax.annotation.Nonnull UUID uuid) {
     this.uuid = uuid;
   }
 
 
-  public PrecisionTimeServiceResponse state(StateEnum state) {
-    
+  public PrecisionTimeServiceResponse state(@javax.annotation.Nonnull StateEnum state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Precision Time Service Status.
    * @return state
-  **/
+   */
   @javax.annotation.Nonnull
-
   public StateEnum getState() {
     return state;
   }
 
-
-  public void setState(StateEnum state) {
+  public void setState(@javax.annotation.Nonnull StateEnum state) {
     this.state = state;
   }
 
 
-  public PrecisionTimeServiceResponse _package(PrecisionTimePackagePostResponse _package) {
-    
+  public PrecisionTimeServiceResponse _package(@javax.annotation.Nonnull PrecisionTimePackagePostResponse _package) {
     this._package = _package;
     return this;
   }
 
-   /**
+  /**
    * Get _package
    * @return _package
-  **/
+   */
   @javax.annotation.Nonnull
-
   public PrecisionTimePackagePostResponse getPackage() {
     return _package;
   }
 
-
-  public void setPackage(PrecisionTimePackagePostResponse _package) {
+  public void setPackage(@javax.annotation.Nonnull PrecisionTimePackagePostResponse _package) {
     this._package = _package;
   }
 
 
-  public PrecisionTimeServiceResponse connections(Set<VirtualConnectionTimeServiceResponse> connections) {
-    
+  public PrecisionTimeServiceResponse connections(@javax.annotation.Nullable Set<VirtualConnectionTimeServiceResponse> connections) {
     this.connections = connections;
     return this;
   }
@@ -387,46 +395,40 @@ public class PrecisionTimeServiceResponse {
     return this;
   }
 
-   /**
+  /**
    * Fabric Connections associated with Precision Time Service.
    * @return connections
-  **/
+   */
   @javax.annotation.Nullable
-
   public Set<VirtualConnectionTimeServiceResponse> getConnections() {
     return connections;
   }
 
-
-  public void setConnections(Set<VirtualConnectionTimeServiceResponse> connections) {
+  public void setConnections(@javax.annotation.Nullable Set<VirtualConnectionTimeServiceResponse> connections) {
     this.connections = connections;
   }
 
 
-  public PrecisionTimeServiceResponse ipv4(Ipv4 ipv4) {
-    
+  public PrecisionTimeServiceResponse ipv4(@javax.annotation.Nullable Ipv4 ipv4) {
     this.ipv4 = ipv4;
     return this;
   }
 
-   /**
+  /**
    * Get ipv4
    * @return ipv4
-  **/
+   */
   @javax.annotation.Nullable
-
   public Ipv4 getIpv4() {
     return ipv4;
   }
 
-
-  public void setIpv4(Ipv4 ipv4) {
+  public void setIpv4(@javax.annotation.Nullable Ipv4 ipv4) {
     this.ipv4 = ipv4;
   }
 
 
-  public PrecisionTimeServiceResponse ntpAdvancedConfiguration(List<Md5> ntpAdvancedConfiguration) {
-    
+  public PrecisionTimeServiceResponse ntpAdvancedConfiguration(@javax.annotation.Nullable List<Md5> ntpAdvancedConfiguration) {
     this.ntpAdvancedConfiguration = ntpAdvancedConfiguration;
     return this;
   }
@@ -439,150 +441,130 @@ public class PrecisionTimeServiceResponse {
     return this;
   }
 
-   /**
+  /**
    * NTP Advanced configuration - MD5 Authentication.
    * @return ntpAdvancedConfiguration
-  **/
+   */
   @javax.annotation.Nullable
-
   public List<Md5> getNtpAdvancedConfiguration() {
     return ntpAdvancedConfiguration;
   }
 
-
-  public void setNtpAdvancedConfiguration(List<Md5> ntpAdvancedConfiguration) {
+  public void setNtpAdvancedConfiguration(@javax.annotation.Nullable List<Md5> ntpAdvancedConfiguration) {
     this.ntpAdvancedConfiguration = ntpAdvancedConfiguration;
   }
 
 
-  public PrecisionTimeServiceResponse ptpAdvancedConfiguration(PtpAdvanceConfiguration ptpAdvancedConfiguration) {
-    
+  public PrecisionTimeServiceResponse ptpAdvancedConfiguration(@javax.annotation.Nullable PtpAdvanceConfiguration ptpAdvancedConfiguration) {
     this.ptpAdvancedConfiguration = ptpAdvancedConfiguration;
     return this;
   }
 
-   /**
+  /**
    * Get ptpAdvancedConfiguration
    * @return ptpAdvancedConfiguration
-  **/
+   */
   @javax.annotation.Nullable
-
   public PtpAdvanceConfiguration getPtpAdvancedConfiguration() {
     return ptpAdvancedConfiguration;
   }
 
-
-  public void setPtpAdvancedConfiguration(PtpAdvanceConfiguration ptpAdvancedConfiguration) {
+  public void setPtpAdvancedConfiguration(@javax.annotation.Nullable PtpAdvanceConfiguration ptpAdvancedConfiguration) {
     this.ptpAdvancedConfiguration = ptpAdvancedConfiguration;
   }
 
 
-  public PrecisionTimeServiceResponse project(Project project) {
-    
+  public PrecisionTimeServiceResponse project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
-
   public Project getProject() {
     return project;
   }
 
-
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public PrecisionTimeServiceResponse account(SimplifiedAccount account) {
-    
+  public PrecisionTimeServiceResponse account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Get account
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-
   public SimplifiedAccount getAccount() {
     return account;
   }
 
-
-  public void setAccount(SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
   }
 
 
-  public PrecisionTimeServiceResponse order(PrecisionTimeOrder order) {
-    
+  public PrecisionTimeServiceResponse order(@javax.annotation.Nullable PrecisionTimeOrder order) {
     this.order = order;
     return this;
   }
 
-   /**
+  /**
    * Get order
    * @return order
-  **/
+   */
   @javax.annotation.Nullable
-
   public PrecisionTimeOrder getOrder() {
     return order;
   }
 
-
-  public void setOrder(PrecisionTimeOrder order) {
+  public void setOrder(@javax.annotation.Nullable PrecisionTimeOrder order) {
     this.order = order;
   }
 
 
-  public PrecisionTimeServiceResponse pricing(PrecisionTimePrice pricing) {
-    
+  public PrecisionTimeServiceResponse pricing(@javax.annotation.Nullable PrecisionTimePrice pricing) {
     this.pricing = pricing;
     return this;
   }
 
-   /**
+  /**
    * Get pricing
    * @return pricing
-  **/
+   */
   @javax.annotation.Nullable
-
   public PrecisionTimePrice getPricing() {
     return pricing;
   }
 
-
-  public void setPricing(PrecisionTimePrice pricing) {
+  public void setPricing(@javax.annotation.Nullable PrecisionTimePrice pricing) {
     this.pricing = pricing;
   }
 
 
-  public PrecisionTimeServiceResponse changeLog(Changelog changeLog) {
-    
+  public PrecisionTimeServiceResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
   }
 
-   /**
+  /**
    * Get changeLog
    * @return changeLog
-  **/
+   */
   @javax.annotation.Nullable
-
   public Changelog getChangeLog() {
     return changeLog;
   }
 
-
-  public void setChangeLog(Changelog changeLog) {
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
   }
 
@@ -731,31 +713,34 @@ public class PrecisionTimeServiceResponse {
     openapiRequiredFields.add("package");
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to PrecisionTimeServiceResponse
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!PrecisionTimeServiceResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PrecisionTimeServiceResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PrecisionTimeServiceResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in PrecisionTimeServiceResponse is not found in the empty JSON string", PrecisionTimeServiceResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PrecisionTimeServiceResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("href").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -765,8 +750,10 @@ public class PrecisionTimeServiceResponse {
       if (!jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
+      // validate the required field `state`
+      StateEnum.validateJsonElement(jsonObj.get("state"));
       // validate the required field `package`
-      PrecisionTimePackagePostResponse.validateJsonObject(jsonObj.getAsJsonObject("package"));
+      PrecisionTimePackagePostResponse.validateJsonElement(jsonObj.get("package"));
       if (jsonObj.get("connections") != null && !jsonObj.get("connections").isJsonNull()) {
         JsonArray jsonArrayconnections = jsonObj.getAsJsonArray("connections");
         if (jsonArrayconnections != null) {
@@ -777,13 +764,13 @@ public class PrecisionTimeServiceResponse {
 
           // validate the optional field `connections` (array)
           for (int i = 0; i < jsonArrayconnections.size(); i++) {
-            VirtualConnectionTimeServiceResponse.validateJsonObject(jsonArrayconnections.get(i).getAsJsonObject());
+            VirtualConnectionTimeServiceResponse.validateJsonElement(jsonArrayconnections.get(i));
           };
         }
       }
       // validate the optional field `ipv4`
       if (jsonObj.get("ipv4") != null && !jsonObj.get("ipv4").isJsonNull()) {
-        Ipv4.validateJsonObject(jsonObj.getAsJsonObject("ipv4"));
+        Ipv4.validateJsonElement(jsonObj.get("ipv4"));
       }
       if (jsonObj.get("ntpAdvancedConfiguration") != null && !jsonObj.get("ntpAdvancedConfiguration").isJsonNull()) {
         JsonArray jsonArrayntpAdvancedConfiguration = jsonObj.getAsJsonArray("ntpAdvancedConfiguration");
@@ -795,33 +782,33 @@ public class PrecisionTimeServiceResponse {
 
           // validate the optional field `ntpAdvancedConfiguration` (array)
           for (int i = 0; i < jsonArrayntpAdvancedConfiguration.size(); i++) {
-            Md5.validateJsonObject(jsonArrayntpAdvancedConfiguration.get(i).getAsJsonObject());
+            Md5.validateJsonElement(jsonArrayntpAdvancedConfiguration.get(i));
           };
         }
       }
       // validate the optional field `ptpAdvancedConfiguration`
       if (jsonObj.get("ptpAdvancedConfiguration") != null && !jsonObj.get("ptpAdvancedConfiguration").isJsonNull()) {
-        PtpAdvanceConfiguration.validateJsonObject(jsonObj.getAsJsonObject("ptpAdvancedConfiguration"));
+        PtpAdvanceConfiguration.validateJsonElement(jsonObj.get("ptpAdvancedConfiguration"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonObject(jsonObj.getAsJsonObject("project"));
+        Project.validateJsonElement(jsonObj.get("project"));
       }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
-        SimplifiedAccount.validateJsonObject(jsonObj.getAsJsonObject("account"));
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        PrecisionTimeOrder.validateJsonObject(jsonObj.getAsJsonObject("order"));
+        PrecisionTimeOrder.validateJsonElement(jsonObj.get("order"));
       }
       // validate the optional field `pricing`
       if (jsonObj.get("pricing") != null && !jsonObj.get("pricing").isJsonNull()) {
-        PrecisionTimePrice.validateJsonObject(jsonObj.getAsJsonObject("pricing"));
+        PrecisionTimePrice.validateJsonElement(jsonObj.get("pricing"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonObject(jsonObj.getAsJsonObject("changeLog"));
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 
@@ -853,7 +840,12 @@ public class PrecisionTimeServiceResponse {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -862,8 +854,9 @@ public class PrecisionTimeServiceResponse {
 
            @Override
            public PrecisionTimeServiceResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              PrecisionTimeServiceResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -891,22 +884,22 @@ public class PrecisionTimeServiceResponse {
     }
   }
 
- /**
-  * Create an instance of PrecisionTimeServiceResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PrecisionTimeServiceResponse
-  * @throws IOException if the JSON string is invalid with respect to PrecisionTimeServiceResponse
-  */
+  /**
+   * Create an instance of PrecisionTimeServiceResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PrecisionTimeServiceResponse
+   * @throws IOException if the JSON string is invalid with respect to PrecisionTimeServiceResponse
+   */
   public static PrecisionTimeServiceResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PrecisionTimeServiceResponse.class);
   }
 
- /**
-  * Convert an instance of PrecisionTimeServiceResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PrecisionTimeServiceResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

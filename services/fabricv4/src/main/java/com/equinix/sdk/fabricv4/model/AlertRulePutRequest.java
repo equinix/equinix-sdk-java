@@ -12,7 +12,6 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.equinix.sdk.fabricv4.model.ResourceSelector;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,13 +31,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -45,18 +47,21 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * Create Stream Alert Rules
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class AlertRulePutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled = true;
 
   /**
@@ -118,14 +123,21 @@ public class AlertRulePutRequest {
         return MetricNameEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      MetricNameEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_METRIC_NAME = "metricName";
   @SerializedName(SERIALIZED_NAME_METRIC_NAME)
+  @javax.annotation.Nullable
   private MetricNameEnum metricName;
 
   public static final String SERIALIZED_NAME_RESOURCE_SELECTOR = "resourceSelector";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SELECTOR)
+  @javax.annotation.Nullable
   private ResourceSelector resourceSelector;
 
   /**
@@ -173,221 +185,203 @@ public class AlertRulePutRequest {
         return OperandEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperandEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_OPERAND = "operand";
   @SerializedName(SERIALIZED_NAME_OPERAND)
+  @javax.annotation.Nullable
   private OperandEnum operand;
 
   public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
   @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
+  @javax.annotation.Nullable
   private String windowSize;
 
   public static final String SERIALIZED_NAME_WARNING_THRESHOLD = "warningThreshold";
   @SerializedName(SERIALIZED_NAME_WARNING_THRESHOLD)
+  @javax.annotation.Nullable
   private String warningThreshold;
 
   public static final String SERIALIZED_NAME_CRITICAL_THRESHOLD = "criticalThreshold";
   @SerializedName(SERIALIZED_NAME_CRITICAL_THRESHOLD)
+  @javax.annotation.Nullable
   private String criticalThreshold;
 
   public AlertRulePutRequest() {
   }
 
-  public AlertRulePutRequest name(String name) {
-    
+  public AlertRulePutRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getName() {
     return name;
   }
 
-
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AlertRulePutRequest description(String description) {
-    
+  public AlertRulePutRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Customer-provided stream description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getDescription() {
     return description;
   }
 
-
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AlertRulePutRequest enabled(Boolean enabled) {
-    
+  public AlertRulePutRequest enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule enabled status
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
-
   public Boolean getEnabled() {
     return enabled;
   }
 
-
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public AlertRulePutRequest metricName(MetricNameEnum metricName) {
-    
+  public AlertRulePutRequest metricName(@javax.annotation.Nullable MetricNameEnum metricName) {
     this.metricName = metricName;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric name
    * @return metricName
-  **/
+   */
   @javax.annotation.Nullable
-
   public MetricNameEnum getMetricName() {
     return metricName;
   }
 
-
-  public void setMetricName(MetricNameEnum metricName) {
+  public void setMetricName(@javax.annotation.Nullable MetricNameEnum metricName) {
     this.metricName = metricName;
   }
 
 
-  public AlertRulePutRequest resourceSelector(ResourceSelector resourceSelector) {
-    
+  public AlertRulePutRequest resourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
     return this;
   }
 
-   /**
+  /**
    * Get resourceSelector
    * @return resourceSelector
-  **/
+   */
   @javax.annotation.Nullable
-
   public ResourceSelector getResourceSelector() {
     return resourceSelector;
   }
 
-
-  public void setResourceSelector(ResourceSelector resourceSelector) {
+  public void setResourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
   }
 
 
-  public AlertRulePutRequest operand(OperandEnum operand) {
-    
+  public AlertRulePutRequest operand(@javax.annotation.Nullable OperandEnum operand) {
     this.operand = operand;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric operand
    * @return operand
-  **/
+   */
   @javax.annotation.Nullable
-
   public OperandEnum getOperand() {
     return operand;
   }
 
-
-  public void setOperand(OperandEnum operand) {
+  public void setOperand(@javax.annotation.Nullable OperandEnum operand) {
     this.operand = operand;
   }
 
 
-  public AlertRulePutRequest windowSize(String windowSize) {
-    
+  public AlertRulePutRequest windowSize(@javax.annotation.Nullable String windowSize) {
     this.windowSize = windowSize;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric window size
    * @return windowSize
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getWindowSize() {
     return windowSize;
   }
 
-
-  public void setWindowSize(String windowSize) {
+  public void setWindowSize(@javax.annotation.Nullable String windowSize) {
     this.windowSize = windowSize;
   }
 
 
-  public AlertRulePutRequest warningThreshold(String warningThreshold) {
-    
+  public AlertRulePutRequest warningThreshold(@javax.annotation.Nullable String warningThreshold) {
     this.warningThreshold = warningThreshold;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric warning threshold
    * @return warningThreshold
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getWarningThreshold() {
     return warningThreshold;
   }
 
-
-  public void setWarningThreshold(String warningThreshold) {
+  public void setWarningThreshold(@javax.annotation.Nullable String warningThreshold) {
     this.warningThreshold = warningThreshold;
   }
 
 
-  public AlertRulePutRequest criticalThreshold(String criticalThreshold) {
-    
+  public AlertRulePutRequest criticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
     this.criticalThreshold = criticalThreshold;
     return this;
   }
 
-   /**
+  /**
    * Stream alert rule metric critical threshold
    * @return criticalThreshold
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getCriticalThreshold() {
     return criticalThreshold;
   }
 
-
-  public void setCriticalThreshold(String criticalThreshold) {
+  public void setCriticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
     this.criticalThreshold = criticalThreshold;
   }
 
@@ -513,18 +507,19 @@ public class AlertRulePutRequest {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to AlertRulePutRequest
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!AlertRulePutRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AlertRulePutRequest
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!AlertRulePutRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in AlertRulePutRequest is not found in the empty JSON string", AlertRulePutRequest.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -534,12 +529,20 @@ public class AlertRulePutRequest {
       if ((jsonObj.get("metricName") != null && !jsonObj.get("metricName").isJsonNull()) && !jsonObj.get("metricName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `metricName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricName").toString()));
       }
+      // validate the optional field `metricName`
+      if (jsonObj.get("metricName") != null && !jsonObj.get("metricName").isJsonNull()) {
+        MetricNameEnum.validateJsonElement(jsonObj.get("metricName"));
+      }
       // validate the optional field `resourceSelector`
       if (jsonObj.get("resourceSelector") != null && !jsonObj.get("resourceSelector").isJsonNull()) {
-        ResourceSelector.validateJsonObject(jsonObj.getAsJsonObject("resourceSelector"));
+        ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
       }
       if ((jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) && !jsonObj.get("operand").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `operand` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operand").toString()));
+      }
+      // validate the optional field `operand`
+      if (jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) {
+        OperandEnum.validateJsonElement(jsonObj.get("operand"));
       }
       if ((jsonObj.get("windowSize") != null && !jsonObj.get("windowSize").isJsonNull()) && !jsonObj.get("windowSize").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `windowSize` to be a primitive type in the JSON string but got `%s`", jsonObj.get("windowSize").toString()));
@@ -580,7 +583,12 @@ public class AlertRulePutRequest {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -589,8 +597,9 @@ public class AlertRulePutRequest {
 
            @Override
            public AlertRulePutRequest read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              AlertRulePutRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -618,22 +627,22 @@ public class AlertRulePutRequest {
     }
   }
 
- /**
-  * Create an instance of AlertRulePutRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AlertRulePutRequest
-  * @throws IOException if the JSON string is invalid with respect to AlertRulePutRequest
-  */
+  /**
+   * Create an instance of AlertRulePutRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AlertRulePutRequest
+   * @throws IOException if the JSON string is invalid with respect to AlertRulePutRequest
+   */
   public static AlertRulePutRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AlertRulePutRequest.class);
   }
 
- /**
-  * Convert an instance of AlertRulePutRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AlertRulePutRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

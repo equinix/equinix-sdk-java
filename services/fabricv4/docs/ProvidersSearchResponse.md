@@ -20,6 +20,8 @@
 
 | Name | Value |
 |---- | -----|
+| VPC | &quot;VPC&quot; |
+| SUBNET | &quot;Subnet&quot; |
 | DIRECT_CONNECT | &quot;DIRECT_CONNECT&quot; |
 
 

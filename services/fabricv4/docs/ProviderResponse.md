@@ -17,6 +17,8 @@ Describes the response structure for different orchestrator provider types, incl
 
 | Name | Value |
 |---- | -----|
+| FABRIC_PROVIDER | &quot;FABRIC_PROVIDER&quot; |
+| AWS_PROVIDER | &quot;AWS_PROVIDER&quot; |
 | GCP_PROVIDER | &quot;GCP_PROVIDER&quot; |
 
 

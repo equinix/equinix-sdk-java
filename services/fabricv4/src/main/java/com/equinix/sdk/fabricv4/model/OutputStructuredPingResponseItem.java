@@ -12,13 +12,13 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,13 +30,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.equinix.sdk.fabricv4.JSON;
@@ -44,137 +46,127 @@ import com.equinix.sdk.fabricv4.JSON;
 /**
  * OutputStructuredPingResponseItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OutputStructuredPingResponseItem {
   public static final String SERIALIZED_NAME_BYTES = "bytes";
   @SerializedName(SERIALIZED_NAME_BYTES)
+  @javax.annotation.Nullable
   private Integer bytes;
 
   public static final String SERIALIZED_NAME_IP = "ip";
   @SerializedName(SERIALIZED_NAME_IP)
+  @javax.annotation.Nullable
   private String ip;
 
   public static final String SERIALIZED_NAME_ICMP_SEQ = "icmpSeq";
   @SerializedName(SERIALIZED_NAME_ICMP_SEQ)
+  @javax.annotation.Nullable
   private Integer icmpSeq;
 
   public static final String SERIALIZED_NAME_TTL = "ttl";
   @SerializedName(SERIALIZED_NAME_TTL)
+  @javax.annotation.Nullable
   private Integer ttl;
 
   public static final String SERIALIZED_NAME_TIME = "time";
   @SerializedName(SERIALIZED_NAME_TIME)
+  @javax.annotation.Nullable
   private Float time;
 
   public OutputStructuredPingResponseItem() {
   }
 
-  public OutputStructuredPingResponseItem bytes(Integer bytes) {
-    
+  public OutputStructuredPingResponseItem bytes(@javax.annotation.Nullable Integer bytes) {
     this.bytes = bytes;
     return this;
   }
 
-   /**
+  /**
    * Get bytes
    * @return bytes
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getBytes() {
     return bytes;
   }
 
-
-  public void setBytes(Integer bytes) {
+  public void setBytes(@javax.annotation.Nullable Integer bytes) {
     this.bytes = bytes;
   }
 
 
-  public OutputStructuredPingResponseItem ip(String ip) {
-    
+  public OutputStructuredPingResponseItem ip(@javax.annotation.Nullable String ip) {
     this.ip = ip;
     return this;
   }
 
-   /**
+  /**
    * Get ip
    * @return ip
-  **/
+   */
   @javax.annotation.Nullable
-
   public String getIp() {
     return ip;
   }
 
-
-  public void setIp(String ip) {
+  public void setIp(@javax.annotation.Nullable String ip) {
     this.ip = ip;
   }
 
 
-  public OutputStructuredPingResponseItem icmpSeq(Integer icmpSeq) {
-    
+  public OutputStructuredPingResponseItem icmpSeq(@javax.annotation.Nullable Integer icmpSeq) {
     this.icmpSeq = icmpSeq;
     return this;
   }
 
-   /**
+  /**
    * Get icmpSeq
    * @return icmpSeq
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getIcmpSeq() {
     return icmpSeq;
   }
 
-
-  public void setIcmpSeq(Integer icmpSeq) {
+  public void setIcmpSeq(@javax.annotation.Nullable Integer icmpSeq) {
     this.icmpSeq = icmpSeq;
   }
 
 
-  public OutputStructuredPingResponseItem ttl(Integer ttl) {
-    
+  public OutputStructuredPingResponseItem ttl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
     return this;
   }
 
-   /**
+  /**
    * Get ttl
    * @return ttl
-  **/
+   */
   @javax.annotation.Nullable
-
   public Integer getTtl() {
     return ttl;
   }
 
-
-  public void setTtl(Integer ttl) {
+  public void setTtl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
   }
 
 
-  public OutputStructuredPingResponseItem time(Float time) {
-    
+  public OutputStructuredPingResponseItem time(@javax.annotation.Nullable Float time) {
     this.time = time;
     return this;
   }
 
-   /**
+  /**
    * Get time
    * @return time
-  **/
+   */
   @javax.annotation.Nullable
-
   public Float getTime() {
     return time;
   }
 
-
-  public void setTime(Float time) {
+  public void setTime(@javax.annotation.Nullable Float time) {
     this.time = time;
   }
 
@@ -288,18 +280,19 @@ public class OutputStructuredPingResponseItem {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OutputStructuredPingResponseItem
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (!OutputStructuredPingResponseItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to OutputStructuredPingResponseItem
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!OutputStructuredPingResponseItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in OutputStructuredPingResponseItem is not found in the empty JSON string", OutputStructuredPingResponseItem.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) && !jsonObj.get("ip").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ip` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip").toString()));
       }
@@ -333,7 +326,12 @@ public class OutputStructuredPingResponseItem {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -342,8 +340,9 @@ public class OutputStructuredPingResponseItem {
 
            @Override
            public OutputStructuredPingResponseItem read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
              OutputStructuredPingResponseItem instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
@@ -371,22 +370,22 @@ public class OutputStructuredPingResponseItem {
     }
   }
 
- /**
-  * Create an instance of OutputStructuredPingResponseItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OutputStructuredPingResponseItem
-  * @throws IOException if the JSON string is invalid with respect to OutputStructuredPingResponseItem
-  */
+  /**
+   * Create an instance of OutputStructuredPingResponseItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of OutputStructuredPingResponseItem
+   * @throws IOException if the JSON string is invalid with respect to OutputStructuredPingResponseItem
+   */
   public static OutputStructuredPingResponseItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, OutputStructuredPingResponseItem.class);
   }
 
- /**
-  * Convert an instance of OutputStructuredPingResponseItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of OutputStructuredPingResponseItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
