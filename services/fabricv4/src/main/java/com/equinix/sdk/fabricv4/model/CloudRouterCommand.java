@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
-import com.equinix.sdk.fabricv4.model.CloudRouterCommandRequest;
+import com.equinix.sdk.fabricv4.model.CloudRouterCommandRequestResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandState;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandType;
@@ -93,7 +93,7 @@ public class CloudRouterCommand {
   public static final String SERIALIZED_NAME_REQUEST = "request";
   @SerializedName(SERIALIZED_NAME_REQUEST)
   @javax.annotation.Nullable
-  private CloudRouterCommandRequest request;
+  private CloudRouterCommandRequestResponse request;
 
   public static final String SERIALIZED_NAME_RESPONSE = "response";
   @SerializedName(SERIALIZED_NAME_RESPONSE)
@@ -241,7 +241,7 @@ public class CloudRouterCommand {
   }
 
 
-  public CloudRouterCommand request(@javax.annotation.Nullable CloudRouterCommandRequest request) {
+  public CloudRouterCommand request(@javax.annotation.Nullable CloudRouterCommandRequestResponse request) {
     this.request = request;
     return this;
   }
@@ -251,11 +251,11 @@ public class CloudRouterCommand {
    * @return request
    */
   @javax.annotation.Nullable
-  public CloudRouterCommandRequest getRequest() {
+  public CloudRouterCommandRequestResponse getRequest() {
     return request;
   }
 
-  public void setRequest(@javax.annotation.Nullable CloudRouterCommandRequest request) {
+  public void setRequest(@javax.annotation.Nullable CloudRouterCommandRequestResponse request) {
     this.request = request;
   }
 
@@ -461,7 +461,7 @@ public class CloudRouterCommand {
       }
       // validate the optional field `request`
       if (jsonObj.get("request") != null && !jsonObj.get("request").isJsonNull()) {
-        CloudRouterCommandRequest.validateJsonElement(jsonObj.get("request"));
+        CloudRouterCommandRequestResponse.validateJsonElement(jsonObj.get("request"));
       }
       // validate the optional field `response`
       if (jsonObj.get("response") != null && !jsonObj.get("response").isJsonNull()) {

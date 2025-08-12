@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,11 +60,6 @@ public class CloudEventSearchRequest {
   @javax.annotation.Nullable
   private PaginationRequest pagination;
 
-  public static final String SERIALIZED_NAME_SORT = "sort";
-  @SerializedName(SERIALIZED_NAME_SORT)
-  @javax.annotation.Nullable
-  private List<CloudEventFilters> sort = new ArrayList<>();
-
   public CloudEventSearchRequest() {
   }
 
@@ -105,33 +98,6 @@ public class CloudEventSearchRequest {
 
   public void setPagination(@javax.annotation.Nullable PaginationRequest pagination) {
     this.pagination = pagination;
-  }
-
-
-  public CloudEventSearchRequest sort(@javax.annotation.Nullable List<CloudEventFilters> sort) {
-    this.sort = sort;
-    return this;
-  }
-
-  public CloudEventSearchRequest addSortItem(CloudEventFilters sortItem) {
-    if (this.sort == null) {
-      this.sort = new ArrayList<>();
-    }
-    this.sort.add(sortItem);
-    return this;
-  }
-
-  /**
-   * Get sort
-   * @return sort
-   */
-  @javax.annotation.Nullable
-  public List<CloudEventFilters> getSort() {
-    return sort;
-  }
-
-  public void setSort(@javax.annotation.Nullable List<CloudEventFilters> sort) {
-    this.sort = sort;
   }
 
   /**
@@ -190,14 +156,13 @@ public class CloudEventSearchRequest {
     }
     CloudEventSearchRequest cloudEventSearchRequest = (CloudEventSearchRequest) o;
     return Objects.equals(this.filter, cloudEventSearchRequest.filter) &&
-        Objects.equals(this.pagination, cloudEventSearchRequest.pagination) &&
-        Objects.equals(this.sort, cloudEventSearchRequest.sort)&&
+        Objects.equals(this.pagination, cloudEventSearchRequest.pagination)&&
         Objects.equals(this.additionalProperties, cloudEventSearchRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filter, pagination, sort, additionalProperties);
+    return Objects.hash(filter, pagination, additionalProperties);
   }
 
   @Override
@@ -206,7 +171,6 @@ public class CloudEventSearchRequest {
     sb.append("class CloudEventSearchRequest {\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
-    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -232,7 +196,6 @@ public class CloudEventSearchRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("filter");
     openapiFields.add("pagination");
-    openapiFields.add("sort");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -258,20 +221,6 @@ public class CloudEventSearchRequest {
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
         PaginationRequest.validateJsonElement(jsonObj.get("pagination"));
-      }
-      if (jsonObj.get("sort") != null && !jsonObj.get("sort").isJsonNull()) {
-        JsonArray jsonArraysort = jsonObj.getAsJsonArray("sort");
-        if (jsonArraysort != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("sort").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `sort` to be an array in the JSON string but got `%s`", jsonObj.get("sort").toString()));
-          }
-
-          // validate the optional field `sort` (array)
-          for (int i = 0; i < jsonArraysort.size(); i++) {
-            CloudEventFilters.validateJsonElement(jsonArraysort.get(i));
-          };
-        }
       }
   }
 
