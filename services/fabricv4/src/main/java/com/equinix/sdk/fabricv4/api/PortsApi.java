@@ -28,8 +28,6 @@ import java.io.IOException;
 import com.equinix.sdk.fabricv4.model.AllPhysicalPortsResponse;
 import com.equinix.sdk.fabricv4.model.AllPortsResponse;
 import com.equinix.sdk.fabricv4.model.BulkPhysicalPort;
-import com.equinix.sdk.fabricv4.model.BulkPort;
-import com.equinix.sdk.fabricv4.model.BulkPortRequest;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.LinkProtocolGetResponse;
 import com.equinix.sdk.fabricv4.model.Port;
@@ -93,9 +91,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addToLagCall(UUID portId, BulkPhysicalPort bulkPhysicalPort, final ApiCallback _callback) throws ApiException {
@@ -172,9 +171,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
     public AllPhysicalPortsResponse addToLag(UUID portId, BulkPhysicalPort bulkPhysicalPort) throws ApiException {
@@ -194,9 +194,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AllPhysicalPortsResponse> addToLagWithHttpInfo(UUID portId, BulkPhysicalPort bulkPhysicalPort) throws ApiException {
@@ -218,9 +219,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addToLagAsync(UUID portId, BulkPhysicalPort bulkPhysicalPort, final ApiCallback<AllPhysicalPortsResponse> _callback) throws ApiException {
@@ -231,135 +233,9 @@ public class PortsApi {
         return localVarCall;
     }
     /**
-     * Build call for createBulkPort
-     * @param bulkPortRequest  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Bulk Port </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createBulkPortCall(BulkPortRequest bulkPortRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = bulkPortRequest;
-
-        // create path and map variables
-        String localVarPath = "/fabric/v4/ports/bulk";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "BearerAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBulkPortValidateBeforeCall(BulkPortRequest bulkPortRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'bulkPortRequest' is set
-        if (bulkPortRequest == null) {
-            throw new ApiException("Missing the required parameter 'bulkPortRequest' when calling createBulkPort(Async)");
-        }
-
-        return createBulkPortCall(bulkPortRequest, _callback);
-
-    }
-
-    /**
-     * Create Port
-     * Create Port creates Equinix Fabric? Port.&lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Preview&lt;/sup&gt;&lt;/font&gt;
-     * @param bulkPortRequest  (required)
-     * @return BulkPort
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Bulk Port </td><td>  -  </td></tr>
-     </table>
-     */
-    public BulkPort createBulkPort(BulkPortRequest bulkPortRequest) throws ApiException {
-        ApiResponse<BulkPort> localVarResp = createBulkPortWithHttpInfo(bulkPortRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Create Port
-     * Create Port creates Equinix Fabric? Port.&lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Preview&lt;/sup&gt;&lt;/font&gt;
-     * @param bulkPortRequest  (required)
-     * @return ApiResponse&lt;BulkPort&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Bulk Port </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<BulkPort> createBulkPortWithHttpInfo(BulkPortRequest bulkPortRequest) throws ApiException {
-        okhttp3.Call localVarCall = createBulkPortValidateBeforeCall(bulkPortRequest, null);
-        Type localVarReturnType = new TypeToken<BulkPort>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Create Port (asynchronously)
-     * Create Port creates Equinix Fabric? Port.&lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Preview&lt;/sup&gt;&lt;/font&gt;
-     * @param bulkPortRequest  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Bulk Port </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createBulkPortAsync(BulkPortRequest bulkPortRequest, final ApiCallback<BulkPort> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = createBulkPortValidateBeforeCall(bulkPortRequest, _callback);
-        Type localVarReturnType = new TypeToken<BulkPort>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for createPort
      * @param portRequest  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -367,12 +243,14 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Single Port Non Lag </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortCall(PortRequest portRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPortCall(PortRequest portRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -397,6 +275,10 @@ public class PortsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (dryRun != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dryRun", dryRun));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -418,61 +300,68 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPortValidateBeforeCall(PortRequest portRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPortValidateBeforeCall(PortRequest portRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portRequest' is set
         if (portRequest == null) {
             throw new ApiException("Missing the required parameter 'portRequest' when calling createPort(Async)");
         }
 
-        return createPortCall(portRequest, _callback);
+        return createPortCall(portRequest, dryRun, _callback);
 
     }
 
     /**
      * Create Port
-     * Creates Equinix Fabric? Port.
+     * Creates Equinix Fabric™ Port.
      * @param portRequest  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return Port
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Single Port Non Lag </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Port createPort(PortRequest portRequest) throws ApiException {
-        ApiResponse<Port> localVarResp = createPortWithHttpInfo(portRequest);
+    public Port createPort(PortRequest portRequest, Boolean dryRun) throws ApiException {
+        ApiResponse<Port> localVarResp = createPortWithHttpInfo(portRequest, dryRun);
         return localVarResp.getData();
     }
 
     /**
      * Create Port
-     * Creates Equinix Fabric? Port.
+     * Creates Equinix Fabric™ Port.
      * @param portRequest  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;Port&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Single Port Non Lag </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Port> createPortWithHttpInfo(PortRequest portRequest) throws ApiException {
-        okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, null);
+    public ApiResponse<Port> createPortWithHttpInfo(PortRequest portRequest, Boolean dryRun) throws ApiException {
+        okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, dryRun, null);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Create Port (asynchronously)
-     * Creates Equinix Fabric? Port.
+     * Creates Equinix Fabric™ Port.
      * @param portRequest  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -480,14 +369,16 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Successful operation for COLO Single Port Non Lag </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortAsync(PortRequest portRequest, final ApiCallback<Port> _callback) throws ApiException {
+    public okhttp3.Call createPortAsync(PortRequest portRequest, Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, _callback);
+        okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -495,6 +386,7 @@ public class PortsApi {
     /**
      * Build call for deletePort
      * @param portId Port UUID (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -502,13 +394,14 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePortCall(UUID portId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePortCall(UUID portId, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -534,6 +427,10 @@ public class PortsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (dryRun != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dryRun", dryRun));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -554,13 +451,13 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePortValidateBeforeCall(UUID portId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePortValidateBeforeCall(UUID portId, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling deletePort(Async)");
         }
 
-        return deletePortCall(portId, _callback);
+        return deletePortCall(portId, dryRun, _callback);
 
     }
 
@@ -568,20 +465,22 @@ public class PortsApi {
      * Delete a single port
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return Port
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Port deletePort(UUID portId) throws ApiException {
-        ApiResponse<Port> localVarResp = deletePortWithHttpInfo(portId);
+    public Port deletePort(UUID portId, Boolean dryRun) throws ApiException {
+        ApiResponse<Port> localVarResp = deletePortWithHttpInfo(portId, dryRun);
         return localVarResp.getData();
     }
 
@@ -589,20 +488,22 @@ public class PortsApi {
      * Delete a single port
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;Port&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Port> deletePortWithHttpInfo(UUID portId) throws ApiException {
-        okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, null);
+    public ApiResponse<Port> deletePortWithHttpInfo(UUID portId, Boolean dryRun) throws ApiException {
+        okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, dryRun, null);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -611,6 +512,7 @@ public class PortsApi {
      * Delete a single port (asynchronously)
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -618,15 +520,16 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePortAsync(UUID portId, final ApiCallback<Port> _callback) throws ApiException {
+    public okhttp3.Call deletePortAsync(UUID portId, Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, _callback);
+        okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -781,7 +684,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPortsCall(String name, final ApiCallback _callback) throws ApiException {
@@ -849,7 +755,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public AllPortsResponse getPorts(String name) throws ApiException {
@@ -868,7 +777,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AllPortsResponse> getPortsWithHttpInfo(String name) throws ApiException {
@@ -889,7 +801,10 @@ public class PortsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPortsAsync(String name, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
@@ -1048,6 +963,7 @@ public class PortsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call searchPortsCall(PortV4SearchRequest portV4SearchRequest, final ApiCallback _callback) throws ApiException {
@@ -1120,6 +1036,7 @@ public class PortsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public AllPortsResponse searchPorts(PortV4SearchRequest portV4SearchRequest) throws ApiException {
@@ -1141,6 +1058,7 @@ public class PortsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AllPortsResponse> searchPortsWithHttpInfo(PortV4SearchRequest portV4SearchRequest) throws ApiException {
@@ -1164,6 +1082,7 @@ public class PortsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call searchPortsAsync(PortV4SearchRequest portV4SearchRequest, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
@@ -1177,6 +1096,7 @@ public class PortsApi {
      * Build call for updatePortByUuid
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1184,13 +1104,14 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePortByUuidCall(UUID portId, List<PortChangeOperation> portChangeOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePortByUuidCall(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1216,6 +1137,10 @@ public class PortsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (dryRun != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dryRun", dryRun));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1237,7 +1162,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePortByUuidValidateBeforeCall(UUID portId, List<PortChangeOperation> portChangeOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePortByUuidValidateBeforeCall(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling updatePortByUuid(Async)");
@@ -1248,7 +1173,7 @@ public class PortsApi {
             throw new ApiException("Missing the required parameter 'portChangeOperation' when calling updatePortByUuid(Async)");
         }
 
-        return updatePortByUuidCall(portId, portChangeOperation, _callback);
+        return updatePortByUuidCall(portId, portChangeOperation, dryRun, _callback);
 
     }
 
@@ -1257,20 +1182,22 @@ public class PortsApi {
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return AllPortsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AllPortsResponse updatePortByUuid(UUID portId, List<PortChangeOperation> portChangeOperation) throws ApiException {
-        ApiResponse<AllPortsResponse> localVarResp = updatePortByUuidWithHttpInfo(portId, portChangeOperation);
+    public AllPortsResponse updatePortByUuid(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun) throws ApiException {
+        ApiResponse<AllPortsResponse> localVarResp = updatePortByUuidWithHttpInfo(portId, portChangeOperation, dryRun);
         return localVarResp.getData();
     }
 
@@ -1279,20 +1206,22 @@ public class PortsApi {
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;AllPortsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AllPortsResponse> updatePortByUuidWithHttpInfo(UUID portId, List<PortChangeOperation> portChangeOperation) throws ApiException {
-        okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, null);
+    public ApiResponse<AllPortsResponse> updatePortByUuidWithHttpInfo(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun) throws ApiException {
+        okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, dryRun, null);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1302,6 +1231,7 @@ public class PortsApi {
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
+     * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1309,15 +1239,16 @@ public class PortsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePortByUuidAsync(UUID portId, List<PortChangeOperation> portChangeOperation, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePortByUuidAsync(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, _callback);
+        okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, dryRun, _callback);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

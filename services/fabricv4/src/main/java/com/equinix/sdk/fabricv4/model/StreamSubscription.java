@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
+import com.equinix.sdk.fabricv4.model.StreamSubscriptionOperation;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSelector;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSink;
 import com.google.gson.TypeAdapter;
@@ -213,15 +214,15 @@ public class StreamSubscription {
   @javax.annotation.Nullable
   private StreamSubscriptionSink sink;
 
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private StreamSubscriptionOperation operation;
+
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
   @javax.annotation.Nullable
   private Changelog changeLog;
-
-  public static final String SERIALIZED_NAME_LAST_ERROR_MESSAGE = "lastErrorMessage";
-  @SerializedName(SERIALIZED_NAME_LAST_ERROR_MESSAGE)
-  @javax.annotation.Nullable
-  private String lastErrorMessage;
 
   public StreamSubscription() {
   }
@@ -415,6 +416,25 @@ public class StreamSubscription {
   }
 
 
+  public StreamSubscription operation(@javax.annotation.Nullable StreamSubscriptionOperation operation) {
+    this.operation = operation;
+    return this;
+  }
+
+  /**
+   * Get operation
+   * @return operation
+   */
+  @javax.annotation.Nullable
+  public StreamSubscriptionOperation getOperation() {
+    return operation;
+  }
+
+  public void setOperation(@javax.annotation.Nullable StreamSubscriptionOperation operation) {
+    this.operation = operation;
+  }
+
+
   public StreamSubscription changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
@@ -431,25 +451,6 @@ public class StreamSubscription {
 
   public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
-  }
-
-
-  public StreamSubscription lastErrorMessage(@javax.annotation.Nullable String lastErrorMessage) {
-    this.lastErrorMessage = lastErrorMessage;
-    return this;
-  }
-
-  /**
-   * HTTP response from sink type if error occurred
-   * @return lastErrorMessage
-   */
-  @javax.annotation.Nullable
-  public String getLastErrorMessage() {
-    return lastErrorMessage;
-  }
-
-  public void setLastErrorMessage(@javax.annotation.Nullable String lastErrorMessage) {
-    this.lastErrorMessage = lastErrorMessage;
   }
 
   /**
@@ -517,14 +518,14 @@ public class StreamSubscription {
         Objects.equals(this.metricSelector, streamSubscription.metricSelector) &&
         Objects.equals(this.eventSelector, streamSubscription.eventSelector) &&
         Objects.equals(this.sink, streamSubscription.sink) &&
-        Objects.equals(this.changeLog, streamSubscription.changeLog) &&
-        Objects.equals(this.lastErrorMessage, streamSubscription.lastErrorMessage)&&
+        Objects.equals(this.operation, streamSubscription.operation) &&
+        Objects.equals(this.changeLog, streamSubscription.changeLog)&&
         Objects.equals(this.additionalProperties, streamSubscription.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, state, enabled, metricSelector, eventSelector, sink, changeLog, lastErrorMessage, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, state, enabled, metricSelector, eventSelector, sink, operation, changeLog, additionalProperties);
   }
 
   @Override
@@ -541,8 +542,8 @@ public class StreamSubscription {
     sb.append("    metricSelector: ").append(toIndentedString(metricSelector)).append("\n");
     sb.append("    eventSelector: ").append(toIndentedString(eventSelector)).append("\n");
     sb.append("    sink: ").append(toIndentedString(sink)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
-    sb.append("    lastErrorMessage: ").append(toIndentedString(lastErrorMessage)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -576,8 +577,8 @@ public class StreamSubscription {
     openapiFields.add("metricSelector");
     openapiFields.add("eventSelector");
     openapiFields.add("sink");
+    openapiFields.add("operation");
     openapiFields.add("changeLog");
-    openapiFields.add("lastErrorMessage");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -634,12 +635,13 @@ public class StreamSubscription {
       if (jsonObj.get("sink") != null && !jsonObj.get("sink").isJsonNull()) {
         StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
       }
+      // validate the optional field `operation`
+      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
+        StreamSubscriptionOperation.validateJsonElement(jsonObj.get("operation"));
+      }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
         Changelog.validateJsonElement(jsonObj.get("changeLog"));
-      }
-      if ((jsonObj.get("lastErrorMessage") != null && !jsonObj.get("lastErrorMessage").isJsonNull()) && !jsonObj.get("lastErrorMessage").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastErrorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastErrorMessage").toString()));
       }
   }
 
