@@ -47,11 +47,16 @@ clean:
 codegen:
 	${OPENAPI_GENERATOR} generate -g java \
         --http-user-agent "${USER_AGENT}" \
+        --additional-properties=java8=false,javaVersion=17,dateLibrary=java8-localdatetime \
+        --global-property=apiTests=false,modelTests=false \
         -p artifactVersion=${PACKAGE_VERSION} \
         -p artifactId="${PACKAGE_NAME}" \
         -p invokerPackage="com.equinix.sdk.${PACKAGE_NAME}" \
         -p apiPackage="com.equinix.sdk.${PACKAGE_NAME}.api" \
         -p modelPackage="com.equinix.sdk.${PACKAGE_NAME}.model" \
+        -p java8=false \
+        -p dateLibrary=java8-localdatetime \
+        -p javaVersion=17 \
         -i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
         -t ${TEMPLATE_DIR} \
         -c config/openapi-generator.json \
