@@ -11,8 +11,8 @@ Current state of latest CloudRouter change
 |**uuid** | **String** | Uniquely identifies a change |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) | Type of change |  |
 |**status** | [**StatusEnum**](#StatusEnum) | Current outcome of the change flow |  [optional] |
-|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
-|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  |
+|**createdDateTime** | **LocalDateTime** | Set when change flow starts |  [optional] |
+|**updatedDateTime** | **LocalDateTime** | Set when change object is updated |  |
 |**information** | **String** | Additional information |  [optional] |
 |**data** | [**CloudRouterChangeOperation**](CloudRouterChangeOperation.md) |  |  [optional] |
 

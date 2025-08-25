@@ -18,7 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -111,7 +111,7 @@ public class BGPConnectionOperation {
   public static final String SERIALIZED_NAME_OP_STATUS_CHANGED_AT = "opStatusChangedAt";
   @SerializedName(SERIALIZED_NAME_OP_STATUS_CHANGED_AT)
   @javax.annotation.Nullable
-  private OffsetDateTime opStatusChangedAt;
+  private LocalDateTime opStatusChangedAt;
 
   public BGPConnectionOperation() {
   }
@@ -135,7 +135,7 @@ public class BGPConnectionOperation {
   }
 
 
-  public BGPConnectionOperation opStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
+  public BGPConnectionOperation opStatusChangedAt(@javax.annotation.Nullable LocalDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
     return this;
   }
@@ -145,11 +145,11 @@ public class BGPConnectionOperation {
    * @return opStatusChangedAt
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getOpStatusChangedAt() {
+  public LocalDateTime getOpStatusChangedAt() {
     return opStatusChangedAt;
   }
 
-  public void setOpStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
+  public void setOpStatusChangedAt(@javax.annotation.Nullable LocalDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 

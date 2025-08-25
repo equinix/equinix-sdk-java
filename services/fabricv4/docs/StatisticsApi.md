@@ -37,8 +37,8 @@ public class Example {
 
     StatisticsApi apiInstance = new StatisticsApi(defaultClient);
     String connectionId = "connectionId_example"; // String | Connection UUID
-    OffsetDateTime startDateTime = OffsetDateTime.parse("2020-11-06T07:00:00Z"); // OffsetDateTime | startDateTime
-    OffsetDateTime endDateTime = OffsetDateTime.parse("2020-11-10T07:00:00Z"); // OffsetDateTime | endDateTime
+    LocalDateTime startDateTime = new LocalDateTime(); // LocalDateTime | startDateTime
+    LocalDateTime endDateTime = new LocalDateTime(); // LocalDateTime | endDateTime
     ViewPoint viewPoint = ViewPoint.fromValue("aSide"); // ViewPoint | viewPoint
     try {
       Statistics result = apiInstance.getConnectionStatsByPortUuid(connectionId, startDateTime, endDateTime, viewPoint);
@@ -59,8 +59,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **connectionId** | **String**| Connection UUID | |
-| **startDateTime** | **OffsetDateTime**| startDateTime | |
-| **endDateTime** | **OffsetDateTime**| endDateTime | |
+| **startDateTime** | **LocalDateTime**| startDateTime | |
+| **endDateTime** | **LocalDateTime**| endDateTime | |
 | **viewPoint** | [**ViewPoint**](.md)| viewPoint | [enum: aSide, zSide] |
 
 ### Return type
@@ -112,8 +112,8 @@ public class Example {
 
     StatisticsApi apiInstance = new StatisticsApi(defaultClient);
     UUID portId = UUID.randomUUID(); // UUID | Port UUID
-    OffsetDateTime startDateTime = OffsetDateTime.parse("2020-11-06T07:00:00Z"); // OffsetDateTime | startDateTime
-    OffsetDateTime endDateTime = OffsetDateTime.parse("2020-11-10T07:00:00Z"); // OffsetDateTime | endDateTime
+    LocalDateTime startDateTime = new LocalDateTime(); // LocalDateTime | startDateTime
+    LocalDateTime endDateTime = new LocalDateTime(); // LocalDateTime | endDateTime
     try {
       Statistics result = apiInstance.getPortStatsByPortUuid(portId, startDateTime, endDateTime);
       System.out.println(result);
@@ -133,8 +133,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **portId** | **UUID**| Port UUID | |
-| **startDateTime** | **OffsetDateTime**| startDateTime | |
-| **endDateTime** | **OffsetDateTime**| endDateTime | |
+| **startDateTime** | **LocalDateTime**| startDateTime | |
+| **endDateTime** | **LocalDateTime**| endDateTime | |
 
 ### Return type
 

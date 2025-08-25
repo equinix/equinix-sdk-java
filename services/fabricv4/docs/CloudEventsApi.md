@@ -110,8 +110,8 @@ public class Example {
     CloudEventsApi apiInstance = new CloudEventsApi(defaultClient);
     CloudEventAssetType asset = CloudEventAssetType.fromValue("ports"); // CloudEventAssetType | asset
     UUID assetId = UUID.randomUUID(); // UUID | asset UUID
-    OffsetDateTime fromDateTime = OffsetDateTime.now(); // OffsetDateTime | Start date and time
-    OffsetDateTime toDateTime = OffsetDateTime.now(); // OffsetDateTime | End date and time
+    LocalDateTime fromDateTime = new LocalDateTime(); // LocalDateTime | Start date and time
+    LocalDateTime toDateTime = new LocalDateTime(); // LocalDateTime | End date and time
     Integer offset = 0; // Integer | offset
     Integer limit = 20; // Integer | limit
     try {
@@ -134,8 +134,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **asset** | [**CloudEventAssetType**](.md)| asset | [enum: ports, connections, routers, serviceTokens, networks, projects, organizations, timeServices] |
 | **assetId** | **UUID**| asset UUID | |
-| **fromDateTime** | **OffsetDateTime**| Start date and time | [optional] |
-| **toDateTime** | **OffsetDateTime**| End date and time | [optional] |
+| **fromDateTime** | **LocalDateTime**| Start date and time | [optional] |
+| **toDateTime** | **LocalDateTime**| End date and time | [optional] |
 | **offset** | **Integer**| offset | [optional] [default to 0] |
 | **limit** | **Integer**| limit | [optional] [default to 20] |
 

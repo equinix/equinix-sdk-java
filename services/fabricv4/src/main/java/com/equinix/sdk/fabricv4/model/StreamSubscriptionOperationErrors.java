@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -63,7 +63,7 @@ public class StreamSubscriptionOperationErrors {
   public static final String SERIALIZED_NAME_DATE_TIME = "dateTime";
   @SerializedName(SERIALIZED_NAME_DATE_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime dateTime;
+  private LocalDateTime dateTime;
 
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
@@ -111,7 +111,7 @@ public class StreamSubscriptionOperationErrors {
   }
 
 
-  public StreamSubscriptionOperationErrors dateTime(@javax.annotation.Nullable OffsetDateTime dateTime) {
+  public StreamSubscriptionOperationErrors dateTime(@javax.annotation.Nullable LocalDateTime dateTime) {
     this.dateTime = dateTime;
     return this;
   }
@@ -121,11 +121,11 @@ public class StreamSubscriptionOperationErrors {
    * @return dateTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getDateTime() {
+  public LocalDateTime getDateTime() {
     return dateTime;
   }
 
-  public void setDateTime(@javax.annotation.Nullable OffsetDateTime dateTime) {
+  public void setDateTime(@javax.annotation.Nullable LocalDateTime dateTime) {
     this.dateTime = dateTime;
   }
 

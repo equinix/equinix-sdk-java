@@ -30,7 +30,7 @@ import com.equinix.sdk.fabricv4.model.CloudEventAssetType;
 import com.equinix.sdk.fabricv4.model.CloudEventSearchRequest;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.GetCloudEventsByAssetResponse;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -241,7 +241,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventByAssetIdCall(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudEventByAssetIdCall(CloudEventAssetType asset, UUID assetId, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -304,7 +304,7 @@ public class CloudEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudEventByAssetIdValidateBeforeCall(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudEventByAssetIdValidateBeforeCall(CloudEventAssetType asset, UUID assetId, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'asset' is set
         if (asset == null) {
             throw new ApiException("Missing the required parameter 'asset' when calling getCloudEventByAssetId(Async)");
@@ -341,7 +341,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetCloudEventsByAssetResponse getCloudEventByAssetId(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public GetCloudEventsByAssetResponse getCloudEventByAssetId(CloudEventAssetType asset, UUID assetId, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
         ApiResponse<GetCloudEventsByAssetResponse> localVarResp = getCloudEventByAssetIdWithHttpInfo(asset, assetId, fromDateTime, toDateTime, offset, limit);
         return localVarResp.getData();
     }
@@ -368,7 +368,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetCloudEventsByAssetResponse> getCloudEventByAssetIdWithHttpInfo(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetCloudEventsByAssetResponse> getCloudEventByAssetIdWithHttpInfo(CloudEventAssetType asset, UUID assetId, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getCloudEventByAssetIdValidateBeforeCall(asset, assetId, fromDateTime, toDateTime, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -397,7 +397,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventByAssetIdAsync(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudEventByAssetIdAsync(CloudEventAssetType asset, UUID assetId, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudEventByAssetIdValidateBeforeCall(asset, assetId, fromDateTime, toDateTime, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();

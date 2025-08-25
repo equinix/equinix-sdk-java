@@ -20,7 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -118,7 +118,7 @@ public class RouteAggregationChangeData {
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime createdDateTime;
+  private LocalDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_BY = "updatedBy";
   @SerializedName(SERIALIZED_NAME_UPDATED_BY)
@@ -128,7 +128,7 @@ public class RouteAggregationChangeData {
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime updatedDateTime;
+  private LocalDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_INFORMATION = "information";
   @SerializedName(SERIALIZED_NAME_INFORMATION)
@@ -256,7 +256,7 @@ public class RouteAggregationChangeData {
   }
 
 
-  public RouteAggregationChangeData createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
+  public RouteAggregationChangeData createdDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
@@ -266,11 +266,11 @@ public class RouteAggregationChangeData {
    * @return createdDateTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getCreatedDateTime() {
+  public LocalDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
@@ -294,7 +294,7 @@ public class RouteAggregationChangeData {
   }
 
 
-  public RouteAggregationChangeData updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
+  public RouteAggregationChangeData updatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
@@ -304,11 +304,11 @@ public class RouteAggregationChangeData {
    * @return updatedDateTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getUpdatedDateTime() {
+  public LocalDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 

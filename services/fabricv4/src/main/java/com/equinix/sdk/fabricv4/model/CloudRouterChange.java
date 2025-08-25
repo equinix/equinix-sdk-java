@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -174,12 +174,12 @@ public class CloudRouterChange {
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime createdDateTime;
+  private LocalDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
   @javax.annotation.Nonnull
-  private OffsetDateTime updatedDateTime;
+  private LocalDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_INFORMATION = "information";
   @SerializedName(SERIALIZED_NAME_INFORMATION)
@@ -251,7 +251,7 @@ public class CloudRouterChange {
   }
 
 
-  public CloudRouterChange createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
+  public CloudRouterChange createdDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
@@ -261,16 +261,16 @@ public class CloudRouterChange {
    * @return createdDateTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getCreatedDateTime() {
+  public LocalDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public CloudRouterChange updatedDateTime(@javax.annotation.Nonnull OffsetDateTime updatedDateTime) {
+  public CloudRouterChange updatedDateTime(@javax.annotation.Nonnull LocalDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
@@ -280,11 +280,11 @@ public class CloudRouterChange {
    * @return updatedDateTime
    */
   @javax.annotation.Nonnull
-  public OffsetDateTime getUpdatedDateTime() {
+  public LocalDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-  public void setUpdatedDateTime(@javax.annotation.Nonnull OffsetDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nonnull LocalDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 
