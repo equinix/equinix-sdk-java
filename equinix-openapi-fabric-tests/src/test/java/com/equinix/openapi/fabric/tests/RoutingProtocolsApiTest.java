@@ -72,7 +72,7 @@ public class RoutingProtocolsApiTest {
 
         }
 
-        assertEquals(202, connectionsApi.getApiClient().getStatusCode());
+        assertEquals(200, connectionsApi.getApiClient().getStatusCode());
 
         String ipBGP = "192.68.100.105";
 
@@ -85,13 +85,13 @@ public class RoutingProtocolsApiTest {
 
         }
 
-        assertEquals(202, connectionsApi.getApiClient().getStatusCode());
+        assertEquals(200, connectionsApi.getApiClient().getStatusCode());
     }
 
     public static void deleteRoutingProtocol(UserResources.RoutingProtocolDto routingProtocolDto) {
         try {
             routingProtocolsApi.deleteConnectionRoutingProtocolByUuid(routingProtocolDto.getRoutingInstanceUuid(), String.valueOf(routingProtocolDto.getConnectionUuid()));
-            assertEquals(202, routingProtocolsApi.getApiClient().getStatusCode());
+            assertEquals(200, routingProtocolsApi.getApiClient().getStatusCode());
         } catch (ApiException e) {
             throw new RuntimeException(e);
         }
