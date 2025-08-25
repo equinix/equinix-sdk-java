@@ -18,7 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -57,7 +57,7 @@ public class SubscriptionTrial {
   public static final String SERIALIZED_NAME_EXPIRY_DATE_TIME = "expiryDateTime";
   @SerializedName(SERIALIZED_NAME_EXPIRY_DATE_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime expiryDateTime;
+  private LocalDateTime expiryDateTime;
 
   public SubscriptionTrial() {
   }
@@ -81,7 +81,7 @@ public class SubscriptionTrial {
   }
 
 
-  public SubscriptionTrial expiryDateTime(@javax.annotation.Nullable OffsetDateTime expiryDateTime) {
+  public SubscriptionTrial expiryDateTime(@javax.annotation.Nullable LocalDateTime expiryDateTime) {
     this.expiryDateTime = expiryDateTime;
     return this;
   }
@@ -91,11 +91,11 @@ public class SubscriptionTrial {
    * @return expiryDateTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getExpiryDateTime() {
+  public LocalDateTime getExpiryDateTime() {
     return expiryDateTime;
   }
 
-  public void setExpiryDateTime(@javax.annotation.Nullable OffsetDateTime expiryDateTime) {
+  public void setExpiryDateTime(@javax.annotation.Nullable LocalDateTime expiryDateTime) {
     this.expiryDateTime = expiryDateTime;
   }
 

@@ -13,8 +13,8 @@ Current state of latest port change
 |**status** | [**StatusEnum**](#StatusEnum) | Current outcome of the change flow |  [optional] |
 |**information** | **String** | Additional information |  [optional] |
 |**data** | [**PortChangeOperation**](PortChangeOperation.md) |  |  [optional] |
-|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
-|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  [optional] |
+|**createdDateTime** | **LocalDateTime** | Set when change flow starts |  [optional] |
+|**updatedDateTime** | **LocalDateTime** | Set when change object is updated |  [optional] |
 
 
 

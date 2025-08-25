@@ -8,8 +8,8 @@ Cloud Router package change log
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**createdDateTime** | **OffsetDateTime** |  |  [optional] |
-|**updatedDateTime** | **OffsetDateTime** |  |  [optional] |
+|**createdDateTime** | **LocalDateTime** |  |  [optional] |
+|**updatedDateTime** | **LocalDateTime** |  |  [optional] |
 
 
 

@@ -9,7 +9,7 @@ Free Trial Subscription
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**enabled** | **Boolean** | Free Trial Enabled |  [optional] |
-|**expiryDateTime** | **OffsetDateTime** | Free Trial Expiry Date |  [optional] |
+|**expiryDateTime** | **LocalDateTime** | Free Trial Expiry Date |  [optional] |
 
 
 
