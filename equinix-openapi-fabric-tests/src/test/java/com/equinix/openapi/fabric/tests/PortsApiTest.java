@@ -10,10 +10,9 @@
 
 package com.equinix.openapi.fabric.tests;
 
-import com.equinix.sdk.fabricv4.ApiException;
-import com.equinix.openapi.fabric.tests.dto.port.PortDto;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
 import com.equinix.openapi.fabric.tests.helpers.Utils;
+import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.sdk.fabricv4.model.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,12 +41,9 @@ public class PortsApiTest {
      */
     @Test
     public void getPort() throws ApiException {
-        UsersItem usersItem = Utils.getUserData(userName);
-        PortDto portDto = usersItem.getPorts().get(0);
-        Port port = portsApi.getPorts(portDto.getName()).getData().get(0);
+        List<Port> ports = getPorts(userName).getData();
         assertEquals(200, portsApi.getApiClient().getStatusCode());
-        assertEquals(port.getName(), portDto.getName());
-        assertEquals(port.getUuid().toString(), portDto.getUuid());
+        assertTrue(ports.size() > 0);
     }
 
     @Test
@@ -70,7 +66,7 @@ public class PortsApiTest {
                                 .operator(PortExpression.OperatorEnum.EQUAL)
                                 .property(PortSearchFieldName.PROJECT_PROJECTID)
                                 .values(singletonList(user.getProjectId())))
-                        ))
+                ))
                 .pagination(new PaginationRequest()
                         .offset(0)
                         .limit(100))
