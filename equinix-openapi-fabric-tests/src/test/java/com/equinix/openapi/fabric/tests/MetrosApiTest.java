@@ -28,14 +28,14 @@ public class MetrosApiTest {
 
     @Test
     public void getMetroByCode() throws ApiException {
-        Metro metro = metrosApi.getMetroByCode(metroCode);
+        var metro = metrosApi.getMetroByCode(metroCode);
         assertEquals(200, metrosApi.getApiClient().getStatusCode());
         assertEquals(metroCode, metro.getCode());
     }
 
     @Test
     public void getMetros() throws ApiException {
-        MetroResponse metroResponse = metrosApi.getMetros(Presence.MY_PORTS, 1, 10);
+        var metroResponse = metrosApi.getMetros(Presence.MY_PORTS, 1, 10);
         assertEquals(200, metrosApi.getApiClient().getStatusCode());
         boolean metroFound = metroResponse.getData().stream().anyMatch(metro -> metro.getCode().equals(metroCode));
         assertTrue(metroFound);
