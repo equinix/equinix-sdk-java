@@ -55,7 +55,6 @@ codegen:
         -p apiPackage="com.equinix.sdk.${PACKAGE_NAME}.api" \
         -p modelPackage="com.equinix.sdk.${PACKAGE_NAME}.model" \
         -p java8=false \
-        -p dateLibrary=java8-localdatetime \
         -p javaVersion=17 \
         -i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
         -t ${TEMPLATE_DIR} \
