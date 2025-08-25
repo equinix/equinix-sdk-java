@@ -6,7 +6,7 @@ jobs:
   sync:
     strategy:
       matrix:
-        java-version: [17]
+        java-version: [21]
         java-distribution: [temurin]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
