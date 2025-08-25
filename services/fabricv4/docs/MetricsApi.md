@@ -38,8 +38,8 @@ public class Example {
     MetricAssetType asset = MetricAssetType.fromValue("ports"); // MetricAssetType | asset
     UUID assetId = UUID.randomUUID(); // UUID | asset UUID
     String name = "name_example"; // String | Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg 
-    LocalDateTime fromDateTime = new LocalDateTime(); // LocalDateTime | Start date and time
-    LocalDateTime toDateTime = new LocalDateTime(); // LocalDateTime | End date and time
+    OffsetDateTime fromDateTime = OffsetDateTime.now(); // OffsetDateTime | Start date and time
+    OffsetDateTime toDateTime = OffsetDateTime.now(); // OffsetDateTime | End date and time
     Integer offset = 0; // Integer | offset
     Integer limit = 20; // Integer | limit
     try {
@@ -63,8 +63,8 @@ public class Example {
 | **asset** | [**MetricAssetType**](.md)| asset | [enum: ports, connections, metros] |
 | **assetId** | **UUID**| asset UUID | |
 | **name** | **String**| Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg  | |
-| **fromDateTime** | **LocalDateTime**| Start date and time | [optional] |
-| **toDateTime** | **LocalDateTime**| End date and time | [optional] |
+| **fromDateTime** | **OffsetDateTime**| Start date and time | [optional] |
+| **toDateTime** | **OffsetDateTime**| End date and time | [optional] |
 | **offset** | **Integer**| offset | [optional] [default to 0] |
 | **limit** | **Integer**| limit | [optional] [default to 20] |
 

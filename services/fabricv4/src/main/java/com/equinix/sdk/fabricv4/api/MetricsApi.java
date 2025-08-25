@@ -27,8 +27,8 @@ import java.io.IOException;
 
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.GetMetricsByAssetResponse;
-import java.time.LocalDateTime;
 import com.equinix.sdk.fabricv4.model.MetricAssetType;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -97,7 +97,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricByAssetIdCall(MetricAssetType asset, UUID assetId, String name, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetricByAssetIdCall(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -164,7 +164,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetricByAssetIdValidateBeforeCall(MetricAssetType asset, UUID assetId, String name, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetricByAssetIdValidateBeforeCall(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'asset' is set
         if (asset == null) {
             throw new ApiException("Missing the required parameter 'asset' when calling getMetricByAssetId(Async)");
@@ -207,7 +207,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetMetricsByAssetResponse getMetricByAssetId(MetricAssetType asset, UUID assetId, String name, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public GetMetricsByAssetResponse getMetricByAssetId(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
         ApiResponse<GetMetricsByAssetResponse> localVarResp = getMetricByAssetIdWithHttpInfo(asset, assetId, name, fromDateTime, toDateTime, offset, limit);
         return localVarResp.getData();
     }
@@ -235,7 +235,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetMetricsByAssetResponse> getMetricByAssetIdWithHttpInfo(MetricAssetType asset, UUID assetId, String name, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetMetricsByAssetResponse> getMetricByAssetIdWithHttpInfo(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -265,7 +265,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricByAssetIdAsync(MetricAssetType asset, UUID assetId, String name, LocalDateTime fromDateTime, LocalDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call getMetricByAssetIdAsync(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();

@@ -12,8 +12,8 @@ Current state of latest network change
 |**uuid** | **UUID** | Uniquely identifies a change |  [optional] |
 |**type** | **NetworkChangeType** |  |  [optional] |
 |**status** | **NetworkChangeStatus** |  |  [optional] |
-|**createdDateTime** | **LocalDateTime** | Set when change flow starts |  [optional] |
-|**updatedDateTime** | **LocalDateTime** | Set when change object is updated |  [optional] |
+|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
+|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  [optional] |
 |**data** | [**List&lt;NetworkChangeOperation&gt;**](NetworkChangeOperation.md) |  |  [optional] |
 
 

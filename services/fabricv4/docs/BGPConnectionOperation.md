@@ -9,7 +9,7 @@ BGP IPv4 or IPv6 Connection State operational data
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**operationalStatus** | [**OperationalStatusEnum**](#OperationalStatusEnum) | BGP IPv4 or IPv6 Connection State operational status |  [optional] |
-|**opStatusChangedAt** | **LocalDateTime** | Last BGP State Update by Date and Time |  [optional] |
+|**opStatusChangedAt** | **OffsetDateTime** | Last BGP State Update by Date and Time |  [optional] |
 
 
 

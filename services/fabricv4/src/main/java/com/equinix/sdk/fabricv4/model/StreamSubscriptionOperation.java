@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -70,12 +70,12 @@ public class StreamSubscriptionOperation {
   public static final String SERIALIZED_NAME_LAST_SUCCESSFUL_DELIVERY_DATE_TIME = "lastSuccessfulDeliveryDateTime";
   @SerializedName(SERIALIZED_NAME_LAST_SUCCESSFUL_DELIVERY_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime lastSuccessfulDeliveryDateTime;
+  private OffsetDateTime lastSuccessfulDeliveryDateTime;
 
   public static final String SERIALIZED_NAME_SUSPENDED_DATE_TIME = "suspendedDateTime";
   @SerializedName(SERIALIZED_NAME_SUSPENDED_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime suspendedDateTime;
+  private OffsetDateTime suspendedDateTime;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
@@ -142,7 +142,7 @@ public class StreamSubscriptionOperation {
   }
 
 
-  public StreamSubscriptionOperation lastSuccessfulDeliveryDateTime(@javax.annotation.Nullable LocalDateTime lastSuccessfulDeliveryDateTime) {
+  public StreamSubscriptionOperation lastSuccessfulDeliveryDateTime(@javax.annotation.Nullable OffsetDateTime lastSuccessfulDeliveryDateTime) {
     this.lastSuccessfulDeliveryDateTime = lastSuccessfulDeliveryDateTime;
     return this;
   }
@@ -152,16 +152,16 @@ public class StreamSubscriptionOperation {
    * @return lastSuccessfulDeliveryDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getLastSuccessfulDeliveryDateTime() {
+  public OffsetDateTime getLastSuccessfulDeliveryDateTime() {
     return lastSuccessfulDeliveryDateTime;
   }
 
-  public void setLastSuccessfulDeliveryDateTime(@javax.annotation.Nullable LocalDateTime lastSuccessfulDeliveryDateTime) {
+  public void setLastSuccessfulDeliveryDateTime(@javax.annotation.Nullable OffsetDateTime lastSuccessfulDeliveryDateTime) {
     this.lastSuccessfulDeliveryDateTime = lastSuccessfulDeliveryDateTime;
   }
 
 
-  public StreamSubscriptionOperation suspendedDateTime(@javax.annotation.Nullable LocalDateTime suspendedDateTime) {
+  public StreamSubscriptionOperation suspendedDateTime(@javax.annotation.Nullable OffsetDateTime suspendedDateTime) {
     this.suspendedDateTime = suspendedDateTime;
     return this;
   }
@@ -171,11 +171,11 @@ public class StreamSubscriptionOperation {
    * @return suspendedDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getSuspendedDateTime() {
+  public OffsetDateTime getSuspendedDateTime() {
     return suspendedDateTime;
   }
 
-  public void setSuspendedDateTime(@javax.annotation.Nullable LocalDateTime suspendedDateTime) {
+  public void setSuspendedDateTime(@javax.annotation.Nullable OffsetDateTime suspendedDateTime) {
     this.suspendedDateTime = suspendedDateTime;
   }
 

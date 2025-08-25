@@ -12,7 +12,7 @@ Connection type-specific operational data
 |**equinixStatus** | **EquinixStatus** |  |  [optional] |
 |**operationalStatus** | [**OperationalStatusEnum**](#OperationalStatusEnum) | Connection operational status |  [optional] |
 |**errors** | [**List&lt;Error&gt;**](Error.md) |  |  [optional] |
-|**opStatusChangedAt** | **LocalDateTime** | When connection transitioned into current operational status |  [optional] |
+|**opStatusChangedAt** | **OffsetDateTime** | When connection transitioned into current operational status |  [optional] |
 
 
 

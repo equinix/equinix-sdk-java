@@ -18,7 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -52,7 +52,7 @@ public class Metrics {
   public static final String SERIALIZED_NAME_INTERVAL_END_TIMESTAMP = "intervalEndTimestamp";
   @SerializedName(SERIALIZED_NAME_INTERVAL_END_TIMESTAMP)
   @javax.annotation.Nullable
-  private LocalDateTime intervalEndTimestamp;
+  private OffsetDateTime intervalEndTimestamp;
 
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
@@ -67,7 +67,7 @@ public class Metrics {
   public Metrics() {
   }
 
-  public Metrics intervalEndTimestamp(@javax.annotation.Nullable LocalDateTime intervalEndTimestamp) {
+  public Metrics intervalEndTimestamp(@javax.annotation.Nullable OffsetDateTime intervalEndTimestamp) {
     this.intervalEndTimestamp = intervalEndTimestamp;
     return this;
   }
@@ -77,11 +77,11 @@ public class Metrics {
    * @return intervalEndTimestamp
    */
   @javax.annotation.Nullable
-  public LocalDateTime getIntervalEndTimestamp() {
+  public OffsetDateTime getIntervalEndTimestamp() {
     return intervalEndTimestamp;
   }
 
-  public void setIntervalEndTimestamp(@javax.annotation.Nullable LocalDateTime intervalEndTimestamp) {
+  public void setIntervalEndTimestamp(@javax.annotation.Nullable OffsetDateTime intervalEndTimestamp) {
     this.intervalEndTimestamp = intervalEndTimestamp;
   }
 

@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -53,12 +53,12 @@ public class MetricDatapoints {
   public static final String SERIALIZED_NAME_END_DATE_TIME = "endDateTime";
   @SerializedName(SERIALIZED_NAME_END_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime endDateTime;
+  private OffsetDateTime endDateTime;
 
   public static final String SERIALIZED_NAME_START_DATE_TIME = "startDateTime";
   @SerializedName(SERIALIZED_NAME_START_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime startDateTime;
+  private OffsetDateTime startDateTime;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -68,7 +68,7 @@ public class MetricDatapoints {
   public MetricDatapoints() {
   }
 
-  public MetricDatapoints endDateTime(@javax.annotation.Nullable LocalDateTime endDateTime) {
+  public MetricDatapoints endDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
@@ -78,16 +78,16 @@ public class MetricDatapoints {
    * @return endDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getEndDateTime() {
+  public OffsetDateTime getEndDateTime() {
     return endDateTime;
   }
 
-  public void setEndDateTime(@javax.annotation.Nullable LocalDateTime endDateTime) {
+  public void setEndDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 
 
-  public MetricDatapoints startDateTime(@javax.annotation.Nullable LocalDateTime startDateTime) {
+  public MetricDatapoints startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -97,11 +97,11 @@ public class MetricDatapoints {
    * @return startDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getStartDateTime() {
+  public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
 
-  public void setStartDateTime(@javax.annotation.Nullable LocalDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 

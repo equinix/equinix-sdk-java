@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -53,12 +53,12 @@ public class Statistics {
   public static final String SERIALIZED_NAME_START_DATE_TIME = "startDateTime";
   @SerializedName(SERIALIZED_NAME_START_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime startDateTime;
+  private OffsetDateTime startDateTime;
 
   public static final String SERIALIZED_NAME_END_DATE_TIME = "endDateTime";
   @SerializedName(SERIALIZED_NAME_END_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime endDateTime;
+  private OffsetDateTime endDateTime;
 
   /**
    * Point of view for connection metrics - aSide or zSide
@@ -125,7 +125,7 @@ public class Statistics {
   public Statistics() {
   }
 
-  public Statistics startDateTime(@javax.annotation.Nullable LocalDateTime startDateTime) {
+  public Statistics startDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -135,16 +135,16 @@ public class Statistics {
    * @return startDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getStartDateTime() {
+  public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
 
-  public void setStartDateTime(@javax.annotation.Nullable LocalDateTime startDateTime) {
+  public void setStartDateTime(@javax.annotation.Nullable OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
 
-  public Statistics endDateTime(@javax.annotation.Nullable LocalDateTime endDateTime) {
+  public Statistics endDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
@@ -154,11 +154,11 @@ public class Statistics {
    * @return endDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getEndDateTime() {
+  public OffsetDateTime getEndDateTime() {
     return endDateTime;
   }
 
-  public void setEndDateTime(@javax.annotation.Nullable LocalDateTime endDateTime) {
+  public void setEndDateTime(@javax.annotation.Nullable OffsetDateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 

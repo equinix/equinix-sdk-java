@@ -10,7 +10,7 @@ Error information for stream subscription delivery
 |------------ | ------------- | ------------- | -------------|
 |**errorCode** | **String** | Equinix Observability error code |  [optional] |
 |**errorMessage** | **String** | Equinix Observability error message |  [optional] |
-|**dateTime** | **LocalDateTime** | Equinix Observability error date time |  [optional] |
+|**dateTime** | **OffsetDateTime** | Equinix Observability error date time |  [optional] |
 |**additionalInfo** | [**StreamSubscriptionOperationAdditionalInfo**](StreamSubscriptionOperationAdditionalInfo.md) |  |  [optional] |
 
 

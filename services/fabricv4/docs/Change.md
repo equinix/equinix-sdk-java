@@ -11,8 +11,8 @@ Current state of latest connection change
 |**uuid** | **String** | Uniquely identifies a change |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) | Type of change |  |
 |**status** | [**StatusEnum**](#StatusEnum) | Current outcome of the change flow |  [optional] |
-|**createdDateTime** | **LocalDateTime** | Set when change flow starts |  |
-|**updatedDateTime** | **LocalDateTime** | Set when change object is updated |  [optional] |
+|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  |
+|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  [optional] |
 |**information** | **String** | Additional information |  [optional] |
 |**data** | [**ConnectionChangeOperation**](ConnectionChangeOperation.md) |  |  [optional] |
 

@@ -10,9 +10,9 @@ Current state of latest route filter rules change
 |------------ | ------------- | ------------- | -------------|
 |**status** | [**StatusEnum**](#StatusEnum) | Current outcome of the change flow |  [optional] |
 |**createdBy** | **String** | Created by User Key |  [optional] |
-|**createdDateTime** | **LocalDateTime** | Set when change flow starts |  [optional] |
+|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
 |**updatedBy** | **String** | Updated by User Key |  [optional] |
-|**updatedDateTime** | **LocalDateTime** | Set when change object is updated |  [optional] |
+|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  [optional] |
 |**data** | [**RouteFilterRulesChangeOperation**](RouteFilterRulesChangeOperation.md) |  |  [optional] |
 |**uuid** | **String** | Uniquely identifies a change |  |
 |**type** | [**TypeEnum**](#TypeEnum) | Type of change |  |

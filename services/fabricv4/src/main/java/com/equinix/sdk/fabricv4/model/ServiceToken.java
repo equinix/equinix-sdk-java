@@ -26,7 +26,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -100,7 +100,7 @@ public class ServiceToken {
   public static final String SERIALIZED_NAME_EXPIRATION_DATE_TIME = "expirationDateTime";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime expirationDateTime;
+  private OffsetDateTime expirationDateTime;
 
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
@@ -275,7 +275,7 @@ public class ServiceToken {
   }
 
 
-  public ServiceToken expirationDateTime(@javax.annotation.Nullable LocalDateTime expirationDateTime) {
+  public ServiceToken expirationDateTime(@javax.annotation.Nullable OffsetDateTime expirationDateTime) {
     this.expirationDateTime = expirationDateTime;
     return this;
   }
@@ -285,11 +285,11 @@ public class ServiceToken {
    * @return expirationDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getExpirationDateTime() {
+  public OffsetDateTime getExpirationDateTime() {
     return expirationDateTime;
   }
 
-  public void setExpirationDateTime(@javax.annotation.Nullable LocalDateTime expirationDateTime) {
+  public void setExpirationDateTime(@javax.annotation.Nullable OffsetDateTime expirationDateTime) {
     this.expirationDateTime = expirationDateTime;
   }
 

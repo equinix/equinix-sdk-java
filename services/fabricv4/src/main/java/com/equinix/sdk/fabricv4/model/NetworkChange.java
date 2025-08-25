@@ -22,7 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -79,12 +79,12 @@ public class NetworkChange {
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime createdDateTime;
+  private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime updatedDateTime;
+  private OffsetDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -169,7 +169,7 @@ public class NetworkChange {
   }
 
 
-  public NetworkChange createdDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
+  public NetworkChange createdDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
@@ -179,16 +179,16 @@ public class NetworkChange {
    * @return createdDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getCreatedDateTime() {
+  public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-  public void setCreatedDateTime(@javax.annotation.Nullable LocalDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public NetworkChange updatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
+  public NetworkChange updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
@@ -198,11 +198,11 @@ public class NetworkChange {
    * @return updatedDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getUpdatedDateTime() {
+  public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-  public void setUpdatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 

@@ -15,7 +15,7 @@ Create Service Tokens (v4) generates Equinix Fabric service tokens. These tokens
 |**issuerSide** | **String** | information about token side |  [optional] |
 |**name** | **String** | Customer-provided service token name |  [optional] |
 |**description** | **String** | Customer-provided service token description |  [optional] |
-|**expirationDateTime** | **LocalDateTime** | Expiration date and time of the service token. |  [optional] |
+|**expirationDateTime** | **OffsetDateTime** | Expiration date and time of the service token. |  [optional] |
 |**connection** | [**ServiceTokenConnection**](ServiceTokenConnection.md) |  |  [optional] |
 |**state** | **ServiceTokenState** |  |  [optional] |
 |**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) | Service token related notifications |  [optional] |

@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -184,12 +184,12 @@ public class Change {
   public static final String SERIALIZED_NAME_CREATED_DATE_TIME = "createdDateTime";
   @SerializedName(SERIALIZED_NAME_CREATED_DATE_TIME)
   @javax.annotation.Nonnull
-  private LocalDateTime createdDateTime;
+  private OffsetDateTime createdDateTime;
 
   public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
   @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
   @javax.annotation.Nullable
-  private LocalDateTime updatedDateTime;
+  private OffsetDateTime updatedDateTime;
 
   public static final String SERIALIZED_NAME_INFORMATION = "information";
   @SerializedName(SERIALIZED_NAME_INFORMATION)
@@ -261,7 +261,7 @@ public class Change {
   }
 
 
-  public Change createdDateTime(@javax.annotation.Nonnull LocalDateTime createdDateTime) {
+  public Change createdDateTime(@javax.annotation.Nonnull OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
     return this;
   }
@@ -271,16 +271,16 @@ public class Change {
    * @return createdDateTime
    */
   @javax.annotation.Nonnull
-  public LocalDateTime getCreatedDateTime() {
+  public OffsetDateTime getCreatedDateTime() {
     return createdDateTime;
   }
 
-  public void setCreatedDateTime(@javax.annotation.Nonnull LocalDateTime createdDateTime) {
+  public void setCreatedDateTime(@javax.annotation.Nonnull OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
   }
 
 
-  public Change updatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
+  public Change updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
     return this;
   }
@@ -290,11 +290,11 @@ public class Change {
    * @return updatedDateTime
    */
   @javax.annotation.Nullable
-  public LocalDateTime getUpdatedDateTime() {
+  public OffsetDateTime getUpdatedDateTime() {
     return updatedDateTime;
   }
 
-  public void setUpdatedDateTime(@javax.annotation.Nullable LocalDateTime updatedDateTime) {
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
     this.updatedDateTime = updatedDateTime;
   }
 

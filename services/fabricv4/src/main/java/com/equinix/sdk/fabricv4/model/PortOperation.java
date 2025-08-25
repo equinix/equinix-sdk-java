@@ -18,7 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -131,7 +131,7 @@ public class PortOperation {
   public static final String SERIALIZED_NAME_OP_STATUS_CHANGED_AT = "opStatusChangedAt";
   @SerializedName(SERIALIZED_NAME_OP_STATUS_CHANGED_AT)
   @javax.annotation.Nullable
-  private LocalDateTime opStatusChangedAt;
+  private OffsetDateTime opStatusChangedAt;
 
   public PortOperation() {
   }
@@ -231,7 +231,7 @@ public class PortOperation {
   }
 
 
-  public PortOperation opStatusChangedAt(@javax.annotation.Nullable LocalDateTime opStatusChangedAt) {
+  public PortOperation opStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
     return this;
   }
@@ -241,11 +241,11 @@ public class PortOperation {
    * @return opStatusChangedAt
    */
   @javax.annotation.Nullable
-  public LocalDateTime getOpStatusChangedAt() {
+  public OffsetDateTime getOpStatusChangedAt() {
     return opStatusChangedAt;
   }
 
-  public void setOpStatusChangedAt(@javax.annotation.Nullable LocalDateTime opStatusChangedAt) {
+  public void setOpStatusChangedAt(@javax.annotation.Nullable OffsetDateTime opStatusChangedAt) {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 
