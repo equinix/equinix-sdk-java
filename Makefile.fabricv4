@@ -47,8 +47,6 @@ clean:
 codegen:
 	${OPENAPI_GENERATOR} generate -g java \
         --http-user-agent "${USER_AGENT}" \
-        --additional-properties=java8=false,javaVersion=17 \
-        --global-property=apiTests=false,modelTests=false \
         -p artifactVersion=${PACKAGE_VERSION} \
         -p artifactId="${PACKAGE_NAME}" \
         -p invokerPackage="com.equinix.sdk.${PACKAGE_NAME}" \

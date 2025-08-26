@@ -24,10 +24,10 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven
 
       - name: Install modules
         run: mvn clean install -DskipTests
+
 
       - name: Tests
         working-directory: ./equinix-openapi-fabric-tests
