@@ -32,13 +32,13 @@ jobs:
           distribution: 'temurin'
 
       - name: Install modules
-        run: mvn clean install -DskipTests
+        run: |
+          export JAVA_HOME=$JAVA_HOME_11_X64
+          mvn clean install -DskipTests
 
       - name: Tests
         working-directory: ./equinix-openapi-fabric-tests
-        run: |
-          export JAVA_HOME=$JAVA_HOME_11_X64
-          mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
+        run: mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
 
       - name: Generate report
         if: always()
