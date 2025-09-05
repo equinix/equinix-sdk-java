@@ -19,6 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -28,10 +34,11 @@ jobs:
       - name: Install modules
         run: mvn clean install -DskipTests
 
-
       - name: Tests
         working-directory: ./equinix-openapi-fabric-tests
-        run: mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
+        run: |
+          export JAVA_HOME=$JAVA_HOME_11_X64
+          mvn test -Dtest=${{ matrix.testClass }} -DenvUrl=${{ env.TEST_HOST_URL }}
 
       - name: Generate report
         if: always()
