@@ -13,7 +13,6 @@
   "hideGenerationTimestamp": true,
   "disallowAdditionalPropertiesIfNotPresent": false,
   "legacyDiscriminatorBehavior": true,
-  "javaVersion": "21",
   "globalProperties": {
     "modelTests": false,
     "apiTests": false
