@@ -69,7 +69,12 @@ jobs:
 
       - name: Tests
         working-directory: ./equinix-openapi-fabric-tests
-        run: mvn test -Dtest=${{ matrix.testConfig.class }} -DenvUrl=${{ env.TEST_HOST_URL }}
+        run: |
+          mvn test \
+            -Dtest=${{ matrix.testConfig.class }} \
+            -DenvUrl=${{ env.TEST_HOST_URL }} \
+            -Dmaven.compiler.source=${{ matrix.testConfig.jdk }} \
+            -Dmaven.compiler.target=${{ matrix.testConfig.jdk }}
 
       - name: Generate report
         if: always()
