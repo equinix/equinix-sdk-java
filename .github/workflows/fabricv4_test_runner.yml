@@ -14,10 +14,15 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          cache: maven
 
       - name: Install modules
         run: mvn clean install -DskipTests
+
+      - name: Cache local Maven repository
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven
 
   test:
     needs: build
@@ -55,7 +60,12 @@ jobs:
         with:
           java-version: ${{ matrix.testConfig.jdk }}
           distribution: 'temurin'
-          cache: maven
+
+      - name: Restore local Maven repository
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven
 
       - name: Tests
         working-directory: ./equinix-openapi-fabric-tests
