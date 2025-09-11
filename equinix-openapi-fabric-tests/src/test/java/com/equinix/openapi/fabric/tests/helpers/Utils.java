@@ -22,6 +22,9 @@ public class Utils {
     }
 
     public static UsersItem getUserData(UsersItem.UserName userName) {
+
+        System.out.println(System.getProperty("uatUsers"));
+        System.out.println(getEnvData(EnvVariable.TEST_DATA_UAT_USERS));
         return ((UsersDto) getEnvData(EnvVariable.TEST_DATA_UAT_USERS)).getUsers().stream()
                 .filter(usersItem -> usersItem.getName().equals(userName.getValue()))
                 .findFirst().orElseThrow(() -> new NoSuchElementException("User not found"));

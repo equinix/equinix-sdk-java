@@ -72,7 +72,9 @@ jobs:
         run: |
           mvn test \
             -Dtest=${{ matrix.testConfig.class }} \
-            -DenvUrl=${{ env.TEST_HOST_URL }} \
+            -DenvUrl="${{ secrets.TEST_HOST_URL }}" \
+            -DuatUsers="${{ secrets.TEST_DATA_UAT_USERS }}" \
+            -Djava.version=${{ matrix.testConfig.jdk }} \
             -Dmaven.compiler.source=${{ matrix.testConfig.jdk }} \
             -Dmaven.compiler.target=${{ matrix.testConfig.jdk }}
 
@@ -184,4 +186,4 @@ jobs:
                   *Status:* ${{ needs.test.result }}
                   *Test Runs:* ${{ needs.test.outputs.tests_run }}
                   *Results:* ${{ steps.set-output-passed.outputs.total_passed }} Passed, ${{ steps.set-output-failed.outputs.total_failed }} Failed
-                  *Triggered by:* <@${{ github.actor }}>        
+                  *Triggered by:* <@${{ github.actor }}>
