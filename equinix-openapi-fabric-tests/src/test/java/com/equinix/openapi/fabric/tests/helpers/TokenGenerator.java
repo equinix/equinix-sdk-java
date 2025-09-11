@@ -51,9 +51,6 @@ public class TokenGenerator {
         String baseUrl = System.getProperty("envUrl");
         UsersItem user = Utils.getUserData(userName);
 
-        System.out.println(baseUrl);
-        System.out.println(user.getClientId());
-
         ApiClient apiTokenClient = Configuration.getDefaultApiClient();
         apiTokenClient.setHttpClient(getOkHttpClient(HttpLoggingInterceptor.Level.NONE));
 
@@ -83,7 +80,6 @@ public class TokenGenerator {
             Type localVarReturnType = new TypeToken<TokenResponseDto>() {
             }.getType();
             tokenResponseDto = (TokenResponseDto) apiTokenClient.execute(call, localVarReturnType).getData();
-            System.out.println(tokenResponseDto.getAccessToken());
         } catch (ApiException e) {
             throw new RuntimeException(e);
         }
