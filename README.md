@@ -6,6 +6,7 @@ Each Equinix service supported by this SDK is maintained as a separate submodule
 
 ## Installation
 
+Java - 8+
 Maven - add dependency to your `pom.xml`:
 
 ```xml
