@@ -1560,8 +1560,6 @@ public class ApiClient {
                 throw new ApiException(e);
             }
         }
-
-        // empty http request body
         return "";
     }
 }
