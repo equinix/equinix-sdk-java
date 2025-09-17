@@ -4,9 +4,14 @@ This is the official Java SDK for Equinix services.  This SDK is currently provi
 
 Each Equinix service supported by this SDK is maintained as a separate submodule that is generated from the OpenAPI specification for that service.  If any Equinix service is not supported by this SDK and you would like to see it added, please [submit a change request](CONTRIBUTING.md)
 
+
+## Requirements
+
+Java => 8
+Maven
+
 ## Installation
 
-Java - 8+
 Maven - add dependency to your `pom.xml`:
 
 ```xml
