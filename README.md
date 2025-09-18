@@ -7,7 +7,7 @@ Each Equinix service supported by this SDK is maintained as a separate submodule
 
 ## Requirements
 
-Java => 8
+Java 8 or higher
 
 ## Installation
 
