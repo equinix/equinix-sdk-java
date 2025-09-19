@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.equinix.sdk</groupId>
   <artifactId>fabricv4</artifactId>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.equinix.sdk:fabricv4:0.5.0"
+     implementation "com.equinix.sdk:fabricv4:0.5.1"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/fabricv4-0.5.0.jar`
+* `target/fabricv4-0.5.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
