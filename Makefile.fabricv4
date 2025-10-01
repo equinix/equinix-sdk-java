@@ -45,7 +45,7 @@ clean:
 	rm -rf $(CODE_DIR)
 
 codegen:
-	${OPENAPI_GENERATOR} generate -g java \
+	${OPENAPI_GENERATOR} generate -g spring \
         --http-user-agent "${USER_AGENT}" \
         -p artifactVersion=${PACKAGE_VERSION} \
         -p artifactId="${PACKAGE_NAME}" \
