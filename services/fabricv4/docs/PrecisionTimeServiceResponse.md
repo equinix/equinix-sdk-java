@@ -13,6 +13,7 @@ Precision Time Service Response Schema.
 |**name** | **String** | Precision Time Service Name. |  [optional] |
 |**uuid** | **UUID** | Precision Time Service UUID. |  |
 |**state** | [**StateEnum**](#StateEnum) | Precision Time Service Status. |  |
+|**operation** | [**TimeServiceOperation**](TimeServiceOperation.md) |  |  [optional] |
 |**_package** | [**PrecisionTimePackagePostResponse**](PrecisionTimePackagePostResponse.md) |  |  |
 |**connections** | [**Set&lt;VirtualConnectionTimeServiceResponse&gt;**](VirtualConnectionTimeServiceResponse.md) | Fabric Connections associated with Precision Time Service. |  [optional] |
 |**ipv4** | [**Ipv4**](Ipv4.md) |  |  [optional] |

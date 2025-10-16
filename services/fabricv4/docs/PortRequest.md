@@ -16,7 +16,7 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |**description** | **String** | Equinix assigned response attribute for Port description |  [optional] |
 |**physicalPortsSpeed** | **Integer** | Physical Ports Speed in Mbps |  |
 |**connectionsCount** | **Integer** | Equinix assigned response attribute for Connection count |  [optional] |
-|**physicalPortsType** | [**PhysicalPortsTypeEnum**](#PhysicalPortsTypeEnum) | Physical Ports Type |  |
+|**physicalPortsType** | [**PhysicalPortsTypeEnum**](#PhysicalPortsTypeEnum) | Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports |  |
 |**physicalPortsCount** | **Integer** |  |  [optional] |
 |**connectivitySourceType** | [**ConnectivitySourceTypeEnum**](#ConnectivitySourceTypeEnum) | Port connectivity type |  |
 |**bmmrType** | [**BmmrTypeEnum**](#BmmrTypeEnum) |  |  [optional] |
@@ -62,6 +62,8 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 | _100GBASE_LR4 | &quot;100GBASE_LR4&quot; |
 | _10GBASE_ER | &quot;10GBASE_ER&quot; |
 | _1000BASE_SX | &quot;1000BASE_SX&quot; |
+| _10GBASE_SMF | &quot;10GBASE_SMF&quot; |
+| _400GBASE_LR4 | &quot;400GBASE_LR4&quot; |
 
 
 

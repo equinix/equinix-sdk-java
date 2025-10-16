@@ -12,6 +12,7 @@
 |**type** | **String** | Cloud Event asset type |  [optional] |
 |**name** | **String** | Cloud Event asset name |  [optional] |
 |**state** | **String** | Cloud Event asset state |  [optional] |
+|**operation** | [**OperationalStatus**](OperationalStatus.md) |  |  [optional] |
 
 
 

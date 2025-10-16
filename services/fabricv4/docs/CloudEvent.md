@@ -13,12 +13,14 @@ Cloud Event object
 |**id** | **UUID** | Cloud Event identifier |  [optional] |
 |**type** | **String** | Equinix supported event type |  [optional] |
 |**subject** | **String** | Cloud Event subject |  [optional] |
+|**time** | **OffsetDateTime** | Cloud Event time the event occurred |  [optional] |
 |**dataschema** | **String** | Cloud Event dataschema reference |  [optional] |
 |**datacontenttype** | **String** | Cloud Event data content type |  [optional] |
 |**severitynumber** | **String** | Cloud Event severity number |  [optional] |
 |**severitytext** | **String** | Cloud Event severity text |  [optional] |
-|**equinixorganization** | **UUID** | Equinix organization identifier |  [optional] |
-|**equinixproject** | **UUID** | Equinix project identifier |  [optional] |
+|**equinixalert** | **String** | Equinix alert |  [optional] |
+|**equinixorganization** | **String** | Equinix organization identifier |  [optional] |
+|**equinixproject** | **String** | Equinix project identifier |  [optional] |
 |**authtype** | **String** | Cloud Event auth type |  [optional] |
 |**authid** | **String** | Cloud Event user identifier |  [optional] |
 |**traceparent** | **String** | Cloud Event traceparent |  [optional] |

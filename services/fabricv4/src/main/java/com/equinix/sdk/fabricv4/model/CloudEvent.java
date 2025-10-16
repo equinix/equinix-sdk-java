@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -75,6 +76,11 @@ public class CloudEvent {
   @javax.annotation.Nullable
   private String subject;
 
+  public static final String SERIALIZED_NAME_TIME = "time";
+  @SerializedName(SERIALIZED_NAME_TIME)
+  @javax.annotation.Nullable
+  private OffsetDateTime time;
+
   public static final String SERIALIZED_NAME_DATASCHEMA = "dataschema";
   @SerializedName(SERIALIZED_NAME_DATASCHEMA)
   @javax.annotation.Nullable
@@ -95,15 +101,20 @@ public class CloudEvent {
   @javax.annotation.Nullable
   private String severitytext;
 
+  public static final String SERIALIZED_NAME_EQUINIXALERT = "equinixalert";
+  @SerializedName(SERIALIZED_NAME_EQUINIXALERT)
+  @javax.annotation.Nullable
+  private String equinixalert;
+
   public static final String SERIALIZED_NAME_EQUINIXORGANIZATION = "equinixorganization";
   @SerializedName(SERIALIZED_NAME_EQUINIXORGANIZATION)
   @javax.annotation.Nullable
-  private UUID equinixorganization;
+  private String equinixorganization;
 
   public static final String SERIALIZED_NAME_EQUINIXPROJECT = "equinixproject";
   @SerializedName(SERIALIZED_NAME_EQUINIXPROJECT)
   @javax.annotation.Nullable
-  private UUID equinixproject;
+  private String equinixproject;
 
   public static final String SERIALIZED_NAME_AUTHTYPE = "authtype";
   @SerializedName(SERIALIZED_NAME_AUTHTYPE)
@@ -227,6 +238,25 @@ public class CloudEvent {
   }
 
 
+  public CloudEvent time(@javax.annotation.Nullable OffsetDateTime time) {
+    this.time = time;
+    return this;
+  }
+
+  /**
+   * Cloud Event time the event occurred
+   * @return time
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getTime() {
+    return time;
+  }
+
+  public void setTime(@javax.annotation.Nullable OffsetDateTime time) {
+    this.time = time;
+  }
+
+
   public CloudEvent dataschema(@javax.annotation.Nullable String dataschema) {
     this.dataschema = dataschema;
     return this;
@@ -303,7 +333,26 @@ public class CloudEvent {
   }
 
 
-  public CloudEvent equinixorganization(@javax.annotation.Nullable UUID equinixorganization) {
+  public CloudEvent equinixalert(@javax.annotation.Nullable String equinixalert) {
+    this.equinixalert = equinixalert;
+    return this;
+  }
+
+  /**
+   * Equinix alert
+   * @return equinixalert
+   */
+  @javax.annotation.Nullable
+  public String getEquinixalert() {
+    return equinixalert;
+  }
+
+  public void setEquinixalert(@javax.annotation.Nullable String equinixalert) {
+    this.equinixalert = equinixalert;
+  }
+
+
+  public CloudEvent equinixorganization(@javax.annotation.Nullable String equinixorganization) {
     this.equinixorganization = equinixorganization;
     return this;
   }
@@ -313,16 +362,16 @@ public class CloudEvent {
    * @return equinixorganization
    */
   @javax.annotation.Nullable
-  public UUID getEquinixorganization() {
+  public String getEquinixorganization() {
     return equinixorganization;
   }
 
-  public void setEquinixorganization(@javax.annotation.Nullable UUID equinixorganization) {
+  public void setEquinixorganization(@javax.annotation.Nullable String equinixorganization) {
     this.equinixorganization = equinixorganization;
   }
 
 
-  public CloudEvent equinixproject(@javax.annotation.Nullable UUID equinixproject) {
+  public CloudEvent equinixproject(@javax.annotation.Nullable String equinixproject) {
     this.equinixproject = equinixproject;
     return this;
   }
@@ -332,11 +381,11 @@ public class CloudEvent {
    * @return equinixproject
    */
   @javax.annotation.Nullable
-  public UUID getEquinixproject() {
+  public String getEquinixproject() {
     return equinixproject;
   }
 
-  public void setEquinixproject(@javax.annotation.Nullable UUID equinixproject) {
+  public void setEquinixproject(@javax.annotation.Nullable String equinixproject) {
     this.equinixproject = equinixproject;
   }
 
@@ -495,10 +544,12 @@ public class CloudEvent {
         Objects.equals(this.id, cloudEvent.id) &&
         Objects.equals(this.type, cloudEvent.type) &&
         Objects.equals(this.subject, cloudEvent.subject) &&
+        Objects.equals(this.time, cloudEvent.time) &&
         Objects.equals(this.dataschema, cloudEvent.dataschema) &&
         Objects.equals(this.datacontenttype, cloudEvent.datacontenttype) &&
         Objects.equals(this.severitynumber, cloudEvent.severitynumber) &&
         Objects.equals(this.severitytext, cloudEvent.severitytext) &&
+        Objects.equals(this.equinixalert, cloudEvent.equinixalert) &&
         Objects.equals(this.equinixorganization, cloudEvent.equinixorganization) &&
         Objects.equals(this.equinixproject, cloudEvent.equinixproject) &&
         Objects.equals(this.authtype, cloudEvent.authtype) &&
@@ -511,7 +562,7 @@ public class CloudEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(spec, source, id, type, subject, dataschema, datacontenttype, severitynumber, severitytext, equinixorganization, equinixproject, authtype, authid, traceparent, tracestate, data, additionalProperties);
+    return Objects.hash(spec, source, id, type, subject, time, dataschema, datacontenttype, severitynumber, severitytext, equinixalert, equinixorganization, equinixproject, authtype, authid, traceparent, tracestate, data, additionalProperties);
   }
 
   @Override
@@ -523,10 +574,12 @@ public class CloudEvent {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
+    sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    dataschema: ").append(toIndentedString(dataschema)).append("\n");
     sb.append("    datacontenttype: ").append(toIndentedString(datacontenttype)).append("\n");
     sb.append("    severitynumber: ").append(toIndentedString(severitynumber)).append("\n");
     sb.append("    severitytext: ").append(toIndentedString(severitytext)).append("\n");
+    sb.append("    equinixalert: ").append(toIndentedString(equinixalert)).append("\n");
     sb.append("    equinixorganization: ").append(toIndentedString(equinixorganization)).append("\n");
     sb.append("    equinixproject: ").append(toIndentedString(equinixproject)).append("\n");
     sb.append("    authtype: ").append(toIndentedString(authtype)).append("\n");
@@ -562,10 +615,12 @@ public class CloudEvent {
     openapiFields.add("id");
     openapiFields.add("type");
     openapiFields.add("subject");
+    openapiFields.add("time");
     openapiFields.add("dataschema");
     openapiFields.add("datacontenttype");
     openapiFields.add("severitynumber");
     openapiFields.add("severitytext");
+    openapiFields.add("equinixalert");
     openapiFields.add("equinixorganization");
     openapiFields.add("equinixproject");
     openapiFields.add("authtype");
@@ -617,6 +672,9 @@ public class CloudEvent {
       }
       if ((jsonObj.get("severitytext") != null && !jsonObj.get("severitytext").isJsonNull()) && !jsonObj.get("severitytext").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `severitytext` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severitytext").toString()));
+      }
+      if ((jsonObj.get("equinixalert") != null && !jsonObj.get("equinixalert").isJsonNull()) && !jsonObj.get("equinixalert").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `equinixalert` to be a primitive type in the JSON string but got `%s`", jsonObj.get("equinixalert").toString()));
       }
       if ((jsonObj.get("equinixorganization") != null && !jsonObj.get("equinixorganization").isJsonNull()) && !jsonObj.get("equinixorganization").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `equinixorganization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("equinixorganization").toString()));

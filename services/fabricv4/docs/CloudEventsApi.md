@@ -113,7 +113,7 @@ public class Example {
     OffsetDateTime fromDateTime = OffsetDateTime.now(); // OffsetDateTime | Start date and time
     OffsetDateTime toDateTime = OffsetDateTime.now(); // OffsetDateTime | End date and time
     Integer offset = 0; // Integer | offset
-    Integer limit = 20; // Integer | limit
+    Integer limit = 100; // Integer | limit
     try {
       GetCloudEventsByAssetResponse result = apiInstance.getCloudEventByAssetId(asset, assetId, fromDateTime, toDateTime, offset, limit);
       System.out.println(result);
@@ -137,7 +137,7 @@ public class Example {
 | **fromDateTime** | **OffsetDateTime**| Start date and time | [optional] |
 | **toDateTime** | **OffsetDateTime**| End date and time | [optional] |
 | **offset** | **Integer**| offset | [optional] [default to 0] |
-| **limit** | **Integer**| limit | [optional] [default to 20] |
+| **limit** | **Integer**| limit | [optional] [default to 100] |
 
 ### Return type
 

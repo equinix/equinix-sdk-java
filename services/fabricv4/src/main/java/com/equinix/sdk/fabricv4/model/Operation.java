@@ -58,6 +58,16 @@ public class Operation {
   @javax.annotation.Nullable
   private Integer bgpIpv6RoutesCount;
 
+  public static final String SERIALIZED_NAME_DISTINCT_IPV4_PREFIXES_COUNT = "distinctIpv4PrefixesCount";
+  @SerializedName(SERIALIZED_NAME_DISTINCT_IPV4_PREFIXES_COUNT)
+  @javax.annotation.Nullable
+  private Integer distinctIpv4PrefixesCount;
+
+  public static final String SERIALIZED_NAME_DISTINCT_IPV6_PREFIXES_COUNT = "distinctIpv6PrefixesCount";
+  @SerializedName(SERIALIZED_NAME_DISTINCT_IPV6_PREFIXES_COUNT)
+  @javax.annotation.Nullable
+  private Integer distinctIpv6PrefixesCount;
+
   public Operation() {
   }
 
@@ -96,6 +106,44 @@ public class Operation {
 
   public void setBgpIpv6RoutesCount(@javax.annotation.Nullable Integer bgpIpv6RoutesCount) {
     this.bgpIpv6RoutesCount = bgpIpv6RoutesCount;
+  }
+
+
+  public Operation distinctIpv4PrefixesCount(@javax.annotation.Nullable Integer distinctIpv4PrefixesCount) {
+    this.distinctIpv4PrefixesCount = distinctIpv4PrefixesCount;
+    return this;
+  }
+
+  /**
+   * distinct IPV4 prefixes count
+   * @return distinctIpv4PrefixesCount
+   */
+  @javax.annotation.Nullable
+  public Integer getDistinctIpv4PrefixesCount() {
+    return distinctIpv4PrefixesCount;
+  }
+
+  public void setDistinctIpv4PrefixesCount(@javax.annotation.Nullable Integer distinctIpv4PrefixesCount) {
+    this.distinctIpv4PrefixesCount = distinctIpv4PrefixesCount;
+  }
+
+
+  public Operation distinctIpv6PrefixesCount(@javax.annotation.Nullable Integer distinctIpv6PrefixesCount) {
+    this.distinctIpv6PrefixesCount = distinctIpv6PrefixesCount;
+    return this;
+  }
+
+  /**
+   * distinct IPV6 prefixes count
+   * @return distinctIpv6PrefixesCount
+   */
+  @javax.annotation.Nullable
+  public Integer getDistinctIpv6PrefixesCount() {
+    return distinctIpv6PrefixesCount;
+  }
+
+  public void setDistinctIpv6PrefixesCount(@javax.annotation.Nullable Integer distinctIpv6PrefixesCount) {
+    this.distinctIpv6PrefixesCount = distinctIpv6PrefixesCount;
   }
 
   /**
@@ -154,13 +202,15 @@ public class Operation {
     }
     Operation operation = (Operation) o;
     return Objects.equals(this.bgpIpv4RoutesCount, operation.bgpIpv4RoutesCount) &&
-        Objects.equals(this.bgpIpv6RoutesCount, operation.bgpIpv6RoutesCount)&&
+        Objects.equals(this.bgpIpv6RoutesCount, operation.bgpIpv6RoutesCount) &&
+        Objects.equals(this.distinctIpv4PrefixesCount, operation.distinctIpv4PrefixesCount) &&
+        Objects.equals(this.distinctIpv6PrefixesCount, operation.distinctIpv6PrefixesCount)&&
         Objects.equals(this.additionalProperties, operation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bgpIpv4RoutesCount, bgpIpv6RoutesCount, additionalProperties);
+    return Objects.hash(bgpIpv4RoutesCount, bgpIpv6RoutesCount, distinctIpv4PrefixesCount, distinctIpv6PrefixesCount, additionalProperties);
   }
 
   @Override
@@ -169,6 +219,8 @@ public class Operation {
     sb.append("class Operation {\n");
     sb.append("    bgpIpv4RoutesCount: ").append(toIndentedString(bgpIpv4RoutesCount)).append("\n");
     sb.append("    bgpIpv6RoutesCount: ").append(toIndentedString(bgpIpv6RoutesCount)).append("\n");
+    sb.append("    distinctIpv4PrefixesCount: ").append(toIndentedString(distinctIpv4PrefixesCount)).append("\n");
+    sb.append("    distinctIpv6PrefixesCount: ").append(toIndentedString(distinctIpv6PrefixesCount)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -194,6 +246,8 @@ public class Operation {
     openapiFields = new HashSet<String>();
     openapiFields.add("bgpIpv4RoutesCount");
     openapiFields.add("bgpIpv6RoutesCount");
+    openapiFields.add("distinctIpv4PrefixesCount");
+    openapiFields.add("distinctIpv6PrefixesCount");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -18,6 +18,7 @@ Preferences and settings for a virtual port connected to an internet service pro
 |**connectivitySource** | [**ConnectivitySource**](ConnectivitySource.md) |  |  [optional] |
 |**serviceType** | **VirtualPortServiceType** |  |  [optional] |
 |**settings** | [**VirtualPortConfiguration**](VirtualPortConfiguration.md) |  |  [optional] |
+|**_package** | [**VirtualPortPackage**](VirtualPortPackage.md) |  |  [optional] |
 
 
 

@@ -67,6 +67,11 @@ public class Metric {
   @javax.annotation.Nullable
   private String unit;
 
+  public static final String SERIALIZED_NAME_INTERVAL = "interval";
+  @SerializedName(SERIALIZED_NAME_INTERVAL)
+  @javax.annotation.Nullable
+  private String interval;
+
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
   @javax.annotation.Nullable
@@ -139,6 +144,25 @@ public class Metric {
 
   public void setUnit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
+  }
+
+
+  public Metric interval(@javax.annotation.Nullable String interval) {
+    this.interval = interval;
+    return this;
+  }
+
+  /**
+   * Metric interval (set automatically based on search range)
+   * @return interval
+   */
+  @javax.annotation.Nullable
+  public String getInterval() {
+    return interval;
+  }
+
+  public void setInterval(@javax.annotation.Nullable String interval) {
+    this.interval = interval;
   }
 
 
@@ -264,6 +288,7 @@ public class Metric {
     return Objects.equals(this.type, metric.type) &&
         Objects.equals(this.name, metric.name) &&
         Objects.equals(this.unit, metric.unit) &&
+        Objects.equals(this.interval, metric.interval) &&
         Objects.equals(this.resource, metric.resource) &&
         Objects.equals(this.summary, metric.summary) &&
         Objects.equals(this.datapoints, metric.datapoints)&&
@@ -272,7 +297,7 @@ public class Metric {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, unit, resource, summary, datapoints, additionalProperties);
+    return Objects.hash(type, name, unit, interval, resource, summary, datapoints, additionalProperties);
   }
 
   @Override
@@ -282,6 +307,7 @@ public class Metric {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    datapoints: ").append(toIndentedString(datapoints)).append("\n");
@@ -311,6 +337,7 @@ public class Metric {
     openapiFields.add("type");
     openapiFields.add("name");
     openapiFields.add("unit");
+    openapiFields.add("interval");
     openapiFields.add("resource");
     openapiFields.add("summary");
     openapiFields.add("datapoints");
@@ -340,6 +367,9 @@ public class Metric {
       }
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      if ((jsonObj.get("interval") != null && !jsonObj.get("interval").isJsonNull()) && !jsonObj.get("interval").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `interval` to be a primitive type in the JSON string but got `%s`", jsonObj.get("interval").toString()));
       }
       // validate the optional field `resource`
       if (jsonObj.get("resource") != null && !jsonObj.get("resource").isJsonNull()) {

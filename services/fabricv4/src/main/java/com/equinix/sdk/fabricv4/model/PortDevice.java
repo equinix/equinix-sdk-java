@@ -50,6 +50,7 @@ import com.equinix.sdk.fabricv4.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortDevice {
   public static final String SERIALIZED_NAME_NAME = "name";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
@@ -67,6 +68,7 @@ public class PortDevice {
   public PortDevice() {
   }
 
+  @Deprecated
   public PortDevice name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -75,12 +77,15 @@ public class PortDevice {
   /**
    * Device name
    * @return name
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
+  @Deprecated
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }

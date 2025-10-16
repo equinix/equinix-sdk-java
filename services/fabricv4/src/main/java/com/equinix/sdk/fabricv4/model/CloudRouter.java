@@ -92,6 +92,11 @@ public class CloudRouter {
   @javax.annotation.Nullable
   private Integer connectionsCount;
 
+  public static final String SERIALIZED_NAME_GATEWAY_ATTACHMENTS_COUNT = "gatewayAttachmentsCount";
+  @SerializedName(SERIALIZED_NAME_GATEWAY_ATTACHMENTS_COUNT)
+  @javax.annotation.Nullable
+  private Integer gatewayAttachmentsCount;
+
   public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
   @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
   @javax.annotation.Nullable
@@ -306,6 +311,26 @@ public class CloudRouter {
 
   public void setConnectionsCount(@javax.annotation.Nullable Integer connectionsCount) {
     this.connectionsCount = connectionsCount;
+  }
+
+
+  public CloudRouter gatewayAttachmentsCount(@javax.annotation.Nullable Integer gatewayAttachmentsCount) {
+    this.gatewayAttachmentsCount = gatewayAttachmentsCount;
+    return this;
+  }
+
+  /**
+   * Number of gateway attachments associated with this Access point
+   * minimum: 0
+   * @return gatewayAttachmentsCount
+   */
+  @javax.annotation.Nullable
+  public Integer getGatewayAttachmentsCount() {
+    return gatewayAttachmentsCount;
+  }
+
+  public void setGatewayAttachmentsCount(@javax.annotation.Nullable Integer gatewayAttachmentsCount) {
+    this.gatewayAttachmentsCount = gatewayAttachmentsCount;
   }
 
 
@@ -567,6 +592,7 @@ public class CloudRouter {
         Objects.equals(this.state, cloudRouter.state) &&
         Objects.equals(this.equinixAsn, cloudRouter.equinixAsn) &&
         Objects.equals(this.connectionsCount, cloudRouter.connectionsCount) &&
+        Objects.equals(this.gatewayAttachmentsCount, cloudRouter.gatewayAttachmentsCount) &&
         Objects.equals(this.marketplaceSubscription, cloudRouter.marketplaceSubscription) &&
         Objects.equals(this.changeLog, cloudRouter.changeLog) &&
         Objects.equals(this.change, cloudRouter.change) &&
@@ -582,7 +608,7 @@ public class CloudRouter {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, name, state, equinixAsn, connectionsCount, marketplaceSubscription, changeLog, change, type, location, _package, order, project, account, notifications, additionalProperties);
+    return Objects.hash(href, uuid, name, state, equinixAsn, connectionsCount, gatewayAttachmentsCount, marketplaceSubscription, changeLog, change, type, location, _package, order, project, account, notifications, additionalProperties);
   }
 
   @Override
@@ -595,6 +621,7 @@ public class CloudRouter {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    equinixAsn: ").append(toIndentedString(equinixAsn)).append("\n");
     sb.append("    connectionsCount: ").append(toIndentedString(connectionsCount)).append("\n");
+    sb.append("    gatewayAttachmentsCount: ").append(toIndentedString(gatewayAttachmentsCount)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
