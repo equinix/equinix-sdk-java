@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.ApiConfig;
 import com.equinix.sdk.fabricv4.model.AuthenticationKey;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointTypeEnum;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Colo Access Point Type
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ServiceProfileAccessPointTypeCOLO {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
@@ -571,27 +573,10 @@ public class ServiceProfileAccessPointTypeCOLO {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("uuid");
-    openapiFields.add("type");
-    openapiFields.add("supportedBandwidths");
-    openapiFields.add("allowRemoteConnections");
-    openapiFields.add("allowCustomBandwidth");
-    openapiFields.add("bandwidthAlertThreshold");
-    openapiFields.add("allowBandwidthAutoApproval");
-    openapiFields.add("allowBandwidthUpgrade");
-    openapiFields.add("linkProtocolConfig");
-    openapiFields.add("enableAutoGenerateServiceKey");
-    openapiFields.add("connectionRedundancyRequired");
-    openapiFields.add("selectiveRedundancy");
-    openapiFields.add("apiConfig");
-    openapiFields.add("connectionLabel");
-    openapiFields.add("authenticationKey");
-    openapiFields.add("metadata");
+    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "supportedBandwidths", "allowRemoteConnections", "allowCustomBandwidth", "bandwidthAlertThreshold", "allowBandwidthAutoApproval", "allowBandwidthUpgrade", "linkProtocolConfig", "enableAutoGenerateServiceKey", "connectionRedundancyRequired", "selectiveRedundancy", "apiConfig", "connectionLabel", "authenticationKey", "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type"));
   }
 
   /**
@@ -603,25 +588,25 @@ public class ServiceProfileAccessPointTypeCOLO {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileAccessPointTypeCOLO is not found in the empty JSON string", ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ServiceProfileAccessPointTypeCOLO is not found in the empty JSON string", ServiceProfileAccessPointTypeCOLO.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ServiceProfileAccessPointTypeCOLO.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the required field `type`
       ServiceProfileAccessPointTypeEnum.validateJsonElement(jsonObj.get("type"));
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
       }
       // validate the optional field `linkProtocolConfig`
       if (jsonObj.get("linkProtocolConfig") != null && !jsonObj.get("linkProtocolConfig").isJsonNull()) {
@@ -632,7 +617,7 @@ public class ServiceProfileAccessPointTypeCOLO {
         ApiConfig.validateJsonElement(jsonObj.get("apiConfig"));
       }
       if ((jsonObj.get("connectionLabel") != null && !jsonObj.get("connectionLabel").isJsonNull()) && !jsonObj.get("connectionLabel").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `connectionLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectionLabel").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connectionLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectionLabel").toString()));
       }
       // validate the optional field `authenticationKey`
       if (jsonObj.get("authenticationKey") != null && !jsonObj.get("authenticationKey").isJsonNull()) {
@@ -701,7 +686,7 @@ public class ServiceProfileAccessPointTypeCOLO {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

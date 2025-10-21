@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.DeploymentState;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
 import com.google.gson.TypeAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * AWSVirtualPrivateGatewayResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class AWSVirtualPrivateGatewayResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -324,22 +326,10 @@ public class AWSVirtualPrivateGatewayResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("type");
-    openapiFields.add("state");
-    openapiFields.add("required");
-    openapiFields.add("vpcId");
-    openapiFields.add("subnetId");
-    openapiFields.add("deploymentProperties");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "type", "state", "required", "vpcId", "subnetId", "deploymentProperties"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("vpcId");
-    openapiRequiredFields.add("subnetId");
-    openapiRequiredFields.add("deploymentProperties");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "state", "vpcId", "subnetId", "deploymentProperties"));
   }
 
   /**
@@ -351,30 +341,30 @@ public class AWSVirtualPrivateGatewayResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AWSVirtualPrivateGatewayResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AWSVirtualPrivateGatewayResponse is not found in the empty JSON string", AWSVirtualPrivateGatewayResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AWSVirtualPrivateGatewayResponse is not found in the empty JSON string", AWSVirtualPrivateGatewayResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AWSVirtualPrivateGatewayResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       // validate the required field `state`
       DeploymentState.validateJsonElement(jsonObj.get("state"));
       if (!jsonObj.get("vpcId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `vpcId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vpcId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `vpcId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vpcId").toString()));
       }
       if (!jsonObj.get("subnetId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subnetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subnetId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `subnetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subnetId").toString()));
       }
       // validate the required field `deploymentProperties`
       TopologyProperties.validateJsonElement(jsonObj.get("deploymentProperties"));
@@ -437,7 +427,7 @@ public class AWSVirtualPrivateGatewayResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

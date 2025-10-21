@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Configuration for dot1q to qinq translation support
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ServiceProfileLinkProtocolConfig {
   /**
    * was tagType - missing on wiki
@@ -387,15 +389,10 @@ public class ServiceProfileLinkProtocolConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("encapsulationStrategy");
-    openapiFields.add("namedTags");
-    openapiFields.add("vlanCTagLabel");
-    openapiFields.add("reuseVlanSTag");
-    openapiFields.add("encapsulation");
+    openapiFields = new HashSet<String>(Arrays.asList("encapsulationStrategy", "namedTags", "vlanCTagLabel", "reuseVlanSTag", "encapsulation"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -407,12 +404,12 @@ public class ServiceProfileLinkProtocolConfig {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ServiceProfileLinkProtocolConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileLinkProtocolConfig is not found in the empty JSON string", ServiceProfileLinkProtocolConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ServiceProfileLinkProtocolConfig is not found in the empty JSON string", ServiceProfileLinkProtocolConfig.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("encapsulationStrategy") != null && !jsonObj.get("encapsulationStrategy").isJsonNull()) && !jsonObj.get("encapsulationStrategy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `encapsulationStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulationStrategy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `encapsulationStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulationStrategy").toString()));
       }
       // validate the optional field `encapsulationStrategy`
       if (jsonObj.get("encapsulationStrategy") != null && !jsonObj.get("encapsulationStrategy").isJsonNull()) {
@@ -420,13 +417,13 @@ public class ServiceProfileLinkProtocolConfig {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("namedTags") != null && !jsonObj.get("namedTags").isJsonNull() && !jsonObj.get("namedTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `namedTags` to be an array in the JSON string but got `%s`", jsonObj.get("namedTags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `namedTags` to be an array in the JSON string but got `%s`", jsonObj.get("namedTags").toString()));
       }
       if ((jsonObj.get("vlanCTagLabel") != null && !jsonObj.get("vlanCTagLabel").isJsonNull()) && !jsonObj.get("vlanCTagLabel").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `vlanCTagLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vlanCTagLabel").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `vlanCTagLabel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vlanCTagLabel").toString()));
       }
       if ((jsonObj.get("encapsulation") != null && !jsonObj.get("encapsulation").isJsonNull()) && !jsonObj.get("encapsulation").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `encapsulation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulation").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `encapsulation` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulation").toString()));
       }
       // validate the optional field `encapsulation`
       if (jsonObj.get("encapsulation") != null && !jsonObj.get("encapsulation").isJsonNull()) {
@@ -491,7 +488,7 @@ public class ServiceProfileLinkProtocolConfig {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

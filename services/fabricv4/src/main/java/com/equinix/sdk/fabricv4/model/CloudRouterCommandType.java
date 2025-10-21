@@ -12,9 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
