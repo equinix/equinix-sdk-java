@@ -97,7 +97,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTimeServicesCall(PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTimeServicesCall(@javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +143,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTimeServicesValidateBeforeCall(PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTimeServicesValidateBeforeCall(@javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'precisionTimeServiceRequest' is set
         if (precisionTimeServiceRequest == null) {
             throw new ApiException("Missing the required parameter 'precisionTimeServiceRequest' when calling createTimeServices(Async)");
@@ -171,7 +171,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceResponse createTimeServices(PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
+    public PrecisionTimeServiceResponse createTimeServices(@javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
         ApiResponse<PrecisionTimeServiceResponse> localVarResp = createTimeServicesWithHttpInfo(precisionTimeServiceRequest);
         return localVarResp.getData();
     }
@@ -194,7 +194,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceResponse> createTimeServicesWithHttpInfo(PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceResponse> createTimeServicesWithHttpInfo(@javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
         okhttp3.Call localVarCall = createTimeServicesValidateBeforeCall(precisionTimeServiceRequest, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -219,7 +219,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTimeServicesAsync(PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call createTimeServicesAsync(@javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTimeServicesValidateBeforeCall(precisionTimeServiceRequest, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
@@ -244,7 +244,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTimeServiceByIdCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTimeServiceByIdCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -290,7 +290,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTimeServiceByIdValidateBeforeCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTimeServiceByIdValidateBeforeCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceId' is set
         if (serviceId == null) {
             throw new ApiException("Missing the required parameter 'serviceId' when calling deleteTimeServiceById(Async)");
@@ -318,7 +318,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceResponse deleteTimeServiceById(UUID serviceId) throws ApiException {
+    public PrecisionTimeServiceResponse deleteTimeServiceById(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         ApiResponse<PrecisionTimeServiceResponse> localVarResp = deleteTimeServiceByIdWithHttpInfo(serviceId);
         return localVarResp.getData();
     }
@@ -341,7 +341,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceResponse> deleteTimeServiceByIdWithHttpInfo(UUID serviceId) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceResponse> deleteTimeServiceByIdWithHttpInfo(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         okhttp3.Call localVarCall = deleteTimeServiceByIdValidateBeforeCall(serviceId, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -366,7 +366,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTimeServiceByIdAsync(UUID serviceId, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteTimeServiceByIdAsync(@javax.annotation.Nonnull UUID serviceId, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTimeServiceByIdValidateBeforeCall(serviceId, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
@@ -393,7 +393,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fulfillTimeServicesCall(UUID serviceId, PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call fulfillTimeServicesCall(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -440,7 +440,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fulfillTimeServicesValidateBeforeCall(UUID serviceId, PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call fulfillTimeServicesValidateBeforeCall(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceId' is set
         if (serviceId == null) {
             throw new ApiException("Missing the required parameter 'serviceId' when calling fulfillTimeServices(Async)");
@@ -475,7 +475,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceResponse fulfillTimeServices(UUID serviceId, PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
+    public PrecisionTimeServiceResponse fulfillTimeServices(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
         ApiResponse<PrecisionTimeServiceResponse> localVarResp = fulfillTimeServicesWithHttpInfo(serviceId, precisionTimeServiceRequest);
         return localVarResp.getData();
     }
@@ -500,7 +500,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceResponse> fulfillTimeServicesWithHttpInfo(UUID serviceId, PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceResponse> fulfillTimeServicesWithHttpInfo(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest) throws ApiException {
         okhttp3.Call localVarCall = fulfillTimeServicesValidateBeforeCall(serviceId, precisionTimeServiceRequest, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -527,7 +527,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fulfillTimeServicesAsync(UUID serviceId, PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call fulfillTimeServicesAsync(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull PrecisionTimeServiceRequest precisionTimeServiceRequest, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = fulfillTimeServicesValidateBeforeCall(serviceId, precisionTimeServiceRequest, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
@@ -553,7 +553,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesByIdCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesByIdCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -599,7 +599,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTimeServicesByIdValidateBeforeCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTimeServicesByIdValidateBeforeCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceId' is set
         if (serviceId == null) {
             throw new ApiException("Missing the required parameter 'serviceId' when calling getTimeServicesById(Async)");
@@ -628,7 +628,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceResponse getTimeServicesById(UUID serviceId) throws ApiException {
+    public PrecisionTimeServiceResponse getTimeServicesById(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         ApiResponse<PrecisionTimeServiceResponse> localVarResp = getTimeServicesByIdWithHttpInfo(serviceId);
         return localVarResp.getData();
     }
@@ -652,7 +652,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceResponse> getTimeServicesByIdWithHttpInfo(UUID serviceId) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceResponse> getTimeServicesByIdWithHttpInfo(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         okhttp3.Call localVarCall = getTimeServicesByIdValidateBeforeCall(serviceId, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -678,7 +678,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesByIdAsync(UUID serviceId, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesByIdAsync(@javax.annotation.Nonnull UUID serviceId, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTimeServicesByIdValidateBeforeCall(serviceId, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
@@ -702,7 +702,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesConnectionsByServiceIdCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesConnectionsByServiceIdCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -748,7 +748,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTimeServicesConnectionsByServiceIdValidateBeforeCall(UUID serviceId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTimeServicesConnectionsByServiceIdValidateBeforeCall(@javax.annotation.Nonnull UUID serviceId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceId' is set
         if (serviceId == null) {
             throw new ApiException("Missing the required parameter 'serviceId' when calling getTimeServicesConnectionsByServiceId(Async)");
@@ -775,7 +775,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceConnectionsResponse getTimeServicesConnectionsByServiceId(UUID serviceId) throws ApiException {
+    public PrecisionTimeServiceConnectionsResponse getTimeServicesConnectionsByServiceId(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         ApiResponse<PrecisionTimeServiceConnectionsResponse> localVarResp = getTimeServicesConnectionsByServiceIdWithHttpInfo(serviceId);
         return localVarResp.getData();
     }
@@ -797,7 +797,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceConnectionsResponse> getTimeServicesConnectionsByServiceIdWithHttpInfo(UUID serviceId) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceConnectionsResponse> getTimeServicesConnectionsByServiceIdWithHttpInfo(@javax.annotation.Nonnull UUID serviceId) throws ApiException {
         okhttp3.Call localVarCall = getTimeServicesConnectionsByServiceIdValidateBeforeCall(serviceId, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceConnectionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -821,7 +821,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesConnectionsByServiceIdAsync(UUID serviceId, final ApiCallback<PrecisionTimeServiceConnectionsResponse> _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesConnectionsByServiceIdAsync(@javax.annotation.Nonnull UUID serviceId, final ApiCallback<PrecisionTimeServiceConnectionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTimeServicesConnectionsByServiceIdValidateBeforeCall(serviceId, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceConnectionsResponse>(){}.getType();
@@ -843,7 +843,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesPackageByCodeCall(String packageCode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesPackageByCodeCall(@javax.annotation.Nonnull String packageCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -889,7 +889,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTimeServicesPackageByCodeValidateBeforeCall(String packageCode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTimeServicesPackageByCodeValidateBeforeCall(@javax.annotation.Nonnull String packageCode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'packageCode' is set
         if (packageCode == null) {
             throw new ApiException("Missing the required parameter 'packageCode' when calling getTimeServicesPackageByCode(Async)");
@@ -914,7 +914,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimePackageResponse getTimeServicesPackageByCode(String packageCode) throws ApiException {
+    public PrecisionTimePackageResponse getTimeServicesPackageByCode(@javax.annotation.Nonnull String packageCode) throws ApiException {
         ApiResponse<PrecisionTimePackageResponse> localVarResp = getTimeServicesPackageByCodeWithHttpInfo(packageCode);
         return localVarResp.getData();
     }
@@ -934,7 +934,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimePackageResponse> getTimeServicesPackageByCodeWithHttpInfo(String packageCode) throws ApiException {
+    public ApiResponse<PrecisionTimePackageResponse> getTimeServicesPackageByCodeWithHttpInfo(@javax.annotation.Nonnull String packageCode) throws ApiException {
         okhttp3.Call localVarCall = getTimeServicesPackageByCodeValidateBeforeCall(packageCode, null);
         Type localVarReturnType = new TypeToken<PrecisionTimePackageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -956,7 +956,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTimeServicesPackageByCodeAsync(String packageCode, final ApiCallback<PrecisionTimePackageResponse> _callback) throws ApiException {
+    public okhttp3.Call getTimeServicesPackageByCodeAsync(@javax.annotation.Nonnull String packageCode, final ApiCallback<PrecisionTimePackageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTimeServicesPackageByCodeValidateBeforeCall(packageCode, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimePackageResponse>(){}.getType();
@@ -1106,7 +1106,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchTimeServicesCall(TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchTimeServicesCall(@javax.annotation.Nonnull TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1152,7 +1152,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchTimeServicesValidateBeforeCall(TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchTimeServicesValidateBeforeCall(@javax.annotation.Nonnull TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'timeServicesSearchRequest' is set
         if (timeServicesSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'timeServicesSearchRequest' when calling searchTimeServices(Async)");
@@ -1180,7 +1180,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceSearchResponse searchTimeServices(TimeServicesSearchRequest timeServicesSearchRequest) throws ApiException {
+    public ServiceSearchResponse searchTimeServices(@javax.annotation.Nonnull TimeServicesSearchRequest timeServicesSearchRequest) throws ApiException {
         ApiResponse<ServiceSearchResponse> localVarResp = searchTimeServicesWithHttpInfo(timeServicesSearchRequest);
         return localVarResp.getData();
     }
@@ -1203,7 +1203,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceSearchResponse> searchTimeServicesWithHttpInfo(TimeServicesSearchRequest timeServicesSearchRequest) throws ApiException {
+    public ApiResponse<ServiceSearchResponse> searchTimeServicesWithHttpInfo(@javax.annotation.Nonnull TimeServicesSearchRequest timeServicesSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchTimeServicesValidateBeforeCall(timeServicesSearchRequest, null);
         Type localVarReturnType = new TypeToken<ServiceSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1228,7 +1228,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchTimeServicesAsync(TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback<ServiceSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchTimeServicesAsync(@javax.annotation.Nonnull TimeServicesSearchRequest timeServicesSearchRequest, final ApiCallback<ServiceSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchTimeServicesValidateBeforeCall(timeServicesSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<ServiceSearchResponse>(){}.getType();
@@ -1255,7 +1255,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTimeServicesByIdCall(UUID serviceId, List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTimeServicesByIdCall(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1302,7 +1302,7 @@ public class PrecisionTimeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTimeServicesByIdValidateBeforeCall(UUID serviceId, List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTimeServicesByIdValidateBeforeCall(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceId' is set
         if (serviceId == null) {
             throw new ApiException("Missing the required parameter 'serviceId' when calling updateTimeServicesById(Async)");
@@ -1337,7 +1337,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PrecisionTimeServiceResponse updateTimeServicesById(UUID serviceId, List<PrecisionTimeChangeOperation> precisionTimeChangeOperation) throws ApiException {
+    public PrecisionTimeServiceResponse updateTimeServicesById(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull List<PrecisionTimeChangeOperation> precisionTimeChangeOperation) throws ApiException {
         ApiResponse<PrecisionTimeServiceResponse> localVarResp = updateTimeServicesByIdWithHttpInfo(serviceId, precisionTimeChangeOperation);
         return localVarResp.getData();
     }
@@ -1362,7 +1362,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PrecisionTimeServiceResponse> updateTimeServicesByIdWithHttpInfo(UUID serviceId, List<PrecisionTimeChangeOperation> precisionTimeChangeOperation) throws ApiException {
+    public ApiResponse<PrecisionTimeServiceResponse> updateTimeServicesByIdWithHttpInfo(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull List<PrecisionTimeChangeOperation> precisionTimeChangeOperation) throws ApiException {
         okhttp3.Call localVarCall = updateTimeServicesByIdValidateBeforeCall(serviceId, precisionTimeChangeOperation, null);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1389,7 +1389,7 @@ public class PrecisionTimeApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTimeServicesByIdAsync(UUID serviceId, List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateTimeServicesByIdAsync(@javax.annotation.Nonnull UUID serviceId, @javax.annotation.Nonnull List<PrecisionTimeChangeOperation> precisionTimeChangeOperation, final ApiCallback<PrecisionTimeServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTimeServicesByIdValidateBeforeCall(serviceId, precisionTimeChangeOperation, _callback);
         Type localVarReturnType = new TypeToken<PrecisionTimeServiceResponse>(){}.getType();

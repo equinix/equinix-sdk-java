@@ -94,7 +94,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceProfileCall(ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createServiceProfileCall(@javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +141,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createServiceProfileValidateBeforeCall(ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createServiceProfileValidateBeforeCall(@javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileRequest' is set
         if (serviceProfileRequest == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileRequest' when calling createServiceProfile(Async)");
@@ -168,7 +168,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile createServiceProfile(ServiceProfileRequest serviceProfileRequest) throws ApiException {
+    public ServiceProfile createServiceProfile(@javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest) throws ApiException {
         ApiResponse<ServiceProfile> localVarResp = createServiceProfileWithHttpInfo(serviceProfileRequest);
         return localVarResp.getData();
     }
@@ -190,7 +190,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> createServiceProfileWithHttpInfo(ServiceProfileRequest serviceProfileRequest) throws ApiException {
+    public ApiResponse<ServiceProfile> createServiceProfileWithHttpInfo(@javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest) throws ApiException {
         okhttp3.Call localVarCall = createServiceProfileValidateBeforeCall(serviceProfileRequest, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceProfileAsync(ServiceProfileRequest serviceProfileRequest, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call createServiceProfileAsync(@javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createServiceProfileValidateBeforeCall(serviceProfileRequest, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
@@ -239,7 +239,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteServiceProfileByUuidCall(UUID serviceProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +286,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteServiceProfileByUuidValidateBeforeCall(UUID serviceProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling deleteServiceProfileByUuid(Async)");
@@ -314,7 +314,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile deleteServiceProfileByUuid(UUID serviceProfileId) throws ApiException {
+    public ServiceProfile deleteServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId) throws ApiException {
         ApiResponse<ServiceProfile> localVarResp = deleteServiceProfileByUuidWithHttpInfo(serviceProfileId);
         return localVarResp.getData();
     }
@@ -337,7 +337,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> deleteServiceProfileByUuidWithHttpInfo(UUID serviceProfileId) throws ApiException {
+    public ApiResponse<ServiceProfile> deleteServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId) throws ApiException {
         okhttp3.Call localVarCall = deleteServiceProfileByUuidValidateBeforeCall(serviceProfileId, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -362,7 +362,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteServiceProfileByUuidAsync(UUID serviceProfileId, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call deleteServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteServiceProfileByUuidValidateBeforeCall(serviceProfileId, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
@@ -387,7 +387,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfileByUuidCall(UUID serviceProfileId, String viewPoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -438,7 +438,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceProfileByUuidValidateBeforeCall(UUID serviceProfileId, String viewPoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling getServiceProfileByUuid(Async)");
@@ -466,7 +466,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile getServiceProfileByUuid(UUID serviceProfileId, String viewPoint) throws ApiException {
+    public ServiceProfile getServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable String viewPoint) throws ApiException {
         ApiResponse<ServiceProfile> localVarResp = getServiceProfileByUuidWithHttpInfo(serviceProfileId, viewPoint);
         return localVarResp.getData();
     }
@@ -489,7 +489,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> getServiceProfileByUuidWithHttpInfo(UUID serviceProfileId, String viewPoint) throws ApiException {
+    public ApiResponse<ServiceProfile> getServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable String viewPoint) throws ApiException {
         okhttp3.Call localVarCall = getServiceProfileByUuidValidateBeforeCall(serviceProfileId, viewPoint, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -514,7 +514,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfileByUuidAsync(UUID serviceProfileId, String viewPoint, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call getServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable String viewPoint, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceProfileByUuidValidateBeforeCall(serviceProfileId, viewPoint, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
@@ -540,7 +540,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfileMetrosByUuidCall(UUID serviceProfileId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceProfileMetrosByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -595,7 +595,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceProfileMetrosByUuidValidateBeforeCall(UUID serviceProfileId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceProfileMetrosByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling getServiceProfileMetrosByUuid(Async)");
@@ -624,7 +624,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceMetros getServiceProfileMetrosByUuid(UUID serviceProfileId, Integer offset, Integer limit) throws ApiException {
+    public ServiceMetros getServiceProfileMetrosByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<ServiceMetros> localVarResp = getServiceProfileMetrosByUuidWithHttpInfo(serviceProfileId, offset, limit);
         return localVarResp.getData();
     }
@@ -648,7 +648,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceMetros> getServiceProfileMetrosByUuidWithHttpInfo(UUID serviceProfileId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<ServiceMetros> getServiceProfileMetrosByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getServiceProfileMetrosByUuidValidateBeforeCall(serviceProfileId, offset, limit, null);
         Type localVarReturnType = new TypeToken<ServiceMetros>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -674,7 +674,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfileMetrosByUuidAsync(UUID serviceProfileId, Integer offset, Integer limit, final ApiCallback<ServiceMetros> _callback) throws ApiException {
+    public okhttp3.Call getServiceProfileMetrosByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<ServiceMetros> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceProfileMetrosByUuidValidateBeforeCall(serviceProfileId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<ServiceMetros>(){}.getType();
@@ -700,7 +700,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfilesCall(Integer offset, Integer limit, String viewPoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceProfilesCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -758,7 +758,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceProfilesValidateBeforeCall(Integer offset, Integer limit, String viewPoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceProfilesValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         return getServiceProfilesCall(offset, limit, viewPoint, _callback);
 
     }
@@ -782,7 +782,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfiles getServiceProfiles(Integer offset, Integer limit, String viewPoint) throws ApiException {
+    public ServiceProfiles getServiceProfiles(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
         ApiResponse<ServiceProfiles> localVarResp = getServiceProfilesWithHttpInfo(offset, limit, viewPoint);
         return localVarResp.getData();
     }
@@ -806,7 +806,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfiles> getServiceProfilesWithHttpInfo(Integer offset, Integer limit, String viewPoint) throws ApiException {
+    public ApiResponse<ServiceProfiles> getServiceProfilesWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
         okhttp3.Call localVarCall = getServiceProfilesValidateBeforeCall(offset, limit, viewPoint, null);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -832,7 +832,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfilesAsync(Integer offset, Integer limit, String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
+    public okhttp3.Call getServiceProfilesAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceProfilesValidateBeforeCall(offset, limit, viewPoint, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
@@ -859,7 +859,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putServiceProfileByUuidCall(UUID serviceProfileId, String ifMatch, ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -912,7 +912,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putServiceProfileByUuidValidateBeforeCall(UUID serviceProfileId, String ifMatch, ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling putServiceProfileByUuid(Async)");
@@ -952,7 +952,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile putServiceProfileByUuid(UUID serviceProfileId, String ifMatch, ServiceProfileRequest serviceProfileRequest) throws ApiException {
+    public ServiceProfile putServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest) throws ApiException {
         ApiResponse<ServiceProfile> localVarResp = putServiceProfileByUuidWithHttpInfo(serviceProfileId, ifMatch, serviceProfileRequest);
         return localVarResp.getData();
     }
@@ -977,7 +977,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> putServiceProfileByUuidWithHttpInfo(UUID serviceProfileId, String ifMatch, ServiceProfileRequest serviceProfileRequest) throws ApiException {
+    public ApiResponse<ServiceProfile> putServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest) throws ApiException {
         okhttp3.Call localVarCall = putServiceProfileByUuidValidateBeforeCall(serviceProfileId, ifMatch, serviceProfileRequest, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1004,7 +1004,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putServiceProfileByUuidAsync(UUID serviceProfileId, String ifMatch, ServiceProfileRequest serviceProfileRequest, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call putServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull ServiceProfileRequest serviceProfileRequest, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putServiceProfileByUuidValidateBeforeCall(serviceProfileId, ifMatch, serviceProfileRequest, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
@@ -1028,7 +1028,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchServiceProfilesCall(ServiceProfileSearchRequest serviceProfileSearchRequest, String viewPoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchServiceProfilesCall(@javax.annotation.Nonnull ServiceProfileSearchRequest serviceProfileSearchRequest, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1079,7 +1079,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchServiceProfilesValidateBeforeCall(ServiceProfileSearchRequest serviceProfileSearchRequest, String viewPoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchServiceProfilesValidateBeforeCall(@javax.annotation.Nonnull ServiceProfileSearchRequest serviceProfileSearchRequest, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileSearchRequest' is set
         if (serviceProfileSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileSearchRequest' when calling searchServiceProfiles(Async)");
@@ -1106,7 +1106,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfiles searchServiceProfiles(ServiceProfileSearchRequest serviceProfileSearchRequest, String viewPoint) throws ApiException {
+    public ServiceProfiles searchServiceProfiles(@javax.annotation.Nonnull ServiceProfileSearchRequest serviceProfileSearchRequest, @javax.annotation.Nullable String viewPoint) throws ApiException {
         ApiResponse<ServiceProfiles> localVarResp = searchServiceProfilesWithHttpInfo(serviceProfileSearchRequest, viewPoint);
         return localVarResp.getData();
     }
@@ -1128,7 +1128,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfiles> searchServiceProfilesWithHttpInfo(ServiceProfileSearchRequest serviceProfileSearchRequest, String viewPoint) throws ApiException {
+    public ApiResponse<ServiceProfiles> searchServiceProfilesWithHttpInfo(@javax.annotation.Nonnull ServiceProfileSearchRequest serviceProfileSearchRequest, @javax.annotation.Nullable String viewPoint) throws ApiException {
         okhttp3.Call localVarCall = searchServiceProfilesValidateBeforeCall(serviceProfileSearchRequest, viewPoint, null);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1152,7 +1152,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchServiceProfilesAsync(ServiceProfileSearchRequest serviceProfileSearchRequest, String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
+    public okhttp3.Call searchServiceProfilesAsync(@javax.annotation.Nonnull ServiceProfileSearchRequest serviceProfileSearchRequest, @javax.annotation.Nullable String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchServiceProfilesValidateBeforeCall(serviceProfileSearchRequest, viewPoint, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
@@ -1180,7 +1180,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceProfileByUuidCall(UUID serviceProfileId, String ifMatch, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1233,7 +1233,7 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateServiceProfileByUuidValidateBeforeCall(UUID serviceProfileId, String ifMatch, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling updateServiceProfileByUuid(Async)");
@@ -1274,7 +1274,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile updateServiceProfileByUuid(UUID serviceProfileId, String ifMatch, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ServiceProfile updateServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         ApiResponse<ServiceProfile> localVarResp = updateServiceProfileByUuidWithHttpInfo(serviceProfileId, ifMatch, jsonPatchOperation);
         return localVarResp.getData();
     }
@@ -1300,7 +1300,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> updateServiceProfileByUuidWithHttpInfo(UUID serviceProfileId, String ifMatch, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ApiResponse<ServiceProfile> updateServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, ifMatch, jsonPatchOperation, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1328,7 +1328,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceProfileByUuidAsync(UUID serviceProfileId, String ifMatch, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call updateServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String ifMatch, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, ifMatch, jsonPatchOperation, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();

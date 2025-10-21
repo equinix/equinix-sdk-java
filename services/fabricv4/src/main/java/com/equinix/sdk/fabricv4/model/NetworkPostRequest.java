@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.NetworkScope;
 import com.equinix.sdk.fabricv4.model.NetworkType;
 import com.equinix.sdk.fabricv4.model.Project;
@@ -47,13 +48,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Create Network
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class NetworkPostRequest {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -310,20 +312,10 @@ public class NetworkPostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("name");
-    openapiFields.add("scope");
-    openapiFields.add("location");
-    openapiFields.add("project");
-    openapiFields.add("notifications");
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "scope", "location", "project", "notifications"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("scope");
-    openapiRequiredFields.add("notifications");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "scope", "notifications"));
   }
 
   /**
@@ -335,21 +327,21 @@ public class NetworkPostRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NetworkPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NetworkPostRequest is not found in the empty JSON string", NetworkPostRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in NetworkPostRequest is not found in the empty JSON string", NetworkPostRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : NetworkPostRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `type`
       NetworkType.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `scope`
       NetworkScope.validateJsonElement(jsonObj.get("scope"));
@@ -363,7 +355,7 @@ public class NetworkPostRequest {
       }
       // ensure the json data is an array
       if (!jsonObj.get("notifications").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
       }
 
       JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
@@ -430,7 +422,7 @@ public class NetworkPostRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

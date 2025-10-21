@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.GCPCloudRouter;
 import com.equinix.sdk.fabricv4.model.GCPPermission;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
@@ -36,6 +37,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,7 +61,7 @@ import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class GCPProviderResource extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GCPProviderResource.class.getName());
 
@@ -115,7 +117,7 @@ public class GCPProviderResource extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GCPPermission'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GCPPermission'", e);
                     }
                     // deserialize GCPCloudRouter
@@ -127,7 +129,7 @@ public class GCPProviderResource extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GCPCloudRouter'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for GCPCloudRouter failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for GCPCloudRouter failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GCPCloudRouter'", e);
                     }
 
@@ -137,7 +139,7 @@ public class GCPProviderResource extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for GCPProviderResource: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for GCPProviderResource: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -236,7 +238,7 @@ public class GCPProviderResource extends AbstractOpenApiSchema {
             GCPPermission.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for GCPPermission failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with GCPCloudRouter
@@ -244,11 +246,11 @@ public class GCPProviderResource extends AbstractOpenApiSchema {
             GCPCloudRouter.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for GCPCloudRouter failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for GCPCloudRouter failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for GCPProviderResource with oneOf schemas: GCPCloudRouter, GCPPermission. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for GCPProviderResource with oneOf schemas: GCPCloudRouter, GCPPermission. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

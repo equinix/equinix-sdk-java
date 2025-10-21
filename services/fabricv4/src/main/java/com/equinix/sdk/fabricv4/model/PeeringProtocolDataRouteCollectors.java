@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Route Collectors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PeeringProtocolDataRouteCollectors {
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
@@ -191,12 +193,10 @@ public class PeeringProtocolDataRouteCollectors {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("primary");
-    openapiFields.add("secondary");
+    openapiFields = new HashSet<String>(Arrays.asList("primary", "secondary"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -208,15 +208,15 @@ public class PeeringProtocolDataRouteCollectors {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PeeringProtocolDataRouteCollectors.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringProtocolDataRouteCollectors is not found in the empty JSON string", PeeringProtocolDataRouteCollectors.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PeeringProtocolDataRouteCollectors is not found in the empty JSON string", PeeringProtocolDataRouteCollectors.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("primary") != null && !jsonObj.get("primary").isJsonNull()) && !jsonObj.get("primary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `primary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary").toString()));
       }
       if ((jsonObj.get("secondary") != null && !jsonObj.get("secondary").isJsonNull()) && !jsonObj.get("secondary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secondary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondary").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secondary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondary").toString()));
       }
   }
 
@@ -277,7 +277,7 @@ public class PeeringProtocolDataRouteCollectors {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

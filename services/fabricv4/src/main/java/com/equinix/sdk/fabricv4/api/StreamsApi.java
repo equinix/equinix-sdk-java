@@ -98,7 +98,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamsCall(StreamPostRequest streamPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createStreamsCall(@javax.annotation.Nonnull StreamPostRequest streamPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -144,7 +144,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createStreamsValidateBeforeCall(StreamPostRequest streamPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createStreamsValidateBeforeCall(@javax.annotation.Nonnull StreamPostRequest streamPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamPostRequest' is set
         if (streamPostRequest == null) {
             throw new ApiException("Missing the required parameter 'streamPostRequest' when calling createStreams(Async)");
@@ -172,7 +172,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Stream createStreams(StreamPostRequest streamPostRequest) throws ApiException {
+    public Stream createStreams(@javax.annotation.Nonnull StreamPostRequest streamPostRequest) throws ApiException {
         ApiResponse<Stream> localVarResp = createStreamsWithHttpInfo(streamPostRequest);
         return localVarResp.getData();
     }
@@ -195,7 +195,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Stream> createStreamsWithHttpInfo(StreamPostRequest streamPostRequest) throws ApiException {
+    public ApiResponse<Stream> createStreamsWithHttpInfo(@javax.annotation.Nonnull StreamPostRequest streamPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createStreamsValidateBeforeCall(streamPostRequest, null);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -220,7 +220,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamsAsync(StreamPostRequest streamPostRequest, final ApiCallback<Stream> _callback) throws ApiException {
+    public okhttp3.Call createStreamsAsync(@javax.annotation.Nonnull StreamPostRequest streamPostRequest, final ApiCallback<Stream> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createStreamsValidateBeforeCall(streamPostRequest, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
@@ -247,7 +247,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamAssetByUuidCall(UUID assetId, Asset asset, UUID streamId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteStreamAssetByUuidCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -295,7 +295,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteStreamAssetByUuidValidateBeforeCall(UUID assetId, Asset asset, UUID streamId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteStreamAssetByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'assetId' is set
         if (assetId == null) {
             throw new ApiException("Missing the required parameter 'assetId' when calling deleteStreamAssetByUuid(Async)");
@@ -335,7 +335,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAsset deleteStreamAssetByUuid(UUID assetId, Asset asset, UUID streamId) throws ApiException {
+    public StreamAsset deleteStreamAssetByUuid(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId) throws ApiException {
         ApiResponse<StreamAsset> localVarResp = deleteStreamAssetByUuidWithHttpInfo(assetId, asset, streamId);
         return localVarResp.getData();
     }
@@ -360,7 +360,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAsset> deleteStreamAssetByUuidWithHttpInfo(UUID assetId, Asset asset, UUID streamId) throws ApiException {
+    public ApiResponse<StreamAsset> deleteStreamAssetByUuidWithHttpInfo(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId) throws ApiException {
         okhttp3.Call localVarCall = deleteStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, null);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -387,7 +387,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamAssetByUuidAsync(UUID assetId, Asset asset, UUID streamId, final ApiCallback<StreamAsset> _callback) throws ApiException {
+    public okhttp3.Call deleteStreamAssetByUuidAsync(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback<StreamAsset> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, _callback);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
@@ -412,7 +412,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamByUuidCall(UUID streamId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteStreamByUuidCall(@javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -458,7 +458,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteStreamByUuidValidateBeforeCall(UUID streamId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteStreamByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling deleteStreamByUuid(Async)");
@@ -486,7 +486,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Stream deleteStreamByUuid(UUID streamId) throws ApiException {
+    public Stream deleteStreamByUuid(@javax.annotation.Nonnull UUID streamId) throws ApiException {
         ApiResponse<Stream> localVarResp = deleteStreamByUuidWithHttpInfo(streamId);
         return localVarResp.getData();
     }
@@ -509,7 +509,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Stream> deleteStreamByUuidWithHttpInfo(UUID streamId) throws ApiException {
+    public ApiResponse<Stream> deleteStreamByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId) throws ApiException {
         okhttp3.Call localVarCall = deleteStreamByUuidValidateBeforeCall(streamId, null);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -534,7 +534,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamByUuidAsync(UUID streamId, final ApiCallback<Stream> _callback) throws ApiException {
+    public okhttp3.Call deleteStreamByUuidAsync(@javax.annotation.Nonnull UUID streamId, final ApiCallback<Stream> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStreamByUuidValidateBeforeCall(streamId, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
@@ -561,7 +561,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAssetByUuidCall(UUID assetId, Asset asset, UUID streamId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamAssetByUuidCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -609,7 +609,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamAssetByUuidValidateBeforeCall(UUID assetId, Asset asset, UUID streamId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamAssetByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'assetId' is set
         if (assetId == null) {
             throw new ApiException("Missing the required parameter 'assetId' when calling getStreamAssetByUuid(Async)");
@@ -649,7 +649,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAsset getStreamAssetByUuid(UUID assetId, Asset asset, UUID streamId) throws ApiException {
+    public StreamAsset getStreamAssetByUuid(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId) throws ApiException {
         ApiResponse<StreamAsset> localVarResp = getStreamAssetByUuidWithHttpInfo(assetId, asset, streamId);
         return localVarResp.getData();
     }
@@ -674,7 +674,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAsset> getStreamAssetByUuidWithHttpInfo(UUID assetId, Asset asset, UUID streamId) throws ApiException {
+    public ApiResponse<StreamAsset> getStreamAssetByUuidWithHttpInfo(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId) throws ApiException {
         okhttp3.Call localVarCall = getStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, null);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -701,7 +701,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAssetByUuidAsync(UUID assetId, Asset asset, UUID streamId, final ApiCallback<StreamAsset> _callback) throws ApiException {
+    public okhttp3.Call getStreamAssetByUuidAsync(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, final ApiCallback<StreamAsset> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, _callback);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
@@ -726,7 +726,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamByUuidCall(UUID streamId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamByUuidCall(@javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -772,7 +772,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamByUuidValidateBeforeCall(UUID streamId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling getStreamByUuid(Async)");
@@ -800,7 +800,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Stream getStreamByUuid(UUID streamId) throws ApiException {
+    public Stream getStreamByUuid(@javax.annotation.Nonnull UUID streamId) throws ApiException {
         ApiResponse<Stream> localVarResp = getStreamByUuidWithHttpInfo(streamId);
         return localVarResp.getData();
     }
@@ -823,7 +823,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Stream> getStreamByUuidWithHttpInfo(UUID streamId) throws ApiException {
+    public ApiResponse<Stream> getStreamByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId) throws ApiException {
         okhttp3.Call localVarCall = getStreamByUuidValidateBeforeCall(streamId, null);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -848,7 +848,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamByUuidAsync(UUID streamId, final ApiCallback<Stream> _callback) throws ApiException {
+    public okhttp3.Call getStreamByUuidAsync(@javax.annotation.Nonnull UUID streamId, final ApiCallback<Stream> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamByUuidValidateBeforeCall(streamId, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
@@ -873,7 +873,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsCall(Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamsCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -926,7 +926,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamsValidateBeforeCall(Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamsValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         return getStreamsCall(offset, limit, _callback);
 
     }
@@ -949,7 +949,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllStreamResponse getStreams(Integer offset, Integer limit) throws ApiException {
+    public GetAllStreamResponse getStreams(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetAllStreamResponse> localVarResp = getStreamsWithHttpInfo(offset, limit);
         return localVarResp.getData();
     }
@@ -972,7 +972,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllStreamResponse> getStreamsWithHttpInfo(Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetAllStreamResponse> getStreamsWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getStreamsValidateBeforeCall(offset, limit, null);
         Type localVarReturnType = new TypeToken<GetAllStreamResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -997,7 +997,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsAsync(Integer offset, Integer limit, final ApiCallback<GetAllStreamResponse> _callback) throws ApiException {
+    public okhttp3.Call getStreamsAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetAllStreamResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamsValidateBeforeCall(offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetAllStreamResponse>(){}.getType();
@@ -1023,7 +1023,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsAssetsCall(StreamAssetSearchRequest streamAssetSearchRequest, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamsAssetsCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1077,7 +1077,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamsAssetsValidateBeforeCall(StreamAssetSearchRequest streamAssetSearchRequest, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamsAssetsValidateBeforeCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamAssetSearchRequest' is set
         if (streamAssetSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'streamAssetSearchRequest' when calling getStreamsAssets(Async)");
@@ -1106,7 +1106,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllStreamAssetResponse getStreamsAssets(StreamAssetSearchRequest streamAssetSearchRequest, Integer offset, Integer limit) throws ApiException {
+    public GetAllStreamAssetResponse getStreamsAssets(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetAllStreamAssetResponse> localVarResp = getStreamsAssetsWithHttpInfo(streamAssetSearchRequest, offset, limit);
         return localVarResp.getData();
     }
@@ -1130,7 +1130,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllStreamAssetResponse> getStreamsAssetsWithHttpInfo(StreamAssetSearchRequest streamAssetSearchRequest, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetAllStreamAssetResponse> getStreamsAssetsWithHttpInfo(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getStreamsAssetsValidateBeforeCall(streamAssetSearchRequest, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetAllStreamAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1156,7 +1156,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsAssetsAsync(StreamAssetSearchRequest streamAssetSearchRequest, Integer offset, Integer limit, final ApiCallback<GetAllStreamAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call getStreamsAssetsAsync(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetAllStreamAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamsAssetsValidateBeforeCall(streamAssetSearchRequest, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetAllStreamAssetResponse>(){}.getType();
@@ -1185,7 +1185,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamAssetByUuidCall(UUID assetId, Asset asset, UUID streamId, StreamAssetPutRequest streamAssetPutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateStreamAssetByUuidCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamAssetPutRequest streamAssetPutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1234,7 +1234,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateStreamAssetByUuidValidateBeforeCall(UUID assetId, Asset asset, UUID streamId, StreamAssetPutRequest streamAssetPutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateStreamAssetByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamAssetPutRequest streamAssetPutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'assetId' is set
         if (assetId == null) {
             throw new ApiException("Missing the required parameter 'assetId' when calling updateStreamAssetByUuid(Async)");
@@ -1281,7 +1281,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAsset updateStreamAssetByUuid(UUID assetId, Asset asset, UUID streamId, StreamAssetPutRequest streamAssetPutRequest) throws ApiException {
+    public StreamAsset updateStreamAssetByUuid(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamAssetPutRequest streamAssetPutRequest) throws ApiException {
         ApiResponse<StreamAsset> localVarResp = updateStreamAssetByUuidWithHttpInfo(assetId, asset, streamId, streamAssetPutRequest);
         return localVarResp.getData();
     }
@@ -1308,7 +1308,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAsset> updateStreamAssetByUuidWithHttpInfo(UUID assetId, Asset asset, UUID streamId, StreamAssetPutRequest streamAssetPutRequest) throws ApiException {
+    public ApiResponse<StreamAsset> updateStreamAssetByUuidWithHttpInfo(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamAssetPutRequest streamAssetPutRequest) throws ApiException {
         okhttp3.Call localVarCall = updateStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, streamAssetPutRequest, null);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1337,7 +1337,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamAssetByUuidAsync(UUID assetId, Asset asset, UUID streamId, StreamAssetPutRequest streamAssetPutRequest, final ApiCallback<StreamAsset> _callback) throws ApiException {
+    public okhttp3.Call updateStreamAssetByUuidAsync(@javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull Asset asset, @javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamAssetPutRequest streamAssetPutRequest, final ApiCallback<StreamAsset> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateStreamAssetByUuidValidateBeforeCall(assetId, asset, streamId, streamAssetPutRequest, _callback);
         Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
@@ -1364,7 +1364,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamByUuidCall(UUID streamId, StreamPutRequest streamPutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateStreamByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamPutRequest streamPutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1411,7 +1411,7 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateStreamByUuidValidateBeforeCall(UUID streamId, StreamPutRequest streamPutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateStreamByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamPutRequest streamPutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling updateStreamByUuid(Async)");
@@ -1446,7 +1446,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Stream updateStreamByUuid(UUID streamId, StreamPutRequest streamPutRequest) throws ApiException {
+    public Stream updateStreamByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamPutRequest streamPutRequest) throws ApiException {
         ApiResponse<Stream> localVarResp = updateStreamByUuidWithHttpInfo(streamId, streamPutRequest);
         return localVarResp.getData();
     }
@@ -1471,7 +1471,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Stream> updateStreamByUuidWithHttpInfo(UUID streamId, StreamPutRequest streamPutRequest) throws ApiException {
+    public ApiResponse<Stream> updateStreamByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamPutRequest streamPutRequest) throws ApiException {
         okhttp3.Call localVarCall = updateStreamByUuidValidateBeforeCall(streamId, streamPutRequest, null);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1498,7 +1498,7 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamByUuidAsync(UUID streamId, StreamPutRequest streamPutRequest, final ApiCallback<Stream> _callback) throws ApiException {
+    public okhttp3.Call updateStreamByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamPutRequest streamPutRequest, final ApiCallback<Stream> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateStreamByUuidValidateBeforeCall(streamId, streamPutRequest, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();

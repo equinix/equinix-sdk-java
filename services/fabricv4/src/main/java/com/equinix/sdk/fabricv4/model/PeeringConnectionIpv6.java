@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PeeringConnectionIpv4AuthKeys;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * PeeringConnectionIpv6
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PeeringConnectionIpv6 {
   public static final String SERIALIZED_NAME_REVERSE_DNS_ADDRESS = "reverseDnsAddress";
   @SerializedName(SERIALIZED_NAME_REVERSE_DNS_ADDRESS)
@@ -288,15 +290,10 @@ public class PeeringConnectionIpv6 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("reverseDnsAddress");
-    openapiFields.add("asSet");
-    openapiFields.add("mlpeEnabled");
-    openapiFields.add("authKeys");
-    openapiFields.add("ipPrefixes");
+    openapiFields = new HashSet<String>(Arrays.asList("reverseDnsAddress", "asSet", "mlpeEnabled", "authKeys", "ipPrefixes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -308,22 +305,22 @@ public class PeeringConnectionIpv6 {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PeeringConnectionIpv6.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringConnectionIpv6 is not found in the empty JSON string", PeeringConnectionIpv6.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PeeringConnectionIpv6 is not found in the empty JSON string", PeeringConnectionIpv6.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("reverseDnsAddress") != null && !jsonObj.get("reverseDnsAddress").isJsonNull()) && !jsonObj.get("reverseDnsAddress").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reverseDnsAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reverseDnsAddress").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reverseDnsAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reverseDnsAddress").toString()));
       }
       if ((jsonObj.get("asSet") != null && !jsonObj.get("asSet").isJsonNull()) && !jsonObj.get("asSet").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `asSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asSet").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `asSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asSet").toString()));
       }
       if (jsonObj.get("authKeys") != null && !jsonObj.get("authKeys").isJsonNull()) {
         JsonArray jsonArrayauthKeys = jsonObj.getAsJsonArray("authKeys");
         if (jsonArrayauthKeys != null) {
           // ensure the json data is an array
           if (!jsonObj.get("authKeys").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `authKeys` to be an array in the JSON string but got `%s`", jsonObj.get("authKeys").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authKeys` to be an array in the JSON string but got `%s`", jsonObj.get("authKeys").toString()));
           }
 
           // validate the optional field `authKeys` (array)
@@ -334,7 +331,7 @@ public class PeeringConnectionIpv6 {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("ipPrefixes") != null && !jsonObj.get("ipPrefixes").isJsonNull() && !jsonObj.get("ipPrefixes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ipPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("ipPrefixes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("ipPrefixes").toString()));
       }
   }
 
@@ -395,7 +392,7 @@ public class PeeringConnectionIpv6 {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
