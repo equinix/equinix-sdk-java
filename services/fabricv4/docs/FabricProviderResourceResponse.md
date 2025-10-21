@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**href** | **URI** | Route Protocol URI |  [optional] [readonly] |
-|**type** | [**TypeEnum**](#TypeEnum) |  |  |
-|**uuid** | **UUID** | Equinix-assigned route protocol identifier |  [optional] |
+|**href** | **URI** | IPWAN Connection URI |  [optional] [readonly] |
+|**type** | **String** |  |  |
+|**uuid** | **String** | Equinix-assigned ipwan connection identifier |  [optional] |
 |**state** | **DeploymentState** |  |  |
 |**name** | **String** |  |  |
-|**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  |  |
+|**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  |  |
 |**_package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  |  |
 |**deploymentProperties** | [**TopologyProperties**](TopologyProperties.md) |  |  |
 |**bandwidth** | **Integer** |  |  |
@@ -23,16 +23,7 @@
 |**customerAsn** | **Long** | Customer asn |  |
 |**bgpAuthKey** | **String** | BGP authorization key |  |
 |**asOverrideEnabled** | **Boolean** | Enable AS number override |  [optional] |
-
-
-
-## Enum: TypeEnum
-
-| Name | Value |
-|---- | -----|
-| XF_ROUTER | &quot;XF_ROUTER&quot; |
-| IP_VC | &quot;IP_VC&quot; |
-| BGP | &quot;BGP&quot; |
+|**scope** | **NetworkScope** |  |  [optional] |
 
 
 

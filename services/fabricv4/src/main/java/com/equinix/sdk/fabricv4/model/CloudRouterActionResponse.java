@@ -15,8 +15,8 @@ import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CloudRouterActionState;
 import com.equinix.sdk.fabricv4.model.CloudRouterActionType;
-import com.equinix.sdk.fabricv4.model.Operation;
 import com.equinix.sdk.fabricv4.model.RouterActionsConnection;
+import com.equinix.sdk.fabricv4.model.RouterActionsRouter;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -89,10 +89,10 @@ public class CloudRouterActionResponse {
   @javax.annotation.Nullable
   private RouterActionsConnection connection;
 
-  public static final String SERIALIZED_NAME_OPERATION = "operation";
-  @SerializedName(SERIALIZED_NAME_OPERATION)
+  public static final String SERIALIZED_NAME_ROUTER = "router";
+  @SerializedName(SERIALIZED_NAME_ROUTER)
   @javax.annotation.Nullable
-  private Operation operation;
+  private RouterActionsRouter router;
 
   public CloudRouterActionResponse() {
   }
@@ -230,22 +230,22 @@ public class CloudRouterActionResponse {
   }
 
 
-  public CloudRouterActionResponse operation(@javax.annotation.Nullable Operation operation) {
-    this.operation = operation;
+  public CloudRouterActionResponse router(@javax.annotation.Nullable RouterActionsRouter router) {
+    this.router = router;
     return this;
   }
 
   /**
-   * Get operation
-   * @return operation
+   * Get router
+   * @return router
    */
   @javax.annotation.Nullable
-  public Operation getOperation() {
-    return operation;
+  public RouterActionsRouter getRouter() {
+    return router;
   }
 
-  public void setOperation(@javax.annotation.Nullable Operation operation) {
-    this.operation = operation;
+  public void setRouter(@javax.annotation.Nullable RouterActionsRouter router) {
+    this.router = router;
   }
 
   /**
@@ -310,13 +310,13 @@ public class CloudRouterActionResponse {
         Objects.equals(this.changeLog, cloudRouterActionResponse.changeLog) &&
         Objects.equals(this.href, cloudRouterActionResponse.href) &&
         Objects.equals(this.connection, cloudRouterActionResponse.connection) &&
-        Objects.equals(this.operation, cloudRouterActionResponse.operation)&&
+        Objects.equals(this.router, cloudRouterActionResponse.router)&&
         Objects.equals(this.additionalProperties, cloudRouterActionResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, uuid, description, state, changeLog, href, connection, operation, additionalProperties);
+    return Objects.hash(type, uuid, description, state, changeLog, href, connection, router, additionalProperties);
   }
 
   @Override
@@ -330,7 +330,7 @@ public class CloudRouterActionResponse {
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
-    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+    sb.append("    router: ").append(toIndentedString(router)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -361,7 +361,7 @@ public class CloudRouterActionResponse {
     openapiFields.add("changeLog");
     openapiFields.add("href");
     openapiFields.add("connection");
-    openapiFields.add("operation");
+    openapiFields.add("router");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -410,9 +410,9 @@ public class CloudRouterActionResponse {
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
         RouterActionsConnection.validateJsonElement(jsonObj.get("connection"));
       }
-      // validate the optional field `operation`
-      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        Operation.validateJsonElement(jsonObj.get("operation"));
+      // validate the optional field `router`
+      if (jsonObj.get("router") != null && !jsonObj.get("router").isJsonNull()) {
+        RouterActionsRouter.validateJsonElement(jsonObj.get("router"));
       }
   }
 

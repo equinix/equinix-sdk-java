@@ -55,7 +55,9 @@ public class ServiceProfileAccessPointCOLO {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    XF_PORT("XF_PORT");
+    XF_PORT("XF_PORT"),
+    
+    IX_PORT("IX_PORT");
 
     private String value;
 

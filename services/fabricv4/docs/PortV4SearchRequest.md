@@ -8,7 +8,7 @@ Search requests containing criteria
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filter** | [**PortExpression**](PortExpression.md) |  |  [optional] |
+|**filter** | [**PortExpression**](PortExpression.md) |  |  |
 |**pagination** | [**PaginationRequest**](PaginationRequest.md) |  |  [optional] |
 |**sort** | [**List&lt;PortSortCriteria&gt;**](PortSortCriteria.md) |  |  [optional] |
 

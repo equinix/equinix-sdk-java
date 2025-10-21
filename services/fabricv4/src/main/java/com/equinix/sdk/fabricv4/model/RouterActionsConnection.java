@@ -12,6 +12,8 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import com.equinix.sdk.fabricv4.model.ConnectionType;
+import com.equinix.sdk.fabricv4.model.Operation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -53,6 +55,21 @@ public class RouterActionsConnection {
   @javax.annotation.Nullable
   private String uuid;
 
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
+  private String href;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
+  private ConnectionType type;
+
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private Operation operation;
+
   public RouterActionsConnection() {
   }
 
@@ -72,6 +89,63 @@ public class RouterActionsConnection {
 
   public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
+  }
+
+
+  public RouterActionsConnection href(@javax.annotation.Nullable String href) {
+    this.href = href;
+    return this;
+  }
+
+  /**
+   * Get href
+   * @return href
+   */
+  @javax.annotation.Nullable
+  public String getHref() {
+    return href;
+  }
+
+  public void setHref(@javax.annotation.Nullable String href) {
+    this.href = href;
+  }
+
+
+  public RouterActionsConnection type(@javax.annotation.Nullable ConnectionType type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nullable
+  public ConnectionType getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nullable ConnectionType type) {
+    this.type = type;
+  }
+
+
+  public RouterActionsConnection operation(@javax.annotation.Nullable Operation operation) {
+    this.operation = operation;
+    return this;
+  }
+
+  /**
+   * Get operation
+   * @return operation
+   */
+  @javax.annotation.Nullable
+  public Operation getOperation() {
+    return operation;
+  }
+
+  public void setOperation(@javax.annotation.Nullable Operation operation) {
+    this.operation = operation;
   }
 
   /**
@@ -129,13 +203,16 @@ public class RouterActionsConnection {
       return false;
     }
     RouterActionsConnection routerActionsConnection = (RouterActionsConnection) o;
-    return Objects.equals(this.uuid, routerActionsConnection.uuid)&&
+    return Objects.equals(this.uuid, routerActionsConnection.uuid) &&
+        Objects.equals(this.href, routerActionsConnection.href) &&
+        Objects.equals(this.type, routerActionsConnection.type) &&
+        Objects.equals(this.operation, routerActionsConnection.operation)&&
         Objects.equals(this.additionalProperties, routerActionsConnection.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, additionalProperties);
+    return Objects.hash(uuid, href, type, operation, additionalProperties);
   }
 
   @Override
@@ -143,6 +220,9 @@ public class RouterActionsConnection {
     StringBuilder sb = new StringBuilder();
     sb.append("class RouterActionsConnection {\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -167,6 +247,9 @@ public class RouterActionsConnection {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("uuid");
+    openapiFields.add("href");
+    openapiFields.add("type");
+    openapiFields.add("operation");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -187,6 +270,17 @@ public class RouterActionsConnection {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ConnectionType.validateJsonElement(jsonObj.get("type"));
+      }
+      // validate the optional field `operation`
+      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
+        Operation.validateJsonElement(jsonObj.get("operation"));
       }
   }
 

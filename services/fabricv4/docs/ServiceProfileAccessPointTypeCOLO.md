@@ -19,6 +19,7 @@ Colo Access Point Type
 |**linkProtocolConfig** | [**ServiceProfileLinkProtocolConfig**](ServiceProfileLinkProtocolConfig.md) |  |  [optional] |
 |**enableAutoGenerateServiceKey** | **Boolean** | for verizon only. |  [optional] |
 |**connectionRedundancyRequired** | **Boolean** | Mandate redundant connections |  [optional] |
+|**selectiveRedundancy** | **Boolean** | Optional redundant connections |  [optional] |
 |**apiConfig** | [**ApiConfig**](ApiConfig.md) |  |  [optional] |
 |**connectionLabel** | **String** | custom name for \&quot;Connection\&quot; |  [optional] |
 |**authenticationKey** | [**AuthenticationKey**](AuthenticationKey.md) |  |  [optional] |

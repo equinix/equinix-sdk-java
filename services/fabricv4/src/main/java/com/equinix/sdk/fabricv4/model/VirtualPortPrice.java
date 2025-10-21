@@ -16,6 +16,7 @@ import com.equinix.sdk.fabricv4.model.ConnectivitySource;
 import com.equinix.sdk.fabricv4.model.LinkAggregationGroup;
 import com.equinix.sdk.fabricv4.model.VirtualPortConfiguration;
 import com.equinix.sdk.fabricv4.model.VirtualPortLocation;
+import com.equinix.sdk.fabricv4.model.VirtualPortPackage;
 import com.equinix.sdk.fabricv4.model.VirtualPortRedundancy;
 import com.equinix.sdk.fabricv4.model.VirtualPortServiceType;
 import com.equinix.sdk.fabricv4.model.VirtualPortType;
@@ -105,6 +106,11 @@ public class VirtualPortPrice {
   @SerializedName(SERIALIZED_NAME_SETTINGS)
   @javax.annotation.Nullable
   private VirtualPortConfiguration settings;
+
+  public static final String SERIALIZED_NAME_PACKAGE = "package";
+  @SerializedName(SERIALIZED_NAME_PACKAGE)
+  @javax.annotation.Nullable
+  private VirtualPortPackage _package;
 
   public VirtualPortPrice() {
   }
@@ -298,6 +304,25 @@ public class VirtualPortPrice {
     this.settings = settings;
   }
 
+
+  public VirtualPortPrice _package(@javax.annotation.Nullable VirtualPortPackage _package) {
+    this._package = _package;
+    return this;
+  }
+
+  /**
+   * Get _package
+   * @return _package
+   */
+  @javax.annotation.Nullable
+  public VirtualPortPackage getPackage() {
+    return _package;
+  }
+
+  public void setPackage(@javax.annotation.Nullable VirtualPortPackage _package) {
+    this._package = _package;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -362,13 +387,14 @@ public class VirtualPortPrice {
         Objects.equals(this.redundancy, virtualPortPrice.redundancy) &&
         Objects.equals(this.connectivitySource, virtualPortPrice.connectivitySource) &&
         Objects.equals(this.serviceType, virtualPortPrice.serviceType) &&
-        Objects.equals(this.settings, virtualPortPrice.settings)&&
+        Objects.equals(this.settings, virtualPortPrice.settings) &&
+        Objects.equals(this._package, virtualPortPrice._package)&&
         Objects.equals(this.additionalProperties, virtualPortPrice.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, type, location, lag, physicalPortsQuantity, bandwidth, redundancy, connectivitySource, serviceType, settings, additionalProperties);
+    return Objects.hash(uuid, type, location, lag, physicalPortsQuantity, bandwidth, redundancy, connectivitySource, serviceType, settings, _package, additionalProperties);
   }
 
   @Override
@@ -385,6 +411,7 @@ public class VirtualPortPrice {
     sb.append("    connectivitySource: ").append(toIndentedString(connectivitySource)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -418,6 +445,7 @@ public class VirtualPortPrice {
     openapiFields.add("connectivitySource");
     openapiFields.add("serviceType");
     openapiFields.add("settings");
+    openapiFields.add("package");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -466,6 +494,10 @@ public class VirtualPortPrice {
       // validate the optional field `settings`
       if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
         VirtualPortConfiguration.validateJsonElement(jsonObj.get("settings"));
+      }
+      // validate the optional field `package`
+      if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
+        VirtualPortPackage.validateJsonElement(jsonObj.get("package"));
       }
   }
 

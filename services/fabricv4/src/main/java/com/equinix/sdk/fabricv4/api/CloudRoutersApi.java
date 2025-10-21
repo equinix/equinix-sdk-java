@@ -36,6 +36,8 @@ import com.equinix.sdk.fabricv4.model.CloudRouterCommand;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandPostRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchResponse;
+import com.equinix.sdk.fabricv4.model.CloudRouterForGatewayAttachmentResponse;
+import com.equinix.sdk.fabricv4.model.CloudRouterListForGatewayAttachment;
 import com.equinix.sdk.fabricv4.model.CloudRouterPackage;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterSearchRequest;
@@ -1942,6 +1944,334 @@ public class CloudRoutersApi {
 
         okhttp3.Call localVarCall = getCloudRouterPackagesValidateBeforeCall(offset, limit, _callback);
         Type localVarReturnType = new TypeToken<PackageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getGatewayAttachmentToCloudRouterByUuid
+     * @param gatewayId Gateway UUID (required)
+     * @param routerId Cloud Router UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cloud Router associated to a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getGatewayAttachmentToCloudRouterByUuidCall(UUID gatewayId, UUID routerId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/gateways/{gatewayId}/routers/{routerId}"
+            .replace("{" + "gatewayId" + "}", localVarApiClient.escapeString(gatewayId.toString()))
+            .replace("{" + "routerId" + "}", localVarApiClient.escapeString(routerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getGatewayAttachmentToCloudRouterByUuidValidateBeforeCall(UUID gatewayId, UUID routerId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'gatewayId' is set
+        if (gatewayId == null) {
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getGatewayAttachmentToCloudRouterByUuid(Async)");
+        }
+
+        // verify the required parameter 'routerId' is set
+        if (routerId == null) {
+            throw new ApiException("Missing the required parameter 'routerId' when calling getGatewayAttachmentToCloudRouterByUuid(Async)");
+        }
+
+        return getGatewayAttachmentToCloudRouterByUuidCall(gatewayId, routerId, _callback);
+
+    }
+
+    /**
+     * Get Gateway Attachment details to a Cloud Router
+     * Get details of a Specific Gateway Attachment to a Cloud Router.
+     * @param gatewayId Gateway UUID (required)
+     * @param routerId Cloud Router UUID (required)
+     * @return CloudRouterForGatewayAttachmentResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cloud Router associated to a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public CloudRouterForGatewayAttachmentResponse getGatewayAttachmentToCloudRouterByUuid(UUID gatewayId, UUID routerId) throws ApiException {
+        ApiResponse<CloudRouterForGatewayAttachmentResponse> localVarResp = getGatewayAttachmentToCloudRouterByUuidWithHttpInfo(gatewayId, routerId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Gateway Attachment details to a Cloud Router
+     * Get details of a Specific Gateway Attachment to a Cloud Router.
+     * @param gatewayId Gateway UUID (required)
+     * @param routerId Cloud Router UUID (required)
+     * @return ApiResponse&lt;CloudRouterForGatewayAttachmentResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cloud Router associated to a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CloudRouterForGatewayAttachmentResponse> getGatewayAttachmentToCloudRouterByUuidWithHttpInfo(UUID gatewayId, UUID routerId) throws ApiException {
+        okhttp3.Call localVarCall = getGatewayAttachmentToCloudRouterByUuidValidateBeforeCall(gatewayId, routerId, null);
+        Type localVarReturnType = new TypeToken<CloudRouterForGatewayAttachmentResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Gateway Attachment details to a Cloud Router (asynchronously)
+     * Get details of a Specific Gateway Attachment to a Cloud Router.
+     * @param gatewayId Gateway UUID (required)
+     * @param routerId Cloud Router UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Cloud Router associated to a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getGatewayAttachmentToCloudRouterByUuidAsync(UUID gatewayId, UUID routerId, final ApiCallback<CloudRouterForGatewayAttachmentResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getGatewayAttachmentToCloudRouterByUuidValidateBeforeCall(gatewayId, routerId, _callback);
+        Type localVarReturnType = new TypeToken<CloudRouterForGatewayAttachmentResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listGatewayAttachmentsToCloudRouter
+     * @param gatewayId Gateway UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Cloud Routers on a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listGatewayAttachmentsToCloudRouterCall(UUID gatewayId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/gateways/{gatewayId}/routers"
+            .replace("{" + "gatewayId" + "}", localVarApiClient.escapeString(gatewayId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listGatewayAttachmentsToCloudRouterValidateBeforeCall(UUID gatewayId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'gatewayId' is set
+        if (gatewayId == null) {
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling listGatewayAttachmentsToCloudRouter(Async)");
+        }
+
+        return listGatewayAttachmentsToCloudRouterCall(gatewayId, offset, limit, _callback);
+
+    }
+
+    /**
+     * List Cloud Routers of a Gateway Attachment.
+     * Get all Cloud Routers attached on a Gateway.
+     * @param gatewayId Gateway UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @return CloudRouterListForGatewayAttachment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Cloud Routers on a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public CloudRouterListForGatewayAttachment listGatewayAttachmentsToCloudRouter(UUID gatewayId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<CloudRouterListForGatewayAttachment> localVarResp = listGatewayAttachmentsToCloudRouterWithHttpInfo(gatewayId, offset, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Cloud Routers of a Gateway Attachment.
+     * Get all Cloud Routers attached on a Gateway.
+     * @param gatewayId Gateway UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @return ApiResponse&lt;CloudRouterListForGatewayAttachment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Cloud Routers on a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CloudRouterListForGatewayAttachment> listGatewayAttachmentsToCloudRouterWithHttpInfo(UUID gatewayId, Integer offset, Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listGatewayAttachmentsToCloudRouterValidateBeforeCall(gatewayId, offset, limit, null);
+        Type localVarReturnType = new TypeToken<CloudRouterListForGatewayAttachment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Cloud Routers of a Gateway Attachment. (asynchronously)
+     * Get all Cloud Routers attached on a Gateway.
+     * @param gatewayId Gateway UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> List of Cloud Routers on a Gateway Attachment. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listGatewayAttachmentsToCloudRouterAsync(UUID gatewayId, Integer offset, Integer limit, final ApiCallback<CloudRouterListForGatewayAttachment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listGatewayAttachmentsToCloudRouterValidateBeforeCall(gatewayId, offset, limit, _callback);
+        Type localVarReturnType = new TypeToken<CloudRouterListForGatewayAttachment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import com.equinix.sdk.fabricv4.model.OperationalStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -72,6 +73,11 @@ public class ResourceData {
   @SerializedName(SERIALIZED_NAME_STATE)
   @javax.annotation.Nullable
   private String state;
+
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private OperationalStatus operation;
 
   public ResourceData() {
   }
@@ -170,6 +176,25 @@ public class ResourceData {
     this.state = state;
   }
 
+
+  public ResourceData operation(@javax.annotation.Nullable OperationalStatus operation) {
+    this.operation = operation;
+    return this;
+  }
+
+  /**
+   * Get operation
+   * @return operation
+   */
+  @javax.annotation.Nullable
+  public OperationalStatus getOperation() {
+    return operation;
+  }
+
+  public void setOperation(@javax.annotation.Nullable OperationalStatus operation) {
+    this.operation = operation;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -229,13 +254,14 @@ public class ResourceData {
         Objects.equals(this.uuid, resourceData.uuid) &&
         Objects.equals(this.type, resourceData.type) &&
         Objects.equals(this.name, resourceData.name) &&
-        Objects.equals(this.state, resourceData.state)&&
+        Objects.equals(this.state, resourceData.state) &&
+        Objects.equals(this.operation, resourceData.operation)&&
         Objects.equals(this.additionalProperties, resourceData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, state, additionalProperties);
+    return Objects.hash(href, uuid, type, name, state, operation, additionalProperties);
   }
 
   @Override
@@ -247,6 +273,7 @@ public class ResourceData {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,6 +302,7 @@ public class ResourceData {
     openapiFields.add("type");
     openapiFields.add("name");
     openapiFields.add("state");
+    openapiFields.add("operation");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -307,6 +335,10 @@ public class ResourceData {
       }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+      // validate the optional field `operation`
+      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
+        OperationalStatus.validateJsonElement(jsonObj.get("operation"));
       }
   }
 

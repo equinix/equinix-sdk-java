@@ -15,7 +15,7 @@ Cloud router actions response object
 |**changeLog** | [**Changelog**](Changelog.md) |  |  |
 |**href** | **String** |  |  [optional] |
 |**connection** | [**RouterActionsConnection**](RouterActionsConnection.md) |  |  [optional] |
-|**operation** | [**Operation**](Operation.md) |  |  [optional] |
+|**router** | [**RouterActionsRouter**](RouterActionsRouter.md) |  |  [optional] |
 
 
 

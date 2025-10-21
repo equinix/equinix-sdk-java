@@ -47,7 +47,7 @@ import java.util.Set;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * PortExpression
+ * Either use &#39;and&#39; for AND operations, &#39;or&#39; for OR operations,  or specify &#39;property&#39;, &#39;operator&#39;, and &#39;values&#39; for field filtering. Only one of these patterns should be used at a time. 
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortExpression {

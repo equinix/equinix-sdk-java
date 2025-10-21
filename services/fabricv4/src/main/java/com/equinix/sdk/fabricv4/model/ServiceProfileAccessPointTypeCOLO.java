@@ -111,6 +111,11 @@ public class ServiceProfileAccessPointTypeCOLO {
   @javax.annotation.Nullable
   private Boolean connectionRedundancyRequired = false;
 
+  public static final String SERIALIZED_NAME_SELECTIVE_REDUNDANCY = "selectiveRedundancy";
+  @SerializedName(SERIALIZED_NAME_SELECTIVE_REDUNDANCY)
+  @javax.annotation.Nullable
+  private Boolean selectiveRedundancy = false;
+
   public static final String SERIALIZED_NAME_API_CONFIG = "apiConfig";
   @SerializedName(SERIALIZED_NAME_API_CONFIG)
   @javax.annotation.Nullable
@@ -351,6 +356,25 @@ public class ServiceProfileAccessPointTypeCOLO {
   }
 
 
+  public ServiceProfileAccessPointTypeCOLO selectiveRedundancy(@javax.annotation.Nullable Boolean selectiveRedundancy) {
+    this.selectiveRedundancy = selectiveRedundancy;
+    return this;
+  }
+
+  /**
+   * Optional redundant connections
+   * @return selectiveRedundancy
+   */
+  @javax.annotation.Nullable
+  public Boolean getSelectiveRedundancy() {
+    return selectiveRedundancy;
+  }
+
+  public void setSelectiveRedundancy(@javax.annotation.Nullable Boolean selectiveRedundancy) {
+    this.selectiveRedundancy = selectiveRedundancy;
+  }
+
+
   public ServiceProfileAccessPointTypeCOLO apiConfig(@javax.annotation.Nullable ApiConfig apiConfig) {
     this.apiConfig = apiConfig;
     return this;
@@ -492,6 +516,7 @@ public class ServiceProfileAccessPointTypeCOLO {
         Objects.equals(this.linkProtocolConfig, serviceProfileAccessPointTypeCOLO.linkProtocolConfig) &&
         Objects.equals(this.enableAutoGenerateServiceKey, serviceProfileAccessPointTypeCOLO.enableAutoGenerateServiceKey) &&
         Objects.equals(this.connectionRedundancyRequired, serviceProfileAccessPointTypeCOLO.connectionRedundancyRequired) &&
+        Objects.equals(this.selectiveRedundancy, serviceProfileAccessPointTypeCOLO.selectiveRedundancy) &&
         Objects.equals(this.apiConfig, serviceProfileAccessPointTypeCOLO.apiConfig) &&
         Objects.equals(this.connectionLabel, serviceProfileAccessPointTypeCOLO.connectionLabel) &&
         Objects.equals(this.authenticationKey, serviceProfileAccessPointTypeCOLO.authenticationKey) &&
@@ -501,7 +526,7 @@ public class ServiceProfileAccessPointTypeCOLO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, type, supportedBandwidths, allowRemoteConnections, allowCustomBandwidth, bandwidthAlertThreshold, allowBandwidthAutoApproval, allowBandwidthUpgrade, linkProtocolConfig, enableAutoGenerateServiceKey, connectionRedundancyRequired, apiConfig, connectionLabel, authenticationKey, metadata, additionalProperties);
+    return Objects.hash(uuid, type, supportedBandwidths, allowRemoteConnections, allowCustomBandwidth, bandwidthAlertThreshold, allowBandwidthAutoApproval, allowBandwidthUpgrade, linkProtocolConfig, enableAutoGenerateServiceKey, connectionRedundancyRequired, selectiveRedundancy, apiConfig, connectionLabel, authenticationKey, metadata, additionalProperties);
   }
 
   @Override
@@ -519,6 +544,7 @@ public class ServiceProfileAccessPointTypeCOLO {
     sb.append("    linkProtocolConfig: ").append(toIndentedString(linkProtocolConfig)).append("\n");
     sb.append("    enableAutoGenerateServiceKey: ").append(toIndentedString(enableAutoGenerateServiceKey)).append("\n");
     sb.append("    connectionRedundancyRequired: ").append(toIndentedString(connectionRedundancyRequired)).append("\n");
+    sb.append("    selectiveRedundancy: ").append(toIndentedString(selectiveRedundancy)).append("\n");
     sb.append("    apiConfig: ").append(toIndentedString(apiConfig)).append("\n");
     sb.append("    connectionLabel: ").append(toIndentedString(connectionLabel)).append("\n");
     sb.append("    authenticationKey: ").append(toIndentedString(authenticationKey)).append("\n");
@@ -557,6 +583,7 @@ public class ServiceProfileAccessPointTypeCOLO {
     openapiFields.add("linkProtocolConfig");
     openapiFields.add("enableAutoGenerateServiceKey");
     openapiFields.add("connectionRedundancyRequired");
+    openapiFields.add("selectiveRedundancy");
     openapiFields.add("apiConfig");
     openapiFields.add("connectionLabel");
     openapiFields.add("authenticationKey");

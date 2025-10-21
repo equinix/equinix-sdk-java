@@ -21,6 +21,7 @@ import com.equinix.sdk.fabricv4.model.PrecisionTimePrice;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.PtpAdvanceConfiguration;
 import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
+import com.equinix.sdk.fabricv4.model.TimeServiceOperation;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionTimeServiceResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -215,6 +216,11 @@ public class PrecisionTimeServiceResponse {
   @javax.annotation.Nonnull
   private StateEnum state;
 
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private TimeServiceOperation operation;
+
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
   @javax.annotation.Nonnull
@@ -360,6 +366,25 @@ public class PrecisionTimeServiceResponse {
 
   public void setState(@javax.annotation.Nonnull StateEnum state) {
     this.state = state;
+  }
+
+
+  public PrecisionTimeServiceResponse operation(@javax.annotation.Nullable TimeServiceOperation operation) {
+    this.operation = operation;
+    return this;
+  }
+
+  /**
+   * Get operation
+   * @return operation
+   */
+  @javax.annotation.Nullable
+  public TimeServiceOperation getOperation() {
+    return operation;
+  }
+
+  public void setOperation(@javax.annotation.Nullable TimeServiceOperation operation) {
+    this.operation = operation;
   }
 
 
@@ -628,6 +653,7 @@ public class PrecisionTimeServiceResponse {
         Objects.equals(this.name, precisionTimeServiceResponse.name) &&
         Objects.equals(this.uuid, precisionTimeServiceResponse.uuid) &&
         Objects.equals(this.state, precisionTimeServiceResponse.state) &&
+        Objects.equals(this.operation, precisionTimeServiceResponse.operation) &&
         Objects.equals(this._package, precisionTimeServiceResponse._package) &&
         Objects.equals(this.connections, precisionTimeServiceResponse.connections) &&
         Objects.equals(this.ipv4, precisionTimeServiceResponse.ipv4) &&
@@ -643,7 +669,7 @@ public class PrecisionTimeServiceResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, name, uuid, state, _package, connections, ipv4, ntpAdvancedConfiguration, ptpAdvancedConfiguration, project, account, order, pricing, changeLog, additionalProperties);
+    return Objects.hash(href, type, name, uuid, state, operation, _package, connections, ipv4, ntpAdvancedConfiguration, ptpAdvancedConfiguration, project, account, order, pricing, changeLog, additionalProperties);
   }
 
   @Override
@@ -655,6 +681,7 @@ public class PrecisionTimeServiceResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
     sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
     sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
@@ -693,6 +720,7 @@ public class PrecisionTimeServiceResponse {
     openapiFields.add("name");
     openapiFields.add("uuid");
     openapiFields.add("state");
+    openapiFields.add("operation");
     openapiFields.add("package");
     openapiFields.add("connections");
     openapiFields.add("ipv4");
@@ -752,6 +780,10 @@ public class PrecisionTimeServiceResponse {
       }
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
+      // validate the optional field `operation`
+      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
+        TimeServiceOperation.validateJsonElement(jsonObj.get("operation"));
+      }
       // validate the required field `package`
       PrecisionTimePackagePostResponse.validateJsonElement(jsonObj.get("package"));
       if (jsonObj.get("connections") != null && !jsonObj.get("connections").isJsonNull()) {

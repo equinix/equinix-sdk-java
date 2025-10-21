@@ -49,7 +49,13 @@ public enum ConnectionType {
   
   IPWAN_VC("IPWAN_VC"),
   
-  IA_VC("IA_VC");
+  IA_VC("IA_VC"),
+  
+  MC_VC("MC_VC"),
+  
+  IX_PUBLIC_VC("IX_PUBLIC_VC"),
+  
+  IX_PRIVATE_VC("IX_PRIVATE_VC");
 
   private String value;
 

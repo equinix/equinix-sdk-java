@@ -55,7 +55,7 @@ import com.equinix.sdk.fabricv4.JSON;
 public class PortV4SearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private PortExpression filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
@@ -71,7 +71,7 @@ public class PortV4SearchRequest {
   public PortV4SearchRequest() {
   }
 
-  public PortV4SearchRequest filter(@javax.annotation.Nullable PortExpression filter) {
+  public PortV4SearchRequest filter(@javax.annotation.Nonnull PortExpression filter) {
     this.filter = filter;
     return this;
   }
@@ -80,12 +80,12 @@ public class PortV4SearchRequest {
    * Get filter
    * @return filter
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public PortExpression getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable PortExpression filter) {
+  public void setFilter(@javax.annotation.Nonnull PortExpression filter) {
     this.filter = filter;
   }
 
@@ -237,6 +237,7 @@ public class PortV4SearchRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("filter");
   }
 
   /**
@@ -251,11 +252,16 @@ public class PortV4SearchRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in PortV4SearchRequest is not found in the empty JSON string", PortV4SearchRequest.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `filter`
-      if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        PortExpression.validateJsonElement(jsonObj.get("filter"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PortV4SearchRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `filter`
+      PortExpression.validateJsonElement(jsonObj.get("filter"));
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
         PaginationRequest.validateJsonElement(jsonObj.get("pagination"));

@@ -115,7 +115,7 @@ public class PortRequest {
   private Integer connectionsCount;
 
   /**
-   * Physical Ports Type
+   * Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
    */
   @JsonAdapter(PhysicalPortsTypeEnum.Adapter.class)
   public enum PhysicalPortsTypeEnum {
@@ -127,7 +127,11 @@ public class PortRequest {
     
     _10GBASE_ER("10GBASE_ER"),
     
-    _1000BASE_SX("1000BASE_SX");
+    _1000BASE_SX("1000BASE_SX"),
+    
+    _10GBASE_SMF("10GBASE_SMF"),
+    
+    _400GBASE_LR4("400GBASE_LR4");
 
     private String value;
 
@@ -664,7 +668,7 @@ public class PortRequest {
   }
 
   /**
-   * Physical Ports Type
+   * Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
    * @return physicalPortsType
    */
   @javax.annotation.Nonnull

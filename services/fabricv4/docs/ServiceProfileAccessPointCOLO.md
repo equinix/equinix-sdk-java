@@ -22,6 +22,7 @@ Colo Access Point
 | Name | Value |
 |---- | -----|
 | XF_PORT | &quot;XF_PORT&quot; |
+| IX_PORT | &quot;IX_PORT&quot; |
 
 
 

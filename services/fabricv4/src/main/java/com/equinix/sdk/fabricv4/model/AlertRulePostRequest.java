@@ -12,6 +12,8 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import com.equinix.sdk.fabricv4.model.DetectionMethod;
+import com.equinix.sdk.fabricv4.model.MetricSelector;
 import com.equinix.sdk.fabricv4.model.ResourceSelector;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -119,87 +121,20 @@ public class AlertRulePostRequest {
   @javax.annotation.Nullable
   private Boolean enabled = true;
 
-  public static final String SERIALIZED_NAME_METRIC_NAME = "metricName";
-  @SerializedName(SERIALIZED_NAME_METRIC_NAME)
+  public static final String SERIALIZED_NAME_METRIC_SELECTOR = "metricSelector";
+  @SerializedName(SERIALIZED_NAME_METRIC_SELECTOR)
   @javax.annotation.Nullable
-  private String metricName;
+  private MetricSelector metricSelector;
 
   public static final String SERIALIZED_NAME_RESOURCE_SELECTOR = "resourceSelector";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SELECTOR)
   @javax.annotation.Nullable
   private ResourceSelector resourceSelector;
 
-  public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
-  @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
+  public static final String SERIALIZED_NAME_DETECTION_METHOD = "detectionMethod";
+  @SerializedName(SERIALIZED_NAME_DETECTION_METHOD)
   @javax.annotation.Nullable
-  private String windowSize;
-
-  /**
-   * Stream alert rule metric operand
-   */
-  @JsonAdapter(OperandEnum.Adapter.class)
-  public enum OperandEnum {
-    ABOVE("ABOVE"),
-    
-    BELOW("BELOW");
-
-    private String value;
-
-    OperandEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static OperandEnum fromValue(String value) {
-      for (OperandEnum b : OperandEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<OperandEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final OperandEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public OperandEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return OperandEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      OperandEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_OPERAND = "operand";
-  @SerializedName(SERIALIZED_NAME_OPERAND)
-  @javax.annotation.Nullable
-  private OperandEnum operand;
-
-  public static final String SERIALIZED_NAME_WARNING_THRESHOLD = "warningThreshold";
-  @SerializedName(SERIALIZED_NAME_WARNING_THRESHOLD)
-  @javax.annotation.Nullable
-  private String warningThreshold;
-
-  public static final String SERIALIZED_NAME_CRITICAL_THRESHOLD = "criticalThreshold";
-  @SerializedName(SERIALIZED_NAME_CRITICAL_THRESHOLD)
-  @javax.annotation.Nullable
-  private String criticalThreshold;
+  private DetectionMethod detectionMethod;
 
   public AlertRulePostRequest() {
   }
@@ -280,22 +215,22 @@ public class AlertRulePostRequest {
   }
 
 
-  public AlertRulePostRequest metricName(@javax.annotation.Nullable String metricName) {
-    this.metricName = metricName;
+  public AlertRulePostRequest metricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+    this.metricSelector = metricSelector;
     return this;
   }
 
   /**
-   * Stream alert rule metric name
-   * @return metricName
+   * Get metricSelector
+   * @return metricSelector
    */
   @javax.annotation.Nullable
-  public String getMetricName() {
-    return metricName;
+  public MetricSelector getMetricSelector() {
+    return metricSelector;
   }
 
-  public void setMetricName(@javax.annotation.Nullable String metricName) {
-    this.metricName = metricName;
+  public void setMetricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+    this.metricSelector = metricSelector;
   }
 
 
@@ -318,79 +253,22 @@ public class AlertRulePostRequest {
   }
 
 
-  public AlertRulePostRequest windowSize(@javax.annotation.Nullable String windowSize) {
-    this.windowSize = windowSize;
+  public AlertRulePostRequest detectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+    this.detectionMethod = detectionMethod;
     return this;
   }
 
   /**
-   * Stream alert rule metric window size
-   * @return windowSize
+   * Get detectionMethod
+   * @return detectionMethod
    */
   @javax.annotation.Nullable
-  public String getWindowSize() {
-    return windowSize;
+  public DetectionMethod getDetectionMethod() {
+    return detectionMethod;
   }
 
-  public void setWindowSize(@javax.annotation.Nullable String windowSize) {
-    this.windowSize = windowSize;
-  }
-
-
-  public AlertRulePostRequest operand(@javax.annotation.Nullable OperandEnum operand) {
-    this.operand = operand;
-    return this;
-  }
-
-  /**
-   * Stream alert rule metric operand
-   * @return operand
-   */
-  @javax.annotation.Nullable
-  public OperandEnum getOperand() {
-    return operand;
-  }
-
-  public void setOperand(@javax.annotation.Nullable OperandEnum operand) {
-    this.operand = operand;
-  }
-
-
-  public AlertRulePostRequest warningThreshold(@javax.annotation.Nullable String warningThreshold) {
-    this.warningThreshold = warningThreshold;
-    return this;
-  }
-
-  /**
-   * Stream alert rule metric warning threshold
-   * @return warningThreshold
-   */
-  @javax.annotation.Nullable
-  public String getWarningThreshold() {
-    return warningThreshold;
-  }
-
-  public void setWarningThreshold(@javax.annotation.Nullable String warningThreshold) {
-    this.warningThreshold = warningThreshold;
-  }
-
-
-  public AlertRulePostRequest criticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
-    this.criticalThreshold = criticalThreshold;
-    return this;
-  }
-
-  /**
-   * Stream alert rule metric critical threshold
-   * @return criticalThreshold
-   */
-  @javax.annotation.Nullable
-  public String getCriticalThreshold() {
-    return criticalThreshold;
-  }
-
-  public void setCriticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
-    this.criticalThreshold = criticalThreshold;
+  public void setDetectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+    this.detectionMethod = detectionMethod;
   }
 
   /**
@@ -452,18 +330,15 @@ public class AlertRulePostRequest {
         Objects.equals(this.name, alertRulePostRequest.name) &&
         Objects.equals(this.description, alertRulePostRequest.description) &&
         Objects.equals(this.enabled, alertRulePostRequest.enabled) &&
-        Objects.equals(this.metricName, alertRulePostRequest.metricName) &&
+        Objects.equals(this.metricSelector, alertRulePostRequest.metricSelector) &&
         Objects.equals(this.resourceSelector, alertRulePostRequest.resourceSelector) &&
-        Objects.equals(this.windowSize, alertRulePostRequest.windowSize) &&
-        Objects.equals(this.operand, alertRulePostRequest.operand) &&
-        Objects.equals(this.warningThreshold, alertRulePostRequest.warningThreshold) &&
-        Objects.equals(this.criticalThreshold, alertRulePostRequest.criticalThreshold)&&
+        Objects.equals(this.detectionMethod, alertRulePostRequest.detectionMethod)&&
         Objects.equals(this.additionalProperties, alertRulePostRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, enabled, metricName, resourceSelector, windowSize, operand, warningThreshold, criticalThreshold, additionalProperties);
+    return Objects.hash(type, name, description, enabled, metricSelector, resourceSelector, detectionMethod, additionalProperties);
   }
 
   @Override
@@ -474,12 +349,9 @@ public class AlertRulePostRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+    sb.append("    metricSelector: ").append(toIndentedString(metricSelector)).append("\n");
     sb.append("    resourceSelector: ").append(toIndentedString(resourceSelector)).append("\n");
-    sb.append("    windowSize: ").append(toIndentedString(windowSize)).append("\n");
-    sb.append("    operand: ").append(toIndentedString(operand)).append("\n");
-    sb.append("    warningThreshold: ").append(toIndentedString(warningThreshold)).append("\n");
-    sb.append("    criticalThreshold: ").append(toIndentedString(criticalThreshold)).append("\n");
+    sb.append("    detectionMethod: ").append(toIndentedString(detectionMethod)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -507,12 +379,9 @@ public class AlertRulePostRequest {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("enabled");
-    openapiFields.add("metricName");
+    openapiFields.add("metricSelector");
     openapiFields.add("resourceSelector");
-    openapiFields.add("windowSize");
-    openapiFields.add("operand");
-    openapiFields.add("warningThreshold");
-    openapiFields.add("criticalThreshold");
+    openapiFields.add("detectionMethod");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -544,28 +413,17 @@ public class AlertRulePostRequest {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if ((jsonObj.get("metricName") != null && !jsonObj.get("metricName").isJsonNull()) && !jsonObj.get("metricName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metricName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricName").toString()));
+      // validate the optional field `metricSelector`
+      if (jsonObj.get("metricSelector") != null && !jsonObj.get("metricSelector").isJsonNull()) {
+        MetricSelector.validateJsonElement(jsonObj.get("metricSelector"));
       }
       // validate the optional field `resourceSelector`
       if (jsonObj.get("resourceSelector") != null && !jsonObj.get("resourceSelector").isJsonNull()) {
         ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
       }
-      if ((jsonObj.get("windowSize") != null && !jsonObj.get("windowSize").isJsonNull()) && !jsonObj.get("windowSize").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `windowSize` to be a primitive type in the JSON string but got `%s`", jsonObj.get("windowSize").toString()));
-      }
-      if ((jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) && !jsonObj.get("operand").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operand` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operand").toString()));
-      }
-      // validate the optional field `operand`
-      if (jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) {
-        OperandEnum.validateJsonElement(jsonObj.get("operand"));
-      }
-      if ((jsonObj.get("warningThreshold") != null && !jsonObj.get("warningThreshold").isJsonNull()) && !jsonObj.get("warningThreshold").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `warningThreshold` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warningThreshold").toString()));
-      }
-      if ((jsonObj.get("criticalThreshold") != null && !jsonObj.get("criticalThreshold").isJsonNull()) && !jsonObj.get("criticalThreshold").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `criticalThreshold` to be a primitive type in the JSON string but got `%s`", jsonObj.get("criticalThreshold").toString()));
+      // validate the optional field `detectionMethod`
+      if (jsonObj.get("detectionMethod") != null && !jsonObj.get("detectionMethod").isJsonNull()) {
+        DetectionMethod.validateJsonElement(jsonObj.get("detectionMethod"));
       }
   }
 

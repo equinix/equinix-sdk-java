@@ -11,5 +11,9 @@
 
 * `IA_PROFILE` (value: `"IA_PROFILE"`)
 
+* `IX_PUBLIC_PROFILE` (value: `"IX_PUBLIC_PROFILE"`)
+
+* `IX_PRIVATE_PROFILE` (value: `"IX_PRIVATE_PROFILE"`)
+
 
 

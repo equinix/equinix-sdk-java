@@ -226,7 +226,7 @@ public class CloudEventsApi {
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
-     * @param limit limit (optional, default to 20)
+     * @param limit limit (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -327,7 +327,7 @@ public class CloudEventsApi {
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
-     * @param limit limit (optional, default to 20)
+     * @param limit limit (optional, default to 100)
      * @return GetCloudEventsByAssetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -354,7 +354,7 @@ public class CloudEventsApi {
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
-     * @param limit limit (optional, default to 20)
+     * @param limit limit (optional, default to 100)
      * @return ApiResponse&lt;GetCloudEventsByAssetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -382,7 +382,7 @@ public class CloudEventsApi {
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
-     * @param limit limit (optional, default to 20)
+     * @param limit limit (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
