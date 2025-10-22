@@ -1,4 +1,5 @@
 {
+  "ignoreFileOverride": "services/.openapi-generator-ignore",
   "groupId": "com.equinix.sdk",
   "artifactDescription": "Equinix Java SDK",
   "artifactUrl": "https://github.com/equinix/equinix-sdk-java",
@@ -13,10 +14,6 @@
   "hideGenerationTimestamp": true,
   "disallowAdditionalPropertiesIfNotPresent": false,
   "legacyDiscriminatorBehavior": true,
-  "globalProperties": {
-    "modelTests": false,
-    "apiTests": false
-  },
   "removeEnumValuePrefix": true,
   "enumPropertyNaming": "legacy"
 }

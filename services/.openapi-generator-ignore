@@ -1,0 +1,6 @@
+**/api/openapi.yaml
+**/git_push.sh
+**/.gitignore
+**/.travis.yml
+**/.openapi-generator-ignore
+**/test/
