@@ -42,12 +42,5 @@ update-manual-versions: version
 	find . -name pom.xml -maxdepth 2 -type f -exec sed -i.bak '1,/<version>.*<\/version>/s,<version>.*</version>,<version>$(shell cat version)</version>,' {} \;
 	find . -name pom.xml.bak -exec rm {} \;
 
-# This task removes unused files that are generated
-# in the shared parts of the SDK.  If you need to remove
-# unused files within a service directory, you must
-# redefine this task in the service-specific Makefile(s)
-remove-unused:
-	rm -rf .openapi-generator
-
 stage:
 	test -d .git && git add --intent-to-add .
