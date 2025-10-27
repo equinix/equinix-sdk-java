@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AWSDirectConnectResponse;
 import com.equinix.sdk.fabricv4.model.AWSPermission;
 import com.equinix.sdk.fabricv4.model.AWSVirtualPrivateGatewayResponse;
@@ -38,6 +39,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,7 +63,7 @@ import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(AWSProviderResourceResponse.class.getName());
 
@@ -124,7 +126,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'AWSPermission'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AWSPermission'", e);
                     }
                     // deserialize AWSDirectConnectResponse
@@ -136,7 +138,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'AWSDirectConnectResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AWSDirectConnectResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSDirectConnectResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AWSDirectConnectResponse'", e);
                     }
                     // deserialize AWSVirtualPrivateGatewayResponse
@@ -148,7 +150,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'AWSVirtualPrivateGatewayResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AWSVirtualPrivateGatewayResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSVirtualPrivateGatewayResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AWSVirtualPrivateGatewayResponse'", e);
                     }
 
@@ -158,7 +160,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for AWSProviderResourceResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for AWSProviderResourceResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -274,7 +276,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
             AWSPermission.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSPermission failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with AWSDirectConnectResponse
@@ -282,7 +284,7 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
             AWSDirectConnectResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AWSDirectConnectResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSDirectConnectResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with AWSVirtualPrivateGatewayResponse
@@ -290,11 +292,11 @@ public class AWSProviderResourceResponse extends AbstractOpenApiSchema {
             AWSVirtualPrivateGatewayResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AWSVirtualPrivateGatewayResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for AWSVirtualPrivateGatewayResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for AWSProviderResourceResponse with oneOf schemas: AWSDirectConnectResponse, AWSPermission, AWSVirtualPrivateGatewayResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for AWSProviderResourceResponse with oneOf schemas: AWSDirectConnectResponse, AWSPermission, AWSVirtualPrivateGatewayResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

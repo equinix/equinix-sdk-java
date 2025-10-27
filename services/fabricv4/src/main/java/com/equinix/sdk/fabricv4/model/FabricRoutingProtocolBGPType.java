@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.FabricBGPConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
 import com.google.gson.TypeAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Defines the structure for BGP routing protocol configuration, including protocol type, BGP IPv4 settings, customer ASN, authentication key, and deployment properties. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class FabricRoutingProtocolBGPType {
   /**
    * Routing protocol type
@@ -400,22 +402,10 @@ public class FabricRoutingProtocolBGPType {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("name");
-    openapiFields.add("uuid");
-    openapiFields.add("bgpIpv4");
-    openapiFields.add("customerAsn");
-    openapiFields.add("bgpAuthKey");
-    openapiFields.add("asOverrideEnabled");
-    openapiFields.add("deploymentProperties");
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "uuid", "bgpIpv4", "customerAsn", "bgpAuthKey", "asOverrideEnabled", "deploymentProperties"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("bgpIpv4");
-    openapiRequiredFields.add("customerAsn");
-    openapiRequiredFields.add("bgpAuthKey");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "bgpIpv4", "customerAsn", "bgpAuthKey"));
   }
 
   /**
@@ -427,32 +417,32 @@ public class FabricRoutingProtocolBGPType {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FabricRoutingProtocolBGPType.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FabricRoutingProtocolBGPType is not found in the empty JSON string", FabricRoutingProtocolBGPType.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FabricRoutingProtocolBGPType is not found in the empty JSON string", FabricRoutingProtocolBGPType.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FabricRoutingProtocolBGPType.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       // validate the required field `type`
       TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the required field `bgpIpv4`
       FabricBGPConnectionIpv4.validateJsonElement(jsonObj.get("bgpIpv4"));
       if (!jsonObj.get("bgpAuthKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));
       }
       // validate the optional field `deploymentProperties`
       if (jsonObj.get("deploymentProperties") != null && !jsonObj.get("deploymentProperties").isJsonNull()) {
@@ -517,7 +507,7 @@ public class FabricRoutingProtocolBGPType {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
