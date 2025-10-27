@@ -95,7 +95,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceTokenCall(ServiceToken serviceToken, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createServiceTokenCall(@javax.annotation.Nonnull ServiceToken serviceToken, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +145,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createServiceTokenValidateBeforeCall(ServiceToken serviceToken, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createServiceTokenValidateBeforeCall(@javax.annotation.Nonnull ServiceToken serviceToken, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceToken' is set
         if (serviceToken == null) {
             throw new ApiException("Missing the required parameter 'serviceToken' when calling createServiceToken(Async)");
@@ -173,7 +173,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceToken createServiceToken(ServiceToken serviceToken, Boolean dryRun) throws ApiException {
+    public ServiceToken createServiceToken(@javax.annotation.Nonnull ServiceToken serviceToken, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<ServiceToken> localVarResp = createServiceTokenWithHttpInfo(serviceToken, dryRun);
         return localVarResp.getData();
     }
@@ -196,7 +196,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceToken> createServiceTokenWithHttpInfo(ServiceToken serviceToken, Boolean dryRun) throws ApiException {
+    public ApiResponse<ServiceToken> createServiceTokenWithHttpInfo(@javax.annotation.Nonnull ServiceToken serviceToken, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = createServiceTokenValidateBeforeCall(serviceToken, dryRun, null);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -221,7 +221,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceTokenAsync(ServiceToken serviceToken, Boolean dryRun, final ApiCallback<ServiceToken> _callback) throws ApiException {
+    public okhttp3.Call createServiceTokenAsync(@javax.annotation.Nonnull ServiceToken serviceToken, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<ServiceToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createServiceTokenValidateBeforeCall(serviceToken, dryRun, _callback);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
@@ -246,7 +246,7 @@ public class ServiceTokensApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceTokenActionCall(UUID serviceTokenId, ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createServiceTokenActionCall(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -293,7 +293,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createServiceTokenActionValidateBeforeCall(UUID serviceTokenId, ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createServiceTokenActionValidateBeforeCall(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceTokenId' is set
         if (serviceTokenId == null) {
             throw new ApiException("Missing the required parameter 'serviceTokenId' when calling createServiceTokenAction(Async)");
@@ -326,7 +326,7 @@ public class ServiceTokensApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceToken createServiceTokenAction(UUID serviceTokenId, ServiceTokenActionRequest serviceTokenActionRequest) throws ApiException {
+    public ServiceToken createServiceTokenAction(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull ServiceTokenActionRequest serviceTokenActionRequest) throws ApiException {
         ApiResponse<ServiceToken> localVarResp = createServiceTokenActionWithHttpInfo(serviceTokenId, serviceTokenActionRequest);
         return localVarResp.getData();
     }
@@ -349,7 +349,7 @@ public class ServiceTokensApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceToken> createServiceTokenActionWithHttpInfo(UUID serviceTokenId, ServiceTokenActionRequest serviceTokenActionRequest) throws ApiException {
+    public ApiResponse<ServiceToken> createServiceTokenActionWithHttpInfo(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull ServiceTokenActionRequest serviceTokenActionRequest) throws ApiException {
         okhttp3.Call localVarCall = createServiceTokenActionValidateBeforeCall(serviceTokenId, serviceTokenActionRequest, null);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -374,7 +374,7 @@ public class ServiceTokensApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createServiceTokenActionAsync(UUID serviceTokenId, ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback<ServiceToken> _callback) throws ApiException {
+    public okhttp3.Call createServiceTokenActionAsync(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull ServiceTokenActionRequest serviceTokenActionRequest, final ApiCallback<ServiceToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createServiceTokenActionValidateBeforeCall(serviceTokenId, serviceTokenActionRequest, _callback);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
@@ -397,7 +397,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteServiceTokenByUuidCall(UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteServiceTokenByUuidCall(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -443,7 +443,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteServiceTokenByUuidValidateBeforeCall(UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteServiceTokenByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceTokenId' is set
         if (serviceTokenId == null) {
             throw new ApiException("Missing the required parameter 'serviceTokenId' when calling deleteServiceTokenByUuid(Async)");
@@ -469,7 +469,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceToken deleteServiceTokenByUuid(UUID serviceTokenId) throws ApiException {
+    public ServiceToken deleteServiceTokenByUuid(@javax.annotation.Nonnull UUID serviceTokenId) throws ApiException {
         ApiResponse<ServiceToken> localVarResp = deleteServiceTokenByUuidWithHttpInfo(serviceTokenId);
         return localVarResp.getData();
     }
@@ -490,7 +490,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceToken> deleteServiceTokenByUuidWithHttpInfo(UUID serviceTokenId) throws ApiException {
+    public ApiResponse<ServiceToken> deleteServiceTokenByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceTokenId) throws ApiException {
         okhttp3.Call localVarCall = deleteServiceTokenByUuidValidateBeforeCall(serviceTokenId, null);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -513,7 +513,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteServiceTokenByUuidAsync(UUID serviceTokenId, final ApiCallback<ServiceToken> _callback) throws ApiException {
+    public okhttp3.Call deleteServiceTokenByUuidAsync(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback<ServiceToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteServiceTokenByUuidValidateBeforeCall(serviceTokenId, _callback);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
@@ -536,7 +536,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceTokenByUuidCall(UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceTokenByUuidCall(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -582,7 +582,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceTokenByUuidValidateBeforeCall(UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceTokenByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceTokenId' is set
         if (serviceTokenId == null) {
             throw new ApiException("Missing the required parameter 'serviceTokenId' when calling getServiceTokenByUuid(Async)");
@@ -608,7 +608,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceToken getServiceTokenByUuid(UUID serviceTokenId) throws ApiException {
+    public ServiceToken getServiceTokenByUuid(@javax.annotation.Nonnull UUID serviceTokenId) throws ApiException {
         ApiResponse<ServiceToken> localVarResp = getServiceTokenByUuidWithHttpInfo(serviceTokenId);
         return localVarResp.getData();
     }
@@ -629,7 +629,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceToken> getServiceTokenByUuidWithHttpInfo(UUID serviceTokenId) throws ApiException {
+    public ApiResponse<ServiceToken> getServiceTokenByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceTokenId) throws ApiException {
         okhttp3.Call localVarCall = getServiceTokenByUuidValidateBeforeCall(serviceTokenId, null);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -652,7 +652,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceTokenByUuidAsync(UUID serviceTokenId, final ApiCallback<ServiceToken> _callback) throws ApiException {
+    public okhttp3.Call getServiceTokenByUuidAsync(@javax.annotation.Nonnull UUID serviceTokenId, final ApiCallback<ServiceToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceTokenByUuidValidateBeforeCall(serviceTokenId, _callback);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
@@ -674,7 +674,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceTokensCall(BigDecimal offset, BigDecimal limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceTokensCall(@javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -727,7 +727,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceTokensValidateBeforeCall(BigDecimal offset, BigDecimal limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceTokensValidateBeforeCall(@javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback _callback) throws ApiException {
         return getServiceTokensCall(offset, limit, _callback);
 
     }
@@ -747,7 +747,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceTokens getServiceTokens(BigDecimal offset, BigDecimal limit) throws ApiException {
+    public ServiceTokens getServiceTokens(@javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit) throws ApiException {
         ApiResponse<ServiceTokens> localVarResp = getServiceTokensWithHttpInfo(offset, limit);
         return localVarResp.getData();
     }
@@ -767,7 +767,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceTokens> getServiceTokensWithHttpInfo(BigDecimal offset, BigDecimal limit) throws ApiException {
+    public ApiResponse<ServiceTokens> getServiceTokensWithHttpInfo(@javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit) throws ApiException {
         okhttp3.Call localVarCall = getServiceTokensValidateBeforeCall(offset, limit, null);
         Type localVarReturnType = new TypeToken<ServiceTokens>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -789,7 +789,7 @@ public class ServiceTokensApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceTokensAsync(BigDecimal offset, BigDecimal limit, final ApiCallback<ServiceTokens> _callback) throws ApiException {
+    public okhttp3.Call getServiceTokensAsync(@javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback<ServiceTokens> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceTokensValidateBeforeCall(offset, limit, _callback);
         Type localVarReturnType = new TypeToken<ServiceTokens>(){}.getType();
@@ -815,7 +815,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchServiceTokensCall(ServiceTokenSearchRequest serviceTokenSearchRequest, BigDecimal offset, BigDecimal limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchServiceTokensCall(@javax.annotation.Nonnull ServiceTokenSearchRequest serviceTokenSearchRequest, @javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -869,7 +869,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchServiceTokensValidateBeforeCall(ServiceTokenSearchRequest serviceTokenSearchRequest, BigDecimal offset, BigDecimal limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchServiceTokensValidateBeforeCall(@javax.annotation.Nonnull ServiceTokenSearchRequest serviceTokenSearchRequest, @javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceTokenSearchRequest' is set
         if (serviceTokenSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'serviceTokenSearchRequest' when calling searchServiceTokens(Async)");
@@ -898,7 +898,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceTokens searchServiceTokens(ServiceTokenSearchRequest serviceTokenSearchRequest, BigDecimal offset, BigDecimal limit) throws ApiException {
+    public ServiceTokens searchServiceTokens(@javax.annotation.Nonnull ServiceTokenSearchRequest serviceTokenSearchRequest, @javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit) throws ApiException {
         ApiResponse<ServiceTokens> localVarResp = searchServiceTokensWithHttpInfo(serviceTokenSearchRequest, offset, limit);
         return localVarResp.getData();
     }
@@ -922,7 +922,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceTokens> searchServiceTokensWithHttpInfo(ServiceTokenSearchRequest serviceTokenSearchRequest, BigDecimal offset, BigDecimal limit) throws ApiException {
+    public ApiResponse<ServiceTokens> searchServiceTokensWithHttpInfo(@javax.annotation.Nonnull ServiceTokenSearchRequest serviceTokenSearchRequest, @javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit) throws ApiException {
         okhttp3.Call localVarCall = searchServiceTokensValidateBeforeCall(serviceTokenSearchRequest, offset, limit, null);
         Type localVarReturnType = new TypeToken<ServiceTokens>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -948,7 +948,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchServiceTokensAsync(ServiceTokenSearchRequest serviceTokenSearchRequest, BigDecimal offset, BigDecimal limit, final ApiCallback<ServiceTokens> _callback) throws ApiException {
+    public okhttp3.Call searchServiceTokensAsync(@javax.annotation.Nonnull ServiceTokenSearchRequest serviceTokenSearchRequest, @javax.annotation.Nullable BigDecimal offset, @javax.annotation.Nullable BigDecimal limit, final ApiCallback<ServiceTokens> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchServiceTokensValidateBeforeCall(serviceTokenSearchRequest, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<ServiceTokens>(){}.getType();
@@ -973,7 +973,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceTokenByUuidCall(UUID serviceTokenId, List<ServiceTokenChangeOperation> serviceTokenChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateServiceTokenByUuidCall(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull List<ServiceTokenChangeOperation> serviceTokenChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1024,7 +1024,7 @@ public class ServiceTokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateServiceTokenByUuidValidateBeforeCall(UUID serviceTokenId, List<ServiceTokenChangeOperation> serviceTokenChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateServiceTokenByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull List<ServiceTokenChangeOperation> serviceTokenChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceTokenId' is set
         if (serviceTokenId == null) {
             throw new ApiException("Missing the required parameter 'serviceTokenId' when calling updateServiceTokenByUuid(Async)");
@@ -1057,7 +1057,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceToken updateServiceTokenByUuid(UUID serviceTokenId, List<ServiceTokenChangeOperation> serviceTokenChangeOperation, Boolean dryRun) throws ApiException {
+    public ServiceToken updateServiceTokenByUuid(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull List<ServiceTokenChangeOperation> serviceTokenChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<ServiceToken> localVarResp = updateServiceTokenByUuidWithHttpInfo(serviceTokenId, serviceTokenChangeOperation, dryRun);
         return localVarResp.getData();
     }
@@ -1080,7 +1080,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceToken> updateServiceTokenByUuidWithHttpInfo(UUID serviceTokenId, List<ServiceTokenChangeOperation> serviceTokenChangeOperation, Boolean dryRun) throws ApiException {
+    public ApiResponse<ServiceToken> updateServiceTokenByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull List<ServiceTokenChangeOperation> serviceTokenChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = updateServiceTokenByUuidValidateBeforeCall(serviceTokenId, serviceTokenChangeOperation, dryRun, null);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1105,7 +1105,7 @@ public class ServiceTokensApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceTokenByUuidAsync(UUID serviceTokenId, List<ServiceTokenChangeOperation> serviceTokenChangeOperation, Boolean dryRun, final ApiCallback<ServiceToken> _callback) throws ApiException {
+    public okhttp3.Call updateServiceTokenByUuidAsync(@javax.annotation.Nonnull UUID serviceTokenId, @javax.annotation.Nonnull List<ServiceTokenChangeOperation> serviceTokenChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<ServiceToken> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateServiceTokenByUuidValidateBeforeCall(serviceTokenId, serviceTokenChangeOperation, dryRun, _callback);
         Type localVarReturnType = new TypeToken<ServiceToken>(){}.getType();

@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Ipv4;
 import com.equinix.sdk.fabricv4.model.Md5;
@@ -57,13 +58,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Precision Time Service Response Schema.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PrecisionTimeServiceResponse {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -714,31 +716,10 @@ public class PrecisionTimeServiceResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("name");
-    openapiFields.add("uuid");
-    openapiFields.add("state");
-    openapiFields.add("operation");
-    openapiFields.add("package");
-    openapiFields.add("connections");
-    openapiFields.add("ipv4");
-    openapiFields.add("ntpAdvancedConfiguration");
-    openapiFields.add("ptpAdvancedConfiguration");
-    openapiFields.add("project");
-    openapiFields.add("account");
-    openapiFields.add("order");
-    openapiFields.add("pricing");
-    openapiFields.add("changeLog");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "pricing", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("href");
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("uuid");
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("package");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "state", "package"));
   }
 
   /**
@@ -750,33 +731,33 @@ public class PrecisionTimeServiceResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PrecisionTimeServiceResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PrecisionTimeServiceResponse is not found in the empty JSON string", PrecisionTimeServiceResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PrecisionTimeServiceResponse is not found in the empty JSON string", PrecisionTimeServiceResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PrecisionTimeServiceResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       // validate the required field `type`
       TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if (!jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
@@ -791,7 +772,7 @@ public class PrecisionTimeServiceResponse {
         if (jsonArrayconnections != null) {
           // ensure the json data is an array
           if (!jsonObj.get("connections").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `connections` to be an array in the JSON string but got `%s`", jsonObj.get("connections").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connections` to be an array in the JSON string but got `%s`", jsonObj.get("connections").toString()));
           }
 
           // validate the optional field `connections` (array)
@@ -809,7 +790,7 @@ public class PrecisionTimeServiceResponse {
         if (jsonArrayntpAdvancedConfiguration != null) {
           // ensure the json data is an array
           if (!jsonObj.get("ntpAdvancedConfiguration").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ntpAdvancedConfiguration` to be an array in the JSON string but got `%s`", jsonObj.get("ntpAdvancedConfiguration").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ntpAdvancedConfiguration` to be an array in the JSON string but got `%s`", jsonObj.get("ntpAdvancedConfiguration").toString()));
           }
 
           // validate the optional field `ntpAdvancedConfiguration` (array)
@@ -901,7 +882,7 @@ public class PrecisionTimeServiceResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

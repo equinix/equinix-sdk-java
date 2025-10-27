@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AccessPointType;
 import com.equinix.sdk.fabricv4.model.CloudRouter;
 import com.equinix.sdk.fabricv4.model.MetalInterconnection;
@@ -54,13 +55,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Access point object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class AccessPoint {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -673,28 +675,10 @@ public class AccessPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("account");
-    openapiFields.add("location");
-    openapiFields.add("port");
-    openapiFields.add("profile");
-    openapiFields.add("router");
-    openapiFields.add("linkProtocol");
-    openapiFields.add("virtualDevice");
-    openapiFields.add("interface");
-    openapiFields.add("network");
-    openapiFields.add("sellerRegion");
-    openapiFields.add("peeringType");
-    openapiFields.add("authenticationKey");
-    openapiFields.add("providerConnectionId");
-    openapiFields.add("virtualNetwork");
-    openapiFields.add("interconnection");
-    openapiFields.add("vpic_interface");
-    openapiFields.add("role");
+    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "vpic_interface", "role"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -706,7 +690,7 @@ public class AccessPoint {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AccessPoint is not found in the empty JSON string", AccessPoint.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AccessPoint is not found in the empty JSON string", AccessPoint.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -751,17 +735,17 @@ public class AccessPoint {
         SimplifiedNetwork.validateJsonElement(jsonObj.get("network"));
       }
       if ((jsonObj.get("sellerRegion") != null && !jsonObj.get("sellerRegion").isJsonNull()) && !jsonObj.get("sellerRegion").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sellerRegion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerRegion").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sellerRegion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerRegion").toString()));
       }
       // validate the optional field `peeringType`
       if (jsonObj.get("peeringType") != null && !jsonObj.get("peeringType").isJsonNull()) {
         PeeringType.validateJsonElement(jsonObj.get("peeringType"));
       }
       if ((jsonObj.get("authenticationKey") != null && !jsonObj.get("authenticationKey").isJsonNull()) && !jsonObj.get("authenticationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `authenticationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authenticationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authenticationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authenticationKey").toString()));
       }
       if ((jsonObj.get("providerConnectionId") != null && !jsonObj.get("providerConnectionId").isJsonNull()) && !jsonObj.get("providerConnectionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `providerConnectionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("providerConnectionId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `providerConnectionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("providerConnectionId").toString()));
       }
       // validate the optional field `virtualNetwork`
       if (jsonObj.get("virtualNetwork") != null && !jsonObj.get("virtualNetwork").isJsonNull()) {
@@ -776,7 +760,7 @@ public class AccessPoint {
         VpicInterface.validateJsonElement(jsonObj.get("vpic_interface"));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       // validate the optional field `role`
       if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
@@ -841,7 +825,7 @@ public class AccessPoint {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

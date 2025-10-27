@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * PTP Advanced Configuration.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PtpAdvanceConfiguration {
   /**
    * Time Scale value, ARB denotes Arbitrary and PTP denotes Precision Time Protocol.
@@ -669,19 +671,10 @@ public class PtpAdvanceConfiguration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("timeScale");
-    openapiFields.add("domain");
-    openapiFields.add("priority1");
-    openapiFields.add("priority2");
-    openapiFields.add("logAnnounceInterval");
-    openapiFields.add("logSyncInterval");
-    openapiFields.add("logDelayReqInterval");
-    openapiFields.add("transportMode");
-    openapiFields.add("grantTime");
+    openapiFields = new HashSet<String>(Arrays.asList("timeScale", "domain", "priority1", "priority2", "logAnnounceInterval", "logSyncInterval", "logDelayReqInterval", "transportMode", "grantTime"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -693,12 +686,12 @@ public class PtpAdvanceConfiguration {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PtpAdvanceConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PtpAdvanceConfiguration is not found in the empty JSON string", PtpAdvanceConfiguration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PtpAdvanceConfiguration is not found in the empty JSON string", PtpAdvanceConfiguration.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("timeScale") != null && !jsonObj.get("timeScale").isJsonNull()) && !jsonObj.get("timeScale").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `timeScale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeScale").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `timeScale` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timeScale").toString()));
       }
       // validate the optional field `timeScale`
       if (jsonObj.get("timeScale") != null && !jsonObj.get("timeScale").isJsonNull()) {
@@ -717,7 +710,7 @@ public class PtpAdvanceConfiguration {
         LogDelayReqIntervalEnum.validateJsonElement(jsonObj.get("logDelayReqInterval"));
       }
       if ((jsonObj.get("transportMode") != null && !jsonObj.get("transportMode").isJsonNull()) && !jsonObj.get("transportMode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `transportMode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transportMode").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `transportMode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transportMode").toString()));
       }
       // validate the optional field `transportMode`
       if (jsonObj.get("transportMode") != null && !jsonObj.get("transportMode").isJsonNull()) {
@@ -782,7 +775,7 @@ public class PtpAdvanceConfiguration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

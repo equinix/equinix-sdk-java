@@ -93,7 +93,7 @@ public class PeeringProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionPeeringProtocolCall(UUID uuid, ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionPeeringProtocolCall(@javax.annotation.Nonnull UUID uuid, @javax.annotation.Nonnull ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class PeeringProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionPeeringProtocolValidateBeforeCall(UUID uuid, ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionPeeringProtocolValidateBeforeCall(@javax.annotation.Nonnull UUID uuid, @javax.annotation.Nonnull ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'uuid' is set
         if (uuid == null) {
             throw new ApiException("Missing the required parameter 'uuid' when calling createConnectionPeeringProtocol(Async)");
@@ -175,7 +175,7 @@ public class PeeringProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PeeringProtocolData createConnectionPeeringProtocol(UUID uuid, ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest) throws ApiException {
+    public PeeringProtocolData createConnectionPeeringProtocol(@javax.annotation.Nonnull UUID uuid, @javax.annotation.Nonnull ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest) throws ApiException {
         ApiResponse<PeeringProtocolData> localVarResp = createConnectionPeeringProtocolWithHttpInfo(uuid, connectionPeeringProtocolPostRequest);
         return localVarResp.getData();
     }
@@ -200,7 +200,7 @@ public class PeeringProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PeeringProtocolData> createConnectionPeeringProtocolWithHttpInfo(UUID uuid, ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest) throws ApiException {
+    public ApiResponse<PeeringProtocolData> createConnectionPeeringProtocolWithHttpInfo(@javax.annotation.Nonnull UUID uuid, @javax.annotation.Nonnull ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createConnectionPeeringProtocolValidateBeforeCall(uuid, connectionPeeringProtocolPostRequest, null);
         Type localVarReturnType = new TypeToken<PeeringProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -227,7 +227,7 @@ public class PeeringProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionPeeringProtocolAsync(UUID uuid, ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback<PeeringProtocolData> _callback) throws ApiException {
+    public okhttp3.Call createConnectionPeeringProtocolAsync(@javax.annotation.Nonnull UUID uuid, @javax.annotation.Nonnull ConnectionPeeringProtocolPostRequest connectionPeeringProtocolPostRequest, final ApiCallback<PeeringProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConnectionPeeringProtocolValidateBeforeCall(uuid, connectionPeeringProtocolPostRequest, _callback);
         Type localVarReturnType = new TypeToken<PeeringProtocolData>(){}.getType();
