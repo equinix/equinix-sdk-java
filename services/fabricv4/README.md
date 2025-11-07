@@ -438,6 +438,7 @@ Class | Method | HTTP request | Description
  - [FabricProviderResource](docs/FabricProviderResource.md)
  - [FabricProviderResourceResponse](docs/FabricProviderResourceResponse.md)
  - [FabricProviderResponse](docs/FabricProviderResponse.md)
+ - [FabricRouteProtocolsResponse](docs/FabricRouteProtocolsResponse.md)
  - [FabricRouter](docs/FabricRouter.md)
  - [FabricRouterResponse](docs/FabricRouterResponse.md)
  - [FabricRoutingProtocolBGPType](docs/FabricRoutingProtocolBGPType.md)
