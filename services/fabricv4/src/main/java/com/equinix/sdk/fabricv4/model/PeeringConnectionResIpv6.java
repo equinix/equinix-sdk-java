@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PeeringConnectionResIpv4AuthKeys;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * BGP IPv6 Connection Details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PeeringConnectionResIpv6 {
   public static final String SERIALIZED_NAME_CUSTOMER_PEER_IP = "customerPeerIp";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_PEER_IP)
@@ -392,19 +394,10 @@ public class PeeringConnectionResIpv6 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("customerPeerIp");
-    openapiFields.add("primaryEquinixPeerIp");
-    openapiFields.add("secondaryEquinixPeerIp");
-    openapiFields.add("reverseDnsAddress");
-    openapiFields.add("asSet");
-    openapiFields.add("mlpeEnabled");
-    openapiFields.add("authKeys");
-    openapiFields.add("ipPrefixes");
-    openapiFields.add("enabled");
+    openapiFields = new HashSet<String>(Arrays.asList("customerPeerIp", "primaryEquinixPeerIp", "secondaryEquinixPeerIp", "reverseDnsAddress", "asSet", "mlpeEnabled", "authKeys", "ipPrefixes", "enabled"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -416,31 +409,31 @@ public class PeeringConnectionResIpv6 {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PeeringConnectionResIpv6.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringConnectionResIpv6 is not found in the empty JSON string", PeeringConnectionResIpv6.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PeeringConnectionResIpv6 is not found in the empty JSON string", PeeringConnectionResIpv6.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("customerPeerIp") != null && !jsonObj.get("customerPeerIp").isJsonNull()) && !jsonObj.get("customerPeerIp").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customerPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerPeerIp").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customerPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerPeerIp").toString()));
       }
       if ((jsonObj.get("primaryEquinixPeerIp") != null && !jsonObj.get("primaryEquinixPeerIp").isJsonNull()) && !jsonObj.get("primaryEquinixPeerIp").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primaryEquinixPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primaryEquinixPeerIp").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `primaryEquinixPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primaryEquinixPeerIp").toString()));
       }
       if ((jsonObj.get("secondaryEquinixPeerIp") != null && !jsonObj.get("secondaryEquinixPeerIp").isJsonNull()) && !jsonObj.get("secondaryEquinixPeerIp").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secondaryEquinixPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondaryEquinixPeerIp").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secondaryEquinixPeerIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondaryEquinixPeerIp").toString()));
       }
       if ((jsonObj.get("reverseDnsAddress") != null && !jsonObj.get("reverseDnsAddress").isJsonNull()) && !jsonObj.get("reverseDnsAddress").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reverseDnsAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reverseDnsAddress").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reverseDnsAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reverseDnsAddress").toString()));
       }
       if ((jsonObj.get("asSet") != null && !jsonObj.get("asSet").isJsonNull()) && !jsonObj.get("asSet").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `asSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asSet").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `asSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asSet").toString()));
       }
       if (jsonObj.get("authKeys") != null && !jsonObj.get("authKeys").isJsonNull()) {
         JsonArray jsonArrayauthKeys = jsonObj.getAsJsonArray("authKeys");
         if (jsonArrayauthKeys != null) {
           // ensure the json data is an array
           if (!jsonObj.get("authKeys").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `authKeys` to be an array in the JSON string but got `%s`", jsonObj.get("authKeys").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authKeys` to be an array in the JSON string but got `%s`", jsonObj.get("authKeys").toString()));
           }
 
           // validate the optional field `authKeys` (array)
@@ -451,7 +444,7 @@ public class PeeringConnectionResIpv6 {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("ipPrefixes") != null && !jsonObj.get("ipPrefixes").isJsonNull() && !jsonObj.get("ipPrefixes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ipPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("ipPrefixes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipPrefixes` to be an array in the JSON string but got `%s`", jsonObj.get("ipPrefixes").toString()));
       }
   }
 
@@ -512,7 +505,7 @@ public class PeeringConnectionResIpv6 {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

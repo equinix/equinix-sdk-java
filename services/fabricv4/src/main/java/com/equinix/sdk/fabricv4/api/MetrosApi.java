@@ -89,7 +89,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetroByCodeCall(String metroCode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetroByCodeCall(@javax.annotation.Nonnull String metroCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class MetrosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetroByCodeValidateBeforeCall(String metroCode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetroByCodeValidateBeforeCall(@javax.annotation.Nonnull String metroCode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'metroCode' is set
         if (metroCode == null) {
             throw new ApiException("Missing the required parameter 'metroCode' when calling getMetroByCode(Async)");
@@ -161,7 +161,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Metro getMetroByCode(String metroCode) throws ApiException {
+    public Metro getMetroByCode(@javax.annotation.Nonnull String metroCode) throws ApiException {
         ApiResponse<Metro> localVarResp = getMetroByCodeWithHttpInfo(metroCode);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Metro> getMetroByCodeWithHttpInfo(String metroCode) throws ApiException {
+    public ApiResponse<Metro> getMetroByCodeWithHttpInfo(@javax.annotation.Nonnull String metroCode) throws ApiException {
         okhttp3.Call localVarCall = getMetroByCodeValidateBeforeCall(metroCode, null);
         Type localVarReturnType = new TypeToken<Metro>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetroByCodeAsync(String metroCode, final ApiCallback<Metro> _callback) throws ApiException {
+    public okhttp3.Call getMetroByCodeAsync(@javax.annotation.Nonnull String metroCode, final ApiCallback<Metro> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetroByCodeValidateBeforeCall(metroCode, _callback);
         Type localVarReturnType = new TypeToken<Metro>(){}.getType();
@@ -230,7 +230,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetrosCall(Presence presence, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetrosCall(@javax.annotation.Nullable Presence presence, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,7 +287,7 @@ public class MetrosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetrosValidateBeforeCall(Presence presence, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetrosValidateBeforeCall(@javax.annotation.Nullable Presence presence, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         return getMetrosCall(presence, offset, limit, _callback);
 
     }
@@ -310,7 +310,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public MetroResponse getMetros(Presence presence, Integer offset, Integer limit) throws ApiException {
+    public MetroResponse getMetros(@javax.annotation.Nullable Presence presence, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<MetroResponse> localVarResp = getMetrosWithHttpInfo(presence, offset, limit);
         return localVarResp.getData();
     }
@@ -333,7 +333,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MetroResponse> getMetrosWithHttpInfo(Presence presence, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<MetroResponse> getMetrosWithHttpInfo(@javax.annotation.Nullable Presence presence, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getMetrosValidateBeforeCall(presence, offset, limit, null);
         Type localVarReturnType = new TypeToken<MetroResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -358,7 +358,7 @@ public class MetrosApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetrosAsync(Presence presence, Integer offset, Integer limit, final ApiCallback<MetroResponse> _callback) throws ApiException {
+    public okhttp3.Call getMetrosAsync(@javax.annotation.Nullable Presence presence, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<MetroResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetrosValidateBeforeCall(presence, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<MetroResponse>(){}.getType();

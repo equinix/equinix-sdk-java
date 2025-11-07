@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequestPackage;
 import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
@@ -46,6 +47,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -69,7 +71,7 @@ import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(FabricProviderResourceResponse.class.getName());
 
@@ -146,7 +148,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FabricRouterResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricRouterResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricRouterResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricRouterResponse'", e);
                     }
                     // deserialize FabricConnectionResponse
@@ -158,7 +160,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FabricConnectionResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricConnectionResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricConnectionResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricConnectionResponse'", e);
                     }
                     // deserialize FabricRouteProtocolsResponse
@@ -170,7 +172,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FabricRouteProtocolsResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricRouteProtocolsResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricRouteProtocolsResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricRouteProtocolsResponse'", e);
                     }
                     // deserialize FabricIPWANResponse
@@ -182,7 +184,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FabricIPWANResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricIPWANResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricIPWANResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricIPWANResponse'", e);
                     }
                     // deserialize FabricIPWANConnectionResponse
@@ -194,7 +196,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'FabricIPWANConnectionResponse'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricIPWANConnectionResponse failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricIPWANConnectionResponse failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'FabricIPWANConnectionResponse'", e);
                     }
 
@@ -204,7 +206,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for FabricProviderResourceResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for FabricProviderResourceResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -354,7 +356,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
             FabricRouterResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricRouterResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricRouterResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FabricConnectionResponse
@@ -362,7 +364,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
             FabricConnectionResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricConnectionResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricConnectionResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FabricRouteProtocolsResponse
@@ -370,7 +372,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
             FabricRouteProtocolsResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricRouteProtocolsResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricRouteProtocolsResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FabricIPWANResponse
@@ -378,7 +380,7 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
             FabricIPWANResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricIPWANResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricIPWANResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with FabricIPWANConnectionResponse
@@ -386,11 +388,11 @@ public class FabricProviderResourceResponse extends AbstractOpenApiSchema {
             FabricIPWANConnectionResponse.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricIPWANConnectionResponse failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for FabricIPWANConnectionResponse failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for FabricProviderResourceResponse with oneOf schemas: FabricConnectionResponse, FabricIPWANConnectionResponse, FabricIPWANResponse, FabricRouteProtocolsResponse, FabricRouterResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for FabricProviderResourceResponse with oneOf schemas: FabricConnectionResponse, FabricIPWANConnectionResponse, FabricIPWANResponse, FabricRouteProtocolsResponse, FabricRouterResponse. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

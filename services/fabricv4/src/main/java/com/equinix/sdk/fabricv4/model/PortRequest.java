@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.EndCustomer;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
@@ -66,13 +67,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * PortRequest is the Request Object for creating single and bulk fabric ports
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortRequest {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -1523,60 +1525,10 @@ public class PortRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("id");
-    openapiFields.add("uuid");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("physicalPortsSpeed");
-    openapiFields.add("connectionsCount");
-    openapiFields.add("physicalPortsType");
-    openapiFields.add("physicalPortsCount");
-    openapiFields.add("connectivitySourceType");
-    openapiFields.add("bmmrType");
-    openapiFields.add("project");
-    openapiFields.add("state");
-    openapiFields.add("order");
-    openapiFields.add("operation");
-    openapiFields.add("account");
-    openapiFields.add("change");
-    openapiFields.add("changeLog");
-    openapiFields.add("serviceType");
-    openapiFields.add("bandwidth");
-    openapiFields.add("availableBandwidth");
-    openapiFields.add("usedBandwidth");
-    openapiFields.add("location");
-    openapiFields.add("device");
-    openapiFields.add("interface");
-    openapiFields.add("demarcationPointIbx");
-    openapiFields.add("tetherIbx");
-    openapiFields.add("demarcationPoint");
-    openapiFields.add("redundancy");
-    openapiFields.add("encapsulation");
-    openapiFields.add("lagEnabled");
-    openapiFields.add("lag");
-    openapiFields.add("asn");
-    openapiFields.add("package");
-    openapiFields.add("settings");
-    openapiFields.add("physicalPortQuantity");
-    openapiFields.add("notifications");
-    openapiFields.add("additionalInfo");
-    openapiFields.add("endCustomer");
-    openapiFields.add("physicalPorts");
-    openapiFields.add("loas");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("physicalPortsSpeed");
-    openapiRequiredFields.add("physicalPortsType");
-    openapiRequiredFields.add("connectivitySourceType");
-    openapiRequiredFields.add("account");
-    openapiRequiredFields.add("location");
-    openapiRequiredFields.add("encapsulation");
-    openapiRequiredFields.add("settings");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "connectivitySourceType", "account", "location", "encapsulation", "settings"));
   }
 
   /**
@@ -1588,43 +1540,43 @@ public class PortRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortRequest is not found in the empty JSON string", PortRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortRequest is not found in the empty JSON string", PortRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PortRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       // validate the required field `type`
       PortType.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("physicalPortsType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `physicalPortsType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("physicalPortsType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `physicalPortsType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("physicalPortsType").toString()));
       }
       // validate the required field `physicalPortsType`
       PhysicalPortsTypeEnum.validateJsonElement(jsonObj.get("physicalPortsType"));
       if (!jsonObj.get("connectivitySourceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `connectivitySourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectivitySourceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connectivitySourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectivitySourceType").toString()));
       }
       // validate the required field `connectivitySourceType`
       ConnectivitySourceTypeEnum.validateJsonElement(jsonObj.get("connectivitySourceType"));
       if ((jsonObj.get("bmmrType") != null && !jsonObj.get("bmmrType").isJsonNull()) && !jsonObj.get("bmmrType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bmmrType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bmmrType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bmmrType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bmmrType").toString()));
       }
       // validate the optional field `bmmrType`
       if (jsonObj.get("bmmrType") != null && !jsonObj.get("bmmrType").isJsonNull()) {
@@ -1657,7 +1609,7 @@ public class PortRequest {
         Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
       if ((jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) && !jsonObj.get("serviceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
       }
       // validate the optional field `serviceType`
       if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
@@ -1674,10 +1626,10 @@ public class PortRequest {
         PortInterface.validateJsonElement(jsonObj.get("interface"));
       }
       if ((jsonObj.get("demarcationPointIbx") != null && !jsonObj.get("demarcationPointIbx").isJsonNull()) && !jsonObj.get("demarcationPointIbx").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `demarcationPointIbx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("demarcationPointIbx").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `demarcationPointIbx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("demarcationPointIbx").toString()));
       }
       if ((jsonObj.get("tetherIbx") != null && !jsonObj.get("tetherIbx").isJsonNull()) && !jsonObj.get("tetherIbx").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tetherIbx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tetherIbx").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tetherIbx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tetherIbx").toString()));
       }
       // validate the optional field `demarcationPoint`
       if (jsonObj.get("demarcationPoint") != null && !jsonObj.get("demarcationPoint").isJsonNull()) {
@@ -1704,7 +1656,7 @@ public class PortRequest {
         if (jsonArraynotifications != null) {
           // ensure the json data is an array
           if (!jsonObj.get("notifications").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
           }
 
           // validate the optional field `notifications` (array)
@@ -1718,7 +1670,7 @@ public class PortRequest {
         if (jsonArrayadditionalInfo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("additionalInfo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
           }
 
           // validate the optional field `additionalInfo` (array)
@@ -1736,7 +1688,7 @@ public class PortRequest {
         if (jsonArrayphysicalPorts != null) {
           // ensure the json data is an array
           if (!jsonObj.get("physicalPorts").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `physicalPorts` to be an array in the JSON string but got `%s`", jsonObj.get("physicalPorts").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `physicalPorts` to be an array in the JSON string but got `%s`", jsonObj.get("physicalPorts").toString()));
           }
 
           // validate the optional field `physicalPorts` (array)
@@ -1750,7 +1702,7 @@ public class PortRequest {
         if (jsonArrayloas != null) {
           // ensure the json data is an array
           if (!jsonObj.get("loas").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `loas` to be an array in the JSON string but got `%s`", jsonObj.get("loas").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `loas` to be an array in the JSON string but got `%s`", jsonObj.get("loas").toString()));
           }
 
           // validate the optional field `loas` (array)
@@ -1818,7 +1770,7 @@ public class PortRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

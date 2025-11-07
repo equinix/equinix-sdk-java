@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * SimplifiedAccount
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SimplifiedAccount {
   public static final String SERIALIZED_NAME_ACCOUNT_NUMBER = "accountNumber";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
@@ -451,22 +453,10 @@ public class SimplifiedAccount {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("accountNumber");
-    openapiFields.add("accountName");
-    openapiFields.add("orgId");
-    openapiFields.add("organizationName");
-    openapiFields.add("globalOrgId");
-    openapiFields.add("globalOrganizationName");
-    openapiFields.add("ucmId");
-    openapiFields.add("globalCustId");
-    openapiFields.add("resellerAccountNumber");
-    openapiFields.add("resellerAccountName");
-    openapiFields.add("resellerUcmId");
-    openapiFields.add("resellerOrgId");
+    openapiFields = new HashSet<String>(Arrays.asList("accountNumber", "accountName", "orgId", "organizationName", "globalOrgId", "globalOrganizationName", "ucmId", "globalCustId", "resellerAccountNumber", "resellerAccountName", "resellerUcmId", "resellerOrgId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -478,33 +468,33 @@ public class SimplifiedAccount {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SimplifiedAccount.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedAccount is not found in the empty JSON string", SimplifiedAccount.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SimplifiedAccount is not found in the empty JSON string", SimplifiedAccount.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("accountName") != null && !jsonObj.get("accountName").isJsonNull()) && !jsonObj.get("accountName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountName").toString()));
       }
       if ((jsonObj.get("organizationName") != null && !jsonObj.get("organizationName").isJsonNull()) && !jsonObj.get("organizationName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organizationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organizationName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `organizationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organizationName").toString()));
       }
       if ((jsonObj.get("globalOrgId") != null && !jsonObj.get("globalOrgId").isJsonNull()) && !jsonObj.get("globalOrgId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `globalOrgId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrgId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `globalOrgId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrgId").toString()));
       }
       if ((jsonObj.get("globalOrganizationName") != null && !jsonObj.get("globalOrganizationName").isJsonNull()) && !jsonObj.get("globalOrganizationName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `globalOrganizationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrganizationName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `globalOrganizationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrganizationName").toString()));
       }
       if ((jsonObj.get("ucmId") != null && !jsonObj.get("ucmId").isJsonNull()) && !jsonObj.get("ucmId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ucmId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ucmId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ucmId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ucmId").toString()));
       }
       if ((jsonObj.get("globalCustId") != null && !jsonObj.get("globalCustId").isJsonNull()) && !jsonObj.get("globalCustId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `globalCustId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalCustId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `globalCustId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalCustId").toString()));
       }
       if ((jsonObj.get("resellerAccountName") != null && !jsonObj.get("resellerAccountName").isJsonNull()) && !jsonObj.get("resellerAccountName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resellerAccountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resellerAccountName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resellerAccountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resellerAccountName").toString()));
       }
       if ((jsonObj.get("resellerUcmId") != null && !jsonObj.get("resellerUcmId").isJsonNull()) && !jsonObj.get("resellerUcmId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resellerUcmId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resellerUcmId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resellerUcmId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resellerUcmId").toString()));
       }
   }
 
@@ -565,7 +555,7 @@ public class SimplifiedAccount {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

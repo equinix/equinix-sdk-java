@@ -99,7 +99,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionCall(ConnectionPostRequest connectionPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionCall(@javax.annotation.Nonnull ConnectionPostRequest connectionPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionValidateBeforeCall(ConnectionPostRequest connectionPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionValidateBeforeCall(@javax.annotation.Nonnull ConnectionPostRequest connectionPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionPostRequest' is set
         if (connectionPostRequest == null) {
             throw new ApiException("Missing the required parameter 'connectionPostRequest' when calling createConnection(Async)");
@@ -178,7 +178,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public Connection createConnection(ConnectionPostRequest connectionPostRequest, Boolean dryRun) throws ApiException {
+    public Connection createConnection(@javax.annotation.Nonnull ConnectionPostRequest connectionPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<Connection> localVarResp = createConnectionWithHttpInfo(connectionPostRequest, dryRun);
         return localVarResp.getData();
     }
@@ -202,7 +202,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Connection> createConnectionWithHttpInfo(ConnectionPostRequest connectionPostRequest, Boolean dryRun) throws ApiException {
+    public ApiResponse<Connection> createConnectionWithHttpInfo(@javax.annotation.Nonnull ConnectionPostRequest connectionPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = createConnectionValidateBeforeCall(connectionPostRequest, dryRun, null);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -228,7 +228,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionAsync(ConnectionPostRequest connectionPostRequest, Boolean dryRun, final ApiCallback<Connection> _callback) throws ApiException {
+    public okhttp3.Call createConnectionAsync(@javax.annotation.Nonnull ConnectionPostRequest connectionPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<Connection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConnectionValidateBeforeCall(connectionPostRequest, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
@@ -253,7 +253,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionActionCall(String connectionId, ConnectionActionRequest connectionActionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionActionCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionActionRequest connectionActionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,7 +300,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionActionValidateBeforeCall(String connectionId, ConnectionActionRequest connectionActionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionActionValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionActionRequest connectionActionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling createConnectionAction(Async)");
@@ -333,7 +333,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionAction createConnectionAction(String connectionId, ConnectionActionRequest connectionActionRequest) throws ApiException {
+    public ConnectionAction createConnectionAction(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionActionRequest connectionActionRequest) throws ApiException {
         ApiResponse<ConnectionAction> localVarResp = createConnectionActionWithHttpInfo(connectionId, connectionActionRequest);
         return localVarResp.getData();
     }
@@ -356,7 +356,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionAction> createConnectionActionWithHttpInfo(String connectionId, ConnectionActionRequest connectionActionRequest) throws ApiException {
+    public ApiResponse<ConnectionAction> createConnectionActionWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionActionRequest connectionActionRequest) throws ApiException {
         okhttp3.Call localVarCall = createConnectionActionValidateBeforeCall(connectionId, connectionActionRequest, null);
         Type localVarReturnType = new TypeToken<ConnectionAction>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -381,7 +381,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionActionAsync(String connectionId, ConnectionActionRequest connectionActionRequest, final ApiCallback<ConnectionAction> _callback) throws ApiException {
+    public okhttp3.Call createConnectionActionAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionActionRequest connectionActionRequest, final ApiCallback<ConnectionAction> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConnectionActionValidateBeforeCall(connectionId, connectionActionRequest, _callback);
         Type localVarReturnType = new TypeToken<ConnectionAction>(){}.getType();
@@ -406,7 +406,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConnectionByUuidCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteConnectionByUuidCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -452,7 +452,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteConnectionByUuidValidateBeforeCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteConnectionByUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling deleteConnectionByUuid(Async)");
@@ -480,7 +480,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public Connection deleteConnectionByUuid(String connectionId) throws ApiException {
+    public Connection deleteConnectionByUuid(@javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<Connection> localVarResp = deleteConnectionByUuidWithHttpInfo(connectionId);
         return localVarResp.getData();
     }
@@ -503,7 +503,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Connection> deleteConnectionByUuidWithHttpInfo(String connectionId) throws ApiException {
+    public ApiResponse<Connection> deleteConnectionByUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = deleteConnectionByUuidValidateBeforeCall(connectionId, null);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -528,7 +528,7 @@ public class ConnectionsApi {
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConnectionByUuidAsync(String connectionId, final ApiCallback<Connection> _callback) throws ApiException {
+    public okhttp3.Call deleteConnectionByUuidAsync(@javax.annotation.Nonnull String connectionId, final ApiCallback<Connection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteConnectionByUuidValidateBeforeCall(connectionId, _callback);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
@@ -552,7 +552,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionByUuidCall(String connectionId, ConnectionDirection direction, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionByUuidCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable ConnectionDirection direction, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -602,7 +602,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionByUuidValidateBeforeCall(String connectionId, ConnectionDirection direction, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionByUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable ConnectionDirection direction, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionByUuid(Async)");
@@ -629,7 +629,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Connection getConnectionByUuid(String connectionId, ConnectionDirection direction) throws ApiException {
+    public Connection getConnectionByUuid(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable ConnectionDirection direction) throws ApiException {
         ApiResponse<Connection> localVarResp = getConnectionByUuidWithHttpInfo(connectionId, direction);
         return localVarResp.getData();
     }
@@ -651,7 +651,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Connection> getConnectionByUuidWithHttpInfo(String connectionId, ConnectionDirection direction) throws ApiException {
+    public ApiResponse<Connection> getConnectionByUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable ConnectionDirection direction) throws ApiException {
         okhttp3.Call localVarCall = getConnectionByUuidValidateBeforeCall(connectionId, direction, null);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -675,7 +675,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionByUuidAsync(String connectionId, ConnectionDirection direction, final ApiCallback<Connection> _callback) throws ApiException {
+    public okhttp3.Call getConnectionByUuidAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable ConnectionDirection direction, final ApiCallback<Connection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionByUuidValidateBeforeCall(connectionId, direction, _callback);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
@@ -699,7 +699,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionsCall(SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchConnectionsCall(@javax.annotation.Nonnull SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -745,7 +745,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchConnectionsValidateBeforeCall(SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchConnectionsValidateBeforeCall(@javax.annotation.Nonnull SearchRequest searchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'searchRequest' is set
         if (searchRequest == null) {
             throw new ApiException("Missing the required parameter 'searchRequest' when calling searchConnections(Async)");
@@ -772,7 +772,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionSearchResponse searchConnections(SearchRequest searchRequest) throws ApiException {
+    public ConnectionSearchResponse searchConnections(@javax.annotation.Nonnull SearchRequest searchRequest) throws ApiException {
         ApiResponse<ConnectionSearchResponse> localVarResp = searchConnectionsWithHttpInfo(searchRequest);
         return localVarResp.getData();
     }
@@ -794,7 +794,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionSearchResponse> searchConnectionsWithHttpInfo(SearchRequest searchRequest) throws ApiException {
+    public ApiResponse<ConnectionSearchResponse> searchConnectionsWithHttpInfo(@javax.annotation.Nonnull SearchRequest searchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchConnectionsValidateBeforeCall(searchRequest, null);
         Type localVarReturnType = new TypeToken<ConnectionSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -818,7 +818,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionsAsync(SearchRequest searchRequest, final ApiCallback<ConnectionSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchConnectionsAsync(@javax.annotation.Nonnull SearchRequest searchRequest, final ApiCallback<ConnectionSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchConnectionsValidateBeforeCall(searchRequest, _callback);
         Type localVarReturnType = new TypeToken<ConnectionSearchResponse>(){}.getType();
@@ -845,7 +845,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConnectionByUuidCall(String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateConnectionByUuidCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -896,7 +896,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateConnectionByUuidValidateBeforeCall(String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateConnectionByUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling updateConnectionByUuid(Async)");
@@ -931,7 +931,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Connection updateConnectionByUuid(String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, Boolean dryRun) throws ApiException {
+    public Connection updateConnectionByUuid(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<Connection> localVarResp = updateConnectionByUuidWithHttpInfo(connectionId, connectionChangeOperation, dryRun);
         return localVarResp.getData();
     }
@@ -956,7 +956,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Connection> updateConnectionByUuidWithHttpInfo(String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, Boolean dryRun) throws ApiException {
+    public ApiResponse<Connection> updateConnectionByUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = updateConnectionByUuidValidateBeforeCall(connectionId, connectionChangeOperation, dryRun, null);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -983,7 +983,7 @@ public class ConnectionsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConnectionByUuidAsync(String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, Boolean dryRun, final ApiCallback<Connection> _callback) throws ApiException {
+    public okhttp3.Call updateConnectionByUuidAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<Connection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateConnectionByUuidValidateBeforeCall(connectionId, connectionChangeOperation, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Connection>(){}.getType();
@@ -1004,7 +1004,7 @@ public class ConnectionsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateConnectionsCall(ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call validateConnectionsCall(@javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1050,7 +1050,7 @@ public class ConnectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateConnectionsValidateBeforeCall(ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call validateConnectionsValidateBeforeCall(@javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'validateRequest' is set
         if (validateRequest == null) {
             throw new ApiException("Missing the required parameter 'validateRequest' when calling validateConnections(Async)");
@@ -1074,7 +1074,7 @@ public class ConnectionsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionResponse validateConnections(ValidateRequest validateRequest) throws ApiException {
+    public ConnectionResponse validateConnections(@javax.annotation.Nonnull ValidateRequest validateRequest) throws ApiException {
         ApiResponse<ConnectionResponse> localVarResp = validateConnectionsWithHttpInfo(validateRequest);
         return localVarResp.getData();
     }
@@ -1093,7 +1093,7 @@ public class ConnectionsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionResponse> validateConnectionsWithHttpInfo(ValidateRequest validateRequest) throws ApiException {
+    public ApiResponse<ConnectionResponse> validateConnectionsWithHttpInfo(@javax.annotation.Nonnull ValidateRequest validateRequest) throws ApiException {
         okhttp3.Call localVarCall = validateConnectionsValidateBeforeCall(validateRequest, null);
         Type localVarReturnType = new TypeToken<ConnectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1114,7 +1114,7 @@ public class ConnectionsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateConnectionsAsync(ValidateRequest validateRequest, final ApiCallback<ConnectionResponse> _callback) throws ApiException {
+    public okhttp3.Call validateConnectionsAsync(@javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback<ConnectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = validateConnectionsValidateBeforeCall(validateRequest, _callback);
         Type localVarReturnType = new TypeToken<ConnectionResponse>(){}.getType();

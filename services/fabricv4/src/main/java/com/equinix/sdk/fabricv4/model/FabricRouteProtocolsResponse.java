@@ -12,9 +12,9 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.DeploymentState;
 import com.equinix.sdk.fabricv4.model.FabricBGPConnectionIpv4;
-import com.equinix.sdk.fabricv4.model.FabricRoutingProtocolBGPType;
 import com.equinix.sdk.fabricv4.model.TopologyProperties;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -24,210 +24,579 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Arrays;
-import java.util.UUID;
-
-
-
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
-public class FabricRouteProtocolsResponse extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(FabricRouteProtocolsResponse.class.getName());
+/**
+ * FabricRouteProtocolsResponse
+ */
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
+public class FabricRouteProtocolsResponse {
+  /**
+   * Routing protocol type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    BGP("BGP");
 
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!FabricRouteProtocolsResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'FabricRouteProtocolsResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<FabricRoutingProtocolBGPType> adapterFabricRoutingProtocolBGPType = gson.getDelegateAdapter(this, TypeToken.get(FabricRoutingProtocolBGPType.class));
+    private String value;
 
-            return (TypeAdapter<T>) new TypeAdapter<FabricRouteProtocolsResponse>() {
-                @Override
-                public void write(JsonWriter out, FabricRouteProtocolsResponse value) throws IOException {
-                    if (value == null || value.getActualInstance() == null) {
-                        elementAdapter.write(out, null);
-                        return;
-                    }
-
-                    // check if the actual instance is of the type `FabricRoutingProtocolBGPType`
-                    if (value.getActualInstance() instanceof FabricRoutingProtocolBGPType) {
-                        JsonElement element = adapterFabricRoutingProtocolBGPType.toJsonTree((FabricRoutingProtocolBGPType)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: FabricRoutingProtocolBGPType");
-                }
-
-                @Override
-                public FabricRouteProtocolsResponse read(JsonReader in) throws IOException {
-                    Object deserialized = null;
-                    JsonElement jsonElement = elementAdapter.read(in);
-
-                    int match = 0;
-                    ArrayList<String> errorMessages = new ArrayList<>();
-                    TypeAdapter actualAdapter = elementAdapter;
-
-                    // deserialize FabricRoutingProtocolBGPType
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        FabricRoutingProtocolBGPType.validateJsonElement(jsonElement);
-                        actualAdapter = adapterFabricRoutingProtocolBGPType;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'FabricRoutingProtocolBGPType'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for FabricRoutingProtocolBGPType failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'FabricRoutingProtocolBGPType'", e);
-                    }
-
-                    if (match == 1) {
-                        FabricRouteProtocolsResponse ret = new FabricRouteProtocolsResponse();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
-                    }
-
-                    throw new IOException(String.format("Failed deserialization for FabricRouteProtocolsResponse: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
-                }
-            }.nullSafe();
-        }
+    TypeEnum(String value) {
+      this.value = value;
     }
 
-    // store a list of schema names defined in oneOf
-    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
-
-    public FabricRouteProtocolsResponse() {
-        super("oneOf", Boolean.FALSE);
-    }
-
-    public FabricRouteProtocolsResponse(Object o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    static {
-        schemas.put("FabricRoutingProtocolBGPType", FabricRoutingProtocolBGPType.class);
+    public String getValue() {
+      return value;
     }
 
     @Override
-    public Map<String, Class<?>> getSchemas() {
-        return FabricRouteProtocolsResponse.schemas;
+    public String toString() {
+      return String.valueOf(value);
     }
 
-    /**
-     * Set the instance that matches the oneOf child schema, check
-     * the instance parameter is valid against the oneOf child schemas:
-     * FabricRoutingProtocolBGPType
-     *
-     * It could be an instance of the 'oneOf' schemas.
-     */
-    @Override
-    public void setActualInstance(Object instance) {
-        if (instance instanceof FabricRoutingProtocolBGPType) {
-            super.setActualInstance(instance);
-            return;
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
         }
-
-        throw new RuntimeException("Invalid instance type. Must be FabricRoutingProtocolBGPType");
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    /**
-     * Get the actual instance, which can be the following:
-     * FabricRoutingProtocolBGPType
-     *
-     * @return The actual instance (FabricRoutingProtocolBGPType)
-     */
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
+  private TypeEnum type;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
+  private String uuid;
+
+  public static final String SERIALIZED_NAME_BGP_IPV4 = "bgpIpv4";
+  @SerializedName(SERIALIZED_NAME_BGP_IPV4)
+  @javax.annotation.Nonnull
+  private FabricBGPConnectionIpv4 bgpIpv4;
+
+  public static final String SERIALIZED_NAME_CUSTOMER_ASN = "customerAsn";
+  @SerializedName(SERIALIZED_NAME_CUSTOMER_ASN)
+  @javax.annotation.Nonnull
+  private Long customerAsn;
+
+  public static final String SERIALIZED_NAME_BGP_AUTH_KEY = "bgpAuthKey";
+  @SerializedName(SERIALIZED_NAME_BGP_AUTH_KEY)
+  @javax.annotation.Nonnull
+  private String bgpAuthKey;
+
+  public static final String SERIALIZED_NAME_AS_OVERRIDE_ENABLED = "asOverrideEnabled";
+  @SerializedName(SERIALIZED_NAME_AS_OVERRIDE_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean asOverrideEnabled;
+
+  public static final String SERIALIZED_NAME_DEPLOYMENT_PROPERTIES = "deploymentProperties";
+  @SerializedName(SERIALIZED_NAME_DEPLOYMENT_PROPERTIES)
+  @javax.annotation.Nullable
+  private TopologyProperties deploymentProperties;
+
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
+  private URI href;
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nonnull
+  private DeploymentState state;
+
+  public FabricRouteProtocolsResponse() {
+  }
+
+  public FabricRouteProtocolsResponse(
+     URI href
+  ) {
+    this();
+    this.href = href;
+  }
+
+  public FabricRouteProtocolsResponse type(@javax.annotation.Nonnull TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Routing protocol type
+   * @return type
+   */
+  @javax.annotation.Nonnull
+  public TypeEnum getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+    this.type = type;
+  }
+
+
+  public FabricRouteProtocolsResponse name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public FabricRouteProtocolsResponse uuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+    return this;
+  }
+
+  /**
+   * Equinix-assigned route protocol identifier
+   * @return uuid
+   */
+  @javax.annotation.Nullable
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+  }
+
+
+  public FabricRouteProtocolsResponse bgpIpv4(@javax.annotation.Nonnull FabricBGPConnectionIpv4 bgpIpv4) {
+    this.bgpIpv4 = bgpIpv4;
+    return this;
+  }
+
+  /**
+   * Get bgpIpv4
+   * @return bgpIpv4
+   */
+  @javax.annotation.Nonnull
+  public FabricBGPConnectionIpv4 getBgpIpv4() {
+    return bgpIpv4;
+  }
+
+  public void setBgpIpv4(@javax.annotation.Nonnull FabricBGPConnectionIpv4 bgpIpv4) {
+    this.bgpIpv4 = bgpIpv4;
+  }
+
+
+  public FabricRouteProtocolsResponse customerAsn(@javax.annotation.Nonnull Long customerAsn) {
+    this.customerAsn = customerAsn;
+    return this;
+  }
+
+  /**
+   * Customer asn
+   * @return customerAsn
+   */
+  @javax.annotation.Nonnull
+  public Long getCustomerAsn() {
+    return customerAsn;
+  }
+
+  public void setCustomerAsn(@javax.annotation.Nonnull Long customerAsn) {
+    this.customerAsn = customerAsn;
+  }
+
+
+  public FabricRouteProtocolsResponse bgpAuthKey(@javax.annotation.Nonnull String bgpAuthKey) {
+    this.bgpAuthKey = bgpAuthKey;
+    return this;
+  }
+
+  /**
+   * BGP authorization key
+   * @return bgpAuthKey
+   */
+  @javax.annotation.Nonnull
+  public String getBgpAuthKey() {
+    return bgpAuthKey;
+  }
+
+  public void setBgpAuthKey(@javax.annotation.Nonnull String bgpAuthKey) {
+    this.bgpAuthKey = bgpAuthKey;
+  }
+
+
+  public FabricRouteProtocolsResponse asOverrideEnabled(@javax.annotation.Nullable Boolean asOverrideEnabled) {
+    this.asOverrideEnabled = asOverrideEnabled;
+    return this;
+  }
+
+  /**
+   * Enable AS number override
+   * @return asOverrideEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getAsOverrideEnabled() {
+    return asOverrideEnabled;
+  }
+
+  public void setAsOverrideEnabled(@javax.annotation.Nullable Boolean asOverrideEnabled) {
+    this.asOverrideEnabled = asOverrideEnabled;
+  }
+
+
+  public FabricRouteProtocolsResponse deploymentProperties(@javax.annotation.Nullable TopologyProperties deploymentProperties) {
+    this.deploymentProperties = deploymentProperties;
+    return this;
+  }
+
+  /**
+   * Get deploymentProperties
+   * @return deploymentProperties
+   */
+  @javax.annotation.Nullable
+  public TopologyProperties getDeploymentProperties() {
+    return deploymentProperties;
+  }
+
+  public void setDeploymentProperties(@javax.annotation.Nullable TopologyProperties deploymentProperties) {
+    this.deploymentProperties = deploymentProperties;
+  }
+
+
+  /**
+   * Route Protocol URI
+   * @return href
+   */
+  @javax.annotation.Nullable
+  public URI getHref() {
+    return href;
+  }
+
+
+
+  public FabricRouteProtocolsResponse state(@javax.annotation.Nonnull DeploymentState state) {
+    this.state = state;
+    return this;
+  }
+
+  /**
+   * Get state
+   * @return state
+   */
+  @javax.annotation.Nonnull
+  public DeploymentState getState() {
+    return state;
+  }
+
+  public void setState(@javax.annotation.Nonnull DeploymentState state) {
+    this.state = state;
+  }
+
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
+
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the FabricRouteProtocolsResponse instance itself
+   */
+  public FabricRouteProtocolsResponse putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
+    }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
+
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    FabricRouteProtocolsResponse fabricRouteProtocolsResponse = (FabricRouteProtocolsResponse) o;
+    return Objects.equals(this.type, fabricRouteProtocolsResponse.type) &&
+        Objects.equals(this.name, fabricRouteProtocolsResponse.name) &&
+        Objects.equals(this.uuid, fabricRouteProtocolsResponse.uuid) &&
+        Objects.equals(this.bgpIpv4, fabricRouteProtocolsResponse.bgpIpv4) &&
+        Objects.equals(this.customerAsn, fabricRouteProtocolsResponse.customerAsn) &&
+        Objects.equals(this.bgpAuthKey, fabricRouteProtocolsResponse.bgpAuthKey) &&
+        Objects.equals(this.asOverrideEnabled, fabricRouteProtocolsResponse.asOverrideEnabled) &&
+        Objects.equals(this.deploymentProperties, fabricRouteProtocolsResponse.deploymentProperties) &&
+        Objects.equals(this.href, fabricRouteProtocolsResponse.href) &&
+        Objects.equals(this.state, fabricRouteProtocolsResponse.state)&&
+        Objects.equals(this.additionalProperties, fabricRouteProtocolsResponse.additionalProperties);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(type, name, uuid, bgpIpv4, customerAsn, bgpAuthKey, asOverrideEnabled, deploymentProperties, href, state, additionalProperties);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class FabricRouteProtocolsResponse {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    bgpIpv4: ").append(toIndentedString(bgpIpv4)).append("\n");
+    sb.append("    customerAsn: ").append(toIndentedString(customerAsn)).append("\n");
+    sb.append("    bgpAuthKey: ").append(toIndentedString(bgpAuthKey)).append("\n");
+    sb.append("    asOverrideEnabled: ").append(toIndentedString(asOverrideEnabled)).append("\n");
+    sb.append("    deploymentProperties: ").append(toIndentedString(deploymentProperties)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "uuid", "bgpIpv4", "customerAsn", "bgpAuthKey", "asOverrideEnabled", "deploymentProperties", "href", "state"));
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "bgpIpv4", "customerAsn", "bgpAuthKey", "state"));
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FabricRouteProtocolsResponse
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!FabricRouteProtocolsResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FabricRouteProtocolsResponse is not found in the empty JSON string", FabricRouteProtocolsResponse.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FabricRouteProtocolsResponse.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      // validate the required field `bgpIpv4`
+      FabricBGPConnectionIpv4.validateJsonElement(jsonObj.get("bgpIpv4"));
+      if (!jsonObj.get("bgpAuthKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));
+      }
+      // validate the optional field `deploymentProperties`
+      if (jsonObj.get("deploymentProperties") != null && !jsonObj.get("deploymentProperties").isJsonNull()) {
+        TopologyProperties.validateJsonElement(jsonObj.get("deploymentProperties"));
+      }
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+      }
+      // validate the required field `state`
+      DeploymentState.validateJsonElement(jsonObj.get("state"));
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
-    public Object getActualInstance() {
-        return super.getActualInstance();
-    }
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!FabricRouteProtocolsResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'FabricRouteProtocolsResponse' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<FabricRouteProtocolsResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(FabricRouteProtocolsResponse.class));
 
-    /**
-     * Get the actual instance of `FabricRoutingProtocolBGPType`. If the actual instance is not `FabricRoutingProtocolBGPType`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `FabricRoutingProtocolBGPType`
-     * @throws ClassCastException if the instance is not `FabricRoutingProtocolBGPType`
-     */
-    public FabricRoutingProtocolBGPType getFabricRoutingProtocolBGPType() throws ClassCastException {
-        return (FabricRoutingProtocolBGPType)super.getActualInstance();
-    }
+       return (TypeAdapter<T>) new TypeAdapter<FabricRouteProtocolsResponse>() {
+           @Override
+           public void write(JsonWriter out, FabricRouteProtocolsResponse value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
 
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to FabricRouteProtocolsResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with FabricRoutingProtocolBGPType
-        try {
-            FabricRoutingProtocolBGPType.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for FabricRoutingProtocolBGPType failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for FabricRouteProtocolsResponse with oneOf schemas: FabricRoutingProtocolBGPType. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
-        }
-    }
+           @Override
+           public FabricRouteProtocolsResponse read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             FabricRouteProtocolsResponse instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
 
-    /**
-     * Create an instance of FabricRouteProtocolsResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of FabricRouteProtocolsResponse
-     * @throws IOException if the JSON string is invalid with respect to FabricRouteProtocolsResponse
-     */
-    public static FabricRouteProtocolsResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, FabricRouteProtocolsResponse.class);
+       }.nullSafe();
     }
+  }
 
-    /**
-     * Convert an instance of FabricRouteProtocolsResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
+  /**
+   * Create an instance of FabricRouteProtocolsResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FabricRouteProtocolsResponse
+   * @throws IOException if the JSON string is invalid with respect to FabricRouteProtocolsResponse
+   */
+  public static FabricRouteProtocolsResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, FabricRouteProtocolsResponse.class);
+  }
+
+  /**
+   * Convert an instance of FabricRouteProtocolsResponse to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 
