@@ -22736,23 +22736,23 @@ components:
         deploymentProperties:
           $ref: "#/components/schemas/TopologyProperties"
     FabricRouteProtocolsResponse:
-      required:
-        - state
-      type: object
-      properties:
-        href:
-          type: string
-          description: Route Protocol URI
-          format: uri
-          readOnly: true
-          example: https://api.equinix.com/fabric/v4/connections/81331c52-04c0-4656-a4a7-18c52669348f/routingProtocols/69762051-85ed-4d13-b6b4-e32e93c672b5
-        uuid:
-          type: string
-          description: Equinix-assigned route protocol identifier
-          example: 69762051-85ed-4d13-b6b4-e32e93c672b5
-        state:
-          $ref: "#/components/schemas/DeploymentState"
-      oneOf:
+      allOf:
+        - required:
+            - state
+          type: object
+          properties:
+            href:
+              type: string
+              description: Route Protocol URI
+              format: uri
+              readOnly: true
+              example: https://api.equinix.com/fabric/v4/connections/81331c52-04c0-4656-a4a7-18c52669348f/routingProtocols/69762051-85ed-4d13-b6b4-e32e93c672b5
+            uuid:
+              type: string
+              description: Equinix-assigned route protocol identifier
+              example: 69762051-85ed-4d13-b6b4-e32e93c672b5
+            state:
+              $ref: "#/components/schemas/DeploymentState"
         - $ref: "#/components/schemas/FabricRoutingProtocolBGPType"
     FabricIPWANResponse:
       type: object
