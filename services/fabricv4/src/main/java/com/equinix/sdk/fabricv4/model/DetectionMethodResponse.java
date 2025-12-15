@@ -44,18 +44,18 @@ import java.util.Set;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * PeeringConnectionResIpv4AuthKeys
+ * DetectionMethodResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
-public class PeeringConnectionResIpv4AuthKeys {
+public class DetectionMethodResponse {
   /**
-   * Type of BGP authentication key
+   * * THRESHOLD - Alert when a metric crosses a defined threshold by user. * OUTLIER - Intelligent Alert that has an outlier behavior. This option is currently supported for metro latency metric. 
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    MD5("MD5"),
+    THRESHOLD("THRESHOLD"),
     
-    RC_MD5("RC-MD5");
+    OUTLIER("OUTLIER");
 
     private String value;
 
@@ -105,21 +105,88 @@ public class PeeringConnectionResIpv4AuthKeys {
   @javax.annotation.Nullable
   private TypeEnum type;
 
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
+  @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
   @javax.annotation.Nullable
-  private String key;
+  private String windowSize;
 
-  public PeeringConnectionResIpv4AuthKeys() {
+  /**
+   * Stream alert rule metric operand
+   */
+  @JsonAdapter(OperandEnum.Adapter.class)
+  public enum OperandEnum {
+    ABOVE("ABOVE"),
+    
+    BELOW("BELOW");
+
+    private String value;
+
+    OperandEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OperandEnum fromValue(String value) {
+      for (OperandEnum b : OperandEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OperandEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OperandEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OperandEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OperandEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperandEnum.fromValue(value);
+    }
   }
 
-  public PeeringConnectionResIpv4AuthKeys type(@javax.annotation.Nullable TypeEnum type) {
+  public static final String SERIALIZED_NAME_OPERAND = "operand";
+  @SerializedName(SERIALIZED_NAME_OPERAND)
+  @javax.annotation.Nullable
+  private OperandEnum operand;
+
+  public static final String SERIALIZED_NAME_WARNING_THRESHOLD = "warningThreshold";
+  @SerializedName(SERIALIZED_NAME_WARNING_THRESHOLD)
+  @javax.annotation.Nullable
+  private String warningThreshold;
+
+  public static final String SERIALIZED_NAME_CRITICAL_THRESHOLD = "criticalThreshold";
+  @SerializedName(SERIALIZED_NAME_CRITICAL_THRESHOLD)
+  @javax.annotation.Nullable
+  private String criticalThreshold;
+
+  public DetectionMethodResponse() {
+  }
+
+  public DetectionMethodResponse type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Type of BGP authentication key
+   * * THRESHOLD - Alert when a metric crosses a defined threshold by user. * OUTLIER - Intelligent Alert that has an outlier behavior. This option is currently supported for metro latency metric. 
    * @return type
    */
   @javax.annotation.Nullable
@@ -132,22 +199,79 @@ public class PeeringConnectionResIpv4AuthKeys {
   }
 
 
-  public PeeringConnectionResIpv4AuthKeys key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public DetectionMethodResponse windowSize(@javax.annotation.Nullable String windowSize) {
+    this.windowSize = windowSize;
     return this;
   }
 
   /**
-   * BGP authentication key
-   * @return key
+   * Stream alert rule metric window size
+   * @return windowSize
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public String getWindowSize() {
+    return windowSize;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public void setWindowSize(@javax.annotation.Nullable String windowSize) {
+    this.windowSize = windowSize;
+  }
+
+
+  public DetectionMethodResponse operand(@javax.annotation.Nullable OperandEnum operand) {
+    this.operand = operand;
+    return this;
+  }
+
+  /**
+   * Stream alert rule metric operand
+   * @return operand
+   */
+  @javax.annotation.Nullable
+  public OperandEnum getOperand() {
+    return operand;
+  }
+
+  public void setOperand(@javax.annotation.Nullable OperandEnum operand) {
+    this.operand = operand;
+  }
+
+
+  public DetectionMethodResponse warningThreshold(@javax.annotation.Nullable String warningThreshold) {
+    this.warningThreshold = warningThreshold;
+    return this;
+  }
+
+  /**
+   * Stream alert rule metric warning threshold
+   * @return warningThreshold
+   */
+  @javax.annotation.Nullable
+  public String getWarningThreshold() {
+    return warningThreshold;
+  }
+
+  public void setWarningThreshold(@javax.annotation.Nullable String warningThreshold) {
+    this.warningThreshold = warningThreshold;
+  }
+
+
+  public DetectionMethodResponse criticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
+    this.criticalThreshold = criticalThreshold;
+    return this;
+  }
+
+  /**
+   * Stream alert rule metric critical threshold
+   * @return criticalThreshold
+   */
+  @javax.annotation.Nullable
+  public String getCriticalThreshold() {
+    return criticalThreshold;
+  }
+
+  public void setCriticalThreshold(@javax.annotation.Nullable String criticalThreshold) {
+    this.criticalThreshold = criticalThreshold;
   }
 
   /**
@@ -163,9 +287,9 @@ public class PeeringConnectionResIpv4AuthKeys {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the PeeringConnectionResIpv4AuthKeys instance itself
+   * @return the DetectionMethodResponse instance itself
    */
-  public PeeringConnectionResIpv4AuthKeys putAdditionalProperty(String key, Object value) {
+  public DetectionMethodResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -204,23 +328,29 @@ public class PeeringConnectionResIpv4AuthKeys {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PeeringConnectionResIpv4AuthKeys peeringConnectionResIpv4AuthKeys = (PeeringConnectionResIpv4AuthKeys) o;
-    return Objects.equals(this.type, peeringConnectionResIpv4AuthKeys.type) &&
-        Objects.equals(this.key, peeringConnectionResIpv4AuthKeys.key)&&
-        Objects.equals(this.additionalProperties, peeringConnectionResIpv4AuthKeys.additionalProperties);
+    DetectionMethodResponse detectionMethodResponse = (DetectionMethodResponse) o;
+    return Objects.equals(this.type, detectionMethodResponse.type) &&
+        Objects.equals(this.windowSize, detectionMethodResponse.windowSize) &&
+        Objects.equals(this.operand, detectionMethodResponse.operand) &&
+        Objects.equals(this.warningThreshold, detectionMethodResponse.warningThreshold) &&
+        Objects.equals(this.criticalThreshold, detectionMethodResponse.criticalThreshold)&&
+        Objects.equals(this.additionalProperties, detectionMethodResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, key, additionalProperties);
+    return Objects.hash(type, windowSize, operand, warningThreshold, criticalThreshold, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PeeringConnectionResIpv4AuthKeys {\n");
+    sb.append("class DetectionMethodResponse {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    windowSize: ").append(toIndentedString(windowSize)).append("\n");
+    sb.append("    operand: ").append(toIndentedString(operand)).append("\n");
+    sb.append("    warningThreshold: ").append(toIndentedString(warningThreshold)).append("\n");
+    sb.append("    criticalThreshold: ").append(toIndentedString(criticalThreshold)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -245,7 +375,10 @@ public class PeeringConnectionResIpv4AuthKeys {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("type");
-    openapiFields.add("key");
+    openapiFields.add("windowSize");
+    openapiFields.add("operand");
+    openapiFields.add("warningThreshold");
+    openapiFields.add("criticalThreshold");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -255,12 +388,12 @@ public class PeeringConnectionResIpv4AuthKeys {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PeeringConnectionResIpv4AuthKeys
+   * @throws IOException if the JSON Element is invalid with respect to DetectionMethodResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PeeringConnectionResIpv4AuthKeys.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringConnectionResIpv4AuthKeys is not found in the empty JSON string", PeeringConnectionResIpv4AuthKeys.openapiRequiredFields.toString()));
+        if (!DetectionMethodResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DetectionMethodResponse is not found in the empty JSON string", DetectionMethodResponse.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -271,8 +404,21 @@ public class PeeringConnectionResIpv4AuthKeys {
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
         TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      if ((jsonObj.get("windowSize") != null && !jsonObj.get("windowSize").isJsonNull()) && !jsonObj.get("windowSize").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `windowSize` to be a primitive type in the JSON string but got `%s`", jsonObj.get("windowSize").toString()));
+      }
+      if ((jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) && !jsonObj.get("operand").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operand` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operand").toString()));
+      }
+      // validate the optional field `operand`
+      if (jsonObj.get("operand") != null && !jsonObj.get("operand").isJsonNull()) {
+        OperandEnum.validateJsonElement(jsonObj.get("operand"));
+      }
+      if ((jsonObj.get("warningThreshold") != null && !jsonObj.get("warningThreshold").isJsonNull()) && !jsonObj.get("warningThreshold").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `warningThreshold` to be a primitive type in the JSON string but got `%s`", jsonObj.get("warningThreshold").toString()));
+      }
+      if ((jsonObj.get("criticalThreshold") != null && !jsonObj.get("criticalThreshold").isJsonNull()) && !jsonObj.get("criticalThreshold").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `criticalThreshold` to be a primitive type in the JSON string but got `%s`", jsonObj.get("criticalThreshold").toString()));
       }
   }
 
@@ -280,16 +426,16 @@ public class PeeringConnectionResIpv4AuthKeys {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PeeringConnectionResIpv4AuthKeys.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PeeringConnectionResIpv4AuthKeys' and its subtypes
+       if (!DetectionMethodResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DetectionMethodResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PeeringConnectionResIpv4AuthKeys> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PeeringConnectionResIpv4AuthKeys.class));
+       final TypeAdapter<DetectionMethodResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DetectionMethodResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PeeringConnectionResIpv4AuthKeys>() {
+       return (TypeAdapter<T>) new TypeAdapter<DetectionMethodResponse>() {
            @Override
-           public void write(JsonWriter out, PeeringConnectionResIpv4AuthKeys value) throws IOException {
+           public void write(JsonWriter out, DetectionMethodResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -317,12 +463,12 @@ public class PeeringConnectionResIpv4AuthKeys {
            }
 
            @Override
-           public PeeringConnectionResIpv4AuthKeys read(JsonReader in) throws IOException {
+           public DetectionMethodResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             PeeringConnectionResIpv4AuthKeys instance = thisAdapter.fromJsonTree(jsonObj);
+             DetectionMethodResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -349,18 +495,18 @@ public class PeeringConnectionResIpv4AuthKeys {
   }
 
   /**
-   * Create an instance of PeeringConnectionResIpv4AuthKeys given an JSON string
+   * Create an instance of DetectionMethodResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PeeringConnectionResIpv4AuthKeys
-   * @throws IOException if the JSON string is invalid with respect to PeeringConnectionResIpv4AuthKeys
+   * @return An instance of DetectionMethodResponse
+   * @throws IOException if the JSON string is invalid with respect to DetectionMethodResponse
    */
-  public static PeeringConnectionResIpv4AuthKeys fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PeeringConnectionResIpv4AuthKeys.class);
+  public static DetectionMethodResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DetectionMethodResponse.class);
   }
 
   /**
-   * Convert an instance of PeeringConnectionResIpv4AuthKeys to an JSON string
+   * Convert an instance of DetectionMethodResponse to an JSON string
    *
    * @return JSON string
    */

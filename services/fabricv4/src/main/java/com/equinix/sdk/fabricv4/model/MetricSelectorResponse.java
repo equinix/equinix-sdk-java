@@ -18,7 +18,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,58 +46,42 @@ import java.util.Set;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * Route Collectors
+ * MetricSelectorResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
-public class PeeringProtocolDataRouteCollectors {
-  public static final String SERIALIZED_NAME_PRIMARY = "primary";
-  @SerializedName(SERIALIZED_NAME_PRIMARY)
+public class MetricSelectorResponse {
+  public static final String SERIALIZED_NAME_INCLUDE = "include";
+  @SerializedName(SERIALIZED_NAME_INCLUDE)
   @javax.annotation.Nullable
-  private String primary;
+  private List<String> include = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_SECONDARY = "secondary";
-  @SerializedName(SERIALIZED_NAME_SECONDARY)
-  @javax.annotation.Nullable
-  private String secondary;
-
-  public PeeringProtocolDataRouteCollectors() {
+  public MetricSelectorResponse() {
   }
 
-  public PeeringProtocolDataRouteCollectors primary(@javax.annotation.Nullable String primary) {
-    this.primary = primary;
+  public MetricSelectorResponse include(@javax.annotation.Nullable List<String> include) {
+    this.include = include;
+    return this;
+  }
+
+  public MetricSelectorResponse addIncludeItem(String includeItem) {
+    if (this.include == null) {
+      this.include = new ArrayList<>();
+    }
+    this.include.add(includeItem);
     return this;
   }
 
   /**
-   * Primary Route Collector
-   * @return primary
+   * Stream alert rule filtered by metric name
+   * @return include
    */
   @javax.annotation.Nullable
-  public String getPrimary() {
-    return primary;
+  public List<String> getInclude() {
+    return include;
   }
 
-  public void setPrimary(@javax.annotation.Nullable String primary) {
-    this.primary = primary;
-  }
-
-
-  public PeeringProtocolDataRouteCollectors secondary(@javax.annotation.Nullable String secondary) {
-    this.secondary = secondary;
-    return this;
-  }
-
-  /**
-   * Secondary Route Collector
-   * @return secondary
-   */
-  @javax.annotation.Nullable
-  public String getSecondary() {
-    return secondary;
-  }
-
-  public void setSecondary(@javax.annotation.Nullable String secondary) {
-    this.secondary = secondary;
+  public void setInclude(@javax.annotation.Nullable List<String> include) {
+    this.include = include;
   }
 
   /**
@@ -111,9 +97,9 @@ public class PeeringProtocolDataRouteCollectors {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the PeeringProtocolDataRouteCollectors instance itself
+   * @return the MetricSelectorResponse instance itself
    */
-  public PeeringProtocolDataRouteCollectors putAdditionalProperty(String key, Object value) {
+  public MetricSelectorResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -152,23 +138,21 @@ public class PeeringProtocolDataRouteCollectors {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PeeringProtocolDataRouteCollectors peeringProtocolDataRouteCollectors = (PeeringProtocolDataRouteCollectors) o;
-    return Objects.equals(this.primary, peeringProtocolDataRouteCollectors.primary) &&
-        Objects.equals(this.secondary, peeringProtocolDataRouteCollectors.secondary)&&
-        Objects.equals(this.additionalProperties, peeringProtocolDataRouteCollectors.additionalProperties);
+    MetricSelectorResponse metricSelectorResponse = (MetricSelectorResponse) o;
+    return Objects.equals(this.include, metricSelectorResponse.include)&&
+        Objects.equals(this.additionalProperties, metricSelectorResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(primary, secondary, additionalProperties);
+    return Objects.hash(include, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PeeringProtocolDataRouteCollectors {\n");
-    sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
-    sb.append("    secondary: ").append(toIndentedString(secondary)).append("\n");
+    sb.append("class MetricSelectorResponse {\n");
+    sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -192,8 +176,7 @@ public class PeeringProtocolDataRouteCollectors {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("primary");
-    openapiFields.add("secondary");
+    openapiFields.add("include");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -203,20 +186,18 @@ public class PeeringProtocolDataRouteCollectors {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PeeringProtocolDataRouteCollectors
+   * @throws IOException if the JSON Element is invalid with respect to MetricSelectorResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PeeringProtocolDataRouteCollectors.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringProtocolDataRouteCollectors is not found in the empty JSON string", PeeringProtocolDataRouteCollectors.openapiRequiredFields.toString()));
+        if (!MetricSelectorResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricSelectorResponse is not found in the empty JSON string", MetricSelectorResponse.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("primary") != null && !jsonObj.get("primary").isJsonNull()) && !jsonObj.get("primary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary").toString()));
-      }
-      if ((jsonObj.get("secondary") != null && !jsonObj.get("secondary").isJsonNull()) && !jsonObj.get("secondary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secondary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondary").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }
 
@@ -224,16 +205,16 @@ public class PeeringProtocolDataRouteCollectors {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PeeringProtocolDataRouteCollectors.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PeeringProtocolDataRouteCollectors' and its subtypes
+       if (!MetricSelectorResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'MetricSelectorResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PeeringProtocolDataRouteCollectors> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PeeringProtocolDataRouteCollectors.class));
+       final TypeAdapter<MetricSelectorResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(MetricSelectorResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PeeringProtocolDataRouteCollectors>() {
+       return (TypeAdapter<T>) new TypeAdapter<MetricSelectorResponse>() {
            @Override
-           public void write(JsonWriter out, PeeringProtocolDataRouteCollectors value) throws IOException {
+           public void write(JsonWriter out, MetricSelectorResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -261,12 +242,12 @@ public class PeeringProtocolDataRouteCollectors {
            }
 
            @Override
-           public PeeringProtocolDataRouteCollectors read(JsonReader in) throws IOException {
+           public MetricSelectorResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             PeeringProtocolDataRouteCollectors instance = thisAdapter.fromJsonTree(jsonObj);
+             MetricSelectorResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -293,18 +274,18 @@ public class PeeringProtocolDataRouteCollectors {
   }
 
   /**
-   * Create an instance of PeeringProtocolDataRouteCollectors given an JSON string
+   * Create an instance of MetricSelectorResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PeeringProtocolDataRouteCollectors
-   * @throws IOException if the JSON string is invalid with respect to PeeringProtocolDataRouteCollectors
+   * @return An instance of MetricSelectorResponse
+   * @throws IOException if the JSON string is invalid with respect to MetricSelectorResponse
    */
-  public static PeeringProtocolDataRouteCollectors fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PeeringProtocolDataRouteCollectors.class);
+  public static MetricSelectorResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, MetricSelectorResponse.class);
   }
 
   /**
-   * Convert an instance of PeeringProtocolDataRouteCollectors to an JSON string
+   * Convert an instance of MetricSelectorResponse to an JSON string
    *
    * @return JSON string
    */

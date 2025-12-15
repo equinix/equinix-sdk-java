@@ -8,7 +8,7 @@ Search requests containing criteria
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filter** | [**CloudEventFilters**](CloudEventFilters.md) |  |  [optional] |
+|**filter** | [**CloudEventFilters**](CloudEventFilters.md) |  |  |
 |**pagination** | [**PaginationRequest**](PaginationRequest.md) |  |  [optional] |
 
 

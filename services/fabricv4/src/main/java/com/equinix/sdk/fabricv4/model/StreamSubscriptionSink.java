@@ -121,7 +121,7 @@ public class StreamSubscriptionSink {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_BATCH_ENABLED = "batchEnabled";
@@ -176,7 +176,7 @@ public class StreamSubscriptionSink {
   }
 
 
-  public StreamSubscriptionSink type(@javax.annotation.Nullable TypeEnum type) {
+  public StreamSubscriptionSink type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -185,12 +185,12 @@ public class StreamSubscriptionSink {
    * destination type
    * @return type
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
@@ -425,6 +425,7 @@ public class StreamSubscriptionSink {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("type");
   }
 
   /**
@@ -439,17 +440,22 @@ public class StreamSubscriptionSink {
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionSink is not found in the empty JSON string", StreamSubscriptionSink.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : StreamSubscriptionSink.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("uri") != null && !jsonObj.get("uri").isJsonNull()) && !jsonObj.get("uri").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uri").toString()));
       }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
-      }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       // validate the optional field `credential`
       if (jsonObj.get("credential") != null && !jsonObj.get("credential").isJsonNull()) {
         StreamSubscriptionSinkCredential.validateJsonElement(jsonObj.get("credential"));

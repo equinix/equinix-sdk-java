@@ -1,7 +1,7 @@
 # fabricv4
 
 Equinix Fabric API v4
-- API version: 4.24
+- API version: 4.25
   - Generator version: 7.12.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
@@ -165,7 +165,6 @@ Class | Method | HTTP request | Description
 *NetworksApi* | [**getNetworkChanges**](docs/NetworksApi.md#getNetworkChanges) | **GET** /fabric/v4/networks/{networkId}/changes | Get Network Changes
 *NetworksApi* | [**searchNetworks**](docs/NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Network
 *NetworksApi* | [**updateNetworkByUuid**](docs/NetworksApi.md#updateNetworkByUuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID
-*PeeringProtocolsApi* | [**createConnectionPeeringProtocol**](docs/PeeringProtocolsApi.md#createConnectionPeeringProtocol) | **POST** /fabric/v4/connections/{uuid}/peeringProtocols | Create Peering Protocol
 *PortPackagesApi* | [**getPortPackages**](docs/PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | Get All Port Packages
 *PortsApi* | [**addToLag**](docs/PortsApi.md#addToLag) | **POST** /fabric/v4/ports/{portId}/physicalPorts/bulk | Add to Lag
 *PortsApi* | [**createPort**](docs/PortsApi.md#createPort) | **POST** /fabric/v4/ports | Create Port
@@ -386,7 +385,6 @@ Class | Method | HTTP request | Description
  - [ConnectionInvitation](docs/ConnectionInvitation.md)
  - [ConnectionLink](docs/ConnectionLink.md)
  - [ConnectionOperation](docs/ConnectionOperation.md)
- - [ConnectionPeeringProtocolPostRequest](docs/ConnectionPeeringProtocolPostRequest.md)
  - [ConnectionPostRequest](docs/ConnectionPostRequest.md)
  - [ConnectionPriority](docs/ConnectionPriority.md)
  - [ConnectionRedundancy](docs/ConnectionRedundancy.md)
@@ -417,6 +415,7 @@ Class | Method | HTTP request | Description
  - [DeploymentState](docs/DeploymentState.md)
  - [DeploymentTopology](docs/DeploymentTopology.md)
  - [DetectionMethod](docs/DetectionMethod.md)
+ - [DetectionMethodResponse](docs/DetectionMethodResponse.md)
  - [DirectConnectionIpv4](docs/DirectConnectionIpv4.md)
  - [DirectConnectionIpv6](docs/DirectConnectionIpv6.md)
  - [Direction](docs/Direction.md)
@@ -496,6 +495,7 @@ Class | Method | HTTP request | Description
  - [MetricFilters](docs/MetricFilters.md)
  - [MetricResource](docs/MetricResource.md)
  - [MetricSelector](docs/MetricSelector.md)
+ - [MetricSelectorResponse](docs/MetricSelectorResponse.md)
  - [MetricSimpleExpression](docs/MetricSimpleExpression.md)
  - [Metrics](docs/Metrics.md)
  - [MetricsSearchRequest](docs/MetricsSearchRequest.md)
@@ -539,14 +539,6 @@ Class | Method | HTTP request | Description
  - [PackageResponse](docs/PackageResponse.md)
  - [Pagination](docs/Pagination.md)
  - [PaginationRequest](docs/PaginationRequest.md)
- - [PeeringConnectionIpv4](docs/PeeringConnectionIpv4.md)
- - [PeeringConnectionIpv4AuthKeys](docs/PeeringConnectionIpv4AuthKeys.md)
- - [PeeringConnectionIpv6](docs/PeeringConnectionIpv6.md)
- - [PeeringConnectionResIpv4](docs/PeeringConnectionResIpv4.md)
- - [PeeringConnectionResIpv4AuthKeys](docs/PeeringConnectionResIpv4AuthKeys.md)
- - [PeeringConnectionResIpv6](docs/PeeringConnectionResIpv6.md)
- - [PeeringProtocolData](docs/PeeringProtocolData.md)
- - [PeeringProtocolDataRouteCollectors](docs/PeeringProtocolDataRouteCollectors.md)
  - [PeeringType](docs/PeeringType.md)
  - [PhysicalPort](docs/PhysicalPort.md)
  - [PhysicalPortSettings](docs/PhysicalPortSettings.md)
@@ -613,6 +605,7 @@ Class | Method | HTTP request | Description
  - [ReplaceOperation](docs/ReplaceOperation.md)
  - [ResourceData](docs/ResourceData.md)
  - [ResourceSelector](docs/ResourceSelector.md)
+ - [ResourceSelectorResponse](docs/ResourceSelectorResponse.md)
  - [RouteAggregationChangeData](docs/RouteAggregationChangeData.md)
  - [RouteAggregationChangeDataResponse](docs/RouteAggregationChangeDataResponse.md)
  - [RouteAggregationConnectionsData](docs/RouteAggregationConnectionsData.md)
@@ -661,6 +654,7 @@ Class | Method | HTTP request | Description
  - [RouteFiltersSearchFilterItem](docs/RouteFiltersSearchFilterItem.md)
  - [RouteFiltersSearchResponse](docs/RouteFiltersSearchResponse.md)
  - [RouteTableEntry](docs/RouteTableEntry.md)
+ - [RouteTableEntryConnection](docs/RouteTableEntryConnection.md)
  - [RouteTableEntryFilter](docs/RouteTableEntryFilter.md)
  - [RouteTableEntryFilters](docs/RouteTableEntryFilters.md)
  - [RouteTableEntryOrFilter](docs/RouteTableEntryOrFilter.md)
@@ -775,6 +769,7 @@ Class | Method | HTTP request | Description
  - [StreamSubscriptionSelector](docs/StreamSubscriptionSelector.md)
  - [StreamSubscriptionSink](docs/StreamSubscriptionSink.md)
  - [StreamSubscriptionSinkCredential](docs/StreamSubscriptionSinkCredential.md)
+ - [StreamSubscriptionSinkResponse](docs/StreamSubscriptionSinkResponse.md)
  - [StreamSubscriptionSinkSetting](docs/StreamSubscriptionSinkSetting.md)
  - [SubInterface](docs/SubInterface.md)
  - [Subnet](docs/Subnet.md)

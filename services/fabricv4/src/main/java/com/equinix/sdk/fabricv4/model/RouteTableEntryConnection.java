@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -44,58 +45,82 @@ import java.util.Set;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * PeeringConnectionIpv4AuthKeys
+ * RouteTableEntryConnection
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
-public class PeeringConnectionIpv4AuthKeys {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+public class RouteTableEntryConnection {
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   @javax.annotation.Nullable
-  private String type;
+  private String uuid;
 
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
-  private String key;
+  private String name;
 
-  public PeeringConnectionIpv4AuthKeys() {
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
+  private URI href;
+
+  public RouteTableEntryConnection() {
   }
 
-  public PeeringConnectionIpv4AuthKeys type(@javax.annotation.Nullable String type) {
-    this.type = type;
+  public RouteTableEntryConnection uuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
     return this;
   }
 
   /**
-   * Get type
-   * @return type
+   * Get uuid
+   * @return uuid
    */
   @javax.annotation.Nullable
-  public String getType() {
-    return type;
+  public String getUuid() {
+    return uuid;
   }
 
-  public void setType(@javax.annotation.Nullable String type) {
-    this.type = type;
+  public void setUuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
   }
 
 
-  public PeeringConnectionIpv4AuthKeys key(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public RouteTableEntryConnection name(@javax.annotation.Nullable String name) {
+    this.name = name;
     return this;
   }
 
   /**
-   * Get key
-   * @return key
+   * Get name
+   * @return name
    */
   @javax.annotation.Nullable
-  public String getKey() {
-    return key;
+  public String getName() {
+    return name;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public RouteTableEntryConnection href(@javax.annotation.Nullable URI href) {
+    this.href = href;
+    return this;
+  }
+
+  /**
+   * Get href
+   * @return href
+   */
+  @javax.annotation.Nullable
+  public URI getHref() {
+    return href;
+  }
+
+  public void setHref(@javax.annotation.Nullable URI href) {
+    this.href = href;
   }
 
   /**
@@ -111,9 +136,9 @@ public class PeeringConnectionIpv4AuthKeys {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the PeeringConnectionIpv4AuthKeys instance itself
+   * @return the RouteTableEntryConnection instance itself
    */
-  public PeeringConnectionIpv4AuthKeys putAdditionalProperty(String key, Object value) {
+  public RouteTableEntryConnection putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -152,23 +177,25 @@ public class PeeringConnectionIpv4AuthKeys {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PeeringConnectionIpv4AuthKeys peeringConnectionIpv4AuthKeys = (PeeringConnectionIpv4AuthKeys) o;
-    return Objects.equals(this.type, peeringConnectionIpv4AuthKeys.type) &&
-        Objects.equals(this.key, peeringConnectionIpv4AuthKeys.key)&&
-        Objects.equals(this.additionalProperties, peeringConnectionIpv4AuthKeys.additionalProperties);
+    RouteTableEntryConnection routeTableEntryConnection = (RouteTableEntryConnection) o;
+    return Objects.equals(this.uuid, routeTableEntryConnection.uuid) &&
+        Objects.equals(this.name, routeTableEntryConnection.name) &&
+        Objects.equals(this.href, routeTableEntryConnection.href)&&
+        Objects.equals(this.additionalProperties, routeTableEntryConnection.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, key, additionalProperties);
+    return Objects.hash(uuid, name, href, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PeeringConnectionIpv4AuthKeys {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("class RouteTableEntryConnection {\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -192,8 +219,9 @@ public class PeeringConnectionIpv4AuthKeys {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("key");
+    openapiFields.add("uuid");
+    openapiFields.add("name");
+    openapiFields.add("href");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -203,20 +231,23 @@ public class PeeringConnectionIpv4AuthKeys {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PeeringConnectionIpv4AuthKeys
+   * @throws IOException if the JSON Element is invalid with respect to RouteTableEntryConnection
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!PeeringConnectionIpv4AuthKeys.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PeeringConnectionIpv4AuthKeys is not found in the empty JSON string", PeeringConnectionIpv4AuthKeys.openapiRequiredFields.toString()));
+        if (!RouteTableEntryConnection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RouteTableEntryConnection is not found in the empty JSON string", RouteTableEntryConnection.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
   }
 
@@ -224,16 +255,16 @@ public class PeeringConnectionIpv4AuthKeys {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PeeringConnectionIpv4AuthKeys.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PeeringConnectionIpv4AuthKeys' and its subtypes
+       if (!RouteTableEntryConnection.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RouteTableEntryConnection' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PeeringConnectionIpv4AuthKeys> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PeeringConnectionIpv4AuthKeys.class));
+       final TypeAdapter<RouteTableEntryConnection> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RouteTableEntryConnection.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<PeeringConnectionIpv4AuthKeys>() {
+       return (TypeAdapter<T>) new TypeAdapter<RouteTableEntryConnection>() {
            @Override
-           public void write(JsonWriter out, PeeringConnectionIpv4AuthKeys value) throws IOException {
+           public void write(JsonWriter out, RouteTableEntryConnection value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -261,12 +292,12 @@ public class PeeringConnectionIpv4AuthKeys {
            }
 
            @Override
-           public PeeringConnectionIpv4AuthKeys read(JsonReader in) throws IOException {
+           public RouteTableEntryConnection read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             PeeringConnectionIpv4AuthKeys instance = thisAdapter.fromJsonTree(jsonObj);
+             RouteTableEntryConnection instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -293,18 +324,18 @@ public class PeeringConnectionIpv4AuthKeys {
   }
 
   /**
-   * Create an instance of PeeringConnectionIpv4AuthKeys given an JSON string
+   * Create an instance of RouteTableEntryConnection given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of PeeringConnectionIpv4AuthKeys
-   * @throws IOException if the JSON string is invalid with respect to PeeringConnectionIpv4AuthKeys
+   * @return An instance of RouteTableEntryConnection
+   * @throws IOException if the JSON string is invalid with respect to RouteTableEntryConnection
    */
-  public static PeeringConnectionIpv4AuthKeys fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PeeringConnectionIpv4AuthKeys.class);
+  public static RouteTableEntryConnection fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RouteTableEntryConnection.class);
   }
 
   /**
-   * Convert an instance of PeeringConnectionIpv4AuthKeys to an JSON string
+   * Convert an instance of RouteTableEntryConnection to an JSON string
    *
    * @return JSON string
    */

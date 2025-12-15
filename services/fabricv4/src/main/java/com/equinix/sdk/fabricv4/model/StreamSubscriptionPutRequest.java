@@ -51,9 +51,64 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class StreamSubscriptionPutRequest {
+  /**
+   * Gets or Sets type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
+  private TypeEnum type;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
@@ -83,13 +138,32 @@ public class StreamSubscriptionPutRequest {
 
   public static final String SERIALIZED_NAME_SINK = "sink";
   @SerializedName(SERIALIZED_NAME_SINK)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private StreamSubscriptionSink sink;
 
   public StreamSubscriptionPutRequest() {
   }
 
-  public StreamSubscriptionPutRequest name(@javax.annotation.Nullable String name) {
+  public StreamSubscriptionPutRequest type(@javax.annotation.Nonnull TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nonnull
+  public TypeEnum getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+    this.type = type;
+  }
+
+
+  public StreamSubscriptionPutRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -98,12 +172,12 @@ public class StreamSubscriptionPutRequest {
    * Customer-provided stream subscription name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
@@ -203,7 +277,7 @@ public class StreamSubscriptionPutRequest {
   }
 
 
-  public StreamSubscriptionPutRequest sink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public StreamSubscriptionPutRequest sink(@javax.annotation.Nonnull StreamSubscriptionSink sink) {
     this.sink = sink;
     return this;
   }
@@ -212,12 +286,12 @@ public class StreamSubscriptionPutRequest {
    * Get sink
    * @return sink
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StreamSubscriptionSink getSink() {
     return sink;
   }
 
-  public void setSink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public void setSink(@javax.annotation.Nonnull StreamSubscriptionSink sink) {
     this.sink = sink;
   }
 
@@ -276,7 +350,8 @@ public class StreamSubscriptionPutRequest {
       return false;
     }
     StreamSubscriptionPutRequest streamSubscriptionPutRequest = (StreamSubscriptionPutRequest) o;
-    return Objects.equals(this.name, streamSubscriptionPutRequest.name) &&
+    return Objects.equals(this.type, streamSubscriptionPutRequest.type) &&
+        Objects.equals(this.name, streamSubscriptionPutRequest.name) &&
         Objects.equals(this.description, streamSubscriptionPutRequest.description) &&
         Objects.equals(this.enabled, streamSubscriptionPutRequest.enabled) &&
         Objects.equals(this.filters, streamSubscriptionPutRequest.filters) &&
@@ -288,13 +363,14 @@ public class StreamSubscriptionPutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, enabled, filters, metricSelector, eventSelector, sink, additionalProperties);
+    return Objects.hash(type, name, description, enabled, filters, metricSelector, eventSelector, sink, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class StreamSubscriptionPutRequest {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
@@ -325,6 +401,7 @@ public class StreamSubscriptionPutRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("type");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("enabled");
@@ -335,6 +412,9 @@ public class StreamSubscriptionPutRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("sink");
   }
 
   /**
@@ -349,8 +429,20 @@ public class StreamSubscriptionPutRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionPutRequest is not found in the empty JSON string", StreamSubscriptionPutRequest.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : StreamSubscriptionPutRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
@@ -368,10 +460,8 @@ public class StreamSubscriptionPutRequest {
       if (jsonObj.get("eventSelector") != null && !jsonObj.get("eventSelector").isJsonNull()) {
         StreamSubscriptionSelector.validateJsonElement(jsonObj.get("eventSelector"));
       }
-      // validate the optional field `sink`
-      if (jsonObj.get("sink") != null && !jsonObj.get("sink").isJsonNull()) {
-        StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
-      }
+      // validate the required field `sink`
+      StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

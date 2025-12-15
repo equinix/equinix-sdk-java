@@ -46,24 +46,24 @@ import java.util.Set;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * MetricSelector
+ * ResourceSelectorResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
-public class MetricSelector {
+public class ResourceSelectorResponse {
   public static final String SERIALIZED_NAME_INCLUDE = "include";
   @SerializedName(SERIALIZED_NAME_INCLUDE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<String> include = new ArrayList<>();
 
-  public MetricSelector() {
+  public ResourceSelectorResponse() {
   }
 
-  public MetricSelector include(@javax.annotation.Nonnull List<String> include) {
+  public ResourceSelectorResponse include(@javax.annotation.Nullable List<String> include) {
     this.include = include;
     return this;
   }
 
-  public MetricSelector addIncludeItem(String includeItem) {
+  public ResourceSelectorResponse addIncludeItem(String includeItem) {
     if (this.include == null) {
       this.include = new ArrayList<>();
     }
@@ -72,15 +72,15 @@ public class MetricSelector {
   }
 
   /**
-   * Stream alert rule filtered by metric name
+   * ### Supported metric names to use on filters with property /subject:   * &#x60;/fabric/v4/ports/&lt;uuid&gt;&#x60; - port metrics   * &#x60;/fabric/v4/connections/&lt;uuid&gt;&#x60; - connection metrics   * &#x60;/fabric/v4/metros/&lt;metroCode&gt;&#x60; - metro latency metrics 
    * @return include
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<String> getInclude() {
     return include;
   }
 
-  public void setInclude(@javax.annotation.Nonnull List<String> include) {
+  public void setInclude(@javax.annotation.Nullable List<String> include) {
     this.include = include;
   }
 
@@ -97,9 +97,9 @@ public class MetricSelector {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the MetricSelector instance itself
+   * @return the ResourceSelectorResponse instance itself
    */
-  public MetricSelector putAdditionalProperty(String key, Object value) {
+  public ResourceSelectorResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -138,9 +138,9 @@ public class MetricSelector {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MetricSelector metricSelector = (MetricSelector) o;
-    return Objects.equals(this.include, metricSelector.include)&&
-        Objects.equals(this.additionalProperties, metricSelector.additionalProperties);
+    ResourceSelectorResponse resourceSelectorResponse = (ResourceSelectorResponse) o;
+    return Objects.equals(this.include, resourceSelectorResponse.include)&&
+        Objects.equals(this.additionalProperties, resourceSelectorResponse.additionalProperties);
   }
 
   @Override
@@ -151,7 +151,7 @@ public class MetricSelector {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MetricSelector {\n");
+    sb.append("class ResourceSelectorResponse {\n");
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -180,33 +180,23 @@ public class MetricSelector {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("include");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to MetricSelector
+   * @throws IOException if the JSON Element is invalid with respect to ResourceSelectorResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!MetricSelector.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricSelector is not found in the empty JSON string", MetricSelector.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : MetricSelector.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!ResourceSelectorResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSelectorResponse is not found in the empty JSON string", ResourceSelectorResponse.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the required json array is present
-      if (jsonObj.get("include") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("include").isJsonArray()) {
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }
@@ -215,16 +205,16 @@ public class MetricSelector {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!MetricSelector.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'MetricSelector' and its subtypes
+       if (!ResourceSelectorResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ResourceSelectorResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<MetricSelector> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(MetricSelector.class));
+       final TypeAdapter<ResourceSelectorResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ResourceSelectorResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<MetricSelector>() {
+       return (TypeAdapter<T>) new TypeAdapter<ResourceSelectorResponse>() {
            @Override
-           public void write(JsonWriter out, MetricSelector value) throws IOException {
+           public void write(JsonWriter out, ResourceSelectorResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -252,12 +242,12 @@ public class MetricSelector {
            }
 
            @Override
-           public MetricSelector read(JsonReader in) throws IOException {
+           public ResourceSelectorResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             MetricSelector instance = thisAdapter.fromJsonTree(jsonObj);
+             ResourceSelectorResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -284,18 +274,18 @@ public class MetricSelector {
   }
 
   /**
-   * Create an instance of MetricSelector given an JSON string
+   * Create an instance of ResourceSelectorResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of MetricSelector
-   * @throws IOException if the JSON string is invalid with respect to MetricSelector
+   * @return An instance of ResourceSelectorResponse
+   * @throws IOException if the JSON string is invalid with respect to ResourceSelectorResponse
    */
-  public static MetricSelector fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, MetricSelector.class);
+  public static ResourceSelectorResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ResourceSelectorResponse.class);
   }
 
   /**
-   * Convert an instance of MetricSelector to an JSON string
+   * Convert an instance of ResourceSelectorResponse to an JSON string
    *
    * @return JSON string
    */

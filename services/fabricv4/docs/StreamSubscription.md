@@ -17,7 +17,7 @@ Stream Subscription object
 |**enabled** | **Boolean** | Stream subscription enabled status |  [optional] |
 |**metricSelector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  |  [optional] |
 |**eventSelector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  |  [optional] |
-|**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  |  [optional] |
+|**sink** | [**StreamSubscriptionSinkResponse**](StreamSubscriptionSinkResponse.md) |  |  [optional] |
 |**operation** | [**StreamSubscriptionOperation**](StreamSubscriptionOperation.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 

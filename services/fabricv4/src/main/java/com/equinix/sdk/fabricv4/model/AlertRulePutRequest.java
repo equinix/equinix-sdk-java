@@ -53,7 +53,7 @@ import com.equinix.sdk.fabricv4.JSON;
 public class AlertRulePutRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String name;
 
   /**
@@ -108,7 +108,7 @@ public class AlertRulePutRequest {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
@@ -123,23 +123,23 @@ public class AlertRulePutRequest {
 
   public static final String SERIALIZED_NAME_METRIC_SELECTOR = "metricSelector";
   @SerializedName(SERIALIZED_NAME_METRIC_SELECTOR)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private MetricSelector metricSelector;
 
   public static final String SERIALIZED_NAME_RESOURCE_SELECTOR = "resourceSelector";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SELECTOR)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ResourceSelector resourceSelector;
 
   public static final String SERIALIZED_NAME_DETECTION_METHOD = "detectionMethod";
   @SerializedName(SERIALIZED_NAME_DETECTION_METHOD)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private DetectionMethod detectionMethod;
 
   public AlertRulePutRequest() {
   }
 
-  public AlertRulePutRequest name(@javax.annotation.Nullable String name) {
+  public AlertRulePutRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -148,17 +148,17 @@ public class AlertRulePutRequest {
    * Customer-provided stream name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AlertRulePutRequest type(@javax.annotation.Nullable TypeEnum type) {
+  public AlertRulePutRequest type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -167,12 +167,12 @@ public class AlertRulePutRequest {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
@@ -215,7 +215,7 @@ public class AlertRulePutRequest {
   }
 
 
-  public AlertRulePutRequest metricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+  public AlertRulePutRequest metricSelector(@javax.annotation.Nonnull MetricSelector metricSelector) {
     this.metricSelector = metricSelector;
     return this;
   }
@@ -224,17 +224,17 @@ public class AlertRulePutRequest {
    * Get metricSelector
    * @return metricSelector
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public MetricSelector getMetricSelector() {
     return metricSelector;
   }
 
-  public void setMetricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+  public void setMetricSelector(@javax.annotation.Nonnull MetricSelector metricSelector) {
     this.metricSelector = metricSelector;
   }
 
 
-  public AlertRulePutRequest resourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
+  public AlertRulePutRequest resourceSelector(@javax.annotation.Nonnull ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
     return this;
   }
@@ -243,17 +243,17 @@ public class AlertRulePutRequest {
    * Get resourceSelector
    * @return resourceSelector
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ResourceSelector getResourceSelector() {
     return resourceSelector;
   }
 
-  public void setResourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
+  public void setResourceSelector(@javax.annotation.Nonnull ResourceSelector resourceSelector) {
     this.resourceSelector = resourceSelector;
   }
 
 
-  public AlertRulePutRequest detectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+  public AlertRulePutRequest detectionMethod(@javax.annotation.Nonnull DetectionMethod detectionMethod) {
     this.detectionMethod = detectionMethod;
     return this;
   }
@@ -262,12 +262,12 @@ public class AlertRulePutRequest {
    * Get detectionMethod
    * @return detectionMethod
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public DetectionMethod getDetectionMethod() {
     return detectionMethod;
   }
 
-  public void setDetectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+  public void setDetectionMethod(@javax.annotation.Nonnull DetectionMethod detectionMethod) {
     this.detectionMethod = detectionMethod;
   }
 
@@ -385,6 +385,11 @@ public class AlertRulePutRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("metricSelector");
+    openapiRequiredFields.add("resourceSelector");
+    openapiRequiredFields.add("detectionMethod");
   }
 
   /**
@@ -399,32 +404,31 @@ public class AlertRulePutRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in AlertRulePutRequest is not found in the empty JSON string", AlertRulePutRequest.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : AlertRulePutRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
-      }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // validate the optional field `metricSelector`
-      if (jsonObj.get("metricSelector") != null && !jsonObj.get("metricSelector").isJsonNull()) {
-        MetricSelector.validateJsonElement(jsonObj.get("metricSelector"));
-      }
-      // validate the optional field `resourceSelector`
-      if (jsonObj.get("resourceSelector") != null && !jsonObj.get("resourceSelector").isJsonNull()) {
-        ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
-      }
-      // validate the optional field `detectionMethod`
-      if (jsonObj.get("detectionMethod") != null && !jsonObj.get("detectionMethod").isJsonNull()) {
-        DetectionMethod.validateJsonElement(jsonObj.get("detectionMethod"));
-      }
+      // validate the required field `metricSelector`
+      MetricSelector.validateJsonElement(jsonObj.get("metricSelector"));
+      // validate the required field `resourceSelector`
+      ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
+      // validate the required field `detectionMethod`
+      DetectionMethod.validateJsonElement(jsonObj.get("detectionMethod"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

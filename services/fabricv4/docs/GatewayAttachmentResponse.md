@@ -12,6 +12,7 @@ Schema representing a Gateway attaching or detaching on a Cloud Router. This sch
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 |**uuid** | **UUID** |  |  [optional] |
 |**attachmentStatus** | [**AttachmentStatusEnum**](#AttachmentStatusEnum) |  |  [optional] |
+|**errors** | [**List&lt;Error&gt;**](Error.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 
 

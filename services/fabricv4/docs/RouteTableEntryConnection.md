@@ -1,6 +1,6 @@
 
 
-# ConnectionRouteTableEntryConnection
+# RouteTableEntryConnection
 
 
 ## Properties
@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**uuid** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**href** | **String** |  |  [optional] |
+|**href** | **URI** |  |  [optional] |
 
 
 

@@ -1,14 +1,13 @@
 
 
-# PeeringConnectionIpv4AuthKeys
+# MetricSelectorResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | **String** |  |  [optional] |
-|**key** | **String** |  |  [optional] |
+|**include** | **List&lt;String&gt;** | Stream alert rule filtered by metric name |  [optional] |
 
 
 

@@ -15,7 +15,7 @@ import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionOperation;
 import com.equinix.sdk.fabricv4.model.StreamSubscriptionSelector;
-import com.equinix.sdk.fabricv4.model.StreamSubscriptionSink;
+import com.equinix.sdk.fabricv4.model.StreamSubscriptionSinkResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -212,7 +212,7 @@ public class StreamSubscription {
   public static final String SERIALIZED_NAME_SINK = "sink";
   @SerializedName(SERIALIZED_NAME_SINK)
   @javax.annotation.Nullable
-  private StreamSubscriptionSink sink;
+  private StreamSubscriptionSinkResponse sink;
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
@@ -397,7 +397,7 @@ public class StreamSubscription {
   }
 
 
-  public StreamSubscription sink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public StreamSubscription sink(@javax.annotation.Nullable StreamSubscriptionSinkResponse sink) {
     this.sink = sink;
     return this;
   }
@@ -407,11 +407,11 @@ public class StreamSubscription {
    * @return sink
    */
   @javax.annotation.Nullable
-  public StreamSubscriptionSink getSink() {
+  public StreamSubscriptionSinkResponse getSink() {
     return sink;
   }
 
-  public void setSink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public void setSink(@javax.annotation.Nullable StreamSubscriptionSinkResponse sink) {
     this.sink = sink;
   }
 
@@ -633,7 +633,7 @@ public class StreamSubscription {
       }
       // validate the optional field `sink`
       if (jsonObj.get("sink") != null && !jsonObj.get("sink").isJsonNull()) {
-        StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
+        StreamSubscriptionSinkResponse.validateJsonElement(jsonObj.get("sink"));
       }
       // validate the optional field `operation`
       if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
