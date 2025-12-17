@@ -17,5 +17,7 @@
 
 * `TYPE` (value: `"/type"`)
 
+* `MED` (value: `"/MED"`)
+
 
 

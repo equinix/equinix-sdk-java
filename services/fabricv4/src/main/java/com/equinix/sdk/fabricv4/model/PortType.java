@@ -27,11 +27,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(PortType.Adapter.class)
 public enum PortType {
   
-  XF_PORT("XF_PORT"),
-  
-  IX_PORT("IX_PORT"),
-  
-  IA_PORT("IA_PORT");
+  XF_PORT("XF_PORT");
 
   private String value;
 

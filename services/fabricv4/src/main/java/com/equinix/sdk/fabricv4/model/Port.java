@@ -14,6 +14,7 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.EndCustomer;
+import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
@@ -28,6 +29,7 @@ import com.equinix.sdk.fabricv4.model.PortNotification;
 import com.equinix.sdk.fabricv4.model.PortOperation;
 import com.equinix.sdk.fabricv4.model.PortOrder;
 import com.equinix.sdk.fabricv4.model.PortRedundancy;
+import com.equinix.sdk.fabricv4.model.PortServiceCode;
 import com.equinix.sdk.fabricv4.model.PortSettings;
 import com.equinix.sdk.fabricv4.model.PortState;
 import com.equinix.sdk.fabricv4.model.PortType;
@@ -395,6 +397,11 @@ public class Port {
   @javax.annotation.Nullable
   private ServiceTypeEnum serviceType;
 
+  public static final String SERIALIZED_NAME_SERVICE_CODE = "serviceCode";
+  @SerializedName(SERIALIZED_NAME_SERVICE_CODE)
+  @javax.annotation.Nullable
+  private PortServiceCode serviceCode;
+
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
@@ -505,6 +512,11 @@ public class Port {
   @SerializedName(SERIALIZED_NAME_LOAS)
   @javax.annotation.Nullable
   private List<PortLoa> loas = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
+  @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
+  @javax.annotation.Nullable
+  private MarketplaceSubscription marketplaceSubscription;
 
   public Port() {
   }
@@ -891,6 +903,25 @@ public class Port {
   @Deprecated
   public void setServiceType(@javax.annotation.Nullable ServiceTypeEnum serviceType) {
     this.serviceType = serviceType;
+  }
+
+
+  public Port serviceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+
+  /**
+   * Get serviceCode
+   * @return serviceCode
+   */
+  @javax.annotation.Nullable
+  public PortServiceCode getServiceCode() {
+    return serviceCode;
+  }
+
+  public void setServiceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
   }
 
 
@@ -1350,6 +1381,25 @@ public class Port {
     this.loas = loas;
   }
 
+
+  public Port marketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
+    this.marketplaceSubscription = marketplaceSubscription;
+    return this;
+  }
+
+  /**
+   * Get marketplaceSubscription
+   * @return marketplaceSubscription
+   */
+  @javax.annotation.Nullable
+  public MarketplaceSubscription getMarketplaceSubscription() {
+    return marketplaceSubscription;
+  }
+
+  public void setMarketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
+    this.marketplaceSubscription = marketplaceSubscription;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1425,6 +1475,7 @@ public class Port {
         Objects.equals(this.change, port.change) &&
         Objects.equals(this.changeLog, port.changeLog) &&
         Objects.equals(this.serviceType, port.serviceType) &&
+        Objects.equals(this.serviceCode, port.serviceCode) &&
         Objects.equals(this.bandwidth, port.bandwidth) &&
         Objects.equals(this.availableBandwidth, port.availableBandwidth) &&
         Objects.equals(this.usedBandwidth, port.usedBandwidth) &&
@@ -1446,13 +1497,14 @@ public class Port {
         Objects.equals(this.additionalInfo, port.additionalInfo) &&
         Objects.equals(this.endCustomer, port.endCustomer) &&
         Objects.equals(this.physicalPorts, port.physicalPorts) &&
-        Objects.equals(this.loas, port.loas)&&
+        Objects.equals(this.loas, port.loas) &&
+        Objects.equals(this.marketplaceSubscription, port.marketplaceSubscription)&&
         Objects.equals(this.additionalProperties, port.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, additionalProperties);
+    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
   }
 
   @Override
@@ -1479,6 +1531,7 @@ public class Port {
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    availableBandwidth: ").append(toIndentedString(availableBandwidth)).append("\n");
     sb.append("    usedBandwidth: ").append(toIndentedString(usedBandwidth)).append("\n");
@@ -1501,6 +1554,7 @@ public class Port {
     sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
+    sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1544,6 +1598,7 @@ public class Port {
     openapiFields.add("change");
     openapiFields.add("changeLog");
     openapiFields.add("serviceType");
+    openapiFields.add("serviceCode");
     openapiFields.add("bandwidth");
     openapiFields.add("availableBandwidth");
     openapiFields.add("usedBandwidth");
@@ -1566,6 +1621,7 @@ public class Port {
     openapiFields.add("endCustomer");
     openapiFields.add("physicalPorts");
     openapiFields.add("loas");
+    openapiFields.add("marketplaceSubscription");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1655,6 +1711,10 @@ public class Port {
       // validate the optional field `serviceType`
       if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
         ServiceTypeEnum.validateJsonElement(jsonObj.get("serviceType"));
+      }
+      // validate the optional field `serviceCode`
+      if (jsonObj.get("serviceCode") != null && !jsonObj.get("serviceCode").isJsonNull()) {
+        PortServiceCode.validateJsonElement(jsonObj.get("serviceCode"));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
@@ -1757,6 +1817,10 @@ public class Port {
             PortLoa.validateJsonElement(jsonArrayloas.get(i));
           };
         }
+      }
+      // validate the optional field `marketplaceSubscription`
+      if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
+        MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
       }
   }
 

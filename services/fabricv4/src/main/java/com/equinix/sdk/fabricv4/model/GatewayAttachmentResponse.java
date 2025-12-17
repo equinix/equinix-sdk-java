@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
+import com.equinix.sdk.fabricv4.model.Error;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -179,6 +182,11 @@ public class GatewayAttachmentResponse {
   @javax.annotation.Nullable
   private AttachmentStatusEnum attachmentStatus;
 
+  public static final String SERIALIZED_NAME_ERRORS = "errors";
+  @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
+  private List<Error> errors = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
   @javax.annotation.Nullable
@@ -263,6 +271,33 @@ public class GatewayAttachmentResponse {
   }
 
 
+  public GatewayAttachmentResponse errors(@javax.annotation.Nullable List<Error> errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  public GatewayAttachmentResponse addErrorsItem(Error errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+  /**
+   * Get errors
+   * @return errors
+   */
+  @javax.annotation.Nullable
+  public List<Error> getErrors() {
+    return errors;
+  }
+
+  public void setErrors(@javax.annotation.Nullable List<Error> errors) {
+    this.errors = errors;
+  }
+
+
   public GatewayAttachmentResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
@@ -340,13 +375,14 @@ public class GatewayAttachmentResponse {
         Objects.equals(this.type, gatewayAttachmentResponse.type) &&
         Objects.equals(this.uuid, gatewayAttachmentResponse.uuid) &&
         Objects.equals(this.attachmentStatus, gatewayAttachmentResponse.attachmentStatus) &&
+        Objects.equals(this.errors, gatewayAttachmentResponse.errors) &&
         Objects.equals(this.changeLog, gatewayAttachmentResponse.changeLog)&&
         Objects.equals(this.additionalProperties, gatewayAttachmentResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, attachmentStatus, changeLog, additionalProperties);
+    return Objects.hash(href, type, uuid, attachmentStatus, errors, changeLog, additionalProperties);
   }
 
   @Override
@@ -357,6 +393,7 @@ public class GatewayAttachmentResponse {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    attachmentStatus: ").append(toIndentedString(attachmentStatus)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -385,6 +422,7 @@ public class GatewayAttachmentResponse {
     openapiFields.add("type");
     openapiFields.add("uuid");
     openapiFields.add("attachmentStatus");
+    openapiFields.add("errors");
     openapiFields.add("changeLog");
 
     // a set of required properties/fields (JSON key names)
@@ -423,6 +461,20 @@ public class GatewayAttachmentResponse {
       // validate the optional field `attachmentStatus`
       if (jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) {
         AttachmentStatusEnum.validateJsonElement(jsonObj.get("attachmentStatus"));
+      }
+      if (jsonObj.get("errors") != null && !jsonObj.get("errors").isJsonNull()) {
+        JsonArray jsonArrayerrors = jsonObj.getAsJsonArray("errors");
+        if (jsonArrayerrors != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("errors").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+          }
+
+          // validate the optional field `errors` (array)
+          for (int i = 0; i < jsonArrayerrors.size(); i++) {
+            Error.validateJsonElement(jsonArrayerrors.get(i));
+          };
+        }
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

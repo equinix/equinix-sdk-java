@@ -11,7 +11,6 @@ Advertised and received route table entry object
 |**type** | **RouteTableEntryType** |  |  |
 |**protocolType** | **RouteTableEntryProtocolType** |  |  [optional] |
 |**state** | [**StateEnum**](#StateEnum) |  |  |
-|**age** | **String** |  |  [optional] |
 |**prefix** | **String** |  |  [optional] |
 |**nextHop** | **String** |  |  [optional] |
 |**MED** | **Integer** |  |  [optional] |

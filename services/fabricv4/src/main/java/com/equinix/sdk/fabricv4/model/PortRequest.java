@@ -12,12 +12,11 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
-import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.EndCustomer;
+import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
-import com.equinix.sdk.fabricv4.model.PortChange;
 import com.equinix.sdk.fabricv4.model.PortDemarcationPoint;
 import com.equinix.sdk.fabricv4.model.PortDevice;
 import com.equinix.sdk.fabricv4.model.PortEncapsulation;
@@ -25,9 +24,9 @@ import com.equinix.sdk.fabricv4.model.PortInterface;
 import com.equinix.sdk.fabricv4.model.PortLag;
 import com.equinix.sdk.fabricv4.model.PortLoa;
 import com.equinix.sdk.fabricv4.model.PortNotification;
-import com.equinix.sdk.fabricv4.model.PortOperation;
 import com.equinix.sdk.fabricv4.model.PortOrder;
 import com.equinix.sdk.fabricv4.model.PortRedundancy;
+import com.equinix.sdk.fabricv4.model.PortServiceCode;
 import com.equinix.sdk.fabricv4.model.PortSettings;
 import com.equinix.sdk.fabricv4.model.PortState;
 import com.equinix.sdk.fabricv4.model.PortType;
@@ -40,11 +39,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -74,25 +71,10 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PortRequest {
-  public static final String SERIALIZED_NAME_HREF = "href";
-  @SerializedName(SERIALIZED_NAME_HREF)
-  @javax.annotation.Nullable
-  private URI href;
-
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
   private PortType type;
-
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private Integer id;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  @javax.annotation.Nullable
-  private UUID uuid;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -108,11 +90,6 @@ public class PortRequest {
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS_SPEED)
   @javax.annotation.Nonnull
   private Integer physicalPortsSpeed;
-
-  public static final String SERIALIZED_NAME_CONNECTIONS_COUNT = "connectionsCount";
-  @SerializedName(SERIALIZED_NAME_CONNECTIONS_COUNT)
-  @javax.annotation.Nullable
-  private Integer connectionsCount;
 
   /**
    * Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
@@ -317,25 +294,10 @@ public class PortRequest {
   @javax.annotation.Nullable
   private PortOrder order;
 
-  public static final String SERIALIZED_NAME_OPERATION = "operation";
-  @SerializedName(SERIALIZED_NAME_OPERATION)
-  @javax.annotation.Nullable
-  private PortOperation operation;
-
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
   @javax.annotation.Nonnull
   private SimplifiedAccount account;
-
-  public static final String SERIALIZED_NAME_CHANGE = "change";
-  @SerializedName(SERIALIZED_NAME_CHANGE)
-  @javax.annotation.Nullable
-  private PortChange change;
-
-  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
-  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
-  @javax.annotation.Nullable
-  private Changelog changeLog;
 
   /**
    * Port service Type
@@ -395,21 +357,16 @@ public class PortRequest {
   @javax.annotation.Nullable
   private ServiceTypeEnum serviceType;
 
+  public static final String SERIALIZED_NAME_SERVICE_CODE = "serviceCode";
+  @SerializedName(SERIALIZED_NAME_SERVICE_CODE)
+  @javax.annotation.Nullable
+  private PortServiceCode serviceCode;
+
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
   @javax.annotation.Nullable
   private Integer bandwidth;
-
-  public static final String SERIALIZED_NAME_AVAILABLE_BANDWIDTH = "availableBandwidth";
-  @SerializedName(SERIALIZED_NAME_AVAILABLE_BANDWIDTH)
-  @javax.annotation.Nullable
-  private Integer availableBandwidth;
-
-  public static final String SERIALIZED_NAME_USED_BANDWIDTH = "usedBandwidth";
-  @SerializedName(SERIALIZED_NAME_USED_BANDWIDTH)
-  @javax.annotation.Nullable
-  private Integer usedBandwidth;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
@@ -506,26 +463,13 @@ public class PortRequest {
   @javax.annotation.Nullable
   private List<PortLoa> loas = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
+  @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
+  @javax.annotation.Nullable
+  private MarketplaceSubscription marketplaceSubscription;
+
   public PortRequest() {
   }
-
-  public PortRequest(
-     URI href
-  ) {
-    this();
-    this.href = href;
-  }
-
-  /**
-   * Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context.
-   * @return href
-   */
-  @javax.annotation.Nullable
-  public URI getHref() {
-    return href;
-  }
-
-
 
   public PortRequest type(@javax.annotation.Nonnull PortType type) {
     this.type = type;
@@ -543,44 +487,6 @@ public class PortRequest {
 
   public void setType(@javax.annotation.Nonnull PortType type) {
     this.type = type;
-  }
-
-
-  public PortRequest id(@javax.annotation.Nullable Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port Id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable Integer id) {
-    this.id = id;
-  }
-
-
-  public PortRequest uuid(@javax.annotation.Nullable UUID uuid) {
-    this.uuid = uuid;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for  port identifier
-   * @return uuid
-   */
-  @javax.annotation.Nullable
-  public UUID getUuid() {
-    return uuid;
-  }
-
-  public void setUuid(@javax.annotation.Nullable UUID uuid) {
-    this.uuid = uuid;
   }
 
 
@@ -639,26 +545,6 @@ public class PortRequest {
 
   public void setPhysicalPortsSpeed(@javax.annotation.Nonnull Integer physicalPortsSpeed) {
     this.physicalPortsSpeed = physicalPortsSpeed;
-  }
-
-
-  public PortRequest connectionsCount(@javax.annotation.Nullable Integer connectionsCount) {
-    this.connectionsCount = connectionsCount;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Connection count
-   * minimum: 0
-   * @return connectionsCount
-   */
-  @javax.annotation.Nullable
-  public Integer getConnectionsCount() {
-    return connectionsCount;
-  }
-
-  public void setConnectionsCount(@javax.annotation.Nullable Integer connectionsCount) {
-    this.connectionsCount = connectionsCount;
   }
 
 
@@ -795,25 +681,6 @@ public class PortRequest {
   }
 
 
-  public PortRequest operation(@javax.annotation.Nullable PortOperation operation) {
-    this.operation = operation;
-    return this;
-  }
-
-  /**
-   * Get operation
-   * @return operation
-   */
-  @javax.annotation.Nullable
-  public PortOperation getOperation() {
-    return operation;
-  }
-
-  public void setOperation(@javax.annotation.Nullable PortOperation operation) {
-    this.operation = operation;
-  }
-
-
   public PortRequest account(@javax.annotation.Nonnull SimplifiedAccount account) {
     this.account = account;
     return this;
@@ -830,44 +697,6 @@ public class PortRequest {
 
   public void setAccount(@javax.annotation.Nonnull SimplifiedAccount account) {
     this.account = account;
-  }
-
-
-  public PortRequest change(@javax.annotation.Nullable PortChange change) {
-    this.change = change;
-    return this;
-  }
-
-  /**
-   * Get change
-   * @return change
-   */
-  @javax.annotation.Nullable
-  public PortChange getChange() {
-    return change;
-  }
-
-  public void setChange(@javax.annotation.Nullable PortChange change) {
-    this.change = change;
-  }
-
-
-  public PortRequest changeLog(@javax.annotation.Nullable Changelog changeLog) {
-    this.changeLog = changeLog;
-    return this;
-  }
-
-  /**
-   * Get changeLog
-   * @return changeLog
-   */
-  @javax.annotation.Nullable
-  public Changelog getChangeLog() {
-    return changeLog;
-  }
-
-  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
-    this.changeLog = changeLog;
   }
 
 
@@ -894,6 +723,25 @@ public class PortRequest {
   }
 
 
+  public PortRequest serviceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+
+  /**
+   * Get serviceCode
+   * @return serviceCode
+   */
+  @javax.annotation.Nullable
+  public PortServiceCode getServiceCode() {
+    return serviceCode;
+  }
+
+  public void setServiceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
+  }
+
+
   @Deprecated
   public PortRequest bandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
@@ -915,46 +763,6 @@ public class PortRequest {
   @Deprecated
   public void setBandwidth(@javax.annotation.Nullable Integer bandwidth) {
     this.bandwidth = bandwidth;
-  }
-
-
-  public PortRequest availableBandwidth(@javax.annotation.Nullable Integer availableBandwidth) {
-    this.availableBandwidth = availableBandwidth;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port available bandwidth in Mbps
-   * minimum: 0
-   * @return availableBandwidth
-   */
-  @javax.annotation.Nullable
-  public Integer getAvailableBandwidth() {
-    return availableBandwidth;
-  }
-
-  public void setAvailableBandwidth(@javax.annotation.Nullable Integer availableBandwidth) {
-    this.availableBandwidth = availableBandwidth;
-  }
-
-
-  public PortRequest usedBandwidth(@javax.annotation.Nullable Integer usedBandwidth) {
-    this.usedBandwidth = usedBandwidth;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port used bandwidth in Mbps
-   * minimum: 0
-   * @return usedBandwidth
-   */
-  @javax.annotation.Nullable
-  public Integer getUsedBandwidth() {
-    return usedBandwidth;
-  }
-
-  public void setUsedBandwidth(@javax.annotation.Nullable Integer usedBandwidth) {
-    this.usedBandwidth = usedBandwidth;
   }
 
 
@@ -1350,6 +1158,25 @@ public class PortRequest {
     this.loas = loas;
   }
 
+
+  public PortRequest marketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
+    this.marketplaceSubscription = marketplaceSubscription;
+    return this;
+  }
+
+  /**
+   * Get marketplaceSubscription
+   * @return marketplaceSubscription
+   */
+  @javax.annotation.Nullable
+  public MarketplaceSubscription getMarketplaceSubscription() {
+    return marketplaceSubscription;
+  }
+
+  public void setMarketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
+    this.marketplaceSubscription = marketplaceSubscription;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1405,14 +1232,10 @@ public class PortRequest {
       return false;
     }
     PortRequest portRequest = (PortRequest) o;
-    return Objects.equals(this.href, portRequest.href) &&
-        Objects.equals(this.type, portRequest.type) &&
-        Objects.equals(this.id, portRequest.id) &&
-        Objects.equals(this.uuid, portRequest.uuid) &&
+    return Objects.equals(this.type, portRequest.type) &&
         Objects.equals(this.name, portRequest.name) &&
         Objects.equals(this.description, portRequest.description) &&
         Objects.equals(this.physicalPortsSpeed, portRequest.physicalPortsSpeed) &&
-        Objects.equals(this.connectionsCount, portRequest.connectionsCount) &&
         Objects.equals(this.physicalPortsType, portRequest.physicalPortsType) &&
         Objects.equals(this.physicalPortsCount, portRequest.physicalPortsCount) &&
         Objects.equals(this.connectivitySourceType, portRequest.connectivitySourceType) &&
@@ -1420,14 +1243,10 @@ public class PortRequest {
         Objects.equals(this.project, portRequest.project) &&
         Objects.equals(this.state, portRequest.state) &&
         Objects.equals(this.order, portRequest.order) &&
-        Objects.equals(this.operation, portRequest.operation) &&
         Objects.equals(this.account, portRequest.account) &&
-        Objects.equals(this.change, portRequest.change) &&
-        Objects.equals(this.changeLog, portRequest.changeLog) &&
         Objects.equals(this.serviceType, portRequest.serviceType) &&
+        Objects.equals(this.serviceCode, portRequest.serviceCode) &&
         Objects.equals(this.bandwidth, portRequest.bandwidth) &&
-        Objects.equals(this.availableBandwidth, portRequest.availableBandwidth) &&
-        Objects.equals(this.usedBandwidth, portRequest.usedBandwidth) &&
         Objects.equals(this.location, portRequest.location) &&
         Objects.equals(this.device, portRequest.device) &&
         Objects.equals(this._interface, portRequest._interface) &&
@@ -1446,27 +1265,24 @@ public class PortRequest {
         Objects.equals(this.additionalInfo, portRequest.additionalInfo) &&
         Objects.equals(this.endCustomer, portRequest.endCustomer) &&
         Objects.equals(this.physicalPorts, portRequest.physicalPorts) &&
-        Objects.equals(this.loas, portRequest.loas)&&
+        Objects.equals(this.loas, portRequest.loas) &&
+        Objects.equals(this.marketplaceSubscription, portRequest.marketplaceSubscription)&&
         Objects.equals(this.additionalProperties, portRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, additionalProperties);
+    return Objects.hash(type, name, description, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, account, serviceType, serviceCode, bandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PortRequest {\n");
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    physicalPortsSpeed: ").append(toIndentedString(physicalPortsSpeed)).append("\n");
-    sb.append("    connectionsCount: ").append(toIndentedString(connectionsCount)).append("\n");
     sb.append("    physicalPortsType: ").append(toIndentedString(physicalPortsType)).append("\n");
     sb.append("    physicalPortsCount: ").append(toIndentedString(physicalPortsCount)).append("\n");
     sb.append("    connectivitySourceType: ").append(toIndentedString(connectivitySourceType)).append("\n");
@@ -1474,14 +1290,10 @@ public class PortRequest {
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
-    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    change: ").append(toIndentedString(change)).append("\n");
-    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
-    sb.append("    availableBandwidth: ").append(toIndentedString(availableBandwidth)).append("\n");
-    sb.append("    usedBandwidth: ").append(toIndentedString(usedBandwidth)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    device: ").append(toIndentedString(device)).append("\n");
     sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
@@ -1501,6 +1313,7 @@ public class PortRequest {
     sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
+    sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1524,14 +1337,10 @@ public class PortRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("href");
     openapiFields.add("type");
-    openapiFields.add("id");
-    openapiFields.add("uuid");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("physicalPortsSpeed");
-    openapiFields.add("connectionsCount");
     openapiFields.add("physicalPortsType");
     openapiFields.add("physicalPortsCount");
     openapiFields.add("connectivitySourceType");
@@ -1539,14 +1348,10 @@ public class PortRequest {
     openapiFields.add("project");
     openapiFields.add("state");
     openapiFields.add("order");
-    openapiFields.add("operation");
     openapiFields.add("account");
-    openapiFields.add("change");
-    openapiFields.add("changeLog");
     openapiFields.add("serviceType");
+    openapiFields.add("serviceCode");
     openapiFields.add("bandwidth");
-    openapiFields.add("availableBandwidth");
-    openapiFields.add("usedBandwidth");
     openapiFields.add("location");
     openapiFields.add("device");
     openapiFields.add("interface");
@@ -1566,6 +1371,7 @@ public class PortRequest {
     openapiFields.add("endCustomer");
     openapiFields.add("physicalPorts");
     openapiFields.add("loas");
+    openapiFields.add("marketplaceSubscription");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1599,14 +1405,8 @@ public class PortRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
-      }
       // validate the required field `type`
       PortType.validateJsonElement(jsonObj.get("type"));
-      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
-      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -1642,26 +1442,18 @@ public class PortRequest {
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
         PortOrder.validateJsonElement(jsonObj.get("order"));
       }
-      // validate the optional field `operation`
-      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
-        PortOperation.validateJsonElement(jsonObj.get("operation"));
-      }
       // validate the required field `account`
       SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
-      // validate the optional field `change`
-      if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        PortChange.validateJsonElement(jsonObj.get("change"));
-      }
-      // validate the optional field `changeLog`
-      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonElement(jsonObj.get("changeLog"));
-      }
       if ((jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) && !jsonObj.get("serviceType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
       }
       // validate the optional field `serviceType`
       if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
         ServiceTypeEnum.validateJsonElement(jsonObj.get("serviceType"));
+      }
+      // validate the optional field `serviceCode`
+      if (jsonObj.get("serviceCode") != null && !jsonObj.get("serviceCode").isJsonNull()) {
+        PortServiceCode.validateJsonElement(jsonObj.get("serviceCode"));
       }
       // validate the required field `location`
       SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
@@ -1758,6 +1550,10 @@ public class PortRequest {
             PortLoa.validateJsonElement(jsonArrayloas.get(i));
           };
         }
+      }
+      // validate the optional field `marketplaceSubscription`
+      if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
+        MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
       }
   }
 

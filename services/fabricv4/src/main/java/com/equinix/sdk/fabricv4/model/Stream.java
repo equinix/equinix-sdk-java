@@ -63,6 +63,76 @@ public class Stream {
   private UUID uuid;
 
   /**
+   * type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    TELEMETRY_STREAM("TELEMETRY_STREAM");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
+  private TypeEnum type;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
+
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
+  private Project project;
+
+  /**
    * Stream provision state
    */
   @JsonAdapter(StateEnum.Adapter.class)
@@ -137,80 +207,15 @@ public class Stream {
   @javax.annotation.Nullable
   private Integer streamSubscriptionsCount;
 
+  public static final String SERIALIZED_NAME_ALERT_RULES_COUNT = "alertRulesCount";
+  @SerializedName(SERIALIZED_NAME_ALERT_RULES_COUNT)
+  @javax.annotation.Nullable
+  private Integer alertRulesCount;
+
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
   @javax.annotation.Nullable
   private Changelog changeLog;
-
-  /**
-   * Gets or Sets type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    TELEMETRY_STREAM("TELEMETRY_STREAM");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private TypeEnum type;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
-  private Project project;
 
   public Stream() {
   }
@@ -252,89 +257,13 @@ public class Stream {
   }
 
 
-  public Stream state(@javax.annotation.Nullable StateEnum state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Stream provision state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public StateEnum getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable StateEnum state) {
-    this.state = state;
-  }
-
-
-  public Stream assetsCount(@javax.annotation.Nullable Integer assetsCount) {
-    this.assetsCount = assetsCount;
-    return this;
-  }
-
-  /**
-   * Stream assets count
-   * @return assetsCount
-   */
-  @javax.annotation.Nullable
-  public Integer getAssetsCount() {
-    return assetsCount;
-  }
-
-  public void setAssetsCount(@javax.annotation.Nullable Integer assetsCount) {
-    this.assetsCount = assetsCount;
-  }
-
-
-  public Stream streamSubscriptionsCount(@javax.annotation.Nullable Integer streamSubscriptionsCount) {
-    this.streamSubscriptionsCount = streamSubscriptionsCount;
-    return this;
-  }
-
-  /**
-   * Stream subscriptions count
-   * @return streamSubscriptionsCount
-   */
-  @javax.annotation.Nullable
-  public Integer getStreamSubscriptionsCount() {
-    return streamSubscriptionsCount;
-  }
-
-  public void setStreamSubscriptionsCount(@javax.annotation.Nullable Integer streamSubscriptionsCount) {
-    this.streamSubscriptionsCount = streamSubscriptionsCount;
-  }
-
-
-  public Stream changeLog(@javax.annotation.Nullable Changelog changeLog) {
-    this.changeLog = changeLog;
-    return this;
-  }
-
-  /**
-   * Get changeLog
-   * @return changeLog
-   */
-  @javax.annotation.Nullable
-  public Changelog getChangeLog() {
-    return changeLog;
-  }
-
-  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
-    this.changeLog = changeLog;
-  }
-
-
   public Stream type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * type
    * @return type
    */
   @javax.annotation.Nullable
@@ -403,6 +332,101 @@ public class Stream {
     this.project = project;
   }
 
+
+  public Stream state(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
+    return this;
+  }
+
+  /**
+   * Stream provision state
+   * @return state
+   */
+  @javax.annotation.Nullable
+  public StateEnum getState() {
+    return state;
+  }
+
+  public void setState(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
+  }
+
+
+  public Stream assetsCount(@javax.annotation.Nullable Integer assetsCount) {
+    this.assetsCount = assetsCount;
+    return this;
+  }
+
+  /**
+   * Stream assets count
+   * @return assetsCount
+   */
+  @javax.annotation.Nullable
+  public Integer getAssetsCount() {
+    return assetsCount;
+  }
+
+  public void setAssetsCount(@javax.annotation.Nullable Integer assetsCount) {
+    this.assetsCount = assetsCount;
+  }
+
+
+  public Stream streamSubscriptionsCount(@javax.annotation.Nullable Integer streamSubscriptionsCount) {
+    this.streamSubscriptionsCount = streamSubscriptionsCount;
+    return this;
+  }
+
+  /**
+   * Stream subscriptions count
+   * @return streamSubscriptionsCount
+   */
+  @javax.annotation.Nullable
+  public Integer getStreamSubscriptionsCount() {
+    return streamSubscriptionsCount;
+  }
+
+  public void setStreamSubscriptionsCount(@javax.annotation.Nullable Integer streamSubscriptionsCount) {
+    this.streamSubscriptionsCount = streamSubscriptionsCount;
+  }
+
+
+  public Stream alertRulesCount(@javax.annotation.Nullable Integer alertRulesCount) {
+    this.alertRulesCount = alertRulesCount;
+    return this;
+  }
+
+  /**
+   * Stream alert rules count
+   * @return alertRulesCount
+   */
+  @javax.annotation.Nullable
+  public Integer getAlertRulesCount() {
+    return alertRulesCount;
+  }
+
+  public void setAlertRulesCount(@javax.annotation.Nullable Integer alertRulesCount) {
+    this.alertRulesCount = alertRulesCount;
+  }
+
+
+  public Stream changeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+    return this;
+  }
+
+  /**
+   * Get changeLog
+   * @return changeLog
+   */
+  @javax.annotation.Nullable
+  public Changelog getChangeLog() {
+    return changeLog;
+  }
+
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -460,20 +484,21 @@ public class Stream {
     Stream stream = (Stream) o;
     return Objects.equals(this.href, stream.href) &&
         Objects.equals(this.uuid, stream.uuid) &&
-        Objects.equals(this.state, stream.state) &&
-        Objects.equals(this.assetsCount, stream.assetsCount) &&
-        Objects.equals(this.streamSubscriptionsCount, stream.streamSubscriptionsCount) &&
-        Objects.equals(this.changeLog, stream.changeLog) &&
         Objects.equals(this.type, stream.type) &&
         Objects.equals(this.name, stream.name) &&
         Objects.equals(this.description, stream.description) &&
-        Objects.equals(this.project, stream.project)&&
+        Objects.equals(this.project, stream.project) &&
+        Objects.equals(this.state, stream.state) &&
+        Objects.equals(this.assetsCount, stream.assetsCount) &&
+        Objects.equals(this.streamSubscriptionsCount, stream.streamSubscriptionsCount) &&
+        Objects.equals(this.alertRulesCount, stream.alertRulesCount) &&
+        Objects.equals(this.changeLog, stream.changeLog)&&
         Objects.equals(this.additionalProperties, stream.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, state, assetsCount, streamSubscriptionsCount, changeLog, type, name, description, project, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, project, state, assetsCount, streamSubscriptionsCount, alertRulesCount, changeLog, additionalProperties);
   }
 
   @Override
@@ -482,14 +507,15 @@ public class Stream {
     sb.append("class Stream {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    assetsCount: ").append(toIndentedString(assetsCount)).append("\n");
-    sb.append("    streamSubscriptionsCount: ").append(toIndentedString(streamSubscriptionsCount)).append("\n");
-    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    assetsCount: ").append(toIndentedString(assetsCount)).append("\n");
+    sb.append("    streamSubscriptionsCount: ").append(toIndentedString(streamSubscriptionsCount)).append("\n");
+    sb.append("    alertRulesCount: ").append(toIndentedString(alertRulesCount)).append("\n");
+    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -513,10 +539,17 @@ public class Stream {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("href");
+    openapiFields.add("uuid");
     openapiFields.add("type");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("project");
+    openapiFields.add("state");
+    openapiFields.add("assetsCount");
+    openapiFields.add("streamSubscriptionsCount");
+    openapiFields.add("alertRulesCount");
+    openapiFields.add("changeLog");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -541,17 +574,6 @@ public class Stream {
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        StateEnum.validateJsonElement(jsonObj.get("state"));
-      }
-      // validate the optional field `changeLog`
-      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
-        Changelog.validateJsonElement(jsonObj.get("changeLog"));
-      }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
@@ -568,6 +590,17 @@ public class Stream {
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
         Project.validateJsonElement(jsonObj.get("project"));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
+      }
+      // validate the optional field `changeLog`
+      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 

@@ -121,11 +121,6 @@ public class ConnectionRouteTableEntry {
   @javax.annotation.Nonnull
   private StateEnum state;
 
-  public static final String SERIALIZED_NAME_AGE = "age";
-  @SerializedName(SERIALIZED_NAME_AGE)
-  @javax.annotation.Nullable
-  private String age;
-
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
   @javax.annotation.Nullable
@@ -218,25 +213,6 @@ public class ConnectionRouteTableEntry {
 
   public void setState(@javax.annotation.Nonnull StateEnum state) {
     this.state = state;
-  }
-
-
-  public ConnectionRouteTableEntry age(@javax.annotation.Nullable String age) {
-    this.age = age;
-    return this;
-  }
-
-  /**
-   * Get age
-   * @return age
-   */
-  @javax.annotation.Nullable
-  public String getAge() {
-    return age;
-  }
-
-  public void setAge(@javax.annotation.Nullable String age) {
-    this.age = age;
   }
 
 
@@ -438,7 +414,6 @@ public class ConnectionRouteTableEntry {
     return Objects.equals(this.type, connectionRouteTableEntry.type) &&
         Objects.equals(this.protocolType, connectionRouteTableEntry.protocolType) &&
         Objects.equals(this.state, connectionRouteTableEntry.state) &&
-        Objects.equals(this.age, connectionRouteTableEntry.age) &&
         Objects.equals(this.prefix, connectionRouteTableEntry.prefix) &&
         Objects.equals(this.nextHop, connectionRouteTableEntry.nextHop) &&
         Objects.equals(this.MED, connectionRouteTableEntry.MED) &&
@@ -451,7 +426,7 @@ public class ConnectionRouteTableEntry {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, protocolType, state, age, prefix, nextHop, MED, localPreference, asPath, connection, changeLog, additionalProperties);
+    return Objects.hash(type, protocolType, state, prefix, nextHop, MED, localPreference, asPath, connection, changeLog, additionalProperties);
   }
 
   @Override
@@ -461,7 +436,6 @@ public class ConnectionRouteTableEntry {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    protocolType: ").append(toIndentedString(protocolType)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    age: ").append(toIndentedString(age)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    nextHop: ").append(toIndentedString(nextHop)).append("\n");
     sb.append("    MED: ").append(toIndentedString(MED)).append("\n");
@@ -495,7 +469,6 @@ public class ConnectionRouteTableEntry {
     openapiFields.add("type");
     openapiFields.add("protocolType");
     openapiFields.add("state");
-    openapiFields.add("age");
     openapiFields.add("prefix");
     openapiFields.add("nextHop");
     openapiFields.add("MED");
@@ -542,9 +515,6 @@ public class ConnectionRouteTableEntry {
       }
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
-      if ((jsonObj.get("age") != null && !jsonObj.get("age").isJsonNull()) && !jsonObj.get("age").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `age` to be a primitive type in the JSON string but got `%s`", jsonObj.get("age").toString()));
-      }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }

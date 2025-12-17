@@ -27,101 +27,99 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(SearchFieldName.Adapter.class)
 public enum SearchFieldName {
   
-  _ISREMOTE("/isRemote"),
+  ISREMOTE("/isRemote"),
   
-  _NAME("/name"),
+  NAME("/name"),
   
-  _UUID("/uuid"),
+  UUID("/uuid"),
   
-  _TYPE("/type"),
+  TYPE("/type"),
   
-  _GEOSCOPE("/geoScope"),
+  GEOSCOPE("/geoScope"),
   
-  _ACCOUNT_ORGID("/account/orgId"),
+  ACCOUNT_ORGID("/account/orgId"),
   
-  _ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/aSide/accessPoint/account/accountName"),
+  ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/aSide/accessPoint/account/accountName"),
   
-  _ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNUMBER("/aSide/accessPoint/account/accountNumber"),
+  ASIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNUMBER("/aSide/accessPoint/account/accountNumber"),
   
-  _ASIDE_ACCESSPOINT_ROUTER_UUID("/aSide/accessPoint/router/uuid"),
+  ASIDE_ACCESSPOINT_ROUTER_UUID("/aSide/accessPoint/router/uuid"),
   
-  _ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
   
-  _ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
   
-  _ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/aSide/accessPoint/linkProtocol/vlanTagMin"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/aSide/accessPoint/linkProtocol/vlanTagMin"),
   
-  _ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/aSide/accessPoint/linkProtocol/vlanTagMax"),
+  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/aSide/accessPoint/linkProtocol/vlanTagMax"),
   
-  _ASIDE_ACCESSPOINT_LOCATION_METROCODE("/aSide/accessPoint/location/metroCode"),
+  ASIDE_ACCESSPOINT_LOCATION_METROCODE("/aSide/accessPoint/location/metroCode"),
   
-  _ASIDE_ACCESSPOINT_LOCATION_METRONAME("/aSide/accessPoint/location/metroName"),
+  ASIDE_ACCESSPOINT_LOCATION_METRONAME("/aSide/accessPoint/location/metroName"),
   
-  _ASIDE_ACCESSPOINT_NAME("/aSide/accessPoint/name"),
+  ASIDE_ACCESSPOINT_NAME("/aSide/accessPoint/name"),
   
-  _ASIDE_ACCESSPOINT_PORT_UUID("/aSide/accessPoint/port/uuid"),
+  ASIDE_ACCESSPOINT_PORT_UUID("/aSide/accessPoint/port/uuid"),
   
-  _ASIDE_ACCESSPOINT_PORT_NAME("/aSide/accessPoint/port/name"),
+  ASIDE_ACCESSPOINT_PORT_NAME("/aSide/accessPoint/port/name"),
   
-  _ASIDE_ACCESSPOINT_TYPE("/aSide/accessPoint/type"),
+  ASIDE_ACCESSPOINT_TYPE("/aSide/accessPoint/type"),
   
-  _ASIDE_ACCESSPOINT_VIRTUALDEVICE_NAME("/aSide/accessPoint/virtualDevice/name"),
+  ASIDE_ACCESSPOINT_VIRTUALDEVICE_NAME("/aSide/accessPoint/virtualDevice/name"),
   
-  _ASIDE_ACCESSPOINT_VIRTUALDEVICE_UUID("/aSide/accessPoint/virtualDevice/uuid"),
+  ASIDE_ACCESSPOINT_VIRTUALDEVICE_UUID("/aSide/accessPoint/virtualDevice/uuid"),
   
-  _ASIDE_SERVICETOKEN_UUID("/aSide/serviceToken/uuid"),
+  ASIDE_SERVICETOKEN_UUID("/aSide/serviceToken/uuid"),
   
-  _CHANGE_STATUS("/change/status"),
+  CHANGE_STATUS("/change/status"),
   
-  _OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
+  OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
-  _OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
+  OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
   
-  _PROJECT_PROJECTID("/project/projectId"),
+  PROJECT_PROJECTID("/project/projectId"),
   
-  _REDUNDANCY_GROUP("/redundancy/group"),
+  REDUNDANCY_GROUP("/redundancy/group"),
   
-  _REDUNDANCY_PRIORITY("/redundancy/priority"),
+  REDUNDANCY_PRIORITY("/redundancy/priority"),
   
-  _ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
+  ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
   
-  _ZSIDE_ACCESSPOINT_AUTHENTICATIONKEY("/zSide/accessPoint/authenticationKey"),
+  ZSIDE_ACCESSPOINT_AUTHENTICATIONKEY("/zSide/accessPoint/authenticationKey"),
   
-  _ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
   
-  _ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
   
-  _ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/zSide/accessPoint/linkProtocol/vlanTagMin"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/zSide/accessPoint/linkProtocol/vlanTagMin"),
   
-  _ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/zSide/accessPoint/linkProtocol/vlanTagMax"),
+  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/zSide/accessPoint/linkProtocol/vlanTagMax"),
   
-  _ZSIDE_ACCESSPOINT_LOCATION_METROCODE("/zSide/accessPoint/location/metroCode"),
+  ZSIDE_ACCESSPOINT_LOCATION_METROCODE("/zSide/accessPoint/location/metroCode"),
   
-  _ZSIDE_ACCESSPOINT_LOCATION_METRONAME("/zSide/accessPoint/location/metroName"),
+  ZSIDE_ACCESSPOINT_LOCATION_METRONAME("/zSide/accessPoint/location/metroName"),
   
-  _ZSIDE_ACCESSPOINT_NAME("/zSide/accessPoint/name"),
+  ZSIDE_ACCESSPOINT_NAME("/zSide/accessPoint/name"),
   
-  _ZSIDE_ACCESSPOINT_PORT_UUID("/zSide/accessPoint/port/uuid"),
+  ZSIDE_ACCESSPOINT_PORT_UUID("/zSide/accessPoint/port/uuid"),
   
-  _ZSIDE_ACCESSPOINT_NETWORK_UUID("/zSide/accessPoint/network/uuid"),
+  ZSIDE_ACCESSPOINT_NETWORK_UUID("/zSide/accessPoint/network/uuid"),
   
-  _ZSIDE_ACCESSPOINT_PORT_NAME("/zSide/accessPoint/port/name"),
+  ZSIDE_ACCESSPOINT_PORT_NAME("/zSide/accessPoint/port/name"),
   
-  _ZSIDE_ACCESSPOINT_PROFILE_UUID("/zSide/accessPoint/profile/uuid"),
+  ZSIDE_ACCESSPOINT_PROFILE_UUID("/zSide/accessPoint/profile/uuid"),
   
-  _ZSIDE_ACCESSPOINT_TYPE("/zSide/accessPoint/type"),
+  ZSIDE_ACCESSPOINT_TYPE("/zSide/accessPoint/type"),
   
-  _ZSIDE_ACCESSPOINT_ROLE("/zSide/accessPoint/role"),
+  ZSIDE_ACCESSPOINT_ROLE("/zSide/accessPoint/role"),
   
-  _ZSIDE_ACCESSPOINT_VIRTUALDEVICE_NAME("/zSide/accessPoint/virtualDevice/name"),
+  ZSIDE_ACCESSPOINT_VIRTUALDEVICE_NAME("/zSide/accessPoint/virtualDevice/name"),
   
-  _ZSIDE_ACCESSPOINT_VIRTUALDEVICE_UUID("/zSide/accessPoint/virtualDevice/uuid"),
+  ZSIDE_ACCESSPOINT_VIRTUALDEVICE_UUID("/zSide/accessPoint/virtualDevice/uuid"),
   
-  _ZSIDE_SERVICETOKEN_UUID("/zSide/serviceToken/uuid"),
+  ZSIDE_SERVICETOKEN_UUID("/zSide/serviceToken/uuid"),
   
-  _ZSIDE_INTERNETACCESS_UUID("/zSide/internetAccess/uuid"),
-  
-  STAR("*");
+  ZSIDE_INTERNETACCESS_UUID("/zSide/internetAccess/uuid");
 
   private String value;
 

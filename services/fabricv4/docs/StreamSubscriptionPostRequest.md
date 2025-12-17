@@ -8,13 +8,13 @@ Create Stream Subscription
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-|**name** | **String** | Customer-provided stream subscription name |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
+|**name** | **String** | Customer-provided stream subscription name |  |
 |**description** | **String** | Customer-provided stream subscription description |  [optional] |
 |**enabled** | **Boolean** | Stream subscription enabled status |  [optional] |
 |**metricSelector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  |  [optional] |
 |**eventSelector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  |  [optional] |
-|**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  |  [optional] |
+|**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  |  |
 
 
 

@@ -8,7 +8,7 @@ Search requests containing criteria
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filter** | [**StreamAssetFilters**](StreamAssetFilters.md) |  |  [optional] |
+|**filter** | [**StreamAssetFilters**](StreamAssetFilters.md) |  |  |
 |**pagination** | [**PaginationRequest**](PaginationRequest.md) |  |  [optional] |
 |**sort** | [**List&lt;StreamAssetSortCriteria&gt;**](StreamAssetSortCriteria.md) |  |  [optional] |
 

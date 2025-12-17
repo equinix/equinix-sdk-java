@@ -37,7 +37,9 @@ public enum RouteTableEntrySortBy {
   
   CONNECTION_NAME("/connection/name"),
   
-  TYPE("/type");
+  TYPE("/type"),
+  
+  MED("/MED");
 
   private String value;
 

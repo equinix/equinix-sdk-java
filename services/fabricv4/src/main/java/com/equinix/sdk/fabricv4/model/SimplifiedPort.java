@@ -21,6 +21,7 @@ import com.equinix.sdk.fabricv4.model.PortEncapsulation;
 import com.equinix.sdk.fabricv4.model.PortInterface;
 import com.equinix.sdk.fabricv4.model.PortOperation;
 import com.equinix.sdk.fabricv4.model.PortRedundancy;
+import com.equinix.sdk.fabricv4.model.PortServiceCode;
 import com.equinix.sdk.fabricv4.model.PortSettings;
 import com.equinix.sdk.fabricv4.model.PortState;
 import com.equinix.sdk.fabricv4.model.PortTether;
@@ -185,6 +186,11 @@ public class SimplifiedPort {
   @SerializedName(SERIALIZED_NAME_SERVICE_TYPE)
   @javax.annotation.Nullable
   private ServiceTypeEnum serviceType;
+
+  public static final String SERIALIZED_NAME_SERVICE_CODE = "serviceCode";
+  @SerializedName(SERIALIZED_NAME_SERVICE_CODE)
+  @javax.annotation.Nullable
+  private PortServiceCode serviceCode;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
@@ -518,6 +524,25 @@ public class SimplifiedPort {
   @Deprecated
   public void setServiceType(@javax.annotation.Nullable ServiceTypeEnum serviceType) {
     this.serviceType = serviceType;
+  }
+
+
+  public SimplifiedPort serviceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+
+  /**
+   * Get serviceCode
+   * @return serviceCode
+   */
+  @javax.annotation.Nullable
+  public PortServiceCode getServiceCode() {
+    return serviceCode;
+  }
+
+  public void setServiceCode(@javax.annotation.Nullable PortServiceCode serviceCode) {
+    this.serviceCode = serviceCode;
   }
 
 
@@ -911,6 +936,7 @@ public class SimplifiedPort {
         Objects.equals(this.operation, simplifiedPort.operation) &&
         Objects.equals(this.account, simplifiedPort.account) &&
         Objects.equals(this.serviceType, simplifiedPort.serviceType) &&
+        Objects.equals(this.serviceCode, simplifiedPort.serviceCode) &&
         Objects.equals(this.bandwidth, simplifiedPort.bandwidth) &&
         Objects.equals(this.availableBandwidth, simplifiedPort.availableBandwidth) &&
         Objects.equals(this.usedBandwidth, simplifiedPort.usedBandwidth) &&
@@ -932,7 +958,7 @@ public class SimplifiedPort {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, project, state, operation, account, serviceType, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, tether, demarcationPoint, redundancy, encapsulation, lagEnabled, _package, settings, physicalPortQuantity, additionalInfo, physicalPorts, additionalProperties);
+    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, project, state, operation, account, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, tether, demarcationPoint, redundancy, encapsulation, lagEnabled, _package, settings, physicalPortQuantity, additionalInfo, physicalPorts, additionalProperties);
   }
 
   @Override
@@ -952,6 +978,7 @@ public class SimplifiedPort {
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    availableBandwidth: ").append(toIndentedString(availableBandwidth)).append("\n");
     sb.append("    usedBandwidth: ").append(toIndentedString(usedBandwidth)).append("\n");
@@ -1004,6 +1031,7 @@ public class SimplifiedPort {
     openapiFields.add("operation");
     openapiFields.add("account");
     openapiFields.add("serviceType");
+    openapiFields.add("serviceCode");
     openapiFields.add("bandwidth");
     openapiFields.add("availableBandwidth");
     openapiFields.add("usedBandwidth");
@@ -1076,6 +1104,10 @@ public class SimplifiedPort {
       // validate the optional field `serviceType`
       if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
         ServiceTypeEnum.validateJsonElement(jsonObj.get("serviceType"));
+      }
+      // validate the optional field `serviceCode`
+      if (jsonObj.get("serviceCode") != null && !jsonObj.get("serviceCode").isJsonNull()) {
+        PortServiceCode.validateJsonElement(jsonObj.get("serviceCode"));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {

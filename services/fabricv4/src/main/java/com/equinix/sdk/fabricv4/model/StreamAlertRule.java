@@ -13,9 +13,9 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
-import com.equinix.sdk.fabricv4.model.DetectionMethod;
-import com.equinix.sdk.fabricv4.model.MetricSelector;
-import com.equinix.sdk.fabricv4.model.ResourceSelector;
+import com.equinix.sdk.fabricv4.model.DetectionMethodResponse;
+import com.equinix.sdk.fabricv4.model.MetricSelectorResponse;
+import com.equinix.sdk.fabricv4.model.ResourceSelectorResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -194,17 +194,17 @@ public class StreamAlertRule {
   public static final String SERIALIZED_NAME_METRIC_SELECTOR = "metricSelector";
   @SerializedName(SERIALIZED_NAME_METRIC_SELECTOR)
   @javax.annotation.Nullable
-  private MetricSelector metricSelector;
+  private MetricSelectorResponse metricSelector;
 
   public static final String SERIALIZED_NAME_RESOURCE_SELECTOR = "resourceSelector";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SELECTOR)
   @javax.annotation.Nullable
-  private ResourceSelector resourceSelector;
+  private ResourceSelectorResponse resourceSelector;
 
   public static final String SERIALIZED_NAME_DETECTION_METHOD = "detectionMethod";
   @SerializedName(SERIALIZED_NAME_DETECTION_METHOD)
   @javax.annotation.Nullable
-  private DetectionMethod detectionMethod;
+  private DetectionMethodResponse detectionMethod;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -346,7 +346,7 @@ public class StreamAlertRule {
   }
 
 
-  public StreamAlertRule metricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+  public StreamAlertRule metricSelector(@javax.annotation.Nullable MetricSelectorResponse metricSelector) {
     this.metricSelector = metricSelector;
     return this;
   }
@@ -356,16 +356,16 @@ public class StreamAlertRule {
    * @return metricSelector
    */
   @javax.annotation.Nullable
-  public MetricSelector getMetricSelector() {
+  public MetricSelectorResponse getMetricSelector() {
     return metricSelector;
   }
 
-  public void setMetricSelector(@javax.annotation.Nullable MetricSelector metricSelector) {
+  public void setMetricSelector(@javax.annotation.Nullable MetricSelectorResponse metricSelector) {
     this.metricSelector = metricSelector;
   }
 
 
-  public StreamAlertRule resourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
+  public StreamAlertRule resourceSelector(@javax.annotation.Nullable ResourceSelectorResponse resourceSelector) {
     this.resourceSelector = resourceSelector;
     return this;
   }
@@ -375,16 +375,16 @@ public class StreamAlertRule {
    * @return resourceSelector
    */
   @javax.annotation.Nullable
-  public ResourceSelector getResourceSelector() {
+  public ResourceSelectorResponse getResourceSelector() {
     return resourceSelector;
   }
 
-  public void setResourceSelector(@javax.annotation.Nullable ResourceSelector resourceSelector) {
+  public void setResourceSelector(@javax.annotation.Nullable ResourceSelectorResponse resourceSelector) {
     this.resourceSelector = resourceSelector;
   }
 
 
-  public StreamAlertRule detectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+  public StreamAlertRule detectionMethod(@javax.annotation.Nullable DetectionMethodResponse detectionMethod) {
     this.detectionMethod = detectionMethod;
     return this;
   }
@@ -394,11 +394,11 @@ public class StreamAlertRule {
    * @return detectionMethod
    */
   @javax.annotation.Nullable
-  public DetectionMethod getDetectionMethod() {
+  public DetectionMethodResponse getDetectionMethod() {
     return detectionMethod;
   }
 
-  public void setDetectionMethod(@javax.annotation.Nullable DetectionMethod detectionMethod) {
+  public void setDetectionMethod(@javax.annotation.Nullable DetectionMethodResponse detectionMethod) {
     this.detectionMethod = detectionMethod;
   }
 
@@ -590,15 +590,15 @@ public class StreamAlertRule {
       }
       // validate the optional field `metricSelector`
       if (jsonObj.get("metricSelector") != null && !jsonObj.get("metricSelector").isJsonNull()) {
-        MetricSelector.validateJsonElement(jsonObj.get("metricSelector"));
+        MetricSelectorResponse.validateJsonElement(jsonObj.get("metricSelector"));
       }
       // validate the optional field `resourceSelector`
       if (jsonObj.get("resourceSelector") != null && !jsonObj.get("resourceSelector").isJsonNull()) {
-        ResourceSelector.validateJsonElement(jsonObj.get("resourceSelector"));
+        ResourceSelectorResponse.validateJsonElement(jsonObj.get("resourceSelector"));
       }
       // validate the optional field `detectionMethod`
       if (jsonObj.get("detectionMethod") != null && !jsonObj.get("detectionMethod").isJsonNull()) {
-        DetectionMethod.validateJsonElement(jsonObj.get("detectionMethod"));
+        DetectionMethodResponse.validateJsonElement(jsonObj.get("detectionMethod"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

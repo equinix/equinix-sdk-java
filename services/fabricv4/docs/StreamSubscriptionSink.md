@@ -9,7 +9,7 @@ Create Stream destination
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**uri** | **String** | any publicly reachable http endpoint |  [optional] |
-|**type** | [**TypeEnum**](#TypeEnum) | destination type |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) | destination type |  |
 |**batchEnabled** | **Boolean** | batch mode on/off |  [optional] |
 |**batchSizeMax** | **Integer** | maximum batch size |  [optional] |
 |**batchWaitTimeMax** | **Integer** | maximum batch waiting time |  [optional] |

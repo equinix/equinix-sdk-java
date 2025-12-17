@@ -58,6 +58,11 @@ public class ConnectionRouteTableEntryConnection {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
+  @javax.annotation.Nullable
+  private String href;
+
   public ConnectionRouteTableEntryConnection() {
   }
 
@@ -96,6 +101,25 @@ public class ConnectionRouteTableEntryConnection {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public ConnectionRouteTableEntryConnection href(@javax.annotation.Nullable String href) {
+    this.href = href;
+    return this;
+  }
+
+  /**
+   * Get href
+   * @return href
+   */
+  @javax.annotation.Nullable
+  public String getHref() {
+    return href;
+  }
+
+  public void setHref(@javax.annotation.Nullable String href) {
+    this.href = href;
   }
 
   /**
@@ -154,13 +178,14 @@ public class ConnectionRouteTableEntryConnection {
     }
     ConnectionRouteTableEntryConnection connectionRouteTableEntryConnection = (ConnectionRouteTableEntryConnection) o;
     return Objects.equals(this.uuid, connectionRouteTableEntryConnection.uuid) &&
-        Objects.equals(this.name, connectionRouteTableEntryConnection.name)&&
+        Objects.equals(this.name, connectionRouteTableEntryConnection.name) &&
+        Objects.equals(this.href, connectionRouteTableEntryConnection.href)&&
         Objects.equals(this.additionalProperties, connectionRouteTableEntryConnection.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, name, additionalProperties);
+    return Objects.hash(uuid, name, href, additionalProperties);
   }
 
   @Override
@@ -169,6 +194,7 @@ public class ConnectionRouteTableEntryConnection {
     sb.append("class ConnectionRouteTableEntryConnection {\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -194,6 +220,7 @@ public class ConnectionRouteTableEntryConnection {
     openapiFields = new HashSet<String>();
     openapiFields.add("uuid");
     openapiFields.add("name");
+    openapiFields.add("href");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -217,6 +244,9 @@ public class ConnectionRouteTableEntryConnection {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
   }
 

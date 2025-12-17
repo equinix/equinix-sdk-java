@@ -10,14 +10,23 @@ Stream object
 |------------ | ------------- | ------------- | -------------|
 |**href** | **URI** | Stream URI |  [optional] [readonly] |
 |**uuid** | **UUID** | Equinix-assigned access point identifier |  [optional] |
-|**state** | [**StateEnum**](#StateEnum) | Stream provision state |  [optional] |
-|**assetsCount** | **Integer** | Stream assets count |  [optional] |
-|**streamSubscriptionsCount** | **Integer** | Stream subscriptions count |  [optional] |
-|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) | type |  [optional] |
 |**name** | **String** | Customer-provided stream name |  [optional] |
 |**description** | **String** | Customer-provided stream description |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
+|**state** | [**StateEnum**](#StateEnum) | Stream provision state |  [optional] |
+|**assetsCount** | **Integer** | Stream assets count |  [optional] |
+|**streamSubscriptionsCount** | **Integer** | Stream subscriptions count |  [optional] |
+|**alertRulesCount** | **Integer** | Stream alert rules count |  [optional] |
+|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
+
+
+
+## Enum: TypeEnum
+
+| Name | Value |
+|---- | -----|
+| TELEMETRY_STREAM | &quot;TELEMETRY_STREAM&quot; |
 
 
 
@@ -31,14 +40,6 @@ Stream object
 | DEPROVISIONING | &quot;DEPROVISIONING&quot; |
 | DEPROVISIONED | &quot;DEPROVISIONED&quot; |
 | FAILED | &quot;FAILED&quot; |
-
-
-
-## Enum: TypeEnum
-
-| Name | Value |
-|---- | -----|
-| TELEMETRY_STREAM | &quot;TELEMETRY_STREAM&quot; |
 
 
 

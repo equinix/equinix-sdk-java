@@ -51,7 +51,7 @@ public class StreamAssetPutRequest {
   public static final String SERIALIZED_NAME_METRICS_ENABLED = "metricsEnabled";
   @SerializedName(SERIALIZED_NAME_METRICS_ENABLED)
   @javax.annotation.Nullable
-  private Boolean metricsEnabled;
+  private Boolean metricsEnabled = false;
 
   public StreamAssetPutRequest() {
   }

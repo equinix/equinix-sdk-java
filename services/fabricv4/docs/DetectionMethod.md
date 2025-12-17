@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | [**TypeEnum**](#TypeEnum) | * THRESHOLD - Alert when a metric crosses a defined threshold by user. * OUTLIER - Intelligent Alert that has an outlier behavior. This option is currently supported for metro latency metric.  |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) | * THRESHOLD - Alert when a metric crosses a defined threshold by user. * OUTLIER - Intelligent Alert that has an outlier behavior. This option is currently supported for metro latency metric.  |  |
 |**windowSize** | **String** | Stream alert rule metric window size |  [optional] |
 |**operand** | [**OperandEnum**](#OperandEnum) | Stream alert rule metric operand |  [optional] |
 |**warningThreshold** | **String** | Stream alert rule metric warning threshold |  [optional] |

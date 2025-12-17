@@ -79,6 +79,11 @@ public class Metro {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_COUNTRY = "country";
+  @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
+  private String country;
+
   public static final String SERIALIZED_NAME_EQUINIX_ASN = "equinixAsn";
   @SerializedName(SERIALIZED_NAME_EQUINIX_ASN)
   @javax.annotation.Nullable
@@ -204,6 +209,25 @@ public class Metro {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public Metro country(@javax.annotation.Nullable String country) {
+    this.country = country;
+    return this;
+  }
+
+  /**
+   * Country code in which the data center is located.
+   * @return country
+   */
+  @javax.annotation.Nullable
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(@javax.annotation.Nullable String country) {
+    this.country = country;
   }
 
 
@@ -404,6 +428,7 @@ public class Metro {
         Objects.equals(this.code, metro.code) &&
         Objects.equals(this.region, metro.region) &&
         Objects.equals(this.name, metro.name) &&
+        Objects.equals(this.country, metro.country) &&
         Objects.equals(this.equinixAsn, metro.equinixAsn) &&
         Objects.equals(this.localVCBandwidthMax, metro.localVCBandwidthMax) &&
         Objects.equals(this.geoCoordinates, metro.geoCoordinates) &&
@@ -415,7 +440,7 @@ public class Metro {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, code, region, name, equinixAsn, localVCBandwidthMax, geoCoordinates, connectedMetros, services, geoScopes, additionalProperties);
+    return Objects.hash(href, type, code, region, name, country, equinixAsn, localVCBandwidthMax, geoCoordinates, connectedMetros, services, geoScopes, additionalProperties);
   }
 
   @Override
@@ -427,6 +452,7 @@ public class Metro {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    equinixAsn: ").append(toIndentedString(equinixAsn)).append("\n");
     sb.append("    localVCBandwidthMax: ").append(toIndentedString(localVCBandwidthMax)).append("\n");
     sb.append("    geoCoordinates: ").append(toIndentedString(geoCoordinates)).append("\n");
@@ -461,6 +487,7 @@ public class Metro {
     openapiFields.add("code");
     openapiFields.add("region");
     openapiFields.add("name");
+    openapiFields.add("country");
     openapiFields.add("equinixAsn");
     openapiFields.add("localVCBandwidthMax");
     openapiFields.add("geoCoordinates");
@@ -499,6 +526,9 @@ public class Metro {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
       // validate the optional field `geoCoordinates`
       if (jsonObj.get("geoCoordinates") != null && !jsonObj.get("geoCoordinates").isJsonNull()) {
