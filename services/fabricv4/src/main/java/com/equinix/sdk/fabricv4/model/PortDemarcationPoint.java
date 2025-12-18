@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Customer physical Port
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortDemarcationPoint {
   public static final String SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID = "cabinetUniqueSpaceId";
   @SerializedName(SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID)
@@ -352,18 +354,10 @@ public class PortDemarcationPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("cabinetUniqueSpaceId");
-    openapiFields.add("cageUniqueSpaceId");
-    openapiFields.add("patchPanel");
-    openapiFields.add("patchPanelName");
-    openapiFields.add("patchPanelPortA");
-    openapiFields.add("patchPanelPortB");
-    openapiFields.add("connectorType");
-    openapiFields.add("ibx");
+    openapiFields = new HashSet<String>(Arrays.asList("cabinetUniqueSpaceId", "cageUniqueSpaceId", "patchPanel", "patchPanelName", "patchPanelPortA", "patchPanelPortB", "connectorType", "ibx"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -375,33 +369,33 @@ public class PortDemarcationPoint {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortDemarcationPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortDemarcationPoint is not found in the empty JSON string", PortDemarcationPoint.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortDemarcationPoint is not found in the empty JSON string", PortDemarcationPoint.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cabinetUniqueSpaceId") != null && !jsonObj.get("cabinetUniqueSpaceId").isJsonNull()) && !jsonObj.get("cabinetUniqueSpaceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cabinetUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cabinetUniqueSpaceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cabinetUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cabinetUniqueSpaceId").toString()));
       }
       if ((jsonObj.get("cageUniqueSpaceId") != null && !jsonObj.get("cageUniqueSpaceId").isJsonNull()) && !jsonObj.get("cageUniqueSpaceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cageUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cageUniqueSpaceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cageUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cageUniqueSpaceId").toString()));
       }
       if ((jsonObj.get("patchPanel") != null && !jsonObj.get("patchPanel").isJsonNull()) && !jsonObj.get("patchPanel").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `patchPanel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanel").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanel").toString()));
       }
       if ((jsonObj.get("patchPanelName") != null && !jsonObj.get("patchPanelName").isJsonNull()) && !jsonObj.get("patchPanelName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `patchPanelName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelName").toString()));
       }
       if ((jsonObj.get("patchPanelPortA") != null && !jsonObj.get("patchPanelPortA").isJsonNull()) && !jsonObj.get("patchPanelPortA").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `patchPanelPortA` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortA").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelPortA` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortA").toString()));
       }
       if ((jsonObj.get("patchPanelPortB") != null && !jsonObj.get("patchPanelPortB").isJsonNull()) && !jsonObj.get("patchPanelPortB").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `patchPanelPortB` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortB").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelPortB` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortB").toString()));
       }
       if ((jsonObj.get("connectorType") != null && !jsonObj.get("connectorType").isJsonNull()) && !jsonObj.get("connectorType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `connectorType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectorType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connectorType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectorType").toString()));
       }
       if ((jsonObj.get("ibx") != null && !jsonObj.get("ibx").isJsonNull()) && !jsonObj.get("ibx").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ibx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ibx").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ibx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ibx").toString()));
       }
   }
 
@@ -462,7 +456,7 @@ public class PortDemarcationPoint {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

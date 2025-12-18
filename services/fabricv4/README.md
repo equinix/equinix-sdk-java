@@ -2,7 +2,7 @@
 
 Equinix Fabric API v4
 - API version: 4.26
-  - Generator version: 7.12.0
+  - Generator version: 7.16.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
 

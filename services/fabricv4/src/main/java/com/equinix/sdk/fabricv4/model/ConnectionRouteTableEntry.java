@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteTableEntryConnection;
 import com.equinix.sdk.fabricv4.model.RouteTableEntryProtocolType;
@@ -46,13 +47,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Advertised and received route table entry object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ConnectionRouteTableEntry {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -465,23 +467,10 @@ public class ConnectionRouteTableEntry {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("protocolType");
-    openapiFields.add("state");
-    openapiFields.add("prefix");
-    openapiFields.add("nextHop");
-    openapiFields.add("MED");
-    openapiFields.add("localPreference");
-    openapiFields.add("asPath");
-    openapiFields.add("connection");
-    openapiFields.add("changeLog");
+    openapiFields = new HashSet<String>(Arrays.asList("type", "protocolType", "state", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("state");
-    openapiRequiredFields.add("changeLog");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "state", "changeLog"));
   }
 
   /**
@@ -493,14 +482,14 @@ public class ConnectionRouteTableEntry {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConnectionRouteTableEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionRouteTableEntry is not found in the empty JSON string", ConnectionRouteTableEntry.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ConnectionRouteTableEntry is not found in the empty JSON string", ConnectionRouteTableEntry.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConnectionRouteTableEntry.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -511,19 +500,19 @@ public class ConnectionRouteTableEntry {
         RouteTableEntryProtocolType.validateJsonElement(jsonObj.get("protocolType"));
       }
       if (!jsonObj.get("state").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
       // validate the required field `state`
       StateEnum.validateJsonElement(jsonObj.get("state"));
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       if ((jsonObj.get("nextHop") != null && !jsonObj.get("nextHop").isJsonNull()) && !jsonObj.get("nextHop").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nextHop` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nextHop").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `nextHop` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nextHop").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("asPath") != null && !jsonObj.get("asPath").isJsonNull() && !jsonObj.get("asPath").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `asPath` to be an array in the JSON string but got `%s`", jsonObj.get("asPath").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `asPath` to be an array in the JSON string but got `%s`", jsonObj.get("asPath").toString()));
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
@@ -590,7 +579,7 @@ public class ConnectionRouteTableEntry {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

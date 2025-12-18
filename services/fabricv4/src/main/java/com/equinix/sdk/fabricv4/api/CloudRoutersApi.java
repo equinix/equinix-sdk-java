@@ -112,7 +112,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterCall(CloudRouterPostRequest cloudRouterPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterCall(@javax.annotation.Nonnull CloudRouterPostRequest cloudRouterPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -162,7 +162,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCloudRouterValidateBeforeCall(CloudRouterPostRequest cloudRouterPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCloudRouterValidateBeforeCall(@javax.annotation.Nonnull CloudRouterPostRequest cloudRouterPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'cloudRouterPostRequest' is set
         if (cloudRouterPostRequest == null) {
             throw new ApiException("Missing the required parameter 'cloudRouterPostRequest' when calling createCloudRouter(Async)");
@@ -191,7 +191,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouter createCloudRouter(CloudRouterPostRequest cloudRouterPostRequest, Boolean dryRun) throws ApiException {
+    public CloudRouter createCloudRouter(@javax.annotation.Nonnull CloudRouterPostRequest cloudRouterPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<CloudRouter> localVarResp = createCloudRouterWithHttpInfo(cloudRouterPostRequest, dryRun);
         return localVarResp.getData();
     }
@@ -215,7 +215,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouter> createCloudRouterWithHttpInfo(CloudRouterPostRequest cloudRouterPostRequest, Boolean dryRun) throws ApiException {
+    public ApiResponse<CloudRouter> createCloudRouterWithHttpInfo(@javax.annotation.Nonnull CloudRouterPostRequest cloudRouterPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = createCloudRouterValidateBeforeCall(cloudRouterPostRequest, dryRun, null);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -241,7 +241,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterAsync(CloudRouterPostRequest cloudRouterPostRequest, Boolean dryRun, final ApiCallback<CloudRouter> _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterAsync(@javax.annotation.Nonnull CloudRouterPostRequest cloudRouterPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<CloudRouter> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCloudRouterValidateBeforeCall(cloudRouterPostRequest, dryRun, _callback);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
@@ -268,7 +268,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterActionCall(UUID routerId, CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterActionCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -315,7 +315,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCloudRouterActionValidateBeforeCall(UUID routerId, CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCloudRouterActionValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling createCloudRouterAction(Async)");
@@ -350,7 +350,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterActionResponse createCloudRouterAction(UUID routerId, CloudRouterActionRequest cloudRouterActionRequest) throws ApiException {
+    public CloudRouterActionResponse createCloudRouterAction(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionRequest cloudRouterActionRequest) throws ApiException {
         ApiResponse<CloudRouterActionResponse> localVarResp = createCloudRouterActionWithHttpInfo(routerId, cloudRouterActionRequest);
         return localVarResp.getData();
     }
@@ -375,7 +375,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterActionResponse> createCloudRouterActionWithHttpInfo(UUID routerId, CloudRouterActionRequest cloudRouterActionRequest) throws ApiException {
+    public ApiResponse<CloudRouterActionResponse> createCloudRouterActionWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionRequest cloudRouterActionRequest) throws ApiException {
         okhttp3.Call localVarCall = createCloudRouterActionValidateBeforeCall(routerId, cloudRouterActionRequest, null);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -402,7 +402,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterActionAsync(UUID routerId, CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterActionAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionRequest cloudRouterActionRequest, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCloudRouterActionValidateBeforeCall(routerId, cloudRouterActionRequest, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
@@ -429,7 +429,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterCommandCall(UUID routerId, CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterCommandCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -476,7 +476,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCloudRouterCommandValidateBeforeCall(UUID routerId, CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCloudRouterCommandValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling createCloudRouterCommand(Async)");
@@ -511,7 +511,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterCommand createCloudRouterCommand(UUID routerId, CloudRouterCommandPostRequest cloudRouterCommandPostRequest) throws ApiException {
+    public CloudRouterCommand createCloudRouterCommand(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandPostRequest cloudRouterCommandPostRequest) throws ApiException {
         ApiResponse<CloudRouterCommand> localVarResp = createCloudRouterCommandWithHttpInfo(routerId, cloudRouterCommandPostRequest);
         return localVarResp.getData();
     }
@@ -536,7 +536,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterCommand> createCloudRouterCommandWithHttpInfo(UUID routerId, CloudRouterCommandPostRequest cloudRouterCommandPostRequest) throws ApiException {
+    public ApiResponse<CloudRouterCommand> createCloudRouterCommandWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandPostRequest cloudRouterCommandPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createCloudRouterCommandValidateBeforeCall(routerId, cloudRouterCommandPostRequest, null);
         Type localVarReturnType = new TypeToken<CloudRouterCommand>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -563,7 +563,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCloudRouterCommandAsync(UUID routerId, CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback<CloudRouterCommand> _callback) throws ApiException {
+    public okhttp3.Call createCloudRouterCommandAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandPostRequest cloudRouterCommandPostRequest, final ApiCallback<CloudRouterCommand> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCloudRouterCommandValidateBeforeCall(routerId, cloudRouterCommandPostRequest, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterCommand>(){}.getType();
@@ -588,7 +588,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCloudRouterByUuidCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCloudRouterByUuidCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -634,7 +634,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCloudRouterByUuidValidateBeforeCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCloudRouterByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling deleteCloudRouterByUuid(Async)");
@@ -661,7 +661,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCloudRouterByUuid(UUID routerId) throws ApiException {
+    public void deleteCloudRouterByUuid(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         deleteCloudRouterByUuidWithHttpInfo(routerId);
     }
 
@@ -683,7 +683,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCloudRouterByUuidWithHttpInfo(UUID routerId) throws ApiException {
+    public ApiResponse<Void> deleteCloudRouterByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         okhttp3.Call localVarCall = deleteCloudRouterByUuidValidateBeforeCall(routerId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -707,7 +707,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCloudRouterByUuidAsync(UUID routerId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCloudRouterByUuidAsync(@javax.annotation.Nonnull UUID routerId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCloudRouterByUuidValidateBeforeCall(routerId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -732,7 +732,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCloudRouterCommandByUuidCall(UUID routerId, UUID commandId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCloudRouterCommandByUuidCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -779,7 +779,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCloudRouterCommandByUuidValidateBeforeCall(UUID routerId, UUID commandId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCloudRouterCommandByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling deleteCloudRouterCommandByUuid(Async)");
@@ -812,7 +812,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCloudRouterCommandByUuid(UUID routerId, UUID commandId) throws ApiException {
+    public void deleteCloudRouterCommandByUuid(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId) throws ApiException {
         deleteCloudRouterCommandByUuidWithHttpInfo(routerId, commandId);
     }
 
@@ -835,7 +835,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCloudRouterCommandByUuidWithHttpInfo(UUID routerId, UUID commandId) throws ApiException {
+    public ApiResponse<Void> deleteCloudRouterCommandByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId) throws ApiException {
         okhttp3.Call localVarCall = deleteCloudRouterCommandByUuidValidateBeforeCall(routerId, commandId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -860,7 +860,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCloudRouterCommandByUuidAsync(UUID routerId, UUID commandId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCloudRouterCommandByUuidAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCloudRouterCommandByUuidValidateBeforeCall(routerId, commandId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -885,7 +885,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllCloudRouterCommandsCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllCloudRouterCommandsCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -931,7 +931,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllCloudRouterCommandsValidateBeforeCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllCloudRouterCommandsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling getAllCloudRouterCommands(Async)");
@@ -960,7 +960,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllCloudRouterCommands getAllCloudRouterCommands(UUID routerId) throws ApiException {
+    public GetAllCloudRouterCommands getAllCloudRouterCommands(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         ApiResponse<GetAllCloudRouterCommands> localVarResp = getAllCloudRouterCommandsWithHttpInfo(routerId);
         return localVarResp.getData();
     }
@@ -984,7 +984,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllCloudRouterCommands> getAllCloudRouterCommandsWithHttpInfo(UUID routerId) throws ApiException {
+    public ApiResponse<GetAllCloudRouterCommands> getAllCloudRouterCommandsWithHttpInfo(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         okhttp3.Call localVarCall = getAllCloudRouterCommandsValidateBeforeCall(routerId, null);
         Type localVarReturnType = new TypeToken<GetAllCloudRouterCommands>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1010,7 +1010,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllCloudRouterCommandsAsync(UUID routerId, final ApiCallback<GetAllCloudRouterCommands> _callback) throws ApiException {
+    public okhttp3.Call getAllCloudRouterCommandsAsync(@javax.annotation.Nonnull UUID routerId, final ApiCallback<GetAllCloudRouterCommands> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllCloudRouterCommandsValidateBeforeCall(routerId, _callback);
         Type localVarReturnType = new TypeToken<GetAllCloudRouterCommands>(){}.getType();
@@ -1037,7 +1037,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterActionsCall(UUID routerId, CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterActionsCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1087,7 +1087,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterActionsValidateBeforeCall(UUID routerId, CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterActionsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling getCloudRouterActions(Async)");
@@ -1117,7 +1117,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterActionResponse getCloudRouterActions(UUID routerId, CloudRouterActionState state) throws ApiException {
+    public CloudRouterActionResponse getCloudRouterActions(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
         ApiResponse<CloudRouterActionResponse> localVarResp = getCloudRouterActionsWithHttpInfo(routerId, state);
         return localVarResp.getData();
     }
@@ -1142,7 +1142,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterActionResponse> getCloudRouterActionsWithHttpInfo(UUID routerId, CloudRouterActionState state) throws ApiException {
+    public ApiResponse<CloudRouterActionResponse> getCloudRouterActionsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterActionsValidateBeforeCall(routerId, state, null);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1169,7 +1169,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterActionsAsync(UUID routerId, CloudRouterActionState state, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterActionsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterActionsValidateBeforeCall(routerId, state, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
@@ -1197,7 +1197,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterActionsByUuidCall(UUID routerId, UUID actionId, CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterActionsByUuidCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID actionId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1248,7 +1248,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterActionsByUuidValidateBeforeCall(UUID routerId, UUID actionId, CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterActionsByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID actionId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling getCloudRouterActionsByUuid(Async)");
@@ -1284,7 +1284,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterActionResponse getCloudRouterActionsByUuid(UUID routerId, UUID actionId, CloudRouterActionState state) throws ApiException {
+    public CloudRouterActionResponse getCloudRouterActionsByUuid(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID actionId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
         ApiResponse<CloudRouterActionResponse> localVarResp = getCloudRouterActionsByUuidWithHttpInfo(routerId, actionId, state);
         return localVarResp.getData();
     }
@@ -1310,7 +1310,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterActionResponse> getCloudRouterActionsByUuidWithHttpInfo(UUID routerId, UUID actionId, CloudRouterActionState state) throws ApiException {
+    public ApiResponse<CloudRouterActionResponse> getCloudRouterActionsByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID actionId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterActionsByUuidValidateBeforeCall(routerId, actionId, state, null);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1338,7 +1338,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterActionsByUuidAsync(UUID routerId, UUID actionId, CloudRouterActionState state, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterActionsByUuidAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID actionId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterActionsByUuidValidateBeforeCall(routerId, actionId, state, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
@@ -1362,7 +1362,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterByUuidCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterByUuidCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1408,7 +1408,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterByUuidValidateBeforeCall(UUID routerId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling getCloudRouterByUuid(Async)");
@@ -1435,7 +1435,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouter getCloudRouterByUuid(UUID routerId) throws ApiException {
+    public CloudRouter getCloudRouterByUuid(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         ApiResponse<CloudRouter> localVarResp = getCloudRouterByUuidWithHttpInfo(routerId);
         return localVarResp.getData();
     }
@@ -1457,7 +1457,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouter> getCloudRouterByUuidWithHttpInfo(UUID routerId) throws ApiException {
+    public ApiResponse<CloudRouter> getCloudRouterByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterByUuidValidateBeforeCall(routerId, null);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1481,7 +1481,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterByUuidAsync(UUID routerId, final ApiCallback<CloudRouter> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterByUuidAsync(@javax.annotation.Nonnull UUID routerId, final ApiCallback<CloudRouter> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterByUuidValidateBeforeCall(routerId, _callback);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
@@ -1508,7 +1508,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterCommandCall(UUID routerId, UUID commandId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterCommandCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1555,7 +1555,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterCommandValidateBeforeCall(UUID routerId, UUID commandId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterCommandValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling getCloudRouterCommand(Async)");
@@ -1590,7 +1590,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterCommand getCloudRouterCommand(UUID routerId, UUID commandId) throws ApiException {
+    public CloudRouterCommand getCloudRouterCommand(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId) throws ApiException {
         ApiResponse<CloudRouterCommand> localVarResp = getCloudRouterCommandWithHttpInfo(routerId, commandId);
         return localVarResp.getData();
     }
@@ -1615,7 +1615,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterCommand> getCloudRouterCommandWithHttpInfo(UUID routerId, UUID commandId) throws ApiException {
+    public ApiResponse<CloudRouterCommand> getCloudRouterCommandWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterCommandValidateBeforeCall(routerId, commandId, null);
         Type localVarReturnType = new TypeToken<CloudRouterCommand>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1642,7 +1642,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterCommandAsync(UUID routerId, UUID commandId, final ApiCallback<CloudRouterCommand> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterCommandAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull UUID commandId, final ApiCallback<CloudRouterCommand> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterCommandValidateBeforeCall(routerId, commandId, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterCommand>(){}.getType();
@@ -1667,7 +1667,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterPackageByCodeCall(RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterPackageByCodeCall(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1713,7 +1713,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterPackageByCodeValidateBeforeCall(RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterPackageByCodeValidateBeforeCall(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerPackageCode' is set
         if (routerPackageCode == null) {
             throw new ApiException("Missing the required parameter 'routerPackageCode' when calling getCloudRouterPackageByCode(Async)");
@@ -1741,7 +1741,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterPackage getCloudRouterPackageByCode(RouterPackageCode routerPackageCode) throws ApiException {
+    public CloudRouterPackage getCloudRouterPackageByCode(@javax.annotation.Nonnull RouterPackageCode routerPackageCode) throws ApiException {
         ApiResponse<CloudRouterPackage> localVarResp = getCloudRouterPackageByCodeWithHttpInfo(routerPackageCode);
         return localVarResp.getData();
     }
@@ -1764,7 +1764,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterPackage> getCloudRouterPackageByCodeWithHttpInfo(RouterPackageCode routerPackageCode) throws ApiException {
+    public ApiResponse<CloudRouterPackage> getCloudRouterPackageByCodeWithHttpInfo(@javax.annotation.Nonnull RouterPackageCode routerPackageCode) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterPackageByCodeValidateBeforeCall(routerPackageCode, null);
         Type localVarReturnType = new TypeToken<CloudRouterPackage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1789,7 +1789,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterPackageByCodeAsync(RouterPackageCode routerPackageCode, final ApiCallback<CloudRouterPackage> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterPackageByCodeAsync(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback<CloudRouterPackage> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterPackageByCodeValidateBeforeCall(routerPackageCode, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterPackage>(){}.getType();
@@ -1814,7 +1814,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterPackagesCall(Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterPackagesCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1867,7 +1867,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterPackagesValidateBeforeCall(Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudRouterPackagesValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         return getCloudRouterPackagesCall(offset, limit, _callback);
 
     }
@@ -1890,7 +1890,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PackageResponse getCloudRouterPackages(Integer offset, Integer limit) throws ApiException {
+    public PackageResponse getCloudRouterPackages(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<PackageResponse> localVarResp = getCloudRouterPackagesWithHttpInfo(offset, limit);
         return localVarResp.getData();
     }
@@ -1913,7 +1913,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PackageResponse> getCloudRouterPackagesWithHttpInfo(Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PackageResponse> getCloudRouterPackagesWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterPackagesValidateBeforeCall(offset, limit, null);
         Type localVarReturnType = new TypeToken<PackageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1938,7 +1938,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterPackagesAsync(Integer offset, Integer limit, final ApiCallback<PackageResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterPackagesAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<PackageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterPackagesValidateBeforeCall(offset, limit, _callback);
         Type localVarReturnType = new TypeToken<PackageResponse>(){}.getType();
@@ -1965,7 +1965,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRouterCommandsCall(UUID routerId, CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchCloudRouterCommandsCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2012,7 +2012,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchCloudRouterCommandsValidateBeforeCall(UUID routerId, CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchCloudRouterCommandsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling searchCloudRouterCommands(Async)");
@@ -2047,7 +2047,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterCommandSearchResponse searchCloudRouterCommands(UUID routerId, CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest) throws ApiException {
+    public CloudRouterCommandSearchResponse searchCloudRouterCommands(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest) throws ApiException {
         ApiResponse<CloudRouterCommandSearchResponse> localVarResp = searchCloudRouterCommandsWithHttpInfo(routerId, cloudRouterCommandSearchRequest);
         return localVarResp.getData();
     }
@@ -2072,7 +2072,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterCommandSearchResponse> searchCloudRouterCommandsWithHttpInfo(UUID routerId, CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest) throws ApiException {
+    public ApiResponse<CloudRouterCommandSearchResponse> searchCloudRouterCommandsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchCloudRouterCommandsValidateBeforeCall(routerId, cloudRouterCommandSearchRequest, null);
         Type localVarReturnType = new TypeToken<CloudRouterCommandSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2099,7 +2099,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRouterCommandsAsync(UUID routerId, CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback<CloudRouterCommandSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchCloudRouterCommandsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest, final ApiCallback<CloudRouterCommandSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchCloudRouterCommandsValidateBeforeCall(routerId, cloudRouterCommandSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterCommandSearchResponse>(){}.getType();
@@ -2126,7 +2126,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRouterRoutesCall(UUID routerId, RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchCloudRouterRoutesCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2173,7 +2173,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchCloudRouterRoutesValidateBeforeCall(UUID routerId, RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchCloudRouterRoutesValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling searchCloudRouterRoutes(Async)");
@@ -2208,7 +2208,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteTableEntrySearchResponse searchCloudRouterRoutes(UUID routerId, RouteTableEntrySearchRequest routeTableEntrySearchRequest) throws ApiException {
+    public RouteTableEntrySearchResponse searchCloudRouterRoutes(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull RouteTableEntrySearchRequest routeTableEntrySearchRequest) throws ApiException {
         ApiResponse<RouteTableEntrySearchResponse> localVarResp = searchCloudRouterRoutesWithHttpInfo(routerId, routeTableEntrySearchRequest);
         return localVarResp.getData();
     }
@@ -2233,7 +2233,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteTableEntrySearchResponse> searchCloudRouterRoutesWithHttpInfo(UUID routerId, RouteTableEntrySearchRequest routeTableEntrySearchRequest) throws ApiException {
+    public ApiResponse<RouteTableEntrySearchResponse> searchCloudRouterRoutesWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull RouteTableEntrySearchRequest routeTableEntrySearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchCloudRouterRoutesValidateBeforeCall(routerId, routeTableEntrySearchRequest, null);
         Type localVarReturnType = new TypeToken<RouteTableEntrySearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2260,7 +2260,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRouterRoutesAsync(UUID routerId, RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback<RouteTableEntrySearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchCloudRouterRoutesAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull RouteTableEntrySearchRequest routeTableEntrySearchRequest, final ApiCallback<RouteTableEntrySearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchCloudRouterRoutesValidateBeforeCall(routerId, routeTableEntrySearchRequest, _callback);
         Type localVarReturnType = new TypeToken<RouteTableEntrySearchResponse>(){}.getType();
@@ -2285,7 +2285,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRoutersCall(CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchCloudRoutersCall(@javax.annotation.Nonnull CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2331,7 +2331,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchCloudRoutersValidateBeforeCall(CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchCloudRoutersValidateBeforeCall(@javax.annotation.Nonnull CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'cloudRouterSearchRequest' is set
         if (cloudRouterSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'cloudRouterSearchRequest' when calling searchCloudRouters(Async)");
@@ -2359,7 +2359,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public SearchResponse searchCloudRouters(CloudRouterSearchRequest cloudRouterSearchRequest) throws ApiException {
+    public SearchResponse searchCloudRouters(@javax.annotation.Nonnull CloudRouterSearchRequest cloudRouterSearchRequest) throws ApiException {
         ApiResponse<SearchResponse> localVarResp = searchCloudRoutersWithHttpInfo(cloudRouterSearchRequest);
         return localVarResp.getData();
     }
@@ -2382,7 +2382,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SearchResponse> searchCloudRoutersWithHttpInfo(CloudRouterSearchRequest cloudRouterSearchRequest) throws ApiException {
+    public ApiResponse<SearchResponse> searchCloudRoutersWithHttpInfo(@javax.annotation.Nonnull CloudRouterSearchRequest cloudRouterSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchCloudRoutersValidateBeforeCall(cloudRouterSearchRequest, null);
         Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2407,7 +2407,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudRoutersAsync(CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback<SearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchCloudRoutersAsync(@javax.annotation.Nonnull CloudRouterSearchRequest cloudRouterSearchRequest, final ApiCallback<SearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchCloudRoutersValidateBeforeCall(cloudRouterSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<SearchResponse>(){}.getType();
@@ -2432,7 +2432,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionAdvertisedRoutesCall(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchConnectionAdvertisedRoutesCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2479,7 +2479,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchConnectionAdvertisedRoutesValidateBeforeCall(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchConnectionAdvertisedRoutesValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling searchConnectionAdvertisedRoutes(Async)");
@@ -2512,7 +2512,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteTableEntrySearchResponse searchConnectionAdvertisedRoutes(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
+    public ConnectionRouteTableEntrySearchResponse searchConnectionAdvertisedRoutes(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
         ApiResponse<ConnectionRouteTableEntrySearchResponse> localVarResp = searchConnectionAdvertisedRoutesWithHttpInfo(connectionId, connectionRouteSearchRequest);
         return localVarResp.getData();
     }
@@ -2535,7 +2535,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteTableEntrySearchResponse> searchConnectionAdvertisedRoutesWithHttpInfo(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
+    public ApiResponse<ConnectionRouteTableEntrySearchResponse> searchConnectionAdvertisedRoutesWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchConnectionAdvertisedRoutesValidateBeforeCall(connectionId, connectionRouteSearchRequest, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteTableEntrySearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2560,7 +2560,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionAdvertisedRoutesAsync(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback<ConnectionRouteTableEntrySearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchConnectionAdvertisedRoutesAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback<ConnectionRouteTableEntrySearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchConnectionAdvertisedRoutesValidateBeforeCall(connectionId, connectionRouteSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteTableEntrySearchResponse>(){}.getType();
@@ -2585,7 +2585,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionReceivedRoutesCall(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchConnectionReceivedRoutesCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2632,7 +2632,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchConnectionReceivedRoutesValidateBeforeCall(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchConnectionReceivedRoutesValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling searchConnectionReceivedRoutes(Async)");
@@ -2665,7 +2665,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteTableEntrySearchResponse searchConnectionReceivedRoutes(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
+    public ConnectionRouteTableEntrySearchResponse searchConnectionReceivedRoutes(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
         ApiResponse<ConnectionRouteTableEntrySearchResponse> localVarResp = searchConnectionReceivedRoutesWithHttpInfo(connectionId, connectionRouteSearchRequest);
         return localVarResp.getData();
     }
@@ -2688,7 +2688,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteTableEntrySearchResponse> searchConnectionReceivedRoutesWithHttpInfo(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
+    public ApiResponse<ConnectionRouteTableEntrySearchResponse> searchConnectionReceivedRoutesWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchConnectionReceivedRoutesValidateBeforeCall(connectionId, connectionRouteSearchRequest, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteTableEntrySearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2713,7 +2713,7 @@ public class CloudRoutersApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchConnectionReceivedRoutesAsync(String connectionId, ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback<ConnectionRouteTableEntrySearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchConnectionReceivedRoutesAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteSearchRequest connectionRouteSearchRequest, final ApiCallback<ConnectionRouteTableEntrySearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchConnectionReceivedRoutesValidateBeforeCall(connectionId, connectionRouteSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteTableEntrySearchResponse>(){}.getType();
@@ -2740,7 +2740,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouterActionsCall(UUID routerId, CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchRouterActionsCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2787,7 +2787,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchRouterActionsValidateBeforeCall(UUID routerId, CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchRouterActionsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling searchRouterActions(Async)");
@@ -2822,7 +2822,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterActionsSearchResponse searchRouterActions(UUID routerId, CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest) throws ApiException {
+    public CloudRouterActionsSearchResponse searchRouterActions(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest) throws ApiException {
         ApiResponse<CloudRouterActionsSearchResponse> localVarResp = searchRouterActionsWithHttpInfo(routerId, cloudRouterActionsSearchRequest);
         return localVarResp.getData();
     }
@@ -2847,7 +2847,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterActionsSearchResponse> searchRouterActionsWithHttpInfo(UUID routerId, CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest) throws ApiException {
+    public ApiResponse<CloudRouterActionsSearchResponse> searchRouterActionsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchRouterActionsValidateBeforeCall(routerId, cloudRouterActionsSearchRequest, null);
         Type localVarReturnType = new TypeToken<CloudRouterActionsSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2874,7 +2874,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouterActionsAsync(UUID routerId, CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback<CloudRouterActionsSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchRouterActionsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest, final ApiCallback<CloudRouterActionsSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchRouterActionsValidateBeforeCall(routerId, cloudRouterActionsSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterActionsSearchResponse>(){}.getType();
@@ -2901,7 +2901,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCloudRouterByUuidCall(UUID routerId, List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCloudRouterByUuidCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2948,7 +2948,7 @@ public class CloudRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCloudRouterByUuidValidateBeforeCall(UUID routerId, List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCloudRouterByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling updateCloudRouterByUuid(Async)");
@@ -2983,7 +2983,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouter updateCloudRouterByUuid(UUID routerId, List<CloudRouterChangeOperation> cloudRouterChangeOperation) throws ApiException {
+    public CloudRouter updateCloudRouterByUuid(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull List<CloudRouterChangeOperation> cloudRouterChangeOperation) throws ApiException {
         ApiResponse<CloudRouter> localVarResp = updateCloudRouterByUuidWithHttpInfo(routerId, cloudRouterChangeOperation);
         return localVarResp.getData();
     }
@@ -3008,7 +3008,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouter> updateCloudRouterByUuidWithHttpInfo(UUID routerId, List<CloudRouterChangeOperation> cloudRouterChangeOperation) throws ApiException {
+    public ApiResponse<CloudRouter> updateCloudRouterByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull List<CloudRouterChangeOperation> cloudRouterChangeOperation) throws ApiException {
         okhttp3.Call localVarCall = updateCloudRouterByUuidValidateBeforeCall(routerId, cloudRouterChangeOperation, null);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3035,7 +3035,7 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCloudRouterByUuidAsync(UUID routerId, List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback<CloudRouter> _callback) throws ApiException {
+    public okhttp3.Call updateCloudRouterByUuidAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull List<CloudRouterChangeOperation> cloudRouterChangeOperation, final ApiCallback<CloudRouter> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCloudRouterByUuidValidateBeforeCall(routerId, cloudRouterChangeOperation, _callback);
         Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();

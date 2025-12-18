@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Metadata. Response attribute. Ignored on request payload.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ServiceProfileMetadata {
   public static final String SERIALIZED_NAME_PROPS = "props";
   @SerializedName(SERIALIZED_NAME_PROPS)
@@ -633,29 +635,10 @@ public class ServiceProfileMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("props");
-    openapiFields.add("regEx");
-    openapiFields.add("regExMsg");
-    openapiFields.add("vlanRangeMaxValue");
-    openapiFields.add("vlanRangeMinValue");
-    openapiFields.add("maxQinq");
-    openapiFields.add("maxDot1q");
-    openapiFields.add("variableBilling");
-    openapiFields.add("globalOrganization");
-    openapiFields.add("limitAuthKeyConn");
-    openapiFields.add("allowSecondaryLocation");
-    openapiFields.add("redundantProfileId");
-    openapiFields.add("allowVcMigration");
-    openapiFields.add("connectionEditable");
-    openapiFields.add("releaseVlan");
-    openapiFields.add("maxConnectionsOnPort");
-    openapiFields.add("portAssignmentStrategy");
-    openapiFields.add("eqxManagedPort");
-    openapiFields.add("connectionNameEditable");
+    openapiFields = new HashSet<String>(Arrays.asList("props", "regEx", "regExMsg", "vlanRangeMaxValue", "vlanRangeMinValue", "maxQinq", "maxDot1q", "variableBilling", "globalOrganization", "limitAuthKeyConn", "allowSecondaryLocation", "redundantProfileId", "allowVcMigration", "connectionEditable", "releaseVlan", "maxConnectionsOnPort", "portAssignmentStrategy", "eqxManagedPort", "connectionNameEditable"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -667,30 +650,30 @@ public class ServiceProfileMetadata {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ServiceProfileMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ServiceProfileMetadata is not found in the empty JSON string", ServiceProfileMetadata.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ServiceProfileMetadata is not found in the empty JSON string", ServiceProfileMetadata.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("props") != null && !jsonObj.get("props").isJsonNull()) && !jsonObj.get("props").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `props` to be a primitive type in the JSON string but got `%s`", jsonObj.get("props").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `props` to be a primitive type in the JSON string but got `%s`", jsonObj.get("props").toString()));
       }
       if ((jsonObj.get("regEx") != null && !jsonObj.get("regEx").isJsonNull()) && !jsonObj.get("regEx").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `regEx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regEx").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `regEx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regEx").toString()));
       }
       if ((jsonObj.get("regExMsg") != null && !jsonObj.get("regExMsg").isJsonNull()) && !jsonObj.get("regExMsg").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `regExMsg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regExMsg").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `regExMsg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regExMsg").toString()));
       }
       if ((jsonObj.get("maxQinq") != null && !jsonObj.get("maxQinq").isJsonNull()) && !jsonObj.get("maxQinq").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maxQinq` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maxQinq").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maxQinq` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maxQinq").toString()));
       }
       if ((jsonObj.get("globalOrganization") != null && !jsonObj.get("globalOrganization").isJsonNull()) && !jsonObj.get("globalOrganization").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `globalOrganization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrganization").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `globalOrganization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("globalOrganization").toString()));
       }
       if ((jsonObj.get("redundantProfileId") != null && !jsonObj.get("redundantProfileId").isJsonNull()) && !jsonObj.get("redundantProfileId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `redundantProfileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redundantProfileId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `redundantProfileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redundantProfileId").toString()));
       }
       if ((jsonObj.get("portAssignmentStrategy") != null && !jsonObj.get("portAssignmentStrategy").isJsonNull()) && !jsonObj.get("portAssignmentStrategy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `portAssignmentStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("portAssignmentStrategy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `portAssignmentStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("portAssignmentStrategy").toString()));
       }
   }
 
@@ -751,7 +734,7 @@ public class ServiceProfileMetadata {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

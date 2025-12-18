@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.ConnectedMetro;
 import com.equinix.sdk.fabricv4.model.GeoCoordinates;
 import com.equinix.sdk.fabricv4.model.GeoScopeType;
@@ -46,13 +47,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * GET Metros retrieves all Equinix® Fabric™ metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Metro {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -481,22 +483,10 @@ public class Metro {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("code");
-    openapiFields.add("region");
-    openapiFields.add("name");
-    openapiFields.add("country");
-    openapiFields.add("equinixAsn");
-    openapiFields.add("localVCBandwidthMax");
-    openapiFields.add("geoCoordinates");
-    openapiFields.add("connectedMetros");
-    openapiFields.add("services");
-    openapiFields.add("geoScopes");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -508,27 +498,27 @@ public class Metro {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Metro.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Metro is not found in the empty JSON string", Metro.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Metro is not found in the empty JSON string", Metro.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
       // validate the optional field `geoCoordinates`
       if (jsonObj.get("geoCoordinates") != null && !jsonObj.get("geoCoordinates").isJsonNull()) {
@@ -539,7 +529,7 @@ public class Metro {
         if (jsonArrayconnectedMetros != null) {
           // ensure the json data is an array
           if (!jsonObj.get("connectedMetros").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `connectedMetros` to be an array in the JSON string but got `%s`", jsonObj.get("connectedMetros").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connectedMetros` to be an array in the JSON string but got `%s`", jsonObj.get("connectedMetros").toString()));
           }
 
           // validate the optional field `connectedMetros` (array)
@@ -553,7 +543,7 @@ public class Metro {
         if (jsonArrayservices != null) {
           // ensure the json data is an array
           if (!jsonObj.get("services").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `services` to be an array in the JSON string but got `%s`", jsonObj.get("services").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `services` to be an array in the JSON string but got `%s`", jsonObj.get("services").toString()));
           }
 
           // validate the optional field `services` (array)
@@ -564,7 +554,7 @@ public class Metro {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("geoScopes") != null && !jsonObj.get("geoScopes").isJsonNull() && !jsonObj.get("geoScopes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `geoScopes` to be an array in the JSON string but got `%s`", jsonObj.get("geoScopes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `geoScopes` to be an array in the JSON string but got `%s`", jsonObj.get("geoScopes").toString()));
       }
   }
 
@@ -625,7 +615,7 @@ public class Metro {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

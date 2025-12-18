@@ -98,7 +98,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationRuleCall(String routeAggregationId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationRuleCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +145,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRouteAggregationRuleValidateBeforeCall(String routeAggregationId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRouteAggregationRuleValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling createRouteAggregationRule(Async)");
@@ -180,7 +180,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesData createRouteAggregationRule(String routeAggregationId, RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
+    public RouteAggregationRulesData createRouteAggregationRule(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
         ApiResponse<RouteAggregationRulesData> localVarResp = createRouteAggregationRuleWithHttpInfo(routeAggregationId, routeAggregationRulesBase);
         return localVarResp.getData();
     }
@@ -205,7 +205,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesData> createRouteAggregationRuleWithHttpInfo(String routeAggregationId, RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
+    public ApiResponse<RouteAggregationRulesData> createRouteAggregationRuleWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
         okhttp3.Call localVarCall = createRouteAggregationRuleValidateBeforeCall(routeAggregationId, routeAggregationRulesBase, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -232,7 +232,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationRuleAsync(String routeAggregationId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationRuleAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRouteAggregationRuleValidateBeforeCall(routeAggregationId, routeAggregationRulesBase, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
@@ -259,7 +259,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationRulesInBulkCall(String routeAggregationId, RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationRulesInBulkCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -306,7 +306,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRouteAggregationRulesInBulkValidateBeforeCall(String routeAggregationId, RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRouteAggregationRulesInBulkValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling createRouteAggregationRulesInBulk(Async)");
@@ -341,7 +341,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetRouteAggregationRulesResponse createRouteAggregationRulesInBulk(String routeAggregationId, RouteAggregationRulesPostRequest routeAggregationRulesPostRequest) throws ApiException {
+    public GetRouteAggregationRulesResponse createRouteAggregationRulesInBulk(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesPostRequest routeAggregationRulesPostRequest) throws ApiException {
         ApiResponse<GetRouteAggregationRulesResponse> localVarResp = createRouteAggregationRulesInBulkWithHttpInfo(routeAggregationId, routeAggregationRulesPostRequest);
         return localVarResp.getData();
     }
@@ -366,7 +366,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetRouteAggregationRulesResponse> createRouteAggregationRulesInBulkWithHttpInfo(String routeAggregationId, RouteAggregationRulesPostRequest routeAggregationRulesPostRequest) throws ApiException {
+    public ApiResponse<GetRouteAggregationRulesResponse> createRouteAggregationRulesInBulkWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesPostRequest routeAggregationRulesPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createRouteAggregationRulesInBulkValidateBeforeCall(routeAggregationId, routeAggregationRulesPostRequest, null);
         Type localVarReturnType = new TypeToken<GetRouteAggregationRulesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -393,7 +393,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationRulesInBulkAsync(String routeAggregationId, RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback<GetRouteAggregationRulesResponse> _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationRulesInBulkAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull RouteAggregationRulesPostRequest routeAggregationRulesPostRequest, final ApiCallback<GetRouteAggregationRulesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRouteAggregationRulesInBulkValidateBeforeCall(routeAggregationId, routeAggregationRulesPostRequest, _callback);
         Type localVarReturnType = new TypeToken<GetRouteAggregationRulesResponse>(){}.getType();
@@ -420,7 +420,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteAggregationRuleByUuidCall(String routeAggregationId, String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRouteAggregationRuleByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -467,7 +467,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRouteAggregationRuleByUuidValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRouteAggregationRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling deleteRouteAggregationRuleByUuid(Async)");
@@ -502,7 +502,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesData deleteRouteAggregationRuleByUuid(String routeAggregationId, String routeAggregationRuleId) throws ApiException {
+    public RouteAggregationRulesData deleteRouteAggregationRuleByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId) throws ApiException {
         ApiResponse<RouteAggregationRulesData> localVarResp = deleteRouteAggregationRuleByUuidWithHttpInfo(routeAggregationId, routeAggregationRuleId);
         return localVarResp.getData();
     }
@@ -527,7 +527,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesData> deleteRouteAggregationRuleByUuidWithHttpInfo(String routeAggregationId, String routeAggregationRuleId) throws ApiException {
+    public ApiResponse<RouteAggregationRulesData> deleteRouteAggregationRuleByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId) throws ApiException {
         okhttp3.Call localVarCall = deleteRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -554,7 +554,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteAggregationRuleByUuidAsync(String routeAggregationId, String routeAggregationRuleId, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
+    public okhttp3.Call deleteRouteAggregationRuleByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
@@ -581,7 +581,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleByUuidCall(String routeAggregationId, String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -628,7 +628,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationRuleByUuidValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationRuleByUuid(Async)");
@@ -663,7 +663,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesData getRouteAggregationRuleByUuid(String routeAggregationId, String routeAggregationRuleId) throws ApiException {
+    public RouteAggregationRulesData getRouteAggregationRuleByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId) throws ApiException {
         ApiResponse<RouteAggregationRulesData> localVarResp = getRouteAggregationRuleByUuidWithHttpInfo(routeAggregationId, routeAggregationRuleId);
         return localVarResp.getData();
     }
@@ -688,7 +688,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesData> getRouteAggregationRuleByUuidWithHttpInfo(String routeAggregationId, String routeAggregationRuleId) throws ApiException {
+    public ApiResponse<RouteAggregationRulesData> getRouteAggregationRuleByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -715,7 +715,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleByUuidAsync(String routeAggregationId, String routeAggregationRuleId, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
@@ -742,7 +742,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleChangeByUuidCall(String routeAggregationId, String routeAggregationRuleId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleChangeByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -790,7 +790,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationRuleChangeByUuidValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationRuleChangeByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationRuleChangeByUuid(Async)");
@@ -830,7 +830,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesChangeData getRouteAggregationRuleChangeByUuid(String routeAggregationId, String routeAggregationRuleId, UUID changeId) throws ApiException {
+    public RouteAggregationRulesChangeData getRouteAggregationRuleChangeByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         ApiResponse<RouteAggregationRulesChangeData> localVarResp = getRouteAggregationRuleChangeByUuidWithHttpInfo(routeAggregationId, routeAggregationRuleId, changeId);
         return localVarResp.getData();
     }
@@ -855,7 +855,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesChangeData> getRouteAggregationRuleChangeByUuidWithHttpInfo(String routeAggregationId, String routeAggregationRuleId, UUID changeId) throws ApiException {
+    public ApiResponse<RouteAggregationRulesChangeData> getRouteAggregationRuleChangeByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationRuleChangeByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, changeId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesChangeData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -882,7 +882,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleChangeByUuidAsync(String routeAggregationId, String routeAggregationRuleId, UUID changeId, final ApiCallback<RouteAggregationRulesChangeData> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleChangeByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull UUID changeId, final ApiCallback<RouteAggregationRulesChangeData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationRuleChangeByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, changeId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesChangeData>(){}.getType();
@@ -910,7 +910,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleChangesCall(String routeAggregationId, String routeAggregationRuleId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleChangesCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -965,7 +965,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationRuleChangesValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationRuleChangesValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationRuleChanges(Async)");
@@ -1001,7 +1001,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesChangeDataResponse getRouteAggregationRuleChanges(String routeAggregationId, String routeAggregationRuleId, Integer offset, Integer limit) throws ApiException {
+    public RouteAggregationRulesChangeDataResponse getRouteAggregationRuleChanges(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<RouteAggregationRulesChangeDataResponse> localVarResp = getRouteAggregationRuleChangesWithHttpInfo(routeAggregationId, routeAggregationRuleId, offset, limit);
         return localVarResp.getData();
     }
@@ -1027,7 +1027,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesChangeDataResponse> getRouteAggregationRuleChangesWithHttpInfo(String routeAggregationId, String routeAggregationRuleId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<RouteAggregationRulesChangeDataResponse> getRouteAggregationRuleChangesWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationRuleChangesValidateBeforeCall(routeAggregationId, routeAggregationRuleId, offset, limit, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesChangeDataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1055,7 +1055,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRuleChangesAsync(String routeAggregationId, String routeAggregationRuleId, Integer offset, Integer limit, final ApiCallback<RouteAggregationRulesChangeDataResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRuleChangesAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<RouteAggregationRulesChangeDataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationRuleChangesValidateBeforeCall(routeAggregationId, routeAggregationRuleId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesChangeDataResponse>(){}.getType();
@@ -1082,7 +1082,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRulesCall(String routeAggregationId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRulesCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1136,7 +1136,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationRulesValidateBeforeCall(String routeAggregationId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationRulesValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationRules(Async)");
@@ -1166,7 +1166,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetRouteAggregationRulesResponse getRouteAggregationRules(String routeAggregationId, Integer offset, Integer limit) throws ApiException {
+    public GetRouteAggregationRulesResponse getRouteAggregationRules(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetRouteAggregationRulesResponse> localVarResp = getRouteAggregationRulesWithHttpInfo(routeAggregationId, offset, limit);
         return localVarResp.getData();
     }
@@ -1191,7 +1191,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetRouteAggregationRulesResponse> getRouteAggregationRulesWithHttpInfo(String routeAggregationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetRouteAggregationRulesResponse> getRouteAggregationRulesWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationRulesValidateBeforeCall(routeAggregationId, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetRouteAggregationRulesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1218,7 +1218,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationRulesAsync(String routeAggregationId, Integer offset, Integer limit, final ApiCallback<GetRouteAggregationRulesResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationRulesAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetRouteAggregationRulesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationRulesValidateBeforeCall(routeAggregationId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetRouteAggregationRulesResponse>(){}.getType();
@@ -1246,7 +1246,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteAggregationRuleByUuidCall(String routeAggregationId, String routeAggregationRuleId, List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchRouteAggregationRuleByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1295,7 +1295,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRouteAggregationRuleByUuidValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchRouteAggregationRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling patchRouteAggregationRuleByUuid(Async)");
@@ -1336,7 +1336,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesData patchRouteAggregationRuleByUuid(String routeAggregationId, String routeAggregationRuleId, List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem) throws ApiException {
+    public RouteAggregationRulesData patchRouteAggregationRuleByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem) throws ApiException {
         ApiResponse<RouteAggregationRulesData> localVarResp = patchRouteAggregationRuleByUuidWithHttpInfo(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem);
         return localVarResp.getData();
     }
@@ -1362,7 +1362,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesData> patchRouteAggregationRuleByUuidWithHttpInfo(String routeAggregationId, String routeAggregationRuleId, List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem) throws ApiException {
+    public ApiResponse<RouteAggregationRulesData> patchRouteAggregationRuleByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem) throws ApiException {
         okhttp3.Call localVarCall = patchRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1390,7 +1390,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteAggregationRuleByUuidAsync(String routeAggregationId, String routeAggregationRuleId, List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
+    public okhttp3.Call patchRouteAggregationRuleByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
@@ -1418,7 +1418,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceRouteAggregationRuleByUuidCall(String routeAggregationId, String routeAggregationRuleId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceRouteAggregationRuleByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1466,7 +1466,7 @@ public class RouteAggregationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceRouteAggregationRuleByUuidValidateBeforeCall(String routeAggregationId, String routeAggregationRuleId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceRouteAggregationRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling replaceRouteAggregationRuleByUuid(Async)");
@@ -1507,7 +1507,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationRulesData replaceRouteAggregationRuleByUuid(String routeAggregationId, String routeAggregationRuleId, RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
+    public RouteAggregationRulesData replaceRouteAggregationRuleByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
         ApiResponse<RouteAggregationRulesData> localVarResp = replaceRouteAggregationRuleByUuidWithHttpInfo(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase);
         return localVarResp.getData();
     }
@@ -1533,7 +1533,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationRulesData> replaceRouteAggregationRuleByUuidWithHttpInfo(String routeAggregationId, String routeAggregationRuleId, RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
+    public ApiResponse<RouteAggregationRulesData> replaceRouteAggregationRuleByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase) throws ApiException {
         okhttp3.Call localVarCall = replaceRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase, null);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1561,7 +1561,7 @@ public class RouteAggregationRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceRouteAggregationRuleByUuidAsync(String routeAggregationId, String routeAggregationRuleId, RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
+    public okhttp3.Call replaceRouteAggregationRuleByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String routeAggregationRuleId, @javax.annotation.Nonnull RouteAggregationRulesBase routeAggregationRulesBase, final ApiCallback<RouteAggregationRulesData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceRouteAggregationRuleByUuidValidateBeforeCall(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationRulesData>(){}.getType();

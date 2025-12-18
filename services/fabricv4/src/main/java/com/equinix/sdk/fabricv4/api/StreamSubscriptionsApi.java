@@ -94,7 +94,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamSubscriptionsCall(UUID streamId, StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createStreamSubscriptionsCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +141,7 @@ public class StreamSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createStreamSubscriptionsValidateBeforeCall(UUID streamId, StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createStreamSubscriptionsValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling createStreamSubscriptions(Async)");
@@ -175,7 +175,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamSubscription createStreamSubscriptions(UUID streamId, StreamSubscriptionPostRequest streamSubscriptionPostRequest) throws ApiException {
+    public StreamSubscription createStreamSubscriptions(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamSubscriptionPostRequest streamSubscriptionPostRequest) throws ApiException {
         ApiResponse<StreamSubscription> localVarResp = createStreamSubscriptionsWithHttpInfo(streamId, streamSubscriptionPostRequest);
         return localVarResp.getData();
     }
@@ -199,7 +199,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamSubscription> createStreamSubscriptionsWithHttpInfo(UUID streamId, StreamSubscriptionPostRequest streamSubscriptionPostRequest) throws ApiException {
+    public ApiResponse<StreamSubscription> createStreamSubscriptionsWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamSubscriptionPostRequest streamSubscriptionPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createStreamSubscriptionsValidateBeforeCall(streamId, streamSubscriptionPostRequest, null);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +225,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamSubscriptionsAsync(UUID streamId, StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback<StreamSubscription> _callback) throws ApiException {
+    public okhttp3.Call createStreamSubscriptionsAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull StreamSubscriptionPostRequest streamSubscriptionPostRequest, final ApiCallback<StreamSubscription> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createStreamSubscriptionsValidateBeforeCall(streamId, streamSubscriptionPostRequest, _callback);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
@@ -251,7 +251,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamSubscriptionByUuidCall(UUID streamId, UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteStreamSubscriptionByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -298,7 +298,7 @@ public class StreamSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteStreamSubscriptionByUuidValidateBeforeCall(UUID streamId, UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteStreamSubscriptionByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling deleteStreamSubscriptionByUuid(Async)");
@@ -332,7 +332,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamSubscription deleteStreamSubscriptionByUuid(UUID streamId, UUID subscriptionId) throws ApiException {
+    public StreamSubscription deleteStreamSubscriptionByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         ApiResponse<StreamSubscription> localVarResp = deleteStreamSubscriptionByUuidWithHttpInfo(streamId, subscriptionId);
         return localVarResp.getData();
     }
@@ -356,7 +356,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamSubscription> deleteStreamSubscriptionByUuidWithHttpInfo(UUID streamId, UUID subscriptionId) throws ApiException {
+    public ApiResponse<StreamSubscription> deleteStreamSubscriptionByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         okhttp3.Call localVarCall = deleteStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, null);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -382,7 +382,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamSubscriptionByUuidAsync(UUID streamId, UUID subscriptionId, final ApiCallback<StreamSubscription> _callback) throws ApiException {
+    public okhttp3.Call deleteStreamSubscriptionByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback<StreamSubscription> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, _callback);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
@@ -408,7 +408,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamSubscriptionByUuidCall(UUID streamId, UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamSubscriptionByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -455,7 +455,7 @@ public class StreamSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamSubscriptionByUuidValidateBeforeCall(UUID streamId, UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamSubscriptionByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling getStreamSubscriptionByUuid(Async)");
@@ -489,7 +489,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamSubscription getStreamSubscriptionByUuid(UUID streamId, UUID subscriptionId) throws ApiException {
+    public StreamSubscription getStreamSubscriptionByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         ApiResponse<StreamSubscription> localVarResp = getStreamSubscriptionByUuidWithHttpInfo(streamId, subscriptionId);
         return localVarResp.getData();
     }
@@ -513,7 +513,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamSubscription> getStreamSubscriptionByUuidWithHttpInfo(UUID streamId, UUID subscriptionId) throws ApiException {
+    public ApiResponse<StreamSubscription> getStreamSubscriptionByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         okhttp3.Call localVarCall = getStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, null);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -539,7 +539,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamSubscriptionByUuidAsync(UUID streamId, UUID subscriptionId, final ApiCallback<StreamSubscription> _callback) throws ApiException {
+    public okhttp3.Call getStreamSubscriptionByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, final ApiCallback<StreamSubscription> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, _callback);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
@@ -565,7 +565,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamSubscriptionsCall(UUID streamId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamSubscriptionsCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -619,7 +619,7 @@ public class StreamSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamSubscriptionsValidateBeforeCall(UUID streamId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamSubscriptionsValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling getStreamSubscriptions(Async)");
@@ -648,7 +648,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllStreamSubscriptionResponse getStreamSubscriptions(UUID streamId, Integer offset, Integer limit) throws ApiException {
+    public GetAllStreamSubscriptionResponse getStreamSubscriptions(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetAllStreamSubscriptionResponse> localVarResp = getStreamSubscriptionsWithHttpInfo(streamId, offset, limit);
         return localVarResp.getData();
     }
@@ -672,7 +672,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllStreamSubscriptionResponse> getStreamSubscriptionsWithHttpInfo(UUID streamId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetAllStreamSubscriptionResponse> getStreamSubscriptionsWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getStreamSubscriptionsValidateBeforeCall(streamId, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetAllStreamSubscriptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -698,7 +698,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamSubscriptionsAsync(UUID streamId, Integer offset, Integer limit, final ApiCallback<GetAllStreamSubscriptionResponse> _callback) throws ApiException {
+    public okhttp3.Call getStreamSubscriptionsAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetAllStreamSubscriptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamSubscriptionsValidateBeforeCall(streamId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetAllStreamSubscriptionResponse>(){}.getType();
@@ -726,7 +726,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamSubscriptionByUuidCall(UUID streamId, UUID subscriptionId, StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateStreamSubscriptionByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, @javax.annotation.Nonnull StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -774,7 +774,7 @@ public class StreamSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateStreamSubscriptionByUuidValidateBeforeCall(UUID streamId, UUID subscriptionId, StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateStreamSubscriptionByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, @javax.annotation.Nonnull StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling updateStreamSubscriptionByUuid(Async)");
@@ -815,7 +815,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamSubscription updateStreamSubscriptionByUuid(UUID streamId, UUID subscriptionId, StreamSubscriptionPutRequest streamSubscriptionPutRequest) throws ApiException {
+    public StreamSubscription updateStreamSubscriptionByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, @javax.annotation.Nonnull StreamSubscriptionPutRequest streamSubscriptionPutRequest) throws ApiException {
         ApiResponse<StreamSubscription> localVarResp = updateStreamSubscriptionByUuidWithHttpInfo(streamId, subscriptionId, streamSubscriptionPutRequest);
         return localVarResp.getData();
     }
@@ -841,7 +841,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamSubscription> updateStreamSubscriptionByUuidWithHttpInfo(UUID streamId, UUID subscriptionId, StreamSubscriptionPutRequest streamSubscriptionPutRequest) throws ApiException {
+    public ApiResponse<StreamSubscription> updateStreamSubscriptionByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, @javax.annotation.Nonnull StreamSubscriptionPutRequest streamSubscriptionPutRequest) throws ApiException {
         okhttp3.Call localVarCall = updateStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, streamSubscriptionPutRequest, null);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -869,7 +869,7 @@ public class StreamSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamSubscriptionByUuidAsync(UUID streamId, UUID subscriptionId, StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback<StreamSubscription> _callback) throws ApiException {
+    public okhttp3.Call updateStreamSubscriptionByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID subscriptionId, @javax.annotation.Nonnull StreamSubscriptionPutRequest streamSubscriptionPutRequest, final ApiCallback<StreamSubscription> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateStreamSubscriptionByUuidValidateBeforeCall(streamId, subscriptionId, streamSubscriptionPutRequest, _callback);
         Type localVarReturnType = new TypeToken<StreamSubscription>(){}.getType();

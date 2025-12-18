@@ -103,7 +103,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachConnectionRouteFilterCall(String routeFilterId, String connectionId, ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachConnectionRouteFilterCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,7 +151,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachConnectionRouteFilterValidateBeforeCall(String routeFilterId, String connectionId, ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachConnectionRouteFilterValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling attachConnectionRouteFilter(Async)");
@@ -192,7 +192,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteFilterData attachConnectionRouteFilter(String routeFilterId, String connectionId, ConnectionRouteFiltersBase connectionRouteFiltersBase) throws ApiException {
+    public ConnectionRouteFilterData attachConnectionRouteFilter(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteFiltersBase connectionRouteFiltersBase) throws ApiException {
         ApiResponse<ConnectionRouteFilterData> localVarResp = attachConnectionRouteFilterWithHttpInfo(routeFilterId, connectionId, connectionRouteFiltersBase);
         return localVarResp.getData();
     }
@@ -218,7 +218,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteFilterData> attachConnectionRouteFilterWithHttpInfo(String routeFilterId, String connectionId, ConnectionRouteFiltersBase connectionRouteFiltersBase) throws ApiException {
+    public ApiResponse<ConnectionRouteFilterData> attachConnectionRouteFilterWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteFiltersBase connectionRouteFiltersBase) throws ApiException {
         okhttp3.Call localVarCall = attachConnectionRouteFilterValidateBeforeCall(routeFilterId, connectionId, connectionRouteFiltersBase, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -246,7 +246,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachConnectionRouteFilterAsync(String routeFilterId, String connectionId, ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
+    public okhttp3.Call attachConnectionRouteFilterAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRouteFiltersBase connectionRouteFiltersBase, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = attachConnectionRouteFilterValidateBeforeCall(routeFilterId, connectionId, connectionRouteFiltersBase, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
@@ -272,7 +272,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteFilterCall(RouteFiltersBase routeFiltersBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRouteFilterCall(@javax.annotation.Nonnull RouteFiltersBase routeFiltersBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -318,7 +318,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRouteFilterValidateBeforeCall(RouteFiltersBase routeFiltersBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRouteFilterValidateBeforeCall(@javax.annotation.Nonnull RouteFiltersBase routeFiltersBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFiltersBase' is set
         if (routeFiltersBase == null) {
             throw new ApiException("Missing the required parameter 'routeFiltersBase' when calling createRouteFilter(Async)");
@@ -347,7 +347,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersData createRouteFilter(RouteFiltersBase routeFiltersBase) throws ApiException {
+    public RouteFiltersData createRouteFilter(@javax.annotation.Nonnull RouteFiltersBase routeFiltersBase) throws ApiException {
         ApiResponse<RouteFiltersData> localVarResp = createRouteFilterWithHttpInfo(routeFiltersBase);
         return localVarResp.getData();
     }
@@ -371,7 +371,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersData> createRouteFilterWithHttpInfo(RouteFiltersBase routeFiltersBase) throws ApiException {
+    public ApiResponse<RouteFiltersData> createRouteFilterWithHttpInfo(@javax.annotation.Nonnull RouteFiltersBase routeFiltersBase) throws ApiException {
         okhttp3.Call localVarCall = createRouteFilterValidateBeforeCall(routeFiltersBase, null);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -397,7 +397,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteFilterAsync(RouteFiltersBase routeFiltersBase, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
+    public okhttp3.Call createRouteFilterAsync(@javax.annotation.Nonnull RouteFiltersBase routeFiltersBase, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRouteFilterValidateBeforeCall(routeFiltersBase, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
@@ -423,7 +423,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteFilterByUuidCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRouteFilterByUuidCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -469,7 +469,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRouteFilterByUuidValidateBeforeCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRouteFilterByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling deleteRouteFilterByUuid(Async)");
@@ -498,7 +498,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersData deleteRouteFilterByUuid(String routeFilterId) throws ApiException {
+    public RouteFiltersData deleteRouteFilterByUuid(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         ApiResponse<RouteFiltersData> localVarResp = deleteRouteFilterByUuidWithHttpInfo(routeFilterId);
         return localVarResp.getData();
     }
@@ -522,7 +522,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersData> deleteRouteFilterByUuidWithHttpInfo(String routeFilterId) throws ApiException {
+    public ApiResponse<RouteFiltersData> deleteRouteFilterByUuidWithHttpInfo(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         okhttp3.Call localVarCall = deleteRouteFilterByUuidValidateBeforeCall(routeFilterId, null);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -548,7 +548,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteFilterByUuidAsync(String routeFilterId, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
+    public okhttp3.Call deleteRouteFilterByUuidAsync(@javax.annotation.Nonnull String routeFilterId, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRouteFilterByUuidValidateBeforeCall(routeFilterId, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
@@ -575,7 +575,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachConnectionRouteFilterCall(String routeFilterId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachConnectionRouteFilterCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -622,7 +622,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachConnectionRouteFilterValidateBeforeCall(String routeFilterId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachConnectionRouteFilterValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling detachConnectionRouteFilter(Async)");
@@ -657,7 +657,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteFilterData detachConnectionRouteFilter(String routeFilterId, String connectionId) throws ApiException {
+    public ConnectionRouteFilterData detachConnectionRouteFilter(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<ConnectionRouteFilterData> localVarResp = detachConnectionRouteFilterWithHttpInfo(routeFilterId, connectionId);
         return localVarResp.getData();
     }
@@ -682,7 +682,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteFilterData> detachConnectionRouteFilterWithHttpInfo(String routeFilterId, String connectionId) throws ApiException {
+    public ApiResponse<ConnectionRouteFilterData> detachConnectionRouteFilterWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = detachConnectionRouteFilterValidateBeforeCall(routeFilterId, connectionId, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -709,7 +709,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachConnectionRouteFilterAsync(String routeFilterId, String connectionId, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
+    public okhttp3.Call detachConnectionRouteFilterAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detachConnectionRouteFilterValidateBeforeCall(routeFilterId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
@@ -736,7 +736,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteFilterByUuidCall(String routeFilterId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteFilterByUuidCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -783,7 +783,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRouteFilterByUuidValidateBeforeCall(String routeFilterId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRouteFilterByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling getConnectionRouteFilterByUuid(Async)");
@@ -818,7 +818,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteFilterData getConnectionRouteFilterByUuid(String routeFilterId, String connectionId) throws ApiException {
+    public ConnectionRouteFilterData getConnectionRouteFilterByUuid(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<ConnectionRouteFilterData> localVarResp = getConnectionRouteFilterByUuidWithHttpInfo(routeFilterId, connectionId);
         return localVarResp.getData();
     }
@@ -843,7 +843,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteFilterData> getConnectionRouteFilterByUuidWithHttpInfo(String routeFilterId, String connectionId) throws ApiException {
+    public ApiResponse<ConnectionRouteFilterData> getConnectionRouteFilterByUuidWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRouteFilterByUuidValidateBeforeCall(routeFilterId, connectionId, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -870,7 +870,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteFilterByUuidAsync(String routeFilterId, String connectionId, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteFilterByUuidAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull String connectionId, final ApiCallback<ConnectionRouteFilterData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRouteFilterByUuidValidateBeforeCall(routeFilterId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteFilterData>(){}.getType();
@@ -896,7 +896,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteFiltersCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteFiltersCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -942,7 +942,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRouteFiltersValidateBeforeCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRouteFiltersValidateBeforeCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRouteFilters(Async)");
@@ -971,7 +971,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllConnectionRouteFiltersResponse getConnectionRouteFilters(String connectionId) throws ApiException {
+    public GetAllConnectionRouteFiltersResponse getConnectionRouteFilters(@javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<GetAllConnectionRouteFiltersResponse> localVarResp = getConnectionRouteFiltersWithHttpInfo(connectionId);
         return localVarResp.getData();
     }
@@ -995,7 +995,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllConnectionRouteFiltersResponse> getConnectionRouteFiltersWithHttpInfo(String connectionId) throws ApiException {
+    public ApiResponse<GetAllConnectionRouteFiltersResponse> getConnectionRouteFiltersWithHttpInfo(@javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRouteFiltersValidateBeforeCall(connectionId, null);
         Type localVarReturnType = new TypeToken<GetAllConnectionRouteFiltersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1021,7 +1021,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteFiltersAsync(String connectionId, final ApiCallback<GetAllConnectionRouteFiltersResponse> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteFiltersAsync(@javax.annotation.Nonnull String connectionId, final ApiCallback<GetAllConnectionRouteFiltersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRouteFiltersValidateBeforeCall(connectionId, _callback);
         Type localVarReturnType = new TypeToken<GetAllConnectionRouteFiltersResponse>(){}.getType();
@@ -1047,7 +1047,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterByUuidCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterByUuidCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1093,7 +1093,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteFilterByUuidValidateBeforeCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteFilterByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling getRouteFilterByUuid(Async)");
@@ -1122,7 +1122,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersData getRouteFilterByUuid(String routeFilterId) throws ApiException {
+    public RouteFiltersData getRouteFilterByUuid(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         ApiResponse<RouteFiltersData> localVarResp = getRouteFilterByUuidWithHttpInfo(routeFilterId);
         return localVarResp.getData();
     }
@@ -1146,7 +1146,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersData> getRouteFilterByUuidWithHttpInfo(String routeFilterId) throws ApiException {
+    public ApiResponse<RouteFiltersData> getRouteFilterByUuidWithHttpInfo(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         okhttp3.Call localVarCall = getRouteFilterByUuidValidateBeforeCall(routeFilterId, null);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1172,7 +1172,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterByUuidAsync(String routeFilterId, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterByUuidAsync(@javax.annotation.Nonnull String routeFilterId, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteFilterByUuidValidateBeforeCall(routeFilterId, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
@@ -1198,7 +1198,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterChangeByUuidCall(String routeFilterId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterChangeByUuidCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1245,7 +1245,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteFilterChangeByUuidValidateBeforeCall(String routeFilterId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteFilterChangeByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling getRouteFilterChangeByUuid(Async)");
@@ -1279,7 +1279,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFilterChangeData getRouteFilterChangeByUuid(String routeFilterId, UUID changeId) throws ApiException {
+    public RouteFilterChangeData getRouteFilterChangeByUuid(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         ApiResponse<RouteFilterChangeData> localVarResp = getRouteFilterChangeByUuidWithHttpInfo(routeFilterId, changeId);
         return localVarResp.getData();
     }
@@ -1303,7 +1303,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFilterChangeData> getRouteFilterChangeByUuidWithHttpInfo(String routeFilterId, UUID changeId) throws ApiException {
+    public ApiResponse<RouteFilterChangeData> getRouteFilterChangeByUuidWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         okhttp3.Call localVarCall = getRouteFilterChangeByUuidValidateBeforeCall(routeFilterId, changeId, null);
         Type localVarReturnType = new TypeToken<RouteFilterChangeData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1329,7 +1329,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterChangeByUuidAsync(String routeFilterId, UUID changeId, final ApiCallback<RouteFilterChangeData> _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterChangeByUuidAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull UUID changeId, final ApiCallback<RouteFilterChangeData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteFilterChangeByUuidValidateBeforeCall(routeFilterId, changeId, _callback);
         Type localVarReturnType = new TypeToken<RouteFilterChangeData>(){}.getType();
@@ -1356,7 +1356,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterChangesCall(String routeFilterId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterChangesCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1410,7 +1410,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteFilterChangesValidateBeforeCall(String routeFilterId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteFilterChangesValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling getRouteFilterChanges(Async)");
@@ -1440,7 +1440,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFilterChangeDataResponse getRouteFilterChanges(String routeFilterId, Integer offset, Integer limit) throws ApiException {
+    public RouteFilterChangeDataResponse getRouteFilterChanges(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<RouteFilterChangeDataResponse> localVarResp = getRouteFilterChangesWithHttpInfo(routeFilterId, offset, limit);
         return localVarResp.getData();
     }
@@ -1465,7 +1465,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFilterChangeDataResponse> getRouteFilterChangesWithHttpInfo(String routeFilterId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<RouteFilterChangeDataResponse> getRouteFilterChangesWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getRouteFilterChangesValidateBeforeCall(routeFilterId, offset, limit, null);
         Type localVarReturnType = new TypeToken<RouteFilterChangeDataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1492,7 +1492,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterChangesAsync(String routeFilterId, Integer offset, Integer limit, final ApiCallback<RouteFilterChangeDataResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterChangesAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<RouteFilterChangeDataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteFilterChangesValidateBeforeCall(routeFilterId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<RouteFilterChangeDataResponse>(){}.getType();
@@ -1518,7 +1518,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterConnectionsCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterConnectionsCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1564,7 +1564,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteFilterConnectionsValidateBeforeCall(String routeFilterId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteFilterConnectionsValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling getRouteFilterConnections(Async)");
@@ -1593,7 +1593,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetRouteFilterGetConnectionsResponse getRouteFilterConnections(String routeFilterId) throws ApiException {
+    public GetRouteFilterGetConnectionsResponse getRouteFilterConnections(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         ApiResponse<GetRouteFilterGetConnectionsResponse> localVarResp = getRouteFilterConnectionsWithHttpInfo(routeFilterId);
         return localVarResp.getData();
     }
@@ -1617,7 +1617,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetRouteFilterGetConnectionsResponse> getRouteFilterConnectionsWithHttpInfo(String routeFilterId) throws ApiException {
+    public ApiResponse<GetRouteFilterGetConnectionsResponse> getRouteFilterConnectionsWithHttpInfo(@javax.annotation.Nonnull String routeFilterId) throws ApiException {
         okhttp3.Call localVarCall = getRouteFilterConnectionsValidateBeforeCall(routeFilterId, null);
         Type localVarReturnType = new TypeToken<GetRouteFilterGetConnectionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1643,7 +1643,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteFilterConnectionsAsync(String routeFilterId, final ApiCallback<GetRouteFilterGetConnectionsResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteFilterConnectionsAsync(@javax.annotation.Nonnull String routeFilterId, final ApiCallback<GetRouteFilterGetConnectionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteFilterConnectionsValidateBeforeCall(routeFilterId, _callback);
         Type localVarReturnType = new TypeToken<GetRouteFilterGetConnectionsResponse>(){}.getType();
@@ -1670,7 +1670,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteFilterByUuidCall(String routeFilterId, List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchRouteFilterByUuidCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1718,7 +1718,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRouteFilterByUuidValidateBeforeCall(String routeFilterId, List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchRouteFilterByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFilterId' is set
         if (routeFilterId == null) {
             throw new ApiException("Missing the required parameter 'routeFilterId' when calling patchRouteFilterByUuid(Async)");
@@ -1753,7 +1753,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersData patchRouteFilterByUuid(String routeFilterId, List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem) throws ApiException {
+    public RouteFiltersData patchRouteFilterByUuid(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem) throws ApiException {
         ApiResponse<RouteFiltersData> localVarResp = patchRouteFilterByUuidWithHttpInfo(routeFilterId, routeFiltersPatchRequestItem);
         return localVarResp.getData();
     }
@@ -1778,7 +1778,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersData> patchRouteFilterByUuidWithHttpInfo(String routeFilterId, List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem) throws ApiException {
+    public ApiResponse<RouteFiltersData> patchRouteFilterByUuidWithHttpInfo(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem) throws ApiException {
         okhttp3.Call localVarCall = patchRouteFilterByUuidValidateBeforeCall(routeFilterId, routeFiltersPatchRequestItem, null);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1805,7 +1805,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteFilterByUuidAsync(String routeFilterId, List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
+    public okhttp3.Call patchRouteFilterByUuidAsync(@javax.annotation.Nonnull String routeFilterId, @javax.annotation.Nonnull List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem, final ApiCallback<RouteFiltersData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchRouteFilterByUuidValidateBeforeCall(routeFilterId, routeFiltersPatchRequestItem, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
@@ -1831,7 +1831,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteFiltersCall(RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchRouteFiltersCall(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1877,7 +1877,7 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchRouteFiltersValidateBeforeCall(RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchRouteFiltersValidateBeforeCall(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeFiltersSearchBase' is set
         if (routeFiltersSearchBase == null) {
             throw new ApiException("Missing the required parameter 'routeFiltersSearchBase' when calling searchRouteFilters(Async)");
@@ -1906,7 +1906,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersSearchResponse searchRouteFilters(RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
+    public RouteFiltersSearchResponse searchRouteFilters(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
         ApiResponse<RouteFiltersSearchResponse> localVarResp = searchRouteFiltersWithHttpInfo(routeFiltersSearchBase);
         return localVarResp.getData();
     }
@@ -1930,7 +1930,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersSearchResponse> searchRouteFiltersWithHttpInfo(RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
+    public ApiResponse<RouteFiltersSearchResponse> searchRouteFiltersWithHttpInfo(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
         okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchBase, null);
         Type localVarReturnType = new TypeToken<RouteFiltersSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1956,7 +1956,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteFiltersAsync(RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback<RouteFiltersSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchRouteFiltersAsync(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback<RouteFiltersSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchBase, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersSearchResponse>(){}.getType();

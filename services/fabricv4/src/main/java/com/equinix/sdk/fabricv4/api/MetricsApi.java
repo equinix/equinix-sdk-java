@@ -98,7 +98,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricByAssetIdCall(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetricByAssetIdCall(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -165,7 +165,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetricByAssetIdValidateBeforeCall(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetricByAssetIdValidateBeforeCall(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'asset' is set
         if (asset == null) {
             throw new ApiException("Missing the required parameter 'asset' when calling getMetricByAssetId(Async)");
@@ -208,7 +208,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetMetricsByAssetResponse getMetricByAssetId(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public GetMetricsByAssetResponse getMetricByAssetId(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetMetricsByAssetResponse> localVarResp = getMetricByAssetIdWithHttpInfo(asset, assetId, name, fromDateTime, toDateTime, offset, limit);
         return localVarResp.getData();
     }
@@ -236,7 +236,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetMetricsByAssetResponse> getMetricByAssetIdWithHttpInfo(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetMetricsByAssetResponse> getMetricByAssetIdWithHttpInfo(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -266,7 +266,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricByAssetIdAsync(MetricAssetType asset, UUID assetId, String name, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call getMetricByAssetIdAsync(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
@@ -290,7 +290,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchMetricsCall(MetricsSearchRequest metricsSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchMetricsCall(@javax.annotation.Nonnull MetricsSearchRequest metricsSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -336,7 +336,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchMetricsValidateBeforeCall(MetricsSearchRequest metricsSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchMetricsValidateBeforeCall(@javax.annotation.Nonnull MetricsSearchRequest metricsSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'metricsSearchRequest' is set
         if (metricsSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'metricsSearchRequest' when calling searchMetrics(Async)");
@@ -363,7 +363,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetMetricsByAssetResponse searchMetrics(MetricsSearchRequest metricsSearchRequest) throws ApiException {
+    public GetMetricsByAssetResponse searchMetrics(@javax.annotation.Nonnull MetricsSearchRequest metricsSearchRequest) throws ApiException {
         ApiResponse<GetMetricsByAssetResponse> localVarResp = searchMetricsWithHttpInfo(metricsSearchRequest);
         return localVarResp.getData();
     }
@@ -385,7 +385,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetMetricsByAssetResponse> searchMetricsWithHttpInfo(MetricsSearchRequest metricsSearchRequest) throws ApiException {
+    public ApiResponse<GetMetricsByAssetResponse> searchMetricsWithHttpInfo(@javax.annotation.Nonnull MetricsSearchRequest metricsSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchMetricsValidateBeforeCall(metricsSearchRequest, null);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -409,7 +409,7 @@ public class MetricsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchMetricsAsync(MetricsSearchRequest metricsSearchRequest, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call searchMetricsAsync(@javax.annotation.Nonnull MetricsSearchRequest metricsSearchRequest, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchMetricsValidateBeforeCall(metricsSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();

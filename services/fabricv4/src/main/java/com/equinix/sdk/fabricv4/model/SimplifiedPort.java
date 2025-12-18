@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
@@ -61,13 +62,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Port specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SimplifiedPort {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -1017,40 +1019,10 @@ public class SimplifiedPort {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("id");
-    openapiFields.add("uuid");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("physicalPortsSpeed");
-    openapiFields.add("connectionsCount");
-    openapiFields.add("project");
-    openapiFields.add("state");
-    openapiFields.add("operation");
-    openapiFields.add("account");
-    openapiFields.add("serviceType");
-    openapiFields.add("serviceCode");
-    openapiFields.add("bandwidth");
-    openapiFields.add("availableBandwidth");
-    openapiFields.add("usedBandwidth");
-    openapiFields.add("location");
-    openapiFields.add("device");
-    openapiFields.add("interface");
-    openapiFields.add("tether");
-    openapiFields.add("demarcationPoint");
-    openapiFields.add("redundancy");
-    openapiFields.add("encapsulation");
-    openapiFields.add("lagEnabled");
-    openapiFields.add("package");
-    openapiFields.add("settings");
-    openapiFields.add("physicalPortQuantity");
-    openapiFields.add("additionalInfo");
-    openapiFields.add("physicalPorts");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "project", "state", "operation", "account", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "tether", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "physicalPortQuantity", "additionalInfo", "physicalPorts"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -1062,25 +1034,25 @@ public class SimplifiedPort {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SimplifiedPort.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedPort is not found in the empty JSON string", SimplifiedPort.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SimplifiedPort is not found in the empty JSON string", SimplifiedPort.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
         PortType.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
@@ -1099,7 +1071,7 @@ public class SimplifiedPort {
         SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       if ((jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) && !jsonObj.get("serviceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
       }
       // validate the optional field `serviceType`
       if (jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) {
@@ -1150,7 +1122,7 @@ public class SimplifiedPort {
         if (jsonArrayadditionalInfo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("additionalInfo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
           }
 
           // validate the optional field `additionalInfo` (array)
@@ -1164,7 +1136,7 @@ public class SimplifiedPort {
         if (jsonArrayphysicalPorts != null) {
           // ensure the json data is an array
           if (!jsonObj.get("physicalPorts").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `physicalPorts` to be an array in the JSON string but got `%s`", jsonObj.get("physicalPorts").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `physicalPorts` to be an array in the JSON string but got `%s`", jsonObj.get("physicalPorts").toString()));
           }
 
           // validate the optional field `physicalPorts` (array)
@@ -1232,7 +1204,7 @@ public class SimplifiedPort {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

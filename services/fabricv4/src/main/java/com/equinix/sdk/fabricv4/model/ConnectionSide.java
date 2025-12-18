@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AccessPoint;
 import com.equinix.sdk.fabricv4.model.ConnectionCompanyProfile;
 import com.equinix.sdk.fabricv4.model.ConnectionInvitation;
@@ -48,13 +49,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Connection configuration object for each side of multi-segment connection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ConnectionSide {
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
@@ -311,16 +313,10 @@ public class ConnectionSide {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("serviceToken");
-    openapiFields.add("accessPoint");
-    openapiFields.add("internetAccess");
-    openapiFields.add("companyProfile");
-    openapiFields.add("invitation");
-    openapiFields.add("additionalInfo");
+    openapiFields = new HashSet<String>(Arrays.asList("serviceToken", "accessPoint", "internetAccess", "companyProfile", "invitation", "additionalInfo"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -332,7 +328,7 @@ public class ConnectionSide {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConnectionSide.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectionSide is not found in the empty JSON string", ConnectionSide.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ConnectionSide is not found in the empty JSON string", ConnectionSide.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -361,7 +357,7 @@ public class ConnectionSide {
         if (jsonArrayadditionalInfo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("additionalInfo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
           }
 
           // validate the optional field `additionalInfo` (array)
@@ -429,7 +425,7 @@ public class ConnectionSide {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

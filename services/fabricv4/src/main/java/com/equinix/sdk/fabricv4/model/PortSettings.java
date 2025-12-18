@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Port configuration settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortSettings {
   public static final String SERIALIZED_NAME_BUYOUT = "buyout";
   @Deprecated
@@ -456,17 +458,10 @@ public class PortSettings {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("buyout");
-    openapiFields.add("viewPortPermission");
-    openapiFields.add("placeVcOrderPermission");
-    openapiFields.add("layer3Enabled");
-    openapiFields.add("sharedPortType");
-    openapiFields.add("sharedPortProduct");
-    openapiFields.add("packageType");
+    openapiFields = new HashSet<String>(Arrays.asList("buyout", "viewPortPermission", "placeVcOrderPermission", "layer3Enabled", "sharedPortType", "sharedPortProduct", "packageType"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -478,19 +473,19 @@ public class PortSettings {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortSettings is not found in the empty JSON string", PortSettings.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortSettings is not found in the empty JSON string", PortSettings.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) && !jsonObj.get("sharedPortProduct").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sharedPortProduct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharedPortProduct").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sharedPortProduct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharedPortProduct").toString()));
       }
       // validate the optional field `sharedPortProduct`
       if (jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) {
         SharedPortProductEnum.validateJsonElement(jsonObj.get("sharedPortProduct"));
       }
       if ((jsonObj.get("packageType") != null && !jsonObj.get("packageType").isJsonNull()) && !jsonObj.get("packageType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `packageType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("packageType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `packageType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("packageType").toString()));
       }
       // validate the optional field `packageType`
       if (jsonObj.get("packageType") != null && !jsonObj.get("packageType").isJsonNull()) {
@@ -555,7 +550,7 @@ public class PortSettings {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

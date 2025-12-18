@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AddOperation;
 import com.equinix.sdk.fabricv4.model.OpEnum;
 import com.equinix.sdk.fabricv4.model.RemoveOperation;
@@ -36,6 +37,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -59,7 +61,7 @@ import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class JsonPatchOperation extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(JsonPatchOperation.class.getName());
 
@@ -122,7 +124,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'AddOperation'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for AddOperation failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for AddOperation failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AddOperation'", e);
                     }
                     // deserialize RemoveOperation
@@ -134,7 +136,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'RemoveOperation'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RemoveOperation failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for RemoveOperation failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RemoveOperation'", e);
                     }
                     // deserialize ReplaceOperation
@@ -146,7 +148,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ReplaceOperation'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ReplaceOperation failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ReplaceOperation failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ReplaceOperation'", e);
                     }
 
@@ -156,7 +158,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for JsonPatchOperation: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for JsonPatchOperation: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -272,7 +274,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
             AddOperation.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for AddOperation failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for AddOperation failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with RemoveOperation
@@ -280,7 +282,7 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
             RemoveOperation.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for RemoveOperation failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for RemoveOperation failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with ReplaceOperation
@@ -288,11 +290,11 @@ public class JsonPatchOperation extends AbstractOpenApiSchema {
             ReplaceOperation.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ReplaceOperation failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for ReplaceOperation failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for JsonPatchOperation with oneOf schemas: AddOperation, RemoveOperation, ReplaceOperation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for JsonPatchOperation with oneOf schemas: AddOperation, RemoveOperation, ReplaceOperation. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

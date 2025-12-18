@@ -99,7 +99,7 @@ public class NetworksApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createNetworkCall(NetworkPostRequest networkPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createNetworkCall(@javax.annotation.Nonnull NetworkPostRequest networkPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createNetworkValidateBeforeCall(NetworkPostRequest networkPostRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createNetworkValidateBeforeCall(@javax.annotation.Nonnull NetworkPostRequest networkPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkPostRequest' is set
         if (networkPostRequest == null) {
             throw new ApiException("Missing the required parameter 'networkPostRequest' when calling createNetwork(Async)");
@@ -179,7 +179,7 @@ public class NetworksApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Network createNetwork(NetworkPostRequest networkPostRequest, Boolean dryRun) throws ApiException {
+    public Network createNetwork(@javax.annotation.Nonnull NetworkPostRequest networkPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<Network> localVarResp = createNetworkWithHttpInfo(networkPostRequest, dryRun);
         return localVarResp.getData();
     }
@@ -204,7 +204,7 @@ public class NetworksApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Network> createNetworkWithHttpInfo(NetworkPostRequest networkPostRequest, Boolean dryRun) throws ApiException {
+    public ApiResponse<Network> createNetworkWithHttpInfo(@javax.annotation.Nonnull NetworkPostRequest networkPostRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = createNetworkValidateBeforeCall(networkPostRequest, dryRun, null);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -231,7 +231,7 @@ public class NetworksApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createNetworkAsync(NetworkPostRequest networkPostRequest, Boolean dryRun, final ApiCallback<Network> _callback) throws ApiException {
+    public okhttp3.Call createNetworkAsync(@javax.annotation.Nonnull NetworkPostRequest networkPostRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<Network> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createNetworkValidateBeforeCall(networkPostRequest, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
@@ -255,7 +255,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworkByUuidCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteNetworkByUuidCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -301,7 +301,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteNetworkByUuidValidateBeforeCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteNetworkByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling deleteNetworkByUuid(Async)");
@@ -328,7 +328,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Network deleteNetworkByUuid(UUID networkId) throws ApiException {
+    public Network deleteNetworkByUuid(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         ApiResponse<Network> localVarResp = deleteNetworkByUuidWithHttpInfo(networkId);
         return localVarResp.getData();
     }
@@ -350,7 +350,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Network> deleteNetworkByUuidWithHttpInfo(UUID networkId) throws ApiException {
+    public ApiResponse<Network> deleteNetworkByUuidWithHttpInfo(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         okhttp3.Call localVarCall = deleteNetworkByUuidValidateBeforeCall(networkId, null);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -374,7 +374,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworkByUuidAsync(UUID networkId, final ApiCallback<Network> _callback) throws ApiException {
+    public okhttp3.Call deleteNetworkByUuidAsync(@javax.annotation.Nonnull UUID networkId, final ApiCallback<Network> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNetworkByUuidValidateBeforeCall(networkId, _callback);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
@@ -398,7 +398,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionsByNetworkUuidCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionsByNetworkUuidCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -444,7 +444,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionsByNetworkUuidValidateBeforeCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionsByNetworkUuidValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling getConnectionsByNetworkUuid(Async)");
@@ -471,7 +471,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public NetworkConnections getConnectionsByNetworkUuid(UUID networkId) throws ApiException {
+    public NetworkConnections getConnectionsByNetworkUuid(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         ApiResponse<NetworkConnections> localVarResp = getConnectionsByNetworkUuidWithHttpInfo(networkId);
         return localVarResp.getData();
     }
@@ -493,7 +493,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NetworkConnections> getConnectionsByNetworkUuidWithHttpInfo(UUID networkId) throws ApiException {
+    public ApiResponse<NetworkConnections> getConnectionsByNetworkUuidWithHttpInfo(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionsByNetworkUuidValidateBeforeCall(networkId, null);
         Type localVarReturnType = new TypeToken<NetworkConnections>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -517,7 +517,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionsByNetworkUuidAsync(UUID networkId, final ApiCallback<NetworkConnections> _callback) throws ApiException {
+    public okhttp3.Call getConnectionsByNetworkUuidAsync(@javax.annotation.Nonnull UUID networkId, final ApiCallback<NetworkConnections> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionsByNetworkUuidValidateBeforeCall(networkId, _callback);
         Type localVarReturnType = new TypeToken<NetworkConnections>(){}.getType();
@@ -540,7 +540,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkByUuidCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNetworkByUuidCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -586,7 +586,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNetworkByUuidValidateBeforeCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNetworkByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling getNetworkByUuid(Async)");
@@ -612,7 +612,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Network getNetworkByUuid(UUID networkId) throws ApiException {
+    public Network getNetworkByUuid(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         ApiResponse<Network> localVarResp = getNetworkByUuidWithHttpInfo(networkId);
         return localVarResp.getData();
     }
@@ -633,7 +633,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Network> getNetworkByUuidWithHttpInfo(UUID networkId) throws ApiException {
+    public ApiResponse<Network> getNetworkByUuidWithHttpInfo(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         okhttp3.Call localVarCall = getNetworkByUuidValidateBeforeCall(networkId, null);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -656,7 +656,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkByUuidAsync(UUID networkId, final ApiCallback<Network> _callback) throws ApiException {
+    public okhttp3.Call getNetworkByUuidAsync(@javax.annotation.Nonnull UUID networkId, final ApiCallback<Network> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworkByUuidValidateBeforeCall(networkId, _callback);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
@@ -681,7 +681,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkChangeByUuidCall(UUID networkId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNetworkChangeByUuidCall(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -728,7 +728,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNetworkChangeByUuidValidateBeforeCall(UUID networkId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNetworkChangeByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling getNetworkChangeByUuid(Async)");
@@ -761,7 +761,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public NetworkChange getNetworkChangeByUuid(UUID networkId, UUID changeId) throws ApiException {
+    public NetworkChange getNetworkChangeByUuid(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         ApiResponse<NetworkChange> localVarResp = getNetworkChangeByUuidWithHttpInfo(networkId, changeId);
         return localVarResp.getData();
     }
@@ -784,7 +784,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NetworkChange> getNetworkChangeByUuidWithHttpInfo(UUID networkId, UUID changeId) throws ApiException {
+    public ApiResponse<NetworkChange> getNetworkChangeByUuidWithHttpInfo(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         okhttp3.Call localVarCall = getNetworkChangeByUuidValidateBeforeCall(networkId, changeId, null);
         Type localVarReturnType = new TypeToken<NetworkChange>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -809,7 +809,7 @@ public class NetworksApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkChangeByUuidAsync(UUID networkId, UUID changeId, final ApiCallback<NetworkChange> _callback) throws ApiException {
+    public okhttp3.Call getNetworkChangeByUuidAsync(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull UUID changeId, final ApiCallback<NetworkChange> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworkChangeByUuidValidateBeforeCall(networkId, changeId, _callback);
         Type localVarReturnType = new TypeToken<NetworkChange>(){}.getType();
@@ -833,7 +833,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkChangesCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNetworkChangesCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -879,7 +879,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNetworkChangesValidateBeforeCall(UUID networkId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNetworkChangesValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling getNetworkChanges(Async)");
@@ -906,7 +906,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public NetworkChangeResponse getNetworkChanges(UUID networkId) throws ApiException {
+    public NetworkChangeResponse getNetworkChanges(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         ApiResponse<NetworkChangeResponse> localVarResp = getNetworkChangesWithHttpInfo(networkId);
         return localVarResp.getData();
     }
@@ -928,7 +928,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NetworkChangeResponse> getNetworkChangesWithHttpInfo(UUID networkId) throws ApiException {
+    public ApiResponse<NetworkChangeResponse> getNetworkChangesWithHttpInfo(@javax.annotation.Nonnull UUID networkId) throws ApiException {
         okhttp3.Call localVarCall = getNetworkChangesValidateBeforeCall(networkId, null);
         Type localVarReturnType = new TypeToken<NetworkChangeResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -952,7 +952,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworkChangesAsync(UUID networkId, final ApiCallback<NetworkChangeResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworkChangesAsync(@javax.annotation.Nonnull UUID networkId, final ApiCallback<NetworkChangeResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworkChangesValidateBeforeCall(networkId, _callback);
         Type localVarReturnType = new TypeToken<NetworkChangeResponse>(){}.getType();
@@ -976,7 +976,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchNetworksCall(NetworkSearchRequest networkSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchNetworksCall(@javax.annotation.Nonnull NetworkSearchRequest networkSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1022,7 +1022,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchNetworksValidateBeforeCall(NetworkSearchRequest networkSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchNetworksValidateBeforeCall(@javax.annotation.Nonnull NetworkSearchRequest networkSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkSearchRequest' is set
         if (networkSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'networkSearchRequest' when calling searchNetworks(Async)");
@@ -1049,7 +1049,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public NetworkSearchResponse searchNetworks(NetworkSearchRequest networkSearchRequest) throws ApiException {
+    public NetworkSearchResponse searchNetworks(@javax.annotation.Nonnull NetworkSearchRequest networkSearchRequest) throws ApiException {
         ApiResponse<NetworkSearchResponse> localVarResp = searchNetworksWithHttpInfo(networkSearchRequest);
         return localVarResp.getData();
     }
@@ -1071,7 +1071,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NetworkSearchResponse> searchNetworksWithHttpInfo(NetworkSearchRequest networkSearchRequest) throws ApiException {
+    public ApiResponse<NetworkSearchResponse> searchNetworksWithHttpInfo(@javax.annotation.Nonnull NetworkSearchRequest networkSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchNetworksValidateBeforeCall(networkSearchRequest, null);
         Type localVarReturnType = new TypeToken<NetworkSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1095,7 +1095,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchNetworksAsync(NetworkSearchRequest networkSearchRequest, final ApiCallback<NetworkSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchNetworksAsync(@javax.annotation.Nonnull NetworkSearchRequest networkSearchRequest, final ApiCallback<NetworkSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchNetworksValidateBeforeCall(networkSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<NetworkSearchResponse>(){}.getType();
@@ -1121,7 +1121,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateNetworkByUuidCall(UUID networkId, List<NetworkChangeOperation> networkChangeOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateNetworkByUuidCall(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull List<NetworkChangeOperation> networkChangeOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1168,7 +1168,7 @@ public class NetworksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateNetworkByUuidValidateBeforeCall(UUID networkId, List<NetworkChangeOperation> networkChangeOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateNetworkByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull List<NetworkChangeOperation> networkChangeOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'networkId' is set
         if (networkId == null) {
             throw new ApiException("Missing the required parameter 'networkId' when calling updateNetworkByUuid(Async)");
@@ -1202,7 +1202,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public Network updateNetworkByUuid(UUID networkId, List<NetworkChangeOperation> networkChangeOperation) throws ApiException {
+    public Network updateNetworkByUuid(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull List<NetworkChangeOperation> networkChangeOperation) throws ApiException {
         ApiResponse<Network> localVarResp = updateNetworkByUuidWithHttpInfo(networkId, networkChangeOperation);
         return localVarResp.getData();
     }
@@ -1226,7 +1226,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Network> updateNetworkByUuidWithHttpInfo(UUID networkId, List<NetworkChangeOperation> networkChangeOperation) throws ApiException {
+    public ApiResponse<Network> updateNetworkByUuidWithHttpInfo(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull List<NetworkChangeOperation> networkChangeOperation) throws ApiException {
         okhttp3.Call localVarCall = updateNetworkByUuidValidateBeforeCall(networkId, networkChangeOperation, null);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1252,7 +1252,7 @@ public class NetworksApi {
         <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateNetworkByUuidAsync(UUID networkId, List<NetworkChangeOperation> networkChangeOperation, final ApiCallback<Network> _callback) throws ApiException {
+    public okhttp3.Call updateNetworkByUuidAsync(@javax.annotation.Nonnull UUID networkId, @javax.annotation.Nonnull List<NetworkChangeOperation> networkChangeOperation, final ApiCallback<Network> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateNetworkByUuidValidateBeforeCall(networkId, networkChangeOperation, _callback);
         Type localVarReturnType = new TypeToken<Network>(){}.getType();

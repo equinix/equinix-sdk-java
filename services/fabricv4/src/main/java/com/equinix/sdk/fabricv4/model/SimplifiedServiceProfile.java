@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.CustomField;
 import com.equinix.sdk.fabricv4.model.MarketingInfo;
 import com.equinix.sdk.fabricv4.model.ServiceMetro;
@@ -53,13 +54,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Service Profile is a software definition for a named provider service and it&#39;s network connectivity requirements. This includes the basic marketing information and one or more sets of access points (a set per each access point type) fulfilling the provider service. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SimplifiedServiceProfile {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -657,27 +659,10 @@ public class SimplifiedServiceProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("name");
-    openapiFields.add("uuid");
-    openapiFields.add("description");
-    openapiFields.add("notifications");
-    openapiFields.add("tags");
-    openapiFields.add("visibility");
-    openapiFields.add("allowedEmails");
-    openapiFields.add("accessPointTypeConfigs");
-    openapiFields.add("customFields");
-    openapiFields.add("marketingInfo");
-    openapiFields.add("ports");
-    openapiFields.add("virtualDevices");
-    openapiFields.add("metros");
-    openapiFields.add("selfProfile");
-    openapiFields.add("projectId");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "selfProfile", "projectId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -689,32 +674,32 @@ public class SimplifiedServiceProfile {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SimplifiedServiceProfile.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedServiceProfile is not found in the empty JSON string", SimplifiedServiceProfile.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SimplifiedServiceProfile is not found in the empty JSON string", SimplifiedServiceProfile.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
         ServiceProfileTypeEnum.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
         if (jsonArraynotifications != null) {
           // ensure the json data is an array
           if (!jsonObj.get("notifications").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
           }
 
           // validate the optional field `notifications` (array)
@@ -725,7 +710,7 @@ public class SimplifiedServiceProfile {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `visibility`
       if (jsonObj.get("visibility") != null && !jsonObj.get("visibility").isJsonNull()) {
@@ -733,14 +718,14 @@ public class SimplifiedServiceProfile {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("allowedEmails") != null && !jsonObj.get("allowedEmails").isJsonNull() && !jsonObj.get("allowedEmails").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `allowedEmails` to be an array in the JSON string but got `%s`", jsonObj.get("allowedEmails").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `allowedEmails` to be an array in the JSON string but got `%s`", jsonObj.get("allowedEmails").toString()));
       }
       if (jsonObj.get("accessPointTypeConfigs") != null && !jsonObj.get("accessPointTypeConfigs").isJsonNull()) {
         JsonArray jsonArrayaccessPointTypeConfigs = jsonObj.getAsJsonArray("accessPointTypeConfigs");
         if (jsonArrayaccessPointTypeConfigs != null) {
           // ensure the json data is an array
           if (!jsonObj.get("accessPointTypeConfigs").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `accessPointTypeConfigs` to be an array in the JSON string but got `%s`", jsonObj.get("accessPointTypeConfigs").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accessPointTypeConfigs` to be an array in the JSON string but got `%s`", jsonObj.get("accessPointTypeConfigs").toString()));
           }
 
           // validate the optional field `accessPointTypeConfigs` (array)
@@ -754,7 +739,7 @@ public class SimplifiedServiceProfile {
         if (jsonArraycustomFields != null) {
           // ensure the json data is an array
           if (!jsonObj.get("customFields").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `customFields` to be an array in the JSON string but got `%s`", jsonObj.get("customFields").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customFields` to be an array in the JSON string but got `%s`", jsonObj.get("customFields").toString()));
           }
 
           // validate the optional field `customFields` (array)
@@ -772,7 +757,7 @@ public class SimplifiedServiceProfile {
         if (jsonArrayports != null) {
           // ensure the json data is an array
           if (!jsonObj.get("ports").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ports` to be an array in the JSON string but got `%s`", jsonObj.get("ports").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ports` to be an array in the JSON string but got `%s`", jsonObj.get("ports").toString()));
           }
 
           // validate the optional field `ports` (array)
@@ -786,7 +771,7 @@ public class SimplifiedServiceProfile {
         if (jsonArrayvirtualDevices != null) {
           // ensure the json data is an array
           if (!jsonObj.get("virtualDevices").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `virtualDevices` to be an array in the JSON string but got `%s`", jsonObj.get("virtualDevices").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `virtualDevices` to be an array in the JSON string but got `%s`", jsonObj.get("virtualDevices").toString()));
           }
 
           // validate the optional field `virtualDevices` (array)
@@ -800,7 +785,7 @@ public class SimplifiedServiceProfile {
         if (jsonArraymetros != null) {
           // ensure the json data is an array
           if (!jsonObj.get("metros").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `metros` to be an array in the JSON string but got `%s`", jsonObj.get("metros").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metros` to be an array in the JSON string but got `%s`", jsonObj.get("metros").toString()));
           }
 
           // validate the optional field `metros` (array)
@@ -810,7 +795,7 @@ public class SimplifiedServiceProfile {
         }
       }
       if ((jsonObj.get("projectId") != null && !jsonObj.get("projectId").isJsonNull()) && !jsonObj.get("projectId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
       }
   }
 
@@ -871,7 +856,7 @@ public class SimplifiedServiceProfile {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

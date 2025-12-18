@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * SimplifiedLocationWithoutIBX
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SimplifiedLocationWithoutIBX {
   public static final String SERIALIZED_NAME_METRO_HREF = "metroHref";
   @SerializedName(SERIALIZED_NAME_METRO_HREF)
@@ -243,15 +245,10 @@ public class SimplifiedLocationWithoutIBX {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metroHref");
-    openapiFields.add("region");
-    openapiFields.add("metroName");
-    openapiFields.add("metroCode");
+    openapiFields = new HashSet<String>(Arrays.asList("metroHref", "region", "metroName", "metroCode"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("metroCode");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("metroCode"));
   }
 
   /**
@@ -263,28 +260,28 @@ public class SimplifiedLocationWithoutIBX {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SimplifiedLocationWithoutIBX.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedLocationWithoutIBX is not found in the empty JSON string", SimplifiedLocationWithoutIBX.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SimplifiedLocationWithoutIBX is not found in the empty JSON string", SimplifiedLocationWithoutIBX.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SimplifiedLocationWithoutIBX.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("metroHref") != null && !jsonObj.get("metroHref").isJsonNull()) && !jsonObj.get("metroHref").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metroHref` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroHref").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metroHref` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroHref").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("metroName") != null && !jsonObj.get("metroName").isJsonNull()) && !jsonObj.get("metroName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metroName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metroName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroName").toString()));
       }
       if (!jsonObj.get("metroCode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metroCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroCode").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metroCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroCode").toString()));
       }
   }
 
@@ -345,7 +342,7 @@ public class SimplifiedLocationWithoutIBX {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

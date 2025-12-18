@@ -103,7 +103,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionRoutingProtocolCall(String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionRoutingProtocolCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,7 +150,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionRoutingProtocolValidateBeforeCall(String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionRoutingProtocolValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling createConnectionRoutingProtocol(Async)");
@@ -185,7 +185,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolData createConnectionRoutingProtocol(String connectionId, RoutingProtocolBase routingProtocolBase) throws ApiException {
+    public RoutingProtocolData createConnectionRoutingProtocol(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase) throws ApiException {
         ApiResponse<RoutingProtocolData> localVarResp = createConnectionRoutingProtocolWithHttpInfo(connectionId, routingProtocolBase);
         return localVarResp.getData();
     }
@@ -210,7 +210,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolData> createConnectionRoutingProtocolWithHttpInfo(String connectionId, RoutingProtocolBase routingProtocolBase) throws ApiException {
+    public ApiResponse<RoutingProtocolData> createConnectionRoutingProtocolWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase) throws ApiException {
         okhttp3.Call localVarCall = createConnectionRoutingProtocolValidateBeforeCall(connectionId, routingProtocolBase, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -237,7 +237,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionRoutingProtocolAsync(String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
+    public okhttp3.Call createConnectionRoutingProtocolAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConnectionRoutingProtocolValidateBeforeCall(connectionId, routingProtocolBase, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
@@ -264,7 +264,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionRoutingProtocolsInBulkCall(String connectionId, ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConnectionRoutingProtocolsInBulkCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -311,7 +311,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConnectionRoutingProtocolsInBulkValidateBeforeCall(String connectionId, ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConnectionRoutingProtocolsInBulkValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling createConnectionRoutingProtocolsInBulk(Async)");
@@ -346,7 +346,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetResponse createConnectionRoutingProtocolsInBulk(String connectionId, ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest) throws ApiException {
+    public GetResponse createConnectionRoutingProtocolsInBulk(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest) throws ApiException {
         ApiResponse<GetResponse> localVarResp = createConnectionRoutingProtocolsInBulkWithHttpInfo(connectionId, connectionRoutingProtocolPostRequest);
         return localVarResp.getData();
     }
@@ -371,7 +371,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetResponse> createConnectionRoutingProtocolsInBulkWithHttpInfo(String connectionId, ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest) throws ApiException {
+    public ApiResponse<GetResponse> createConnectionRoutingProtocolsInBulkWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest) throws ApiException {
         okhttp3.Call localVarCall = createConnectionRoutingProtocolsInBulkValidateBeforeCall(connectionId, connectionRoutingProtocolPostRequest, null);
         Type localVarReturnType = new TypeToken<GetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -398,7 +398,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConnectionRoutingProtocolsInBulkAsync(String connectionId, ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback<GetResponse> _callback) throws ApiException {
+    public okhttp3.Call createConnectionRoutingProtocolsInBulkAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest, final ApiCallback<GetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConnectionRoutingProtocolsInBulkValidateBeforeCall(connectionId, connectionRoutingProtocolPostRequest, _callback);
         Type localVarReturnType = new TypeToken<GetResponse>(){}.getType();
@@ -425,7 +425,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConnectionRoutingProtocolByUuidCall(UUID routingProtocolId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteConnectionRoutingProtocolByUuidCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -472,7 +472,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteConnectionRoutingProtocolByUuidValidateBeforeCall(UUID routingProtocolId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteConnectionRoutingProtocolByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling deleteConnectionRoutingProtocolByUuid(Async)");
@@ -507,7 +507,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolData deleteConnectionRoutingProtocolByUuid(UUID routingProtocolId, String connectionId) throws ApiException {
+    public RoutingProtocolData deleteConnectionRoutingProtocolByUuid(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<RoutingProtocolData> localVarResp = deleteConnectionRoutingProtocolByUuidWithHttpInfo(routingProtocolId, connectionId);
         return localVarResp.getData();
     }
@@ -532,7 +532,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolData> deleteConnectionRoutingProtocolByUuidWithHttpInfo(UUID routingProtocolId, String connectionId) throws ApiException {
+    public ApiResponse<RoutingProtocolData> deleteConnectionRoutingProtocolByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = deleteConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -559,7 +559,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConnectionRoutingProtocolByUuidAsync(UUID routingProtocolId, String connectionId, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
+    public okhttp3.Call deleteConnectionRoutingProtocolByUuidAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
@@ -588,7 +588,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolAllBgpActionsCall(UUID routingProtocolId, String connectionId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolAllBgpActionsCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -643,7 +643,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolAllBgpActionsValidateBeforeCall(UUID routingProtocolId, String connectionId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolAllBgpActionsValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling getConnectionRoutingProtocolAllBgpActions(Async)");
@@ -680,7 +680,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public BGPActionsBulkData getConnectionRoutingProtocolAllBgpActions(UUID routingProtocolId, String connectionId, Integer offset, Integer limit) throws ApiException {
+    public BGPActionsBulkData getConnectionRoutingProtocolAllBgpActions(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<BGPActionsBulkData> localVarResp = getConnectionRoutingProtocolAllBgpActionsWithHttpInfo(routingProtocolId, connectionId, offset, limit);
         return localVarResp.getData();
     }
@@ -707,7 +707,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BGPActionsBulkData> getConnectionRoutingProtocolAllBgpActionsWithHttpInfo(UUID routingProtocolId, String connectionId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<BGPActionsBulkData> getConnectionRoutingProtocolAllBgpActionsWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolAllBgpActionsValidateBeforeCall(routingProtocolId, connectionId, offset, limit, null);
         Type localVarReturnType = new TypeToken<BGPActionsBulkData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -736,7 +736,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolAllBgpActionsAsync(UUID routingProtocolId, String connectionId, Integer offset, Integer limit, final ApiCallback<BGPActionsBulkData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolAllBgpActionsAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<BGPActionsBulkData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolAllBgpActionsValidateBeforeCall(routingProtocolId, connectionId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<BGPActionsBulkData>(){}.getType();
@@ -763,7 +763,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolByUuidCall(UUID routingProtocolId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolByUuidCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -810,7 +810,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolByUuidValidateBeforeCall(UUID routingProtocolId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling getConnectionRoutingProtocolByUuid(Async)");
@@ -845,7 +845,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolData getConnectionRoutingProtocolByUuid(UUID routingProtocolId, String connectionId) throws ApiException {
+    public RoutingProtocolData getConnectionRoutingProtocolByUuid(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<RoutingProtocolData> localVarResp = getConnectionRoutingProtocolByUuidWithHttpInfo(routingProtocolId, connectionId);
         return localVarResp.getData();
     }
@@ -870,7 +870,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolData> getConnectionRoutingProtocolByUuidWithHttpInfo(UUID routingProtocolId, String connectionId) throws ApiException {
+    public ApiResponse<RoutingProtocolData> getConnectionRoutingProtocolByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -897,7 +897,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolByUuidAsync(UUID routingProtocolId, String connectionId, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolByUuidAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
@@ -924,7 +924,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsCall(String connectionId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -978,7 +978,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolsValidateBeforeCall(String connectionId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolsValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRoutingProtocols(Async)");
@@ -1008,7 +1008,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetResponse getConnectionRoutingProtocols(String connectionId, Integer offset, Integer limit) throws ApiException {
+    public GetResponse getConnectionRoutingProtocols(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetResponse> localVarResp = getConnectionRoutingProtocolsWithHttpInfo(connectionId, offset, limit);
         return localVarResp.getData();
     }
@@ -1033,7 +1033,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetResponse> getConnectionRoutingProtocolsWithHttpInfo(String connectionId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetResponse> getConnectionRoutingProtocolsWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsValidateBeforeCall(connectionId, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1060,7 +1060,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsAsync(String connectionId, Integer offset, Integer limit, final ApiCallback<GetResponse> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsValidateBeforeCall(connectionId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetResponse>(){}.getType();
@@ -1087,7 +1087,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidCall(String connectionId, UUID routingProtocolId, UUID actionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID actionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1135,7 +1135,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidValidateBeforeCall(String connectionId, UUID routingProtocolId, UUID actionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID actionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRoutingProtocolsBgpActionByUuid(Async)");
@@ -1175,7 +1175,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public BGPActionData getConnectionRoutingProtocolsBgpActionByUuid(String connectionId, UUID routingProtocolId, UUID actionId) throws ApiException {
+    public BGPActionData getConnectionRoutingProtocolsBgpActionByUuid(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID actionId) throws ApiException {
         ApiResponse<BGPActionData> localVarResp = getConnectionRoutingProtocolsBgpActionByUuidWithHttpInfo(connectionId, routingProtocolId, actionId);
         return localVarResp.getData();
     }
@@ -1200,7 +1200,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BGPActionData> getConnectionRoutingProtocolsBgpActionByUuidWithHttpInfo(String connectionId, UUID routingProtocolId, UUID actionId) throws ApiException {
+    public ApiResponse<BGPActionData> getConnectionRoutingProtocolsBgpActionByUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID actionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsBgpActionByUuidValidateBeforeCall(connectionId, routingProtocolId, actionId, null);
         Type localVarReturnType = new TypeToken<BGPActionData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1227,7 +1227,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidAsync(String connectionId, UUID routingProtocolId, UUID actionId, final ApiCallback<BGPActionData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsBgpActionByUuidAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID actionId, final ApiCallback<BGPActionData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsBgpActionByUuidValidateBeforeCall(connectionId, routingProtocolId, actionId, _callback);
         Type localVarReturnType = new TypeToken<BGPActionData>(){}.getType();
@@ -1254,7 +1254,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsChangeByUuidCall(String connectionId, UUID routingProtocolId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsChangeByUuidCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1302,7 +1302,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolsChangeByUuidValidateBeforeCall(String connectionId, UUID routingProtocolId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolsChangeByUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRoutingProtocolsChangeByUuid(Async)");
@@ -1342,7 +1342,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolChangeData getConnectionRoutingProtocolsChangeByUuid(String connectionId, UUID routingProtocolId, UUID changeId) throws ApiException {
+    public RoutingProtocolChangeData getConnectionRoutingProtocolsChangeByUuid(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         ApiResponse<RoutingProtocolChangeData> localVarResp = getConnectionRoutingProtocolsChangeByUuidWithHttpInfo(connectionId, routingProtocolId, changeId);
         return localVarResp.getData();
     }
@@ -1367,7 +1367,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolChangeData> getConnectionRoutingProtocolsChangeByUuidWithHttpInfo(String connectionId, UUID routingProtocolId, UUID changeId) throws ApiException {
+    public ApiResponse<RoutingProtocolChangeData> getConnectionRoutingProtocolsChangeByUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsChangeByUuidValidateBeforeCall(connectionId, routingProtocolId, changeId, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolChangeData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1394,7 +1394,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsChangeByUuidAsync(String connectionId, UUID routingProtocolId, UUID changeId, final ApiCallback<RoutingProtocolChangeData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsChangeByUuidAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull UUID changeId, final ApiCallback<RoutingProtocolChangeData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsChangeByUuidValidateBeforeCall(connectionId, routingProtocolId, changeId, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolChangeData>(){}.getType();
@@ -1422,7 +1422,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsChangesCall(String connectionId, UUID routingProtocolId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsChangesCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1477,7 +1477,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRoutingProtocolsChangesValidateBeforeCall(String connectionId, UUID routingProtocolId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRoutingProtocolsChangesValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRoutingProtocolsChanges(Async)");
@@ -1513,7 +1513,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolChangeDataResponse getConnectionRoutingProtocolsChanges(String connectionId, UUID routingProtocolId, Integer offset, Integer limit) throws ApiException {
+    public RoutingProtocolChangeDataResponse getConnectionRoutingProtocolsChanges(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<RoutingProtocolChangeDataResponse> localVarResp = getConnectionRoutingProtocolsChangesWithHttpInfo(connectionId, routingProtocolId, offset, limit);
         return localVarResp.getData();
     }
@@ -1539,7 +1539,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolChangeDataResponse> getConnectionRoutingProtocolsChangesWithHttpInfo(String connectionId, UUID routingProtocolId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<RoutingProtocolChangeDataResponse> getConnectionRoutingProtocolsChangesWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsChangesValidateBeforeCall(connectionId, routingProtocolId, offset, limit, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolChangeDataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1567,7 +1567,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRoutingProtocolsChangesAsync(String connectionId, UUID routingProtocolId, Integer offset, Integer limit, final ApiCallback<RoutingProtocolChangeDataResponse> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRoutingProtocolsChangesAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<RoutingProtocolChangeDataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRoutingProtocolsChangesValidateBeforeCall(connectionId, routingProtocolId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolChangeDataResponse>(){}.getType();
@@ -1595,7 +1595,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchConnectionRoutingProtocolByUuidCall(UUID routingProtocolId, String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchConnectionRoutingProtocolByUuidCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1644,7 +1644,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchConnectionRoutingProtocolByUuidValidateBeforeCall(UUID routingProtocolId, String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchConnectionRoutingProtocolByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling patchConnectionRoutingProtocolByUuid(Async)");
@@ -1685,7 +1685,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolData patchConnectionRoutingProtocolByUuid(UUID routingProtocolId, String connectionId, List<ConnectionChangeOperation> connectionChangeOperation) throws ApiException {
+    public RoutingProtocolData patchConnectionRoutingProtocolByUuid(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation) throws ApiException {
         ApiResponse<RoutingProtocolData> localVarResp = patchConnectionRoutingProtocolByUuidWithHttpInfo(routingProtocolId, connectionId, connectionChangeOperation);
         return localVarResp.getData();
     }
@@ -1711,7 +1711,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolData> patchConnectionRoutingProtocolByUuidWithHttpInfo(UUID routingProtocolId, String connectionId, List<ConnectionChangeOperation> connectionChangeOperation) throws ApiException {
+    public ApiResponse<RoutingProtocolData> patchConnectionRoutingProtocolByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation) throws ApiException {
         okhttp3.Call localVarCall = patchConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, connectionChangeOperation, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1739,7 +1739,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchConnectionRoutingProtocolByUuidAsync(UUID routingProtocolId, String connectionId, List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
+    public okhttp3.Call patchConnectionRoutingProtocolByUuidAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull List<ConnectionChangeOperation> connectionChangeOperation, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, connectionChangeOperation, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
@@ -1767,7 +1767,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidCall(UUID routingProtocolId, String connectionId, BGPActionRequest bgPActionRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull BGPActionRequest bgPActionRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1815,7 +1815,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidValidateBeforeCall(UUID routingProtocolId, String connectionId, BGPActionRequest bgPActionRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull BGPActionRequest bgPActionRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling postConnectionRoutingProtocolBgpActionByUuid(Async)");
@@ -1856,7 +1856,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public BGPActionData postConnectionRoutingProtocolBgpActionByUuid(UUID routingProtocolId, String connectionId, BGPActionRequest bgPActionRequest) throws ApiException {
+    public BGPActionData postConnectionRoutingProtocolBgpActionByUuid(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull BGPActionRequest bgPActionRequest) throws ApiException {
         ApiResponse<BGPActionData> localVarResp = postConnectionRoutingProtocolBgpActionByUuidWithHttpInfo(routingProtocolId, connectionId, bgPActionRequest);
         return localVarResp.getData();
     }
@@ -1882,7 +1882,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BGPActionData> postConnectionRoutingProtocolBgpActionByUuidWithHttpInfo(UUID routingProtocolId, String connectionId, BGPActionRequest bgPActionRequest) throws ApiException {
+    public ApiResponse<BGPActionData> postConnectionRoutingProtocolBgpActionByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull BGPActionRequest bgPActionRequest) throws ApiException {
         okhttp3.Call localVarCall = postConnectionRoutingProtocolBgpActionByUuidValidateBeforeCall(routingProtocolId, connectionId, bgPActionRequest, null);
         Type localVarReturnType = new TypeToken<BGPActionData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1910,7 +1910,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidAsync(UUID routingProtocolId, String connectionId, BGPActionRequest bgPActionRequest, final ApiCallback<BGPActionData> _callback) throws ApiException {
+    public okhttp3.Call postConnectionRoutingProtocolBgpActionByUuidAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull BGPActionRequest bgPActionRequest, final ApiCallback<BGPActionData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postConnectionRoutingProtocolBgpActionByUuidValidateBeforeCall(routingProtocolId, connectionId, bgPActionRequest, _callback);
         Type localVarReturnType = new TypeToken<BGPActionData>(){}.getType();
@@ -1938,7 +1938,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceConnectionRoutingProtocolByUuidCall(UUID routingProtocolId, String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceConnectionRoutingProtocolByUuidCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1986,7 +1986,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceConnectionRoutingProtocolByUuidValidateBeforeCall(UUID routingProtocolId, String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceConnectionRoutingProtocolByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routingProtocolId' is set
         if (routingProtocolId == null) {
             throw new ApiException("Missing the required parameter 'routingProtocolId' when calling replaceConnectionRoutingProtocolByUuid(Async)");
@@ -2027,7 +2027,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutingProtocolData replaceConnectionRoutingProtocolByUuid(UUID routingProtocolId, String connectionId, RoutingProtocolBase routingProtocolBase) throws ApiException {
+    public RoutingProtocolData replaceConnectionRoutingProtocolByUuid(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase) throws ApiException {
         ApiResponse<RoutingProtocolData> localVarResp = replaceConnectionRoutingProtocolByUuidWithHttpInfo(routingProtocolId, connectionId, routingProtocolBase);
         return localVarResp.getData();
     }
@@ -2053,7 +2053,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutingProtocolData> replaceConnectionRoutingProtocolByUuidWithHttpInfo(UUID routingProtocolId, String connectionId, RoutingProtocolBase routingProtocolBase) throws ApiException {
+    public ApiResponse<RoutingProtocolData> replaceConnectionRoutingProtocolByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase) throws ApiException {
         okhttp3.Call localVarCall = replaceConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, routingProtocolBase, null);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2081,7 +2081,7 @@ public class RoutingProtocolsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceConnectionRoutingProtocolByUuidAsync(UUID routingProtocolId, String connectionId, RoutingProtocolBase routingProtocolBase, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
+    public okhttp3.Call replaceConnectionRoutingProtocolByUuidAsync(@javax.annotation.Nonnull UUID routingProtocolId, @javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull RoutingProtocolBase routingProtocolBase, final ApiCallback<RoutingProtocolData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceConnectionRoutingProtocolByUuidValidateBeforeCall(routingProtocolId, connectionId, routingProtocolBase, _callback);
         Type localVarReturnType = new TypeToken<RoutingProtocolData>(){}.getType();
@@ -2103,7 +2103,7 @@ public class RoutingProtocolsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateRoutingProtocolCall(UUID routerId, ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call validateRoutingProtocolCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2150,7 +2150,7 @@ public class RoutingProtocolsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateRoutingProtocolValidateBeforeCall(UUID routerId, ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call validateRoutingProtocolValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routerId' is set
         if (routerId == null) {
             throw new ApiException("Missing the required parameter 'routerId' when calling validateRoutingProtocol(Async)");
@@ -2180,7 +2180,7 @@ public class RoutingProtocolsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public ValidateSubnetResponse validateRoutingProtocol(UUID routerId, ValidateRequest validateRequest) throws ApiException {
+    public ValidateSubnetResponse validateRoutingProtocol(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull ValidateRequest validateRequest) throws ApiException {
         ApiResponse<ValidateSubnetResponse> localVarResp = validateRoutingProtocolWithHttpInfo(routerId, validateRequest);
         return localVarResp.getData();
     }
@@ -2200,7 +2200,7 @@ public class RoutingProtocolsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ValidateSubnetResponse> validateRoutingProtocolWithHttpInfo(UUID routerId, ValidateRequest validateRequest) throws ApiException {
+    public ApiResponse<ValidateSubnetResponse> validateRoutingProtocolWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull ValidateRequest validateRequest) throws ApiException {
         okhttp3.Call localVarCall = validateRoutingProtocolValidateBeforeCall(routerId, validateRequest, null);
         Type localVarReturnType = new TypeToken<ValidateSubnetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2222,7 +2222,7 @@ public class RoutingProtocolsApi {
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateRoutingProtocolAsync(UUID routerId, ValidateRequest validateRequest, final ApiCallback<ValidateSubnetResponse> _callback) throws ApiException {
+    public okhttp3.Call validateRoutingProtocolAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull ValidateRequest validateRequest, final ApiCallback<ValidateSubnetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = validateRoutingProtocolValidateBeforeCall(routerId, validateRequest, _callback);
         Type localVarReturnType = new TypeToken<ValidateSubnetResponse>(){}.getType();

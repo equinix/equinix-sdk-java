@@ -94,7 +94,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getConnectionStatsByPortUuidCall(String connectionId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, ViewPoint viewPoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionStatsByPortUuidCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, @javax.annotation.Nonnull ViewPoint viewPoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,7 +153,7 @@ public class StatisticsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionStatsByPortUuidValidateBeforeCall(String connectionId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, ViewPoint viewPoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionStatsByPortUuidValidateBeforeCall(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, @javax.annotation.Nonnull ViewPoint viewPoint, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionStatsByPortUuid(Async)");
@@ -198,7 +198,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public Statistics getConnectionStatsByPortUuid(String connectionId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, ViewPoint viewPoint) throws ApiException {
+    public Statistics getConnectionStatsByPortUuid(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, @javax.annotation.Nonnull ViewPoint viewPoint) throws ApiException {
         ApiResponse<Statistics> localVarResp = getConnectionStatsByPortUuidWithHttpInfo(connectionId, startDateTime, endDateTime, viewPoint);
         return localVarResp.getData();
     }
@@ -223,7 +223,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Statistics> getConnectionStatsByPortUuidWithHttpInfo(String connectionId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, ViewPoint viewPoint) throws ApiException {
+    public ApiResponse<Statistics> getConnectionStatsByPortUuidWithHttpInfo(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, @javax.annotation.Nonnull ViewPoint viewPoint) throws ApiException {
         okhttp3.Call localVarCall = getConnectionStatsByPortUuidValidateBeforeCall(connectionId, startDateTime, endDateTime, viewPoint, null);
         Type localVarReturnType = new TypeToken<Statistics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -250,7 +250,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getConnectionStatsByPortUuidAsync(String connectionId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, ViewPoint viewPoint, final ApiCallback<Statistics> _callback) throws ApiException {
+    public okhttp3.Call getConnectionStatsByPortUuidAsync(@javax.annotation.Nonnull String connectionId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, @javax.annotation.Nonnull ViewPoint viewPoint, final ApiCallback<Statistics> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionStatsByPortUuidValidateBeforeCall(connectionId, startDateTime, endDateTime, viewPoint, _callback);
         Type localVarReturnType = new TypeToken<Statistics>(){}.getType();
@@ -277,7 +277,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getPortStatsByPortUuidCall(UUID portId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPortStatsByPortUuidCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -332,7 +332,7 @@ public class StatisticsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPortStatsByPortUuidValidateBeforeCall(UUID portId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPortStatsByPortUuidValidateBeforeCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling getPortStatsByPortUuid(Async)");
@@ -372,7 +372,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public Statistics getPortStatsByPortUuid(UUID portId, OffsetDateTime startDateTime, OffsetDateTime endDateTime) throws ApiException {
+    public Statistics getPortStatsByPortUuid(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime) throws ApiException {
         ApiResponse<Statistics> localVarResp = getPortStatsByPortUuidWithHttpInfo(portId, startDateTime, endDateTime);
         return localVarResp.getData();
     }
@@ -397,7 +397,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Statistics> getPortStatsByPortUuidWithHttpInfo(UUID portId, OffsetDateTime startDateTime, OffsetDateTime endDateTime) throws ApiException {
+    public ApiResponse<Statistics> getPortStatsByPortUuidWithHttpInfo(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime) throws ApiException {
         okhttp3.Call localVarCall = getPortStatsByPortUuidValidateBeforeCall(portId, startDateTime, endDateTime, null);
         Type localVarReturnType = new TypeToken<Statistics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -424,7 +424,7 @@ public class StatisticsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getPortStatsByPortUuidAsync(UUID portId, OffsetDateTime startDateTime, OffsetDateTime endDateTime, final ApiCallback<Statistics> _callback) throws ApiException {
+    public okhttp3.Call getPortStatsByPortUuidAsync(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull OffsetDateTime startDateTime, @javax.annotation.Nonnull OffsetDateTime endDateTime, final ApiCallback<Statistics> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPortStatsByPortUuidValidateBeforeCall(portId, startDateTime, endDateTime, _callback);
         Type localVarReturnType = new TypeToken<Statistics>(){}.getType();

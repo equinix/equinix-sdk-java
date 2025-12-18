@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,13 +41,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Stream subscription sink settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class StreamSubscriptionSinkSetting {
   public static final String SERIALIZED_NAME_EVENT_INDEX = "eventIndex";
   @SerializedName(SERIALIZED_NAME_EVENT_INDEX)
@@ -373,17 +375,10 @@ public class StreamSubscriptionSinkSetting {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("eventIndex");
-    openapiFields.add("metricIndex");
-    openapiFields.add("source");
-    openapiFields.add("applicationKey");
-    openapiFields.add("eventUri");
-    openapiFields.add("metricUri");
-    openapiFields.add("format");
+    openapiFields = new HashSet<String>(Arrays.asList("eventIndex", "metricIndex", "source", "applicationKey", "eventUri", "metricUri", "format"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -395,30 +390,30 @@ public class StreamSubscriptionSinkSetting {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StreamSubscriptionSinkSetting.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionSinkSetting is not found in the empty JSON string", StreamSubscriptionSinkSetting.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in StreamSubscriptionSinkSetting is not found in the empty JSON string", StreamSubscriptionSinkSetting.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("eventIndex") != null && !jsonObj.get("eventIndex").isJsonNull()) && !jsonObj.get("eventIndex").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventIndex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventIndex").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventIndex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventIndex").toString()));
       }
       if ((jsonObj.get("metricIndex") != null && !jsonObj.get("metricIndex").isJsonNull()) && !jsonObj.get("metricIndex").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metricIndex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricIndex").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricIndex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricIndex").toString()));
       }
       if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
       }
       if ((jsonObj.get("applicationKey") != null && !jsonObj.get("applicationKey").isJsonNull()) && !jsonObj.get("applicationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
       }
       if ((jsonObj.get("eventUri") != null && !jsonObj.get("eventUri").isJsonNull()) && !jsonObj.get("eventUri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventUri").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventUri").toString()));
       }
       if ((jsonObj.get("metricUri") != null && !jsonObj.get("metricUri").isJsonNull()) && !jsonObj.get("metricUri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metricUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricUri").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricUri").toString()));
       }
       if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
       // validate the optional field `format`
       if (jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) {
@@ -483,7 +478,7 @@ public class StreamSubscriptionSinkSetting {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PortPackageSourceType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Port Package details
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortPackage {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -473,20 +475,10 @@ public class PortPackage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("code");
-    openapiFields.add("vcBandwidthMax");
-    openapiFields.add("vcRemoteSupported");
-    openapiFields.add("supportedServiceTypes");
-    openapiFields.add("supportedSourceTypes");
-    openapiFields.add("supportedMetros");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "vcBandwidthMax", "vcRemoteSupported", "supportedServiceTypes", "supportedSourceTypes", "supportedMetros"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("code");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "code"));
   }
 
   /**
@@ -498,39 +490,39 @@ public class PortPackage {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortPackage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortPackage is not found in the empty JSON string", PortPackage.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortPackage is not found in the empty JSON string", PortPackage.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PortPackage.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       // validate the required field `type`
       TypeEnum.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedServiceTypes") != null && !jsonObj.get("supportedServiceTypes").isJsonNull() && !jsonObj.get("supportedServiceTypes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `supportedServiceTypes` to be an array in the JSON string but got `%s`", jsonObj.get("supportedServiceTypes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedServiceTypes` to be an array in the JSON string but got `%s`", jsonObj.get("supportedServiceTypes").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedSourceTypes") != null && !jsonObj.get("supportedSourceTypes").isJsonNull() && !jsonObj.get("supportedSourceTypes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `supportedSourceTypes` to be an array in the JSON string but got `%s`", jsonObj.get("supportedSourceTypes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedSourceTypes` to be an array in the JSON string but got `%s`", jsonObj.get("supportedSourceTypes").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedMetros") != null && !jsonObj.get("supportedMetros").isJsonNull() && !jsonObj.get("supportedMetros").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `supportedMetros` to be an array in the JSON string but got `%s`", jsonObj.get("supportedMetros").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedMetros` to be an array in the JSON string but got `%s`", jsonObj.get("supportedMetros").toString()));
       }
   }
 
@@ -591,7 +583,7 @@ public class PortPackage {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
