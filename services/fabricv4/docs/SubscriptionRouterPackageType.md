@@ -8,16 +8,7 @@ Cloud Router Package Type
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**code** | [**CodeEnum**](#CodeEnum) | Cloud Router package code |  [optional] |
-
-
-
-## Enum: CodeEnum
-
-| Name | Value |
-|---- | -----|
-| ADVANCED | &quot;ADVANCED&quot; |
-| STANDARD | &quot;STANDARD&quot; |
+|**code** | **String** | Cloud Router package code |  [optional] |
 
 
 

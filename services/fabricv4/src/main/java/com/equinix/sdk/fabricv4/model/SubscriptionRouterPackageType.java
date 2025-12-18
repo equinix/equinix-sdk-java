@@ -48,67 +48,15 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SubscriptionRouterPackageType {
-  /**
-   * Cloud Router package code
-   */
-  @JsonAdapter(CodeEnum.Adapter.class)
-  public enum CodeEnum {
-    ADVANCED("ADVANCED"),
-    
-    STANDARD("STANDARD");
-
-    private String value;
-
-    CodeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static CodeEnum fromValue(String value) {
-      for (CodeEnum b : CodeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<CodeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final CodeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public CodeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return CodeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      CodeEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   @javax.annotation.Nullable
-  private CodeEnum code;
+  private String code;
 
   public SubscriptionRouterPackageType() {
   }
 
-  public SubscriptionRouterPackageType code(@javax.annotation.Nullable CodeEnum code) {
+  public SubscriptionRouterPackageType code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
@@ -118,11 +66,11 @@ public class SubscriptionRouterPackageType {
    * @return code
    */
   @javax.annotation.Nullable
-  public CodeEnum getCode() {
+  public String getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nullable CodeEnum code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
@@ -239,10 +187,6 @@ public class SubscriptionRouterPackageType {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
-      }
-      // validate the optional field `code`
-      if (jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) {
-        CodeEnum.validateJsonElement(jsonObj.get("code"));
       }
   }
 

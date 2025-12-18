@@ -1705,7 +1705,8 @@ public class RouteFiltersApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json",
+            "application/json-patch+json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {

@@ -8,10 +8,10 @@ Create Stream
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-|**name** | **String** | Customer-provided stream name |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
+|**name** | **String** | Customer-provided stream name |  |
 |**description** | **String** | Customer-provided stream description |  [optional] |
-|**project** | [**Project**](Project.md) |  |  [optional] |
+|**project** | [**Project**](Project.md) |  |  |
 
 
 

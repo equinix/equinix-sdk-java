@@ -14,7 +14,6 @@ Fabric Cloud Router object
 |**state** | **CloudRouterAccessPointState** |  |  [optional] |
 |**equinixAsn** | **Long** | Equinix ASN |  [optional] |
 |**connectionsCount** | **Integer** | Number of connections associated with this Access point |  [optional] |
-|**gatewayAttachmentsCount** | **Integer** | Number of gateway attachments associated with this Access point |  [optional] |
 |**marketplaceSubscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 |**change** | [**CloudRouterChange**](CloudRouterChange.md) |  |  [optional] |

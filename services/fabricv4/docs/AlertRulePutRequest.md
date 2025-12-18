@@ -8,13 +8,13 @@ Create Stream Alert Rules
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** | Customer-provided stream name |  [optional] |
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+|**name** | **String** | Customer-provided stream name |  |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**description** | **String** | Customer-provided stream description |  [optional] |
 |**enabled** | **Boolean** | Stream alert rule enabled status |  [optional] |
-|**metricSelector** | [**MetricSelector**](MetricSelector.md) |  |  [optional] |
-|**resourceSelector** | [**ResourceSelector**](ResourceSelector.md) |  |  [optional] |
-|**detectionMethod** | [**DetectionMethod**](DetectionMethod.md) |  |  [optional] |
+|**metricSelector** | [**MetricSelector**](MetricSelector.md) |  |  |
+|**resourceSelector** | [**ResourceSelector**](ResourceSelector.md) |  |  |
+|**detectionMethod** | [**DetectionMethod**](DetectionMethod.md) |  |  |
 
 
 

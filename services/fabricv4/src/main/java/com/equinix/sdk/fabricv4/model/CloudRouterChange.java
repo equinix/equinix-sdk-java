@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -60,9 +62,7 @@ public class CloudRouterChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    UPDATE("ROUTER_UPDATE"),
-    
-    PACKAGE_UPDATE("ROUTER_PACKAGE_UPDATE");
+    ROUTER_UPDATE("ROUTER_UPDATE");
 
     private String value;
 
@@ -189,7 +189,7 @@ public class CloudRouterChange {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private CloudRouterChangeOperation data;
+  private List<CloudRouterChangeOperation> data = new ArrayList<>();
 
   public CloudRouterChange() {
   }
@@ -308,8 +308,16 @@ public class CloudRouterChange {
   }
 
 
-  public CloudRouterChange data(@javax.annotation.Nullable CloudRouterChangeOperation data) {
+  public CloudRouterChange data(@javax.annotation.Nullable List<CloudRouterChangeOperation> data) {
     this.data = data;
+    return this;
+  }
+
+  public CloudRouterChange addDataItem(CloudRouterChangeOperation dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -318,11 +326,11 @@ public class CloudRouterChange {
    * @return data
    */
   @javax.annotation.Nullable
-  public CloudRouterChangeOperation getData() {
+  public List<CloudRouterChangeOperation> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable CloudRouterChangeOperation data) {
+  public void setData(@javax.annotation.Nullable List<CloudRouterChangeOperation> data) {
     this.data = data;
   }
 
@@ -482,9 +490,19 @@ public class CloudRouterChange {
       if ((jsonObj.get("information") != null && !jsonObj.get("information").isJsonNull()) && !jsonObj.get("information").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `information` to be a primitive type in the JSON string but got `%s`", jsonObj.get("information").toString()));
       }
-      // validate the optional field `data`
       if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
-        CloudRouterChangeOperation.validateJsonElement(jsonObj.get("data"));
+        JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
+        if (jsonArraydata != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("data").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
+          }
+
+          // validate the optional field `data` (array)
+          for (int i = 0; i < jsonArraydata.size(); i++) {
+            CloudRouterChangeOperation.validateJsonElement(jsonArraydata.get(i));
+          };
+        }
       }
   }
 

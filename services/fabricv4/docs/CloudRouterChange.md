@@ -14,7 +14,7 @@ Current state of latest CloudRouter change
 |**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
 |**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  |
 |**information** | **String** | Additional information |  [optional] |
-|**data** | [**CloudRouterChangeOperation**](CloudRouterChangeOperation.md) |  |  [optional] |
+|**data** | [**List&lt;CloudRouterChangeOperation&gt;**](CloudRouterChangeOperation.md) |  |  [optional] |
 
 
 
@@ -22,8 +22,7 @@ Current state of latest CloudRouter change
 
 | Name | Value |
 |---- | -----|
-| UPDATE | &quot;ROUTER_UPDATE&quot; |
-| PACKAGE_UPDATE | &quot;ROUTER_PACKAGE_UPDATE&quot; |
+| ROUTER_UPDATE | &quot;ROUTER_UPDATE&quot; |
 
 
 

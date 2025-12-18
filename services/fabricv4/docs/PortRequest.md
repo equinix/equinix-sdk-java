@@ -8,14 +8,10 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**href** | **URI** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. |  [optional] [readonly] |
 |**type** | **PortType** |  |  |
-|**id** | **Integer** | Equinix assigned response attribute for Port Id |  [optional] |
-|**uuid** | **UUID** | Equinix assigned response attribute for  port identifier |  [optional] |
 |**name** | **String** | Equinix assigned response attribute for Port name |  [optional] |
 |**description** | **String** | Equinix assigned response attribute for Port description |  [optional] |
 |**physicalPortsSpeed** | **Integer** | Physical Ports Speed in Mbps |  |
-|**connectionsCount** | **Integer** | Equinix assigned response attribute for Connection count |  [optional] |
 |**physicalPortsType** | [**PhysicalPortsTypeEnum**](#PhysicalPortsTypeEnum) | Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports |  |
 |**physicalPortsCount** | **Integer** |  |  [optional] |
 |**connectivitySourceType** | [**ConnectivitySourceTypeEnum**](#ConnectivitySourceTypeEnum) | Port connectivity type |  |
@@ -23,14 +19,10 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |**project** | [**Project**](Project.md) |  |  [optional] |
 |**state** | **PortState** |  |  [optional] |
 |**order** | [**PortOrder**](PortOrder.md) |  |  [optional] |
-|**operation** | [**PortOperation**](PortOperation.md) |  |  [optional] |
 |**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  |  |
-|**change** | [**PortChange**](PortChange.md) |  |  [optional] |
-|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 |**serviceType** | [**ServiceTypeEnum**](#ServiceTypeEnum) | Port service Type |  [optional] |
+|**serviceCode** | **PortServiceCode** |  |  [optional] |
 |**bandwidth** | **Integer** | Equinix assigned response attribute for Port bandwidth in Mbps |  [optional] |
-|**availableBandwidth** | **Integer** | Equinix assigned response attribute for Port available bandwidth in Mbps |  [optional] |
-|**usedBandwidth** | **Integer** | Equinix assigned response attribute for Port used bandwidth in Mbps |  [optional] |
 |**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  |  |
 |**device** | [**PortDevice**](PortDevice.md) |  |  [optional] |
 |**_interface** | [**PortInterface**](PortInterface.md) |  |  [optional] |
@@ -50,6 +42,7 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |**endCustomer** | [**EndCustomer**](EndCustomer.md) |  |  [optional] |
 |**physicalPorts** | [**List&lt;PhysicalPort&gt;**](PhysicalPort.md) | Physical ports that implement this port |  [optional] |
 |**loas** | [**List&lt;PortLoa&gt;**](PortLoa.md) | Port Loas |  [optional] |
+|**marketplaceSubscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  |  [optional] |
 
 
 

@@ -74,7 +74,7 @@ public class RouteTableEntrySimpleExpression {
   }
 
   /**
-   * Possible field names to use on filters:  * &#x60;/type&#x60; - Route table entry type  * &#x60;/prefix&#x60; - Route table entry prefix  * &#x60;/nextHop&#x60; - Route table entry nextHop  * &#x60;/state&#x60; - Route table entry state  * &#x60;/_*&#x60; - all-category search 
+   * Possible field names to use on filters:  * &#x60;/type&#x60; - Route table entry type  * &#x60;/prefix&#x60; - Route table entry prefix  * &#x60;/nextHop&#x60; - Route table entry nextHop  * &#x60;/state&#x60; - Route table entry state  * &#x60;/MED&#x60; - Route table entry med  * &#x60;/_*&#x60; - all-category search 
    * @return property
    */
   @javax.annotation.Nullable

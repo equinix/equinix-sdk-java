@@ -21,6 +21,7 @@ Port specification
 |**operation** | [**PortOperation**](PortOperation.md) |  |  [optional] |
 |**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  |  [optional] |
 |**serviceType** | [**ServiceTypeEnum**](#ServiceTypeEnum) | Port service Type |  [optional] |
+|**serviceCode** | **PortServiceCode** |  |  [optional] |
 |**bandwidth** | **Long** | Equinix assigned response attribute for Port bandwidth in Mbps |  [optional] |
 |**availableBandwidth** | **Long** | Equinix assigned response attribute for Port available bandwidth in Mbps |  [optional] |
 |**usedBandwidth** | **Long** | Equinix assigned response attribute for Port used bandwidth in Mbps |  [optional] |

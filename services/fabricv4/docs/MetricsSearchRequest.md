@@ -8,7 +8,7 @@ Search requests containing criteria
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filter** | [**MetricFilters**](MetricFilters.md) |  |  [optional] |
+|**filter** | [**MetricFilters**](MetricFilters.md) |  |  |
 |**pagination** | [**PaginationRequest**](PaginationRequest.md) |  |  [optional] |
 
 

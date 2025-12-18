@@ -52,13 +52,13 @@ import com.equinix.sdk.fabricv4.JSON;
 public class ResourceSelector {
   public static final String SERIALIZED_NAME_INCLUDE = "include";
   @SerializedName(SERIALIZED_NAME_INCLUDE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private List<String> include = new ArrayList<>();
 
   public ResourceSelector() {
   }
 
-  public ResourceSelector include(@javax.annotation.Nullable List<String> include) {
+  public ResourceSelector include(@javax.annotation.Nonnull List<String> include) {
     this.include = include;
     return this;
   }
@@ -75,12 +75,12 @@ public class ResourceSelector {
    * ### Supported metric names to use on filters with property /subject:   * &#x60;/fabric/v4/ports/&lt;uuid&gt;&#x60; - port metrics   * &#x60;/fabric/v4/connections/&lt;uuid&gt;&#x60; - connection metrics   * &#x60;/fabric/v4/metros/&lt;metroCode&gt;&#x60; - metro latency metrics 
    * @return include
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<String> getInclude() {
     return include;
   }
 
-  public void setInclude(@javax.annotation.Nullable List<String> include) {
+  public void setInclude(@javax.annotation.Nonnull List<String> include) {
     this.include = include;
   }
 
@@ -180,6 +180,7 @@ public class ResourceSelector {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("include");
   }
 
   /**
@@ -194,9 +195,18 @@ public class ResourceSelector {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSelector is not found in the empty JSON string", ResourceSelector.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ResourceSelector.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("include") != null && !jsonObj.get("include").isJsonNull() && !jsonObj.get("include").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("include") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("include").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `include` to be an array in the JSON string but got `%s`", jsonObj.get("include").toString()));
       }
   }

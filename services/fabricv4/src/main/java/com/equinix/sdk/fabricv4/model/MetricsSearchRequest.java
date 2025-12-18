@@ -52,7 +52,7 @@ import com.equinix.sdk.fabricv4.JSON;
 public class MetricsSearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private MetricFilters filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
@@ -63,7 +63,7 @@ public class MetricsSearchRequest {
   public MetricsSearchRequest() {
   }
 
-  public MetricsSearchRequest filter(@javax.annotation.Nullable MetricFilters filter) {
+  public MetricsSearchRequest filter(@javax.annotation.Nonnull MetricFilters filter) {
     this.filter = filter;
     return this;
   }
@@ -72,12 +72,12 @@ public class MetricsSearchRequest {
    * Get filter
    * @return filter
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public MetricFilters getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable MetricFilters filter) {
+  public void setFilter(@javax.annotation.Nonnull MetricFilters filter) {
     this.filter = filter;
   }
 
@@ -199,6 +199,7 @@ public class MetricsSearchRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("filter");
   }
 
   /**
@@ -213,11 +214,16 @@ public class MetricsSearchRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in MetricsSearchRequest is not found in the empty JSON string", MetricsSearchRequest.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `filter`
-      if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        MetricFilters.validateJsonElement(jsonObj.get("filter"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : MetricsSearchRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `filter`
+      MetricFilters.validateJsonElement(jsonObj.get("filter"));
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
         PaginationRequest.validateJsonElement(jsonObj.get("pagination"));

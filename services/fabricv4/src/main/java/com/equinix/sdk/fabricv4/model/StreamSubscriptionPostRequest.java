@@ -102,12 +102,12 @@ public class StreamSubscriptionPostRequest {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
@@ -118,7 +118,7 @@ public class StreamSubscriptionPostRequest {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @javax.annotation.Nullable
-  private Boolean enabled;
+  private Boolean enabled = true;
 
   public static final String SERIALIZED_NAME_METRIC_SELECTOR = "metricSelector";
   @SerializedName(SERIALIZED_NAME_METRIC_SELECTOR)
@@ -132,13 +132,13 @@ public class StreamSubscriptionPostRequest {
 
   public static final String SERIALIZED_NAME_SINK = "sink";
   @SerializedName(SERIALIZED_NAME_SINK)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private StreamSubscriptionSink sink;
 
   public StreamSubscriptionPostRequest() {
   }
 
-  public StreamSubscriptionPostRequest type(@javax.annotation.Nullable TypeEnum type) {
+  public StreamSubscriptionPostRequest type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class StreamSubscriptionPostRequest {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public StreamSubscriptionPostRequest name(@javax.annotation.Nullable String name) {
+  public StreamSubscriptionPostRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -166,12 +166,12 @@ public class StreamSubscriptionPostRequest {
    * Customer-provided stream subscription name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
@@ -252,7 +252,7 @@ public class StreamSubscriptionPostRequest {
   }
 
 
-  public StreamSubscriptionPostRequest sink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public StreamSubscriptionPostRequest sink(@javax.annotation.Nonnull StreamSubscriptionSink sink) {
     this.sink = sink;
     return this;
   }
@@ -261,12 +261,12 @@ public class StreamSubscriptionPostRequest {
    * Get sink
    * @return sink
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StreamSubscriptionSink getSink() {
     return sink;
   }
 
-  public void setSink(@javax.annotation.Nullable StreamSubscriptionSink sink) {
+  public void setSink(@javax.annotation.Nonnull StreamSubscriptionSink sink) {
     this.sink = sink;
   }
 
@@ -384,6 +384,9 @@ public class StreamSubscriptionPostRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("sink");
   }
 
   /**
@@ -398,15 +401,20 @@ public class StreamSubscriptionPostRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in StreamSubscriptionPostRequest is not found in the empty JSON string", StreamSubscriptionPostRequest.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : StreamSubscriptionPostRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
@@ -420,10 +428,8 @@ public class StreamSubscriptionPostRequest {
       if (jsonObj.get("eventSelector") != null && !jsonObj.get("eventSelector").isJsonNull()) {
         StreamSubscriptionSelector.validateJsonElement(jsonObj.get("eventSelector"));
       }
-      // validate the optional field `sink`
-      if (jsonObj.get("sink") != null && !jsonObj.get("sink").isJsonNull()) {
-        StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
-      }
+      // validate the required field `sink`
+      StreamSubscriptionSink.validateJsonElement(jsonObj.get("sink"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

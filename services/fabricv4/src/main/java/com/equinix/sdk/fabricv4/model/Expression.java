@@ -77,23 +77,9 @@ public class Expression {
     
     GREATER_THAN(">"),
     
-    GREATER_THAN_OR_EQUAL_TO(">="),
-    
     LESS_THAN("<"),
     
-    LESS_THAN_OR_EQUAL_TO("<="),
-    
-    BETWEEN("BETWEEN"),
-    
-    NOT_BETWEEN("NOT BETWEEN"),
-    
     LIKE("LIKE"),
-    
-    NOT_LIKE("NOT LIKE"),
-    
-    IN("IN"),
-    
-    NOT_IN("NOT IN"),
     
     IS_NOT_NULL("IS NOT NULL"),
     

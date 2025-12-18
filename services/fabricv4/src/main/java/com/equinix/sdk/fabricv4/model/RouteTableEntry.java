@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import com.equinix.sdk.fabricv4.model.Changelog;
-import com.equinix.sdk.fabricv4.model.ConnectionRouteTableEntryConnection;
+import com.equinix.sdk.fabricv4.model.RouteTableEntryConnection;
 import com.equinix.sdk.fabricv4.model.RouteTableEntryProtocolType;
 import com.equinix.sdk.fabricv4.model.RouteTableEntryState;
 import com.equinix.sdk.fabricv4.model.RouteTableEntryType;
@@ -70,11 +70,6 @@ public class RouteTableEntry {
   @javax.annotation.Nonnull
   private RouteTableEntryState state;
 
-  public static final String SERIALIZED_NAME_AGE = "age";
-  @SerializedName(SERIALIZED_NAME_AGE)
-  @javax.annotation.Nullable
-  private String age;
-
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
   @javax.annotation.Nullable
@@ -103,7 +98,7 @@ public class RouteTableEntry {
   public static final String SERIALIZED_NAME_CONNECTION = "connection";
   @SerializedName(SERIALIZED_NAME_CONNECTION)
   @javax.annotation.Nullable
-  private ConnectionRouteTableEntryConnection connection;
+  private RouteTableEntryConnection connection;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -167,25 +162,6 @@ public class RouteTableEntry {
 
   public void setState(@javax.annotation.Nonnull RouteTableEntryState state) {
     this.state = state;
-  }
-
-
-  public RouteTableEntry age(@javax.annotation.Nullable String age) {
-    this.age = age;
-    return this;
-  }
-
-  /**
-   * Get age
-   * @return age
-   */
-  @javax.annotation.Nullable
-  public String getAge() {
-    return age;
-  }
-
-  public void setAge(@javax.annotation.Nullable String age) {
-    this.age = age;
   }
 
 
@@ -292,7 +268,7 @@ public class RouteTableEntry {
   }
 
 
-  public RouteTableEntry connection(@javax.annotation.Nullable ConnectionRouteTableEntryConnection connection) {
+  public RouteTableEntry connection(@javax.annotation.Nullable RouteTableEntryConnection connection) {
     this.connection = connection;
     return this;
   }
@@ -302,11 +278,11 @@ public class RouteTableEntry {
    * @return connection
    */
   @javax.annotation.Nullable
-  public ConnectionRouteTableEntryConnection getConnection() {
+  public RouteTableEntryConnection getConnection() {
     return connection;
   }
 
-  public void setConnection(@javax.annotation.Nullable ConnectionRouteTableEntryConnection connection) {
+  public void setConnection(@javax.annotation.Nullable RouteTableEntryConnection connection) {
     this.connection = connection;
   }
 
@@ -387,7 +363,6 @@ public class RouteTableEntry {
     return Objects.equals(this.type, routeTableEntry.type) &&
         Objects.equals(this.protocolType, routeTableEntry.protocolType) &&
         Objects.equals(this.state, routeTableEntry.state) &&
-        Objects.equals(this.age, routeTableEntry.age) &&
         Objects.equals(this.prefix, routeTableEntry.prefix) &&
         Objects.equals(this.nextHop, routeTableEntry.nextHop) &&
         Objects.equals(this.MED, routeTableEntry.MED) &&
@@ -400,7 +375,7 @@ public class RouteTableEntry {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, protocolType, state, age, prefix, nextHop, MED, localPreference, asPath, connection, changeLog, additionalProperties);
+    return Objects.hash(type, protocolType, state, prefix, nextHop, MED, localPreference, asPath, connection, changeLog, additionalProperties);
   }
 
   @Override
@@ -410,7 +385,6 @@ public class RouteTableEntry {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    protocolType: ").append(toIndentedString(protocolType)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    age: ").append(toIndentedString(age)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    nextHop: ").append(toIndentedString(nextHop)).append("\n");
     sb.append("    MED: ").append(toIndentedString(MED)).append("\n");
@@ -444,7 +418,6 @@ public class RouteTableEntry {
     openapiFields.add("type");
     openapiFields.add("protocolType");
     openapiFields.add("state");
-    openapiFields.add("age");
     openapiFields.add("prefix");
     openapiFields.add("nextHop");
     openapiFields.add("MED");
@@ -488,9 +461,6 @@ public class RouteTableEntry {
       }
       // validate the required field `state`
       RouteTableEntryState.validateJsonElement(jsonObj.get("state"));
-      if ((jsonObj.get("age") != null && !jsonObj.get("age").isJsonNull()) && !jsonObj.get("age").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `age` to be a primitive type in the JSON string but got `%s`", jsonObj.get("age").toString()));
-      }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
@@ -503,7 +473,7 @@ public class RouteTableEntry {
       }
       // validate the optional field `connection`
       if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
-        ConnectionRouteTableEntryConnection.validateJsonElement(jsonObj.get("connection"));
+        RouteTableEntryConnection.validateJsonElement(jsonObj.get("connection"));
       }
       // validate the required field `changeLog`
       Changelog.validateJsonElement(jsonObj.get("changeLog"));

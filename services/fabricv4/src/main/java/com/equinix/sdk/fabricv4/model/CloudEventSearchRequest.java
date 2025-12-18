@@ -52,7 +52,7 @@ import com.equinix.sdk.fabricv4.JSON;
 public class CloudEventSearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private CloudEventFilters filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
@@ -63,7 +63,7 @@ public class CloudEventSearchRequest {
   public CloudEventSearchRequest() {
   }
 
-  public CloudEventSearchRequest filter(@javax.annotation.Nullable CloudEventFilters filter) {
+  public CloudEventSearchRequest filter(@javax.annotation.Nonnull CloudEventFilters filter) {
     this.filter = filter;
     return this;
   }
@@ -72,12 +72,12 @@ public class CloudEventSearchRequest {
    * Get filter
    * @return filter
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public CloudEventFilters getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable CloudEventFilters filter) {
+  public void setFilter(@javax.annotation.Nonnull CloudEventFilters filter) {
     this.filter = filter;
   }
 
@@ -199,6 +199,7 @@ public class CloudEventSearchRequest {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("filter");
   }
 
   /**
@@ -213,11 +214,16 @@ public class CloudEventSearchRequest {
           throw new IllegalArgumentException(String.format("The required field(s) %s in CloudEventSearchRequest is not found in the empty JSON string", CloudEventSearchRequest.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `filter`
-      if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        CloudEventFilters.validateJsonElement(jsonObj.get("filter"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CloudEventSearchRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `filter`
+      CloudEventFilters.validateJsonElement(jsonObj.get("filter"));
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
         PaginationRequest.validateJsonElement(jsonObj.get("pagination"));
