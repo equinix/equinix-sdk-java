@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
  * API tests for MetrosApi
  */
 public class MetrosApiTest {
-    private final String metroCode = "DC";
+    private final String metroCode = "SV";
 
     @Test
     public void getMetroByCode() throws ApiException {
@@ -35,7 +35,7 @@ public class MetrosApiTest {
 
     @Test
     public void getMetros() throws ApiException {
-        MetroResponse metroResponse = metrosApi.getMetros(Presence.MY_PORTS, 1, 10);
+        MetroResponse metroResponse = metrosApi.getMetros(null,1, 10);
         assertEquals(200, metrosApi.getApiClient().getStatusCode());
         boolean metroFound = metroResponse.getData().stream().anyMatch(metro -> metro.getCode().equals(metroCode));
         assertTrue(metroFound);

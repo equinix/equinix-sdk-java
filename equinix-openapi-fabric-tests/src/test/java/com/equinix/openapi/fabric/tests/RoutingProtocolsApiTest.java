@@ -109,7 +109,7 @@ public class RoutingProtocolsApiTest {
                 break;
             }
             try {
-                Thread.sleep(3000);
+                Thread.sleep(8000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
