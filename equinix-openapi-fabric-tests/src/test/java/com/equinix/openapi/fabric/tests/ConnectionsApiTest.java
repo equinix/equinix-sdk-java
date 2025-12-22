@@ -364,7 +364,7 @@ public class ConnectionsApiTest {
                 }
             }
             try {
-                Thread.sleep(15000);
+                Thread.sleep(30000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -390,7 +390,7 @@ public class ConnectionsApiTest {
         SearchRequest searchRequest = new SearchRequest()
                 .filter(new Expression()
                         .addAndItem(new Expression()
-                                .property(SearchFieldName._OPERATION_PROVIDERSTATUS)
+                                .property(SearchFieldName.OPERATION_PROVIDERSTATUS)
                                 .operator(Expression.OperatorEnum.EQUAL)
                                 .values(singletonList(ProviderStatus.AVAILABLE.getValue()))))
                 .pagination(new PaginationRequest().limit(5).offset(10))
