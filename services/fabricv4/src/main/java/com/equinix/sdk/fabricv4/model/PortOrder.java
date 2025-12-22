@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PortOrderPurchaseOrder;
 import com.equinix.sdk.fabricv4.model.PortOrderSignature;
 import com.google.gson.TypeAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * PortOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortOrder {
   public static final String SERIALIZED_NAME_PURCHASE_ORDER = "purchaseOrder";
   @SerializedName(SERIALIZED_NAME_PURCHASE_ORDER)
@@ -303,16 +305,10 @@ public class PortOrder {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("purchaseOrder");
-    openapiFields.add("orderId");
-    openapiFields.add("customerReferenceId");
-    openapiFields.add("orderNumber");
-    openapiFields.add("uuid");
-    openapiFields.add("signature");
+    openapiFields = new HashSet<String>(Arrays.asList("purchaseOrder", "orderId", "customerReferenceId", "orderNumber", "uuid", "signature"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -324,7 +320,7 @@ public class PortOrder {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortOrder.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortOrder is not found in the empty JSON string", PortOrder.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortOrder is not found in the empty JSON string", PortOrder.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -333,16 +329,16 @@ public class PortOrder {
         PortOrderPurchaseOrder.validateJsonElement(jsonObj.get("purchaseOrder"));
       }
       if ((jsonObj.get("orderId") != null && !jsonObj.get("orderId").isJsonNull()) && !jsonObj.get("orderId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `orderId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("orderId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `orderId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("orderId").toString()));
       }
       if ((jsonObj.get("customerReferenceId") != null && !jsonObj.get("customerReferenceId").isJsonNull()) && !jsonObj.get("customerReferenceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customerReferenceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerReferenceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customerReferenceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerReferenceId").toString()));
       }
       if ((jsonObj.get("orderNumber") != null && !jsonObj.get("orderNumber").isJsonNull()) && !jsonObj.get("orderNumber").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `orderNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("orderNumber").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `orderNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("orderNumber").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the optional field `signature`
       if (jsonObj.get("signature") != null && !jsonObj.get("signature").isJsonNull()) {
@@ -407,7 +403,7 @@ public class PortOrder {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -94,7 +94,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamAlertRulesCall(UUID streamId, AlertRulePostRequest alertRulePostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createStreamAlertRulesCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull AlertRulePostRequest alertRulePostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +141,7 @@ public class StreamAlertRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createStreamAlertRulesValidateBeforeCall(UUID streamId, AlertRulePostRequest alertRulePostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createStreamAlertRulesValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull AlertRulePostRequest alertRulePostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling createStreamAlertRules(Async)");
@@ -175,7 +175,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAlertRule createStreamAlertRules(UUID streamId, AlertRulePostRequest alertRulePostRequest) throws ApiException {
+    public StreamAlertRule createStreamAlertRules(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull AlertRulePostRequest alertRulePostRequest) throws ApiException {
         ApiResponse<StreamAlertRule> localVarResp = createStreamAlertRulesWithHttpInfo(streamId, alertRulePostRequest);
         return localVarResp.getData();
     }
@@ -199,7 +199,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAlertRule> createStreamAlertRulesWithHttpInfo(UUID streamId, AlertRulePostRequest alertRulePostRequest) throws ApiException {
+    public ApiResponse<StreamAlertRule> createStreamAlertRulesWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull AlertRulePostRequest alertRulePostRequest) throws ApiException {
         okhttp3.Call localVarCall = createStreamAlertRulesValidateBeforeCall(streamId, alertRulePostRequest, null);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +225,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStreamAlertRulesAsync(UUID streamId, AlertRulePostRequest alertRulePostRequest, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
+    public okhttp3.Call createStreamAlertRulesAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull AlertRulePostRequest alertRulePostRequest, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createStreamAlertRulesValidateBeforeCall(streamId, alertRulePostRequest, _callback);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
@@ -251,7 +251,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamAlertRuleByUuidCall(UUID streamId, UUID alertRuleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteStreamAlertRuleByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -298,7 +298,7 @@ public class StreamAlertRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteStreamAlertRuleByUuidValidateBeforeCall(UUID streamId, UUID alertRuleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteStreamAlertRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling deleteStreamAlertRuleByUuid(Async)");
@@ -332,7 +332,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAlertRule deleteStreamAlertRuleByUuid(UUID streamId, UUID alertRuleId) throws ApiException {
+    public StreamAlertRule deleteStreamAlertRuleByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId) throws ApiException {
         ApiResponse<StreamAlertRule> localVarResp = deleteStreamAlertRuleByUuidWithHttpInfo(streamId, alertRuleId);
         return localVarResp.getData();
     }
@@ -356,7 +356,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAlertRule> deleteStreamAlertRuleByUuidWithHttpInfo(UUID streamId, UUID alertRuleId) throws ApiException {
+    public ApiResponse<StreamAlertRule> deleteStreamAlertRuleByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId) throws ApiException {
         okhttp3.Call localVarCall = deleteStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, null);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -382,7 +382,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStreamAlertRuleByUuidAsync(UUID streamId, UUID alertRuleId, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
+    public okhttp3.Call deleteStreamAlertRuleByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, _callback);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
@@ -408,7 +408,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAlertRuleByUuidCall(UUID streamId, UUID alertRuleId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamAlertRuleByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -455,7 +455,7 @@ public class StreamAlertRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamAlertRuleByUuidValidateBeforeCall(UUID streamId, UUID alertRuleId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamAlertRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling getStreamAlertRuleByUuid(Async)");
@@ -489,7 +489,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAlertRule getStreamAlertRuleByUuid(UUID streamId, UUID alertRuleId) throws ApiException {
+    public StreamAlertRule getStreamAlertRuleByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId) throws ApiException {
         ApiResponse<StreamAlertRule> localVarResp = getStreamAlertRuleByUuidWithHttpInfo(streamId, alertRuleId);
         return localVarResp.getData();
     }
@@ -513,7 +513,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAlertRule> getStreamAlertRuleByUuidWithHttpInfo(UUID streamId, UUID alertRuleId) throws ApiException {
+    public ApiResponse<StreamAlertRule> getStreamAlertRuleByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId) throws ApiException {
         okhttp3.Call localVarCall = getStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, null);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -539,7 +539,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAlertRuleByUuidAsync(UUID streamId, UUID alertRuleId, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
+    public okhttp3.Call getStreamAlertRuleByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, _callback);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
@@ -565,7 +565,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAlertRulesCall(UUID streamId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamAlertRulesCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -619,7 +619,7 @@ public class StreamAlertRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamAlertRulesValidateBeforeCall(UUID streamId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamAlertRulesValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling getStreamAlertRules(Async)");
@@ -648,7 +648,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllStreamAlertRuleResponse getStreamAlertRules(UUID streamId, Integer offset, Integer limit) throws ApiException {
+    public GetAllStreamAlertRuleResponse getStreamAlertRules(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetAllStreamAlertRuleResponse> localVarResp = getStreamAlertRulesWithHttpInfo(streamId, offset, limit);
         return localVarResp.getData();
     }
@@ -672,7 +672,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllStreamAlertRuleResponse> getStreamAlertRulesWithHttpInfo(UUID streamId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetAllStreamAlertRuleResponse> getStreamAlertRulesWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getStreamAlertRulesValidateBeforeCall(streamId, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetAllStreamAlertRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -698,7 +698,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamAlertRulesAsync(UUID streamId, Integer offset, Integer limit, final ApiCallback<GetAllStreamAlertRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call getStreamAlertRulesAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetAllStreamAlertRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamAlertRulesValidateBeforeCall(streamId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetAllStreamAlertRuleResponse>(){}.getType();
@@ -726,7 +726,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamAlertRuleByUuidCall(UUID streamId, UUID alertRuleId, AlertRulePutRequest alertRulePutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateStreamAlertRuleByUuidCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, @javax.annotation.Nonnull AlertRulePutRequest alertRulePutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -774,7 +774,7 @@ public class StreamAlertRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateStreamAlertRuleByUuidValidateBeforeCall(UUID streamId, UUID alertRuleId, AlertRulePutRequest alertRulePutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateStreamAlertRuleByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, @javax.annotation.Nonnull AlertRulePutRequest alertRulePutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'streamId' is set
         if (streamId == null) {
             throw new ApiException("Missing the required parameter 'streamId' when calling updateStreamAlertRuleByUuid(Async)");
@@ -815,7 +815,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public StreamAlertRule updateStreamAlertRuleByUuid(UUID streamId, UUID alertRuleId, AlertRulePutRequest alertRulePutRequest) throws ApiException {
+    public StreamAlertRule updateStreamAlertRuleByUuid(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, @javax.annotation.Nonnull AlertRulePutRequest alertRulePutRequest) throws ApiException {
         ApiResponse<StreamAlertRule> localVarResp = updateStreamAlertRuleByUuidWithHttpInfo(streamId, alertRuleId, alertRulePutRequest);
         return localVarResp.getData();
     }
@@ -841,7 +841,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StreamAlertRule> updateStreamAlertRuleByUuidWithHttpInfo(UUID streamId, UUID alertRuleId, AlertRulePutRequest alertRulePutRequest) throws ApiException {
+    public ApiResponse<StreamAlertRule> updateStreamAlertRuleByUuidWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, @javax.annotation.Nonnull AlertRulePutRequest alertRulePutRequest) throws ApiException {
         okhttp3.Call localVarCall = updateStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, alertRulePutRequest, null);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -869,7 +869,7 @@ public class StreamAlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStreamAlertRuleByUuidAsync(UUID streamId, UUID alertRuleId, AlertRulePutRequest alertRulePutRequest, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
+    public okhttp3.Call updateStreamAlertRuleByUuidAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID alertRuleId, @javax.annotation.Nonnull AlertRulePutRequest alertRulePutRequest, final ApiCallback<StreamAlertRule> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateStreamAlertRuleByUuidValidateBeforeCall(streamId, alertRuleId, alertRulePutRequest, _callback);
         Type localVarReturnType = new TypeToken<StreamAlertRule>(){}.getType();

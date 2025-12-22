@@ -93,7 +93,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventCall(UUID cloudEventId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudEventCall(@javax.annotation.Nonnull UUID cloudEventId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class CloudEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudEventValidateBeforeCall(UUID cloudEventId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudEventValidateBeforeCall(@javax.annotation.Nonnull UUID cloudEventId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'cloudEventId' is set
         if (cloudEventId == null) {
             throw new ApiException("Missing the required parameter 'cloudEventId' when calling getCloudEvent(Async)");
@@ -166,7 +166,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudEvent getCloudEvent(UUID cloudEventId) throws ApiException {
+    public CloudEvent getCloudEvent(@javax.annotation.Nonnull UUID cloudEventId) throws ApiException {
         ApiResponse<CloudEvent> localVarResp = getCloudEventWithHttpInfo(cloudEventId);
         return localVarResp.getData();
     }
@@ -188,7 +188,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudEvent> getCloudEventWithHttpInfo(UUID cloudEventId) throws ApiException {
+    public ApiResponse<CloudEvent> getCloudEventWithHttpInfo(@javax.annotation.Nonnull UUID cloudEventId) throws ApiException {
         okhttp3.Call localVarCall = getCloudEventValidateBeforeCall(cloudEventId, null);
         Type localVarReturnType = new TypeToken<CloudEvent>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,7 +212,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventAsync(UUID cloudEventId, final ApiCallback<CloudEvent> _callback) throws ApiException {
+    public okhttp3.Call getCloudEventAsync(@javax.annotation.Nonnull UUID cloudEventId, final ApiCallback<CloudEvent> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudEventValidateBeforeCall(cloudEventId, _callback);
         Type localVarReturnType = new TypeToken<CloudEvent>(){}.getType();
@@ -241,7 +241,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventByAssetIdCall(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudEventByAssetIdCall(@javax.annotation.Nonnull CloudEventAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -304,7 +304,7 @@ public class CloudEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudEventByAssetIdValidateBeforeCall(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudEventByAssetIdValidateBeforeCall(@javax.annotation.Nonnull CloudEventAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'asset' is set
         if (asset == null) {
             throw new ApiException("Missing the required parameter 'asset' when calling getCloudEventByAssetId(Async)");
@@ -341,7 +341,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetCloudEventsByAssetResponse getCloudEventByAssetId(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public GetCloudEventsByAssetResponse getCloudEventByAssetId(@javax.annotation.Nonnull CloudEventAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetCloudEventsByAssetResponse> localVarResp = getCloudEventByAssetIdWithHttpInfo(asset, assetId, fromDateTime, toDateTime, offset, limit);
         return localVarResp.getData();
     }
@@ -368,7 +368,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetCloudEventsByAssetResponse> getCloudEventByAssetIdWithHttpInfo(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<GetCloudEventsByAssetResponse> getCloudEventByAssetIdWithHttpInfo(@javax.annotation.Nonnull CloudEventAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getCloudEventByAssetIdValidateBeforeCall(asset, assetId, fromDateTime, toDateTime, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -397,7 +397,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudEventByAssetIdAsync(CloudEventAssetType asset, UUID assetId, OffsetDateTime fromDateTime, OffsetDateTime toDateTime, Integer offset, Integer limit, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudEventByAssetIdAsync(@javax.annotation.Nonnull CloudEventAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudEventByAssetIdValidateBeforeCall(asset, assetId, fromDateTime, toDateTime, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();
@@ -421,7 +421,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudEventsCall(CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchCloudEventsCall(@javax.annotation.Nonnull CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -467,7 +467,7 @@ public class CloudEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchCloudEventsValidateBeforeCall(CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchCloudEventsValidateBeforeCall(@javax.annotation.Nonnull CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'cloudEventSearchRequest' is set
         if (cloudEventSearchRequest == null) {
             throw new ApiException("Missing the required parameter 'cloudEventSearchRequest' when calling searchCloudEvents(Async)");
@@ -494,7 +494,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetCloudEventsByAssetResponse searchCloudEvents(CloudEventSearchRequest cloudEventSearchRequest) throws ApiException {
+    public GetCloudEventsByAssetResponse searchCloudEvents(@javax.annotation.Nonnull CloudEventSearchRequest cloudEventSearchRequest) throws ApiException {
         ApiResponse<GetCloudEventsByAssetResponse> localVarResp = searchCloudEventsWithHttpInfo(cloudEventSearchRequest);
         return localVarResp.getData();
     }
@@ -516,7 +516,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetCloudEventsByAssetResponse> searchCloudEventsWithHttpInfo(CloudEventSearchRequest cloudEventSearchRequest) throws ApiException {
+    public ApiResponse<GetCloudEventsByAssetResponse> searchCloudEventsWithHttpInfo(@javax.annotation.Nonnull CloudEventSearchRequest cloudEventSearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchCloudEventsValidateBeforeCall(cloudEventSearchRequest, null);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -540,7 +540,7 @@ public class CloudEventsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchCloudEventsAsync(CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call searchCloudEventsAsync(@javax.annotation.Nonnull CloudEventSearchRequest cloudEventSearchRequest, final ApiCallback<GetCloudEventsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchCloudEventsValidateBeforeCall(cloudEventSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<GetCloudEventsByAssetResponse>(){}.getType();

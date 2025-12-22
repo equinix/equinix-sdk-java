@@ -101,7 +101,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachConnectionRouteAggregationCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachConnectionRouteAggregationCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +148,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachConnectionRouteAggregationValidateBeforeCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachConnectionRouteAggregationValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling attachConnectionRouteAggregation(Async)");
@@ -183,7 +183,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteAggregationData attachConnectionRouteAggregation(String routeAggregationId, String connectionId) throws ApiException {
+    public ConnectionRouteAggregationData attachConnectionRouteAggregation(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<ConnectionRouteAggregationData> localVarResp = attachConnectionRouteAggregationWithHttpInfo(routeAggregationId, connectionId);
         return localVarResp.getData();
     }
@@ -208,7 +208,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteAggregationData> attachConnectionRouteAggregationWithHttpInfo(String routeAggregationId, String connectionId) throws ApiException {
+    public ApiResponse<ConnectionRouteAggregationData> attachConnectionRouteAggregationWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = attachConnectionRouteAggregationValidateBeforeCall(routeAggregationId, connectionId, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -235,7 +235,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachConnectionRouteAggregationAsync(String routeAggregationId, String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
+    public okhttp3.Call attachConnectionRouteAggregationAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = attachConnectionRouteAggregationValidateBeforeCall(routeAggregationId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
@@ -261,7 +261,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationCall(RouteAggregationsBase routeAggregationsBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationCall(@javax.annotation.Nonnull RouteAggregationsBase routeAggregationsBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -307,7 +307,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRouteAggregationValidateBeforeCall(RouteAggregationsBase routeAggregationsBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRouteAggregationValidateBeforeCall(@javax.annotation.Nonnull RouteAggregationsBase routeAggregationsBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationsBase' is set
         if (routeAggregationsBase == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationsBase' when calling createRouteAggregation(Async)");
@@ -336,7 +336,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsData createRouteAggregation(RouteAggregationsBase routeAggregationsBase) throws ApiException {
+    public RouteAggregationsData createRouteAggregation(@javax.annotation.Nonnull RouteAggregationsBase routeAggregationsBase) throws ApiException {
         ApiResponse<RouteAggregationsData> localVarResp = createRouteAggregationWithHttpInfo(routeAggregationsBase);
         return localVarResp.getData();
     }
@@ -360,7 +360,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsData> createRouteAggregationWithHttpInfo(RouteAggregationsBase routeAggregationsBase) throws ApiException {
+    public ApiResponse<RouteAggregationsData> createRouteAggregationWithHttpInfo(@javax.annotation.Nonnull RouteAggregationsBase routeAggregationsBase) throws ApiException {
         okhttp3.Call localVarCall = createRouteAggregationValidateBeforeCall(routeAggregationsBase, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -386,7 +386,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRouteAggregationAsync(RouteAggregationsBase routeAggregationsBase, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
+    public okhttp3.Call createRouteAggregationAsync(@javax.annotation.Nonnull RouteAggregationsBase routeAggregationsBase, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRouteAggregationValidateBeforeCall(routeAggregationsBase, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
@@ -412,7 +412,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteAggregationByUuidCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRouteAggregationByUuidCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -458,7 +458,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRouteAggregationByUuidValidateBeforeCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRouteAggregationByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling deleteRouteAggregationByUuid(Async)");
@@ -487,7 +487,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsData deleteRouteAggregationByUuid(String routeAggregationId) throws ApiException {
+    public RouteAggregationsData deleteRouteAggregationByUuid(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         ApiResponse<RouteAggregationsData> localVarResp = deleteRouteAggregationByUuidWithHttpInfo(routeAggregationId);
         return localVarResp.getData();
     }
@@ -511,7 +511,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsData> deleteRouteAggregationByUuidWithHttpInfo(String routeAggregationId) throws ApiException {
+    public ApiResponse<RouteAggregationsData> deleteRouteAggregationByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         okhttp3.Call localVarCall = deleteRouteAggregationByUuidValidateBeforeCall(routeAggregationId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -537,7 +537,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRouteAggregationByUuidAsync(String routeAggregationId, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
+    public okhttp3.Call deleteRouteAggregationByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRouteAggregationByUuidValidateBeforeCall(routeAggregationId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
@@ -564,7 +564,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachConnectionRouteAggregationCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachConnectionRouteAggregationCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -611,7 +611,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachConnectionRouteAggregationValidateBeforeCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachConnectionRouteAggregationValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling detachConnectionRouteAggregation(Async)");
@@ -646,7 +646,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteAggregationData detachConnectionRouteAggregation(String routeAggregationId, String connectionId) throws ApiException {
+    public ConnectionRouteAggregationData detachConnectionRouteAggregation(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<ConnectionRouteAggregationData> localVarResp = detachConnectionRouteAggregationWithHttpInfo(routeAggregationId, connectionId);
         return localVarResp.getData();
     }
@@ -671,7 +671,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteAggregationData> detachConnectionRouteAggregationWithHttpInfo(String routeAggregationId, String connectionId) throws ApiException {
+    public ApiResponse<ConnectionRouteAggregationData> detachConnectionRouteAggregationWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = detachConnectionRouteAggregationValidateBeforeCall(routeAggregationId, connectionId, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -698,7 +698,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachConnectionRouteAggregationAsync(String routeAggregationId, String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
+    public okhttp3.Call detachConnectionRouteAggregationAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detachConnectionRouteAggregationValidateBeforeCall(routeAggregationId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
@@ -725,7 +725,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteAggregationByUuidCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteAggregationByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -772,7 +772,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRouteAggregationByUuidValidateBeforeCall(String routeAggregationId, String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRouteAggregationByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getConnectionRouteAggregationByUuid(Async)");
@@ -807,7 +807,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ConnectionRouteAggregationData getConnectionRouteAggregationByUuid(String routeAggregationId, String connectionId) throws ApiException {
+    public ConnectionRouteAggregationData getConnectionRouteAggregationByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<ConnectionRouteAggregationData> localVarResp = getConnectionRouteAggregationByUuidWithHttpInfo(routeAggregationId, connectionId);
         return localVarResp.getData();
     }
@@ -832,7 +832,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConnectionRouteAggregationData> getConnectionRouteAggregationByUuidWithHttpInfo(String routeAggregationId, String connectionId) throws ApiException {
+    public ApiResponse<ConnectionRouteAggregationData> getConnectionRouteAggregationByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRouteAggregationByUuidValidateBeforeCall(routeAggregationId, connectionId, null);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -859,7 +859,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteAggregationByUuidAsync(String routeAggregationId, String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteAggregationByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull String connectionId, final ApiCallback<ConnectionRouteAggregationData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRouteAggregationByUuidValidateBeforeCall(routeAggregationId, connectionId, _callback);
         Type localVarReturnType = new TypeToken<ConnectionRouteAggregationData>(){}.getType();
@@ -885,7 +885,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteAggregationsCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteAggregationsCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -931,7 +931,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConnectionRouteAggregationsValidateBeforeCall(String connectionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConnectionRouteAggregationsValidateBeforeCall(@javax.annotation.Nonnull String connectionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'connectionId' is set
         if (connectionId == null) {
             throw new ApiException("Missing the required parameter 'connectionId' when calling getConnectionRouteAggregations(Async)");
@@ -960,7 +960,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllConnectionRouteAggregationsResponse getConnectionRouteAggregations(String connectionId) throws ApiException {
+    public GetAllConnectionRouteAggregationsResponse getConnectionRouteAggregations(@javax.annotation.Nonnull String connectionId) throws ApiException {
         ApiResponse<GetAllConnectionRouteAggregationsResponse> localVarResp = getConnectionRouteAggregationsWithHttpInfo(connectionId);
         return localVarResp.getData();
     }
@@ -984,7 +984,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllConnectionRouteAggregationsResponse> getConnectionRouteAggregationsWithHttpInfo(String connectionId) throws ApiException {
+    public ApiResponse<GetAllConnectionRouteAggregationsResponse> getConnectionRouteAggregationsWithHttpInfo(@javax.annotation.Nonnull String connectionId) throws ApiException {
         okhttp3.Call localVarCall = getConnectionRouteAggregationsValidateBeforeCall(connectionId, null);
         Type localVarReturnType = new TypeToken<GetAllConnectionRouteAggregationsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1010,7 +1010,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConnectionRouteAggregationsAsync(String connectionId, final ApiCallback<GetAllConnectionRouteAggregationsResponse> _callback) throws ApiException {
+    public okhttp3.Call getConnectionRouteAggregationsAsync(@javax.annotation.Nonnull String connectionId, final ApiCallback<GetAllConnectionRouteAggregationsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConnectionRouteAggregationsValidateBeforeCall(connectionId, _callback);
         Type localVarReturnType = new TypeToken<GetAllConnectionRouteAggregationsResponse>(){}.getType();
@@ -1036,7 +1036,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationByUuidCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationByUuidCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1082,7 +1082,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationByUuidValidateBeforeCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationByUuid(Async)");
@@ -1111,7 +1111,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsData getRouteAggregationByUuid(String routeAggregationId) throws ApiException {
+    public RouteAggregationsData getRouteAggregationByUuid(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         ApiResponse<RouteAggregationsData> localVarResp = getRouteAggregationByUuidWithHttpInfo(routeAggregationId);
         return localVarResp.getData();
     }
@@ -1135,7 +1135,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsData> getRouteAggregationByUuidWithHttpInfo(String routeAggregationId) throws ApiException {
+    public ApiResponse<RouteAggregationsData> getRouteAggregationByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationByUuidValidateBeforeCall(routeAggregationId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1161,7 +1161,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationByUuidAsync(String routeAggregationId, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationByUuidValidateBeforeCall(routeAggregationId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
@@ -1187,7 +1187,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationChangeByUuidCall(String routeAggregationId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationChangeByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1234,7 +1234,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationChangeByUuidValidateBeforeCall(String routeAggregationId, UUID changeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationChangeByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull UUID changeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationChangeByUuid(Async)");
@@ -1268,7 +1268,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationChangeData getRouteAggregationChangeByUuid(String routeAggregationId, UUID changeId) throws ApiException {
+    public RouteAggregationChangeData getRouteAggregationChangeByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         ApiResponse<RouteAggregationChangeData> localVarResp = getRouteAggregationChangeByUuidWithHttpInfo(routeAggregationId, changeId);
         return localVarResp.getData();
     }
@@ -1292,7 +1292,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationChangeData> getRouteAggregationChangeByUuidWithHttpInfo(String routeAggregationId, UUID changeId) throws ApiException {
+    public ApiResponse<RouteAggregationChangeData> getRouteAggregationChangeByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull UUID changeId) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationChangeByUuidValidateBeforeCall(routeAggregationId, changeId, null);
         Type localVarReturnType = new TypeToken<RouteAggregationChangeData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1318,7 +1318,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationChangeByUuidAsync(String routeAggregationId, UUID changeId, final ApiCallback<RouteAggregationChangeData> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationChangeByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull UUID changeId, final ApiCallback<RouteAggregationChangeData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationChangeByUuidValidateBeforeCall(routeAggregationId, changeId, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationChangeData>(){}.getType();
@@ -1345,7 +1345,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationChangesCall(String routeAggregationId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationChangesCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1399,7 +1399,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationChangesValidateBeforeCall(String routeAggregationId, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationChangesValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationChanges(Async)");
@@ -1429,7 +1429,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationChangeDataResponse getRouteAggregationChanges(String routeAggregationId, Integer offset, Integer limit) throws ApiException {
+    public RouteAggregationChangeDataResponse getRouteAggregationChanges(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<RouteAggregationChangeDataResponse> localVarResp = getRouteAggregationChangesWithHttpInfo(routeAggregationId, offset, limit);
         return localVarResp.getData();
     }
@@ -1454,7 +1454,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationChangeDataResponse> getRouteAggregationChangesWithHttpInfo(String routeAggregationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<RouteAggregationChangeDataResponse> getRouteAggregationChangesWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationChangesValidateBeforeCall(routeAggregationId, offset, limit, null);
         Type localVarReturnType = new TypeToken<RouteAggregationChangeDataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1481,7 +1481,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationChangesAsync(String routeAggregationId, Integer offset, Integer limit, final ApiCallback<RouteAggregationChangeDataResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationChangesAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<RouteAggregationChangeDataResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationChangesValidateBeforeCall(routeAggregationId, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationChangeDataResponse>(){}.getType();
@@ -1507,7 +1507,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationConnectionsCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationConnectionsCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1553,7 +1553,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRouteAggregationConnectionsValidateBeforeCall(String routeAggregationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRouteAggregationConnectionsValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling getRouteAggregationConnections(Async)");
@@ -1582,7 +1582,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetRouteAggregationGetConnectionsResponse getRouteAggregationConnections(String routeAggregationId) throws ApiException {
+    public GetRouteAggregationGetConnectionsResponse getRouteAggregationConnections(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         ApiResponse<GetRouteAggregationGetConnectionsResponse> localVarResp = getRouteAggregationConnectionsWithHttpInfo(routeAggregationId);
         return localVarResp.getData();
     }
@@ -1606,7 +1606,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetRouteAggregationGetConnectionsResponse> getRouteAggregationConnectionsWithHttpInfo(String routeAggregationId) throws ApiException {
+    public ApiResponse<GetRouteAggregationGetConnectionsResponse> getRouteAggregationConnectionsWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId) throws ApiException {
         okhttp3.Call localVarCall = getRouteAggregationConnectionsValidateBeforeCall(routeAggregationId, null);
         Type localVarReturnType = new TypeToken<GetRouteAggregationGetConnectionsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1632,7 +1632,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRouteAggregationConnectionsAsync(String routeAggregationId, final ApiCallback<GetRouteAggregationGetConnectionsResponse> _callback) throws ApiException {
+    public okhttp3.Call getRouteAggregationConnectionsAsync(@javax.annotation.Nonnull String routeAggregationId, final ApiCallback<GetRouteAggregationGetConnectionsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRouteAggregationConnectionsValidateBeforeCall(routeAggregationId, _callback);
         Type localVarReturnType = new TypeToken<GetRouteAggregationGetConnectionsResponse>(){}.getType();
@@ -1659,7 +1659,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteAggregationByUuidCall(String routeAggregationId, List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchRouteAggregationByUuidCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1707,7 +1707,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRouteAggregationByUuidValidateBeforeCall(String routeAggregationId, List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchRouteAggregationByUuidValidateBeforeCall(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationId' is set
         if (routeAggregationId == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationId' when calling patchRouteAggregationByUuid(Async)");
@@ -1742,7 +1742,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsData patchRouteAggregationByUuid(String routeAggregationId, List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem) throws ApiException {
+    public RouteAggregationsData patchRouteAggregationByUuid(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem) throws ApiException {
         ApiResponse<RouteAggregationsData> localVarResp = patchRouteAggregationByUuidWithHttpInfo(routeAggregationId, routeAggregationsPatchRequestItem);
         return localVarResp.getData();
     }
@@ -1767,7 +1767,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsData> patchRouteAggregationByUuidWithHttpInfo(String routeAggregationId, List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem) throws ApiException {
+    public ApiResponse<RouteAggregationsData> patchRouteAggregationByUuidWithHttpInfo(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem) throws ApiException {
         okhttp3.Call localVarCall = patchRouteAggregationByUuidValidateBeforeCall(routeAggregationId, routeAggregationsPatchRequestItem, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1794,7 +1794,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRouteAggregationByUuidAsync(String routeAggregationId, List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
+    public okhttp3.Call patchRouteAggregationByUuidAsync(@javax.annotation.Nonnull String routeAggregationId, @javax.annotation.Nonnull List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem, final ApiCallback<RouteAggregationsData> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchRouteAggregationByUuidValidateBeforeCall(routeAggregationId, routeAggregationsPatchRequestItem, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
@@ -1820,7 +1820,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteAggregationsCall(RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchRouteAggregationsCall(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1866,7 +1866,7 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchRouteAggregationsValidateBeforeCall(RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchRouteAggregationsValidateBeforeCall(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'routeAggregationsSearchBase' is set
         if (routeAggregationsSearchBase == null) {
             throw new ApiException("Missing the required parameter 'routeAggregationsSearchBase' when calling searchRouteAggregations(Async)");
@@ -1895,7 +1895,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsSearchResponse searchRouteAggregations(RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
+    public RouteAggregationsSearchResponse searchRouteAggregations(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
         ApiResponse<RouteAggregationsSearchResponse> localVarResp = searchRouteAggregationsWithHttpInfo(routeAggregationsSearchBase);
         return localVarResp.getData();
     }
@@ -1919,7 +1919,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsSearchResponse> searchRouteAggregationsWithHttpInfo(RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
+    public ApiResponse<RouteAggregationsSearchResponse> searchRouteAggregationsWithHttpInfo(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
         okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchBase, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1945,7 +1945,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteAggregationsAsync(RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback<RouteAggregationsSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchRouteAggregationsAsync(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback<RouteAggregationsSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchBase, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsSearchResponse>(){}.getType();

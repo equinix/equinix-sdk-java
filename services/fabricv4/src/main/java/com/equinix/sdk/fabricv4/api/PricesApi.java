@@ -87,7 +87,7 @@ public class PricesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchPricesCall(FilterBody filterBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchPricesCall(@javax.annotation.Nonnull FilterBody filterBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +133,7 @@ public class PricesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchPricesValidateBeforeCall(FilterBody filterBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchPricesValidateBeforeCall(@javax.annotation.Nonnull FilterBody filterBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'filterBody' is set
         if (filterBody == null) {
             throw new ApiException("Missing the required parameter 'filterBody' when calling searchPrices(Async)");
@@ -158,7 +158,7 @@ public class PricesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PriceSearchResponse searchPrices(FilterBody filterBody) throws ApiException {
+    public PriceSearchResponse searchPrices(@javax.annotation.Nonnull FilterBody filterBody) throws ApiException {
         ApiResponse<PriceSearchResponse> localVarResp = searchPricesWithHttpInfo(filterBody);
         return localVarResp.getData();
     }
@@ -178,7 +178,7 @@ public class PricesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PriceSearchResponse> searchPricesWithHttpInfo(FilterBody filterBody) throws ApiException {
+    public ApiResponse<PriceSearchResponse> searchPricesWithHttpInfo(@javax.annotation.Nonnull FilterBody filterBody) throws ApiException {
         okhttp3.Call localVarCall = searchPricesValidateBeforeCall(filterBody, null);
         Type localVarReturnType = new TypeToken<PriceSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -200,7 +200,7 @@ public class PricesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchPricesAsync(FilterBody filterBody, final ApiCallback<PriceSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchPricesAsync(@javax.annotation.Nonnull FilterBody filterBody, final ApiCallback<PriceSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchPricesValidateBeforeCall(filterBody, _callback);
         Type localVarReturnType = new TypeToken<PriceSearchResponse>(){}.getType();

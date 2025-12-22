@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Direction;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -41,13 +42,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Bandwidth utilization statistics (octet counters-based)
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class BandwidthUtilization {
   /**
    * Aggregated data transfer capacity. Possible values- Mbps, megabits (1 million bits) per second; Gbps, gigabits (1 billion bits) per second.
@@ -294,14 +296,10 @@ public class BandwidthUtilization {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("unit");
-    openapiFields.add("metricInterval");
-    openapiFields.add("inbound");
-    openapiFields.add("outbound");
+    openapiFields = new HashSet<String>(Arrays.asList("unit", "metricInterval", "inbound", "outbound"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -313,19 +311,19 @@ public class BandwidthUtilization {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BandwidthUtilization.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BandwidthUtilization is not found in the empty JSON string", BandwidthUtilization.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BandwidthUtilization is not found in the empty JSON string", BandwidthUtilization.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
       }
       // validate the optional field `unit`
       if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) {
         UnitEnum.validateJsonElement(jsonObj.get("unit"));
       }
       if ((jsonObj.get("metricInterval") != null && !jsonObj.get("metricInterval").isJsonNull()) && !jsonObj.get("metricInterval").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metricInterval` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricInterval").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricInterval` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricInterval").toString()));
       }
       // validate the optional field `inbound`
       if (jsonObj.get("inbound") != null && !jsonObj.get("inbound").isJsonNull()) {
@@ -394,7 +392,7 @@ public class BandwidthUtilization {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

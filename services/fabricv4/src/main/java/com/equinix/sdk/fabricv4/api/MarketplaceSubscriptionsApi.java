@@ -89,7 +89,7 @@ public class MarketplaceSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionByIdCall(UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionByIdCall(@javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class MarketplaceSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionByIdValidateBeforeCall(UUID subscriptionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSubscriptionByIdValidateBeforeCall(@javax.annotation.Nonnull UUID subscriptionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'subscriptionId' is set
         if (subscriptionId == null) {
             throw new ApiException("Missing the required parameter 'subscriptionId' when calling getSubscriptionById(Async)");
@@ -162,7 +162,7 @@ public class MarketplaceSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public SubscriptionResponse getSubscriptionById(UUID subscriptionId) throws ApiException {
+    public SubscriptionResponse getSubscriptionById(@javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         ApiResponse<SubscriptionResponse> localVarResp = getSubscriptionByIdWithHttpInfo(subscriptionId);
         return localVarResp.getData();
     }
@@ -184,7 +184,7 @@ public class MarketplaceSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubscriptionResponse> getSubscriptionByIdWithHttpInfo(UUID subscriptionId) throws ApiException {
+    public ApiResponse<SubscriptionResponse> getSubscriptionByIdWithHttpInfo(@javax.annotation.Nonnull UUID subscriptionId) throws ApiException {
         okhttp3.Call localVarCall = getSubscriptionByIdValidateBeforeCall(subscriptionId, null);
         Type localVarReturnType = new TypeToken<SubscriptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -208,7 +208,7 @@ public class MarketplaceSubscriptionsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionByIdAsync(UUID subscriptionId, final ApiCallback<SubscriptionResponse> _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionByIdAsync(@javax.annotation.Nonnull UUID subscriptionId, final ApiCallback<SubscriptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSubscriptionByIdValidateBeforeCall(subscriptionId, _callback);
         Type localVarReturnType = new TypeToken<SubscriptionResponse>(){}.getType();

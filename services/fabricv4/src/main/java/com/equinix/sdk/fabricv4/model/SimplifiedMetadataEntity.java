@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.SimplifiedLocation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Configuration details for port used at the access point.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SimplifiedMetadataEntity {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -403,20 +405,10 @@ public class SimplifiedMetadataEntity {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("uuid");
-    openapiFields.add("type");
-    openapiFields.add("cvpId");
-    openapiFields.add("bandwidth");
-    openapiFields.add("portName");
-    openapiFields.add("encapsulationProtocolType");
-    openapiFields.add("accountName");
-    openapiFields.add("priority");
-    openapiFields.add("location");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "cvpId", "bandwidth", "portName", "encapsulationProtocolType", "accountName", "priority", "location"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -428,30 +420,30 @@ public class SimplifiedMetadataEntity {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SimplifiedMetadataEntity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SimplifiedMetadataEntity is not found in the empty JSON string", SimplifiedMetadataEntity.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SimplifiedMetadataEntity is not found in the empty JSON string", SimplifiedMetadataEntity.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("portName") != null && !jsonObj.get("portName").isJsonNull()) && !jsonObj.get("portName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `portName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("portName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `portName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("portName").toString()));
       }
       if ((jsonObj.get("encapsulationProtocolType") != null && !jsonObj.get("encapsulationProtocolType").isJsonNull()) && !jsonObj.get("encapsulationProtocolType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `encapsulationProtocolType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulationProtocolType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `encapsulationProtocolType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("encapsulationProtocolType").toString()));
       }
       if ((jsonObj.get("accountName") != null && !jsonObj.get("accountName").isJsonNull()) && !jsonObj.get("accountName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accountName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountName").toString()));
       }
       if ((jsonObj.get("priority") != null && !jsonObj.get("priority").isJsonNull()) && !jsonObj.get("priority").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `priority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("priority").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `priority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("priority").toString()));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
@@ -516,7 +508,7 @@ public class SimplifiedMetadataEntity {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

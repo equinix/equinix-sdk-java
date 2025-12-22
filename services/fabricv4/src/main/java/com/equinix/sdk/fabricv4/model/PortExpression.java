@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PortSearchFieldName;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -43,13 +44,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Either use &#39;and&#39; for AND operations, &#39;or&#39; for OR operations,  or specify &#39;property&#39;, &#39;operator&#39;, and &#39;values&#39; for field filtering. Only one of these patterns should be used at a time. 
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortExpression {
   public static final String SERIALIZED_NAME_AND = "and";
   @SerializedName(SERIALIZED_NAME_AND)
@@ -346,15 +348,10 @@ public class PortExpression {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("and");
-    openapiFields.add("or");
-    openapiFields.add("property");
-    openapiFields.add("operator");
-    openapiFields.add("values");
+    openapiFields = new HashSet<String>(Arrays.asList("and", "or", "property", "operator", "values"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -366,7 +363,7 @@ public class PortExpression {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PortExpression.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PortExpression is not found in the empty JSON string", PortExpression.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PortExpression is not found in the empty JSON string", PortExpression.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -375,7 +372,7 @@ public class PortExpression {
         if (jsonArrayand != null) {
           // ensure the json data is an array
           if (!jsonObj.get("and").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `and` to be an array in the JSON string but got `%s`", jsonObj.get("and").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `and` to be an array in the JSON string but got `%s`", jsonObj.get("and").toString()));
           }
 
           // validate the optional field `and` (array)
@@ -389,7 +386,7 @@ public class PortExpression {
         if (jsonArrayor != null) {
           // ensure the json data is an array
           if (!jsonObj.get("or").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
           }
 
           // validate the optional field `or` (array)
@@ -403,7 +400,7 @@ public class PortExpression {
         PortSearchFieldName.validateJsonElement(jsonObj.get("property"));
       }
       if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
       // validate the optional field `operator`
       if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
@@ -411,7 +408,7 @@ public class PortExpression {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
 
@@ -472,7 +469,7 @@ public class PortExpression {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

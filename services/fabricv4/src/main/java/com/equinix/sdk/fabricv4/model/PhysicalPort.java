@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.PhysicalPortSettings;
 import com.equinix.sdk.fabricv4.model.PhysicalPortType;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
@@ -56,13 +57,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Physical Port specification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PhysicalPort {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
@@ -626,27 +628,10 @@ public class PhysicalPort {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("href");
-    openapiFields.add("type");
-    openapiFields.add("id");
-    openapiFields.add("state");
-    openapiFields.add("account");
-    openapiFields.add("interfaceSpeed");
-    openapiFields.add("interfaceType");
-    openapiFields.add("uuid");
-    openapiFields.add("tether");
-    openapiFields.add("demarcationPoint");
-    openapiFields.add("settings");
-    openapiFields.add("interface");
-    openapiFields.add("notifications");
-    openapiFields.add("additionalInfo");
-    openapiFields.add("order");
-    openapiFields.add("operation");
-    openapiFields.add("loas");
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "state", "account", "interfaceSpeed", "interfaceType", "uuid", "tether", "demarcationPoint", "settings", "interface", "notifications", "additionalInfo", "order", "operation", "loas"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -658,12 +643,12 @@ public class PhysicalPort {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PhysicalPort.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PhysicalPort is not found in the empty JSON string", PhysicalPort.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PhysicalPort is not found in the empty JSON string", PhysicalPort.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
@@ -678,10 +663,10 @@ public class PhysicalPort {
         SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
       if ((jsonObj.get("interfaceType") != null && !jsonObj.get("interfaceType").isJsonNull()) && !jsonObj.get("interfaceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `interfaceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("interfaceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `interfaceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("interfaceType").toString()));
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
       // validate the optional field `tether`
       if (jsonObj.get("tether") != null && !jsonObj.get("tether").isJsonNull()) {
@@ -704,7 +689,7 @@ public class PhysicalPort {
         if (jsonArraynotifications != null) {
           // ensure the json data is an array
           if (!jsonObj.get("notifications").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
           }
 
           // validate the optional field `notifications` (array)
@@ -718,7 +703,7 @@ public class PhysicalPort {
         if (jsonArrayadditionalInfo != null) {
           // ensure the json data is an array
           if (!jsonObj.get("additionalInfo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
           }
 
           // validate the optional field `additionalInfo` (array)
@@ -740,7 +725,7 @@ public class PhysicalPort {
         if (jsonArrayloas != null) {
           // ensure the json data is an array
           if (!jsonObj.get("loas").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `loas` to be an array in the JSON string but got `%s`", jsonObj.get("loas").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `loas` to be an array in the JSON string but got `%s`", jsonObj.get("loas").toString()));
           }
 
           // validate the optional field `loas` (array)
@@ -808,7 +793,7 @@ public class PhysicalPort {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

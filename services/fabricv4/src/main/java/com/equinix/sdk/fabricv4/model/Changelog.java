@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,13 +42,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * Change log
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Changelog {
   public static final String SERIALIZED_NAME_CREATED_BY = "createdBy";
   @SerializedName(SERIALIZED_NAME_CREATED_BY)
@@ -452,22 +454,10 @@ public class Changelog {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("createdBy");
-    openapiFields.add("createdByFullName");
-    openapiFields.add("createdByEmail");
-    openapiFields.add("createdDateTime");
-    openapiFields.add("updatedBy");
-    openapiFields.add("updatedByFullName");
-    openapiFields.add("updatedByEmail");
-    openapiFields.add("updatedDateTime");
-    openapiFields.add("deletedBy");
-    openapiFields.add("deletedByFullName");
-    openapiFields.add("deletedByEmail");
-    openapiFields.add("deletedDateTime");
+    openapiFields = new HashSet<String>(Arrays.asList("createdBy", "createdByFullName", "createdByEmail", "createdDateTime", "updatedBy", "updatedByFullName", "updatedByEmail", "updatedDateTime", "deletedBy", "deletedByFullName", "deletedByEmail", "deletedDateTime"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -479,36 +469,36 @@ public class Changelog {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Changelog.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Changelog is not found in the empty JSON string", Changelog.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Changelog is not found in the empty JSON string", Changelog.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("createdBy") != null && !jsonObj.get("createdBy").isJsonNull()) && !jsonObj.get("createdBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `createdBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdBy").toString()));
       }
       if ((jsonObj.get("createdByFullName") != null && !jsonObj.get("createdByFullName").isJsonNull()) && !jsonObj.get("createdByFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `createdByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdByFullName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `createdByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdByFullName").toString()));
       }
       if ((jsonObj.get("createdByEmail") != null && !jsonObj.get("createdByEmail").isJsonNull()) && !jsonObj.get("createdByEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `createdByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdByEmail").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `createdByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdByEmail").toString()));
       }
       if ((jsonObj.get("updatedBy") != null && !jsonObj.get("updatedBy").isJsonNull()) && !jsonObj.get("updatedBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updatedBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `updatedBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedBy").toString()));
       }
       if ((jsonObj.get("updatedByFullName") != null && !jsonObj.get("updatedByFullName").isJsonNull()) && !jsonObj.get("updatedByFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updatedByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedByFullName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `updatedByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedByFullName").toString()));
       }
       if ((jsonObj.get("updatedByEmail") != null && !jsonObj.get("updatedByEmail").isJsonNull()) && !jsonObj.get("updatedByEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updatedByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedByEmail").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `updatedByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedByEmail").toString()));
       }
       if ((jsonObj.get("deletedBy") != null && !jsonObj.get("deletedBy").isJsonNull()) && !jsonObj.get("deletedBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deletedBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `deletedBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedBy").toString()));
       }
       if ((jsonObj.get("deletedByFullName") != null && !jsonObj.get("deletedByFullName").isJsonNull()) && !jsonObj.get("deletedByFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deletedByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedByFullName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `deletedByFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedByFullName").toString()));
       }
       if ((jsonObj.get("deletedByEmail") != null && !jsonObj.get("deletedByEmail").isJsonNull()) && !jsonObj.get("deletedByEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deletedByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedByEmail").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `deletedByEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deletedByEmail").toString()));
       }
   }
 
@@ -569,7 +559,7 @@ public class Changelog {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

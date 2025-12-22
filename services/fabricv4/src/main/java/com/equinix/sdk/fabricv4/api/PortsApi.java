@@ -97,7 +97,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addToLagCall(UUID portId, BulkPhysicalPort bulkPhysicalPort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addToLagCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull BulkPhysicalPort bulkPhysicalPort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -144,7 +144,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addToLagValidateBeforeCall(UUID portId, BulkPhysicalPort bulkPhysicalPort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addToLagValidateBeforeCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull BulkPhysicalPort bulkPhysicalPort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling addToLag(Async)");
@@ -177,7 +177,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public AllPhysicalPortsResponse addToLag(UUID portId, BulkPhysicalPort bulkPhysicalPort) throws ApiException {
+    public AllPhysicalPortsResponse addToLag(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull BulkPhysicalPort bulkPhysicalPort) throws ApiException {
         ApiResponse<AllPhysicalPortsResponse> localVarResp = addToLagWithHttpInfo(portId, bulkPhysicalPort);
         return localVarResp.getData();
     }
@@ -200,7 +200,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AllPhysicalPortsResponse> addToLagWithHttpInfo(UUID portId, BulkPhysicalPort bulkPhysicalPort) throws ApiException {
+    public ApiResponse<AllPhysicalPortsResponse> addToLagWithHttpInfo(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull BulkPhysicalPort bulkPhysicalPort) throws ApiException {
         okhttp3.Call localVarCall = addToLagValidateBeforeCall(portId, bulkPhysicalPort, null);
         Type localVarReturnType = new TypeToken<AllPhysicalPortsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +225,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addToLagAsync(UUID portId, BulkPhysicalPort bulkPhysicalPort, final ApiCallback<AllPhysicalPortsResponse> _callback) throws ApiException {
+    public okhttp3.Call addToLagAsync(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull BulkPhysicalPort bulkPhysicalPort, final ApiCallback<AllPhysicalPortsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addToLagValidateBeforeCall(portId, bulkPhysicalPort, _callback);
         Type localVarReturnType = new TypeToken<AllPhysicalPortsResponse>(){}.getType();
@@ -250,7 +250,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortCall(PortRequest portRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPortCall(@javax.annotation.Nonnull PortRequest portRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,7 +300,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPortValidateBeforeCall(PortRequest portRequest, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPortValidateBeforeCall(@javax.annotation.Nonnull PortRequest portRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portRequest' is set
         if (portRequest == null) {
             throw new ApiException("Missing the required parameter 'portRequest' when calling createPort(Async)");
@@ -328,7 +328,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Port createPort(PortRequest portRequest, Boolean dryRun) throws ApiException {
+    public Port createPort(@javax.annotation.Nonnull PortRequest portRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<Port> localVarResp = createPortWithHttpInfo(portRequest, dryRun);
         return localVarResp.getData();
     }
@@ -351,7 +351,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Port> createPortWithHttpInfo(PortRequest portRequest, Boolean dryRun) throws ApiException {
+    public ApiResponse<Port> createPortWithHttpInfo(@javax.annotation.Nonnull PortRequest portRequest, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, dryRun, null);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -376,7 +376,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPortAsync(PortRequest portRequest, Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
+    public okhttp3.Call createPortAsync(@javax.annotation.Nonnull PortRequest portRequest, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createPortValidateBeforeCall(portRequest, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
@@ -401,7 +401,7 @@ public class PortsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePortCall(UUID portId, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePortCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -451,7 +451,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePortValidateBeforeCall(UUID portId, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePortValidateBeforeCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling deletePort(Async)");
@@ -479,7 +479,7 @@ public class PortsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public Port deletePort(UUID portId, Boolean dryRun) throws ApiException {
+    public Port deletePort(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<Port> localVarResp = deletePortWithHttpInfo(portId, dryRun);
         return localVarResp.getData();
     }
@@ -502,7 +502,7 @@ public class PortsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Port> deletePortWithHttpInfo(UUID portId, Boolean dryRun) throws ApiException {
+    public ApiResponse<Port> deletePortWithHttpInfo(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, dryRun, null);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -527,7 +527,7 @@ public class PortsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePortAsync(UUID portId, Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
+    public okhttp3.Call deletePortAsync(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<Port> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePortValidateBeforeCall(portId, dryRun, _callback);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
@@ -550,7 +550,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortByUuidCall(UUID portId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPortByUuidCall(@javax.annotation.Nonnull UUID portId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -596,7 +596,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPortByUuidValidateBeforeCall(UUID portId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPortByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID portId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling getPortByUuid(Async)");
@@ -622,7 +622,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Port getPortByUuid(UUID portId) throws ApiException {
+    public Port getPortByUuid(@javax.annotation.Nonnull UUID portId) throws ApiException {
         ApiResponse<Port> localVarResp = getPortByUuidWithHttpInfo(portId);
         return localVarResp.getData();
     }
@@ -643,7 +643,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Port> getPortByUuidWithHttpInfo(UUID portId) throws ApiException {
+    public ApiResponse<Port> getPortByUuidWithHttpInfo(@javax.annotation.Nonnull UUID portId) throws ApiException {
         okhttp3.Call localVarCall = getPortByUuidValidateBeforeCall(portId, null);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -666,7 +666,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortByUuidAsync(UUID portId, final ApiCallback<Port> _callback) throws ApiException {
+    public okhttp3.Call getPortByUuidAsync(@javax.annotation.Nonnull UUID portId, final ApiCallback<Port> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPortByUuidValidateBeforeCall(portId, _callback);
         Type localVarReturnType = new TypeToken<Port>(){}.getType();
@@ -690,7 +690,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortsCall(String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPortsCall(@javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -739,7 +739,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPortsValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPortsValidateBeforeCall(@javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         return getPortsCall(name, _callback);
 
     }
@@ -761,7 +761,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public AllPortsResponse getPorts(String name) throws ApiException {
+    public AllPortsResponse getPorts(@javax.annotation.Nullable String name) throws ApiException {
         ApiResponse<AllPortsResponse> localVarResp = getPortsWithHttpInfo(name);
         return localVarResp.getData();
     }
@@ -783,7 +783,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AllPortsResponse> getPortsWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<AllPortsResponse> getPortsWithHttpInfo(@javax.annotation.Nullable String name) throws ApiException {
         okhttp3.Call localVarCall = getPortsValidateBeforeCall(name, null);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -807,7 +807,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPortsAsync(String name, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
+    public okhttp3.Call getPortsAsync(@javax.annotation.Nullable String name, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPortsValidateBeforeCall(name, _callback);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
@@ -829,7 +829,7 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVlansCall(UUID portUuid, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getVlansCall(@javax.annotation.Nonnull UUID portUuid, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -875,7 +875,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVlansValidateBeforeCall(UUID portUuid, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVlansValidateBeforeCall(@javax.annotation.Nonnull UUID portUuid, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portUuid' is set
         if (portUuid == null) {
             throw new ApiException("Missing the required parameter 'portUuid' when calling getVlans(Async)");
@@ -900,7 +900,7 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public LinkProtocolGetResponse getVlans(UUID portUuid) throws ApiException {
+    public LinkProtocolGetResponse getVlans(@javax.annotation.Nonnull UUID portUuid) throws ApiException {
         ApiResponse<LinkProtocolGetResponse> localVarResp = getVlansWithHttpInfo(portUuid);
         return localVarResp.getData();
     }
@@ -920,7 +920,7 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LinkProtocolGetResponse> getVlansWithHttpInfo(UUID portUuid) throws ApiException {
+    public ApiResponse<LinkProtocolGetResponse> getVlansWithHttpInfo(@javax.annotation.Nonnull UUID portUuid) throws ApiException {
         okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, null);
         Type localVarReturnType = new TypeToken<LinkProtocolGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -942,7 +942,7 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVlansAsync(UUID portUuid, final ApiCallback<LinkProtocolGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getVlansAsync(@javax.annotation.Nonnull UUID portUuid, final ApiCallback<LinkProtocolGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, _callback);
         Type localVarReturnType = new TypeToken<LinkProtocolGetResponse>(){}.getType();
@@ -966,7 +966,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchPortsCall(PortV4SearchRequest portV4SearchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchPortsCall(@javax.annotation.Nonnull PortV4SearchRequest portV4SearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1012,7 +1012,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchPortsValidateBeforeCall(PortV4SearchRequest portV4SearchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchPortsValidateBeforeCall(@javax.annotation.Nonnull PortV4SearchRequest portV4SearchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portV4SearchRequest' is set
         if (portV4SearchRequest == null) {
             throw new ApiException("Missing the required parameter 'portV4SearchRequest' when calling searchPorts(Async)");
@@ -1039,7 +1039,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public AllPortsResponse searchPorts(PortV4SearchRequest portV4SearchRequest) throws ApiException {
+    public AllPortsResponse searchPorts(@javax.annotation.Nonnull PortV4SearchRequest portV4SearchRequest) throws ApiException {
         ApiResponse<AllPortsResponse> localVarResp = searchPortsWithHttpInfo(portV4SearchRequest);
         return localVarResp.getData();
     }
@@ -1061,7 +1061,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AllPortsResponse> searchPortsWithHttpInfo(PortV4SearchRequest portV4SearchRequest) throws ApiException {
+    public ApiResponse<AllPortsResponse> searchPortsWithHttpInfo(@javax.annotation.Nonnull PortV4SearchRequest portV4SearchRequest) throws ApiException {
         okhttp3.Call localVarCall = searchPortsValidateBeforeCall(portV4SearchRequest, null);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1085,7 +1085,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Service Unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchPortsAsync(PortV4SearchRequest portV4SearchRequest, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
+    public okhttp3.Call searchPortsAsync(@javax.annotation.Nonnull PortV4SearchRequest portV4SearchRequest, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchPortsValidateBeforeCall(portV4SearchRequest, _callback);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
@@ -1111,7 +1111,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePortByUuidCall(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePortByUuidCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull List<PortChangeOperation> portChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1162,7 +1162,7 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePortByUuidValidateBeforeCall(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePortByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull List<PortChangeOperation> portChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portId' is set
         if (portId == null) {
             throw new ApiException("Missing the required parameter 'portId' when calling updatePortByUuid(Async)");
@@ -1196,7 +1196,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AllPortsResponse updatePortByUuid(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun) throws ApiException {
+    public AllPortsResponse updatePortByUuid(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull List<PortChangeOperation> portChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<AllPortsResponse> localVarResp = updatePortByUuidWithHttpInfo(portId, portChangeOperation, dryRun);
         return localVarResp.getData();
     }
@@ -1220,7 +1220,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AllPortsResponse> updatePortByUuidWithHttpInfo(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun) throws ApiException {
+    public ApiResponse<AllPortsResponse> updatePortByUuidWithHttpInfo(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull List<PortChangeOperation> portChangeOperation, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, dryRun, null);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1246,7 +1246,7 @@ public class PortsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePortByUuidAsync(UUID portId, List<PortChangeOperation> portChangeOperation, Boolean dryRun, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePortByUuidAsync(@javax.annotation.Nonnull UUID portId, @javax.annotation.Nonnull List<PortChangeOperation> portChangeOperation, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<AllPortsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePortByUuidValidateBeforeCall(portId, portChangeOperation, dryRun, _callback);
         Type localVarReturnType = new TypeToken<AllPortsResponse>(){}.getType();

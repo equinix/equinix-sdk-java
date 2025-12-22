@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.BGPConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.BGPConnectionIpv6;
 import com.equinix.sdk.fabricv4.model.DirectConnectionIpv4;
@@ -39,6 +40,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.equinix.sdk.fabricv4.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class RoutingProtocolBase extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(RoutingProtocolBase.class.getName());
 
@@ -118,7 +120,7 @@ public class RoutingProtocolBase extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'RoutingProtocolBGPType'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RoutingProtocolBGPType failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for RoutingProtocolBGPType failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RoutingProtocolBGPType'", e);
                     }
                     // deserialize RoutingProtocolDirectType
@@ -130,7 +132,7 @@ public class RoutingProtocolBase extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'RoutingProtocolDirectType'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for RoutingProtocolDirectType failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for RoutingProtocolDirectType failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RoutingProtocolDirectType'", e);
                     }
 
@@ -140,7 +142,7 @@ public class RoutingProtocolBase extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for RoutingProtocolBase: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for RoutingProtocolBase: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -239,7 +241,7 @@ public class RoutingProtocolBase extends AbstractOpenApiSchema {
             RoutingProtocolBGPType.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for RoutingProtocolBGPType failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for RoutingProtocolBGPType failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with RoutingProtocolDirectType
@@ -247,11 +249,11 @@ public class RoutingProtocolBase extends AbstractOpenApiSchema {
             RoutingProtocolDirectType.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for RoutingProtocolDirectType failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for RoutingProtocolDirectType failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for RoutingProtocolBase with oneOf schemas: RoutingProtocolBGPType, RoutingProtocolDirectType. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for RoutingProtocolBase with oneOf schemas: RoutingProtocolBGPType, RoutingProtocolDirectType. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

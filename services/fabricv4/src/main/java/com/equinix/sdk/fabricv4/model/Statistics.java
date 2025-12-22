@@ -12,6 +12,7 @@
 package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.BandwidthUtilization;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -42,13 +43,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
  * This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Statistics {
   public static final String SERIALIZED_NAME_START_DATE_TIME = "startDateTime";
   @SerializedName(SERIALIZED_NAME_START_DATE_TIME)
@@ -297,14 +299,10 @@ public class Statistics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("startDateTime");
-    openapiFields.add("endDateTime");
-    openapiFields.add("viewPoint");
-    openapiFields.add("bandwidthUtilization");
+    openapiFields = new HashSet<String>(Arrays.asList("startDateTime", "endDateTime", "viewPoint", "bandwidthUtilization"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -316,12 +314,12 @@ public class Statistics {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Statistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Statistics is not found in the empty JSON string", Statistics.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Statistics is not found in the empty JSON string", Statistics.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("viewPoint") != null && !jsonObj.get("viewPoint").isJsonNull()) && !jsonObj.get("viewPoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `viewPoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("viewPoint").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `viewPoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("viewPoint").toString()));
       }
       // validate the optional field `viewPoint`
       if (jsonObj.get("viewPoint") != null && !jsonObj.get("viewPoint").isJsonNull()) {
@@ -390,7 +388,7 @@ public class Statistics {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
