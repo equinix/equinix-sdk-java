@@ -30,7 +30,7 @@ import static org.junit.Assert.*;
  */
 public class CloudRoutersApiTest {
 
-    private static final UsersItem.UserName userName = UsersItem.UserName.PANTHERS_FNV;
+    private static final UsersItem.UserName userName = UsersItem.UserName.PANTHERS_FCR;
 
     public static void removeCloudRouters(UsersItem.UserName userName) {
         users.get(userName).getUserResources().getCloudRoutersUuid().forEach(uuid -> {

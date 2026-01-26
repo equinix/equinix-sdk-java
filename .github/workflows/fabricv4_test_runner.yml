@@ -1,6 +1,9 @@
 name: Test Equinix SDK Java Runner
 
 on:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -187,3 +190,4 @@ jobs:
                   *Test Runs:* ${{ needs.test.outputs.tests_run }}
                   *Results:* ${{ steps.set-output-passed.outputs.total_passed }} Passed, ${{ steps.set-output-failed.outputs.total_failed }} Failed
                   *Triggered by:* <@${{ github.actor }}>
+                  *Responsibility:* <@U04AM0XBJMA>
