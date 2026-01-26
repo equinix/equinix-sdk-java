@@ -30,7 +30,7 @@ import static org.junit.Assert.assertFalse;
  * API tests for NetworksApi
  */
 public class NetworksApiTest {
-    private static final UsersItem.UserName userName = UsersItem.UserName.PANTHERS_FNV;
+    private static final UsersItem.UserName userName = UsersItem.UserName.PANTHERS_FCR;
 
     public static void removeNetworks(UsersItem.UserName userName) {
         users.get(userName).getUserResources().getNetworksUuid().forEach(NetworksApiTest::deleteNetwork);
