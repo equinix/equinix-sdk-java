@@ -1,8 +1,27 @@
 #!/usr/bin/env python3
 """
 Generate a summary of SDK changes from git diff for Fabric API sync PRs.
+
 This script analyzes changes in the services/fabricv4 directory and produces
 a summary of added, modified, removed, and renamed models and API classes.
+
+The script compares the current branch against the main branch (origin/main)
+to detect all changes made during the sync process.
+
+Output format:
+- Added models (alphabetically sorted list)
+- Modified models (alphabetically sorted list)
+- Breaking Changes section containing:
+  - Modified API classes
+  - Removed API classes
+  - Removed models
+  - Renamed classes
+
+Usage:
+    python3 generate_sync_summary.py
+
+The script is typically called from the sync-fabricv4.yaml GitHub Actions workflow
+after generating the client code from the API spec.
 """
 
 import subprocess
