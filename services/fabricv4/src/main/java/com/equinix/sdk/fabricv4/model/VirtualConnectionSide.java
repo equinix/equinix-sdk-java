@@ -13,9 +13,8 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.AccessPoint;
+
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -23,26 +22,15 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
@@ -54,13 +42,13 @@ public class VirtualConnectionSide {
   public static final String SERIALIZED_NAME_ACCESS_POINT = "accessPoint";
   @SerializedName(SERIALIZED_NAME_ACCESS_POINT)
   @javax.annotation.Nullable
-  private AccessPoint accessPoint;
+  private AccessPointS accessPointS;
 
   public VirtualConnectionSide() {
   }
 
-  public VirtualConnectionSide accessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
-    this.accessPoint = accessPoint;
+  public VirtualConnectionSide accessPoint(@javax.annotation.Nullable AccessPointS accessPointS) {
+    this.accessPointS = accessPointS;
     return this;
   }
 
@@ -69,12 +57,12 @@ public class VirtualConnectionSide {
    * @return accessPoint
    */
   @javax.annotation.Nullable
-  public AccessPoint getAccessPoint() {
-    return accessPoint;
+  public AccessPointS getAccessPoint() {
+    return accessPointS;
   }
 
-  public void setAccessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
-    this.accessPoint = accessPoint;
+  public void setAccessPoint(@javax.annotation.Nullable AccessPointS accessPointS) {
+    this.accessPointS = accessPointS;
   }
 
   /**
@@ -132,20 +120,20 @@ public class VirtualConnectionSide {
       return false;
     }
     VirtualConnectionSide virtualConnectionSide = (VirtualConnectionSide) o;
-    return Objects.equals(this.accessPoint, virtualConnectionSide.accessPoint)&&
+    return Objects.equals(this.accessPointS, virtualConnectionSide.accessPointS)&&
         Objects.equals(this.additionalProperties, virtualConnectionSide.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessPoint, additionalProperties);
+    return Objects.hash(accessPointS, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class VirtualConnectionSide {\n");
-    sb.append("    accessPoint: ").append(toIndentedString(accessPoint)).append("\n");
+    sb.append("    accessPoint: ").append(toIndentedString(accessPointS)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -189,7 +177,7 @@ public class VirtualConnectionSide {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `accessPoint`
       if (jsonObj.get("accessPoint") != null && !jsonObj.get("accessPoint").isJsonNull()) {
-        AccessPoint.validateJsonElement(jsonObj.get("accessPoint"));
+        AccessPointS.validateJsonElement(jsonObj.get("accessPoint"));
       }
   }
 

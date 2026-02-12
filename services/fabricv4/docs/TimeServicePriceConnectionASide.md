@@ -8,7 +8,7 @@ Time Service Price Connection ASide configuration
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessPoint** | [**TimeServicePriceConnectionAccessPoint**](TimeServicePriceConnectionAccessPoint.md) |  |  [optional] |
+|**accessPointS** | [**TimeServicePriceConnectionAccessPoint**](TimeServicePriceConnectionAccessPoint.md) |  |  [optional] |
 
 
 

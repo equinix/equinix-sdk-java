@@ -11,6 +11,7 @@
 
 package com.equinix.sdk.fabricv4;
 
+import com.equinix.sdk.fabricv4.model.AccessPointS;
 import com.equinix.sdk.fabricv4.model.PortDeviceRedundancy;
 import com.equinix.sdk.fabricv4.model.PortEncapsulation;
 import com.equinix.sdk.fabricv4.model.PortPriority;
@@ -44,7 +45,6 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.TimeZone;
@@ -141,7 +141,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
-        gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.AccessPoint.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new AccessPointS.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.AccessPointSelector.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.AddOperation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.equinix.sdk.fabricv4.model.AlertRulePostRequest.CustomTypeAdapterFactory());
