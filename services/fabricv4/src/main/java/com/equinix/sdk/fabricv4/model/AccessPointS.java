@@ -13,20 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.AccessPointType;
-import com.equinix.sdk.fabricv4.model.CloudRouter;
-import com.equinix.sdk.fabricv4.model.MetalInterconnection;
-import com.equinix.sdk.fabricv4.model.ModelInterface;
-import com.equinix.sdk.fabricv4.model.PeeringType;
-import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
-import com.equinix.sdk.fabricv4.model.SimplifiedLinkProtocol;
-import com.equinix.sdk.fabricv4.model.SimplifiedLocation;
-import com.equinix.sdk.fabricv4.model.SimplifiedNetwork;
-import com.equinix.sdk.fabricv4.model.SimplifiedPort;
-import com.equinix.sdk.fabricv4.model.SimplifiedServiceProfile;
-import com.equinix.sdk.fabricv4.model.VirtualDevice;
-import com.equinix.sdk.fabricv4.model.VirtualNetwork;
-import com.equinix.sdk.fabricv4.model.VpicInterface;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,26 +23,15 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
@@ -63,7 +39,7 @@ import com.equinix.sdk.fabricv4.JSON;
  * Access point object
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class AccessPoint {
+public class AccessPointS {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -206,10 +182,10 @@ public class AccessPoint {
   @javax.annotation.Nullable
   private RoleEnum role;
 
-  public AccessPoint() {
+  public AccessPointS() {
   }
 
-  public AccessPoint type(@javax.annotation.Nullable AccessPointType type) {
+  public AccessPointS type(@javax.annotation.Nullable AccessPointType type) {
     this.type = type;
     return this;
   }
@@ -228,7 +204,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint account(@javax.annotation.Nullable SimplifiedAccount account) {
+  public AccessPointS account(@javax.annotation.Nullable SimplifiedAccount account) {
     this.account = account;
     return this;
   }
@@ -247,7 +223,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint location(@javax.annotation.Nullable SimplifiedLocation location) {
+  public AccessPointS location(@javax.annotation.Nullable SimplifiedLocation location) {
     this.location = location;
     return this;
   }
@@ -266,7 +242,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint port(@javax.annotation.Nullable SimplifiedPort port) {
+  public AccessPointS port(@javax.annotation.Nullable SimplifiedPort port) {
     this.port = port;
     return this;
   }
@@ -285,7 +261,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint profile(@javax.annotation.Nullable SimplifiedServiceProfile profile) {
+  public AccessPointS profile(@javax.annotation.Nullable SimplifiedServiceProfile profile) {
     this.profile = profile;
     return this;
   }
@@ -304,7 +280,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint router(@javax.annotation.Nullable CloudRouter router) {
+  public AccessPointS router(@javax.annotation.Nullable CloudRouter router) {
     this.router = router;
     return this;
   }
@@ -323,7 +299,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint linkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
+  public AccessPointS linkProtocol(@javax.annotation.Nullable SimplifiedLinkProtocol linkProtocol) {
     this.linkProtocol = linkProtocol;
     return this;
   }
@@ -342,7 +318,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint virtualDevice(@javax.annotation.Nullable VirtualDevice virtualDevice) {
+  public AccessPointS virtualDevice(@javax.annotation.Nullable VirtualDevice virtualDevice) {
     this.virtualDevice = virtualDevice;
     return this;
   }
@@ -361,7 +337,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint _interface(@javax.annotation.Nullable ModelInterface _interface) {
+  public AccessPointS _interface(@javax.annotation.Nullable ModelInterface _interface) {
     this._interface = _interface;
     return this;
   }
@@ -380,7 +356,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint network(@javax.annotation.Nullable SimplifiedNetwork network) {
+  public AccessPointS network(@javax.annotation.Nullable SimplifiedNetwork network) {
     this.network = network;
     return this;
   }
@@ -399,7 +375,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint sellerRegion(@javax.annotation.Nullable String sellerRegion) {
+  public AccessPointS sellerRegion(@javax.annotation.Nullable String sellerRegion) {
     this.sellerRegion = sellerRegion;
     return this;
   }
@@ -418,7 +394,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint peeringType(@javax.annotation.Nullable PeeringType peeringType) {
+  public AccessPointS peeringType(@javax.annotation.Nullable PeeringType peeringType) {
     this.peeringType = peeringType;
     return this;
   }
@@ -437,7 +413,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint authenticationKey(@javax.annotation.Nullable String authenticationKey) {
+  public AccessPointS authenticationKey(@javax.annotation.Nullable String authenticationKey) {
     this.authenticationKey = authenticationKey;
     return this;
   }
@@ -456,7 +432,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint providerConnectionId(@javax.annotation.Nullable String providerConnectionId) {
+  public AccessPointS providerConnectionId(@javax.annotation.Nullable String providerConnectionId) {
     this.providerConnectionId = providerConnectionId;
     return this;
   }
@@ -475,7 +451,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint virtualNetwork(@javax.annotation.Nullable VirtualNetwork virtualNetwork) {
+  public AccessPointS virtualNetwork(@javax.annotation.Nullable VirtualNetwork virtualNetwork) {
     this.virtualNetwork = virtualNetwork;
     return this;
   }
@@ -494,7 +470,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint interconnection(@javax.annotation.Nullable MetalInterconnection interconnection) {
+  public AccessPointS interconnection(@javax.annotation.Nullable MetalInterconnection interconnection) {
     this.interconnection = interconnection;
     return this;
   }
@@ -513,7 +489,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint vpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
+  public AccessPointS vpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
     this.vpicInterface = vpicInterface;
     return this;
   }
@@ -532,7 +508,7 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint role(@javax.annotation.Nullable RoleEnum role) {
+  public AccessPointS role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -565,7 +541,7 @@ public class AccessPoint {
    * @param value value of the property
    * @return the AccessPoint instance itself
    */
-  public AccessPoint putAdditionalProperty(String key, Object value) {
+  public AccessPointS putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -604,26 +580,26 @@ public class AccessPoint {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccessPoint accessPoint = (AccessPoint) o;
-    return Objects.equals(this.type, accessPoint.type) &&
-        Objects.equals(this.account, accessPoint.account) &&
-        Objects.equals(this.location, accessPoint.location) &&
-        Objects.equals(this.port, accessPoint.port) &&
-        Objects.equals(this.profile, accessPoint.profile) &&
-        Objects.equals(this.router, accessPoint.router) &&
-        Objects.equals(this.linkProtocol, accessPoint.linkProtocol) &&
-        Objects.equals(this.virtualDevice, accessPoint.virtualDevice) &&
-        Objects.equals(this._interface, accessPoint._interface) &&
-        Objects.equals(this.network, accessPoint.network) &&
-        Objects.equals(this.sellerRegion, accessPoint.sellerRegion) &&
-        Objects.equals(this.peeringType, accessPoint.peeringType) &&
-        Objects.equals(this.authenticationKey, accessPoint.authenticationKey) &&
-        Objects.equals(this.providerConnectionId, accessPoint.providerConnectionId) &&
-        Objects.equals(this.virtualNetwork, accessPoint.virtualNetwork) &&
-        Objects.equals(this.interconnection, accessPoint.interconnection) &&
-        Objects.equals(this.vpicInterface, accessPoint.vpicInterface) &&
-        Objects.equals(this.role, accessPoint.role)&&
-        Objects.equals(this.additionalProperties, accessPoint.additionalProperties);
+    AccessPointS accessPointS = (AccessPointS) o;
+    return Objects.equals(this.type, accessPointS.type) &&
+        Objects.equals(this.account, accessPointS.account) &&
+        Objects.equals(this.location, accessPointS.location) &&
+        Objects.equals(this.port, accessPointS.port) &&
+        Objects.equals(this.profile, accessPointS.profile) &&
+        Objects.equals(this.router, accessPointS.router) &&
+        Objects.equals(this.linkProtocol, accessPointS.linkProtocol) &&
+        Objects.equals(this.virtualDevice, accessPointS.virtualDevice) &&
+        Objects.equals(this._interface, accessPointS._interface) &&
+        Objects.equals(this.network, accessPointS.network) &&
+        Objects.equals(this.sellerRegion, accessPointS.sellerRegion) &&
+        Objects.equals(this.peeringType, accessPointS.peeringType) &&
+        Objects.equals(this.authenticationKey, accessPointS.authenticationKey) &&
+        Objects.equals(this.providerConnectionId, accessPointS.providerConnectionId) &&
+        Objects.equals(this.virtualNetwork, accessPointS.virtualNetwork) &&
+        Objects.equals(this.interconnection, accessPointS.interconnection) &&
+        Objects.equals(this.vpicInterface, accessPointS.vpicInterface) &&
+        Objects.equals(this.role, accessPointS.role)&&
+        Objects.equals(this.additionalProperties, accessPointS.additionalProperties);
   }
 
   @Override
@@ -689,8 +665,8 @@ public class AccessPoint {
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!AccessPoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AccessPoint is not found in the empty JSON string", AccessPoint.openapiRequiredFields.toString()));
+        if (!AccessPointS.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AccessPoint is not found in the empty JSON string", AccessPointS.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -772,16 +748,16 @@ public class AccessPoint {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AccessPoint.class.isAssignableFrom(type.getRawType())) {
+       if (!AccessPointS.class.isAssignableFrom(type.getRawType())) {
          return null; // this class only serializes 'AccessPoint' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AccessPoint> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AccessPoint.class));
+       final TypeAdapter<AccessPointS> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(AccessPointS.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<AccessPoint>() {
+       return (TypeAdapter<T>) new TypeAdapter<AccessPointS>() {
            @Override
-           public void write(JsonWriter out, AccessPoint value) throws IOException {
+           public void write(JsonWriter out, AccessPointS value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -809,12 +785,12 @@ public class AccessPoint {
            }
 
            @Override
-           public AccessPoint read(JsonReader in) throws IOException {
+           public AccessPointS read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             AccessPoint instance = thisAdapter.fromJsonTree(jsonObj);
+             AccessPointS instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -847,8 +823,8 @@ public class AccessPoint {
    * @return An instance of AccessPoint
    * @throws IOException if the JSON string is invalid with respect to AccessPoint
    */
-  public static AccessPoint fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AccessPoint.class);
+  public static AccessPointS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AccessPointS.class);
   }
 
   /**
