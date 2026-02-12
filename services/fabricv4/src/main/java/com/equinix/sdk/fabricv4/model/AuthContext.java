@@ -56,7 +56,7 @@ public class AuthContext {
   @JsonAdapter(AuthtypeEnum.Adapter.class)
   public enum AuthtypeEnum {
     SYSTEM("system"),
-    
+    SUPER("super"),
     USER("user");
 
     private String value;
