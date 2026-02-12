@@ -61,20 +61,51 @@ jobs:
           
           # Get PR info
           PR_INFO=$(gh pr view $PR_NUMBER --json title,author,headRefName,baseRefName,body)
-          echo "pr_title=$(echo "$PR_INFO" | jq -r '.title')" >> $GITHUB_OUTPUT
-          echo "pr_author=$(echo "$PR_INFO" | jq -r '.author.login')" >> $GITHUB_OUTPUT
-          echo "head_branch=$(echo "$PR_INFO" | jq -r '.headRefName')" >> $GITHUB_OUTPUT
-          echo "base_branch=$(echo "$PR_INFO" | jq -r '.baseRefName')" >> $GITHUB_OUTPUT
-          echo "pr_body=$(echo "$PR_INFO" | jq -r '.body')" >> $GITHUB_OUTPUT
+          
+          # Extract values safely
+          PR_TITLE=$(echo "$PR_INFO" | jq -r '.title // ""')
+          PR_AUTHOR=$(echo "$PR_INFO" | jq -r '.author.login // ""')
+          HEAD_BRANCH=$(echo "$PR_INFO" | jq -r '.headRefName // ""')
+          BASE_BRANCH=$(echo "$PR_INFO" | jq -r '.baseRefName // ""')
+          PR_BODY=$(echo "$PR_INFO" | jq -r '.body // ""')
+          
+          # Set outputs with proper escaping
+          {
+            echo "pr_title<<EOF"
+            echo "$PR_TITLE"
+            echo "EOF"
+            echo "pr_author<<EOF"
+            echo "$PR_AUTHOR"
+            echo "EOF"
+            echo "head_branch<<EOF"
+            echo "$HEAD_BRANCH"
+            echo "EOF"
+            echo "base_branch<<EOF"
+            echo "$BASE_BRANCH"
+            echo "EOF"
+            echo "pr_body<<EOF"
+            echo "$PR_BODY"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
           
           # Detect if this is an API Sync PR
           IS_API_SYNC=false
-          if echo "${{ steps.pr-details.outputs.pr_title }}" | grep -i "api.*sync\|sync.*api\|spec.*update\|swagger.*update"; then
+          PR_TITLE_VAL=$(echo "$PR_INFO" | jq -r '.title // ""')
+          PR_BODY_VAL=$(echo "$PR_INFO" | jq -r '.body // ""')
+          HEAD_BRANCH_VAL=$(echo "$PR_INFO" | jq -r '.headRefName // ""')
+          
+          echo "Checking PR title: $PR_TITLE_VAL"
+          echo "Checking head branch: $HEAD_BRANCH_VAL"
+          
+          if [ -n "$PR_TITLE_VAL" ] && echo "$PR_TITLE_VAL" | grep -i "api.*sync\|sync.*api\|spec.*update\|swagger.*update"; then
             IS_API_SYNC=true
-          elif echo "${{ steps.pr-details.outputs.pr_body }}" | grep -i "swaggerhub\|api.*spec\|spec.*version"; then
+            echo "API Sync detected from title"
+          elif [ -n "$PR_BODY_VAL" ] && echo "$PR_BODY_VAL" | grep -i "swaggerhub\|api.*spec\|spec.*version"; then
             IS_API_SYNC=true
-          elif echo "${{ steps.pr-details.outputs.head_branch }}" | grep -i "sync\|api\|spec"; then
+            echo "API Sync detected from body"
+          elif [ -n "$HEAD_BRANCH_VAL" ] && echo "$HEAD_BRANCH_VAL" | grep -i "sync\|api\|spec"; then
             IS_API_SYNC=true
+            echo "API Sync detected from branch name"
           fi
           
           echo "is_api_sync=${IS_API_SYNC}" >> $GITHUB_OUTPUT
@@ -447,39 +478,38 @@ jobs:
           CURRENT_DESC=$(gh pr view ${{ steps.pr-details.outputs.pr_number }} --json body --jq '.body')
           
           # Create short summary for PR description
-          SUMMARY="## 🤖 Copilot Analysis Summary
-
-          ✅ **Analysis completed** - ${{ steps.changed-files.outputs.code_files_count }} code files analyzed
-          
-          📊 **Files:** ${{ steps.changed-files.outputs.changed_files_count }} changed, ${{ steps.changed-files.outputs.code_files_count }} code files
-          
-          🔍 **Status:** Automated code review completed by GitHub Copilot
-          
-          > 💡 See detailed analysis in PR comments below
-          
-          ---"
+          echo "## 🤖 Copilot Analysis Summary" > pr_summary.md
+          echo "" >> pr_summary.md
+          echo "✅ **Analysis completed** - ${{ steps.changed-files.outputs.code_files_count }} code files analyzed" >> pr_summary.md
+          echo "" >> pr_summary.md
+          echo "📊 **Files:** ${{ steps.changed-files.outputs.changed_files_count }} changed, ${{ steps.changed-files.outputs.code_files_count }} code files" >> pr_summary.md
+          echo "" >> pr_summary.md
+          echo "🔍 **Status:** Automated code review completed by GitHub Copilot" >> pr_summary.md
+          echo "" >> pr_summary.md
+          echo "> 💡 See detailed analysis in PR comments below" >> pr_summary.md
+          echo "" >> pr_summary.md
+          echo "---" >> pr_summary.md
           
           # Check if summary already exists and update/add accordingly
-          if echo "$CURRENT_DESC" | grep -q "## 🤖 Copilot Analysis Summary"; then
+          if echo "$CURRENT_DESC" | grep -q "🤖 Copilot Analysis Summary"; then
             # Remove old summary
-            NEW_DESC=$(echo "$CURRENT_DESC" | sed '/## 🤖 Copilot Analysis Summary/,/^---$/d')
-            NEW_DESC="${NEW_DESC}
-
-          ${SUMMARY}"
+            NEW_DESC=$(echo "$CURRENT_DESC" | sed '/🤖 Copilot Analysis Summary/,/^---$/d')
+            echo "${NEW_DESC}" > temp_desc.md
+            echo "" >> temp_desc.md
+            cat pr_summary.md >> temp_desc.md
           else
             # Add new summary
             if [ -n "$CURRENT_DESC" ] && [ "$CURRENT_DESC" != "null" ]; then
-              NEW_DESC="${CURRENT_DESC}
-
-          ${SUMMARY}"
+              echo "$CURRENT_DESC" > temp_desc.md
+              echo "" >> temp_desc.md
+              cat pr_summary.md >> temp_desc.md
             else
-              NEW_DESC="$SUMMARY"
+              cp pr_summary.md temp_desc.md
             fi
           fi
           
           # Update PR description
-          echo "$NEW_DESC" > pr_description.md
-          gh pr edit ${{ steps.pr-details.outputs.pr_number }} --body-file pr_description.md
+          gh pr edit ${{ steps.pr-details.outputs.pr_number }} --body-file temp_desc.md
 
       - name: Create analysis artifact
         if: steps.copilot-analysis.outputs.analysis_completed == 'true'
