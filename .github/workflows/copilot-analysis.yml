@@ -376,7 +376,7 @@ jobs:
           echo "Generating Copilot recommendations..."
           
           # Create a prompt for general code review
-          REVIEW_PROMPT="Review this pull request and provide recommendations for code quality, security, and best practices. Focus on Java code if present."
+          REVIEW_PROMPT="Review this pull request of changed files. Please present section 'Changes in SDK' with added, modified, removed models and APIs. They should be listed and categorized by added models, added apis, renamed from one to antoher class name, modified. Please evaluate braking changes and put in different section. I just need only listed summaraize"
           
           # Use Copilot suggest if available
           SUGGESTIONS=""
