@@ -29,10 +29,14 @@ import sys
 import re
 from collections import defaultdict
 
-def run_git_command(cmd):
-    """Execute a git command and return output."""
+def run_git_command(args):
+    """Execute a git command and return output.
+    
+    Args:
+        args: List of command arguments (e.g., ['git', 'diff', '--name-status'])
+    """
     try:
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, check=True)
+        result = subprocess.run(args, capture_output=True, text=True, check=True)
         return result.stdout
     except subprocess.CalledProcessError as e:
         print(f"Error running git command: {e}", file=sys.stderr)
@@ -41,18 +45,18 @@ def run_git_command(cmd):
 def parse_diff_name_status():
     """Parse git diff --name-status to detect file changes."""
     # First try to get changes in the current branch vs main
-    cmd = "git diff --name-status origin/main...HEAD --diff-filter=ACDMR -- services/fabricv4/"
-    output = run_git_command(cmd)
+    args = ['git', 'diff', '--name-status', 'origin/main...HEAD', '--diff-filter=ACDMR', '--', 'services/fabricv4/']
+    output = run_git_command(args)
     
     # If that fails, try comparing with staging area
     if not output.strip():
-        cmd = "git diff --name-status --cached --diff-filter=ACDMR -- services/fabricv4/"
-        output = run_git_command(cmd)
+        args = ['git', 'diff', '--name-status', '--cached', '--diff-filter=ACDMR', '--', 'services/fabricv4/']
+        output = run_git_command(args)
     
     # If still nothing, try uncommitted changes
     if not output.strip():
-        cmd = "git diff --name-status HEAD --diff-filter=ACDMR -- services/fabricv4/"
-        output = run_git_command(cmd)
+        args = ['git', 'diff', '--name-status', 'HEAD', '--diff-filter=ACDMR', '--', 'services/fabricv4/']
+        output = run_git_command(args)
     
     changes = {
         'added_models': [],
@@ -136,14 +140,14 @@ def format_summary(changes):
     
     # Modified APIs
     if changes['modified_apis']:
-        breaking_changes.append("Modified api classes ->")
+        breaking_changes.append("Modified API classes ->")
         for api in sorted(changes['modified_apis']):
             breaking_changes.append(f"* {api}")
         breaking_changes.append("")
     
     # Removed APIs
     if changes['removed_apis']:
-        breaking_changes.append("Removed api classes ->")
+        breaking_changes.append("Removed API classes ->")
         for api in sorted(changes['removed_apis']):
             breaking_changes.append(f"* {api}")
         breaking_changes.append("")
