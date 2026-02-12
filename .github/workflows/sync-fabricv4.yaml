@@ -74,6 +74,16 @@ jobs:
         run: |-
           mvn clean package -DskipTests -DenvUrl=${{ env.TEST_HOST_URL }} -DuserName=${{ env.TEST_USER_NAME }}
 
+      - name: Generate SDK changes summary
+        id: summary
+        if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
+        run: |
+          echo "Generating SDK changes summary..."
+          SUMMARY=$(python3 script/generate_sync_summary.py)
+          echo "summary<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$SUMMARY" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
@@ -97,13 +107,7 @@ jobs:
 
             ## Changes in SDK
 
-            ### Enhancements
-
-            -Add enhancements here-
-
-            ### Breaking Changes
-
-            -Add breaking changes here-
+            ${{ steps.summary.outputs.summary }}
           delete-branch: true
           draft: ${{ steps.patch.conclusion == 'failure' || steps.generate.conclusion == 'failure' }}
 
