@@ -8,7 +8,7 @@ Fabric Connection access point object.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessPointS** | [**AccessPoint**](AccessPoint.md) |  |  [optional] |
+|**accessPoint** | [**AccessPoint**](AccessPoint.md) |  |  [optional] |
 
 
 

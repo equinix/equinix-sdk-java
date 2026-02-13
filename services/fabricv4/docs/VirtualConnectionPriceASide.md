@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accessPointS** | [**VirtualConnectionPriceASideAccessPoint**](VirtualConnectionPriceASideAccessPoint.md) |  |  [optional] |
+|**accessPoint** | [**VirtualConnectionPriceASideAccessPoint**](VirtualConnectionPriceASideAccessPoint.md) |  |  [optional] |
 
 
 
