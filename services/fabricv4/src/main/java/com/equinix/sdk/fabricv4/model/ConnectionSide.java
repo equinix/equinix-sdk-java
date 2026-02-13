@@ -13,8 +13,14 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-
+import com.equinix.sdk.fabricv4.model.AccessPoint;
+import com.equinix.sdk.fabricv4.model.ConnectionCompanyProfile;
+import com.equinix.sdk.fabricv4.model.ConnectionInvitation;
+import com.equinix.sdk.fabricv4.model.ConnectionSideAdditionalInfo;
+import com.equinix.sdk.fabricv4.model.InternetAccess;
+import com.equinix.sdk.fabricv4.model.ServiceToken;
 import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -24,15 +30,26 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.Locale;
 
 import com.equinix.sdk.fabricv4.JSON;
 
@@ -49,7 +66,7 @@ public class ConnectionSide {
   public static final String SERIALIZED_NAME_ACCESS_POINT = "accessPoint";
   @SerializedName(SERIALIZED_NAME_ACCESS_POINT)
   @javax.annotation.Nullable
-  private AccessPointS accessPointS;
+  private AccessPoint accessPoint;
 
   public static final String SERIALIZED_NAME_INTERNET_ACCESS = "internetAccess";
   @SerializedName(SERIALIZED_NAME_INTERNET_ACCESS)
@@ -93,8 +110,8 @@ public class ConnectionSide {
   }
 
 
-  public ConnectionSide accessPoint(@javax.annotation.Nullable AccessPointS accessPointS) {
-    this.accessPointS = accessPointS;
+  public ConnectionSide accessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
+    this.accessPoint = accessPoint;
     return this;
   }
 
@@ -103,12 +120,12 @@ public class ConnectionSide {
    * @return accessPoint
    */
   @javax.annotation.Nullable
-  public AccessPointS getAccessPoint() {
-    return accessPointS;
+  public AccessPoint getAccessPoint() {
+    return accessPoint;
   }
 
-  public void setAccessPoint(@javax.annotation.Nullable AccessPointS accessPointS) {
-    this.accessPointS = accessPointS;
+  public void setAccessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
+    this.accessPoint = accessPoint;
   }
 
 
@@ -251,7 +268,7 @@ public class ConnectionSide {
     }
     ConnectionSide connectionSide = (ConnectionSide) o;
     return Objects.equals(this.serviceToken, connectionSide.serviceToken) &&
-        Objects.equals(this.accessPointS, connectionSide.accessPointS) &&
+        Objects.equals(this.accessPoint, connectionSide.accessPoint) &&
         Objects.equals(this.internetAccess, connectionSide.internetAccess) &&
         Objects.equals(this.companyProfile, connectionSide.companyProfile) &&
         Objects.equals(this.invitation, connectionSide.invitation) &&
@@ -261,7 +278,7 @@ public class ConnectionSide {
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceToken, accessPointS, internetAccess, companyProfile, invitation, additionalInfo, additionalProperties);
+    return Objects.hash(serviceToken, accessPoint, internetAccess, companyProfile, invitation, additionalInfo, additionalProperties);
   }
 
   @Override
@@ -269,7 +286,7 @@ public class ConnectionSide {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConnectionSide {\n");
     sb.append("    serviceToken: ").append(toIndentedString(serviceToken)).append("\n");
-    sb.append("    accessPoint: ").append(toIndentedString(accessPointS)).append("\n");
+    sb.append("    accessPoint: ").append(toIndentedString(accessPoint)).append("\n");
     sb.append("    internetAccess: ").append(toIndentedString(internetAccess)).append("\n");
     sb.append("    companyProfile: ").append(toIndentedString(companyProfile)).append("\n");
     sb.append("    invitation: ").append(toIndentedString(invitation)).append("\n");
@@ -321,7 +338,7 @@ public class ConnectionSide {
       }
       // validate the optional field `accessPoint`
       if (jsonObj.get("accessPoint") != null && !jsonObj.get("accessPoint").isJsonNull()) {
-        AccessPointS.validateJsonElement(jsonObj.get("accessPoint"));
+        AccessPoint.validateJsonElement(jsonObj.get("accessPoint"));
       }
       // validate the optional field `internetAccess`
       if (jsonObj.get("internetAccess") != null && !jsonObj.get("internetAccess").isJsonNull()) {
