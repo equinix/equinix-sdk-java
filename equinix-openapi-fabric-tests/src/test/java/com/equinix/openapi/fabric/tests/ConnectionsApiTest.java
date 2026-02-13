@@ -73,7 +73,7 @@ public class ConnectionsApiTest {
                 .bandwidth(1000)
                 .type(ConnectionType.EVPL_VC)
                 .order(new Order().purchaseOrderNumber("pol123"))
-                .aSide(new ConnectionSide().accessPoint(new AccessPointS()
+                .aSide(new ConnectionSide().accessPoint(new AccessPoint()
                         .type(AccessPointType.VD)
                         .virtualDevice(new VirtualDevice()
                                 .type(VirtualDevice.TypeEnum.EDGE)
@@ -84,7 +84,7 @@ public class ConnectionsApiTest {
         for (int i = 0; i < 3; i++) {
             int vlanTag = getRandomVlanNumber();
             connectionPostRequest.zSide(new ConnectionSide().accessPoint(
-                    new AccessPointS()
+                    new AccessPoint()
                             .type(AccessPointType.COLO)
                             .port(new SimplifiedPort()
                                     .uuid(portUuid))
@@ -181,7 +181,7 @@ public class ConnectionsApiTest {
                 .bandwidth(1000)
                 .project(new Project().projectId(userDto.getProjectId()))
                 .aSide(new ConnectionSide().accessPoint(
-                        new AccessPointS()
+                        new AccessPoint()
                                 .type(AccessPointType.CLOUD_ROUTER)
                                 .router(new CloudRouter().uuid(cloudRouter.getUuid()))));
 
@@ -189,7 +189,7 @@ public class ConnectionsApiTest {
         for (int i = 0; i < 3; i++) {
             int tag = getRandomVlanNumber();
             connectionPostRequest.zSide(new ConnectionSide().accessPoint(
-                    new AccessPointS()
+                    new AccessPoint()
                             .type(AccessPointType.COLO)
                             .port(new SimplifiedPort().uuid(port.getUuid()))
                             .linkProtocol(new SimplifiedLinkProtocol()
@@ -234,7 +234,7 @@ public class ConnectionsApiTest {
                 .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
                 .order(new Order().purchaseOrderNumber("pol123"))
                 .zSide(new ConnectionSide().accessPoint(
-                        new AccessPointS()
+                        new AccessPoint()
                                 .type(AccessPointType.SP)
                                 .profile(new SimplifiedServiceProfile()
                                         .type(ServiceProfileTypeEnum.L2_PROFILE)
@@ -248,7 +248,7 @@ public class ConnectionsApiTest {
             int sTag = getRandomVlanNumber();
             int cTag = getRandomVlanNumber();
             connectionPostRequest.aSide(new ConnectionSide().accessPoint(
-                    new AccessPointS()
+                    new AccessPoint()
                             .type(AccessPointType.COLO)
                             .port(new SimplifiedPort().uuid(UUID.fromString(portDto.getUuid())))
                             .linkProtocol(new SimplifiedLinkProtocol()
@@ -317,14 +317,14 @@ public class ConnectionsApiTest {
                     .type(ConnectionType.EVPL_VC)
                     .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
                     .aSide(new ConnectionSide().accessPoint(
-                            new AccessPointS()
+                            new AccessPoint()
                                     .type(AccessPointType.COLO)
                                     .port(new SimplifiedPort()
                                             .uuid(port.get(0).getUuid()))
                                     .linkProtocol(new SimplifiedLinkProtocol()
                                             .type(LinkProtocolType.DOT1Q).vlanTag(tagAside))))
                     .zSide(new ConnectionSide().accessPoint(
-                            new AccessPointS()
+                            new AccessPoint()
                                     .type(AccessPointType.COLO)
                                     .port(new SimplifiedPort()
                                             .uuid(port.get(1).getUuid()))
