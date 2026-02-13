@@ -1,0 +1,225 @@
+name: "Branch File Analysis"
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to analyze'
+        required: true
+        type: number
+
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+
+jobs:
+  branch-file-analysis:
+    name: Branch File Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Setup GitHub CLI
+        run: |
+          # Install GitHub CLI if not present
+          if ! command -v gh &> /dev/null; then
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            sudo apt update
+            sudo apt install gh
+          fi
+          
+          # Authenticate GitHub CLI
+          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Get PR details
+        id: pr-details
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            PR_NUMBER=${{ github.event.inputs.pr_number }}
+          else
+            PR_NUMBER=${{ github.event.number }}
+          fi
+          
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          
+          # Get PR info
+          PR_INFO=$(gh pr view $PR_NUMBER --json title,author,headRefName,baseRefName,body)
+          
+          # Extract values safely with multiline support
+          PR_TITLE=$(echo "$PR_INFO" | jq -r '.title // ""')
+          PR_AUTHOR=$(echo "$PR_INFO" | jq -r '.author.login // ""')
+          HEAD_BRANCH=$(echo "$PR_INFO" | jq -r '.headRefName // ""')
+          BASE_BRANCH=$(echo "$PR_INFO" | jq -r '.baseRefName // ""')
+          PR_BODY=$(echo "$PR_INFO" | jq -r '.body // ""')
+          
+          # Set outputs with proper escaping for multiline content
+          {
+            echo "pr_title<<EOF"
+            echo "$PR_TITLE"
+            echo "EOF"
+            echo "pr_author<<EOF" 
+            echo "$PR_AUTHOR"
+            echo "EOF"
+            echo "head_branch<<EOF"
+            echo "$HEAD_BRANCH" 
+            echo "EOF"
+            echo "base_branch<<EOF"
+            echo "$BASE_BRANCH"
+            echo "EOF"
+            echo "pr_body<<EOF"
+            echo "$PR_BODY"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Run branch file analysis
+        id: file-analysis
+        run: |
+          echo "🔍 Running branch file analysis..."
+          
+          # Check if analyzer script exists
+          if [ ! -f "script/branch_file_analyzer.py" ]; then
+            echo "❌ Branch file analyzer script not found at script/branch_file_analyzer.py"
+            echo "analysis_completed=false" >> $GITHUB_OUTPUT
+            echo "analysis_result=Branch file analyzer script not found" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Make script executable
+          chmod +x script/branch_file_analyzer.py
+          
+          # Run the analysis and capture output
+          echo "Running: python3 script/branch_file_analyzer.py"
+          
+          if python3 script/branch_file_analyzer.py > analysis_output.txt 2>&1; then
+            # Check if analysis produced results
+            if [ -s analysis_output.txt ]; then
+              echo "✅ Branch file analysis completed successfully"
+              echo "analysis_completed=true" >> $GITHUB_OUTPUT
+              
+              # Save the output with proper multiline handling
+              {
+                echo "analysis_result<<EOF"
+                cat analysis_output.txt
+                echo "EOF"
+              } >> $GITHUB_OUTPUT
+              
+              echo "Analysis output:"
+              cat analysis_output.txt
+            else
+              echo "ℹ️ No file changes detected"
+              echo "analysis_completed=true" >> $GITHUB_OUTPUT
+              echo "analysis_result=No file changes detected in this branch" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "❌ Branch file analysis failed"
+            echo "Analysis error output:"
+            cat analysis_output.txt
+            echo "analysis_completed=false" >> $GITHUB_OUTPUT
+            {
+              echo "analysis_result<<EOF"
+              echo "Branch file analysis failed with error:"
+              cat analysis_output.txt
+              echo "EOF"
+            } >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update PR description
+        if: steps.file-analysis.outputs.analysis_completed == 'true'
+        run: |
+          echo "📝 Updating PR description..."
+          
+          PR_NUMBER=${{ steps.pr-details.outputs.pr_number }}
+          
+          # Get current PR description
+          CURRENT_DESC=$(gh pr view $PR_NUMBER --json body --jq '.body // ""')
+          
+          # Create file analysis section
+          cat > file_analysis_section.md << 'EOF'
+## 📋 Branch File Analysis
+
+${{ steps.file-analysis.outputs.analysis_result }}
+
+---
+*Auto-generated by Branch File Analysis workflow*
+EOF
+
+          # Check if file analysis section already exists and update/add accordingly
+          if echo "$CURRENT_DESC" | grep -q "## 📋 Branch File Analysis"; then
+            echo "🔄 Updating existing file analysis section..."
+            # Remove old file analysis section (from header to next ## or end)
+            NEW_DESC=$(echo "$CURRENT_DESC" | sed '/## 📋 Branch File Analysis/,/^---$/d' | sed '/^---$/d')
+            
+            # Add updated section
+            {
+              echo "$NEW_DESC"
+              echo ""
+              cat file_analysis_section.md
+            } > updated_desc.md
+          else
+            echo "➕ Adding new file analysis section..."
+            # Add new file analysis section
+            if [ -n "$CURRENT_DESC" ] && [ "$CURRENT_DESC" != "null" ]; then
+              {
+                echo "$CURRENT_DESC"
+                echo ""
+                cat file_analysis_section.md
+              } > updated_desc.md
+            else
+              cp file_analysis_section.md updated_desc.md
+            fi
+          fi
+          
+          # Update PR description
+          gh pr edit $PR_NUMBER --body-file updated_desc.md
+          
+          echo "✅ PR description updated successfully"
+
+      - name: Create analysis artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: branch-file-analysis-${{ steps.pr-details.outputs.pr_number }}
+          path: |
+            analysis_output.txt
+            file_analysis_section.md
+            updated_desc.md
+          retention-days: 7
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 📋 Branch File Analysis Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**PR Number:** #${{ steps.pr-details.outputs.pr_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** \`${{ steps.pr-details.outputs.head_branch }}\` → \`${{ steps.pr-details.outputs.base_branch }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Analysis Status:** ${{ steps.file-analysis.outputs.analysis_completed == 'true' && '✅ Completed' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.file-analysis.outputs.analysis_completed }}" == "true" ]; then
+            echo "### Analysis Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.file-analysis.outputs.analysis_result }}" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "✅ PR description has been updated with file analysis results" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Analysis failed or no changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
