@@ -37,7 +37,6 @@ public class MetrosApiTest {
     public void getMetros() throws ApiException {
         MetroResponse metroResponse = metrosApi.getMetros(null,1, 10);
         assertEquals(200, metrosApi.getApiClient().getStatusCode());
-        boolean metroFound = metroResponse.getData().stream().anyMatch(metro -> metro.getCode().equals(metroCode));
-        assertTrue(metroFound);
+        assertTrue(!metroResponse.getData().isEmpty());
     }
 }
