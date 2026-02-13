@@ -1,8 +1,8 @@
-name: "Branch File Analysis"
+name: "PR Analysis"
 
 on:
   workflow_run:
-    workflows: ["SAuto commit client updates"]
+    workflows: ["Auto commit client updates"]
     types: [completed]
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  branch-file-analysis:
+  pr-analysis:
     name: Branch File Analysis
     runs-on: ubuntu-latest
 
