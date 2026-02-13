@@ -2,7 +2,7 @@ name: "PR Analysis"
 
 on:
   workflow_run:
-    workflows: ["Auto commit client updates"]
+    workflows: ["Sync fabricv4 API spec"]
     types: [completed]
 
 permissions:
