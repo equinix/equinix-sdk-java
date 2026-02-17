@@ -80,7 +80,7 @@ public class ServiceProfilesApiTest {
     @Test
     public void getServiceProfileMetrosByUuid() throws ApiException {
         ServiceProfiles serviceProfiles = getServiceProfilesByQueryResponse("aSide");
-        ServiceProfile serviceProfileToCheck = serviceProfiles.getData().get(0);
+        ServiceProfile serviceProfileToCheck = serviceProfiles.getData().get(1);
         ServiceMetros serviceMetros = serviceProfilesApi.getServiceProfileMetrosByUuid(serviceProfileToCheck.getUuid(), 0, 10);
         assertEquals(200, serviceProfilesApi.getApiClient().getStatusCode());
         assertFalse(serviceMetros.getData().isEmpty());
