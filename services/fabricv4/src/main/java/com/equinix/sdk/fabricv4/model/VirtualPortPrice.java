@@ -114,6 +114,11 @@ public class VirtualPortPrice {
   @javax.annotation.Nullable
   private VirtualPortPackage _package;
 
+  public static final String SERIALIZED_NAME_SERVICE_CODE = "serviceCode";
+  @SerializedName(SERIALIZED_NAME_SERVICE_CODE)
+  @javax.annotation.Nullable
+  private String serviceCode;
+
   public VirtualPortPrice() {
   }
 
@@ -325,6 +330,25 @@ public class VirtualPortPrice {
     this._package = _package;
   }
 
+
+  public VirtualPortPrice serviceCode(@javax.annotation.Nullable String serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+
+  /**
+   * Port service code.
+   * @return serviceCode
+   */
+  @javax.annotation.Nullable
+  public String getServiceCode() {
+    return serviceCode;
+  }
+
+  public void setServiceCode(@javax.annotation.Nullable String serviceCode) {
+    this.serviceCode = serviceCode;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -390,13 +414,14 @@ public class VirtualPortPrice {
         Objects.equals(this.connectivitySource, virtualPortPrice.connectivitySource) &&
         Objects.equals(this.serviceType, virtualPortPrice.serviceType) &&
         Objects.equals(this.settings, virtualPortPrice.settings) &&
-        Objects.equals(this._package, virtualPortPrice._package)&&
+        Objects.equals(this._package, virtualPortPrice._package) &&
+        Objects.equals(this.serviceCode, virtualPortPrice.serviceCode)&&
         Objects.equals(this.additionalProperties, virtualPortPrice.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, type, location, lag, physicalPortsQuantity, bandwidth, redundancy, connectivitySource, serviceType, settings, _package, additionalProperties);
+    return Objects.hash(uuid, type, location, lag, physicalPortsQuantity, bandwidth, redundancy, connectivitySource, serviceType, settings, _package, serviceCode, additionalProperties);
   }
 
   @Override
@@ -414,6 +439,7 @@ public class VirtualPortPrice {
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -436,7 +462,7 @@ public class VirtualPortPrice {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings", "package"));
+    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings", "package", "serviceCode"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -489,6 +515,9 @@ public class VirtualPortPrice {
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
         VirtualPortPackage.validateJsonElement(jsonObj.get("package"));
+      }
+      if ((jsonObj.get("serviceCode") != null && !jsonObj.get("serviceCode").isJsonNull()) && !jsonObj.get("serviceCode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceCode").toString()));
       }
   }
 

@@ -35,6 +35,8 @@ public enum CloudEventAssetType {
   
   ROUTERS("routers"),
   
+  METROS("metros"),
+  
   SERVICETOKENS("serviceTokens"),
   
   NETWORKS("networks"),

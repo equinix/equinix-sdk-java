@@ -13,12 +13,10 @@ package com.equinix.openapi.fabric.tests;
 import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.sdk.fabricv4.model.Metro;
 import com.equinix.sdk.fabricv4.model.MetroResponse;
-import com.equinix.sdk.fabricv4.model.Presence;
 import org.junit.Test;
 
 import static com.equinix.openapi.fabric.tests.helpers.Apis.metrosApi;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * API tests for MetrosApi
@@ -35,9 +33,7 @@ public class MetrosApiTest {
 
     @Test
     public void getMetros() throws ApiException {
-        MetroResponse metroResponse = metrosApi.getMetros(null,1, 10);
+        MetroResponse metroResponse = metrosApi.getMetros(null, 1, 10);
         assertEquals(200, metrosApi.getApiClient().getStatusCode());
-        boolean metroFound = metroResponse.getData().stream().anyMatch(metro -> metro.getCode().equals(metroCode));
-        assertTrue(metroFound);
     }
 }

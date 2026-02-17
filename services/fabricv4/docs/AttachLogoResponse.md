@@ -11,6 +11,7 @@
 |**type** | **String** | Type of the logo or attachment |  |
 |**uuid** | **String** | Unique identifier for the logo |  |
 |**attachmentStatus** | **String** | Status of the attachment operation |  [optional] |
+|**extensionType** | **String** | Extension type of logo |  [optional] |
 
 
 

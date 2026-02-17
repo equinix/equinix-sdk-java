@@ -13,6 +13,7 @@
 |**description** | **String** |  |  |
 |**notifications** | **List&lt;Object&gt;** |  |  [optional] |
 |**webUrl** | **String** |  |  [optional] |
+|**contactUrl** | **String** |  |  [optional] |
 
 
 

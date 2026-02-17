@@ -47,7 +47,7 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * Port signature Type
+ * Port signature details
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class PortOrderSignature {

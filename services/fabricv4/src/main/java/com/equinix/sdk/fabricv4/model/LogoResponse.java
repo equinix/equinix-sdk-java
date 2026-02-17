@@ -83,6 +83,11 @@ public class LogoResponse {
   @javax.annotation.Nullable
   private String status;
 
+  public static final String SERIALIZED_NAME_EXTENSION_TYPE = "extensionType";
+  @SerializedName(SERIALIZED_NAME_EXTENSION_TYPE)
+  @javax.annotation.Nullable
+  private String extensionType;
+
   public static final String SERIALIZED_NAME_CHANGELOG = "changelog";
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
   @javax.annotation.Nullable
@@ -205,6 +210,25 @@ public class LogoResponse {
   }
 
 
+  public LogoResponse extensionType(@javax.annotation.Nullable String extensionType) {
+    this.extensionType = extensionType;
+    return this;
+  }
+
+  /**
+   * Get extensionType
+   * @return extensionType
+   */
+  @javax.annotation.Nullable
+  public String getExtensionType() {
+    return extensionType;
+  }
+
+  public void setExtensionType(@javax.annotation.Nullable String extensionType) {
+    this.extensionType = extensionType;
+  }
+
+
   public LogoResponse changelog(@javax.annotation.Nullable Changelog changelog) {
     this.changelog = changelog;
     return this;
@@ -284,13 +308,14 @@ public class LogoResponse {
         Objects.equals(this.name, logoResponse.name) &&
         Objects.equals(this.description, logoResponse.description) &&
         Objects.equals(this.status, logoResponse.status) &&
+        Objects.equals(this.extensionType, logoResponse.extensionType) &&
         Objects.equals(this.changelog, logoResponse.changelog)&&
         Objects.equals(this.additionalProperties, logoResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, status, changelog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, status, extensionType, changelog, additionalProperties);
   }
 
   @Override
@@ -303,6 +328,7 @@ public class LogoResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    extensionType: ").append(toIndentedString(extensionType)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -326,7 +352,7 @@ public class LogoResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "status", "changelog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "status", "extensionType", "changelog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -362,6 +388,9 @@ public class LogoResponse {
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if ((jsonObj.get("extensionType") != null && !jsonObj.get("extensionType").isJsonNull()) && !jsonObj.get("extensionType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `extensionType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("extensionType").toString()));
       }
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {

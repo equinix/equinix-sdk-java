@@ -51,6 +51,11 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class CompanyProfileChange {
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  @javax.annotation.Nullable
+  private String uuid;
+
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -66,6 +71,11 @@ public class CompanyProfileChange {
   @javax.annotation.Nullable
   private OffsetDateTime createdDateTime;
 
+  public static final String SERIALIZED_NAME_UPDATED_DATE_TIME = "updatedDateTime";
+  @SerializedName(SERIALIZED_NAME_UPDATED_DATE_TIME)
+  @javax.annotation.Nullable
+  private OffsetDateTime updatedDateTime;
+
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
@@ -73,6 +83,25 @@ public class CompanyProfileChange {
 
   public CompanyProfileChange() {
   }
+
+  public CompanyProfileChange uuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+    return this;
+  }
+
+  /**
+   * Get uuid
+   * @return uuid
+   */
+  @javax.annotation.Nullable
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(@javax.annotation.Nullable String uuid) {
+    this.uuid = uuid;
+  }
+
 
   public CompanyProfileChange type(@javax.annotation.Nullable String type) {
     this.type = type;
@@ -128,6 +157,25 @@ public class CompanyProfileChange {
 
   public void setCreatedDateTime(@javax.annotation.Nullable OffsetDateTime createdDateTime) {
     this.createdDateTime = createdDateTime;
+  }
+
+
+  public CompanyProfileChange updatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
+    this.updatedDateTime = updatedDateTime;
+    return this;
+  }
+
+  /**
+   * Get updatedDateTime
+   * @return updatedDateTime
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getUpdatedDateTime() {
+    return updatedDateTime;
+  }
+
+  public void setUpdatedDateTime(@javax.annotation.Nullable OffsetDateTime updatedDateTime) {
+    this.updatedDateTime = updatedDateTime;
   }
 
 
@@ -204,25 +252,29 @@ public class CompanyProfileChange {
       return false;
     }
     CompanyProfileChange companyProfileChange = (CompanyProfileChange) o;
-    return Objects.equals(this.type, companyProfileChange.type) &&
+    return Objects.equals(this.uuid, companyProfileChange.uuid) &&
+        Objects.equals(this.type, companyProfileChange.type) &&
         Objects.equals(this.status, companyProfileChange.status) &&
         Objects.equals(this.createdDateTime, companyProfileChange.createdDateTime) &&
+        Objects.equals(this.updatedDateTime, companyProfileChange.updatedDateTime) &&
         Objects.equals(this.data, companyProfileChange.data)&&
         Objects.equals(this.additionalProperties, companyProfileChange.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, createdDateTime, data, additionalProperties);
+    return Objects.hash(uuid, type, status, createdDateTime, updatedDateTime, data, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompanyProfileChange {\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
+    sb.append("    updatedDateTime: ").append(toIndentedString(updatedDateTime)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -246,7 +298,7 @@ public class CompanyProfileChange {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "status", "createdDateTime", "data"));
+    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "status", "createdDateTime", "updatedDateTime", "data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -265,6 +317,9 @@ public class CompanyProfileChange {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }

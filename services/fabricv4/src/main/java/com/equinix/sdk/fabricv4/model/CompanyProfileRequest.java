@@ -82,6 +82,11 @@ public class CompanyProfileRequest {
   @javax.annotation.Nullable
   private String webUrl;
 
+  public static final String SERIALIZED_NAME_CONTACT_URL = "contactUrl";
+  @SerializedName(SERIALIZED_NAME_CONTACT_URL)
+  @javax.annotation.Nullable
+  private String contactUrl;
+
   public CompanyProfileRequest() {
   }
 
@@ -206,6 +211,25 @@ public class CompanyProfileRequest {
     this.webUrl = webUrl;
   }
 
+
+  public CompanyProfileRequest contactUrl(@javax.annotation.Nullable String contactUrl) {
+    this.contactUrl = contactUrl;
+    return this;
+  }
+
+  /**
+   * Get contactUrl
+   * @return contactUrl
+   */
+  @javax.annotation.Nullable
+  public String getContactUrl() {
+    return contactUrl;
+  }
+
+  public void setContactUrl(@javax.annotation.Nullable String contactUrl) {
+    this.contactUrl = contactUrl;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -266,13 +290,14 @@ public class CompanyProfileRequest {
         Objects.equals(this.summary, companyProfileRequest.summary) &&
         Objects.equals(this.description, companyProfileRequest.description) &&
         Objects.equals(this.notifications, companyProfileRequest.notifications) &&
-        Objects.equals(this.webUrl, companyProfileRequest.webUrl)&&
+        Objects.equals(this.webUrl, companyProfileRequest.webUrl) &&
+        Objects.equals(this.contactUrl, companyProfileRequest.contactUrl)&&
         Objects.equals(this.additionalProperties, companyProfileRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, summary, description, notifications, webUrl, additionalProperties);
+    return Objects.hash(type, name, summary, description, notifications, webUrl, contactUrl, additionalProperties);
   }
 
   @Override
@@ -285,6 +310,7 @@ public class CompanyProfileRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
+    sb.append("    contactUrl: ").append(toIndentedString(contactUrl)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -307,7 +333,7 @@ public class CompanyProfileRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description", "notifications", "webUrl"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description", "notifications", "webUrl", "contactUrl"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description"));
@@ -351,6 +377,9 @@ public class CompanyProfileRequest {
       }
       if ((jsonObj.get("webUrl") != null && !jsonObj.get("webUrl").isJsonNull()) && !jsonObj.get("webUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webUrl").toString()));
+      }
+      if ((jsonObj.get("contactUrl") != null && !jsonObj.get("contactUrl").isJsonNull()) && !jsonObj.get("contactUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contactUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contactUrl").toString()));
       }
   }
 

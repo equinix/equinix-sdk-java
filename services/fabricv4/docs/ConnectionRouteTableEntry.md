@@ -10,7 +10,7 @@ Advertised and received route table entry object
 |------------ | ------------- | ------------- | -------------|
 |**type** | **RouteTableEntryType** |  |  |
 |**protocolType** | **RouteTableEntryProtocolType** |  |  [optional] |
-|**state** | [**StateEnum**](#StateEnum) |  |  |
+|**state** | [**StateEnum**](#StateEnum) |  |  [optional] |
 |**prefix** | **String** |  |  [optional] |
 |**nextHop** | **String** |  |  [optional] |
 |**MED** | **Integer** |  |  [optional] |

@@ -11,6 +11,7 @@ Metric resource
 |**href** | **String** | Metric resource href |  [optional] |
 |**uuid** | **String** | Metric resource UUID |  [optional] |
 |**type** | **String** | Metric resource type |  [optional] |
+|**state** | **String** | Metric resource state |  [optional] |
 |**name** | **String** | Metric resource name |  [optional] |
 |**description** | **String** | Metric resource description |  [optional] |
 

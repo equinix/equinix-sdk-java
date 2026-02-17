@@ -60,6 +60,11 @@ public class CompanyLogo {
   @javax.annotation.Nullable
   private String uuid;
 
+  public static final String SERIALIZED_NAME_EXTENSION_TYPE = "extensionType";
+  @SerializedName(SERIALIZED_NAME_EXTENSION_TYPE)
+  @javax.annotation.Nullable
+  private String extensionType;
+
   public CompanyLogo() {
   }
 
@@ -98,6 +103,25 @@ public class CompanyLogo {
 
   public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
+  }
+
+
+  public CompanyLogo extensionType(@javax.annotation.Nullable String extensionType) {
+    this.extensionType = extensionType;
+    return this;
+  }
+
+  /**
+   * Get extensionType
+   * @return extensionType
+   */
+  @javax.annotation.Nullable
+  public String getExtensionType() {
+    return extensionType;
+  }
+
+  public void setExtensionType(@javax.annotation.Nullable String extensionType) {
+    this.extensionType = extensionType;
   }
 
   /**
@@ -156,13 +180,14 @@ public class CompanyLogo {
     }
     CompanyLogo companyLogo = (CompanyLogo) o;
     return Objects.equals(this.href, companyLogo.href) &&
-        Objects.equals(this.uuid, companyLogo.uuid)&&
+        Objects.equals(this.uuid, companyLogo.uuid) &&
+        Objects.equals(this.extensionType, companyLogo.extensionType)&&
         Objects.equals(this.additionalProperties, companyLogo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, additionalProperties);
+    return Objects.hash(href, uuid, extensionType, additionalProperties);
   }
 
   @Override
@@ -171,6 +196,7 @@ public class CompanyLogo {
     sb.append("class CompanyLogo {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    extensionType: ").append(toIndentedString(extensionType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -193,7 +219,7 @@ public class CompanyLogo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "extensionType"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -217,6 +243,9 @@ public class CompanyLogo {
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      if ((jsonObj.get("extensionType") != null && !jsonObj.get("extensionType").isJsonNull()) && !jsonObj.get("extensionType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `extensionType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("extensionType").toString()));
       }
   }
 

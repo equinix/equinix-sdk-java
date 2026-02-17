@@ -19,6 +19,7 @@ Preferences and settings for a virtual port connected to an internet service pro
 |**serviceType** | **VirtualPortServiceType** |  |  [optional] |
 |**settings** | [**VirtualPortConfiguration**](VirtualPortConfiguration.md) |  |  [optional] |
 |**_package** | [**VirtualPortPackage**](VirtualPortPackage.md) |  |  [optional] |
+|**serviceCode** | **String** | Port service code. |  [optional] |
 
 
 

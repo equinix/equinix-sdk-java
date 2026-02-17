@@ -13,6 +13,7 @@ Equinix Fabric Tag Response Object
 |**type** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**displayName** | **String** |  |  [optional] |
+|**weight** | **Integer** |  |  [optional] |
 
 
 

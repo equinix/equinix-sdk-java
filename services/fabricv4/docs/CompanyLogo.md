@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**href** | **String** |  |  [optional] |
 |**uuid** | **String** |  |  [optional] |
+|**extensionType** | **String** |  |  [optional] |
 
 
 
