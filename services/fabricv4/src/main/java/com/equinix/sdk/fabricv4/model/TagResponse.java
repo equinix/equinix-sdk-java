@@ -77,6 +77,11 @@ public class TagResponse {
   @javax.annotation.Nullable
   private String displayName;
 
+  public static final String SERIALIZED_NAME_WEIGHT = "weight";
+  @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
+  private Integer weight;
+
   public TagResponse() {
   }
 
@@ -174,6 +179,25 @@ public class TagResponse {
     this.displayName = displayName;
   }
 
+
+  public TagResponse weight(@javax.annotation.Nullable Integer weight) {
+    this.weight = weight;
+    return this;
+  }
+
+  /**
+   * Get weight
+   * @return weight
+   */
+  @javax.annotation.Nullable
+  public Integer getWeight() {
+    return weight;
+  }
+
+  public void setWeight(@javax.annotation.Nullable Integer weight) {
+    this.weight = weight;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -233,13 +257,14 @@ public class TagResponse {
         Objects.equals(this.uuid, tagResponse.uuid) &&
         Objects.equals(this.type, tagResponse.type) &&
         Objects.equals(this.name, tagResponse.name) &&
-        Objects.equals(this.displayName, tagResponse.displayName)&&
+        Objects.equals(this.displayName, tagResponse.displayName) &&
+        Objects.equals(this.weight, tagResponse.weight)&&
         Objects.equals(this.additionalProperties, tagResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, displayName, additionalProperties);
+    return Objects.hash(href, uuid, type, name, displayName, weight, additionalProperties);
   }
 
   @Override
@@ -251,6 +276,7 @@ public class TagResponse {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -273,7 +299,7 @@ public class TagResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "displayName"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "displayName", "weight"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

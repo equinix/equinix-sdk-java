@@ -65,6 +65,11 @@ public class MetricResource {
   @javax.annotation.Nullable
   private String type;
 
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
+  private String state;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
@@ -132,6 +137,25 @@ public class MetricResource {
 
   public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
+  }
+
+
+  public MetricResource state(@javax.annotation.Nullable String state) {
+    this.state = state;
+    return this;
+  }
+
+  /**
+   * Metric resource state
+   * @return state
+   */
+  @javax.annotation.Nullable
+  public String getState() {
+    return state;
+  }
+
+  public void setState(@javax.annotation.Nullable String state) {
+    this.state = state;
   }
 
 
@@ -230,6 +254,7 @@ public class MetricResource {
     return Objects.equals(this.href, metricResource.href) &&
         Objects.equals(this.uuid, metricResource.uuid) &&
         Objects.equals(this.type, metricResource.type) &&
+        Objects.equals(this.state, metricResource.state) &&
         Objects.equals(this.name, metricResource.name) &&
         Objects.equals(this.description, metricResource.description)&&
         Objects.equals(this.additionalProperties, metricResource.additionalProperties);
@@ -237,7 +262,7 @@ public class MetricResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, additionalProperties);
+    return Objects.hash(href, uuid, type, state, name, description, additionalProperties);
   }
 
   @Override
@@ -247,6 +272,7 @@ public class MetricResource {
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -271,7 +297,7 @@ public class MetricResource {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "state", "name", "description"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -298,6 +324,9 @@ public class MetricResource {
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

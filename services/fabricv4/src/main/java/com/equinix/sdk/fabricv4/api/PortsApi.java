@@ -312,7 +312,7 @@ public class PortsApi {
 
     /**
      * Create Port
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric? Port.
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return Port
@@ -335,7 +335,7 @@ public class PortsApi {
 
     /**
      * Create Port
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric? Port.
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;Port&gt;
@@ -359,7 +359,7 @@ public class PortsApi {
 
     /**
      * Create Port (asynchronously)
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric? Port.
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes

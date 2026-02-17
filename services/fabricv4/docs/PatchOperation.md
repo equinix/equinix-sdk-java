@@ -18,6 +18,8 @@
 | Name | Value |
 |---- | -----|
 | REPLACE | &quot;replace&quot; |
+| ADD | &quot;add&quot; |
+| REMOVE | &quot;remove&quot; |
 
 
 

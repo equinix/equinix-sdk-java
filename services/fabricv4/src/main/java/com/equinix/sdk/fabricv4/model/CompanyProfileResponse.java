@@ -15,6 +15,8 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CompanyLogo;
+import com.equinix.sdk.fabricv4.model.CompanyMetro;
+import com.equinix.sdk.fabricv4.model.CompanyProfileChange;
 import com.equinix.sdk.fabricv4.model.CompanyServiceProfile;
 import com.equinix.sdk.fabricv4.model.PrivateService;
 import com.equinix.sdk.fabricv4.model.TagResponse;
@@ -92,6 +94,11 @@ public class CompanyProfileResponse {
   @javax.annotation.Nullable
   private Object state;
 
+  public static final String SERIALIZED_NAME_METROS = "metros";
+  @SerializedName(SERIALIZED_NAME_METROS)
+  @javax.annotation.Nullable
+  private List<CompanyMetro> metros = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_LOGO = "logo";
   @SerializedName(SERIALIZED_NAME_LOGO)
   @javax.annotation.Nullable
@@ -121,6 +128,16 @@ public class CompanyProfileResponse {
   @SerializedName(SERIALIZED_NAME_WEB_URL)
   @javax.annotation.Nullable
   private String webUrl;
+
+  public static final String SERIALIZED_NAME_CONTACT_URL = "contactUrl";
+  @SerializedName(SERIALIZED_NAME_CONTACT_URL)
+  @javax.annotation.Nullable
+  private String contactUrl;
+
+  public static final String SERIALIZED_NAME_CHANGE = "change";
+  @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
+  private CompanyProfileChange change;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -260,6 +277,33 @@ public class CompanyProfileResponse {
 
   public void setState(@javax.annotation.Nullable Object state) {
     this.state = state;
+  }
+
+
+  public CompanyProfileResponse metros(@javax.annotation.Nullable List<CompanyMetro> metros) {
+    this.metros = metros;
+    return this;
+  }
+
+  public CompanyProfileResponse addMetrosItem(CompanyMetro metrosItem) {
+    if (this.metros == null) {
+      this.metros = new ArrayList<>();
+    }
+    this.metros.add(metrosItem);
+    return this;
+  }
+
+  /**
+   * Get metros
+   * @return metros
+   */
+  @javax.annotation.Nullable
+  public List<CompanyMetro> getMetros() {
+    return metros;
+  }
+
+  public void setMetros(@javax.annotation.Nullable List<CompanyMetro> metros) {
+    this.metros = metros;
   }
 
 
@@ -409,6 +453,44 @@ public class CompanyProfileResponse {
   }
 
 
+  public CompanyProfileResponse contactUrl(@javax.annotation.Nullable String contactUrl) {
+    this.contactUrl = contactUrl;
+    return this;
+  }
+
+  /**
+   * Get contactUrl
+   * @return contactUrl
+   */
+  @javax.annotation.Nullable
+  public String getContactUrl() {
+    return contactUrl;
+  }
+
+  public void setContactUrl(@javax.annotation.Nullable String contactUrl) {
+    this.contactUrl = contactUrl;
+  }
+
+
+  public CompanyProfileResponse change(@javax.annotation.Nullable CompanyProfileChange change) {
+    this.change = change;
+    return this;
+  }
+
+  /**
+   * Get change
+   * @return change
+   */
+  @javax.annotation.Nullable
+  public CompanyProfileChange getChange() {
+    return change;
+  }
+
+  public void setChange(@javax.annotation.Nullable CompanyProfileChange change) {
+    this.change = change;
+  }
+
+
   public CompanyProfileResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
@@ -489,19 +571,22 @@ public class CompanyProfileResponse {
         Objects.equals(this.summary, companyProfileResponse.summary) &&
         Objects.equals(this.description, companyProfileResponse.description) &&
         Objects.equals(this.state, companyProfileResponse.state) &&
+        Objects.equals(this.metros, companyProfileResponse.metros) &&
         Objects.equals(this.logo, companyProfileResponse.logo) &&
         Objects.equals(this.tags, companyProfileResponse.tags) &&
         Objects.equals(this.serviceProfiles, companyProfileResponse.serviceProfiles) &&
         Objects.equals(this.privateServices, companyProfileResponse.privateServices) &&
         Objects.equals(this.notifications, companyProfileResponse.notifications) &&
         Objects.equals(this.webUrl, companyProfileResponse.webUrl) &&
+        Objects.equals(this.contactUrl, companyProfileResponse.contactUrl) &&
+        Objects.equals(this.change, companyProfileResponse.change) &&
         Objects.equals(this.changeLog, companyProfileResponse.changeLog)&&
         Objects.equals(this.additionalProperties, companyProfileResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, summary, description, state, logo, tags, serviceProfiles, privateServices, notifications, webUrl, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, summary, description, state, metros, logo, tags, serviceProfiles, privateServices, notifications, webUrl, contactUrl, change, changeLog, additionalProperties);
   }
 
   @Override
@@ -515,12 +600,15 @@ public class CompanyProfileResponse {
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    metros: ").append(toIndentedString(metros)).append("\n");
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    serviceProfiles: ").append(toIndentedString(serviceProfiles)).append("\n");
     sb.append("    privateServices: ").append(toIndentedString(privateServices)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
+    sb.append("    contactUrl: ").append(toIndentedString(contactUrl)).append("\n");
+    sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -544,7 +632,7 @@ public class CompanyProfileResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -580,6 +668,20 @@ public class CompanyProfileResponse {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if (jsonObj.get("metros") != null && !jsonObj.get("metros").isJsonNull()) {
+        JsonArray jsonArraymetros = jsonObj.getAsJsonArray("metros");
+        if (jsonArraymetros != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("metros").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metros` to be an array in the JSON string but got `%s`", jsonObj.get("metros").toString()));
+          }
+
+          // validate the optional field `metros` (array)
+          for (int i = 0; i < jsonArraymetros.size(); i++) {
+            CompanyMetro.validateJsonElement(jsonArraymetros.get(i));
+          };
+        }
       }
       // validate the optional field `logo`
       if (jsonObj.get("logo") != null && !jsonObj.get("logo").isJsonNull()) {
@@ -633,6 +735,13 @@ public class CompanyProfileResponse {
       }
       if ((jsonObj.get("webUrl") != null && !jsonObj.get("webUrl").isJsonNull()) && !jsonObj.get("webUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webUrl").toString()));
+      }
+      if ((jsonObj.get("contactUrl") != null && !jsonObj.get("contactUrl").isJsonNull()) && !jsonObj.get("contactUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contactUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contactUrl").toString()));
+      }
+      // validate the optional field `change`
+      if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
+        CompanyProfileChange.validateJsonElement(jsonObj.get("change"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

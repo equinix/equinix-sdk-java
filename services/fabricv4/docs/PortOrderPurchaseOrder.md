@@ -10,8 +10,8 @@ purchase order
 |------------ | ------------- | ------------- | -------------|
 |**number** | **String** | purchase order number |  [optional] |
 |**amount** | **String** | purchase order amount |  [optional] |
-|**startDate** | **String** |  |  [optional] |
-|**endDate** | **String** |  |  [optional] |
+|**startDate** | **OffsetDateTime** |  |  [optional] |
+|**endDate** | **OffsetDateTime** |  |  [optional] |
 |**attachmentId** | **UUID** |  |  [optional] |
 |**selectionType** | [**SelectionTypeEnum**](#SelectionTypeEnum) |  |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |

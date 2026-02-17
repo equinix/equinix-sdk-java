@@ -13,8 +13,6 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CompanyProfileChange;
-import com.equinix.sdk.fabricv4.model.CompanyProfileResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,58 +46,58 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * CompanyProfileUpdateResponse
+ * CompanyMetro
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
-public class CompanyProfileUpdateResponse {
-  public static final String SERIALIZED_NAME_COMPANY_PROFILE = "companyProfile";
-  @SerializedName(SERIALIZED_NAME_COMPANY_PROFILE)
+public class CompanyMetro {
+  public static final String SERIALIZED_NAME_HREF = "href";
+  @SerializedName(SERIALIZED_NAME_HREF)
   @javax.annotation.Nullable
-  private CompanyProfileResponse companyProfile;
+  private String href;
 
-  public static final String SERIALIZED_NAME_CHANGE = "change";
-  @SerializedName(SERIALIZED_NAME_CHANGE)
+  public static final String SERIALIZED_NAME_METRO_CODE = "metroCode";
+  @SerializedName(SERIALIZED_NAME_METRO_CODE)
   @javax.annotation.Nullable
-  private CompanyProfileChange change;
+  private String metroCode;
 
-  public CompanyProfileUpdateResponse() {
+  public CompanyMetro() {
   }
 
-  public CompanyProfileUpdateResponse companyProfile(@javax.annotation.Nullable CompanyProfileResponse companyProfile) {
-    this.companyProfile = companyProfile;
+  public CompanyMetro href(@javax.annotation.Nullable String href) {
+    this.href = href;
     return this;
   }
 
   /**
-   * Get companyProfile
-   * @return companyProfile
+   * Get href
+   * @return href
    */
   @javax.annotation.Nullable
-  public CompanyProfileResponse getCompanyProfile() {
-    return companyProfile;
+  public String getHref() {
+    return href;
   }
 
-  public void setCompanyProfile(@javax.annotation.Nullable CompanyProfileResponse companyProfile) {
-    this.companyProfile = companyProfile;
+  public void setHref(@javax.annotation.Nullable String href) {
+    this.href = href;
   }
 
 
-  public CompanyProfileUpdateResponse change(@javax.annotation.Nullable CompanyProfileChange change) {
-    this.change = change;
+  public CompanyMetro metroCode(@javax.annotation.Nullable String metroCode) {
+    this.metroCode = metroCode;
     return this;
   }
 
   /**
-   * Get change
-   * @return change
+   * Get metroCode
+   * @return metroCode
    */
   @javax.annotation.Nullable
-  public CompanyProfileChange getChange() {
-    return change;
+  public String getMetroCode() {
+    return metroCode;
   }
 
-  public void setChange(@javax.annotation.Nullable CompanyProfileChange change) {
-    this.change = change;
+  public void setMetroCode(@javax.annotation.Nullable String metroCode) {
+    this.metroCode = metroCode;
   }
 
   /**
@@ -115,9 +113,9 @@ public class CompanyProfileUpdateResponse {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the CompanyProfileUpdateResponse instance itself
+   * @return the CompanyMetro instance itself
    */
-  public CompanyProfileUpdateResponse putAdditionalProperty(String key, Object value) {
+  public CompanyMetro putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -156,23 +154,23 @@ public class CompanyProfileUpdateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CompanyProfileUpdateResponse companyProfileUpdateResponse = (CompanyProfileUpdateResponse) o;
-    return Objects.equals(this.companyProfile, companyProfileUpdateResponse.companyProfile) &&
-        Objects.equals(this.change, companyProfileUpdateResponse.change)&&
-        Objects.equals(this.additionalProperties, companyProfileUpdateResponse.additionalProperties);
+    CompanyMetro companyMetro = (CompanyMetro) o;
+    return Objects.equals(this.href, companyMetro.href) &&
+        Objects.equals(this.metroCode, companyMetro.metroCode)&&
+        Objects.equals(this.additionalProperties, companyMetro.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyProfile, change, additionalProperties);
+    return Objects.hash(href, metroCode, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CompanyProfileUpdateResponse {\n");
-    sb.append("    companyProfile: ").append(toIndentedString(companyProfile)).append("\n");
-    sb.append("    change: ").append(toIndentedString(change)).append("\n");
+    sb.append("class CompanyMetro {\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    metroCode: ").append(toIndentedString(metroCode)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,7 +193,7 @@ public class CompanyProfileUpdateResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("companyProfile", "change"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "metroCode"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -205,22 +203,20 @@ public class CompanyProfileUpdateResponse {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CompanyProfileUpdateResponse
+   * @throws IOException if the JSON Element is invalid with respect to CompanyMetro
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!CompanyProfileUpdateResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CompanyProfileUpdateResponse is not found in the empty JSON string", CompanyProfileUpdateResponse.openapiRequiredFields.toString()));
+        if (!CompanyMetro.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CompanyMetro is not found in the empty JSON string", CompanyMetro.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `companyProfile`
-      if (jsonObj.get("companyProfile") != null && !jsonObj.get("companyProfile").isJsonNull()) {
-        CompanyProfileResponse.validateJsonElement(jsonObj.get("companyProfile"));
+      if ((jsonObj.get("href") != null && !jsonObj.get("href").isJsonNull()) && !jsonObj.get("href").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `href` to be a primitive type in the JSON string but got `%s`", jsonObj.get("href").toString()));
       }
-      // validate the optional field `change`
-      if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
-        CompanyProfileChange.validateJsonElement(jsonObj.get("change"));
+      if ((jsonObj.get("metroCode") != null && !jsonObj.get("metroCode").isJsonNull()) && !jsonObj.get("metroCode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metroCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metroCode").toString()));
       }
   }
 
@@ -228,16 +224,16 @@ public class CompanyProfileUpdateResponse {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CompanyProfileUpdateResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CompanyProfileUpdateResponse' and its subtypes
+       if (!CompanyMetro.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CompanyMetro' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CompanyProfileUpdateResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CompanyProfileUpdateResponse.class));
+       final TypeAdapter<CompanyMetro> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CompanyMetro.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<CompanyProfileUpdateResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<CompanyMetro>() {
            @Override
-           public void write(JsonWriter out, CompanyProfileUpdateResponse value) throws IOException {
+           public void write(JsonWriter out, CompanyMetro value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -265,12 +261,12 @@ public class CompanyProfileUpdateResponse {
            }
 
            @Override
-           public CompanyProfileUpdateResponse read(JsonReader in) throws IOException {
+           public CompanyMetro read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             CompanyProfileUpdateResponse instance = thisAdapter.fromJsonTree(jsonObj);
+             CompanyMetro instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -297,18 +293,18 @@ public class CompanyProfileUpdateResponse {
   }
 
   /**
-   * Create an instance of CompanyProfileUpdateResponse given an JSON string
+   * Create an instance of CompanyMetro given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of CompanyProfileUpdateResponse
-   * @throws IOException if the JSON string is invalid with respect to CompanyProfileUpdateResponse
+   * @return An instance of CompanyMetro
+   * @throws IOException if the JSON string is invalid with respect to CompanyMetro
    */
-  public static CompanyProfileUpdateResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CompanyProfileUpdateResponse.class);
+  public static CompanyMetro fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CompanyMetro.class);
   }
 
   /**
-   * Convert an instance of CompanyProfileUpdateResponse to an JSON string
+   * Convert an instance of CompanyMetro to an JSON string
    *
    * @return JSON string
    */

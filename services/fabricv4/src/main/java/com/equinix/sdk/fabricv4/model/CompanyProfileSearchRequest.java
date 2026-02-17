@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.CompanyProfileSearchFilter;
 import com.equinix.sdk.fabricv4.model.Pagination;
+import com.equinix.sdk.fabricv4.model.Sort;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -62,6 +63,11 @@ public class CompanyProfileSearchRequest {
   @javax.annotation.Nullable
   private Pagination pagination;
 
+  public static final String SERIALIZED_NAME_SORT = "sort";
+  @SerializedName(SERIALIZED_NAME_SORT)
+  @javax.annotation.Nullable
+  private Sort sort;
+
   public CompanyProfileSearchRequest() {
   }
 
@@ -100,6 +106,25 @@ public class CompanyProfileSearchRequest {
 
   public void setPagination(@javax.annotation.Nullable Pagination pagination) {
     this.pagination = pagination;
+  }
+
+
+  public CompanyProfileSearchRequest sort(@javax.annotation.Nullable Sort sort) {
+    this.sort = sort;
+    return this;
+  }
+
+  /**
+   * Get sort
+   * @return sort
+   */
+  @javax.annotation.Nullable
+  public Sort getSort() {
+    return sort;
+  }
+
+  public void setSort(@javax.annotation.Nullable Sort sort) {
+    this.sort = sort;
   }
 
   /**
@@ -158,13 +183,14 @@ public class CompanyProfileSearchRequest {
     }
     CompanyProfileSearchRequest companyProfileSearchRequest = (CompanyProfileSearchRequest) o;
     return Objects.equals(this.filter, companyProfileSearchRequest.filter) &&
-        Objects.equals(this.pagination, companyProfileSearchRequest.pagination)&&
+        Objects.equals(this.pagination, companyProfileSearchRequest.pagination) &&
+        Objects.equals(this.sort, companyProfileSearchRequest.sort)&&
         Objects.equals(this.additionalProperties, companyProfileSearchRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filter, pagination, additionalProperties);
+    return Objects.hash(filter, pagination, sort, additionalProperties);
   }
 
   @Override
@@ -173,6 +199,7 @@ public class CompanyProfileSearchRequest {
     sb.append("class CompanyProfileSearchRequest {\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,7 +222,7 @@ public class CompanyProfileSearchRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("filter", "pagination"));
+    openapiFields = new HashSet<String>(Arrays.asList("filter", "pagination", "sort"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -221,6 +248,10 @@ public class CompanyProfileSearchRequest {
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
         Pagination.validateJsonElement(jsonObj.get("pagination"));
+      }
+      // validate the optional field `sort`
+      if (jsonObj.get("sort") != null && !jsonObj.get("sort").isJsonNull()) {
+        Sort.validateJsonElement(jsonObj.get("sort"));
       }
   }
 

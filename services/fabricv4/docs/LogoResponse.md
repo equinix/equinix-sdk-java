@@ -14,6 +14,7 @@ Equinix Fabric Logo Response Object
 |**name** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
+|**extensionType** | **String** |  |  [optional] |
 |**changelog** | [**Changelog**](Changelog.md) |  |  [optional] |
 
 

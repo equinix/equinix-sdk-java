@@ -33,7 +33,15 @@ public enum GeoScopeType {
   
   CONUS("CONUS"),
   
-  JAPAN("JAPAN");
+  JAPAN("JAPAN"),
+  
+  UK("UK"),
+  
+  AUSTRALIA("AUSTRALIA"),
+  
+  BRAZIL("BRAZIL"),
+  
+  SWITZERLAND("SWITZERLAND");
 
   private String value;
 

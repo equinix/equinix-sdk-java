@@ -27,6 +27,7 @@ import java.io.IOException;
 
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.GetMetricsByAssetResponse;
+import com.equinix.sdk.fabricv4.model.GetMetricsByNameResponse;
 import com.equinix.sdk.fabricv4.model.MetricAssetType;
 import com.equinix.sdk.fabricv4.model.MetricsSearchRequest;
 import java.time.OffsetDateTime;
@@ -79,7 +80,7 @@ public class MetricsApi {
      * Build call for getMetricByAssetId
      * @param asset asset (required)
      * @param assetId asset UUID (required)
-     * @param name Name of the metric types: &lt;br&gt; - equinix.fabric.connection.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.connection.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.port.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.port.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.port.packets_dropped_rx.count &lt;br&gt; - equinix.fabric.port.packets_dropped_tx.count &lt;br&gt; - equinix.fabric.port.packets_erred_rx.count &lt;br&gt; - equinix.fabric.port.packets_erred_tx.count &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg &lt;br&gt;  (required)
+     * @param name Name of the metric types:  - &#x60;equinix.fabric.connection.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.connection.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.port.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.port.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.port.packets_dropped_rx.count&#x60; - &#x60;equinix.fabric.port.packets_dropped_tx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_rx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_tx.count&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg&#x60;  (required)
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
@@ -190,7 +191,7 @@ public class MetricsApi {
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
-     * @param name Name of the metric types: &lt;br&gt; - equinix.fabric.connection.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.connection.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.port.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.port.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.port.packets_dropped_rx.count &lt;br&gt; - equinix.fabric.port.packets_dropped_tx.count &lt;br&gt; - equinix.fabric.port.packets_erred_rx.count &lt;br&gt; - equinix.fabric.port.packets_erred_tx.count &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg &lt;br&gt;  (required)
+     * @param name Name of the metric types:  - &#x60;equinix.fabric.connection.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.connection.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.port.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.port.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.port.packets_dropped_rx.count&#x60; - &#x60;equinix.fabric.port.packets_dropped_tx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_rx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_tx.count&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg&#x60;  (required)
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
@@ -218,7 +219,7 @@ public class MetricsApi {
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
-     * @param name Name of the metric types: &lt;br&gt; - equinix.fabric.connection.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.connection.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.port.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.port.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.port.packets_dropped_rx.count &lt;br&gt; - equinix.fabric.port.packets_dropped_tx.count &lt;br&gt; - equinix.fabric.port.packets_erred_rx.count &lt;br&gt; - equinix.fabric.port.packets_erred_tx.count &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg &lt;br&gt;  (required)
+     * @param name Name of the metric types:  - &#x60;equinix.fabric.connection.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.connection.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.port.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.port.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.port.packets_dropped_rx.count&#x60; - &#x60;equinix.fabric.port.packets_dropped_tx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_rx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_tx.count&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg&#x60;  (required)
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
@@ -247,7 +248,7 @@ public class MetricsApi {
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
-     * @param name Name of the metric types: &lt;br&gt; - equinix.fabric.connection.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.connection.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count &lt;br&gt; - equinix.fabric.port.bandwidth_rx.usage &lt;br&gt; - equinix.fabric.port.bandwidth_tx.usage &lt;br&gt; - equinix.fabric.port.packets_dropped_rx.count &lt;br&gt; - equinix.fabric.port.packets_dropped_tx.count &lt;br&gt; - equinix.fabric.port.packets_erred_rx.count &lt;br&gt; - equinix.fabric.port.packets_erred_tx.count &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency &lt;br&gt; - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg &lt;br&gt;  (required)
+     * @param name Name of the metric types:  - &#x60;equinix.fabric.connection.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.connection.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count&#x60; - &#x60;equinix.fabric.port.bandwidth_rx.usage&#x60; - &#x60;equinix.fabric.port.bandwidth_tx.usage&#x60; - &#x60;equinix.fabric.port.packets_dropped_rx.count&#x60; - &#x60;equinix.fabric.port.packets_dropped_tx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_rx.count&#x60; - &#x60;equinix.fabric.port.packets_erred_tx.count&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency&#x60; - &#x60;equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg&#x60;  (required)
      * @param fromDateTime Start date and time (optional)
      * @param toDateTime End date and time (optional)
      * @param offset offset (optional, default to 0)
@@ -270,6 +271,181 @@ public class MetricsApi {
 
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getMetricByName
+     * @param name Name of the metric types with wildcard:  - &#x60;equinix.fabric.metro.*.latency&#x60; - &#x60;equinix.fabric.metro.*.jitter_avg&#x60;  (required)
+     * @param value value (required)
+     * @param offset offset (optional, default to 0)
+     * @param limit limit (optional, default to 20)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetricByNameCall(@javax.annotation.Nonnull String name, @javax.annotation.Nonnull String value, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/metrics";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (name != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
+        }
+
+        if (value != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("value", value));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMetricByNameValidateBeforeCall(@javax.annotation.Nonnull String name, @javax.annotation.Nonnull String value, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling getMetricByName(Async)");
+        }
+
+        // verify the required parameter 'value' is set
+        if (value == null) {
+            throw new ApiException("Missing the required parameter 'value' when calling getMetricByName(Async)");
+        }
+
+        return getMetricByNameCall(name, value, offset, limit, _callback);
+
+    }
+
+    /**
+     * Get Metrics by Name
+     * This API provides capability to retrieve Metrics by specific wildcard metric types
+     * @param name Name of the metric types with wildcard:  - &#x60;equinix.fabric.metro.*.latency&#x60; - &#x60;equinix.fabric.metro.*.jitter_avg&#x60;  (required)
+     * @param value value (required)
+     * @param offset offset (optional, default to 0)
+     * @param limit limit (optional, default to 20)
+     * @return GetMetricsByNameResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetMetricsByNameResponse getMetricByName(@javax.annotation.Nonnull String name, @javax.annotation.Nonnull String value, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<GetMetricsByNameResponse> localVarResp = getMetricByNameWithHttpInfo(name, value, offset, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Metrics by Name
+     * This API provides capability to retrieve Metrics by specific wildcard metric types
+     * @param name Name of the metric types with wildcard:  - &#x60;equinix.fabric.metro.*.latency&#x60; - &#x60;equinix.fabric.metro.*.jitter_avg&#x60;  (required)
+     * @param value value (required)
+     * @param offset offset (optional, default to 0)
+     * @param limit limit (optional, default to 20)
+     * @return ApiResponse&lt;GetMetricsByNameResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetMetricsByNameResponse> getMetricByNameWithHttpInfo(@javax.annotation.Nonnull String name, @javax.annotation.Nonnull String value, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getMetricByNameValidateBeforeCall(name, value, offset, limit, null);
+        Type localVarReturnType = new TypeToken<GetMetricsByNameResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Metrics by Name (asynchronously)
+     * This API provides capability to retrieve Metrics by specific wildcard metric types
+     * @param name Name of the metric types with wildcard:  - &#x60;equinix.fabric.metro.*.latency&#x60; - &#x60;equinix.fabric.metro.*.jitter_avg&#x60;  (required)
+     * @param value value (required)
+     * @param offset offset (optional, default to 0)
+     * @param limit limit (optional, default to 20)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMetricByNameAsync(@javax.annotation.Nonnull String name, @javax.annotation.Nonnull String value, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetMetricsByNameResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMetricByNameValidateBeforeCall(name, value, offset, limit, _callback);
+        Type localVarReturnType = new TypeToken<GetMetricsByNameResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

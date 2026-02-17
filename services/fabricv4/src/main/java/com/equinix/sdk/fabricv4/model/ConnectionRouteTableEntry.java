@@ -120,7 +120,7 @@ public class ConnectionRouteTableEntry {
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private StateEnum state;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
@@ -199,7 +199,7 @@ public class ConnectionRouteTableEntry {
   }
 
 
-  public ConnectionRouteTableEntry state(@javax.annotation.Nonnull StateEnum state) {
+  public ConnectionRouteTableEntry state(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
     return this;
   }
@@ -208,12 +208,12 @@ public class ConnectionRouteTableEntry {
    * Get state
    * @return state
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public StateEnum getState() {
     return state;
   }
 
-  public void setState(@javax.annotation.Nonnull StateEnum state) {
+  public void setState(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
   }
 
@@ -470,7 +470,7 @@ public class ConnectionRouteTableEntry {
     openapiFields = new HashSet<String>(Arrays.asList("type", "protocolType", "state", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "state", "changeLog"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "changeLog"));
   }
 
   /**
@@ -499,11 +499,13 @@ public class ConnectionRouteTableEntry {
       if (jsonObj.get("protocolType") != null && !jsonObj.get("protocolType").isJsonNull()) {
         RouteTableEntryProtocolType.validateJsonElement(jsonObj.get("protocolType"));
       }
-      if (!jsonObj.get("state").isJsonPrimitive()) {
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
-      // validate the required field `state`
-      StateEnum.validateJsonElement(jsonObj.get("state"));
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
+      }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }

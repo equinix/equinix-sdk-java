@@ -1,7 +1,7 @@
 # fabricv4
 
 Equinix Fabric API v4
-- API version: 4.26
+- API version: 4.27
   - Generator version: 7.16.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
@@ -142,6 +142,19 @@ Class | Method | HTTP request | Description
 *CloudRoutersApi* | [**searchConnectionReceivedRoutes**](docs/CloudRoutersApi.md#searchConnectionReceivedRoutes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search Received Routes
 *CloudRoutersApi* | [**searchRouterActions**](docs/CloudRoutersApi.md#searchRouterActions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search Route Table Actions
 *CloudRoutersApi* | [**updateCloudRouterByUuid**](docs/CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers
+*CompanyProfilesApi* | [**attachPrivateServiceToProfile**](docs/CompanyProfilesApi.md#attachPrivateServiceToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Attach Private Service
+*CompanyProfilesApi* | [**attachServiceProfileToProfile**](docs/CompanyProfilesApi.md#attachServiceProfileToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Attach Service Profile
+*CompanyProfilesApi* | [**attachTagToProfile**](docs/CompanyProfilesApi.md#attachTagToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Attach Tag
+*CompanyProfilesApi* | [**createCompanyProfile**](docs/CompanyProfilesApi.md#createCompanyProfile) | **POST** /fabric/v4/companyProfiles | Create Company Profile
+*CompanyProfilesApi* | [**deleteCompanyProfile**](docs/CompanyProfilesApi.md#deleteCompanyProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId} | Delete Company Profile
+*CompanyProfilesApi* | [**detachPrivateServiceFromProfile**](docs/CompanyProfilesApi.md#detachPrivateServiceFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Detach Private Service
+*CompanyProfilesApi* | [**detachServiceProfileFromProfile**](docs/CompanyProfilesApi.md#detachServiceProfileFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Detach Service Profile
+*CompanyProfilesApi* | [**detachTagFromProfile**](docs/CompanyProfilesApi.md#detachTagFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Detach Tag
+*CompanyProfilesApi* | [**getCompanyProfile**](docs/CompanyProfilesApi.md#getCompanyProfile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by UUID
+*CompanyProfilesApi* | [**getCompanyProfilePrivateServices**](docs/CompanyProfilesApi.md#getCompanyProfilePrivateServices) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/privateServices | Get Private Services
+*CompanyProfilesApi* | [**getCompanyProfileServiceProfiles**](docs/CompanyProfilesApi.md#getCompanyProfileServiceProfiles) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles | Get Service Profiles
+*CompanyProfilesApi* | [**getTags**](docs/CompanyProfilesApi.md#getTags) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/tags | Get Tags
+*CompanyProfilesApi* | [**searchCompanyProfile**](docs/CompanyProfilesApi.md#searchCompanyProfile) | **POST** /fabric/v4/companyProfiles/search | Search Company Profiles
 *ConnectionsApi* | [**createConnection**](docs/ConnectionsApi.md#createConnection) | **POST** /fabric/v4/connections | Create Connection
 *ConnectionsApi* | [**createConnectionAction**](docs/ConnectionsApi.md#createConnectionAction) | **POST** /fabric/v4/connections/{connectionId}/actions | Connection Actions
 *ConnectionsApi* | [**deleteConnectionByUuid**](docs/ConnectionsApi.md#deleteConnectionByUuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete by ID
@@ -150,8 +163,11 @@ Class | Method | HTTP request | Description
 *ConnectionsApi* | [**updateConnectionByUuid**](docs/ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update by ID
 *ConnectionsApi* | [**validateConnections**](docs/ConnectionsApi.md#validateConnections) | **POST** /fabric/v4/connections/validate | Validate Connection
 *HealthApi* | [**getStatus**](docs/HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get service status
+*LogosApi* | [**deleteLogoByUuid**](docs/LogosApi.md#deleteLogoByUuid) | **DELETE** /fabric/v4/logos/{uuid} | Delete Logo
+*LogosApi* | [**getLogoByUuid**](docs/LogosApi.md#getLogoByUuid) | **GET** /fabric/v4/logos/{uuid} | Get Logo
 *MarketplaceSubscriptionsApi* | [**getSubscriptionById**](docs/MarketplaceSubscriptionsApi.md#getSubscriptionById) | **GET** /fabric/v4/marketplaceSubscriptions/{subscriptionId} | Get Subscription
 *MetricsApi* | [**getMetricByAssetId**](docs/MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id
+*MetricsApi* | [**getMetricByName**](docs/MetricsApi.md#getMetricByName) | **GET** /fabric/v4/metrics | Get Metrics by Name
 *MetricsApi* | [**searchMetrics**](docs/MetricsApi.md#searchMetrics) | **POST** /fabric/v4/metrics/search | Search Metrics
 *MetrosApi* | [**getMetroByCode**](docs/MetrosApi.md#getMetroByCode) | **GET** /fabric/v4/metros/{metroCode} | Get Metro by Code
 *MetrosApi* | [**getMetros**](docs/MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get all Metros
@@ -273,6 +289,8 @@ Class | Method | HTTP request | Description
 *StreamsApi* | [**getStreamsAssets**](docs/StreamsApi.md#getStreamsAssets) | **POST** /fabric/v4/streamAssets/search | Get Assets
 *StreamsApi* | [**updateStreamAssetByUuid**](docs/StreamsApi.md#updateStreamAssetByUuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 *StreamsApi* | [**updateStreamByUuid**](docs/StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
+*TagsApi* | [**createTag**](docs/TagsApi.md#createTag) | **POST** /fabric/v4/tags | Create Tag
+*TagsApi* | [**listTags**](docs/TagsApi.md#listTags) | **GET** /fabric/v4/tags | List Tags
 
 
 ## Documentation for Models
@@ -365,6 +383,7 @@ Class | Method | HTTP request | Description
  - [CloudRouterSortDirection](docs/CloudRouterSortDirection.md)
  - [Code](docs/Code.md)
  - [CompanyLogo](docs/CompanyLogo.md)
+ - [CompanyMetro](docs/CompanyMetro.md)
  - [CompanyProfileActionRequest](docs/CompanyProfileActionRequest.md)
  - [CompanyProfileChange](docs/CompanyProfileChange.md)
  - [CompanyProfileRequest](docs/CompanyProfileRequest.md)
@@ -372,7 +391,7 @@ Class | Method | HTTP request | Description
  - [CompanyProfileSearchFilter](docs/CompanyProfileSearchFilter.md)
  - [CompanyProfileSearchRequest](docs/CompanyProfileSearchRequest.md)
  - [CompanyProfileSearchResponse](docs/CompanyProfileSearchResponse.md)
- - [CompanyProfileUpdateResponse](docs/CompanyProfileUpdateResponse.md)
+ - [CompanyProfileSortDirection](docs/CompanyProfileSortDirection.md)
  - [CompanyServiceProfile](docs/CompanyServiceProfile.md)
  - [ConnectedMetro](docs/ConnectedMetro.md)
  - [Connection](docs/Connection.md)
@@ -438,6 +457,7 @@ Class | Method | HTTP request | Description
  - [GetAllStreamSubscriptionResponse](docs/GetAllStreamSubscriptionResponse.md)
  - [GetCloudEventsByAssetResponse](docs/GetCloudEventsByAssetResponse.md)
  - [GetMetricsByAssetResponse](docs/GetMetricsByAssetResponse.md)
+ - [GetMetricsByNameResponse](docs/GetMetricsByNameResponse.md)
  - [GetResponse](docs/GetResponse.md)
  - [GetRouteAggregationGetConnectionsResponse](docs/GetRouteAggregationGetConnectionsResponse.md)
  - [GetRouteAggregationRulesResponse](docs/GetRouteAggregationRulesResponse.md)
@@ -520,6 +540,7 @@ Class | Method | HTTP request | Description
  - [PhysicalPort](docs/PhysicalPort.md)
  - [PhysicalPortSettings](docs/PhysicalPortSettings.md)
  - [PhysicalPortType](docs/PhysicalPortType.md)
+ - [PlatformChangelog](docs/PlatformChangelog.md)
  - [Port](docs/Port.md)
  - [PortAdditionalInfo](docs/PortAdditionalInfo.md)
  - [PortChange](docs/PortChange.md)
@@ -583,6 +604,9 @@ Class | Method | HTTP request | Description
  - [ResourceData](docs/ResourceData.md)
  - [ResourceSelector](docs/ResourceSelector.md)
  - [ResourceSelectorResponse](docs/ResourceSelectorResponse.md)
+ - [ResponseIncompleteDetails](docs/ResponseIncompleteDetails.md)
+ - [ResponseUsageInputTokensDetails](docs/ResponseUsageInputTokensDetails.md)
+ - [ResponseUsageOutputTokensDetails](docs/ResponseUsageOutputTokensDetails.md)
  - [RouteAggregationChangeData](docs/RouteAggregationChangeData.md)
  - [RouteAggregationChangeDataResponse](docs/RouteAggregationChangeDataResponse.md)
  - [RouteAggregationConnectionsData](docs/RouteAggregationConnectionsData.md)
@@ -713,6 +737,7 @@ Class | Method | HTTP request | Description
  - [SimplifiedServiceProfile](docs/SimplifiedServiceProfile.md)
  - [SimplifiedTokenNetwork](docs/SimplifiedTokenNetwork.md)
  - [SimplifiedVirtualDevice](docs/SimplifiedVirtualDevice.md)
+ - [Sort](docs/Sort.md)
  - [SortBy](docs/SortBy.md)
  - [SortCriteria](docs/SortCriteria.md)
  - [SortCriteriaResponse](docs/SortCriteriaResponse.md)

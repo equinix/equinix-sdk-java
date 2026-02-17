@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -64,12 +65,12 @@ public class PortOrderPurchaseOrder {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
   @javax.annotation.Nullable
-  private String startDate;
+  private OffsetDateTime startDate;
 
   public static final String SERIALIZED_NAME_END_DATE = "endDate";
   @SerializedName(SERIALIZED_NAME_END_DATE)
   @javax.annotation.Nullable
-  private String endDate;
+  private OffsetDateTime endDate;
 
   public static final String SERIALIZED_NAME_ATTACHMENT_ID = "attachmentId";
   @SerializedName(SERIALIZED_NAME_ATTACHMENT_ID)
@@ -240,7 +241,7 @@ public class PortOrderPurchaseOrder {
   }
 
 
-  public PortOrderPurchaseOrder startDate(@javax.annotation.Nullable String startDate) {
+  public PortOrderPurchaseOrder startDate(@javax.annotation.Nullable OffsetDateTime startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -250,16 +251,16 @@ public class PortOrderPurchaseOrder {
    * @return startDate
    */
   @javax.annotation.Nullable
-  public String getStartDate() {
+  public OffsetDateTime getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(@javax.annotation.Nullable String startDate) {
+  public void setStartDate(@javax.annotation.Nullable OffsetDateTime startDate) {
     this.startDate = startDate;
   }
 
 
-  public PortOrderPurchaseOrder endDate(@javax.annotation.Nullable String endDate) {
+  public PortOrderPurchaseOrder endDate(@javax.annotation.Nullable OffsetDateTime endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -269,11 +270,11 @@ public class PortOrderPurchaseOrder {
    * @return endDate
    */
   @javax.annotation.Nullable
-  public String getEndDate() {
+  public OffsetDateTime getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(@javax.annotation.Nullable String endDate) {
+  public void setEndDate(@javax.annotation.Nullable OffsetDateTime endDate) {
     this.endDate = endDate;
   }
 
@@ -465,12 +466,6 @@ public class PortOrderPurchaseOrder {
       }
       if ((jsonObj.get("amount") != null && !jsonObj.get("amount").isJsonNull()) && !jsonObj.get("amount").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `amount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("amount").toString()));
-      }
-      if ((jsonObj.get("startDate") != null && !jsonObj.get("startDate").isJsonNull()) && !jsonObj.get("startDate").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `startDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("startDate").toString()));
-      }
-      if ((jsonObj.get("endDate") != null && !jsonObj.get("endDate").isJsonNull()) && !jsonObj.get("endDate").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `endDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endDate").toString()));
       }
       if ((jsonObj.get("attachmentId") != null && !jsonObj.get("attachmentId").isJsonNull()) && !jsonObj.get("attachmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attachmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attachmentId").toString()));

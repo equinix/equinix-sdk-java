@@ -55,7 +55,11 @@ public class PatchOperation {
    */
   @JsonAdapter(OpEnum.Adapter.class)
   public enum OpEnum {
-    REPLACE("replace");
+    REPLACE("replace"),
+    
+    ADD("add"),
+    
+    REMOVE("remove");
 
     private String value;
 
