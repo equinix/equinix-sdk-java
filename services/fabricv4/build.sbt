@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.equinix.sdk",
     name := "fabricv4",
-    version := "0.7.0",
+    version := "0.8.0",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),
