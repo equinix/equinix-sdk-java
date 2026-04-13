@@ -70,7 +70,7 @@ public class PortsApiTest {
                 .pagination(new PaginationRequest()
                         .offset(0)
                         .limit(100))
-                .sort(singletonList(new PortSortCriteria().property(PortSortBy._DEVICE_NAME).direction(PortSortDirection.DESC)));
+                .sort(singletonList(new PortSortCriteria().property(PortSortBy.DEVICE_NAME).direction(PortSortDirection.DESC)));
 
         return portsApi.searchPorts(portV4SearchRequest);
     }
