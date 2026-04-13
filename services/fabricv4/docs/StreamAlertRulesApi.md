@@ -5,7 +5,7 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createStreamAlertRules**](StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rules |
-| [**deleteStreamAlertRuleByUuid**](StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules |
+| [**deleteStreamAlertRuleByUuid**](StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rules |
 | [**getStreamAlertRuleByUuid**](StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rules |
 | [**getStreamAlertRules**](StreamAlertRulesApi.md#getStreamAlertRules) | **GET** /fabric/v4/streams/{streamId}/alertRules | Get Stream Alert Rules |
 | [**updateStreamAlertRuleByUuid**](StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules |
@@ -89,7 +89,7 @@ public class Example {
 # **deleteStreamAlertRuleByUuid**
 > StreamAlertRule deleteStreamAlertRuleByUuid(streamId, alertRuleId)
 
-Update Stream Alert Rules
+Delete Stream Alert Rules
 
 This API provides capability to delete a user&#39;s stream alert rule
 

@@ -15,6 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getRouteFilterChanges**](RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes |
 | [**getRouteFilterConnections**](RouteFiltersApi.md#getRouteFilterConnections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter |
 | [**patchRouteFilterByUuid**](RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter |
+| [**searchCloudRouterRouteFilterAttachments**](RouteFiltersApi.md#searchCloudRouterRouteFilterAttachments) | **POST** /fabric/v4/routers/{routerId}/routeFilters/search | Search Cloud Router Route Filter Attachments |
 | [**searchRouteFilters**](RouteFiltersApi.md#searchRouteFilters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters |
 
 
@@ -828,6 +829,81 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **202** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Route Filter ID Not Found |  -  |
+| **415** | Unsupported Media Type |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchCloudRouterRouteFilterAttachments"></a>
+# **searchCloudRouterRouteFilterAttachments**
+> CloudRouterRouteFiltersSearchResponse searchCloudRouterRouteFilterAttachments(routerId, cloudRouterRouteFiltersSearchBase)
+
+Search Cloud Router Route Filter Attachments
+
+This API provides capability to search route filter attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.RouteFiltersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
+    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase = new CloudRouterRouteFiltersSearchBase(); // CloudRouterRouteFiltersSearchBase | 
+    try {
+      CloudRouterRouteFiltersSearchResponse result = apiInstance.searchCloudRouterRouteFilterAttachments(routerId, cloudRouterRouteFiltersSearchBase);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RouteFiltersApi#searchCloudRouterRouteFilterAttachments");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **routerId** | **UUID**| Cloud Router UUID | |
+| **cloudRouterRouteFiltersSearchBase** | [**CloudRouterRouteFiltersSearchBase**](CloudRouterRouteFiltersSearchBase.md)|  | |
+
+### Return type
+
+[**CloudRouterRouteFiltersSearchResponse**](CloudRouterRouteFiltersSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

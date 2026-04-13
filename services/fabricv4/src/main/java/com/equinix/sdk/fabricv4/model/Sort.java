@@ -70,7 +70,7 @@ public class Sort {
   }
 
   /**
-   * Property to sort by
+   * Property to sort by((currently supports tags with filter syntax)
    * @return property
    */
   @javax.annotation.Nullable

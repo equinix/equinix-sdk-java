@@ -13,6 +13,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getRouteAggregationRules**](RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | GetRARules |
 | [**patchRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | PatchRARule |
 | [**replaceRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | ReplaceRARule |
+| [**searchRouteAggregationRules**](RouteAggregationRulesApi.md#searchRouteAggregationRules) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/search | Search Route Aggregation Rules |
 
 
 <a id="createRouteAggregationRule"></a>
@@ -696,6 +697,81 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Route Aggregation ID Not Found |  -  |
+| **415** | Unsupported Media Type |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchRouteAggregationRules"></a>
+# **searchRouteAggregationRules**
+> RouteAggregationRulesSearchResponse searchRouteAggregationRules(routeAggregationId, routeAggregationRulesSearchRequest)
+
+Search Route Aggregation Rules
+
+This API provides capability to search Route Aggregation Rules
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.RouteAggregationRulesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
+    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    RouteAggregationRulesSearchRequest routeAggregationRulesSearchRequest = new RouteAggregationRulesSearchRequest(); // RouteAggregationRulesSearchRequest | 
+    try {
+      RouteAggregationRulesSearchResponse result = apiInstance.searchRouteAggregationRules(routeAggregationId, routeAggregationRulesSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RouteAggregationRulesApi#searchRouteAggregationRules");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **routeAggregationId** | **String**| Route Aggregations Id | |
+| **routeAggregationRulesSearchRequest** | [**RouteAggregationRulesSearchRequest**](RouteAggregationRulesSearchRequest.md)|  | |
+
+### Return type
+
+[**RouteAggregationRulesSearchResponse**](RouteAggregationRulesSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Route Aggregation Rule ID Not Found |  -  |
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 

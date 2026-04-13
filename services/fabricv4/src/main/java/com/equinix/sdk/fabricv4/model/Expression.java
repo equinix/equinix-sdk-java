@@ -79,13 +79,23 @@ public class Expression {
     
     GREATER_THAN(">"),
     
+    GREATER_THAN_OR_EQUAL_TO(">="),
+    
     LESS_THAN("<"),
+    
+    LESS_THAN_OR_EQUAL_TO("<="),
     
     LIKE("LIKE"),
     
+    ILKE("ILKE"),
+    
     IS_NOT_NULL("IS NOT NULL"),
     
-    IS_NULL("IS NULL");
+    IS_NULL("IS NULL"),
+    
+    IN("IN"),
+    
+    BETWEEN("BETWEEN");
 
     private String value;
 

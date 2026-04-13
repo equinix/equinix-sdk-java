@@ -60,7 +60,7 @@ public class PortSortCriteria {
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
-  private PortSortBy property = PortSortBy._DEVICE_NAME;
+  private PortSortBy property = PortSortBy.DEVICE_NAME;
 
   public PortSortCriteria() {
   }

@@ -11,6 +11,7 @@ Service Profile is a software definition for a named provider service and it's n
 |**state** | **ServiceProfileStateEnum** |  |  [optional] |
 |**account** | [**SimplifiedAccount**](SimplifiedAccount.md) | Seller Account for Service Profile. |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
+|**change** | [**ServiceProfileChange**](ServiceProfileChange.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) | Seller Account for Service Profile. |  [optional] |
 |**href** | **URI** | Service Profile URI response attribute |  [optional] [readonly] |
 |**type** | **ServiceProfileTypeEnum** |  |  [optional] |

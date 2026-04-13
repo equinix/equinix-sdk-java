@@ -24,6 +24,8 @@
 | PROFILE_LIFECYCLE | &quot;PROFILE_LIFECYCLE&quot; |
 | ALL | &quot;ALL&quot; |
 | SALES_REP_NOTIFICATIONS | &quot;SALES_REP_NOTIFICATIONS&quot; |
+| TECHNICAL | &quot;TECHNICAL&quot; |
+| ORDERING | &quot;ORDERING&quot; |
 
 
 

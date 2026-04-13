@@ -29,7 +29,27 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(PortSortBy.Adapter.class)
 public enum PortSortBy {
   
-  _DEVICE_NAME("/device/name");
+  DEVICE_NAME("/device/name"),
+  
+  NAME("/name"),
+  
+  STATE("/state"),
+  
+  LOCATION_METRONAME("/location/metroName"),
+  
+  DEMARCATIONPOINTIBX("/demarcationPointIbx"),
+  
+  DEVICE_REDUNDANCY_PRIORITY("/device/redundancy/priority"),
+  
+  LAGENABLED("/lagEnabled"),
+  
+  PHYSICALPORTSSPEED("/physicalPortsSpeed"),
+  
+  ENCAPSULATION_TYPE("/encapsulation/type"),
+  
+  PHYSICALPORTS_TETHER_CROSSCONNECTID("/physicalPorts/tether/crossConnectId"),
+  
+  PACKAGE_CODE("/package/code");
 
   private String value;
 

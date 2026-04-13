@@ -5,6 +5,7 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createServiceProfile**](ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Profile |
+| [**createServiceProfileAction**](ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions |
 | [**deleteServiceProfileByUuid**](ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile |
 | [**getServiceProfileByUuid**](ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile |
 | [**getServiceProfileMetrosByUuid**](ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros |
@@ -83,6 +84,80 @@ public class Example {
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **500** | Internal Server Error |  -  |
+
+<a id="createServiceProfileAction"></a>
+# **createServiceProfileAction**
+> ServiceProfileActionResponse createServiceProfileAction(serviceProfileId, serviceProfileActionRequest)
+
+Profile Actions
+
+This API provides capability to accept/reject service profile update requests
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.ServiceProfilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    ServiceProfilesApi apiInstance = new ServiceProfilesApi(defaultClient);
+    UUID serviceProfileId = UUID.randomUUID(); // UUID | Service Profile UUID
+    ServiceProfileActionRequest serviceProfileActionRequest = new ServiceProfileActionRequest(); // ServiceProfileActionRequest | 
+    try {
+      ServiceProfileActionResponse result = apiInstance.createServiceProfileAction(serviceProfileId, serviceProfileActionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ServiceProfilesApi#createServiceProfileAction");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **serviceProfileId** | **UUID**| Service Profile UUID | |
+| **serviceProfileActionRequest** | [**ServiceProfileActionRequest**](ServiceProfileActionRequest.md)|  | |
+
+### Return type
+
+[**ServiceProfileActionResponse**](ServiceProfileActionResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json; charset=UTF-8, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="deleteServiceProfileByUuid"></a>
@@ -530,7 +605,7 @@ public class Example {
 
 <a id="updateServiceProfileByUuid"></a>
 # **updateServiceProfileByUuid**
-> ServiceProfile updateServiceProfileByUuid(serviceProfileId, ifMatch, jsonPatchOperation)
+> ServiceProfile updateServiceProfileByUuid(serviceProfileId, jsonPatchOperation)
 
 Update Profile
 
@@ -557,10 +632,9 @@ public class Example {
 
     ServiceProfilesApi apiInstance = new ServiceProfilesApi(defaultClient);
     UUID serviceProfileId = UUID.randomUUID(); // UUID | Service Profile UUID
-    String ifMatch = "ifMatch_example"; // String | conditional request
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     try {
-      ServiceProfile result = apiInstance.updateServiceProfileByUuid(serviceProfileId, ifMatch, jsonPatchOperation);
+      ServiceProfile result = apiInstance.updateServiceProfileByUuid(serviceProfileId, jsonPatchOperation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceProfilesApi#updateServiceProfileByUuid");
@@ -578,7 +652,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **serviceProfileId** | **UUID**| Service Profile UUID | |
-| **ifMatch** | **String**| conditional request | |
 | **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
 
 ### Return type
@@ -602,6 +675,5 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
-| **412** | Precondition Failed |  -  |
 | **500** | Internal Server Error |  -  |
 

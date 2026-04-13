@@ -23,5 +23,7 @@
 
 * `TIMESERVICES` (value: `"timeServices"`)
 
+* `COMPANYPROFILES` (value: `"companyProfiles"`)
+
 
 

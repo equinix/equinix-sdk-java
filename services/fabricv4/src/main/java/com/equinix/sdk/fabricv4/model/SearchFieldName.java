@@ -47,10 +47,6 @@ public enum SearchFieldName {
   
   ASIDE_ACCESSPOINT_ROUTER_UUID("/aSide/accessPoint/router/uuid"),
   
-  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/aSide/accessPoint/linkProtocol/vlanCTag"),
-  
-  ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/aSide/accessPoint/linkProtocol/vlanSTag"),
-  
   ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/aSide/accessPoint/linkProtocol/vlanTagMin"),
   
   ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/aSide/accessPoint/linkProtocol/vlanTagMax"),
@@ -73,7 +69,13 @@ public enum SearchFieldName {
   
   ASIDE_SERVICETOKEN_UUID("/aSide/serviceToken/uuid"),
   
+  BANDWIDTH("/bandwidth"),
+  
   CHANGE_STATUS("/change/status"),
+  
+  CHANGELOG_CREATEDBY("/changeLog/createdBy"),
+  
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
   OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
@@ -88,10 +90,6 @@ public enum SearchFieldName {
   ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
   
   ZSIDE_ACCESSPOINT_AUTHENTICATIONKEY("/zSide/accessPoint/authenticationKey"),
-  
-  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANCTAG("/zSide/accessPoint/linkProtocol/vlanCTag"),
-  
-  ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANSTAG("/zSide/accessPoint/linkProtocol/vlanSTag"),
   
   ZSIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/zSide/accessPoint/linkProtocol/vlanTagMin"),
   

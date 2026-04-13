@@ -1099,10 +1099,10 @@ public class CloudRoutersApi {
 
     /**
      * Get Route Table Actions
-     * This API provides capability to fetch action status
+     * This API provides capability to fetch all actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param state Action state (optional)
-     * @return CloudRouterActionResponse
+     * @return CloudRouterActionsSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1117,17 +1117,17 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouterActionResponse getCloudRouterActions(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
-        ApiResponse<CloudRouterActionResponse> localVarResp = getCloudRouterActionsWithHttpInfo(routerId, state);
+    public CloudRouterActionsSearchResponse getCloudRouterActions(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
+        ApiResponse<CloudRouterActionsSearchResponse> localVarResp = getCloudRouterActionsWithHttpInfo(routerId, state);
         return localVarResp.getData();
     }
 
     /**
      * Get Route Table Actions
-     * This API provides capability to fetch action status
+     * This API provides capability to fetch all actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param state Action state (optional)
-     * @return ApiResponse&lt;CloudRouterActionResponse&gt;
+     * @return ApiResponse&lt;CloudRouterActionsSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1142,15 +1142,15 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouterActionResponse> getCloudRouterActionsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
+    public ApiResponse<CloudRouterActionsSearchResponse> getCloudRouterActionsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterActionsValidateBeforeCall(routerId, state, null);
-        Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CloudRouterActionsSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Route Table Actions (asynchronously)
-     * This API provides capability to fetch action status
+     * This API provides capability to fetch all actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param state Action state (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1169,10 +1169,10 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterActionsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback<CloudRouterActionResponse> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterActionsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nullable CloudRouterActionState state, final ApiCallback<CloudRouterActionsSearchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterActionsValidateBeforeCall(routerId, state, _callback);
-        Type localVarReturnType = new TypeToken<CloudRouterActionResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<CloudRouterActionsSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2804,7 +2804,7 @@ public class CloudRoutersApi {
 
     /**
      * Search Route Table Actions
-     * This API provides capability to refresh route table and bgp session summary information
+     * This API provides capability to search route table actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param cloudRouterActionsSearchRequest  (required)
      * @return CloudRouterActionsSearchResponse
@@ -2829,7 +2829,7 @@ public class CloudRoutersApi {
 
     /**
      * Search Route Table Actions
-     * This API provides capability to refresh route table and bgp session summary information
+     * This API provides capability to search route table actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param cloudRouterActionsSearchRequest  (required)
      * @return ApiResponse&lt;CloudRouterActionsSearchResponse&gt;
@@ -2855,7 +2855,7 @@ public class CloudRoutersApi {
 
     /**
      * Search Route Table Actions (asynchronously)
-     * This API provides capability to refresh route table and bgp session summary information
+     * This API provides capability to search route table actions for a given cloud router
      * @param routerId Router UUID (required)
      * @param cloudRouterActionsSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

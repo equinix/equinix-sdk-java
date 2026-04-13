@@ -47,7 +47,9 @@ public enum AccessPointType {
   
   METAL_NETWORK("METAL_NETWORK"),
   
-  VPIC_INTERFACE("VPIC_INTERFACE");
+  VPIC_INTERFACE("VPIC_INTERFACE"),
+  
+  APP_LINK("APP_LINK");
 
   private String value;
 

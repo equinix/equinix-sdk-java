@@ -24,7 +24,6 @@ Access point object
 |**providerConnectionId** | **String** | Provider assigned Connection Id |  [optional] |
 |**virtualNetwork** | [**VirtualNetwork**](VirtualNetwork.md) |  |  [optional] |
 |**interconnection** | [**MetalInterconnection**](MetalInterconnection.md) |  |  [optional] |
-|**vpicInterface** | [**VpicInterface**](VpicInterface.md) |  |  [optional] |
 |**role** | [**RoleEnum**](#RoleEnum) | E-Tree network connection role |  [optional] |
 
 

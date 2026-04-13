@@ -20,7 +20,6 @@ import com.equinix.sdk.fabricv4.model.ConnectionOperation;
 import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.equinix.sdk.fabricv4.model.ConnectionSideAdditionalInfo;
-import com.equinix.sdk.fabricv4.model.ConnectionState;
 import com.equinix.sdk.fabricv4.model.ConnectionType;
 import com.equinix.sdk.fabricv4.model.GeoScopeType;
 import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
@@ -92,11 +91,6 @@ public class Connection {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private ConnectionState state;
 
   public static final String SERIALIZED_NAME_CHANGE = "change";
   @SerializedName(SERIALIZED_NAME_CHANGE)
@@ -272,25 +266,6 @@ public class Connection {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
-  }
-
-
-  public Connection state(@javax.annotation.Nullable ConnectionState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public ConnectionState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable ConnectionState state) {
-    this.state = state;
   }
 
 
@@ -675,7 +650,6 @@ public class Connection {
         Objects.equals(this.uuid, connection.uuid) &&
         Objects.equals(this.name, connection.name) &&
         Objects.equals(this.description, connection.description) &&
-        Objects.equals(this.state, connection.state) &&
         Objects.equals(this.change, connection.change) &&
         Objects.equals(this.operation, connection.operation) &&
         Objects.equals(this.order, connection.order) &&
@@ -697,7 +671,7 @@ public class Connection {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, name, description, state, change, operation, order, notifications, account, changeLog, bandwidth, geoScope, redundancy, isRemote, direction, aSide, zSide, marketplaceSubscription, additionalInfo, project, additionalProperties);
+    return Objects.hash(href, type, uuid, name, description, change, operation, order, notifications, account, changeLog, bandwidth, geoScope, redundancy, isRemote, direction, aSide, zSide, marketplaceSubscription, additionalInfo, project, additionalProperties);
   }
 
   @Override
@@ -709,7 +683,6 @@ public class Connection {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
@@ -748,7 +721,7 @@ public class Connection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "state", "change", "operation", "order", "notifications", "account", "changeLog", "bandwidth", "geoScope", "redundancy", "isRemote", "direction", "aSide", "zSide", "marketplaceSubscription", "additionalInfo", "project"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "change", "operation", "order", "notifications", "account", "changeLog", "bandwidth", "geoScope", "redundancy", "isRemote", "direction", "aSide", "zSide", "marketplaceSubscription", "additionalInfo", "project"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "bandwidth", "aSide", "zSide"));
@@ -787,10 +760,6 @@ public class Connection {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        ConnectionState.validateJsonElement(jsonObj.get("state"));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {

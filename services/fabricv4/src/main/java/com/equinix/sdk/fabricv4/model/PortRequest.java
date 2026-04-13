@@ -13,8 +13,6 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.EndCustomer;
-import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
@@ -450,11 +448,6 @@ public class PortRequest {
   @javax.annotation.Nullable
   private List<PortAdditionalInfo> additionalInfo = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_END_CUSTOMER = "endCustomer";
-  @SerializedName(SERIALIZED_NAME_END_CUSTOMER)
-  @javax.annotation.Nullable
-  private EndCustomer endCustomer;
-
   public static final String SERIALIZED_NAME_PHYSICAL_PORTS = "physicalPorts";
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS)
   @javax.annotation.Nullable
@@ -464,11 +457,6 @@ public class PortRequest {
   @SerializedName(SERIALIZED_NAME_LOAS)
   @javax.annotation.Nullable
   private List<PortLoa> loas = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
-  @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
-  @javax.annotation.Nullable
-  private MarketplaceSubscription marketplaceSubscription;
 
   public PortRequest() {
   }
@@ -1088,25 +1076,6 @@ public class PortRequest {
   }
 
 
-  public PortRequest endCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-    return this;
-  }
-
-  /**
-   * Get endCustomer
-   * @return endCustomer
-   */
-  @javax.annotation.Nullable
-  public EndCustomer getEndCustomer() {
-    return endCustomer;
-  }
-
-  public void setEndCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-  }
-
-
   public PortRequest physicalPorts(@javax.annotation.Nullable List<PhysicalPort> physicalPorts) {
     this.physicalPorts = physicalPorts;
     return this;
@@ -1158,25 +1127,6 @@ public class PortRequest {
 
   public void setLoas(@javax.annotation.Nullable List<PortLoa> loas) {
     this.loas = loas;
-  }
-
-
-  public PortRequest marketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
-    this.marketplaceSubscription = marketplaceSubscription;
-    return this;
-  }
-
-  /**
-   * Get marketplaceSubscription
-   * @return marketplaceSubscription
-   */
-  @javax.annotation.Nullable
-  public MarketplaceSubscription getMarketplaceSubscription() {
-    return marketplaceSubscription;
-  }
-
-  public void setMarketplaceSubscription(@javax.annotation.Nullable MarketplaceSubscription marketplaceSubscription) {
-    this.marketplaceSubscription = marketplaceSubscription;
   }
 
   /**
@@ -1265,16 +1215,14 @@ public class PortRequest {
         Objects.equals(this.physicalPortQuantity, portRequest.physicalPortQuantity) &&
         Objects.equals(this.notifications, portRequest.notifications) &&
         Objects.equals(this.additionalInfo, portRequest.additionalInfo) &&
-        Objects.equals(this.endCustomer, portRequest.endCustomer) &&
         Objects.equals(this.physicalPorts, portRequest.physicalPorts) &&
-        Objects.equals(this.loas, portRequest.loas) &&
-        Objects.equals(this.marketplaceSubscription, portRequest.marketplaceSubscription)&&
+        Objects.equals(this.loas, portRequest.loas)&&
         Objects.equals(this.additionalProperties, portRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, account, serviceType, serviceCode, bandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
+    return Objects.hash(type, name, description, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, account, serviceType, serviceCode, bandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, physicalPorts, loas, additionalProperties);
   }
 
   @Override
@@ -1312,10 +1260,8 @@ public class PortRequest {
     sb.append("    physicalPortQuantity: ").append(toIndentedString(physicalPortQuantity)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
-    sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
-    sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1338,7 +1284,7 @@ public class PortRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "physicalPorts", "loas"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "connectivitySourceType", "account", "location", "encapsulation", "settings"));
@@ -1478,10 +1424,6 @@ public class PortRequest {
           };
         }
       }
-      // validate the optional field `endCustomer`
-      if (jsonObj.get("endCustomer") != null && !jsonObj.get("endCustomer").isJsonNull()) {
-        EndCustomer.validateJsonElement(jsonObj.get("endCustomer"));
-      }
       if (jsonObj.get("physicalPorts") != null && !jsonObj.get("physicalPorts").isJsonNull()) {
         JsonArray jsonArrayphysicalPorts = jsonObj.getAsJsonArray("physicalPorts");
         if (jsonArrayphysicalPorts != null) {
@@ -1509,10 +1451,6 @@ public class PortRequest {
             PortLoa.validateJsonElement(jsonArrayloas.get(i));
           };
         }
-      }
-      // validate the optional field `marketplaceSubscription`
-      if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
-        MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
       }
   }
 

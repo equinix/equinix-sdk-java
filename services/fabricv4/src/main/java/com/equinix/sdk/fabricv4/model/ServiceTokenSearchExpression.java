@@ -58,6 +58,11 @@ public class ServiceTokenSearchExpression {
   @javax.annotation.Nullable
   private List<ServiceTokenSearchExpression> and = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_OR = "or";
+  @SerializedName(SERIALIZED_NAME_OR)
+  @javax.annotation.Nullable
+  private List<ServiceTokenSearchExpression> or = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
   @javax.annotation.Nullable
@@ -150,6 +155,33 @@ public class ServiceTokenSearchExpression {
 
   public void setAnd(@javax.annotation.Nullable List<ServiceTokenSearchExpression> and) {
     this.and = and;
+  }
+
+
+  public ServiceTokenSearchExpression or(@javax.annotation.Nullable List<ServiceTokenSearchExpression> or) {
+    this.or = or;
+    return this;
+  }
+
+  public ServiceTokenSearchExpression addOrItem(ServiceTokenSearchExpression orItem) {
+    if (this.or == null) {
+      this.or = new ArrayList<>();
+    }
+    this.or.add(orItem);
+    return this;
+  }
+
+  /**
+   * Get or
+   * @return or
+   */
+  @javax.annotation.Nullable
+  public List<ServiceTokenSearchExpression> getOr() {
+    return or;
+  }
+
+  public void setOr(@javax.annotation.Nullable List<ServiceTokenSearchExpression> or) {
+    this.or = or;
   }
 
 
@@ -273,6 +305,7 @@ public class ServiceTokenSearchExpression {
     }
     ServiceTokenSearchExpression serviceTokenSearchExpression = (ServiceTokenSearchExpression) o;
     return Objects.equals(this.and, serviceTokenSearchExpression.and) &&
+        Objects.equals(this.or, serviceTokenSearchExpression.or) &&
         Objects.equals(this.property, serviceTokenSearchExpression.property) &&
         Objects.equals(this.operator, serviceTokenSearchExpression.operator) &&
         Objects.equals(this.values, serviceTokenSearchExpression.values)&&
@@ -281,7 +314,7 @@ public class ServiceTokenSearchExpression {
 
   @Override
   public int hashCode() {
-    return Objects.hash(and, property, operator, values, additionalProperties);
+    return Objects.hash(and, or, property, operator, values, additionalProperties);
   }
 
   @Override
@@ -289,6 +322,7 @@ public class ServiceTokenSearchExpression {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceTokenSearchExpression {\n");
     sb.append("    and: ").append(toIndentedString(and)).append("\n");
+    sb.append("    or: ").append(toIndentedString(or)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
@@ -314,7 +348,7 @@ public class ServiceTokenSearchExpression {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("and", "property", "operator", "values"));
+    openapiFields = new HashSet<String>(Arrays.asList("and", "or", "property", "operator", "values"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -344,6 +378,20 @@ public class ServiceTokenSearchExpression {
           // validate the optional field `and` (array)
           for (int i = 0; i < jsonArrayand.size(); i++) {
             ServiceTokenSearchExpression.validateJsonElement(jsonArrayand.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("or") != null && !jsonObj.get("or").isJsonNull()) {
+        JsonArray jsonArrayor = jsonObj.getAsJsonArray("or");
+        if (jsonArrayor != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("or").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `or` to be an array in the JSON string but got `%s`", jsonObj.get("or").toString()));
+          }
+
+          // validate the optional field `or` (array)
+          for (int i = 0; i < jsonArrayor.size(); i++) {
+            ServiceTokenSearchExpression.validateJsonElement(jsonArrayor.get(i));
           };
         }
       }

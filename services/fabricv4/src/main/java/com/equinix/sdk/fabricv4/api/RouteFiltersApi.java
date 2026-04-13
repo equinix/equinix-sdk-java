@@ -25,6 +25,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.equinix.sdk.fabricv4.model.CloudRouterRouteFiltersSearchBase;
+import com.equinix.sdk.fabricv4.model.CloudRouterRouteFiltersSearchResponse;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteFilterData;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteFiltersBase;
 import com.equinix.sdk.fabricv4.model.Error;
@@ -1809,6 +1811,167 @@ public class RouteFiltersApi {
 
         okhttp3.Call localVarCall = patchRouteFilterByUuidValidateBeforeCall(routeFilterId, routeFiltersPatchRequestItem, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersData>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for searchCloudRouterRouteFilterAttachments
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteFiltersSearchBase  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Filter ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchCloudRouterRouteFilterAttachmentsCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = cloudRouterRouteFiltersSearchBase;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/routers/{routerId}/routeFilters/search"
+            .replace("{" + "routerId" + "}", localVarApiClient.escapeString(routerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call searchCloudRouterRouteFilterAttachmentsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routerId' is set
+        if (routerId == null) {
+            throw new ApiException("Missing the required parameter 'routerId' when calling searchCloudRouterRouteFilterAttachments(Async)");
+        }
+
+        // verify the required parameter 'cloudRouterRouteFiltersSearchBase' is set
+        if (cloudRouterRouteFiltersSearchBase == null) {
+            throw new ApiException("Missing the required parameter 'cloudRouterRouteFiltersSearchBase' when calling searchCloudRouterRouteFilterAttachments(Async)");
+        }
+
+        return searchCloudRouterRouteFilterAttachmentsCall(routerId, cloudRouterRouteFiltersSearchBase, _callback);
+
+    }
+
+    /**
+     * Search Cloud Router Route Filter Attachments
+     * This API provides capability to search route filter attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteFiltersSearchBase  (required)
+     * @return CloudRouterRouteFiltersSearchResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Filter ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public CloudRouterRouteFiltersSearchResponse searchCloudRouterRouteFilterAttachments(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase) throws ApiException {
+        ApiResponse<CloudRouterRouteFiltersSearchResponse> localVarResp = searchCloudRouterRouteFilterAttachmentsWithHttpInfo(routerId, cloudRouterRouteFiltersSearchBase);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search Cloud Router Route Filter Attachments
+     * This API provides capability to search route filter attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteFiltersSearchBase  (required)
+     * @return ApiResponse&lt;CloudRouterRouteFiltersSearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Filter ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CloudRouterRouteFiltersSearchResponse> searchCloudRouterRouteFilterAttachmentsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase) throws ApiException {
+        okhttp3.Call localVarCall = searchCloudRouterRouteFilterAttachmentsValidateBeforeCall(routerId, cloudRouterRouteFiltersSearchBase, null);
+        Type localVarReturnType = new TypeToken<CloudRouterRouteFiltersSearchResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search Cloud Router Route Filter Attachments (asynchronously)
+     * This API provides capability to search route filter attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteFiltersSearchBase  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Filter ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchCloudRouterRouteFilterAttachmentsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase, final ApiCallback<CloudRouterRouteFiltersSearchResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = searchCloudRouterRouteFilterAttachmentsValidateBeforeCall(routerId, cloudRouterRouteFiltersSearchBase, _callback);
+        Type localVarReturnType = new TypeToken<CloudRouterRouteFiltersSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -43,11 +43,7 @@ public enum ConnectionState {
   
   PENDING("PENDING"),
   
-  PROVISIONED("PROVISIONED"),
-  
   PROVISIONING("PROVISIONING"),
-  
-  REPROVISIONING("REPROVISIONING"),
   
   EMPTY("");
 

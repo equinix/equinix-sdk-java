@@ -26,7 +26,6 @@ import com.equinix.sdk.fabricv4.model.SimplifiedPort;
 import com.equinix.sdk.fabricv4.model.SimplifiedServiceProfile;
 import com.equinix.sdk.fabricv4.model.VirtualDevice;
 import com.equinix.sdk.fabricv4.model.VirtualNetwork;
-import com.equinix.sdk.fabricv4.model.VpicInterface;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -143,11 +142,6 @@ public class AccessPoint {
   @SerializedName(SERIALIZED_NAME_INTERCONNECTION)
   @javax.annotation.Nullable
   private MetalInterconnection interconnection;
-
-  public static final String SERIALIZED_NAME_VPIC_INTERFACE = "vpic_interface";
-  @SerializedName(SERIALIZED_NAME_VPIC_INTERFACE)
-  @javax.annotation.Nullable
-  private VpicInterface vpicInterface;
 
   /**
    * E-Tree network connection role
@@ -513,25 +507,6 @@ public class AccessPoint {
   }
 
 
-  public AccessPoint vpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
-    this.vpicInterface = vpicInterface;
-    return this;
-  }
-
-  /**
-   * Get vpicInterface
-   * @return vpicInterface
-   */
-  @javax.annotation.Nullable
-  public VpicInterface getVpicInterface() {
-    return vpicInterface;
-  }
-
-  public void setVpicInterface(@javax.annotation.Nullable VpicInterface vpicInterface) {
-    this.vpicInterface = vpicInterface;
-  }
-
-
   public AccessPoint role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
@@ -621,14 +596,13 @@ public class AccessPoint {
         Objects.equals(this.providerConnectionId, accessPoint.providerConnectionId) &&
         Objects.equals(this.virtualNetwork, accessPoint.virtualNetwork) &&
         Objects.equals(this.interconnection, accessPoint.interconnection) &&
-        Objects.equals(this.vpicInterface, accessPoint.vpicInterface) &&
         Objects.equals(this.role, accessPoint.role)&&
         Objects.equals(this.additionalProperties, accessPoint.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, sellerRegion, peeringType, authenticationKey, providerConnectionId, virtualNetwork, interconnection, vpicInterface, role, additionalProperties);
+    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, sellerRegion, peeringType, authenticationKey, providerConnectionId, virtualNetwork, interconnection, role, additionalProperties);
   }
 
   @Override
@@ -651,7 +625,6 @@ public class AccessPoint {
     sb.append("    providerConnectionId: ").append(toIndentedString(providerConnectionId)).append("\n");
     sb.append("    virtualNetwork: ").append(toIndentedString(virtualNetwork)).append("\n");
     sb.append("    interconnection: ").append(toIndentedString(interconnection)).append("\n");
-    sb.append("    vpicInterface: ").append(toIndentedString(vpicInterface)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -675,7 +648,7 @@ public class AccessPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "vpic_interface", "role"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -754,10 +727,6 @@ public class AccessPoint {
       // validate the optional field `interconnection`
       if (jsonObj.get("interconnection") != null && !jsonObj.get("interconnection").isJsonNull()) {
         MetalInterconnection.validateJsonElement(jsonObj.get("interconnection"));
-      }
-      // validate the optional field `vpic_interface`
-      if (jsonObj.get("vpic_interface") != null && !jsonObj.get("vpic_interface").isJsonNull()) {
-        VpicInterface.validateJsonElement(jsonObj.get("vpic_interface"));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getRouteFilterRules**](RouteFilterRulesApi.md#getRouteFilterRules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules |
 | [**patchRouteFilterRuleByUuid**](RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule |
 | [**replaceRouteFilterRuleByUuid**](RouteFilterRulesApi.md#replaceRouteFilterRuleByUuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule |
+| [**searchRouteFilterRules**](RouteFilterRulesApi.md#searchRouteFilterRules) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/search | Search Route Filter Rules |
 
 
 <a id="createRouteFilterRule"></a>
@@ -696,6 +697,81 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Route Filter ID Not Found |  -  |
+| **415** | Unsupported Media Type |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchRouteFilterRules"></a>
+# **searchRouteFilterRules**
+> RouteFilterRulesSearchResponse searchRouteFilterRules(routeFilterId, routeFilterRulesSearchRequest)
+
+Search Route Filter Rules
+
+This API provides capability to search Route Filter Rules
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.RouteFilterRulesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
+    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    RouteFilterRulesSearchRequest routeFilterRulesSearchRequest = new RouteFilterRulesSearchRequest(); // RouteFilterRulesSearchRequest | 
+    try {
+      RouteFilterRulesSearchResponse result = apiInstance.searchRouteFilterRules(routeFilterId, routeFilterRulesSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RouteFilterRulesApi#searchRouteFilterRules");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **routeFilterId** | **String**| Route Filters Id | |
+| **routeFilterRulesSearchRequest** | [**RouteFilterRulesSearchRequest**](RouteFilterRulesSearchRequest.md)|  | |
+
+### Return type
+
+[**RouteFilterRulesSearchResponse**](RouteFilterRulesSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Route Filter Rule ID Not Found |  -  |
 | **415** | Unsupported Media Type |  -  |
 | **500** | Internal server error |  -  |
 

@@ -314,7 +314,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules
+     * Delete Stream Alert Rules
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -338,7 +338,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules
+     * Delete Stream Alert Rules
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -363,7 +363,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules (asynchronously)
+     * Delete Stream Alert Rules (asynchronously)
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
