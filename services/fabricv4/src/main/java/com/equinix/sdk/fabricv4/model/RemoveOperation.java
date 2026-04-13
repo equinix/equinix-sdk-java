@@ -222,6 +222,11 @@ public class RemoveOperation {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `op`
       OpEnum.validateJsonElement(jsonObj.get("op"));
+      // check op value matches "remove" for RemoveOperation
+      String opValue = jsonObj.get("op").getAsString();
+      if (!"remove".equals(opValue)) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected op='remove' for RemoveOperation but got `%s`", opValue));
+      }
       if (!jsonObj.get("path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }

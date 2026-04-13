@@ -248,6 +248,11 @@ public class ReplaceOperation {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `op`
       OpEnum.validateJsonElement(jsonObj.get("op"));
+      // check op value matches "replace" for ReplaceOperation
+      String opValue = jsonObj.get("op").getAsString();
+      if (!"replace".equals(opValue)) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected op='replace' for ReplaceOperation but got `%s`", opValue));
+      }
       if (!jsonObj.get("path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
