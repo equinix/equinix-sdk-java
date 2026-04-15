@@ -1,0 +1,48 @@
+diff --git a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/AddOperation.java b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/AddOperation.java
+index 4a87dd55..d0ad5665 100644
+--- a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/AddOperation.java
++++ b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/AddOperation.java
+@@ -248,6 +248,11 @@ public class AddOperation {
+         JsonObject jsonObj = jsonElement.getAsJsonObject();
+       // validate the required field `op`
+       OpEnum.validateJsonElement(jsonObj.get("op"));
++      // check op value matches "add" for AddOperation
++      String opValue = jsonObj.get("op").getAsString();
++      if (!"add".equals(opValue)) {
++        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected op='add' for AddOperation but got `%s`", opValue));
++      }
+       if (!jsonObj.get("path").isJsonPrimitive()) {
+         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+       }
+diff --git a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/RemoveOperation.java b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/RemoveOperation.java
+index b03e1b13..6f0ee59e 100644
+--- a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/RemoveOperation.java
++++ b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/RemoveOperation.java
+@@ -222,6 +222,11 @@ public class RemoveOperation {
+         JsonObject jsonObj = jsonElement.getAsJsonObject();
+       // validate the required field `op`
+       OpEnum.validateJsonElement(jsonObj.get("op"));
++      // check op value matches "remove" for RemoveOperation
++      String opValue = jsonObj.get("op").getAsString();
++      if (!"remove".equals(opValue)) {
++        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected op='remove' for RemoveOperation but got `%s`", opValue));
++      }
+       if (!jsonObj.get("path").isJsonPrimitive()) {
+         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+       }
+diff --git a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/ReplaceOperation.java b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/ReplaceOperation.java
+index af7babd0..f73d91ac 100644
+--- a/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/ReplaceOperation.java
++++ b/services/fabricv4/src/main/java/com/equinix/sdk/fabricv4/model/ReplaceOperation.java
+@@ -248,6 +248,11 @@ public class ReplaceOperation {
+         JsonObject jsonObj = jsonElement.getAsJsonObject();
+       // validate the required field `op`
+       OpEnum.validateJsonElement(jsonObj.get("op"));
++      // check op value matches "replace" for ReplaceOperation
++      String opValue = jsonObj.get("op").getAsString();
++      if (!"replace".equals(opValue)) {
++        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected op='replace' for ReplaceOperation but got `%s`", opValue));
++      }
+       if (!jsonObj.get("path").isJsonPrimitive()) {
+         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+       }

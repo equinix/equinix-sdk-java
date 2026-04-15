@@ -25,5 +25,7 @@
 
 * `VPIC_INTERFACE` (value: `"VPIC_INTERFACE"`)
 
+* `APP_LINK` (value: `"APP_LINK"`)
+
 
 

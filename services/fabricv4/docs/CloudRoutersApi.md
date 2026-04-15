@@ -468,11 +468,11 @@ public class Example {
 
 <a id="getCloudRouterActions"></a>
 # **getCloudRouterActions**
-> CloudRouterActionResponse getCloudRouterActions(routerId, state)
+> CloudRouterActionsSearchResponse getCloudRouterActions(routerId, state)
 
 Get Route Table Actions
 
-This API provides capability to fetch action status
+This API provides capability to fetch all actions for a given cloud router
 
 ### Example
 ```java
@@ -497,7 +497,7 @@ public class Example {
     UUID routerId = UUID.randomUUID(); // UUID | Router UUID
     CloudRouterActionState state = CloudRouterActionState.fromValue("SUCCEEDED"); // CloudRouterActionState | Action state
     try {
-      CloudRouterActionResponse result = apiInstance.getCloudRouterActions(routerId, state);
+      CloudRouterActionsSearchResponse result = apiInstance.getCloudRouterActions(routerId, state);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CloudRoutersApi#getCloudRouterActions");
@@ -519,7 +519,7 @@ public class Example {
 
 ### Return type
 
-[**CloudRouterActionResponse**](CloudRouterActionResponse.md)
+[**CloudRouterActionsSearchResponse**](CloudRouterActionsSearchResponse.md)
 
 ### Authorization
 
@@ -1283,7 +1283,7 @@ public class Example {
 
 Search Route Table Actions
 
-This API provides capability to refresh route table and bgp session summary information
+This API provides capability to search route table actions for a given cloud router
 
 ### Example
 ```java

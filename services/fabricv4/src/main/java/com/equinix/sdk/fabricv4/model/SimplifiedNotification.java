@@ -67,7 +67,11 @@ public class SimplifiedNotification {
     
     ALL("ALL"),
     
-    SALES_REP_NOTIFICATIONS("SALES_REP_NOTIFICATIONS");
+    SALES_REP_NOTIFICATIONS("SALES_REP_NOTIFICATIONS"),
+    
+    TECHNICAL("TECHNICAL"),
+    
+    ORDERING("ORDERING");
 
     private String value;
 

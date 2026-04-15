@@ -17,6 +17,7 @@ import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CompanyLogo;
 import com.equinix.sdk.fabricv4.model.CompanyMetro;
 import com.equinix.sdk.fabricv4.model.CompanyProfileChange;
+import com.equinix.sdk.fabricv4.model.CompanyProfileResponseAccount;
 import com.equinix.sdk.fabricv4.model.CompanyServiceProfile;
 import com.equinix.sdk.fabricv4.model.PrivateService;
 import com.equinix.sdk.fabricv4.model.TagResponse;
@@ -93,6 +94,11 @@ public class CompanyProfileResponse {
   @SerializedName(SERIALIZED_NAME_STATE)
   @javax.annotation.Nullable
   private Object state;
+
+  public static final String SERIALIZED_NAME_ACCOUNT = "account";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
+  private CompanyProfileResponseAccount account;
 
   public static final String SERIALIZED_NAME_METROS = "metros";
   @SerializedName(SERIALIZED_NAME_METROS)
@@ -277,6 +283,25 @@ public class CompanyProfileResponse {
 
   public void setState(@javax.annotation.Nullable Object state) {
     this.state = state;
+  }
+
+
+  public CompanyProfileResponse account(@javax.annotation.Nullable CompanyProfileResponseAccount account) {
+    this.account = account;
+    return this;
+  }
+
+  /**
+   * Get account
+   * @return account
+   */
+  @javax.annotation.Nullable
+  public CompanyProfileResponseAccount getAccount() {
+    return account;
+  }
+
+  public void setAccount(@javax.annotation.Nullable CompanyProfileResponseAccount account) {
+    this.account = account;
   }
 
 
@@ -571,6 +596,7 @@ public class CompanyProfileResponse {
         Objects.equals(this.summary, companyProfileResponse.summary) &&
         Objects.equals(this.description, companyProfileResponse.description) &&
         Objects.equals(this.state, companyProfileResponse.state) &&
+        Objects.equals(this.account, companyProfileResponse.account) &&
         Objects.equals(this.metros, companyProfileResponse.metros) &&
         Objects.equals(this.logo, companyProfileResponse.logo) &&
         Objects.equals(this.tags, companyProfileResponse.tags) &&
@@ -586,7 +612,7 @@ public class CompanyProfileResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, summary, description, state, metros, logo, tags, serviceProfiles, privateServices, notifications, webUrl, contactUrl, change, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, summary, description, state, account, metros, logo, tags, serviceProfiles, privateServices, notifications, webUrl, contactUrl, change, changeLog, additionalProperties);
   }
 
   @Override
@@ -600,6 +626,7 @@ public class CompanyProfileResponse {
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    metros: ").append(toIndentedString(metros)).append("\n");
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
@@ -632,7 +659,7 @@ public class CompanyProfileResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -668,6 +695,10 @@ public class CompanyProfileResponse {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // validate the optional field `account`
+      if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
+        CompanyProfileResponseAccount.validateJsonElement(jsonObj.get("account"));
       }
       if (jsonObj.get("metros") != null && !jsonObj.get("metros").isJsonNull()) {
         JsonArray jsonArraymetros = jsonObj.getAsJsonArray("metros");

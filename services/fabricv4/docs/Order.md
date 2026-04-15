@@ -13,6 +13,7 @@
 |**orderId** | **String** | Order Identification |  [optional] |
 |**orderNumber** | **String** | Order Reference Number |  [optional] |
 |**termLength** | **Integer** | Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case). |  [optional] |
+|**contractedBandwidth** | **Integer** | Contracted bandwidth |  [optional] |
 
 
 

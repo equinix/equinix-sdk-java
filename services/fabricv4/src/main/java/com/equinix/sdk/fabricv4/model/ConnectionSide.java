@@ -14,10 +14,7 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AccessPoint;
-import com.equinix.sdk.fabricv4.model.ConnectionCompanyProfile;
-import com.equinix.sdk.fabricv4.model.ConnectionInvitation;
 import com.equinix.sdk.fabricv4.model.ConnectionSideAdditionalInfo;
-import com.equinix.sdk.fabricv4.model.InternetAccess;
 import com.equinix.sdk.fabricv4.model.ServiceToken;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -68,21 +65,6 @@ public class ConnectionSide {
   @javax.annotation.Nullable
   private AccessPoint accessPoint;
 
-  public static final String SERIALIZED_NAME_INTERNET_ACCESS = "internetAccess";
-  @SerializedName(SERIALIZED_NAME_INTERNET_ACCESS)
-  @javax.annotation.Nullable
-  private InternetAccess internetAccess;
-
-  public static final String SERIALIZED_NAME_COMPANY_PROFILE = "companyProfile";
-  @SerializedName(SERIALIZED_NAME_COMPANY_PROFILE)
-  @javax.annotation.Nullable
-  private ConnectionCompanyProfile companyProfile;
-
-  public static final String SERIALIZED_NAME_INVITATION = "invitation";
-  @SerializedName(SERIALIZED_NAME_INVITATION)
-  @javax.annotation.Nullable
-  private ConnectionInvitation invitation;
-
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
   @javax.annotation.Nullable
@@ -126,63 +108,6 @@ public class ConnectionSide {
 
   public void setAccessPoint(@javax.annotation.Nullable AccessPoint accessPoint) {
     this.accessPoint = accessPoint;
-  }
-
-
-  public ConnectionSide internetAccess(@javax.annotation.Nullable InternetAccess internetAccess) {
-    this.internetAccess = internetAccess;
-    return this;
-  }
-
-  /**
-   * Get internetAccess
-   * @return internetAccess
-   */
-  @javax.annotation.Nullable
-  public InternetAccess getInternetAccess() {
-    return internetAccess;
-  }
-
-  public void setInternetAccess(@javax.annotation.Nullable InternetAccess internetAccess) {
-    this.internetAccess = internetAccess;
-  }
-
-
-  public ConnectionSide companyProfile(@javax.annotation.Nullable ConnectionCompanyProfile companyProfile) {
-    this.companyProfile = companyProfile;
-    return this;
-  }
-
-  /**
-   * Get companyProfile
-   * @return companyProfile
-   */
-  @javax.annotation.Nullable
-  public ConnectionCompanyProfile getCompanyProfile() {
-    return companyProfile;
-  }
-
-  public void setCompanyProfile(@javax.annotation.Nullable ConnectionCompanyProfile companyProfile) {
-    this.companyProfile = companyProfile;
-  }
-
-
-  public ConnectionSide invitation(@javax.annotation.Nullable ConnectionInvitation invitation) {
-    this.invitation = invitation;
-    return this;
-  }
-
-  /**
-   * Get invitation
-   * @return invitation
-   */
-  @javax.annotation.Nullable
-  public ConnectionInvitation getInvitation() {
-    return invitation;
-  }
-
-  public void setInvitation(@javax.annotation.Nullable ConnectionInvitation invitation) {
-    this.invitation = invitation;
   }
 
 
@@ -269,16 +194,13 @@ public class ConnectionSide {
     ConnectionSide connectionSide = (ConnectionSide) o;
     return Objects.equals(this.serviceToken, connectionSide.serviceToken) &&
         Objects.equals(this.accessPoint, connectionSide.accessPoint) &&
-        Objects.equals(this.internetAccess, connectionSide.internetAccess) &&
-        Objects.equals(this.companyProfile, connectionSide.companyProfile) &&
-        Objects.equals(this.invitation, connectionSide.invitation) &&
         Objects.equals(this.additionalInfo, connectionSide.additionalInfo)&&
         Objects.equals(this.additionalProperties, connectionSide.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceToken, accessPoint, internetAccess, companyProfile, invitation, additionalInfo, additionalProperties);
+    return Objects.hash(serviceToken, accessPoint, additionalInfo, additionalProperties);
   }
 
   @Override
@@ -287,9 +209,6 @@ public class ConnectionSide {
     sb.append("class ConnectionSide {\n");
     sb.append("    serviceToken: ").append(toIndentedString(serviceToken)).append("\n");
     sb.append("    accessPoint: ").append(toIndentedString(accessPoint)).append("\n");
-    sb.append("    internetAccess: ").append(toIndentedString(internetAccess)).append("\n");
-    sb.append("    companyProfile: ").append(toIndentedString(companyProfile)).append("\n");
-    sb.append("    invitation: ").append(toIndentedString(invitation)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -313,7 +232,7 @@ public class ConnectionSide {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("serviceToken", "accessPoint", "internetAccess", "companyProfile", "invitation", "additionalInfo"));
+    openapiFields = new HashSet<String>(Arrays.asList("serviceToken", "accessPoint", "additionalInfo"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -339,18 +258,6 @@ public class ConnectionSide {
       // validate the optional field `accessPoint`
       if (jsonObj.get("accessPoint") != null && !jsonObj.get("accessPoint").isJsonNull()) {
         AccessPoint.validateJsonElement(jsonObj.get("accessPoint"));
-      }
-      // validate the optional field `internetAccess`
-      if (jsonObj.get("internetAccess") != null && !jsonObj.get("internetAccess").isJsonNull()) {
-        InternetAccess.validateJsonElement(jsonObj.get("internetAccess"));
-      }
-      // validate the optional field `companyProfile`
-      if (jsonObj.get("companyProfile") != null && !jsonObj.get("companyProfile").isJsonNull()) {
-        ConnectionCompanyProfile.validateJsonElement(jsonObj.get("companyProfile"));
-      }
-      // validate the optional field `invitation`
-      if (jsonObj.get("invitation") != null && !jsonObj.get("invitation").isJsonNull()) {
-        ConnectionInvitation.validateJsonElement(jsonObj.get("invitation"));
       }
       if (jsonObj.get("additionalInfo") != null && !jsonObj.get("additionalInfo").isJsonNull()) {
         JsonArray jsonArrayadditionalInfo = jsonObj.getAsJsonArray("additionalInfo");

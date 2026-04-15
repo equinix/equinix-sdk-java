@@ -25,6 +25,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.equinix.sdk.fabricv4.model.CloudRouterRouteAggregationsSearchBase;
+import com.equinix.sdk.fabricv4.model.CloudRouterRouteAggregationsSearchResponse;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteAggregationData;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.GetAllConnectionRouteAggregationsResponse;
@@ -1798,6 +1800,167 @@ public class RouteAggregationsApi {
 
         okhttp3.Call localVarCall = patchRouteAggregationByUuidValidateBeforeCall(routeAggregationId, routeAggregationsPatchRequestItem, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsData>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for searchCloudRouterRouteAggregationAttachments
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteAggregationsSearchBase  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Aggregation ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchCloudRouterRouteAggregationAttachmentsCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = cloudRouterRouteAggregationsSearchBase;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/routers/{routerId}/routeAggregations/search"
+            .replace("{" + "routerId" + "}", localVarApiClient.escapeString(routerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call searchCloudRouterRouteAggregationAttachmentsValidateBeforeCall(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routerId' is set
+        if (routerId == null) {
+            throw new ApiException("Missing the required parameter 'routerId' when calling searchCloudRouterRouteAggregationAttachments(Async)");
+        }
+
+        // verify the required parameter 'cloudRouterRouteAggregationsSearchBase' is set
+        if (cloudRouterRouteAggregationsSearchBase == null) {
+            throw new ApiException("Missing the required parameter 'cloudRouterRouteAggregationsSearchBase' when calling searchCloudRouterRouteAggregationAttachments(Async)");
+        }
+
+        return searchCloudRouterRouteAggregationAttachmentsCall(routerId, cloudRouterRouteAggregationsSearchBase, _callback);
+
+    }
+
+    /**
+     * Search Cloud Router Route Aggregation Attachments
+     * This API provides capability to search route aggregation attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteAggregationsSearchBase  (required)
+     * @return CloudRouterRouteAggregationsSearchResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Aggregation ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public CloudRouterRouteAggregationsSearchResponse searchCloudRouterRouteAggregationAttachments(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase) throws ApiException {
+        ApiResponse<CloudRouterRouteAggregationsSearchResponse> localVarResp = searchCloudRouterRouteAggregationAttachmentsWithHttpInfo(routerId, cloudRouterRouteAggregationsSearchBase);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search Cloud Router Route Aggregation Attachments
+     * This API provides capability to search route aggregation attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteAggregationsSearchBase  (required)
+     * @return ApiResponse&lt;CloudRouterRouteAggregationsSearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Aggregation ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CloudRouterRouteAggregationsSearchResponse> searchCloudRouterRouteAggregationAttachmentsWithHttpInfo(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase) throws ApiException {
+        okhttp3.Call localVarCall = searchCloudRouterRouteAggregationAttachmentsValidateBeforeCall(routerId, cloudRouterRouteAggregationsSearchBase, null);
+        Type localVarReturnType = new TypeToken<CloudRouterRouteAggregationsSearchResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search Cloud Router Route Aggregation Attachments (asynchronously)
+     * This API provides capability to search route aggregation attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param routerId Cloud Router UUID (required)
+     * @param cloudRouterRouteAggregationsSearchBase  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Route Aggregation ID Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchCloudRouterRouteAggregationAttachmentsAsync(@javax.annotation.Nonnull UUID routerId, @javax.annotation.Nonnull CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase, final ApiCallback<CloudRouterRouteAggregationsSearchResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = searchCloudRouterRouteAggregationAttachmentsValidateBeforeCall(routerId, cloudRouterRouteAggregationsSearchBase, _callback);
+        Type localVarReturnType = new TypeToken<CloudRouterRouteAggregationsSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

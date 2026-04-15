@@ -1,7 +1,7 @@
 # fabricv4
 
 Equinix Fabric API v4
-- API version: 4.27
+- API version: 4.28
   - Generator version: 7.16.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
@@ -86,7 +86,7 @@ import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.sdk.fabricv4.Configuration;
 import com.equinix.sdk.fabricv4.auth.*;
 import com.equinix.sdk.fabricv4.model.*;
-import com.equinix.sdk.fabricv4.api.CloudEventsApi;
+import com.equinix.sdk.fabricv4.api.AgentTemplatesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -97,13 +97,15 @@ public class Example {
     HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
     BearerAuth.setBearerToken("BEARER TOKEN");
 
-    CloudEventsApi apiInstance = new CloudEventsApi(defaultClient);
-    UUID cloudEventId = UUID.randomUUID(); // UUID | Cloud Event UUID
+    AgentTemplatesApi apiInstance = new AgentTemplatesApi(defaultClient);
+    UUID agentTemplateId = UUID.randomUUID(); // UUID | Agent Template UUID
+    Integer offset = 1; // Integer | offset
+    Integer limit = 10; // Integer | number of records to fetch
     try {
-      CloudEvent result = apiInstance.getCloudEvent(cloudEventId);
+      AgentTemplates result = apiInstance.getAgentTemplateByUuid(agentTemplateId, offset, limit);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CloudEventsApi#getCloudEvent");
+      System.err.println("Exception when calling AgentTemplatesApi#getAgentTemplateByUuid");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -120,6 +122,14 @@ All URIs are relative to *https://api.equinix.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AgentTemplatesApi* | [**getAgentTemplateByUuid**](docs/AgentTemplatesApi.md#getAgentTemplateByUuid) | **GET** /fabric/v4/agentTemplates/{agentTemplateId} | Get Agent Template by UUID
+*AgentTemplatesApi* | [**getAgentTemplates**](docs/AgentTemplatesApi.md#getAgentTemplates) | **GET** /fabric/v4/agentTemplates | Get Agent Templates
+*AgentsApi* | [**createAgent**](docs/AgentsApi.md#createAgent) | **POST** /fabric/v4/agents | Create Agent
+*AgentsApi* | [**deleteAgentByUuid**](docs/AgentsApi.md#deleteAgentByUuid) | **DELETE** /fabric/v4/agents/{agentId} | Delete Agent by UUID
+*AgentsApi* | [**getAgentActivities**](docs/AgentsApi.md#getAgentActivities) | **GET** /fabric/v4/agents/{agentId}/activities | Get Agent Activities
+*AgentsApi* | [**getAgentByUuid**](docs/AgentsApi.md#getAgentByUuid) | **GET** /fabric/v4/agents/{agentId} | Get Agent by UUID
+*AgentsApi* | [**getAgents**](docs/AgentsApi.md#getAgents) | **GET** /fabric/v4/agents | Get Agents
+*AgentsApi* | [**patchAgentByUuid**](docs/AgentsApi.md#patchAgentByUuid) | **PATCH** /fabric/v4/agents/{agentId} | Update Agent by UUID
 *CloudEventsApi* | [**getCloudEvent**](docs/CloudEventsApi.md#getCloudEvent) | **GET** /fabric/v4/cloudevents/{cloudEventId} | Get Cloud Event
 *CloudEventsApi* | [**getCloudEventByAssetId**](docs/CloudEventsApi.md#getCloudEventByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/cloudevents | Get Cloud Events by Asset Id
 *CloudEventsApi* | [**searchCloudEvents**](docs/CloudEventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events
@@ -207,6 +217,7 @@ Class | Method | HTTP request | Description
 *RouteAggregationRulesApi* | [**getRouteAggregationRules**](docs/RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | GetRARules
 *RouteAggregationRulesApi* | [**patchRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | PatchRARule
 *RouteAggregationRulesApi* | [**replaceRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | ReplaceRARule
+*RouteAggregationRulesApi* | [**searchRouteAggregationRules**](docs/RouteAggregationRulesApi.md#searchRouteAggregationRules) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/search | Search Route Aggregation Rules
 *RouteAggregationsApi* | [**attachConnectionRouteAggregation**](docs/RouteAggregationsApi.md#attachConnectionRouteAggregation) | **PUT** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Attach Aggregation
 *RouteAggregationsApi* | [**createRouteAggregation**](docs/RouteAggregationsApi.md#createRouteAggregation) | **POST** /fabric/v4/routeAggregations | Create Aggregations
 *RouteAggregationsApi* | [**deleteRouteAggregationByUuid**](docs/RouteAggregationsApi.md#deleteRouteAggregationByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId} | Delete Aggregation
@@ -218,6 +229,7 @@ Class | Method | HTTP request | Description
 *RouteAggregationsApi* | [**getRouteAggregationChanges**](docs/RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes
 *RouteAggregationsApi* | [**getRouteAggregationConnections**](docs/RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation
 *RouteAggregationsApi* | [**patchRouteAggregationByUuid**](docs/RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation
+*RouteAggregationsApi* | [**searchCloudRouterRouteAggregationAttachments**](docs/RouteAggregationsApi.md#searchCloudRouterRouteAggregationAttachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments
 *RouteAggregationsApi* | [**searchRouteAggregations**](docs/RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations
 *RouteFilterRulesApi* | [**createRouteFilterRule**](docs/RouteFilterRulesApi.md#createRouteFilterRule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create Route Filter Rule
 *RouteFilterRulesApi* | [**createRouteFilterRulesInBulk**](docs/RouteFilterRulesApi.md#createRouteFilterRulesInBulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk Create Route Filter Rules
@@ -228,6 +240,7 @@ Class | Method | HTTP request | Description
 *RouteFilterRulesApi* | [**getRouteFilterRules**](docs/RouteFilterRulesApi.md#getRouteFilterRules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules
 *RouteFilterRulesApi* | [**patchRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule
 *RouteFilterRulesApi* | [**replaceRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#replaceRouteFilterRuleByUuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule
+*RouteFilterRulesApi* | [**searchRouteFilterRules**](docs/RouteFilterRulesApi.md#searchRouteFilterRules) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/search | Search Route Filter Rules
 *RouteFiltersApi* | [**attachConnectionRouteFilter**](docs/RouteFiltersApi.md#attachConnectionRouteFilter) | **PUT** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Attach Route Filter
 *RouteFiltersApi* | [**createRouteFilter**](docs/RouteFiltersApi.md#createRouteFilter) | **POST** /fabric/v4/routeFilters | Create Route Filters
 *RouteFiltersApi* | [**deleteRouteFilterByUuid**](docs/RouteFiltersApi.md#deleteRouteFilterByUuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId} | Delete Route Filter
@@ -239,6 +252,7 @@ Class | Method | HTTP request | Description
 *RouteFiltersApi* | [**getRouteFilterChanges**](docs/RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes
 *RouteFiltersApi* | [**getRouteFilterConnections**](docs/RouteFiltersApi.md#getRouteFilterConnections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter
 *RouteFiltersApi* | [**patchRouteFilterByUuid**](docs/RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter
+*RouteFiltersApi* | [**searchCloudRouterRouteFilterAttachments**](docs/RouteFiltersApi.md#searchCloudRouterRouteFilterAttachments) | **POST** /fabric/v4/routers/{routerId}/routeFilters/search | Search Cloud Router Route Filter Attachments
 *RouteFiltersApi* | [**searchRouteFilters**](docs/RouteFiltersApi.md#searchRouteFilters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters
 *RoutingProtocolsApi* | [**createConnectionRoutingProtocol**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Protocol
 *RoutingProtocolsApi* | [**createConnectionRoutingProtocolsInBulk**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocolsInBulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Protocol
@@ -254,6 +268,7 @@ Class | Method | HTTP request | Description
 *RoutingProtocolsApi* | [**replaceConnectionRoutingProtocolByUuid**](docs/RoutingProtocolsApi.md#replaceConnectionRoutingProtocolByUuid) | **PUT** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Replace Protocol
 *RoutingProtocolsApi* | [**validateRoutingProtocol**](docs/RoutingProtocolsApi.md#validateRoutingProtocol) | **POST** /fabric/v4/routers/{routerId}/validate | Validate Subnet
 *ServiceProfilesApi* | [**createServiceProfile**](docs/ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Profile
+*ServiceProfilesApi* | [**createServiceProfileAction**](docs/ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions
 *ServiceProfilesApi* | [**deleteServiceProfileByUuid**](docs/ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile
 *ServiceProfilesApi* | [**getServiceProfileByUuid**](docs/ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile
 *ServiceProfilesApi* | [**getServiceProfileMetrosByUuid**](docs/ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros
@@ -271,7 +286,7 @@ Class | Method | HTTP request | Description
 *StatisticsApi* | [**getConnectionStatsByPortUuid**](docs/StatisticsApi.md#getConnectionStatsByPortUuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by uuid **(DEPRECATED)**
 *StatisticsApi* | [**getPortStatsByPortUuid**](docs/StatisticsApi.md#getPortStatsByPortUuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid **(DEPRECATED)**
 *StreamAlertRulesApi* | [**createStreamAlertRules**](docs/StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rules
-*StreamAlertRulesApi* | [**deleteStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules
+*StreamAlertRulesApi* | [**deleteStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rules
 *StreamAlertRulesApi* | [**getStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rules
 *StreamAlertRulesApi* | [**getStreamAlertRules**](docs/StreamAlertRulesApi.md#getStreamAlertRules) | **GET** /fabric/v4/streams/{streamId}/alertRules | Get Stream Alert Rules
 *StreamAlertRulesApi* | [**updateStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules
@@ -300,6 +315,18 @@ Class | Method | HTTP request | Description
  - [AccessPointType](docs/AccessPointType.md)
  - [Actions](docs/Actions.md)
  - [AddOperation](docs/AddOperation.md)
+ - [Agent](docs/Agent.md)
+ - [AgentActivities](docs/AgentActivities.md)
+ - [AgentActivitiesMetadata](docs/AgentActivitiesMetadata.md)
+ - [AgentDefinition](docs/AgentDefinition.md)
+ - [AgentGetActivities](docs/AgentGetActivities.md)
+ - [AgentGetAllResponse](docs/AgentGetAllResponse.md)
+ - [AgentPatchRequest](docs/AgentPatchRequest.md)
+ - [AgentPostRequest](docs/AgentPostRequest.md)
+ - [AgentTemplate](docs/AgentTemplate.md)
+ - [AgentTemplateGetAllResponse](docs/AgentTemplateGetAllResponse.md)
+ - [AgentTemplates](docs/AgentTemplates.md)
+ - [Agents](docs/Agents.md)
  - [AlertRulePostRequest](docs/AlertRulePostRequest.md)
  - [AlertRulePutRequest](docs/AlertRulePutRequest.md)
  - [AllPhysicalPortsResponse](docs/AllPhysicalPortsResponse.md)
@@ -327,6 +354,7 @@ Class | Method | HTTP request | Description
  - [BulkPortRequest](docs/BulkPortRequest.md)
  - [Change](docs/Change.md)
  - [Changelog](docs/Changelog.md)
+ - [ChatMessage](docs/ChatMessage.md)
  - [CloudEvent](docs/CloudEvent.md)
  - [CloudEventAssetType](docs/CloudEventAssetType.md)
  - [CloudEventData](docs/CloudEventData.md)
@@ -376,6 +404,20 @@ Class | Method | HTTP request | Description
  - [CloudRouterPostRequest](docs/CloudRouterPostRequest.md)
  - [CloudRouterPostRequestBase](docs/CloudRouterPostRequestBase.md)
  - [CloudRouterPostRequestPackage](docs/CloudRouterPostRequestPackage.md)
+ - [CloudRouterRouteAggregationAndExpression](docs/CloudRouterRouteAggregationAndExpression.md)
+ - [CloudRouterRouteAggregationExpression](docs/CloudRouterRouteAggregationExpression.md)
+ - [CloudRouterRouteAggregationOrExpression](docs/CloudRouterRouteAggregationOrExpression.md)
+ - [CloudRouterRouteAggregationSimpleExpression](docs/CloudRouterRouteAggregationSimpleExpression.md)
+ - [CloudRouterRouteAggregationsFilter](docs/CloudRouterRouteAggregationsFilter.md)
+ - [CloudRouterRouteAggregationsSearchBase](docs/CloudRouterRouteAggregationsSearchBase.md)
+ - [CloudRouterRouteAggregationsSearchResponse](docs/CloudRouterRouteAggregationsSearchResponse.md)
+ - [CloudRouterRouteFilterAndExpression](docs/CloudRouterRouteFilterAndExpression.md)
+ - [CloudRouterRouteFilterExpression](docs/CloudRouterRouteFilterExpression.md)
+ - [CloudRouterRouteFilterOrExpression](docs/CloudRouterRouteFilterOrExpression.md)
+ - [CloudRouterRouteFilterSimpleExpression](docs/CloudRouterRouteFilterSimpleExpression.md)
+ - [CloudRouterRouteFiltersFilter](docs/CloudRouterRouteFiltersFilter.md)
+ - [CloudRouterRouteFiltersSearchBase](docs/CloudRouterRouteFiltersSearchBase.md)
+ - [CloudRouterRouteFiltersSearchResponse](docs/CloudRouterRouteFiltersSearchResponse.md)
  - [CloudRouterSearchRequest](docs/CloudRouterSearchRequest.md)
  - [CloudRouterSimpleExpression](docs/CloudRouterSimpleExpression.md)
  - [CloudRouterSortBy](docs/CloudRouterSortBy.md)
@@ -388,6 +430,7 @@ Class | Method | HTTP request | Description
  - [CompanyProfileChange](docs/CompanyProfileChange.md)
  - [CompanyProfileRequest](docs/CompanyProfileRequest.md)
  - [CompanyProfileResponse](docs/CompanyProfileResponse.md)
+ - [CompanyProfileResponseAccount](docs/CompanyProfileResponseAccount.md)
  - [CompanyProfileSearchFilter](docs/CompanyProfileSearchFilter.md)
  - [CompanyProfileSearchRequest](docs/CompanyProfileSearchRequest.md)
  - [CompanyProfileSearchResponse](docs/CompanyProfileSearchResponse.md)
@@ -485,6 +528,7 @@ Class | Method | HTTP request | Description
  - [MarketingInfo](docs/MarketingInfo.md)
  - [MarketplaceSubscription](docs/MarketplaceSubscription.md)
  - [Md5](docs/Md5.md)
+ - [MessagesInner](docs/MessagesInner.md)
  - [MetalInterconnection](docs/MetalInterconnection.md)
  - [Metric](docs/Metric.md)
  - [MetricAssetType](docs/MetricAssetType.md)
@@ -499,6 +543,7 @@ Class | Method | HTTP request | Description
  - [Metro](docs/Metro.md)
  - [MetroError](docs/MetroError.md)
  - [MetroResponse](docs/MetroResponse.md)
+ - [ModelConfiguration](docs/ModelConfiguration.md)
  - [ModelInterface](docs/ModelInterface.md)
  - [ModelPackage](docs/ModelPackage.md)
  - [Network](docs/Network.md)
@@ -599,6 +644,7 @@ Class | Method | HTTP request | Description
  - [Project](docs/Project.md)
  - [ProviderStatus](docs/ProviderStatus.md)
  - [PtpAdvanceConfiguration](docs/PtpAdvanceConfiguration.md)
+ - [RaAttachmentSortItem](docs/RaAttachmentSortItem.md)
  - [RemoveOperation](docs/RemoveOperation.md)
  - [ReplaceOperation](docs/ReplaceOperation.md)
  - [ResourceData](docs/ResourceData.md)
@@ -607,9 +653,17 @@ Class | Method | HTTP request | Description
  - [ResponseIncompleteDetails](docs/ResponseIncompleteDetails.md)
  - [ResponseUsageInputTokensDetails](docs/ResponseUsageInputTokensDetails.md)
  - [ResponseUsageOutputTokensDetails](docs/ResponseUsageOutputTokensDetails.md)
+ - [RfAttachmentSortItem](docs/RfAttachmentSortItem.md)
  - [RouteAggregationChangeData](docs/RouteAggregationChangeData.md)
  - [RouteAggregationChangeDataResponse](docs/RouteAggregationChangeDataResponse.md)
  - [RouteAggregationConnectionsData](docs/RouteAggregationConnectionsData.md)
+ - [RouteAggregationRuleAndExpression](docs/RouteAggregationRuleAndExpression.md)
+ - [RouteAggregationRuleExpression](docs/RouteAggregationRuleExpression.md)
+ - [RouteAggregationRuleOrExpression](docs/RouteAggregationRuleOrExpression.md)
+ - [RouteAggregationRuleSimpleExpression](docs/RouteAggregationRuleSimpleExpression.md)
+ - [RouteAggregationRuleSortBy](docs/RouteAggregationRuleSortBy.md)
+ - [RouteAggregationRuleSortCriteria](docs/RouteAggregationRuleSortCriteria.md)
+ - [RouteAggregationRuleSortDirection](docs/RouteAggregationRuleSortDirection.md)
  - [RouteAggregationRuleState](docs/RouteAggregationRuleState.md)
  - [RouteAggregationRulesBase](docs/RouteAggregationRulesBase.md)
  - [RouteAggregationRulesChange](docs/RouteAggregationRulesChange.md)
@@ -617,8 +671,11 @@ Class | Method | HTTP request | Description
  - [RouteAggregationRulesChangeDataResponse](docs/RouteAggregationRulesChangeDataResponse.md)
  - [RouteAggregationRulesChangeOperation](docs/RouteAggregationRulesChangeOperation.md)
  - [RouteAggregationRulesData](docs/RouteAggregationRulesData.md)
+ - [RouteAggregationRulesFilter](docs/RouteAggregationRulesFilter.md)
  - [RouteAggregationRulesPatchRequestItem](docs/RouteAggregationRulesPatchRequestItem.md)
  - [RouteAggregationRulesPostRequest](docs/RouteAggregationRulesPostRequest.md)
+ - [RouteAggregationRulesSearchRequest](docs/RouteAggregationRulesSearchRequest.md)
+ - [RouteAggregationRulesSearchResponse](docs/RouteAggregationRulesSearchResponse.md)
  - [RouteAggregationSortItem](docs/RouteAggregationSortItem.md)
  - [RouteAggregationState](docs/RouteAggregationState.md)
  - [RouteAggregationsBase](docs/RouteAggregationsBase.md)
@@ -634,6 +691,13 @@ Class | Method | HTTP request | Description
  - [RouteFilterChangeData](docs/RouteFilterChangeData.md)
  - [RouteFilterChangeDataResponse](docs/RouteFilterChangeDataResponse.md)
  - [RouteFilterConnectionsData](docs/RouteFilterConnectionsData.md)
+ - [RouteFilterRuleAndExpression](docs/RouteFilterRuleAndExpression.md)
+ - [RouteFilterRuleExpression](docs/RouteFilterRuleExpression.md)
+ - [RouteFilterRuleOrExpression](docs/RouteFilterRuleOrExpression.md)
+ - [RouteFilterRuleSimpleExpression](docs/RouteFilterRuleSimpleExpression.md)
+ - [RouteFilterRuleSortBy](docs/RouteFilterRuleSortBy.md)
+ - [RouteFilterRuleSortCriteria](docs/RouteFilterRuleSortCriteria.md)
+ - [RouteFilterRuleSortDirection](docs/RouteFilterRuleSortDirection.md)
  - [RouteFilterRuleState](docs/RouteFilterRuleState.md)
  - [RouteFilterRulesBase](docs/RouteFilterRulesBase.md)
  - [RouteFilterRulesChange](docs/RouteFilterRulesChange.md)
@@ -641,8 +705,11 @@ Class | Method | HTTP request | Description
  - [RouteFilterRulesChangeDataResponse](docs/RouteFilterRulesChangeDataResponse.md)
  - [RouteFilterRulesChangeOperation](docs/RouteFilterRulesChangeOperation.md)
  - [RouteFilterRulesData](docs/RouteFilterRulesData.md)
+ - [RouteFilterRulesFilter](docs/RouteFilterRulesFilter.md)
  - [RouteFilterRulesPatchRequestItem](docs/RouteFilterRulesPatchRequestItem.md)
  - [RouteFilterRulesPostRequest](docs/RouteFilterRulesPostRequest.md)
+ - [RouteFilterRulesSearchRequest](docs/RouteFilterRulesSearchRequest.md)
+ - [RouteFilterRulesSearchResponse](docs/RouteFilterRulesSearchResponse.md)
  - [RouteFilterState](docs/RouteFilterState.md)
  - [RouteFiltersBase](docs/RouteFiltersBase.md)
  - [RouteFiltersChange](docs/RouteFiltersChange.md)
@@ -696,7 +763,10 @@ Class | Method | HTTP request | Description
  - [ServiceProfileAccessPointTypeEnum](docs/ServiceProfileAccessPointTypeEnum.md)
  - [ServiceProfileAccessPointTypeVD](docs/ServiceProfileAccessPointTypeVD.md)
  - [ServiceProfileAccessPointVD](docs/ServiceProfileAccessPointVD.md)
+ - [ServiceProfileActionRequest](docs/ServiceProfileActionRequest.md)
+ - [ServiceProfileActionResponse](docs/ServiceProfileActionResponse.md)
  - [ServiceProfileAndFilter](docs/ServiceProfileAndFilter.md)
+ - [ServiceProfileChange](docs/ServiceProfileChange.md)
  - [ServiceProfileFilter](docs/ServiceProfileFilter.md)
  - [ServiceProfileLinkProtocolConfig](docs/ServiceProfileLinkProtocolConfig.md)
  - [ServiceProfileListResponse](docs/ServiceProfileListResponse.md)
@@ -796,6 +866,7 @@ Class | Method | HTTP request | Description
  - [TimeServiceSortCriteria](docs/TimeServiceSortCriteria.md)
  - [TimeServiceSortDirection](docs/TimeServiceSortDirection.md)
  - [TimeServicesSearchRequest](docs/TimeServicesSearchRequest.md)
+ - [ToolCallInformationInner](docs/ToolCallInformationInner.md)
  - [ValidateConnectionResponse](docs/ValidateConnectionResponse.md)
  - [ValidateRequest](docs/ValidateRequest.md)
  - [ValidateRequestFilter](docs/ValidateRequestFilter.md)

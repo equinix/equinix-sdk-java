@@ -39,7 +39,11 @@ public enum Asset {
   
   ORGANIZATIONS("organizations"),
   
-  PROJECTS("projects");
+  PROJECTS("projects"),
+  
+  NETWORKEDGEDEVICES("networkEdgeDevices"),
+  
+  COMPANYPROFILES("companyProfiles");
 
   private String value;
 

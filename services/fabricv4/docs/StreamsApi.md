@@ -137,7 +137,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 
 ### Return type
@@ -285,7 +285,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 
 ### Return type
@@ -582,7 +582,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 | **streamAssetPutRequest** | [**StreamAssetPutRequest**](StreamAssetPutRequest.md)|  | |
 

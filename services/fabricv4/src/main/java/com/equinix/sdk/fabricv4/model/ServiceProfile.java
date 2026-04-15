@@ -21,6 +21,7 @@ import com.equinix.sdk.fabricv4.model.ServiceMetro;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointCOLO;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointType;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointVD;
+import com.equinix.sdk.fabricv4.model.ServiceProfileChange;
 import com.equinix.sdk.fabricv4.model.ServiceProfileStateEnum;
 import com.equinix.sdk.fabricv4.model.ServiceProfileTypeEnum;
 import com.equinix.sdk.fabricv4.model.ServiceProfileVisibilityEnum;
@@ -81,6 +82,11 @@ public class ServiceProfile {
   @SerializedName(SERIALIZED_NAME_PROJECT)
   @javax.annotation.Nullable
   private Project project;
+
+  public static final String SERIALIZED_NAME_CHANGE = "change";
+  @SerializedName(SERIALIZED_NAME_CHANGE)
+  @javax.annotation.Nullable
+  private ServiceProfileChange change;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -236,6 +242,25 @@ public class ServiceProfile {
 
   public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
+  }
+
+
+  public ServiceProfile change(@javax.annotation.Nullable ServiceProfileChange change) {
+    this.change = change;
+    return this;
+  }
+
+  /**
+   * Get change
+   * @return change
+   */
+  @javax.annotation.Nullable
+  public ServiceProfileChange getChange() {
+    return change;
+  }
+
+  public void setChange(@javax.annotation.Nullable ServiceProfileChange change) {
+    this.change = change;
   }
 
 
@@ -694,6 +719,7 @@ public class ServiceProfile {
     return Objects.equals(this.state, serviceProfile.state) &&
         Objects.equals(this.account, serviceProfile.account) &&
         Objects.equals(this.project, serviceProfile.project) &&
+        Objects.equals(this.change, serviceProfile.change) &&
         Objects.equals(this.changeLog, serviceProfile.changeLog) &&
         Objects.equals(this.href, serviceProfile.href) &&
         Objects.equals(this.type, serviceProfile.type) &&
@@ -717,7 +743,7 @@ public class ServiceProfile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, account, project, changeLog, href, type, name, uuid, description, notifications, tags, visibility, allowedEmails, accessPointTypeConfigs, customFields, marketingInfo, ports, virtualDevices, metros, selfProfile, projectId, additionalProperties);
+    return Objects.hash(state, account, project, change, changeLog, href, type, name, uuid, description, notifications, tags, visibility, allowedEmails, accessPointTypeConfigs, customFields, marketingInfo, ports, virtualDevices, metros, selfProfile, projectId, additionalProperties);
   }
 
   @Override
@@ -727,6 +753,7 @@ public class ServiceProfile {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -797,6 +824,10 @@ public class ServiceProfile {
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
         Project.validateJsonElement(jsonObj.get("project"));
+      }
+      // validate the optional field `change`
+      if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {
+        ServiceProfileChange.validateJsonElement(jsonObj.get("change"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

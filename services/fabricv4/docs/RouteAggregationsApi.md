@@ -15,6 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getRouteAggregationChanges**](RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes |
 | [**getRouteAggregationConnections**](RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation |
 | [**patchRouteAggregationByUuid**](RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation |
+| [**searchCloudRouterRouteAggregationAttachments**](RouteAggregationsApi.md#searchCloudRouterRouteAggregationAttachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments |
 | [**searchRouteAggregations**](RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations |
 
 
@@ -826,6 +827,81 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **202** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Route Aggregation ID Not Found |  -  |
+| **415** | Unsupported Media Type |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchCloudRouterRouteAggregationAttachments"></a>
+# **searchCloudRouterRouteAggregationAttachments**
+> CloudRouterRouteAggregationsSearchResponse searchCloudRouterRouteAggregationAttachments(routerId, cloudRouterRouteAggregationsSearchBase)
+
+Search Cloud Router Route Aggregation Attachments
+
+This API provides capability to search route aggregation attachments for a given cloud router &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.RouteAggregationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
+    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase = new CloudRouterRouteAggregationsSearchBase(); // CloudRouterRouteAggregationsSearchBase | 
+    try {
+      CloudRouterRouteAggregationsSearchResponse result = apiInstance.searchCloudRouterRouteAggregationAttachments(routerId, cloudRouterRouteAggregationsSearchBase);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RouteAggregationsApi#searchCloudRouterRouteAggregationAttachments");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **routerId** | **UUID**| Cloud Router UUID | |
+| **cloudRouterRouteAggregationsSearchBase** | [**CloudRouterRouteAggregationsSearchBase**](CloudRouterRouteAggregationsSearchBase.md)|  | |
+
+### Return type
+
+[**CloudRouterRouteAggregationsSearchResponse**](CloudRouterRouteAggregationsSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

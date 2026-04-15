@@ -80,6 +80,11 @@ public class Order {
   @javax.annotation.Nullable
   private Integer termLength = 1;
 
+  public static final String SERIALIZED_NAME_CONTRACTED_BANDWIDTH = "contractedBandwidth";
+  @SerializedName(SERIALIZED_NAME_CONTRACTED_BANDWIDTH)
+  @javax.annotation.Nullable
+  private Integer contractedBandwidth;
+
   public Order() {
   }
 
@@ -198,6 +203,25 @@ public class Order {
     this.termLength = termLength;
   }
 
+
+  public Order contractedBandwidth(@javax.annotation.Nullable Integer contractedBandwidth) {
+    this.contractedBandwidth = contractedBandwidth;
+    return this;
+  }
+
+  /**
+   * Contracted bandwidth
+   * @return contractedBandwidth
+   */
+  @javax.annotation.Nullable
+  public Integer getContractedBandwidth() {
+    return contractedBandwidth;
+  }
+
+  public void setContractedBandwidth(@javax.annotation.Nullable Integer contractedBandwidth) {
+    this.contractedBandwidth = contractedBandwidth;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -258,13 +282,14 @@ public class Order {
         Objects.equals(this.billingTier, order.billingTier) &&
         Objects.equals(this.orderId, order.orderId) &&
         Objects.equals(this.orderNumber, order.orderNumber) &&
-        Objects.equals(this.termLength, order.termLength)&&
+        Objects.equals(this.termLength, order.termLength) &&
+        Objects.equals(this.contractedBandwidth, order.contractedBandwidth)&&
         Objects.equals(this.additionalProperties, order.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(purchaseOrderNumber, customerReferenceNumber, billingTier, orderId, orderNumber, termLength, additionalProperties);
+    return Objects.hash(purchaseOrderNumber, customerReferenceNumber, billingTier, orderId, orderNumber, termLength, contractedBandwidth, additionalProperties);
   }
 
   @Override
@@ -277,6 +302,7 @@ public class Order {
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    orderNumber: ").append(toIndentedString(orderNumber)).append("\n");
     sb.append("    termLength: ").append(toIndentedString(termLength)).append("\n");
+    sb.append("    contractedBandwidth: ").append(toIndentedString(contractedBandwidth)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -299,7 +325,7 @@ public class Order {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("purchaseOrderNumber", "customerReferenceNumber", "billingTier", "orderId", "orderNumber", "termLength"));
+    openapiFields = new HashSet<String>(Arrays.asList("purchaseOrderNumber", "customerReferenceNumber", "billingTier", "orderId", "orderNumber", "termLength", "contractedBandwidth"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
