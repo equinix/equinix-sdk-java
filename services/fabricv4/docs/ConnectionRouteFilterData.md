@@ -12,6 +12,7 @@
 |**uuid** | **UUID** | Route Filter identifier |  [optional] |
 |**attachmentStatus** | [**AttachmentStatusEnum**](#AttachmentStatusEnum) |  |  [optional] |
 |**direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
+|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 
 
 

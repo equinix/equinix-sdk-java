@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * type of product
+ * Identifies the service type associated with this port
  */
 @JsonAdapter(PortServiceCode.Adapter.class)
 public enum PortServiceCode {

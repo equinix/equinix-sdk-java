@@ -35,7 +35,19 @@ public enum ServiceTokenSearchFieldName {
   
   NAME("/name"),
   
-  PROJECT_PROJECTID("/project/projectId");
+  PROJECT_PROJECTID("/project/projectId"),
+  
+  TYPE("/type"),
+  
+  EXPIRATIONDATETIME("/expirationDateTime"),
+  
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+  
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  
+  CONNECTION_ASIDE_ACCESSPOINTSELECTORS_PORT_UUID("/connection/aSide/accessPointSelectors/port/uuid"),
+  
+  CONNECTION_ZSIDE_ACCESSPOINTSELECTORS_PORT_UUID("/connection/zSide/accessPointSelectors/port/uuid");
 
   private String value;
 

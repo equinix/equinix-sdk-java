@@ -74,72 +74,6 @@ public class PortSettings {
   @javax.annotation.Nullable
   private Boolean layer3Enabled;
 
-  public static final String SERIALIZED_NAME_SHARED_PORT_TYPE = "sharedPortType";
-  @SerializedName(SERIALIZED_NAME_SHARED_PORT_TYPE)
-  @javax.annotation.Nullable
-  private Boolean sharedPortType;
-
-  /**
-   * Gets or Sets sharedPortProduct
-   */
-  @JsonAdapter(SharedPortProductEnum.Adapter.class)
-  public enum SharedPortProductEnum {
-    NETWORK_EDGE("NETWORK_EDGE"),
-    
-    VIRTUAL_GATEWAY("VIRTUAL_GATEWAY"),
-    
-    SMARTKEY("SMARTKEY"),
-    
-    EDGE_METAL("EDGE_METAL");
-
-    private String value;
-
-    SharedPortProductEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SharedPortProductEnum fromValue(String value) {
-      for (SharedPortProductEnum b : SharedPortProductEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SharedPortProductEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SharedPortProductEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SharedPortProductEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SharedPortProductEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      SharedPortProductEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_SHARED_PORT_PRODUCT = "sharedPortProduct";
-  @SerializedName(SERIALIZED_NAME_SHARED_PORT_PRODUCT)
-  @javax.annotation.Nullable
-  private SharedPortProductEnum sharedPortProduct;
-
   /**
    * Type of Port Package
    */
@@ -295,44 +229,6 @@ public class PortSettings {
   }
 
 
-  public PortSettings sharedPortType(@javax.annotation.Nullable Boolean sharedPortType) {
-    this.sharedPortType = sharedPortType;
-    return this;
-  }
-
-  /**
-   * Get sharedPortType
-   * @return sharedPortType
-   */
-  @javax.annotation.Nullable
-  public Boolean getSharedPortType() {
-    return sharedPortType;
-  }
-
-  public void setSharedPortType(@javax.annotation.Nullable Boolean sharedPortType) {
-    this.sharedPortType = sharedPortType;
-  }
-
-
-  public PortSettings sharedPortProduct(@javax.annotation.Nullable SharedPortProductEnum sharedPortProduct) {
-    this.sharedPortProduct = sharedPortProduct;
-    return this;
-  }
-
-  /**
-   * Get sharedPortProduct
-   * @return sharedPortProduct
-   */
-  @javax.annotation.Nullable
-  public SharedPortProductEnum getSharedPortProduct() {
-    return sharedPortProduct;
-  }
-
-  public void setSharedPortProduct(@javax.annotation.Nullable SharedPortProductEnum sharedPortProduct) {
-    this.sharedPortProduct = sharedPortProduct;
-  }
-
-
   @Deprecated
   public PortSettings packageType(@javax.annotation.Nullable PackageTypeEnum packageType) {
     this.packageType = packageType;
@@ -414,15 +310,13 @@ public class PortSettings {
         Objects.equals(this.viewPortPermission, portSettings.viewPortPermission) &&
         Objects.equals(this.placeVcOrderPermission, portSettings.placeVcOrderPermission) &&
         Objects.equals(this.layer3Enabled, portSettings.layer3Enabled) &&
-        Objects.equals(this.sharedPortType, portSettings.sharedPortType) &&
-        Objects.equals(this.sharedPortProduct, portSettings.sharedPortProduct) &&
         Objects.equals(this.packageType, portSettings.packageType)&&
         Objects.equals(this.additionalProperties, portSettings.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(buyout, viewPortPermission, placeVcOrderPermission, layer3Enabled, sharedPortType, sharedPortProduct, packageType, additionalProperties);
+    return Objects.hash(buyout, viewPortPermission, placeVcOrderPermission, layer3Enabled, packageType, additionalProperties);
   }
 
   @Override
@@ -433,8 +327,6 @@ public class PortSettings {
     sb.append("    viewPortPermission: ").append(toIndentedString(viewPortPermission)).append("\n");
     sb.append("    placeVcOrderPermission: ").append(toIndentedString(placeVcOrderPermission)).append("\n");
     sb.append("    layer3Enabled: ").append(toIndentedString(layer3Enabled)).append("\n");
-    sb.append("    sharedPortType: ").append(toIndentedString(sharedPortType)).append("\n");
-    sb.append("    sharedPortProduct: ").append(toIndentedString(sharedPortProduct)).append("\n");
     sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -458,7 +350,7 @@ public class PortSettings {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("buyout", "viewPortPermission", "placeVcOrderPermission", "layer3Enabled", "sharedPortType", "sharedPortProduct", "packageType"));
+    openapiFields = new HashSet<String>(Arrays.asList("buyout", "viewPortPermission", "placeVcOrderPermission", "layer3Enabled", "packageType"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -477,13 +369,6 @@ public class PortSettings {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) && !jsonObj.get("sharedPortProduct").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sharedPortProduct` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharedPortProduct").toString()));
-      }
-      // validate the optional field `sharedPortProduct`
-      if (jsonObj.get("sharedPortProduct") != null && !jsonObj.get("sharedPortProduct").isJsonNull()) {
-        SharedPortProductEnum.validateJsonElement(jsonObj.get("sharedPortProduct"));
-      }
       if ((jsonObj.get("packageType") != null && !jsonObj.get("packageType").isJsonNull()) && !jsonObj.get("packageType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `packageType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("packageType").toString()));
       }

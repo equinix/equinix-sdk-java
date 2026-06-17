@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.Changelog;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -182,6 +183,11 @@ public class ConnectionRouteAggregationData {
   @javax.annotation.Nullable
   private AttachmentStatusEnum attachmentStatus;
 
+  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
+  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
+  private Changelog changeLog;
+
   public ConnectionRouteAggregationData() {
   }
 
@@ -260,6 +266,25 @@ public class ConnectionRouteAggregationData {
     this.attachmentStatus = attachmentStatus;
   }
 
+
+  public ConnectionRouteAggregationData changeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+    return this;
+  }
+
+  /**
+   * Get changeLog
+   * @return changeLog
+   */
+  @javax.annotation.Nullable
+  public Changelog getChangeLog() {
+    return changeLog;
+  }
+
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -318,13 +343,14 @@ public class ConnectionRouteAggregationData {
     return Objects.equals(this.href, connectionRouteAggregationData.href) &&
         Objects.equals(this.type, connectionRouteAggregationData.type) &&
         Objects.equals(this.uuid, connectionRouteAggregationData.uuid) &&
-        Objects.equals(this.attachmentStatus, connectionRouteAggregationData.attachmentStatus)&&
+        Objects.equals(this.attachmentStatus, connectionRouteAggregationData.attachmentStatus) &&
+        Objects.equals(this.changeLog, connectionRouteAggregationData.changeLog)&&
         Objects.equals(this.additionalProperties, connectionRouteAggregationData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, attachmentStatus, additionalProperties);
+    return Objects.hash(href, type, uuid, attachmentStatus, changeLog, additionalProperties);
   }
 
   @Override
@@ -335,6 +361,7 @@ public class ConnectionRouteAggregationData {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    attachmentStatus: ").append(toIndentedString(attachmentStatus)).append("\n");
+    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -357,7 +384,7 @@ public class ConnectionRouteAggregationData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "attachmentStatus"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "attachmentStatus", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -395,6 +422,10 @@ public class ConnectionRouteAggregationData {
       // validate the optional field `attachmentStatus`
       if (jsonObj.get("attachmentStatus") != null && !jsonObj.get("attachmentStatus").isJsonNull()) {
         AttachmentStatusEnum.validateJsonElement(jsonObj.get("attachmentStatus"));
+      }
+      // validate the optional field `changeLog`
+      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 

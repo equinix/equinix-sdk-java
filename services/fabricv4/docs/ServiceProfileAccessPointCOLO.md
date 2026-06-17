@@ -23,6 +23,7 @@ Colo Access Point
 |---- | -----|
 | XF_PORT | &quot;XF_PORT&quot; |
 | IX_PORT | &quot;IX_PORT&quot; |
+| XF_INTERCONNECT_PORT | &quot;XF_INTERCONNECT_PORT&quot; |
 
 
 

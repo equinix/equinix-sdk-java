@@ -14,7 +14,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Get Agent Template by UUID
 
-This API provides capability to retrieve an agent template by uuid
+This API provides capability to retrieve an agent template by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -89,7 +89,7 @@ public class Example {
 
 Get Agent Templates
 
-This API provides capability to retrieve agent templates
+This API provides capability to retrieve agent templates &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java

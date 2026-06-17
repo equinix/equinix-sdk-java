@@ -88,11 +88,6 @@ public class Port {
   @javax.annotation.Nullable
   private PortType type;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private Integer id;
-
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
   @javax.annotation.Nullable
@@ -466,6 +461,7 @@ public class Port {
   private Boolean lagEnabled;
 
   public static final String SERIALIZED_NAME_LAG = "lag";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_LAG)
   @javax.annotation.Nullable
   private PortLag lag;
@@ -557,25 +553,6 @@ public class Port {
 
   public void setType(@javax.annotation.Nullable PortType type) {
     this.type = type;
-  }
-
-
-  public Port id(@javax.annotation.Nullable Integer id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port Id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable Integer id) {
-    this.id = id;
   }
 
 
@@ -1162,6 +1139,7 @@ public class Port {
   }
 
 
+  @Deprecated
   public Port lag(@javax.annotation.Nullable PortLag lag) {
     this.lag = lag;
     return this;
@@ -1170,12 +1148,15 @@ public class Port {
   /**
    * Get lag
    * @return lag
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public PortLag getLag() {
     return lag;
   }
 
+  @Deprecated
   public void setLag(@javax.annotation.Nullable PortLag lag) {
     this.lag = lag;
   }
@@ -1459,7 +1440,6 @@ public class Port {
     Port port = (Port) o;
     return Objects.equals(this.href, port.href) &&
         Objects.equals(this.type, port.type) &&
-        Objects.equals(this.id, port.id) &&
         Objects.equals(this.uuid, port.uuid) &&
         Objects.equals(this.name, port.name) &&
         Objects.equals(this.description, port.description) &&
@@ -1506,7 +1486,7 @@ public class Port {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, id, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
+    return Objects.hash(href, type, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
   }
 
   @Override
@@ -1515,7 +1495,6 @@ public class Port {
     sb.append("class Port {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -1579,7 +1558,7 @@ public class Port {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

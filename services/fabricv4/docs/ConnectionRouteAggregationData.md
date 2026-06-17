@@ -11,6 +11,7 @@
 |**type** | [**TypeEnum**](#TypeEnum) | Route Aggregation type |  [optional] |
 |**uuid** | **UUID** | Route Aggregation identifier |  [optional] |
 |**attachmentStatus** | [**AttachmentStatusEnum**](#AttachmentStatusEnum) |  |  [optional] |
+|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 
 
 

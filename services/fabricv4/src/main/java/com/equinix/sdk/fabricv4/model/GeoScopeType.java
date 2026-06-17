@@ -41,7 +41,9 @@ public enum GeoScopeType {
   
   BRAZIL("BRAZIL"),
   
-  SWITZERLAND("SWITZERLAND");
+  SWITZERLAND("SWITZERLAND"),
+  
+  EU("EU");
 
   private String value;
 

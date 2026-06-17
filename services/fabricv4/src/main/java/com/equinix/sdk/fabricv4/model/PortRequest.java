@@ -15,23 +15,18 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
-import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
 import com.equinix.sdk.fabricv4.model.PortDemarcationPoint;
-import com.equinix.sdk.fabricv4.model.PortDevice;
 import com.equinix.sdk.fabricv4.model.PortEncapsulation;
-import com.equinix.sdk.fabricv4.model.PortInterface;
-import com.equinix.sdk.fabricv4.model.PortLag;
 import com.equinix.sdk.fabricv4.model.PortLoa;
 import com.equinix.sdk.fabricv4.model.PortNotification;
 import com.equinix.sdk.fabricv4.model.PortOrder;
 import com.equinix.sdk.fabricv4.model.PortRedundancy;
 import com.equinix.sdk.fabricv4.model.PortServiceCode;
 import com.equinix.sdk.fabricv4.model.PortSettings;
-import com.equinix.sdk.fabricv4.model.PortState;
 import com.equinix.sdk.fabricv4.model.PortType;
 import com.equinix.sdk.fabricv4.model.Project;
-import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
-import com.equinix.sdk.fabricv4.model.SimplifiedLocation;
+import com.equinix.sdk.fabricv4.model.SimplifiedAccountRequest;
+import com.equinix.sdk.fabricv4.model.SimplifiedLocationRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -76,23 +71,13 @@ public class PortRequest {
   @javax.annotation.Nonnull
   private PortType type;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
-  private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
   public static final String SERIALIZED_NAME_PHYSICAL_PORTS_SPEED = "physicalPortsSpeed";
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS_SPEED)
   @javax.annotation.Nonnull
   private Integer physicalPortsSpeed;
 
   /**
-   * Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
+   * Physical Ports Type. 10GBASE_SMF is only applicable for IX ports
    */
   @JsonAdapter(PhysicalPortsTypeEnum.Adapter.class)
   public enum PhysicalPortsTypeEnum {
@@ -223,7 +208,7 @@ public class PortRequest {
   private ConnectivitySourceTypeEnum connectivitySourceType;
 
   /**
-   * Gets or Sets bmmrType
+   * BMMR Type is mandatory when connectivitySourceType is BMMR
    */
   @JsonAdapter(BmmrTypeEnum.Adapter.class)
   public enum BmmrTypeEnum {
@@ -281,13 +266,8 @@ public class PortRequest {
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Project project;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private PortState state;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
@@ -297,7 +277,7 @@ public class PortRequest {
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
   @javax.annotation.Nonnull
-  private SimplifiedAccount account;
+  private SimplifiedAccountRequest account;
 
   /**
    * Port service Type
@@ -371,17 +351,7 @@ public class PortRequest {
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
   @javax.annotation.Nonnull
-  private SimplifiedLocation location;
-
-  public static final String SERIALIZED_NAME_DEVICE = "device";
-  @SerializedName(SERIALIZED_NAME_DEVICE)
-  @javax.annotation.Nullable
-  private PortDevice device;
-
-  public static final String SERIALIZED_NAME_INTERFACE = "interface";
-  @SerializedName(SERIALIZED_NAME_INTERFACE)
-  @javax.annotation.Nullable
-  private PortInterface _interface;
+  private SimplifiedLocationRequest location;
 
   public static final String SERIALIZED_NAME_DEMARCATION_POINT_IBX = "demarcationPointIbx";
   @SerializedName(SERIALIZED_NAME_DEMARCATION_POINT_IBX)
@@ -413,16 +383,6 @@ public class PortRequest {
   @javax.annotation.Nullable
   private Boolean lagEnabled;
 
-  public static final String SERIALIZED_NAME_LAG = "lag";
-  @SerializedName(SERIALIZED_NAME_LAG)
-  @javax.annotation.Nullable
-  private PortLag lag;
-
-  public static final String SERIALIZED_NAME_ASN = "asn";
-  @SerializedName(SERIALIZED_NAME_ASN)
-  @javax.annotation.Nullable
-  private Integer asn;
-
   public static final String SERIALIZED_NAME_PACKAGE = "package";
   @SerializedName(SERIALIZED_NAME_PACKAGE)
   @javax.annotation.Nullable
@@ -430,23 +390,13 @@ public class PortRequest {
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
-  @javax.annotation.Nonnull
-  private PortSettings settings;
-
-  public static final String SERIALIZED_NAME_PHYSICAL_PORT_QUANTITY = "physicalPortQuantity";
-  @SerializedName(SERIALIZED_NAME_PHYSICAL_PORT_QUANTITY)
   @javax.annotation.Nullable
-  private Integer physicalPortQuantity;
+  private PortSettings settings;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
   private List<PortNotification> notifications = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
-  @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
-  @javax.annotation.Nullable
-  private List<PortAdditionalInfo> additionalInfo = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHYSICAL_PORTS = "physicalPorts";
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS)
@@ -480,44 +430,6 @@ public class PortRequest {
   }
 
 
-  public PortRequest name(@javax.annotation.Nullable String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port name
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
-  }
-
-
-  public PortRequest description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Equinix assigned response attribute for Port description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
   public PortRequest physicalPortsSpeed(@javax.annotation.Nonnull Integer physicalPortsSpeed) {
     this.physicalPortsSpeed = physicalPortsSpeed;
     return this;
@@ -544,7 +456,7 @@ public class PortRequest {
   }
 
   /**
-   * Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
+   * Physical Ports Type. 10GBASE_SMF is only applicable for IX ports
    * @return physicalPortsType
    */
   @javax.annotation.Nonnull
@@ -601,7 +513,7 @@ public class PortRequest {
   }
 
   /**
-   * Get bmmrType
+   * BMMR Type is mandatory when connectivitySourceType is BMMR
    * @return bmmrType
    */
   @javax.annotation.Nullable
@@ -614,7 +526,7 @@ public class PortRequest {
   }
 
 
-  public PortRequest project(@javax.annotation.Nullable Project project) {
+  public PortRequest project(@javax.annotation.Nonnull Project project) {
     this.project = project;
     return this;
   }
@@ -623,32 +535,13 @@ public class PortRequest {
    * Get project
    * @return project
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Project getProject() {
     return project;
   }
 
-  public void setProject(@javax.annotation.Nullable Project project) {
+  public void setProject(@javax.annotation.Nonnull Project project) {
     this.project = project;
-  }
-
-
-  public PortRequest state(@javax.annotation.Nullable PortState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public PortState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable PortState state) {
-    this.state = state;
   }
 
 
@@ -671,7 +564,7 @@ public class PortRequest {
   }
 
 
-  public PortRequest account(@javax.annotation.Nonnull SimplifiedAccount account) {
+  public PortRequest account(@javax.annotation.Nonnull SimplifiedAccountRequest account) {
     this.account = account;
     return this;
   }
@@ -681,11 +574,11 @@ public class PortRequest {
    * @return account
    */
   @javax.annotation.Nonnull
-  public SimplifiedAccount getAccount() {
+  public SimplifiedAccountRequest getAccount() {
     return account;
   }
 
-  public void setAccount(@javax.annotation.Nonnull SimplifiedAccount account) {
+  public void setAccount(@javax.annotation.Nonnull SimplifiedAccountRequest account) {
     this.account = account;
   }
 
@@ -756,7 +649,7 @@ public class PortRequest {
   }
 
 
-  public PortRequest location(@javax.annotation.Nonnull SimplifiedLocation location) {
+  public PortRequest location(@javax.annotation.Nonnull SimplifiedLocationRequest location) {
     this.location = location;
     return this;
   }
@@ -766,50 +659,12 @@ public class PortRequest {
    * @return location
    */
   @javax.annotation.Nonnull
-  public SimplifiedLocation getLocation() {
+  public SimplifiedLocationRequest getLocation() {
     return location;
   }
 
-  public void setLocation(@javax.annotation.Nonnull SimplifiedLocation location) {
+  public void setLocation(@javax.annotation.Nonnull SimplifiedLocationRequest location) {
     this.location = location;
-  }
-
-
-  public PortRequest device(@javax.annotation.Nullable PortDevice device) {
-    this.device = device;
-    return this;
-  }
-
-  /**
-   * Get device
-   * @return device
-   */
-  @javax.annotation.Nullable
-  public PortDevice getDevice() {
-    return device;
-  }
-
-  public void setDevice(@javax.annotation.Nullable PortDevice device) {
-    this.device = device;
-  }
-
-
-  public PortRequest _interface(@javax.annotation.Nullable PortInterface _interface) {
-    this._interface = _interface;
-    return this;
-  }
-
-  /**
-   * Get _interface
-   * @return _interface
-   */
-  @javax.annotation.Nullable
-  public PortInterface getInterface() {
-    return _interface;
-  }
-
-  public void setInterface(@javax.annotation.Nullable PortInterface _interface) {
-    this._interface = _interface;
   }
 
 
@@ -914,7 +769,7 @@ public class PortRequest {
   }
 
   /**
-   * If LAG enabled
+   * Indicates whether Link Aggregation Group (LAG) is enabled on this port
    * @return lagEnabled
    */
   @javax.annotation.Nullable
@@ -924,44 +779,6 @@ public class PortRequest {
 
   public void setLagEnabled(@javax.annotation.Nullable Boolean lagEnabled) {
     this.lagEnabled = lagEnabled;
-  }
-
-
-  public PortRequest lag(@javax.annotation.Nullable PortLag lag) {
-    this.lag = lag;
-    return this;
-  }
-
-  /**
-   * Get lag
-   * @return lag
-   */
-  @javax.annotation.Nullable
-  public PortLag getLag() {
-    return lag;
-  }
-
-  public void setLag(@javax.annotation.Nullable PortLag lag) {
-    this.lag = lag;
-  }
-
-
-  public PortRequest asn(@javax.annotation.Nullable Integer asn) {
-    this.asn = asn;
-    return this;
-  }
-
-  /**
-   * Port ASN
-   * @return asn
-   */
-  @javax.annotation.Nullable
-  public Integer getAsn() {
-    return asn;
-  }
-
-  public void setAsn(@javax.annotation.Nullable Integer asn) {
-    this.asn = asn;
   }
 
 
@@ -984,7 +801,7 @@ public class PortRequest {
   }
 
 
-  public PortRequest settings(@javax.annotation.Nonnull PortSettings settings) {
+  public PortRequest settings(@javax.annotation.Nullable PortSettings settings) {
     this.settings = settings;
     return this;
   }
@@ -993,32 +810,13 @@ public class PortRequest {
    * Get settings
    * @return settings
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public PortSettings getSettings() {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nonnull PortSettings settings) {
+  public void setSettings(@javax.annotation.Nullable PortSettings settings) {
     this.settings = settings;
-  }
-
-
-  public PortRequest physicalPortQuantity(@javax.annotation.Nullable Integer physicalPortQuantity) {
-    this.physicalPortQuantity = physicalPortQuantity;
-    return this;
-  }
-
-  /**
-   * Number of physical ports
-   * @return physicalPortQuantity
-   */
-  @javax.annotation.Nullable
-  public Integer getPhysicalPortQuantity() {
-    return physicalPortQuantity;
-  }
-
-  public void setPhysicalPortQuantity(@javax.annotation.Nullable Integer physicalPortQuantity) {
-    this.physicalPortQuantity = physicalPortQuantity;
   }
 
 
@@ -1046,33 +844,6 @@ public class PortRequest {
 
   public void setNotifications(@javax.annotation.Nullable List<PortNotification> notifications) {
     this.notifications = notifications;
-  }
-
-
-  public PortRequest additionalInfo(@javax.annotation.Nullable List<PortAdditionalInfo> additionalInfo) {
-    this.additionalInfo = additionalInfo;
-    return this;
-  }
-
-  public PortRequest addAdditionalInfoItem(PortAdditionalInfo additionalInfoItem) {
-    if (this.additionalInfo == null) {
-      this.additionalInfo = new ArrayList<>();
-    }
-    this.additionalInfo.add(additionalInfoItem);
-    return this;
-  }
-
-  /**
-   * Port additional information
-   * @return additionalInfo
-   */
-  @javax.annotation.Nullable
-  public List<PortAdditionalInfo> getAdditionalInfo() {
-    return additionalInfo;
-  }
-
-  public void setAdditionalInfo(@javax.annotation.Nullable List<PortAdditionalInfo> additionalInfo) {
-    this.additionalInfo = additionalInfo;
   }
 
 
@@ -1185,36 +956,27 @@ public class PortRequest {
     }
     PortRequest portRequest = (PortRequest) o;
     return Objects.equals(this.type, portRequest.type) &&
-        Objects.equals(this.name, portRequest.name) &&
-        Objects.equals(this.description, portRequest.description) &&
         Objects.equals(this.physicalPortsSpeed, portRequest.physicalPortsSpeed) &&
         Objects.equals(this.physicalPortsType, portRequest.physicalPortsType) &&
         Objects.equals(this.physicalPortsCount, portRequest.physicalPortsCount) &&
         Objects.equals(this.connectivitySourceType, portRequest.connectivitySourceType) &&
         Objects.equals(this.bmmrType, portRequest.bmmrType) &&
         Objects.equals(this.project, portRequest.project) &&
-        Objects.equals(this.state, portRequest.state) &&
         Objects.equals(this.order, portRequest.order) &&
         Objects.equals(this.account, portRequest.account) &&
         Objects.equals(this.serviceType, portRequest.serviceType) &&
         Objects.equals(this.serviceCode, portRequest.serviceCode) &&
         Objects.equals(this.bandwidth, portRequest.bandwidth) &&
         Objects.equals(this.location, portRequest.location) &&
-        Objects.equals(this.device, portRequest.device) &&
-        Objects.equals(this._interface, portRequest._interface) &&
         Objects.equals(this.demarcationPointIbx, portRequest.demarcationPointIbx) &&
         Objects.equals(this.tetherIbx, portRequest.tetherIbx) &&
         Objects.equals(this.demarcationPoint, portRequest.demarcationPoint) &&
         Objects.equals(this.redundancy, portRequest.redundancy) &&
         Objects.equals(this.encapsulation, portRequest.encapsulation) &&
         Objects.equals(this.lagEnabled, portRequest.lagEnabled) &&
-        Objects.equals(this.lag, portRequest.lag) &&
-        Objects.equals(this.asn, portRequest.asn) &&
         Objects.equals(this._package, portRequest._package) &&
         Objects.equals(this.settings, portRequest.settings) &&
-        Objects.equals(this.physicalPortQuantity, portRequest.physicalPortQuantity) &&
         Objects.equals(this.notifications, portRequest.notifications) &&
-        Objects.equals(this.additionalInfo, portRequest.additionalInfo) &&
         Objects.equals(this.physicalPorts, portRequest.physicalPorts) &&
         Objects.equals(this.loas, portRequest.loas)&&
         Objects.equals(this.additionalProperties, portRequest.additionalProperties);
@@ -1222,7 +984,7 @@ public class PortRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, account, serviceType, serviceCode, bandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, physicalPorts, loas, additionalProperties);
+    return Objects.hash(type, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, order, account, serviceType, serviceCode, bandwidth, location, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, _package, settings, notifications, physicalPorts, loas, additionalProperties);
   }
 
   @Override
@@ -1230,36 +992,27 @@ public class PortRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PortRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    physicalPortsSpeed: ").append(toIndentedString(physicalPortsSpeed)).append("\n");
     sb.append("    physicalPortsType: ").append(toIndentedString(physicalPortsType)).append("\n");
     sb.append("    physicalPortsCount: ").append(toIndentedString(physicalPortsCount)).append("\n");
     sb.append("    connectivitySourceType: ").append(toIndentedString(connectivitySourceType)).append("\n");
     sb.append("    bmmrType: ").append(toIndentedString(bmmrType)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
     sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    demarcationPointIbx: ").append(toIndentedString(demarcationPointIbx)).append("\n");
     sb.append("    tetherIbx: ").append(toIndentedString(tetherIbx)).append("\n");
     sb.append("    demarcationPoint: ").append(toIndentedString(demarcationPoint)).append("\n");
     sb.append("    redundancy: ").append(toIndentedString(redundancy)).append("\n");
     sb.append("    encapsulation: ").append(toIndentedString(encapsulation)).append("\n");
     sb.append("    lagEnabled: ").append(toIndentedString(lagEnabled)).append("\n");
-    sb.append("    lag: ").append(toIndentedString(lag)).append("\n");
-    sb.append("    asn: ").append(toIndentedString(asn)).append("\n");
     sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-    sb.append("    physicalPortQuantity: ").append(toIndentedString(physicalPortQuantity)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
-    sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -1284,10 +1037,10 @@ public class PortRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "physicalPorts", "loas"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "notifications", "physicalPorts", "loas"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "connectivitySourceType", "account", "location", "encapsulation", "settings"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "connectivitySourceType", "project", "account", "location", "encapsulation"));
   }
 
   /**
@@ -1312,12 +1065,6 @@ public class PortRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `type`
       PortType.validateJsonElement(jsonObj.get("type"));
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
       if (!jsonObj.get("physicalPortsType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `physicalPortsType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("physicalPortsType").toString()));
       }
@@ -1335,20 +1082,14 @@ public class PortRequest {
       if (jsonObj.get("bmmrType") != null && !jsonObj.get("bmmrType").isJsonNull()) {
         BmmrTypeEnum.validateJsonElement(jsonObj.get("bmmrType"));
       }
-      // validate the optional field `project`
-      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-        Project.validateJsonElement(jsonObj.get("project"));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        PortState.validateJsonElement(jsonObj.get("state"));
-      }
+      // validate the required field `project`
+      Project.validateJsonElement(jsonObj.get("project"));
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
         PortOrder.validateJsonElement(jsonObj.get("order"));
       }
       // validate the required field `account`
-      SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
+      SimplifiedAccountRequest.validateJsonElement(jsonObj.get("account"));
       if ((jsonObj.get("serviceType") != null && !jsonObj.get("serviceType").isJsonNull()) && !jsonObj.get("serviceType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceType").toString()));
       }
@@ -1361,15 +1102,7 @@ public class PortRequest {
         PortServiceCode.validateJsonElement(jsonObj.get("serviceCode"));
       }
       // validate the required field `location`
-      SimplifiedLocation.validateJsonElement(jsonObj.get("location"));
-      // validate the optional field `device`
-      if (jsonObj.get("device") != null && !jsonObj.get("device").isJsonNull()) {
-        PortDevice.validateJsonElement(jsonObj.get("device"));
-      }
-      // validate the optional field `interface`
-      if (jsonObj.get("interface") != null && !jsonObj.get("interface").isJsonNull()) {
-        PortInterface.validateJsonElement(jsonObj.get("interface"));
-      }
+      SimplifiedLocationRequest.validateJsonElement(jsonObj.get("location"));
       if ((jsonObj.get("demarcationPointIbx") != null && !jsonObj.get("demarcationPointIbx").isJsonNull()) && !jsonObj.get("demarcationPointIbx").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `demarcationPointIbx` to be a primitive type in the JSON string but got `%s`", jsonObj.get("demarcationPointIbx").toString()));
       }
@@ -1386,16 +1119,14 @@ public class PortRequest {
       }
       // validate the required field `encapsulation`
       PortEncapsulation.validateJsonElement(jsonObj.get("encapsulation"));
-      // validate the optional field `lag`
-      if (jsonObj.get("lag") != null && !jsonObj.get("lag").isJsonNull()) {
-        PortLag.validateJsonElement(jsonObj.get("lag"));
-      }
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
         ModelPackage.validateJsonElement(jsonObj.get("package"));
       }
-      // validate the required field `settings`
-      PortSettings.validateJsonElement(jsonObj.get("settings"));
+      // validate the optional field `settings`
+      if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
+        PortSettings.validateJsonElement(jsonObj.get("settings"));
+      }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
         if (jsonArraynotifications != null) {
@@ -1407,20 +1138,6 @@ public class PortRequest {
           // validate the optional field `notifications` (array)
           for (int i = 0; i < jsonArraynotifications.size(); i++) {
             PortNotification.validateJsonElement(jsonArraynotifications.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("additionalInfo") != null && !jsonObj.get("additionalInfo").isJsonNull()) {
-        JsonArray jsonArrayadditionalInfo = jsonObj.getAsJsonArray("additionalInfo");
-        if (jsonArrayadditionalInfo != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("additionalInfo").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `additionalInfo` to be an array in the JSON string but got `%s`", jsonObj.get("additionalInfo").toString()));
-          }
-
-          // validate the optional field `additionalInfo` (array)
-          for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            PortAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }

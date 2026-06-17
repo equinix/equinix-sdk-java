@@ -37,7 +37,7 @@ import com.equinix.sdk.fabricv4.model.RouteFilterChangeDataResponse;
 import com.equinix.sdk.fabricv4.model.RouteFiltersBase;
 import com.equinix.sdk.fabricv4.model.RouteFiltersData;
 import com.equinix.sdk.fabricv4.model.RouteFiltersPatchRequestItem;
-import com.equinix.sdk.fabricv4.model.RouteFiltersSearchBase;
+import com.equinix.sdk.fabricv4.model.RouteFiltersSearchRequest;
 import com.equinix.sdk.fabricv4.model.RouteFiltersSearchResponse;
 import java.util.UUID;
 
@@ -1977,7 +1977,7 @@ public class RouteFiltersApi {
     }
     /**
      * Build call for searchRouteFilters
-     * @param routeFiltersSearchBase  (required)
+     * @param routeFiltersSearchRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1994,7 +1994,7 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteFiltersCall(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchRouteFiltersCall(@javax.annotation.Nonnull RouteFiltersSearchRequest routeFiltersSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2008,7 +2008,7 @@ public class RouteFiltersApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routeFiltersSearchBase;
+        Object localVarPostBody = routeFiltersSearchRequest;
 
         // create path and map variables
         String localVarPath = "/fabric/v4/routeFilters/search";
@@ -2040,20 +2040,20 @@ public class RouteFiltersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchRouteFiltersValidateBeforeCall(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routeFiltersSearchBase' is set
-        if (routeFiltersSearchBase == null) {
-            throw new ApiException("Missing the required parameter 'routeFiltersSearchBase' when calling searchRouteFilters(Async)");
+    private okhttp3.Call searchRouteFiltersValidateBeforeCall(@javax.annotation.Nonnull RouteFiltersSearchRequest routeFiltersSearchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routeFiltersSearchRequest' is set
+        if (routeFiltersSearchRequest == null) {
+            throw new ApiException("Missing the required parameter 'routeFiltersSearchRequest' when calling searchRouteFilters(Async)");
         }
 
-        return searchRouteFiltersCall(routeFiltersSearchBase, _callback);
+        return searchRouteFiltersCall(routeFiltersSearchRequest, _callback);
 
     }
 
     /**
      * Search Route Filters
      * This API provides capability to search Route Filters
-     * @param routeFiltersSearchBase  (required)
+     * @param routeFiltersSearchRequest  (required)
      * @return RouteFiltersSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2069,15 +2069,15 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteFiltersSearchResponse searchRouteFilters(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
-        ApiResponse<RouteFiltersSearchResponse> localVarResp = searchRouteFiltersWithHttpInfo(routeFiltersSearchBase);
+    public RouteFiltersSearchResponse searchRouteFilters(@javax.annotation.Nonnull RouteFiltersSearchRequest routeFiltersSearchRequest) throws ApiException {
+        ApiResponse<RouteFiltersSearchResponse> localVarResp = searchRouteFiltersWithHttpInfo(routeFiltersSearchRequest);
         return localVarResp.getData();
     }
 
     /**
      * Search Route Filters
      * This API provides capability to search Route Filters
-     * @param routeFiltersSearchBase  (required)
+     * @param routeFiltersSearchRequest  (required)
      * @return ApiResponse&lt;RouteFiltersSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2093,8 +2093,8 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteFiltersSearchResponse> searchRouteFiltersWithHttpInfo(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase) throws ApiException {
-        okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchBase, null);
+    public ApiResponse<RouteFiltersSearchResponse> searchRouteFiltersWithHttpInfo(@javax.annotation.Nonnull RouteFiltersSearchRequest routeFiltersSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchRequest, null);
         Type localVarReturnType = new TypeToken<RouteFiltersSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2102,7 +2102,7 @@ public class RouteFiltersApi {
     /**
      * Search Route Filters (asynchronously)
      * This API provides capability to search Route Filters
-     * @param routeFiltersSearchBase  (required)
+     * @param routeFiltersSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2119,9 +2119,9 @@ public class RouteFiltersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteFiltersAsync(@javax.annotation.Nonnull RouteFiltersSearchBase routeFiltersSearchBase, final ApiCallback<RouteFiltersSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchRouteFiltersAsync(@javax.annotation.Nonnull RouteFiltersSearchRequest routeFiltersSearchRequest, final ApiCallback<RouteFiltersSearchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchBase, _callback);
+        okhttp3.Call localVarCall = searchRouteFiltersValidateBeforeCall(routeFiltersSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<RouteFiltersSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

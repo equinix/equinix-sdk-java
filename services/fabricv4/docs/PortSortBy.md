@@ -27,5 +27,13 @@
 
 * `PACKAGE_CODE` (value: `"/package/code"`)
 
+* `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+
+* `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
+
+* `BANDWIDTH` (value: `"/bandwidth"`)
+
+* `SERVICECODE` (value: `"/serviceCode"`)
+
 
 

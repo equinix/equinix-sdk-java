@@ -8,7 +8,7 @@ Sub Interface information
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** | name of subinterafce of a port |  [optional] |
+|**name** | **String** | name of subInterface of a port |  [optional] |
 |**unit** | **Integer** |  |  [optional] |
 
 

@@ -17,9 +17,17 @@
 
 * `PACKAGE_CODE` (value: `"/package/code"`)
 
+* `TYPE` (value: `"/type"`)
+
+* `CONNECTIONSCOUNT` (value: `"/connectionsCount"`)
+
 * `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
 
 * `CHANGELOG_UPDATEDDATETIME` (value: `"/changeLog/updatedDateTime"`)
+
+* `CHANGELOG_DELETEDDATETIME` (value: `"/changeLog/deletedDateTime"`)
+
+* `ORDER_TERMLENGTH` (value: `"/order/termLength"`)
 
 
 

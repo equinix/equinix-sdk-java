@@ -77,6 +77,12 @@ public enum SearchFieldName {
   
   CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
+  CHANGELOG_DELETEDBY("/changeLog/deletedBy"),
+  
+  CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
+  
+  CHANGELOG_LASTUPDATEDBY("/changeLog/lastUpdatedBy"),
+  
   OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
   OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
@@ -99,6 +105,8 @@ public enum SearchFieldName {
   
   ZSIDE_ACCESSPOINT_LOCATION_METRONAME("/zSide/accessPoint/location/metroName"),
   
+  ZSIDE_ACCESSPOINT_SELLERREGION("/zSide/accessPoint/sellerRegion"),
+  
   ZSIDE_ACCESSPOINT_NAME("/zSide/accessPoint/name"),
   
   ZSIDE_ACCESSPOINT_PORT_UUID("/zSide/accessPoint/port/uuid"),
@@ -119,7 +127,9 @@ public enum SearchFieldName {
   
   ZSIDE_SERVICETOKEN_UUID("/zSide/serviceToken/uuid"),
   
-  ZSIDE_INTERNETACCESS_UUID("/zSide/internetAccess/uuid");
+  ZSIDE_INTERNETACCESS_UUID("/zSide/internetAccess/uuid"),
+  
+  STATE("/state");
 
   private String value;
 

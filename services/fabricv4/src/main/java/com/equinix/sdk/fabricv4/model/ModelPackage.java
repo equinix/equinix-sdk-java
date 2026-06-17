@@ -109,63 +109,6 @@ public class ModelPackage {
   @javax.annotation.Nullable
   private CodeEnum code;
 
-  /**
-   * Port service Type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    EPL("EPL"),
-    
-    MSP("MSP");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private TypeEnum type;
-
   public ModelPackage() {
   }
 
@@ -185,25 +128,6 @@ public class ModelPackage {
 
   public void setCode(@javax.annotation.Nullable CodeEnum code) {
     this.code = code;
-  }
-
-
-  public ModelPackage type(@javax.annotation.Nullable TypeEnum type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Port service Type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public TypeEnum getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
-    this.type = type;
   }
 
   /**
@@ -261,14 +185,13 @@ public class ModelPackage {
       return false;
     }
     ModelPackage _package = (ModelPackage) o;
-    return Objects.equals(this.code, _package.code) &&
-        Objects.equals(this.type, _package.type)&&
+    return Objects.equals(this.code, _package.code)&&
         Objects.equals(this.additionalProperties, _package.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, type, additionalProperties);
+    return Objects.hash(code, additionalProperties);
   }
 
   @Override
@@ -276,7 +199,6 @@ public class ModelPackage {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelPackage {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -299,7 +221,7 @@ public class ModelPackage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("code", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("code"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -324,13 +246,6 @@ public class ModelPackage {
       // validate the optional field `code`
       if (jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) {
         CodeEnum.validateJsonElement(jsonObj.get("code"));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
       }
   }
 

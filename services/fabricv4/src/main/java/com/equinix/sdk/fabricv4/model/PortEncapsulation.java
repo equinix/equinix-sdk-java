@@ -55,8 +55,6 @@ public class PortEncapsulation {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    NULL("NULL"),
-    
     DOT1Q("DOT1Q"),
     
     QINQ("QINQ"),

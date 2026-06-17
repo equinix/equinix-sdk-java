@@ -14,7 +14,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Create Tag
 
-Create Tag for Equinix Fabric?.
+Create Tag for Equinix Fabric™.
 
 ### Example
 ```java

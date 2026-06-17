@@ -913,7 +913,7 @@ public class Example {
 
 <a id="searchRouteFilters"></a>
 # **searchRouteFilters**
-> RouteFiltersSearchResponse searchRouteFilters(routeFiltersSearchBase)
+> RouteFiltersSearchResponse searchRouteFilters(routeFiltersSearchRequest)
 
 Search Route Filters
 
@@ -939,9 +939,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    RouteFiltersSearchBase routeFiltersSearchBase = new RouteFiltersSearchBase(); // RouteFiltersSearchBase | 
+    RouteFiltersSearchRequest routeFiltersSearchRequest = new RouteFiltersSearchRequest(); // RouteFiltersSearchRequest | 
     try {
-      RouteFiltersSearchResponse result = apiInstance.searchRouteFilters(routeFiltersSearchBase);
+      RouteFiltersSearchResponse result = apiInstance.searchRouteFilters(routeFiltersSearchRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RouteFiltersApi#searchRouteFilters");
@@ -958,7 +958,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routeFiltersSearchBase** | [**RouteFiltersSearchBase**](RouteFiltersSearchBase.md)|  | |
+| **routeFiltersSearchRequest** | [**RouteFiltersSearchRequest**](RouteFiltersSearchRequest.md)|  | |
 
 ### Return type
 

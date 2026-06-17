@@ -24,8 +24,10 @@ Service Profile is a software definition for a named provider service and it's n
 |**ports** | [**List&lt;ServiceProfileAccessPointCOLO&gt;**](ServiceProfileAccessPointCOLO.md) |  |  [optional] |
 |**virtualDevices** | [**List&lt;ServiceProfileAccessPointVD&gt;**](ServiceProfileAccessPointVD.md) |  |  [optional] |
 |**metros** | [**List&lt;ServiceMetro&gt;**](ServiceMetro.md) | Derived response attribute. |  [optional] |
+|**environments** | [**List&lt;ProviderEnvironment&gt;**](ProviderEnvironment.md) | Provider environments associated with this IC_PROFILE service profile. |  [optional] |
 |**selfProfile** | **Boolean** | response attribute indicates whether the profile belongs to the same organization as the api-invoker. |  [optional] |
 |**projectId** | **String** |  |  [optional] |
+|**lastMileConfig** | [**ServiceProfileLastMileConfig**](ServiceProfileLastMileConfig.md) |  |  [optional] |
 
 
 

@@ -152,7 +152,7 @@ public class AgentsApi {
 
     /**
      * Create Agent
-     * This API provides capability to create user&#39;s agent
+     * This API provides capability to create user&#39;s agent &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentPostRequest  (required)
      * @return Agents
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -175,7 +175,7 @@ public class AgentsApi {
 
     /**
      * Create Agent
-     * This API provides capability to create user&#39;s agent
+     * This API provides capability to create user&#39;s agent &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentPostRequest  (required)
      * @return ApiResponse&lt;Agents&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -199,7 +199,7 @@ public class AgentsApi {
 
     /**
      * Create Agent (asynchronously)
-     * This API provides capability to create user&#39;s agent
+     * This API provides capability to create user&#39;s agent &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentPostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -308,7 +308,7 @@ public class AgentsApi {
 
     /**
      * Delete Agent by UUID
-     * This API provides capability to delete an agent by uuid
+     * This API provides capability to delete an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -332,7 +332,7 @@ public class AgentsApi {
 
     /**
      * Delete Agent by UUID
-     * This API provides capability to delete an agent by uuid
+     * This API provides capability to delete an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -357,7 +357,7 @@ public class AgentsApi {
 
     /**
      * Delete Agent by UUID (asynchronously)
-     * This API provides capability to delete an agent by uuid
+     * This API provides capability to delete an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -467,7 +467,7 @@ public class AgentsApi {
 
     /**
      * Get Agent Activities
-     * This API provides capability to retrieve an agent activities
+     * This API provides capability to retrieve an agent activities &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -491,7 +491,7 @@ public class AgentsApi {
 
     /**
      * Get Agent Activities
-     * This API provides capability to retrieve an agent activities
+     * This API provides capability to retrieve an agent activities &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -516,7 +516,7 @@ public class AgentsApi {
 
     /**
      * Get Agent Activities (asynchronously)
-     * This API provides capability to retrieve an agent activities
+     * This API provides capability to retrieve an agent activities &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -626,7 +626,7 @@ public class AgentsApi {
 
     /**
      * Get Agent by UUID
-     * This API provides capability to retrieve an agent by uuid
+     * This API provides capability to retrieve an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -650,7 +650,7 @@ public class AgentsApi {
 
     /**
      * Get Agent by UUID
-     * This API provides capability to retrieve an agent by uuid
+     * This API provides capability to retrieve an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -675,7 +675,7 @@ public class AgentsApi {
 
     /**
      * Get Agent by UUID (asynchronously)
-     * This API provides capability to retrieve an agent by uuid
+     * This API provides capability to retrieve an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -778,7 +778,7 @@ public class AgentsApi {
 
     /**
      * Get Agents
-     * This API provides capability to retrieve agents
+     * This API provides capability to retrieve agents &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @return AgentGetAllResponse
@@ -801,7 +801,7 @@ public class AgentsApi {
 
     /**
      * Get Agents
-     * This API provides capability to retrieve agents
+     * This API provides capability to retrieve agents &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @return ApiResponse&lt;AgentGetAllResponse&gt;
@@ -825,7 +825,7 @@ public class AgentsApi {
 
     /**
      * Get Agents (asynchronously)
-     * This API provides capability to retrieve agents
+     * This API provides capability to retrieve agents &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -931,7 +931,7 @@ public class AgentsApi {
 
     /**
      * Update Agent by UUID
-     * This API provides capability to update an agent by uuid
+     * This API provides capability to update an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param agentPatchRequest  (required)
      * @return Agents
@@ -954,7 +954,7 @@ public class AgentsApi {
 
     /**
      * Update Agent by UUID
-     * This API provides capability to update an agent by uuid
+     * This API provides capability to update an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param agentPatchRequest  (required)
      * @return ApiResponse&lt;Agents&gt;
@@ -978,7 +978,7 @@ public class AgentsApi {
 
     /**
      * Update Agent by UUID (asynchronously)
-     * This API provides capability to update an agent by uuid
+     * This API provides capability to update an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentId Agent UUID (required)
      * @param agentPatchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

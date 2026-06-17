@@ -16,6 +16,7 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.ConnectedMetro;
 import com.equinix.sdk.fabricv4.model.GeoCoordinates;
 import com.equinix.sdk.fabricv4.model.GeoScopeType;
+import com.equinix.sdk.fabricv4.model.GeoZone;
 import com.equinix.sdk.fabricv4.model.Services;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -52,7 +53,7 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * GET Metros retrieves all Equinix? Fabric? metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
+ * GET Metros retrieves all Equinix® Fabric™ metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class Metro {
@@ -115,6 +116,11 @@ public class Metro {
   @SerializedName(SERIALIZED_NAME_GEO_SCOPES)
   @javax.annotation.Nullable
   private List<GeoScopeType> geoScopes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_GEO_ZONES = "geoZones";
+  @SerializedName(SERIALIZED_NAME_GEO_ZONES)
+  @javax.annotation.Nullable
+  private List<GeoZone> geoZones = new ArrayList<>();
 
   public Metro() {
   }
@@ -370,6 +376,33 @@ public class Metro {
     this.geoScopes = geoScopes;
   }
 
+
+  public Metro geoZones(@javax.annotation.Nullable List<GeoZone> geoZones) {
+    this.geoZones = geoZones;
+    return this;
+  }
+
+  public Metro addGeoZonesItem(GeoZone geoZonesItem) {
+    if (this.geoZones == null) {
+      this.geoZones = new ArrayList<>();
+    }
+    this.geoZones.add(geoZonesItem);
+    return this;
+  }
+
+  /**
+   * List of supported geographic zones of a Fabric Metro.
+   * @return geoZones
+   */
+  @javax.annotation.Nullable
+  public List<GeoZone> getGeoZones() {
+    return geoZones;
+  }
+
+  public void setGeoZones(@javax.annotation.Nullable List<GeoZone> geoZones) {
+    this.geoZones = geoZones;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -436,13 +469,14 @@ public class Metro {
         Objects.equals(this.geoCoordinates, metro.geoCoordinates) &&
         Objects.equals(this.connectedMetros, metro.connectedMetros) &&
         Objects.equals(this.services, metro.services) &&
-        Objects.equals(this.geoScopes, metro.geoScopes)&&
+        Objects.equals(this.geoScopes, metro.geoScopes) &&
+        Objects.equals(this.geoZones, metro.geoZones)&&
         Objects.equals(this.additionalProperties, metro.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, code, region, name, country, equinixAsn, localVCBandwidthMax, geoCoordinates, connectedMetros, services, geoScopes, additionalProperties);
+    return Objects.hash(href, type, code, region, name, country, equinixAsn, localVCBandwidthMax, geoCoordinates, connectedMetros, services, geoScopes, geoZones, additionalProperties);
   }
 
   @Override
@@ -461,6 +495,7 @@ public class Metro {
     sb.append("    connectedMetros: ").append(toIndentedString(connectedMetros)).append("\n");
     sb.append("    services: ").append(toIndentedString(services)).append("\n");
     sb.append("    geoScopes: ").append(toIndentedString(geoScopes)).append("\n");
+    sb.append("    geoZones: ").append(toIndentedString(geoZones)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -483,7 +518,7 @@ public class Metro {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes", "geoZones"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -555,6 +590,20 @@ public class Metro {
       // ensure the optional json data is an array if present
       if (jsonObj.get("geoScopes") != null && !jsonObj.get("geoScopes").isJsonNull() && !jsonObj.get("geoScopes").isJsonArray()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `geoScopes` to be an array in the JSON string but got `%s`", jsonObj.get("geoScopes").toString()));
+      }
+      if (jsonObj.get("geoZones") != null && !jsonObj.get("geoZones").isJsonNull()) {
+        JsonArray jsonArraygeoZones = jsonObj.getAsJsonArray("geoZones");
+        if (jsonArraygeoZones != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("geoZones").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `geoZones` to be an array in the JSON string but got `%s`", jsonObj.get("geoZones").toString()));
+          }
+
+          // validate the optional field `geoZones` (array)
+          for (int i = 0; i < jsonArraygeoZones.size(); i++) {
+            GeoZone.validateJsonElement(jsonArraygeoZones.get(i));
+          };
+        }
       }
   }
 

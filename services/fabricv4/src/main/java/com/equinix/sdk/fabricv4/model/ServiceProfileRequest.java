@@ -16,10 +16,12 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.CustomField;
 import com.equinix.sdk.fabricv4.model.MarketingInfo;
 import com.equinix.sdk.fabricv4.model.Project;
+import com.equinix.sdk.fabricv4.model.ProviderEnvironment;
 import com.equinix.sdk.fabricv4.model.ServiceMetro;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointCOLO;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointType;
 import com.equinix.sdk.fabricv4.model.ServiceProfileAccessPointVD;
+import com.equinix.sdk.fabricv4.model.ServiceProfileLastMileConfig;
 import com.equinix.sdk.fabricv4.model.ServiceProfileTypeEnum;
 import com.equinix.sdk.fabricv4.model.ServiceProfileVisibilityEnum;
 import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
@@ -144,6 +146,11 @@ public class ServiceProfileRequest {
   @javax.annotation.Nullable
   private List<ServiceMetro> metros = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
+  private List<ProviderEnvironment> environments = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_SELF_PROFILE = "selfProfile";
   @SerializedName(SERIALIZED_NAME_SELF_PROFILE)
   @javax.annotation.Nullable
@@ -153,6 +160,11 @@ public class ServiceProfileRequest {
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
   @javax.annotation.Nullable
   private String projectId;
+
+  public static final String SERIALIZED_NAME_LAST_MILE_CONFIG = "lastMileConfig";
+  @SerializedName(SERIALIZED_NAME_LAST_MILE_CONFIG)
+  @javax.annotation.Nullable
+  private ServiceProfileLastMileConfig lastMileConfig;
 
   public ServiceProfileRequest() {
   }
@@ -524,6 +536,33 @@ public class ServiceProfileRequest {
   }
 
 
+  public ServiceProfileRequest environments(@javax.annotation.Nullable List<ProviderEnvironment> environments) {
+    this.environments = environments;
+    return this;
+  }
+
+  public ServiceProfileRequest addEnvironmentsItem(ProviderEnvironment environmentsItem) {
+    if (this.environments == null) {
+      this.environments = new ArrayList<>();
+    }
+    this.environments.add(environmentsItem);
+    return this;
+  }
+
+  /**
+   * Provider environments associated with this IC_PROFILE service profile.
+   * @return environments
+   */
+  @javax.annotation.Nullable
+  public List<ProviderEnvironment> getEnvironments() {
+    return environments;
+  }
+
+  public void setEnvironments(@javax.annotation.Nullable List<ProviderEnvironment> environments) {
+    this.environments = environments;
+  }
+
+
   public ServiceProfileRequest selfProfile(@javax.annotation.Nullable Boolean selfProfile) {
     this.selfProfile = selfProfile;
     return this;
@@ -559,6 +598,25 @@ public class ServiceProfileRequest {
 
   public void setProjectId(@javax.annotation.Nullable String projectId) {
     this.projectId = projectId;
+  }
+
+
+  public ServiceProfileRequest lastMileConfig(@javax.annotation.Nullable ServiceProfileLastMileConfig lastMileConfig) {
+    this.lastMileConfig = lastMileConfig;
+    return this;
+  }
+
+  /**
+   * Get lastMileConfig
+   * @return lastMileConfig
+   */
+  @javax.annotation.Nullable
+  public ServiceProfileLastMileConfig getLastMileConfig() {
+    return lastMileConfig;
+  }
+
+  public void setLastMileConfig(@javax.annotation.Nullable ServiceProfileLastMileConfig lastMileConfig) {
+    this.lastMileConfig = lastMileConfig;
   }
 
   /**
@@ -632,14 +690,16 @@ public class ServiceProfileRequest {
         Objects.equals(this.ports, serviceProfileRequest.ports) &&
         Objects.equals(this.virtualDevices, serviceProfileRequest.virtualDevices) &&
         Objects.equals(this.metros, serviceProfileRequest.metros) &&
+        Objects.equals(this.environments, serviceProfileRequest.environments) &&
         Objects.equals(this.selfProfile, serviceProfileRequest.selfProfile) &&
-        Objects.equals(this.projectId, serviceProfileRequest.projectId)&&
+        Objects.equals(this.projectId, serviceProfileRequest.projectId) &&
+        Objects.equals(this.lastMileConfig, serviceProfileRequest.lastMileConfig)&&
         Objects.equals(this.additionalProperties, serviceProfileRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(project, href, type, name, uuid, description, notifications, tags, visibility, allowedEmails, accessPointTypeConfigs, customFields, marketingInfo, ports, virtualDevices, metros, selfProfile, projectId, additionalProperties);
+    return Objects.hash(project, href, type, name, uuid, description, notifications, tags, visibility, allowedEmails, accessPointTypeConfigs, customFields, marketingInfo, ports, virtualDevices, metros, environments, selfProfile, projectId, lastMileConfig, additionalProperties);
   }
 
   @Override
@@ -662,8 +722,10 @@ public class ServiceProfileRequest {
     sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
     sb.append("    virtualDevices: ").append(toIndentedString(virtualDevices)).append("\n");
     sb.append("    metros: ").append(toIndentedString(metros)).append("\n");
+    sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    selfProfile: ").append(toIndentedString(selfProfile)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+    sb.append("    lastMileConfig: ").append(toIndentedString(lastMileConfig)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -686,7 +748,7 @@ public class ServiceProfileRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "selfProfile", "projectId"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "environments", "selfProfile", "projectId", "lastMileConfig"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "description"));
@@ -830,8 +892,26 @@ public class ServiceProfileRequest {
           };
         }
       }
+      if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull()) {
+        JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
+        if (jsonArrayenvironments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("environments").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+          }
+
+          // validate the optional field `environments` (array)
+          for (int i = 0; i < jsonArrayenvironments.size(); i++) {
+            ProviderEnvironment.validateJsonElement(jsonArrayenvironments.get(i));
+          };
+        }
+      }
       if ((jsonObj.get("projectId") != null && !jsonObj.get("projectId").isJsonNull()) && !jsonObj.get("projectId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
+      }
+      // validate the optional field `lastMileConfig`
+      if (jsonObj.get("lastMileConfig") != null && !jsonObj.get("lastMileConfig").isJsonNull()) {
+        ServiceProfileLastMileConfig.validateJsonElement(jsonObj.get("lastMileConfig"));
       }
   }
 

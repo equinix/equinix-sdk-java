@@ -22,6 +22,8 @@
 |**operation** | [**RoutingProtocolOperation**](RoutingProtocolOperation.md) |  |  [optional] |
 |**change** | [**RoutingProtocolChange**](RoutingProtocolChange.md) |  |  [optional] |
 |**changelog** | [**Changelog**](Changelog.md) |  |  [optional] |
+|**project** | [**RoutingProtocolProject**](RoutingProtocolProject.md) |  |  [optional] |
+|**connection** | [**RoutingProtocolConnection**](RoutingProtocolConnection.md) |  |  [optional] |
 |**directIpv4** | [**DirectConnectionIpv4**](DirectConnectionIpv4.md) |  |  [optional] |
 |**directIpv6** | [**DirectConnectionIpv6**](DirectConnectionIpv6.md) |  |  [optional] |
 
