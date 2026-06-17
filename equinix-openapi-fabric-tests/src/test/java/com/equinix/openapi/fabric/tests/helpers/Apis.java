@@ -1,7 +1,7 @@
 package com.equinix.openapi.fabric.tests.helpers;
 
-import com.equinix.sdk.fabricv4.api.*;
 import com.equinix.openapi.fabric.tests.dto.users.UsersItem;
+import com.equinix.sdk.fabricv4.api.*;
 
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.generate;
 
@@ -20,6 +20,7 @@ public class Apis {
     public static ServiceProfilesApi serviceProfilesApi;
     public static ServiceTokensApi serviceTokensApi;
     public static StatisticsApi statisticsApi;
+    public static InternetAccessServicesApi internetAccessServicesApi;
     private static UsersItem.UserName currentUser;
 
     static {
@@ -52,5 +53,6 @@ public class Apis {
         serviceProfilesApi = new ServiceProfilesApi(TokenGenerator.getApiClient(currentUser));
         serviceTokensApi = new ServiceTokensApi(TokenGenerator.getApiClient(currentUser));
         statisticsApi = new StatisticsApi(TokenGenerator.getApiClient(currentUser));
+        internetAccessServicesApi = new InternetAccessServicesApi(TokenGenerator.getApiClient(currentUser));
     }
 }
