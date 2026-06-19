@@ -73,7 +73,29 @@ public class ServiceTokenSearchExpression {
    */
   @JsonAdapter(OperatorEnum.Adapter.class)
   public enum OperatorEnum {
-    EQUAL("=");
+    EQUAL("="),
+    
+    NOT_EQUAL("!="),
+    
+    LIKE("LIKE"),
+    
+    ILIKE("ILIKE"),
+    
+    LESS_THAN("<"),
+    
+    GREATER_THAN(">"),
+    
+    LESS_THAN_OR_EQUAL_TO("<="),
+    
+    GREATER_THAN_OR_EQUAL_TO(">="),
+    
+    IN("IN"),
+    
+    NOT_IN("NOT IN"),
+    
+    BETWEEN("BETWEEN"),
+    
+    NOT_BETWEEN("NOT BETWEEN");
 
     private String value;
 

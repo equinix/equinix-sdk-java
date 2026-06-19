@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.Changelog;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -241,6 +242,11 @@ public class ConnectionRouteFilterData {
   @javax.annotation.Nullable
   private DirectionEnum direction;
 
+  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
+  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
+  private Changelog changeLog;
+
   public ConnectionRouteFilterData() {
   }
 
@@ -338,6 +344,25 @@ public class ConnectionRouteFilterData {
     this.direction = direction;
   }
 
+
+  public ConnectionRouteFilterData changeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+    return this;
+  }
+
+  /**
+   * Get changeLog
+   * @return changeLog
+   */
+  @javax.annotation.Nullable
+  public Changelog getChangeLog() {
+    return changeLog;
+  }
+
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -397,13 +422,14 @@ public class ConnectionRouteFilterData {
         Objects.equals(this.type, connectionRouteFilterData.type) &&
         Objects.equals(this.uuid, connectionRouteFilterData.uuid) &&
         Objects.equals(this.attachmentStatus, connectionRouteFilterData.attachmentStatus) &&
-        Objects.equals(this.direction, connectionRouteFilterData.direction)&&
+        Objects.equals(this.direction, connectionRouteFilterData.direction) &&
+        Objects.equals(this.changeLog, connectionRouteFilterData.changeLog)&&
         Objects.equals(this.additionalProperties, connectionRouteFilterData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, attachmentStatus, direction, additionalProperties);
+    return Objects.hash(href, type, uuid, attachmentStatus, direction, changeLog, additionalProperties);
   }
 
   @Override
@@ -415,6 +441,7 @@ public class ConnectionRouteFilterData {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    attachmentStatus: ").append(toIndentedString(attachmentStatus)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -437,7 +464,7 @@ public class ConnectionRouteFilterData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "attachmentStatus", "direction"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "attachmentStatus", "direction", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -482,6 +509,10 @@ public class ConnectionRouteFilterData {
       // validate the optional field `direction`
       if (jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) {
         DirectionEnum.validateJsonElement(jsonObj.get("direction"));
+      }
+      // validate the optional field `changeLog`
+      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 

@@ -18,7 +18,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Create Agent
 
-This API provides capability to create user&#39;s agent
+This API provides capability to create user&#39;s agent &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -90,7 +90,7 @@ public class Example {
 
 Delete Agent by UUID
 
-This API provides capability to delete an agent by uuid
+This API provides capability to delete an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -165,7 +165,7 @@ public class Example {
 
 Get Agent Activities
 
-This API provides capability to retrieve an agent activities
+This API provides capability to retrieve an agent activities &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -240,7 +240,7 @@ public class Example {
 
 Get Agent by UUID
 
-This API provides capability to retrieve an agent by uuid
+This API provides capability to retrieve an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -315,7 +315,7 @@ public class Example {
 
 Get Agents
 
-This API provides capability to retrieve agents
+This API provides capability to retrieve agents &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -388,7 +388,7 @@ public class Example {
 
 Update Agent by UUID
 
-This API provides capability to update an agent by uuid
+This API provides capability to update an agent by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java

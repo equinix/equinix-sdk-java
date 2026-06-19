@@ -49,7 +49,15 @@ public enum PortSortBy {
   
   PHYSICALPORTS_TETHER_CROSSCONNECTID("/physicalPorts/tether/crossConnectId"),
   
-  PACKAGE_CODE("/package/code");
+  PACKAGE_CODE("/package/code"),
+  
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+  
+  BANDWIDTH("/bandwidth"),
+  
+  SERVICECODE("/serviceCode");
 
   private String value;
 

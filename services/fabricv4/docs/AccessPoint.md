@@ -18,9 +18,11 @@ Access point object
 |**virtualDevice** | [**VirtualDevice**](VirtualDevice.md) |  |  [optional] |
 |**_interface** | [**ModelInterface**](ModelInterface.md) |  |  [optional] |
 |**network** | [**SimplifiedNetwork**](SimplifiedNetwork.md) |  |  [optional] |
+|**environment** | [**ProviderEnvironment**](ProviderEnvironment.md) |  |  [optional] |
 |**sellerRegion** | **String** | Access point seller region |  [optional] |
 |**peeringType** | **PeeringType** |  |  [optional] |
 |**authenticationKey** | **String** | Access point authentication key |  [optional] |
+|**activationKey** | **String** | Access point activation key |  [optional] |
 |**providerConnectionId** | **String** | Provider assigned Connection Id |  [optional] |
 |**virtualNetwork** | [**VirtualNetwork**](VirtualNetwork.md) |  |  [optional] |
 |**interconnection** | [**MetalInterconnection**](MetalInterconnection.md) |  |  [optional] |

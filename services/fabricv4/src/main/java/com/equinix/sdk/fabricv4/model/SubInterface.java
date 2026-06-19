@@ -51,6 +51,7 @@ import com.equinix.sdk.fabricv4.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class SubInterface {
   public static final String SERIALIZED_NAME_NAME = "name";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
@@ -63,20 +64,24 @@ public class SubInterface {
   public SubInterface() {
   }
 
+  @Deprecated
   public SubInterface name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * name of subinterafce of a port
+   * name of subInterface of a port
    * @return name
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
+  @Deprecated
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }

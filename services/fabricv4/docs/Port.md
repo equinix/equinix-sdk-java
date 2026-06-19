@@ -10,7 +10,6 @@ Port specification
 |------------ | ------------- | ------------- | -------------|
 |**href** | **URI** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. |  [optional] [readonly] |
 |**type** | **PortType** |  |  [optional] |
-|**id** | **Integer** | Equinix assigned response attribute for Port Id |  [optional] |
 |**uuid** | **UUID** | Equinix assigned response attribute for  port identifier |  [optional] |
 |**name** | **String** | Equinix assigned response attribute for Port name |  [optional] |
 |**description** | **String** | Equinix assigned response attribute for Port description |  [optional] |

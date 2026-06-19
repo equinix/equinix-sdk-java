@@ -36,7 +36,7 @@ import com.equinix.sdk.fabricv4.model.RouteAggregationChangeDataResponse;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsBase;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsData;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsPatchRequestItem;
-import com.equinix.sdk.fabricv4.model.RouteAggregationsSearchBase;
+import com.equinix.sdk.fabricv4.model.RouteAggregationsSearchRequest;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsSearchResponse;
 import java.util.UUID;
 
@@ -1966,7 +1966,7 @@ public class RouteAggregationsApi {
     }
     /**
      * Build call for searchRouteAggregations
-     * @param routeAggregationsSearchBase  (required)
+     * @param routeAggregationsSearchRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1983,7 +1983,7 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteAggregationsCall(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchRouteAggregationsCall(@javax.annotation.Nonnull RouteAggregationsSearchRequest routeAggregationsSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1997,7 +1997,7 @@ public class RouteAggregationsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = routeAggregationsSearchBase;
+        Object localVarPostBody = routeAggregationsSearchRequest;
 
         // create path and map variables
         String localVarPath = "/fabric/v4/routeAggregations/search";
@@ -2029,20 +2029,20 @@ public class RouteAggregationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchRouteAggregationsValidateBeforeCall(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routeAggregationsSearchBase' is set
-        if (routeAggregationsSearchBase == null) {
-            throw new ApiException("Missing the required parameter 'routeAggregationsSearchBase' when calling searchRouteAggregations(Async)");
+    private okhttp3.Call searchRouteAggregationsValidateBeforeCall(@javax.annotation.Nonnull RouteAggregationsSearchRequest routeAggregationsSearchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'routeAggregationsSearchRequest' is set
+        if (routeAggregationsSearchRequest == null) {
+            throw new ApiException("Missing the required parameter 'routeAggregationsSearchRequest' when calling searchRouteAggregations(Async)");
         }
 
-        return searchRouteAggregationsCall(routeAggregationsSearchBase, _callback);
+        return searchRouteAggregationsCall(routeAggregationsSearchRequest, _callback);
 
     }
 
     /**
      * Search Aggregations
      * This API provides capability to search Route Aggregations
-     * @param routeAggregationsSearchBase  (required)
+     * @param routeAggregationsSearchRequest  (required)
      * @return RouteAggregationsSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2058,15 +2058,15 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RouteAggregationsSearchResponse searchRouteAggregations(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
-        ApiResponse<RouteAggregationsSearchResponse> localVarResp = searchRouteAggregationsWithHttpInfo(routeAggregationsSearchBase);
+    public RouteAggregationsSearchResponse searchRouteAggregations(@javax.annotation.Nonnull RouteAggregationsSearchRequest routeAggregationsSearchRequest) throws ApiException {
+        ApiResponse<RouteAggregationsSearchResponse> localVarResp = searchRouteAggregationsWithHttpInfo(routeAggregationsSearchRequest);
         return localVarResp.getData();
     }
 
     /**
      * Search Aggregations
      * This API provides capability to search Route Aggregations
-     * @param routeAggregationsSearchBase  (required)
+     * @param routeAggregationsSearchRequest  (required)
      * @return ApiResponse&lt;RouteAggregationsSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2082,8 +2082,8 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RouteAggregationsSearchResponse> searchRouteAggregationsWithHttpInfo(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase) throws ApiException {
-        okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchBase, null);
+    public ApiResponse<RouteAggregationsSearchResponse> searchRouteAggregationsWithHttpInfo(@javax.annotation.Nonnull RouteAggregationsSearchRequest routeAggregationsSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchRequest, null);
         Type localVarReturnType = new TypeToken<RouteAggregationsSearchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2091,7 +2091,7 @@ public class RouteAggregationsApi {
     /**
      * Search Aggregations (asynchronously)
      * This API provides capability to search Route Aggregations
-     * @param routeAggregationsSearchBase  (required)
+     * @param routeAggregationsSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2108,9 +2108,9 @@ public class RouteAggregationsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchRouteAggregationsAsync(@javax.annotation.Nonnull RouteAggregationsSearchBase routeAggregationsSearchBase, final ApiCallback<RouteAggregationsSearchResponse> _callback) throws ApiException {
+    public okhttp3.Call searchRouteAggregationsAsync(@javax.annotation.Nonnull RouteAggregationsSearchRequest routeAggregationsSearchRequest, final ApiCallback<RouteAggregationsSearchResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchBase, _callback);
+        okhttp3.Call localVarCall = searchRouteAggregationsValidateBeforeCall(routeAggregationsSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<RouteAggregationsSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

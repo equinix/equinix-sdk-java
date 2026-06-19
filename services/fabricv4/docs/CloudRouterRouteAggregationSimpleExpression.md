@@ -19,6 +19,8 @@
 |---- | -----|
 | TYPE | &quot;/type&quot; |
 | ATTACHMENTSTATUS | &quot;/attachmentStatus&quot; |
+| CHANGELOG_CREATEDDATETIME | &quot;/changeLog/createdDateTime&quot; |
+| CHANGELOG_UPDATEDDATETIME | &quot;/changeLog/updatedDateTime&quot; |
 
 
 

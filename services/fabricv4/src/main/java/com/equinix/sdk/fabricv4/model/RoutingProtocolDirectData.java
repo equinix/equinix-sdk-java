@@ -17,7 +17,9 @@ import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.DirectConnectionIpv4;
 import com.equinix.sdk.fabricv4.model.DirectConnectionIpv6;
 import com.equinix.sdk.fabricv4.model.RoutingProtocolChange;
+import com.equinix.sdk.fabricv4.model.RoutingProtocolConnection;
 import com.equinix.sdk.fabricv4.model.RoutingProtocolOperation;
+import com.equinix.sdk.fabricv4.model.RoutingProtocolProject;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -217,6 +219,16 @@ public class RoutingProtocolDirectData {
   @javax.annotation.Nullable
   private Changelog changelog;
 
+  public static final String SERIALIZED_NAME_PROJECT = "project";
+  @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
+  private RoutingProtocolProject project;
+
+  public static final String SERIALIZED_NAME_CONNECTION = "connection";
+  @SerializedName(SERIALIZED_NAME_CONNECTION)
+  @javax.annotation.Nullable
+  private RoutingProtocolConnection connection;
+
   public RoutingProtocolDirectData() {
   }
 
@@ -409,6 +421,44 @@ public class RoutingProtocolDirectData {
     this.changelog = changelog;
   }
 
+
+  public RoutingProtocolDirectData project(@javax.annotation.Nullable RoutingProtocolProject project) {
+    this.project = project;
+    return this;
+  }
+
+  /**
+   * Get project
+   * @return project
+   */
+  @javax.annotation.Nullable
+  public RoutingProtocolProject getProject() {
+    return project;
+  }
+
+  public void setProject(@javax.annotation.Nullable RoutingProtocolProject project) {
+    this.project = project;
+  }
+
+
+  public RoutingProtocolDirectData connection(@javax.annotation.Nullable RoutingProtocolConnection connection) {
+    this.connection = connection;
+    return this;
+  }
+
+  /**
+   * Get connection
+   * @return connection
+   */
+  @javax.annotation.Nullable
+  public RoutingProtocolConnection getConnection() {
+    return connection;
+  }
+
+  public void setConnection(@javax.annotation.Nullable RoutingProtocolConnection connection) {
+    this.connection = connection;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -473,13 +523,15 @@ public class RoutingProtocolDirectData {
         Objects.equals(this.state, routingProtocolDirectData.state) &&
         Objects.equals(this.operation, routingProtocolDirectData.operation) &&
         Objects.equals(this.change, routingProtocolDirectData.change) &&
-        Objects.equals(this.changelog, routingProtocolDirectData.changelog)&&
+        Objects.equals(this.changelog, routingProtocolDirectData.changelog) &&
+        Objects.equals(this.project, routingProtocolDirectData.project) &&
+        Objects.equals(this.connection, routingProtocolDirectData.connection)&&
         Objects.equals(this.additionalProperties, routingProtocolDirectData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, directIpv4, directIpv6, href, uuid, state, operation, change, changelog, additionalProperties);
+    return Objects.hash(type, name, directIpv4, directIpv6, href, uuid, state, operation, change, changelog, project, connection, additionalProperties);
   }
 
   @Override
@@ -496,6 +548,8 @@ public class RoutingProtocolDirectData {
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
+    sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -518,7 +572,7 @@ public class RoutingProtocolDirectData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "directIpv4", "directIpv6", "href", "uuid", "state", "operation", "change", "changelog"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "directIpv4", "directIpv6", "href", "uuid", "state", "operation", "change", "changelog", "project", "connection"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -579,6 +633,14 @@ public class RoutingProtocolDirectData {
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
         Changelog.validateJsonElement(jsonObj.get("changelog"));
+      }
+      // validate the optional field `project`
+      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
+        RoutingProtocolProject.validateJsonElement(jsonObj.get("project"));
+      }
+      // validate the optional field `connection`
+      if (jsonObj.get("connection") != null && !jsonObj.get("connection").isJsonNull()) {
+        RoutingProtocolConnection.validateJsonElement(jsonObj.get("connection"));
       }
   }
 

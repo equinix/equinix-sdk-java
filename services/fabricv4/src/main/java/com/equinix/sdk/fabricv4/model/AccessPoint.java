@@ -18,6 +18,7 @@ import com.equinix.sdk.fabricv4.model.CloudRouter;
 import com.equinix.sdk.fabricv4.model.MetalInterconnection;
 import com.equinix.sdk.fabricv4.model.ModelInterface;
 import com.equinix.sdk.fabricv4.model.PeeringType;
+import com.equinix.sdk.fabricv4.model.ProviderEnvironment;
 import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
 import com.equinix.sdk.fabricv4.model.SimplifiedLinkProtocol;
 import com.equinix.sdk.fabricv4.model.SimplifiedLocation;
@@ -113,6 +114,11 @@ public class AccessPoint {
   @javax.annotation.Nullable
   private SimplifiedNetwork network;
 
+  public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nullable
+  private ProviderEnvironment environment;
+
   public static final String SERIALIZED_NAME_SELLER_REGION = "sellerRegion";
   @SerializedName(SERIALIZED_NAME_SELLER_REGION)
   @javax.annotation.Nullable
@@ -127,6 +133,11 @@ public class AccessPoint {
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_KEY)
   @javax.annotation.Nullable
   private String authenticationKey;
+
+  public static final String SERIALIZED_NAME_ACTIVATION_KEY = "activationKey";
+  @SerializedName(SERIALIZED_NAME_ACTIVATION_KEY)
+  @javax.annotation.Nullable
+  private String activationKey;
 
   public static final String SERIALIZED_NAME_PROVIDER_CONNECTION_ID = "providerConnectionId";
   @SerializedName(SERIALIZED_NAME_PROVIDER_CONNECTION_ID)
@@ -393,6 +404,25 @@ public class AccessPoint {
   }
 
 
+  public AccessPoint environment(@javax.annotation.Nullable ProviderEnvironment environment) {
+    this.environment = environment;
+    return this;
+  }
+
+  /**
+   * Get environment
+   * @return environment
+   */
+  @javax.annotation.Nullable
+  public ProviderEnvironment getEnvironment() {
+    return environment;
+  }
+
+  public void setEnvironment(@javax.annotation.Nullable ProviderEnvironment environment) {
+    this.environment = environment;
+  }
+
+
   public AccessPoint sellerRegion(@javax.annotation.Nullable String sellerRegion) {
     this.sellerRegion = sellerRegion;
     return this;
@@ -447,6 +477,25 @@ public class AccessPoint {
 
   public void setAuthenticationKey(@javax.annotation.Nullable String authenticationKey) {
     this.authenticationKey = authenticationKey;
+  }
+
+
+  public AccessPoint activationKey(@javax.annotation.Nullable String activationKey) {
+    this.activationKey = activationKey;
+    return this;
+  }
+
+  /**
+   * Access point activation key
+   * @return activationKey
+   */
+  @javax.annotation.Nullable
+  public String getActivationKey() {
+    return activationKey;
+  }
+
+  public void setActivationKey(@javax.annotation.Nullable String activationKey) {
+    this.activationKey = activationKey;
   }
 
 
@@ -590,9 +639,11 @@ public class AccessPoint {
         Objects.equals(this.virtualDevice, accessPoint.virtualDevice) &&
         Objects.equals(this._interface, accessPoint._interface) &&
         Objects.equals(this.network, accessPoint.network) &&
+        Objects.equals(this.environment, accessPoint.environment) &&
         Objects.equals(this.sellerRegion, accessPoint.sellerRegion) &&
         Objects.equals(this.peeringType, accessPoint.peeringType) &&
         Objects.equals(this.authenticationKey, accessPoint.authenticationKey) &&
+        Objects.equals(this.activationKey, accessPoint.activationKey) &&
         Objects.equals(this.providerConnectionId, accessPoint.providerConnectionId) &&
         Objects.equals(this.virtualNetwork, accessPoint.virtualNetwork) &&
         Objects.equals(this.interconnection, accessPoint.interconnection) &&
@@ -602,7 +653,7 @@ public class AccessPoint {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, sellerRegion, peeringType, authenticationKey, providerConnectionId, virtualNetwork, interconnection, role, additionalProperties);
+    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, environment, sellerRegion, peeringType, authenticationKey, activationKey, providerConnectionId, virtualNetwork, interconnection, role, additionalProperties);
   }
 
   @Override
@@ -619,9 +670,11 @@ public class AccessPoint {
     sb.append("    virtualDevice: ").append(toIndentedString(virtualDevice)).append("\n");
     sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
     sb.append("    sellerRegion: ").append(toIndentedString(sellerRegion)).append("\n");
     sb.append("    peeringType: ").append(toIndentedString(peeringType)).append("\n");
     sb.append("    authenticationKey: ").append(toIndentedString(authenticationKey)).append("\n");
+    sb.append("    activationKey: ").append(toIndentedString(activationKey)).append("\n");
     sb.append("    providerConnectionId: ").append(toIndentedString(providerConnectionId)).append("\n");
     sb.append("    virtualNetwork: ").append(toIndentedString(virtualNetwork)).append("\n");
     sb.append("    interconnection: ").append(toIndentedString(interconnection)).append("\n");
@@ -648,7 +701,7 @@ public class AccessPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -707,6 +760,10 @@ public class AccessPoint {
       if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonNull()) {
         SimplifiedNetwork.validateJsonElement(jsonObj.get("network"));
       }
+      // validate the optional field `environment`
+      if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
+        ProviderEnvironment.validateJsonElement(jsonObj.get("environment"));
+      }
       if ((jsonObj.get("sellerRegion") != null && !jsonObj.get("sellerRegion").isJsonNull()) && !jsonObj.get("sellerRegion").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sellerRegion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerRegion").toString()));
       }
@@ -716,6 +773,9 @@ public class AccessPoint {
       }
       if ((jsonObj.get("authenticationKey") != null && !jsonObj.get("authenticationKey").isJsonNull()) && !jsonObj.get("authenticationKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authenticationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authenticationKey").toString()));
+      }
+      if ((jsonObj.get("activationKey") != null && !jsonObj.get("activationKey").isJsonNull()) && !jsonObj.get("activationKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `activationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activationKey").toString()));
       }
       if ((jsonObj.get("providerConnectionId") != null && !jsonObj.get("providerConnectionId").isJsonNull()) && !jsonObj.get("providerConnectionId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `providerConnectionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("providerConnectionId").toString()));

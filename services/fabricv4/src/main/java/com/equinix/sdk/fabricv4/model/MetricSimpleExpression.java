@@ -76,7 +76,7 @@ public class MetricSimpleExpression {
   }
 
   /**
-   * Possible field names to use on filters:  * &#x60;/subject&#x60; - Metric subject description (required and limited to 1 value)  * &#x60;/name&#x60; - Metric names (required)  * &#x60;/dataPoints/endDateTime&#x60; - Time of Metrics 
+   * Possible field names to use on filters:  * &#x60;/subject&#x60; - Metric subject description (required and limited to 1 value)  * &#x60;/name&#x60; - Metric names (required)  * &#x60;/dataPoints/endDateTime&#x60; - Time of Metrics  * &#x60;/time&#x60; - Time of Metrics  * &#x60;/interval&#x60; - ISO-8601 duration format to specify the interval of metrics data points  * &#x60;/value&#x60; - specific data points of the metric to return (e.g. &#39;last&#39; - for metros only) 
    * @return property
    */
   @javax.annotation.Nullable

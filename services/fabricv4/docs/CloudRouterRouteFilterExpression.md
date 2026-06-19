@@ -23,6 +23,8 @@ Filter expression that can be AND, OR, or a simple expression
 | TYPE | &quot;/type&quot; |
 | DIRECTION | &quot;/direction&quot; |
 | ATTACHMENTSTATUS | &quot;/attachmentStatus&quot; |
+| CHANGELOG_CREATEDDATETIME | &quot;/changeLog/createdDateTime&quot; |
+| CHANGELOG_UPDATEDDATETIME | &quot;/changeLog/updatedDateTime&quot; |
 
 
 

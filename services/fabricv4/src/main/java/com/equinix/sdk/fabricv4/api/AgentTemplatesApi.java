@@ -158,7 +158,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Template by UUID
-     * This API provides capability to retrieve an agent template by uuid
+     * This API provides capability to retrieve an agent template by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentTemplateId Agent Template UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -182,7 +182,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Template by UUID
-     * This API provides capability to retrieve an agent template by uuid
+     * This API provides capability to retrieve an agent template by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentTemplateId Agent Template UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -207,7 +207,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Template by UUID (asynchronously)
-     * This API provides capability to retrieve an agent template by uuid
+     * This API provides capability to retrieve an agent template by uuid &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param agentTemplateId Agent Template UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -310,7 +310,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Templates
-     * This API provides capability to retrieve agent templates
+     * This API provides capability to retrieve agent templates &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @return AgentTemplateGetAllResponse
@@ -333,7 +333,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Templates
-     * This API provides capability to retrieve agent templates
+     * This API provides capability to retrieve agent templates &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @return ApiResponse&lt;AgentTemplateGetAllResponse&gt;
@@ -357,7 +357,7 @@ public class AgentTemplatesApi {
 
     /**
      * Get Agent Templates (asynchronously)
-     * This API provides capability to retrieve agent templates
+     * This API provides capability to retrieve agent templates &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param _callback The callback to be executed when the API call finishes

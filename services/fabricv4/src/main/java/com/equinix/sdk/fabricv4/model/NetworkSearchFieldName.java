@@ -37,9 +37,15 @@ public enum NetworkSearchFieldName {
   
   TYPE("/type"),
   
+  STATE("/state"),
+  
   OPERATION_EQUINIXSTATUS("/operation/equinixStatus"),
   
   LOCATION_REGION("/location/region"),
+  
+  LOCATION_METROCODE("/location/metroCode"),
+  
+  CONNECTIONSCOUNT("/connectionsCount"),
   
   PROJECT_PROJECTID("/project/projectId"),
   
@@ -47,7 +53,11 @@ public enum NetworkSearchFieldName {
   
   ACCOUNT_ORGID("/account/orgId"),
   
-  DELETEDDATE("/deletedDate"),
+  CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+  
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  
+  CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
   
   STAR("/_*");
 

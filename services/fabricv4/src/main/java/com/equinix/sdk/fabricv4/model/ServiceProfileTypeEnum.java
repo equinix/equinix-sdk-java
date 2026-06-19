@@ -35,7 +35,11 @@ public enum ServiceProfileTypeEnum {
   
   IA_PROFILE("IA_PROFILE"),
   
-  IX_PROFILE("IX_PROFILE");
+  IX_PROFILE("IX_PROFILE"),
+  
+  IC_PROFILE("IC_PROFILE"),
+  
+  LMAAS_PROFILE("LMAAS_PROFILE");
 
   private String value;
 

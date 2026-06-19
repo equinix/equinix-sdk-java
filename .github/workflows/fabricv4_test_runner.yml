@@ -1,9 +1,6 @@
 name: Test Equinix SDK Java Runner
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_run:
     workflows: ["Sync fabricv4 API spec"]
     types:

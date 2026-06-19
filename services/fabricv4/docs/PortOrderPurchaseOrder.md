@@ -2,7 +2,7 @@
 
 # PortOrderPurchaseOrder
 
-purchase order
+Purchase Order information associate to the account
 
 ## Properties
 
@@ -10,8 +10,8 @@ purchase order
 |------------ | ------------- | ------------- | -------------|
 |**number** | **String** | purchase order number |  [optional] |
 |**amount** | **String** | purchase order amount |  [optional] |
-|**startDate** | **OffsetDateTime** |  |  [optional] |
-|**endDate** | **OffsetDateTime** |  |  [optional] |
+|**startDate** | **String** |  |  [optional] |
+|**endDate** | **String** |  |  [optional] |
 |**attachmentId** | **UUID** |  |  [optional] |
 |**selectionType** | [**SelectionTypeEnum**](#SelectionTypeEnum) |  |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |

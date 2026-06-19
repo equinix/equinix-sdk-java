@@ -59,7 +59,11 @@ public class CloudRouterRouteAggregationSimpleExpression {
   public enum PropertyEnum {
     TYPE("/type"),
     
-    ATTACHMENTSTATUS("/attachmentStatus");
+    ATTACHMENTSTATUS("/attachmentStatus"),
+    
+    CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
+    
+    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
     private String value;
 

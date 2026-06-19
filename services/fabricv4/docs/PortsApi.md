@@ -93,7 +93,7 @@ public class Example {
 
 Create Port
 
-Creates Equinix Fabric? Port.
+Creates Equinix Fabric™ Port.
 
 ### Example
 ```java

@@ -53,6 +53,12 @@
 
 * `CHANGELOG_CREATEDDATETIME` (value: `"/changeLog/createdDateTime"`)
 
+* `CHANGELOG_DELETEDBY` (value: `"/changeLog/deletedBy"`)
+
+* `CHANGELOG_DELETEDDATETIME` (value: `"/changeLog/deletedDateTime"`)
+
+* `CHANGELOG_LASTUPDATEDBY` (value: `"/changeLog/lastUpdatedBy"`)
+
 * `OPERATION_EQUINIXSTATUS` (value: `"/operation/equinixStatus"`)
 
 * `OPERATION_PROVIDERSTATUS` (value: `"/operation/providerStatus"`)
@@ -75,6 +81,8 @@
 
 * `ZSIDE_ACCESSPOINT_LOCATION_METRONAME` (value: `"/zSide/accessPoint/location/metroName"`)
 
+* `ZSIDE_ACCESSPOINT_SELLERREGION` (value: `"/zSide/accessPoint/sellerRegion"`)
+
 * `ZSIDE_ACCESSPOINT_NAME` (value: `"/zSide/accessPoint/name"`)
 
 * `ZSIDE_ACCESSPOINT_PORT_UUID` (value: `"/zSide/accessPoint/port/uuid"`)
@@ -96,6 +104,8 @@
 * `ZSIDE_SERVICETOKEN_UUID` (value: `"/zSide/serviceToken/uuid"`)
 
 * `ZSIDE_INTERNETACCESS_UUID` (value: `"/zSide/internetAccess/uuid"`)
+
+* `STATE` (value: `"/state"`)
 
 
 

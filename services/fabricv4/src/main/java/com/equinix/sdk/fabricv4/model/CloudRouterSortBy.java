@@ -41,9 +41,17 @@ public enum CloudRouterSortBy {
   
   PACKAGE_CODE("/package/code"),
   
+  TYPE("/type"),
+  
+  CONNECTIONSCOUNT("/connectionsCount"),
+  
   CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  
+  CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
+  
+  ORDER_TERMLENGTH("/order/termLength");
 
   private String value;
 

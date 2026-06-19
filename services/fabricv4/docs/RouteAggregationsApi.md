@@ -911,7 +911,7 @@ public class Example {
 
 <a id="searchRouteAggregations"></a>
 # **searchRouteAggregations**
-> RouteAggregationsSearchResponse searchRouteAggregations(routeAggregationsSearchBase)
+> RouteAggregationsSearchResponse searchRouteAggregations(routeAggregationsSearchRequest)
 
 Search Aggregations
 
@@ -937,9 +937,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    RouteAggregationsSearchBase routeAggregationsSearchBase = new RouteAggregationsSearchBase(); // RouteAggregationsSearchBase | 
+    RouteAggregationsSearchRequest routeAggregationsSearchRequest = new RouteAggregationsSearchRequest(); // RouteAggregationsSearchRequest | 
     try {
-      RouteAggregationsSearchResponse result = apiInstance.searchRouteAggregations(routeAggregationsSearchBase);
+      RouteAggregationsSearchResponse result = apiInstance.searchRouteAggregations(routeAggregationsSearchRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling RouteAggregationsApi#searchRouteAggregations");
@@ -956,7 +956,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **routeAggregationsSearchBase** | [**RouteAggregationsSearchBase**](RouteAggregationsSearchBase.md)|  | |
+| **routeAggregationsSearchRequest** | [**RouteAggregationsSearchRequest**](RouteAggregationsSearchRequest.md)|  | |
 
 ### Return type
 

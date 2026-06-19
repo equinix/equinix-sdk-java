@@ -19,5 +19,7 @@
 
 * `SWITZERLAND` (value: `"SWITZERLAND"`)
 
+* `EU` (value: `"EU"`)
+
 
 
