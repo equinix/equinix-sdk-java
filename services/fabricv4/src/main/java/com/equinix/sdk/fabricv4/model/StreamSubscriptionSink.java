@@ -310,6 +310,7 @@ public class StreamSubscriptionSink {
     this.host = host;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -356,6 +357,7 @@ public class StreamSubscriptionSink {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -393,7 +395,9 @@ public class StreamSubscriptionSink {
     sb.append("    credential: ").append(toIndentedString(credential)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    host: ").append(toIndentedString(host)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

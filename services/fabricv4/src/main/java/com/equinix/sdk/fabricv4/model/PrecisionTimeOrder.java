@@ -124,6 +124,7 @@ public class PrecisionTimeOrder {
     this.orderNumber = orderNumber;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class PrecisionTimeOrder {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class PrecisionTimeOrder {
     sb.append("    purchaseOrderNumber: ").append(toIndentedString(purchaseOrderNumber)).append("\n");
     sb.append("    customerReferenceNumber: ").append(toIndentedString(customerReferenceNumber)).append("\n");
     sb.append("    orderNumber: ").append(toIndentedString(orderNumber)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -297,6 +297,7 @@ public class RoutingProtocolBGPType {
     this.bfd = bfd;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -343,6 +344,7 @@ public class RoutingProtocolBGPType {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -380,7 +382,9 @@ public class RoutingProtocolBGPType {
     sb.append("    bgpAuthKey: ").append(toIndentedString(bgpAuthKey)).append("\n");
     sb.append("    asOverrideEnabled: ").append(toIndentedString(asOverrideEnabled)).append("\n");
     sb.append("    bfd: ").append(toIndentedString(bfd)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

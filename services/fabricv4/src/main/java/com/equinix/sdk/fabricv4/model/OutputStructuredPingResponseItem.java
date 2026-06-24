@@ -172,6 +172,7 @@ public class OutputStructuredPingResponseItem {
     this.time = time;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -218,6 +219,7 @@ public class OutputStructuredPingResponseItem {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -249,7 +251,9 @@ public class OutputStructuredPingResponseItem {
     sb.append("    icmpSeq: ").append(toIndentedString(icmpSeq)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

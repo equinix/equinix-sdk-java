@@ -252,6 +252,7 @@ public class SubmitIpBlockRequestBody {
     this.prefix = prefix;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -298,6 +299,7 @@ public class SubmitIpBlockRequestBody {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -335,7 +337,9 @@ public class SubmitIpBlockRequestBody {
     sb.append("    regulations: ").append(toIndentedString(regulations)).append("\n");
     sb.append("    prefixLength: ").append(toIndentedString(prefixLength)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

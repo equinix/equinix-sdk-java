@@ -363,6 +363,7 @@ public class ConnectionRouteFilterData {
     this.changeLog = changeLog;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -409,6 +410,7 @@ public class ConnectionRouteFilterData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -442,7 +444,9 @@ public class ConnectionRouteFilterData {
     sb.append("    attachmentStatus: ").append(toIndentedString(attachmentStatus)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

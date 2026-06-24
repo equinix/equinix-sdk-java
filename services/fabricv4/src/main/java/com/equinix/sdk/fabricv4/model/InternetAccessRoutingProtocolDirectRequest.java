@@ -90,6 +90,9 @@ public class InternetAccessRoutingProtocolDirectRequest extends InternetAccessRo
     this.connections = connections;
   }
 
+
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -99,7 +102,7 @@ public class InternetAccessRoutingProtocolDirectRequest extends InternetAccessRo
       return false;
     }
     InternetAccessRoutingProtocolDirectRequest internetAccessRoutingProtocolDirectRequest = (InternetAccessRoutingProtocolDirectRequest) o;
-    return Objects.equals(this.connections, internetAccessRoutingProtocolDirectRequest.connections)&&
+    return Objects.equals(this.connections, internetAccessRoutingProtocolDirectRequest.connections) &&
         super.equals(o);
   }
 
@@ -114,6 +117,7 @@ public class InternetAccessRoutingProtocolDirectRequest extends InternetAccessRo
     sb.append("class InternetAccessRoutingProtocolDirectRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

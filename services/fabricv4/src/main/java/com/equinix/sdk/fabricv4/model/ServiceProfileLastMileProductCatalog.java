@@ -160,6 +160,7 @@ public class ServiceProfileLastMileProductCatalog {
     this.offerings = offerings;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -206,6 +207,7 @@ public class ServiceProfileLastMileProductCatalog {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -235,7 +237,9 @@ public class ServiceProfileLastMileProductCatalog {
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    offerings: ").append(toIndentedString(offerings)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

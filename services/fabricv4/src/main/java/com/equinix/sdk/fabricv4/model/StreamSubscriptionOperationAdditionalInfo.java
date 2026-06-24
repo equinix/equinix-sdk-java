@@ -124,6 +124,7 @@ public class StreamSubscriptionOperationAdditionalInfo {
     this.reason = reason;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class StreamSubscriptionOperationAdditionalInfo {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class StreamSubscriptionOperationAdditionalInfo {
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

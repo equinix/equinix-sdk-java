@@ -124,6 +124,7 @@ public class ServiceProfileLastMileNotification {
     this.required = required;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class ServiceProfileLastMileNotification {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class ServiceProfileLastMileNotification {
     sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

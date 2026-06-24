@@ -77,6 +77,7 @@ public class FilterBody {
     this.filter = filter;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -123,6 +124,7 @@ public class FilterBody {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,7 +148,9 @@ public class FilterBody {
     StringBuilder sb = new StringBuilder();
     sb.append("class FilterBody {\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -197,6 +197,7 @@ public class PlatformChangelog {
     this.deletedDateTime = deletedDateTime;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -243,6 +244,7 @@ public class PlatformChangelog {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -276,7 +278,9 @@ public class PlatformChangelog {
     sb.append("    updatedDateTime: ").append(toIndentedString(updatedDateTime)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
     sb.append("    deletedDateTime: ").append(toIndentedString(deletedDateTime)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

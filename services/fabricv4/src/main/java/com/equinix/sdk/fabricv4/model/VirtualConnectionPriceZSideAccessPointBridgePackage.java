@@ -77,6 +77,7 @@ public class VirtualConnectionPriceZSideAccessPointBridgePackage {
     this.code = code;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -123,6 +124,7 @@ public class VirtualConnectionPriceZSideAccessPointBridgePackage {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -146,7 +148,9 @@ public class VirtualConnectionPriceZSideAccessPointBridgePackage {
     StringBuilder sb = new StringBuilder();
     sb.append("class VirtualConnectionPriceZSideAccessPointBridgePackage {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

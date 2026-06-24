@@ -124,6 +124,7 @@ public class AuthenticationKey {
     this.description = description;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class AuthenticationKey {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class AuthenticationKey {
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

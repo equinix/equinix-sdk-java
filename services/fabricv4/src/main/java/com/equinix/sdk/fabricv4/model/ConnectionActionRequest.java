@@ -126,6 +126,7 @@ public class ConnectionActionRequest {
     this.data = data;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -172,6 +173,7 @@ public class ConnectionActionRequest {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,7 +201,9 @@ public class ConnectionActionRequest {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

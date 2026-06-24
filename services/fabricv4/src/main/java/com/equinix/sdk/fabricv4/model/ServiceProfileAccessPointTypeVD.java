@@ -185,6 +185,7 @@ public class ServiceProfileAccessPointTypeVD {
 
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -215,6 +216,7 @@ public class ServiceProfileAccessPointTypeVD {
     sb.append("    supportedBandwidths: ").append(toIndentedString(supportedBandwidths)).append("\n");
     sb.append("    allowRemoteConnections: ").append(toIndentedString(allowRemoteConnections)).append("\n");
     sb.append("    allowCustomBandwidth: ").append(toIndentedString(allowCustomBandwidth)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

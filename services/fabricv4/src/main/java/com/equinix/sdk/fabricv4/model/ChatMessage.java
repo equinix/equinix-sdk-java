@@ -87,6 +87,7 @@ public class ChatMessage {
     this.messages = messages;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -133,6 +134,7 @@ public class ChatMessage {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -156,7 +158,9 @@ public class ChatMessage {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChatMessage {\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

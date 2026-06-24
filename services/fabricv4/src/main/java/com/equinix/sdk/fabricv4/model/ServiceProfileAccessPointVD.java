@@ -200,6 +200,7 @@ public class ServiceProfileAccessPointVD {
     this.interfaceUuid = interfaceUuid;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -246,6 +247,7 @@ public class ServiceProfileAccessPointVD {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -275,7 +277,9 @@ public class ServiceProfileAccessPointVD {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    interfaceUuid: ").append(toIndentedString(interfaceUuid)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

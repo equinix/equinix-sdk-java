@@ -137,6 +137,7 @@ public class ConnectionSide {
     this.additionalInfo = additionalInfo;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -183,6 +184,7 @@ public class ConnectionSide {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -210,7 +212,9 @@ public class ConnectionSide {
     sb.append("    serviceToken: ").append(toIndentedString(serviceToken)).append("\n");
     sb.append("    accessPoint: ").append(toIndentedString(accessPoint)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

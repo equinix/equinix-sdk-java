@@ -900,6 +900,7 @@ public class PortRequest {
     this.loas = loas;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -944,6 +945,7 @@ public class PortRequest {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -1015,7 +1017,9 @@ public class PortRequest {
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -222,6 +222,7 @@ public class Order {
     this.contractedBandwidth = contractedBandwidth;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -268,6 +269,7 @@ public class Order {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -303,7 +305,9 @@ public class Order {
     sb.append("    orderNumber: ").append(toIndentedString(orderNumber)).append("\n");
     sb.append("    termLength: ").append(toIndentedString(termLength)).append("\n");
     sb.append("    contractedBandwidth: ").append(toIndentedString(contractedBandwidth)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

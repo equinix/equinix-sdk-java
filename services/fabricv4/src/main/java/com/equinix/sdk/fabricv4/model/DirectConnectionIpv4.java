@@ -76,6 +76,7 @@ public class DirectConnectionIpv4 {
     this.equinixIfaceIp = equinixIfaceIp;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -122,6 +123,7 @@ public class DirectConnectionIpv4 {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,7 +147,9 @@ public class DirectConnectionIpv4 {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectConnectionIpv4 {\n");
     sb.append("    equinixIfaceIp: ").append(toIndentedString(equinixIfaceIp)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

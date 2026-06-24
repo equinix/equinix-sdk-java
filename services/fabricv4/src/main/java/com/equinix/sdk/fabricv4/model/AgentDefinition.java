@@ -76,6 +76,7 @@ public class AgentDefinition {
     this.url = url;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -122,6 +123,7 @@ public class AgentDefinition {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,7 +147,9 @@ public class AgentDefinition {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgentDefinition {\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -200,6 +200,7 @@ public class RoutingProtocolDirectType {
     this.directIpv6 = directIpv6;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -246,6 +247,7 @@ public class RoutingProtocolDirectType {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -275,7 +277,9 @@ public class RoutingProtocolDirectType {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    directIpv4: ").append(toIndentedString(directIpv4)).append("\n");
     sb.append("    directIpv6: ").append(toIndentedString(directIpv6)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

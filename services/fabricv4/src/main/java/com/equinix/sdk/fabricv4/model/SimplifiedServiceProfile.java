@@ -594,6 +594,7 @@ public class SimplifiedServiceProfile {
     this.lastMileConfig = lastMileConfig;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -638,6 +639,7 @@ public class SimplifiedServiceProfile {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -699,7 +701,9 @@ public class SimplifiedServiceProfile {
     sb.append("    selfProfile: ").append(toIndentedString(selfProfile)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
     sb.append("    lastMileConfig: ").append(toIndentedString(lastMileConfig)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

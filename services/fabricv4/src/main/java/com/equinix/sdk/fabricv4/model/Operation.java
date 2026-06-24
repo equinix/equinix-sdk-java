@@ -148,6 +148,7 @@ public class Operation {
     this.distinctIpv6PrefixesCount = distinctIpv6PrefixesCount;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -194,6 +195,7 @@ public class Operation {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,7 +225,9 @@ public class Operation {
     sb.append("    bgpIpv6RoutesCount: ").append(toIndentedString(bgpIpv6RoutesCount)).append("\n");
     sb.append("    distinctIpv4PrefixesCount: ").append(toIndentedString(distinctIpv4PrefixesCount)).append("\n");
     sb.append("    distinctIpv6PrefixesCount: ").append(toIndentedString(distinctIpv6PrefixesCount)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

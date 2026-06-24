@@ -124,6 +124,7 @@ public class ApiServices {
     this.changedDateTime = changedDateTime;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class ApiServices {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class ApiServices {
     sb.append("    route: ").append(toIndentedString(route)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    changedDateTime: ").append(toIndentedString(changedDateTime)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

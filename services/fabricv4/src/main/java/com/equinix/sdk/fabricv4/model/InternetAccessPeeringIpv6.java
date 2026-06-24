@@ -198,6 +198,7 @@ public class InternetAccessPeeringIpv6 {
     this.customerVrrpIp = customerVrrpIp;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -244,6 +245,7 @@ public class InternetAccessPeeringIpv6 {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -277,7 +279,9 @@ public class InternetAccessPeeringIpv6 {
     sb.append("    customerPeerIp: ").append(toIndentedString(customerPeerIp)).append("\n");
     sb.append("    equinixVrrpIp: ").append(toIndentedString(equinixVrrpIp)).append("\n");
     sb.append("    customerVrrpIp: ").append(toIndentedString(customerVrrpIp)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -118,6 +118,7 @@ public class StreamSubscriptionSelector {
     this.except = except;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -164,6 +165,7 @@ public class StreamSubscriptionSelector {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -189,7 +191,9 @@ public class StreamSubscriptionSelector {
     sb.append("class StreamSubscriptionSelector {\n");
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
     sb.append("    except: ").append(toIndentedString(except)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

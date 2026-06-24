@@ -225,6 +225,7 @@ public class ModelInterface {
     this.projectId = projectId;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -271,6 +272,7 @@ public class ModelInterface {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -302,7 +304,9 @@ public class ModelInterface {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

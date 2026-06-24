@@ -487,6 +487,7 @@ public class Price {
     this.timeService = timeService;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -531,6 +532,7 @@ public class Price {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -584,7 +586,9 @@ public class Price {
     sb.append("    router: ").append(toIndentedString(router)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
     sb.append("    timeService: ").append(toIndentedString(timeService)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

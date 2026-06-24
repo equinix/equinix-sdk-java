@@ -87,6 +87,7 @@ public class RouteFilterRulesPostRequest {
     this.data = data;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -133,6 +134,7 @@ public class RouteFilterRulesPostRequest {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -156,7 +158,9 @@ public class RouteFilterRulesPostRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RouteFilterRulesPostRequest {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

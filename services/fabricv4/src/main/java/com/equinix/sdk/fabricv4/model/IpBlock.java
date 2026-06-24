@@ -461,6 +461,7 @@ public class IpBlock {
     this.error = error;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -505,6 +506,7 @@ public class IpBlock {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -560,7 +562,9 @@ public class IpBlock {
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

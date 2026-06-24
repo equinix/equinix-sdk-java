@@ -486,6 +486,7 @@ public class CloudEvent {
     this.data = data;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -530,6 +531,7 @@ public class CloudEvent {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -589,7 +591,9 @@ public class CloudEvent {
     sb.append("    traceparent: ").append(toIndentedString(traceparent)).append("\n");
     sb.append("    tracestate: ").append(toIndentedString(tracestate)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

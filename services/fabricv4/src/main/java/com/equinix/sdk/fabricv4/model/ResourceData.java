@@ -197,6 +197,7 @@ public class ResourceData {
     this.operation = operation;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -243,6 +244,7 @@ public class ResourceData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -276,7 +278,9 @@ public class ResourceData {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

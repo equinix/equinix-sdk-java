@@ -157,6 +157,7 @@ public class PrecisionTimePackagePostResponse {
     this.code = code;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -203,6 +204,7 @@ public class PrecisionTimePackagePostResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -228,7 +230,9 @@ public class PrecisionTimePackagePostResponse {
     sb.append("class PrecisionTimePackagePostResponse {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

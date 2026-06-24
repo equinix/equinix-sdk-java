@@ -124,6 +124,7 @@ public class EndCustomer {
     this.mdmId = mdmId;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -170,6 +171,7 @@ public class EndCustomer {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -197,7 +199,9 @@ public class EndCustomer {
     sb.append("    isDisclosed: ").append(toIndentedString(isDisclosed)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    mdmId: ").append(toIndentedString(mdmId)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -152,6 +152,7 @@ public class InternetAccessConnection {
     this.peeringIpv6 = peeringIpv6;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -198,6 +199,7 @@ public class InternetAccessConnection {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -227,7 +229,9 @@ public class InternetAccessConnection {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    peeringIpv4: ").append(toIndentedString(peeringIpv4)).append("\n");
     sb.append("    peeringIpv6: ").append(toIndentedString(peeringIpv6)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

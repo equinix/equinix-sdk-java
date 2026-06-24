@@ -455,6 +455,7 @@ public class StreamSubscription {
     this.changeLog = changeLog;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -499,6 +500,7 @@ public class StreamSubscription {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -546,7 +548,9 @@ public class StreamSubscription {
     sb.append("    sink: ").append(toIndentedString(sink)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

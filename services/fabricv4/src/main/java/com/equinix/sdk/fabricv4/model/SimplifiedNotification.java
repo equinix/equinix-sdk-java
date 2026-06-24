@@ -230,6 +230,7 @@ public class SimplifiedNotification {
     this.registeredUsers = registeredUsers;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -276,6 +277,7 @@ public class SimplifiedNotification {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -305,7 +307,9 @@ public class SimplifiedNotification {
     sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    registeredUsers: ").append(toIndentedString(registeredUsers)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

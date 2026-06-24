@@ -425,6 +425,7 @@ public class RouteFilterRulesData {
     this.changelog = changelog;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -471,6 +472,7 @@ public class RouteFilterRulesData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -514,7 +516,9 @@ public class RouteFilterRulesData {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

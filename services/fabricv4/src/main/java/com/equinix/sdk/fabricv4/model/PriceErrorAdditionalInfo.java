@@ -100,6 +100,7 @@ public class PriceErrorAdditionalInfo {
     this.reason = reason;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -146,6 +147,7 @@ public class PriceErrorAdditionalInfo {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -171,7 +173,9 @@ public class PriceErrorAdditionalInfo {
     sb.append("class PriceErrorAdditionalInfo {\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

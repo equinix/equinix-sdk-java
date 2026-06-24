@@ -151,6 +151,7 @@ public class IpBlockPrice {
     this.location = location;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -197,6 +198,7 @@ public class IpBlockPrice {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -226,7 +228,9 @@ public class IpBlockPrice {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    prefixLength: ").append(toIndentedString(prefixLength)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

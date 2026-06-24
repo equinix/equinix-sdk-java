@@ -197,6 +197,7 @@ public class CompanyProfileChange {
     this.data = data;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -243,6 +244,7 @@ public class CompanyProfileChange {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -276,7 +278,9 @@ public class CompanyProfileChange {
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
     sb.append("    updatedDateTime: ").append(toIndentedString(updatedDateTime)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

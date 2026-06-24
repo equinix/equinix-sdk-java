@@ -203,6 +203,7 @@ public class InternetAccessLocation {
     this.ibx = ibx;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -249,6 +250,7 @@ public class InternetAccessLocation {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -278,7 +280,9 @@ public class InternetAccessLocation {
     sb.append("    metroCode: ").append(toIndentedString(metroCode)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    ibx: ").append(toIndentedString(ibx)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -76,6 +76,7 @@ public class ModelConfiguration {
     this.prompt = prompt;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -122,6 +123,7 @@ public class ModelConfiguration {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,7 +147,9 @@ public class ModelConfiguration {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelConfiguration {\n");
     sb.append("    prompt: ").append(toIndentedString(prompt)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

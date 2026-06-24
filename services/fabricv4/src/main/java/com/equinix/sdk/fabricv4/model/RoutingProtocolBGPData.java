@@ -580,6 +580,7 @@ public class RoutingProtocolBGPData {
     this.connection = connection;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -624,6 +625,7 @@ public class RoutingProtocolBGPData {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -681,7 +683,9 @@ public class RoutingProtocolBGPData {
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

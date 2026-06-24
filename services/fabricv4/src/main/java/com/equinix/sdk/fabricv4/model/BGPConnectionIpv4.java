@@ -245,6 +245,7 @@ public class BGPConnectionIpv4 {
     this.operation = operation;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -291,6 +292,7 @@ public class BGPConnectionIpv4 {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -328,7 +330,9 @@ public class BGPConnectionIpv4 {
     sb.append("    outboundMED: ").append(toIndentedString(outboundMED)).append("\n");
     sb.append("    routesMax: ").append(toIndentedString(routesMax)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

@@ -76,6 +76,7 @@ public class Project {
     this.projectId = projectId;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -122,6 +123,7 @@ public class Project {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,7 +147,9 @@ public class Project {
     StringBuilder sb = new StringBuilder();
     sb.append("class Project {\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

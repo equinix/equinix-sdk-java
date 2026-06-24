@@ -508,6 +508,7 @@ public class CloudRouter {
     this.notifications = notifications;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -552,6 +553,7 @@ public class CloudRouter {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -607,7 +609,9 @@ public class CloudRouter {
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

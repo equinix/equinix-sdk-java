@@ -126,6 +126,7 @@ public class PortOrder {
     this.signature = signature;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -172,6 +173,7 @@ public class PortOrder {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,7 +201,9 @@ public class PortOrder {
     sb.append("    purchaseOrder: ").append(toIndentedString(purchaseOrder)).append("\n");
     sb.append("    customerReferenceId: ").append(toIndentedString(customerReferenceId)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

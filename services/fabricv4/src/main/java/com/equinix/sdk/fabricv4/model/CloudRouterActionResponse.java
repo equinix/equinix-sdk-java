@@ -250,6 +250,7 @@ public class CloudRouterActionResponse {
     this.router = router;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -296,6 +297,7 @@ public class CloudRouterActionResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -333,7 +335,9 @@ public class CloudRouterActionResponse {
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
     sb.append("    router: ").append(toIndentedString(router)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

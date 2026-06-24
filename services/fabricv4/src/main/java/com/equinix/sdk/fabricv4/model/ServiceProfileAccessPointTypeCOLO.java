@@ -452,6 +452,7 @@ public class ServiceProfileAccessPointTypeCOLO {
     this.metadata = metadata;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -496,6 +497,7 @@ public class ServiceProfileAccessPointTypeCOLO {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -551,7 +553,9 @@ public class ServiceProfileAccessPointTypeCOLO {
     sb.append("    connectionLabel: ").append(toIndentedString(connectionLabel)).append("\n");
     sb.append("    authenticationKey: ").append(toIndentedString(authenticationKey)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

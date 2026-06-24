@@ -230,6 +230,7 @@ public class CompanyProfileRequest {
     this.contactUrl = contactUrl;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -276,6 +277,7 @@ public class CompanyProfileRequest {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -311,7 +313,9 @@ public class CompanyProfileRequest {
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    contactUrl: ").append(toIndentedString(contactUrl)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

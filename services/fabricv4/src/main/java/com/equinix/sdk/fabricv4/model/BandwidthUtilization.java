@@ -199,6 +199,7 @@ public class BandwidthUtilization {
     this.outbound = outbound;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -245,6 +246,7 @@ public class BandwidthUtilization {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -274,7 +276,9 @@ public class BandwidthUtilization {
     sb.append("    metricInterval: ").append(toIndentedString(metricInterval)).append("\n");
     sb.append("    inbound: ").append(toIndentedString(inbound)).append("\n");
     sb.append("    outbound: ").append(toIndentedString(outbound)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

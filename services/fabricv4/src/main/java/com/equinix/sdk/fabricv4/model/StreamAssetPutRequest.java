@@ -76,6 +76,7 @@ public class StreamAssetPutRequest {
     this.metricsEnabled = metricsEnabled;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -122,6 +123,7 @@ public class StreamAssetPutRequest {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -145,7 +147,9 @@ public class StreamAssetPutRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class StreamAssetPutRequest {\n");
     sb.append("    metricsEnabled: ").append(toIndentedString(metricsEnabled)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

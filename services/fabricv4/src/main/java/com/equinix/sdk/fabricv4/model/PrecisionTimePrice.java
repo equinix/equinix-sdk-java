@@ -111,6 +111,7 @@ public class PrecisionTimePrice {
     this.charges = charges;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -157,6 +158,7 @@ public class PrecisionTimePrice {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -182,7 +184,9 @@ public class PrecisionTimePrice {
     sb.append("class PrecisionTimePrice {\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    charges: ").append(toIndentedString(charges)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

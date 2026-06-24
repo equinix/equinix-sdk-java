@@ -251,6 +251,7 @@ public class PortSettings {
     this.packageType = packageType;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -297,6 +298,7 @@ public class PortSettings {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -328,7 +330,9 @@ public class PortSettings {
     sb.append("    placeVcOrderPermission: ").append(toIndentedString(placeVcOrderPermission)).append("\n");
     sb.append("    layer3Enabled: ").append(toIndentedString(layer3Enabled)).append("\n");
     sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

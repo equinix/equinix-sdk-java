@@ -148,6 +148,7 @@ public class RouteFilterRulesBase {
     this.prefixMatch = prefixMatch;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -194,6 +195,7 @@ public class RouteFilterRulesBase {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,7 +225,9 @@ public class RouteFilterRulesBase {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    prefixMatch: ").append(toIndentedString(prefixMatch)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

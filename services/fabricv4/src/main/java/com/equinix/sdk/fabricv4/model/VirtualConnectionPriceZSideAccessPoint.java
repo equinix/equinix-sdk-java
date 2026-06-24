@@ -202,6 +202,7 @@ public class VirtualConnectionPriceZSideAccessPoint {
     this.bridge = bridge;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -248,6 +249,7 @@ public class VirtualConnectionPriceZSideAccessPoint {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -281,7 +283,9 @@ public class VirtualConnectionPriceZSideAccessPoint {
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    bridge: ").append(toIndentedString(bridge)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

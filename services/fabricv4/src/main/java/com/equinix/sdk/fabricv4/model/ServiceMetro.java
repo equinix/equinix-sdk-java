@@ -240,6 +240,7 @@ public class ServiceMetro {
     this.sellerRegions = sellerRegions;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -286,6 +287,7 @@ public class ServiceMetro {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -321,7 +323,9 @@ public class ServiceMetro {
     sb.append("    inTrail: ").append(toIndentedString(inTrail)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    sellerRegions: ").append(toIndentedString(sellerRegions)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

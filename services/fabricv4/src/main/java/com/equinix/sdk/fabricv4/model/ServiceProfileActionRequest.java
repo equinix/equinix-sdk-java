@@ -100,6 +100,7 @@ public class ServiceProfileActionRequest {
     this.description = description;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -146,6 +147,7 @@ public class ServiceProfileActionRequest {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -171,7 +173,9 @@ public class ServiceProfileActionRequest {
     sb.append("class ServiceProfileActionRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

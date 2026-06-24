@@ -112,6 +112,7 @@ public class CompanyProfileSearchResponse {
     this.data = data;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -158,6 +159,7 @@ public class CompanyProfileSearchResponse {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -183,7 +185,9 @@ public class CompanyProfileSearchResponse {
     sb.append("class CompanyProfileSearchResponse {\n");
     sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

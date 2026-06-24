@@ -152,6 +152,7 @@ public class SearchSortItem {
     this.property = property;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -198,6 +199,7 @@ public class SearchSortItem {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,7 +225,9 @@ public class SearchSortItem {
     sb.append("class SearchSortItem {\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }

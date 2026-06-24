@@ -340,6 +340,7 @@ public class SimplifiedAccount {
     this.resellerOrgId = resellerOrgId;
   }
 
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -384,6 +385,7 @@ public class SimplifiedAccount {
     }
     return this.additionalProperties.get(key);
   }
+
 
 
   @Override
@@ -431,7 +433,9 @@ public class SimplifiedAccount {
     sb.append("    resellerAccountName: ").append(toIndentedString(resellerAccountName)).append("\n");
     sb.append("    resellerUcmId: ").append(toIndentedString(resellerUcmId)).append("\n");
     sb.append("    resellerOrgId: ").append(toIndentedString(resellerOrgId)).append("\n");
+
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+
     sb.append("}");
     return sb.toString();
   }
