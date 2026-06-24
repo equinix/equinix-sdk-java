@@ -1,4 +1,5 @@
-{{#isAdditionalPropertiesTrue}}{{^parent}}
+{{#isAdditionalPropertiesTrue}}
+{{^parent}}
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -43,4 +44,5 @@
     }
     return this.additionalProperties.get(key);
   }
-{{/parent}}{{/isAdditionalPropertiesTrue}}
+{{/parent}}
+{{/isAdditionalPropertiesTrue}}
