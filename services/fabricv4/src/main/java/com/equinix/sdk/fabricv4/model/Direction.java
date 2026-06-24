@@ -135,7 +135,6 @@ public class Direction {
     this.metrics = metrics;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -182,7 +181,6 @@ public class Direction {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -210,9 +208,7 @@ public class Direction {
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

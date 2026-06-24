@@ -220,7 +220,6 @@ public class PortTether {
     this.ibx = ibx;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -267,7 +266,6 @@ public class PortTether {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -303,9 +301,7 @@ public class PortTether {
     sb.append("    patchPanelPortA: ").append(toIndentedString(patchPanelPortA)).append("\n");
     sb.append("    patchPanelPortB: ").append(toIndentedString(patchPanelPortB)).append("\n");
     sb.append("    ibx: ").append(toIndentedString(ibx)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

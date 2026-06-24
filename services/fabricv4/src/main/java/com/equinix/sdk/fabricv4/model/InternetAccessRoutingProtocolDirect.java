@@ -60,7 +60,6 @@ public class InternetAccessRoutingProtocolDirect extends InternetAccessRoutingPr
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -82,7 +81,6 @@ public class InternetAccessRoutingProtocolDirect extends InternetAccessRoutingPr
     StringBuilder sb = new StringBuilder();
     sb.append("class InternetAccessRoutingProtocolDirect {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

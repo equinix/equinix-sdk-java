@@ -148,7 +148,6 @@ public class SimplifiedLocationWithoutIBX {
     this.metroCode = metroCode;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -195,7 +194,6 @@ public class SimplifiedLocationWithoutIBX {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -225,9 +223,7 @@ public class SimplifiedLocationWithoutIBX {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    metroName: ").append(toIndentedString(metroName)).append("\n");
     sb.append("    metroCode: ").append(toIndentedString(metroCode)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

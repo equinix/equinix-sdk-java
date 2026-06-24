@@ -179,7 +179,6 @@ public class RoutingProtocolChange {
     this.href = href;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -226,7 +225,6 @@ public class RoutingProtocolChange {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -254,9 +252,7 @@ public class RoutingProtocolChange {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

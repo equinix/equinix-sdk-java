@@ -92,7 +92,6 @@ public class InternetAccessRoutingProtocolDirectRequest extends InternetAccessRo
 
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -117,7 +116,6 @@ public class InternetAccessRoutingProtocolDirectRequest extends InternetAccessRo
     sb.append("class InternetAccessRoutingProtocolDirectRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

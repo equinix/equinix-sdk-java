@@ -429,7 +429,6 @@ public class Stream {
     this.changeLog = changeLog;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -476,7 +475,6 @@ public class Stream {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -520,9 +518,7 @@ public class Stream {
     sb.append("    streamSubscriptionsCount: ").append(toIndentedString(streamSubscriptionsCount)).append("\n");
     sb.append("    alertRulesCount: ").append(toIndentedString(alertRulesCount)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

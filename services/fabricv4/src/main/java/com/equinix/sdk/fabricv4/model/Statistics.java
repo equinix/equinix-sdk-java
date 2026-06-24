@@ -202,7 +202,6 @@ public class Statistics {
     this.bandwidthUtilization = bandwidthUtilization;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -249,7 +248,6 @@ public class Statistics {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -279,9 +277,7 @@ public class Statistics {
     sb.append("    endDateTime: ").append(toIndentedString(endDateTime)).append("\n");
     sb.append("    viewPoint: ").append(toIndentedString(viewPoint)).append("\n");
     sb.append("    bandwidthUtilization: ").append(toIndentedString(bandwidthUtilization)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

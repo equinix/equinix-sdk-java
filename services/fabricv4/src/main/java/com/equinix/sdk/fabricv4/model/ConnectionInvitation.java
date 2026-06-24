@@ -124,7 +124,6 @@ public class ConnectionInvitation {
     this.ctrDraftOrderId = ctrDraftOrderId;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -171,7 +170,6 @@ public class ConnectionInvitation {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,9 +197,7 @@ public class ConnectionInvitation {
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    ctrDraftOrderId: ").append(toIndentedString(ctrDraftOrderId)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

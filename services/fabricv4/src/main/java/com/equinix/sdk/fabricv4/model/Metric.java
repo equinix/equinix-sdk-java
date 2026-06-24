@@ -232,7 +232,6 @@ public class Metric {
     this.datapoints = datapoints;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -279,7 +278,6 @@ public class Metric {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -315,9 +313,7 @@ public class Metric {
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    datapoints: ").append(toIndentedString(datapoints)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

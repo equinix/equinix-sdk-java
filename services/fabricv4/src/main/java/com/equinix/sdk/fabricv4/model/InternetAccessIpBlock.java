@@ -102,7 +102,6 @@ public class InternetAccessIpBlock {
     this.uuid = uuid;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -149,7 +148,6 @@ public class InternetAccessIpBlock {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -175,9 +173,7 @@ public class InternetAccessIpBlock {
     sb.append("class InternetAccessIpBlock {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

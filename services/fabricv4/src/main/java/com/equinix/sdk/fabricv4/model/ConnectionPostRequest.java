@@ -394,7 +394,6 @@ public class ConnectionPostRequest {
     this.endCustomer = endCustomer;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -439,7 +438,6 @@ public class ConnectionPostRequest {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -489,9 +487,7 @@ public class ConnectionPostRequest {
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
     sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

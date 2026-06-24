@@ -172,7 +172,6 @@ public class Link {
     this.authenticate = authenticate;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -219,7 +218,6 @@ public class Link {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -251,9 +249,7 @@ public class Link {
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    authenticate: ").append(toIndentedString(authenticate)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

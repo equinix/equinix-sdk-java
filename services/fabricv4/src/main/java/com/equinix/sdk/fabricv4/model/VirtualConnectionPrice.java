@@ -177,7 +177,6 @@ public class VirtualConnectionPrice {
     this.zSide = zSide;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -224,7 +223,6 @@ public class VirtualConnectionPrice {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,9 +254,7 @@ public class VirtualConnectionPrice {
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    aSide: ").append(toIndentedString(aSide)).append("\n");
     sb.append("    zSide: ").append(toIndentedString(zSide)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

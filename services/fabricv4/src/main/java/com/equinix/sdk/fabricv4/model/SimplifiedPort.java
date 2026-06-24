@@ -870,7 +870,6 @@ public class SimplifiedPort {
     this.physicalPorts = physicalPorts;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -915,7 +914,6 @@ public class SimplifiedPort {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -999,9 +997,7 @@ public class SimplifiedPort {
     sb.append("    physicalPortQuantity: ").append(toIndentedString(physicalPortQuantity)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

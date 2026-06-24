@@ -222,7 +222,6 @@ public class ApiConfig {
     this.bandwidthFromApi = bandwidthFromApi;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -269,7 +268,6 @@ public class ApiConfig {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -305,9 +303,7 @@ public class ApiConfig {
     sb.append("    allowOverSubscription: ").append(toIndentedString(allowOverSubscription)).append("\n");
     sb.append("    overSubscriptionLimit: ").append(toIndentedString(overSubscriptionLimit)).append("\n");
     sb.append("    bandwidthFromApi: ").append(toIndentedString(bandwidthFromApi)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

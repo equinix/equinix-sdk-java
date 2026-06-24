@@ -190,7 +190,6 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
 
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -223,7 +222,6 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
     sb.append("    customerAsn: ").append(toIndentedString(customerAsn)).append("\n");
     sb.append("    bgpAuthKey: ").append(toIndentedString(bgpAuthKey)).append("\n");
     sb.append("    customerAsnRange: ").append(toIndentedString(customerAsnRange)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

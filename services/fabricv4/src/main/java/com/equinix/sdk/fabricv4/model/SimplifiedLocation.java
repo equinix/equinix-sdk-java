@@ -177,7 +177,6 @@ public class SimplifiedLocation {
     this.ibx = ibx;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -224,7 +223,6 @@ public class SimplifiedLocation {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,9 +254,7 @@ public class SimplifiedLocation {
     sb.append("    metroName: ").append(toIndentedString(metroName)).append("\n");
     sb.append("    metroCode: ").append(toIndentedString(metroCode)).append("\n");
     sb.append("    ibx: ").append(toIndentedString(ibx)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

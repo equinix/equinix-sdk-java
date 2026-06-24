@@ -174,7 +174,6 @@ public class VirtualConnectionTimeServiceResponse {
     this.zSide = zSide;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -221,7 +220,6 @@ public class VirtualConnectionTimeServiceResponse {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -253,9 +251,7 @@ public class VirtualConnectionTimeServiceResponse {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    aSide: ").append(toIndentedString(aSide)).append("\n");
     sb.append("    zSide: ").append(toIndentedString(zSide)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

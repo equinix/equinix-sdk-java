@@ -374,7 +374,6 @@ public class RouteAggregationsData {
     this.changeLog = changeLog;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -421,7 +420,6 @@ public class RouteAggregationsData {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -465,9 +463,7 @@ public class RouteAggregationsData {
     sb.append("    rulesCount: ").append(toIndentedString(rulesCount)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

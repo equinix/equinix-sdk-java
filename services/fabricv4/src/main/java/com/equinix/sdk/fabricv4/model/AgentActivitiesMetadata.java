@@ -112,7 +112,6 @@ public class AgentActivitiesMetadata {
     this.toolCallInformation = toolCallInformation;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -159,7 +158,6 @@ public class AgentActivitiesMetadata {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -185,9 +183,7 @@ public class AgentActivitiesMetadata {
     sb.append("class AgentActivitiesMetadata {\n");
     sb.append("    chatMessage: ").append(toIndentedString(chatMessage)).append("\n");
     sb.append("    toolCallInformation: ").append(toIndentedString(toolCallInformation)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

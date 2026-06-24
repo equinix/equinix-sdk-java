@@ -100,7 +100,6 @@ public class IpBlockAddressingPlan {
     this.size = size;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -147,7 +146,6 @@ public class IpBlockAddressingPlan {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -173,9 +171,7 @@ public class IpBlockAddressingPlan {
     sb.append("class IpBlockAddressingPlan {\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

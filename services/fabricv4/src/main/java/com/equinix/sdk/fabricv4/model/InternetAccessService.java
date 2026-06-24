@@ -459,7 +459,6 @@ public class InternetAccessService {
     this.useCase = useCase;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -504,7 +503,6 @@ public class InternetAccessService {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -560,9 +558,7 @@ public class InternetAccessService {
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    useCase: ").append(toIndentedString(useCase)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

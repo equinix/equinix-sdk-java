@@ -247,7 +247,6 @@ public class LogoResponse {
     this.changelog = changelog;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -294,7 +293,6 @@ public class LogoResponse {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -332,9 +330,7 @@ public class LogoResponse {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    extensionType: ").append(toIndentedString(extensionType)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

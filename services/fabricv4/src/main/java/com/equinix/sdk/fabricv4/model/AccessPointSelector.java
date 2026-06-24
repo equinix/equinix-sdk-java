@@ -284,7 +284,6 @@ public class AccessPointSelector {
     this.network = network;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -331,7 +330,6 @@ public class AccessPointSelector {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -367,9 +365,7 @@ public class AccessPointSelector {
     sb.append("    virtualDevice: ").append(toIndentedString(virtualDevice)).append("\n");
     sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

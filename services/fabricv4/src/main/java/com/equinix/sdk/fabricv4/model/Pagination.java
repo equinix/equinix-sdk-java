@@ -175,7 +175,6 @@ public class Pagination {
     this.previous = previous;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -222,7 +221,6 @@ public class Pagination {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -254,9 +252,7 @@ public class Pagination {
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

@@ -443,7 +443,6 @@ public class LinkProtocolResponse {
     this.changeLog = changeLog;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -488,7 +487,6 @@ public class LinkProtocolResponse {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -544,9 +542,7 @@ public class LinkProtocolResponse {
     sb.append("    asset: ").append(toIndentedString(asset)).append("\n");
     sb.append("    serviceToken: ").append(toIndentedString(serviceToken)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

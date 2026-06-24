@@ -252,7 +252,6 @@ public class ServiceProfileAccessPointCOLO {
     this.crossConnectId = crossConnectId;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -299,7 +298,6 @@ public class ServiceProfileAccessPointCOLO {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -333,9 +331,7 @@ public class ServiceProfileAccessPointCOLO {
     sb.append("    sellerRegion: ").append(toIndentedString(sellerRegion)).append("\n");
     sb.append("    sellerRegionDescription: ").append(toIndentedString(sellerRegionDescription)).append("\n");
     sb.append("    crossConnectId: ").append(toIndentedString(crossConnectId)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

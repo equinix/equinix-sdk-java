@@ -102,7 +102,6 @@ public class CloudRouterActionRequest {
     this.connection = connection;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -149,7 +148,6 @@ public class CloudRouterActionRequest {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -175,9 +173,7 @@ public class CloudRouterActionRequest {
     sb.append("class CloudRouterActionRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

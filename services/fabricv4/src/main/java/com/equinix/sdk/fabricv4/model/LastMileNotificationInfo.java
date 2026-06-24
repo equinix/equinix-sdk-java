@@ -100,7 +100,6 @@ public class LastMileNotificationInfo {
     this.value = value;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -147,7 +146,6 @@ public class LastMileNotificationInfo {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -173,9 +171,7 @@ public class LastMileNotificationInfo {
     sb.append("class LastMileNotificationInfo {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

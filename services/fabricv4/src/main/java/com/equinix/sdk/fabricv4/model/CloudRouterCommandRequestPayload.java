@@ -200,7 +200,6 @@ public class CloudRouterCommandRequestPayload {
     this.hopsMax = hopsMax;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -247,7 +246,6 @@ public class CloudRouterCommandRequestPayload {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -281,9 +279,7 @@ public class CloudRouterCommandRequestPayload {
     sb.append("    dataBytes: ").append(toIndentedString(dataBytes)).append("\n");
     sb.append("    probes: ").append(toIndentedString(probes)).append("\n");
     sb.append("    hopsMax: ").append(toIndentedString(hopsMax)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

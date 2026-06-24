@@ -136,7 +136,6 @@ public class CloudRouterCommandTracerouteResponse {
     this.errors = errors;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -183,7 +182,6 @@ public class CloudRouterCommandTracerouteResponse {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -211,9 +209,7 @@ public class CloudRouterCommandTracerouteResponse {
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("    outputStructuredTraceroute: ").append(toIndentedString(outputStructuredTraceroute)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

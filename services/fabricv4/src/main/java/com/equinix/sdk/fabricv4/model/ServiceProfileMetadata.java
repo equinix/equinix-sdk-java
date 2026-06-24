@@ -508,7 +508,6 @@ public class ServiceProfileMetadata {
     this.connectionNameEditable = connectionNameEditable;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -553,7 +552,6 @@ public class ServiceProfileMetadata {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -615,9 +613,7 @@ public class ServiceProfileMetadata {
     sb.append("    portAssignmentStrategy: ").append(toIndentedString(portAssignmentStrategy)).append("\n");
     sb.append("    eqxManagedPort: ").append(toIndentedString(eqxManagedPort)).append("\n");
     sb.append("    connectionNameEditable: ").append(toIndentedString(connectionNameEditable)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

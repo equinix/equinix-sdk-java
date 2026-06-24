@@ -341,7 +341,6 @@ public class Changelog {
     this.deletedDateTime = deletedDateTime;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -386,7 +385,6 @@ public class Changelog {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -434,9 +432,7 @@ public class Changelog {
     sb.append("    deletedByFullName: ").append(toIndentedString(deletedByFullName)).append("\n");
     sb.append("    deletedByEmail: ").append(toIndentedString(deletedByEmail)).append("\n");
     sb.append("    deletedDateTime: ").append(toIndentedString(deletedDateTime)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

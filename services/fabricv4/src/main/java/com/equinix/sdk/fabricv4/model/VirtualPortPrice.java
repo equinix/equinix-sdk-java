@@ -349,7 +349,6 @@ public class VirtualPortPrice {
     this.serviceCode = serviceCode;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -394,7 +393,6 @@ public class VirtualPortPrice {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -442,9 +440,7 @@ public class VirtualPortPrice {
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
     sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

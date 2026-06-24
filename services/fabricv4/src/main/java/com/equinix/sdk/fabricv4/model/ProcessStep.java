@@ -124,7 +124,6 @@ public class ProcessStep {
     this.description = description;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -171,7 +170,6 @@ public class ProcessStep {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,9 +197,7 @@ public class ProcessStep {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    subTitle: ").append(toIndentedString(subTitle)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

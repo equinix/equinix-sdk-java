@@ -451,7 +451,6 @@ public class PrecisionTimePackageResponse {
     this.changelog = changelog;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -496,7 +495,6 @@ public class PrecisionTimePackageResponse {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -544,9 +542,7 @@ public class PrecisionTimePackageResponse {
     sb.append("    accuracySlaMin: ").append(toIndentedString(accuracySlaMin)).append("\n");
     sb.append("    accuracySlaMax: ").append(toIndentedString(accuracySlaMax)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

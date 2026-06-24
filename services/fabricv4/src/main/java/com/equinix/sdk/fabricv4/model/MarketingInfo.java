@@ -135,7 +135,6 @@ public class MarketingInfo {
     this.processSteps = processSteps;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -182,7 +181,6 @@ public class MarketingInfo {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -210,9 +208,7 @@ public class MarketingInfo {
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
     sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
     sb.append("    processSteps: ").append(toIndentedString(processSteps)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

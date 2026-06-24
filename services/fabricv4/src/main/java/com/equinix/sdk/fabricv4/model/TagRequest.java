@@ -124,7 +124,6 @@ public class TagRequest {
     this.displayName = displayName;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -171,7 +170,6 @@ public class TagRequest {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,9 +197,7 @@ public class TagRequest {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

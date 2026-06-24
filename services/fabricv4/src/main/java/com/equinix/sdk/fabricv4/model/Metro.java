@@ -403,7 +403,6 @@ public class Metro {
     this.geoZones = geoZones;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -448,7 +447,6 @@ public class Metro {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -498,9 +496,7 @@ public class Metro {
     sb.append("    services: ").append(toIndentedString(services)).append("\n");
     sb.append("    geoScopes: ").append(toIndentedString(geoScopes)).append("\n");
     sb.append("    geoZones: ").append(toIndentedString(geoZones)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

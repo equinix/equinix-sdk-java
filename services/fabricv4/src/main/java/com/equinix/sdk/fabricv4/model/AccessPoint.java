@@ -574,7 +574,6 @@ public class AccessPoint {
     this.role = role;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -619,7 +618,6 @@ public class AccessPoint {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -681,9 +679,7 @@ public class AccessPoint {
     sb.append("    virtualNetwork: ").append(toIndentedString(virtualNetwork)).append("\n");
     sb.append("    interconnection: ").append(toIndentedString(interconnection)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

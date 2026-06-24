@@ -274,7 +274,6 @@ public class InternetAccessPostRequest {
     this.account = account;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -321,7 +320,6 @@ public class InternetAccessPostRequest {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -361,9 +359,7 @@ public class InternetAccessPostRequest {
     sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

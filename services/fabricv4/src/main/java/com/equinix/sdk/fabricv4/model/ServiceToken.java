@@ -417,7 +417,6 @@ public class ServiceToken {
     this.project = project;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -462,7 +461,6 @@ public class ServiceToken {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -514,9 +512,7 @@ public class ServiceToken {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

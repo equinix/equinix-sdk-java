@@ -155,7 +155,6 @@ public class SimplifiedLinkProtocol {
     this.vlanCTag = vlanCTag;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -202,7 +201,6 @@ public class SimplifiedLinkProtocol {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -232,9 +230,7 @@ public class SimplifiedLinkProtocol {
     sb.append("    vlanTag: ").append(toIndentedString(vlanTag)).append("\n");
     sb.append("    vlanSTag: ").append(toIndentedString(vlanSTag)).append("\n");
     sb.append("    vlanCTag: ").append(toIndentedString(vlanCTag)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

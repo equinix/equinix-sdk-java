@@ -77,7 +77,6 @@ public class TimeServicePriceConnection {
     this.aSide = aSide;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -124,7 +123,6 @@ public class TimeServicePriceConnection {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -148,9 +146,7 @@ public class TimeServicePriceConnection {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeServicePriceConnection {\n");
     sb.append("    aSide: ").append(toIndentedString(aSide)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

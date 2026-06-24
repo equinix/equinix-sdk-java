@@ -273,7 +273,6 @@ public class AlertRulePutRequest {
     this.detectionMethod = detectionMethod;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -320,7 +319,6 @@ public class AlertRulePutRequest {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -356,9 +354,7 @@ public class AlertRulePutRequest {
     sb.append("    metricSelector: ").append(toIndentedString(metricSelector)).append("\n");
     sb.append("    resourceSelector: ").append(toIndentedString(resourceSelector)).append("\n");
     sb.append("    detectionMethod: ").append(toIndentedString(detectionMethod)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

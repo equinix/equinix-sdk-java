@@ -324,7 +324,6 @@ public class MetroError {
     this.additionalInfo = additionalInfo;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -371,7 +370,6 @@ public class MetroError {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -405,9 +403,7 @@ public class MetroError {
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    help: ").append(toIndentedString(help)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

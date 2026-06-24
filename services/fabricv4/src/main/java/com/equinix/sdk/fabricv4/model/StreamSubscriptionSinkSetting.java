@@ -272,7 +272,6 @@ public class StreamSubscriptionSinkSetting {
     this.format = format;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -319,7 +318,6 @@ public class StreamSubscriptionSinkSetting {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -355,9 +353,7 @@ public class StreamSubscriptionSinkSetting {
     sb.append("    eventUri: ").append(toIndentedString(eventUri)).append("\n");
     sb.append("    metricUri: ").append(toIndentedString(metricUri)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

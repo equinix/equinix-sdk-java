@@ -86,7 +86,6 @@ public class MetricSelectorResponse {
     this.include = include;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -133,7 +132,6 @@ public class MetricSelectorResponse {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -157,9 +155,7 @@ public class MetricSelectorResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class MetricSelectorResponse {\n");
     sb.append("    include: ").append(toIndentedString(include)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

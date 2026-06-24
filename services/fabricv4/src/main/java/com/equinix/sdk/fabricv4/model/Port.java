@@ -1383,7 +1383,6 @@ public class Port {
     this.marketplaceSubscription = marketplaceSubscription;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -1428,7 +1427,6 @@ public class Port {
     }
     return this.additionalProperties.get(key);
   }
-
 
 
   @Override
@@ -1538,9 +1536,7 @@ public class Port {
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

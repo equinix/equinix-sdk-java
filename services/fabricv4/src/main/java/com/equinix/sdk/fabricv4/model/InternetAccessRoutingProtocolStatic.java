@@ -60,7 +60,6 @@ public class InternetAccessRoutingProtocolStatic extends InternetAccessRoutingPr
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -82,7 +81,6 @@ public class InternetAccessRoutingProtocolStatic extends InternetAccessRoutingPr
     StringBuilder sb = new StringBuilder();
     sb.append("class InternetAccessRoutingProtocolStatic {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

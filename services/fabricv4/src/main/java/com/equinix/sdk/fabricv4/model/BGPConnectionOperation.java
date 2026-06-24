@@ -155,7 +155,6 @@ public class BGPConnectionOperation {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -202,7 +201,6 @@ public class BGPConnectionOperation {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -228,9 +226,7 @@ public class BGPConnectionOperation {
     sb.append("class BGPConnectionOperation {\n");
     sb.append("    operationalStatus: ").append(toIndentedString(operationalStatus)).append("\n");
     sb.append("    opStatusChangedAt: ").append(toIndentedString(opStatusChangedAt)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

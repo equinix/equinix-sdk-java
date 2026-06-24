@@ -177,7 +177,6 @@ public class SubscriptionEntitlementResponse {
     this.asset = asset;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -224,7 +223,6 @@ public class SubscriptionEntitlementResponse {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,9 +254,7 @@ public class SubscriptionEntitlementResponse {
     sb.append("    quantityConsumed: ").append(toIndentedString(quantityConsumed)).append("\n");
     sb.append("    quantityAvailable: ").append(toIndentedString(quantityAvailable)).append("\n");
     sb.append("    asset: ").append(toIndentedString(asset)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }

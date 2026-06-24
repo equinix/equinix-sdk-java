@@ -335,7 +335,6 @@ public class CloudRouterPostRequestBase {
     this.marketplaceSubscription = marketplaceSubscription;
   }
 
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -382,7 +381,6 @@ public class CloudRouterPostRequestBase {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -422,9 +420,7 @@ public class CloudRouterPostRequestBase {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
-
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-
     sb.append("}");
     return sb.toString();
   }
