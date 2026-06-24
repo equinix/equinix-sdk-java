@@ -20,7 +20,7 @@
 |**billing** | [**InternetAccessBilling**](InternetAccessBilling.md) |  |  |
 |**account** | [**InternetAccessAccount**](InternetAccessAccount.md) |  |  |
 |**project** | [**Project**](Project.md) |  |  |
-|**order** | [**InternetAccessOrder**](InternetAccessOrder.md) |  |  |
+|**order** | [**InternetAccessOrder**](InternetAccessOrder.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  |
 |**useCase** | **InternetAccessUseCase** |  |  |
 
