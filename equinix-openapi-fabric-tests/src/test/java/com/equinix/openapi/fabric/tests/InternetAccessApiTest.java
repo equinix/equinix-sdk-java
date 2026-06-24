@@ -28,9 +28,9 @@ public class InternetAccessApiTest {
     private static final UsersItem.UserName userName = UsersItem.UserName.PANTHERS_FNV;
     private static final UsersItem testData = Utils.getUserData(userName);
     private static final String IA_METRO = "SV";
-    private static final int DELETE_RETRY_INTERVAL_MS = 5000;
+    private static final int DELETE_RETRY_INTERVAL_MS = 10000;
     private static final int DELETE_MAX_ATTEMPTS = 11;
-    private static final int STATE_RETRY_INTERVAL_MS = 5000;
+    private static final int STATE_RETRY_INTERVAL_MS = 10000;
     private static final int STATE_MAX_ATTEMPTS = 20;
     private static final int INITIAL_BANDWIDTH = 50;
     private static final int[] BANDWIDTH_CANDIDATES = {100, 200, 500, 1000};
