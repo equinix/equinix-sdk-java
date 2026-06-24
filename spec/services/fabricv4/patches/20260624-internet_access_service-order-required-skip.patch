@@ -1,0 +1,11 @@
+diff --git a/spec/services/fabricv4/oas3.patched/openapi.yaml b/spec/services/fabricv4/oas3.patched/openapi.yaml
+--- a/spec/services/fabricv4/oas3.patched/openapi.yaml
++++ b/spec/services/fabricv4/oas3.patched/openapi.yaml
+@@ -16160,7 +16160,6 @@ components:
+         - changeLog
+         - href
+         - name
+-        - order
+         - project
+         - routingProtocol
+         - state

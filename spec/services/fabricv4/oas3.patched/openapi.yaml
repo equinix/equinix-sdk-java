@@ -16159,7 +16159,6 @@ components:
         - changeLog
         - href
         - name
-        - order
         - project
         - routingProtocol
         - state
