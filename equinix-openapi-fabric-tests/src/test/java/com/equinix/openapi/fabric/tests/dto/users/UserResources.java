@@ -10,6 +10,7 @@ public class UserResources {
     private final List<RoutingProtocolDto> routingProtocolsUuid = new ArrayList<>();
     private final List<UUID> networksUuid = new ArrayList<>();
     private final List<UUID> serviceProfilesUuid = new ArrayList<>();
+    private final List<UUID> internetAccessServicesUuid = new ArrayList<>();
 
     public List<UUID> getCloudRoutersUuid() {
         return cloudRoutersUuid;
@@ -50,6 +51,14 @@ public class UserResources {
 
     public void addServiceProfileUuid(UUID serviceProfilesUuid) {
         this.serviceProfilesUuid.add(serviceProfilesUuid);
+    }
+
+    public List<UUID> getInternetAccessServicesUuid() {
+        return internetAccessServicesUuid;
+    }
+
+    public void addInternetAccessServiceUuid(UUID internetAccessServiceUuid) {
+        this.internetAccessServicesUuid.add(internetAccessServiceUuid);
     }
 
     public class RoutingProtocolDto {

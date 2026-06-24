@@ -54,6 +54,8 @@ jobs:
           jdk: 21
         - class: ServiceProfilesApiTest
           jdk: 21
+        - class: InternetAccessApiTest
+          jdk: 21
 
     env:
       TEST_HOST_URL: ${{ secrets.TEST_HOST_URL }}

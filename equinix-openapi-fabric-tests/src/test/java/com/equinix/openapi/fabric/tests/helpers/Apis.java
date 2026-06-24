@@ -21,6 +21,7 @@ public class Apis {
     public static ServiceTokensApi serviceTokensApi;
     public static StatisticsApi statisticsApi;
     public static InternetAccessServicesApi internetAccessServicesApi;
+    public static IpBlocksApi ipBlocksApi;
     private static UsersItem.UserName currentUser;
 
     static {
@@ -54,5 +55,6 @@ public class Apis {
         serviceTokensApi = new ServiceTokensApi(TokenGenerator.getApiClient(currentUser));
         statisticsApi = new StatisticsApi(TokenGenerator.getApiClient(currentUser));
         internetAccessServicesApi = new InternetAccessServicesApi(TokenGenerator.getApiClient(currentUser));
+        ipBlocksApi = new IpBlocksApi(TokenGenerator.getApiClient(currentUser));
     }
 }

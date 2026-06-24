@@ -1,8 +1,8 @@
 package com.equinix.openapi.fabric.tests.dto.users;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.equinix.openapi.fabric.tests.dto.port.PortDto;
 import com.equinix.openapi.fabric.tests.dto.port.VirtualDevicesItem;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
@@ -28,6 +28,12 @@ public class UsersItem {
 
     @JsonProperty("client_id")
     private String clientId;
+
+    @JsonProperty("accountNumberEIA")
+    private String accountNumberEIA;
+
+    @JsonProperty("iaProfileUuid")
+    private String iaProfileUuid;
 
     public List<PortDto> getPorts() {
         return ports;
@@ -83,6 +89,22 @@ public class UsersItem {
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
+    }
+
+    public String getAccountNumberEIA() {
+        return accountNumberEIA;
+    }
+
+    public void setAccountNumberEIA(String accountNumberEIA) {
+        this.accountNumberEIA = accountNumberEIA;
+    }
+
+    public String getIaProfileUuid() {
+        return iaProfileUuid;
+    }
+
+    public void setIaProfileUuid(String iaProfileUuid) {
+        this.iaProfileUuid = iaProfileUuid;
     }
 
     public enum UserName {
