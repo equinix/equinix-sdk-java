@@ -60,3 +60,77 @@ public class Example {
   }
 }
 ```
+
+## Equinix Internet Access (EIA)
+
+The Fabric v4 module supports **Equinix Internet Access (EIA)** services. The generated
+clients live under `com.equinix.sdk.fabricv4` (`api` for clients, `model` for data classes).
+
+Two API clients cover the EIA workflow:
+
+- **`InternetAccessServicesApi`** — manage EIA services: create, get, search,
+  patch (e.g. update bandwidth) and delete.
+- **`IpBlocksApi`** — manage the IP blocks an EIA service routes: submit, search,
+  get, patch and delete.
+
+Supported routing protocols: `DIRECT`, `STATIC`, and `BGP`
+(`InternetAccessRoutingProtocolType`). Service state is reported via
+`InternetAccessServiceState` (`PROVISIONING`, `PROVISIONED`, `FAILED`,
+`DEPROVISIONING`, `DEPROVISIONED`).
+
+### Example: create an EIA service
+
+```java
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.HttpBearerAuth;
+import com.equinix.sdk.fabricv4.api.InternetAccessServicesApi;
+import com.equinix.sdk.fabricv4.model.*;
+import java.util.UUID;
+
+import static java.util.Collections.singletonList;
+
+public class EiaExample {
+  public static void main(String[] args) throws ApiException {
+    ApiClient client = Configuration.getDefaultApiClient();
+    client.setBasePath("https://api.equinix.com");
+    ((HttpBearerAuth) client.getAuthentication("BearerAuth"))
+        .setBearerToken("<GetBearerTokenFromDeveloperPortal>");
+
+    InternetAccessServicesApi eiaApi = new InternetAccessServicesApi(client);
+
+    // DIRECT routing: reference an existing IA_VC connection and a customer IPv4 block,
+    // and supply the Equinix peer IP from that block.
+    InternetAccessRoutingProtocolDirectRequest routing =
+        new InternetAccessRoutingProtocolDirectRequest()
+            .addConnectionsItem(new InternetAccessConnectionDirectRequest()
+                .uuid(UUID.fromString("<connectionUuid>"))
+                .peeringIpv4(new InternetAccessPeeringIpv4Request().equinixPeerIp("67.223.23.5")));
+    routing.type(InternetAccessRoutingProtocolType.DIRECT);
+    routing.addCustomerRoutesItem(new InternetAccessCustomerRouteRequest()
+        .ipBlock(new InternetAccessIpBlockRequest().uuid(UUID.fromString("<ipBlockUuid>"))));
+
+    InternetAccessPostRequest request = new InternetAccessPostRequest()
+        .type(InternetAccessServiceType.SINGLE_IA)
+        .name("my-eia-service")
+        .bandwidth(50)
+        .routingProtocol(routing)
+        .billing(new InternetAccessPostRequestBilling().type(InternetAccessBillingType.FIXED))
+        .project(new Project().projectId("<projectId>"))
+        .account(new InternetAccessAccount().accountNumber("<accountNumber>"));
+
+    InternetAccessService service = eiaApi.createEiaService(request);
+    System.out.println("Created EIA service: " + service.getUuid() + " state=" + service.getState());
+
+    // Update bandwidth
+    eiaApi.patchEiaService(service.getUuid(), singletonList(new InternetAccessPatchOperationUpdate()
+        .op(InternetAccessPatchOperationUpdateAllowedOp.REPLACE)
+        .path("/bandwidth")
+        .value(100)));
+
+    // Delete when no longer needed
+    eiaApi.deleteEiaService(service.getUuid());
+  }
+}
+```

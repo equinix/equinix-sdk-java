@@ -132,7 +132,7 @@ public class InternetAccessService {
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private InternetAccessOrder order;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
@@ -403,7 +403,7 @@ public class InternetAccessService {
   }
 
 
-  public InternetAccessService order(@javax.annotation.Nonnull InternetAccessOrder order) {
+  public InternetAccessService order(@javax.annotation.Nullable InternetAccessOrder order) {
     this.order = order;
     return this;
   }
@@ -412,12 +412,12 @@ public class InternetAccessService {
    * Get order
    * @return order
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public InternetAccessOrder getOrder() {
     return order;
   }
 
-  public void setOrder(@javax.annotation.Nonnull InternetAccessOrder order) {
+  public void setOrder(@javax.annotation.Nullable InternetAccessOrder order) {
     this.order = order;
   }
 
@@ -583,7 +583,7 @@ public class InternetAccessService {
     openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "bandwidth", "bandwidthCommit", "state", "change", "locations", "routingProtocol", "billing", "account", "project", "order", "changeLog", "useCase"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "state", "change", "routingProtocol", "billing", "account", "project", "order", "changeLog", "useCase"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "state", "change", "routingProtocol", "billing", "account", "project", "changeLog", "useCase"));
   }
 
   /**
@@ -643,8 +643,10 @@ public class InternetAccessService {
       InternetAccessAccount.validateJsonElement(jsonObj.get("account"));
       // validate the required field `project`
       Project.validateJsonElement(jsonObj.get("project"));
-      // validate the required field `order`
-      InternetAccessOrder.validateJsonElement(jsonObj.get("order"));
+      // validate the optional field `order`
+      if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
+        InternetAccessOrder.validateJsonElement(jsonObj.get("order"));
+      }
       // validate the required field `changeLog`
       Changelog.validateJsonElement(jsonObj.get("changeLog"));
       // validate the required field `useCase`
