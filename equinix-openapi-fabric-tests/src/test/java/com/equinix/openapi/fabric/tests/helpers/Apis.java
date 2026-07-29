@@ -6,6 +6,8 @@ import com.equinix.sdk.fabricv4.api.*;
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.generate;
 
 public class Apis {
+    public static AgentsApi agentsApi;
+    public static AgentTemplatesApi agentTemplatesApi;
     public static CloudRoutersApi cloudRoutersApi;
     public static ConnectionsApi connectionsApi;
     public static HealthApi healthApi;
@@ -40,6 +42,8 @@ public class Apis {
     }
 
     private static void setApis() {
+        agentsApi = new AgentsApi(TokenGenerator.getApiClient(currentUser));
+        agentTemplatesApi = new AgentTemplatesApi(TokenGenerator.getApiClient(currentUser));
         cloudRoutersApi = new CloudRoutersApi(TokenGenerator.getApiClient(currentUser));
         connectionsApi = new ConnectionsApi(TokenGenerator.getApiClient(currentUser));
         healthApi = new HealthApi(TokenGenerator.getApiClient(currentUser));
