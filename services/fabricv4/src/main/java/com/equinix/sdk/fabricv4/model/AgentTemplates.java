@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.net.URI;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -56,7 +57,7 @@ public class AgentTemplates {
   public static final String SERIALIZED_NAME_HREF = "href";
   @SerializedName(SERIALIZED_NAME_HREF)
   @javax.annotation.Nullable
-  private UUID href;
+  private URI href;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -161,7 +162,7 @@ public class AgentTemplates {
   public AgentTemplates() {
   }
 
-  public AgentTemplates href(@javax.annotation.Nullable UUID href) {
+  public AgentTemplates href(@javax.annotation.Nullable URI href) {
     this.href = href;
     return this;
   }
@@ -171,11 +172,11 @@ public class AgentTemplates {
    * @return href
    */
   @javax.annotation.Nullable
-  public UUID getHref() {
+  public URI getHref() {
     return href;
   }
 
-  public void setHref(@javax.annotation.Nullable UUID href) {
+  public void setHref(@javax.annotation.Nullable URI href) {
     this.href = href;
   }
 

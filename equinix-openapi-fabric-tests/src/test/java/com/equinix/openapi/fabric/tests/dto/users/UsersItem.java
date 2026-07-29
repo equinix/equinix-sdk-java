@@ -35,6 +35,9 @@ public class UsersItem {
     @JsonProperty("iaProfileUuid")
     private String iaProfileUuid;
 
+    @JsonProperty("agentsProjectId")
+    private String agentsProjectId;
+
     public List<PortDto> getPorts() {
         return ports;
     }
@@ -105,6 +108,14 @@ public class UsersItem {
 
     public void setIaProfileUuid(String iaProfileUuid) {
         this.iaProfileUuid = iaProfileUuid;
+    }
+
+    public String getAgentsProjectId() {
+        return agentsProjectId;
+    }
+
+    public void setAgentsProjectId(String agentsProjectId) {
+        this.agentsProjectId = agentsProjectId;
     }
 
     public enum UserName {
