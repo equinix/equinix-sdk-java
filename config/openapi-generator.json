@@ -15,5 +15,6 @@
   "disallowAdditionalPropertiesIfNotPresent": false,
   "legacyDiscriminatorBehavior": true,
   "removeEnumValuePrefix": true,
-  "enumPropertyNaming": "legacy"
+  "enumPropertyNaming": "legacy",
+  "enumUnknownDefaultCase": true
 }
