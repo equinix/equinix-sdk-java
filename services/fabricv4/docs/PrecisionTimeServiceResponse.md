@@ -33,6 +33,7 @@ Precision Time Service Response Schema.
 |---- | -----|
 | NTP | &quot;NTP&quot; |
 | PTP | &quot;PTP&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -53,6 +54,7 @@ Precision Time Service Response Schema.
 | PROVISIONING_FAILED | &quot;PROVISIONING_FAILED&quot; |
 | REPROVISIONING | &quot;REPROVISIONING&quot; |
 | REPROVISIONING_FAILED | &quot;REPROVISIONING_FAILED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

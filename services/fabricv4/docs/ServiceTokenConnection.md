@@ -32,6 +32,7 @@ Service Token Connection Type Information
 | IP_VC | &quot;IP_VC&quot; |
 | EVPTREE_VC | &quot;EVPTREE_VC&quot; |
 | EPTREE_VC | &quot;EPTREE_VC&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

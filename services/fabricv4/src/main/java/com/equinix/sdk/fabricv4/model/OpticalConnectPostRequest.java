@@ -63,7 +63,9 @@ public class OpticalConnectPostRequest {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    OC("OC");
+    OC("OC"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -86,7 +88,7 @@ public class OpticalConnectPostRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -127,7 +129,9 @@ public class OpticalConnectPostRequest {
     
     BMMR("BMMR"),
     
-    REMOTE("REMOTE");
+    REMOTE("REMOTE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -150,7 +154,7 @@ public class OpticalConnectPostRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ConnectionDestinationTypeEnum> {
@@ -186,7 +190,9 @@ public class OpticalConnectPostRequest {
     
     PROTECTED("PROTECTED"),
     
-    UNPROTECTED("UNPROTECTED");
+    UNPROTECTED("UNPROTECTED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -209,7 +215,7 @@ public class OpticalConnectPostRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<PathTypeEnum> {
@@ -273,7 +279,9 @@ public class OpticalConnectPostRequest {
   public enum BmmrTypeEnum {
     EQUINIX("EQUINIX"),
     
-    SELF("SELF");
+    SELF("SELF"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -296,7 +304,7 @@ public class OpticalConnectPostRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<BmmrTypeEnum> {

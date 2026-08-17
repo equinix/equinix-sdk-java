@@ -23,6 +23,7 @@ Current state of latest CloudRouter change
 | Name | Value |
 |---- | -----|
 | ROUTER_UPDATE | &quot;ROUTER_UPDATE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -33,6 +34,7 @@ Current state of latest CloudRouter change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

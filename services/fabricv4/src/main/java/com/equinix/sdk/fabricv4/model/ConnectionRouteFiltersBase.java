@@ -57,7 +57,9 @@ public class ConnectionRouteFiltersBase {
   public enum DirectionEnum {
     INBOUND("INBOUND"),
     
-    OUTBOUND("OUTBOUND");
+    OUTBOUND("OUTBOUND"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -80,7 +82,7 @@ public class ConnectionRouteFiltersBase {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {

@@ -71,7 +71,9 @@ public class RouteAggregationsChange {
     
     IPV6_PREFIX_AGGREGATION_CREATION("BGP_IPv6_PREFIX_AGGREGATION_CREATION"),
     
-    IPV6_PREFIX_AGGREGATION_DELETION("BGP_IPv6_PREFIX_AGGREGATION_DELETION");
+    IPV6_PREFIX_AGGREGATION_DELETION("BGP_IPv6_PREFIX_AGGREGATION_DELETION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -94,7 +96,7 @@ public class RouteAggregationsChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

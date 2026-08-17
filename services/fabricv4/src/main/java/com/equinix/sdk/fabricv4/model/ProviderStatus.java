@@ -59,7 +59,9 @@ public enum ProviderStatus {
   
   PENDING_DELETE("PENDING DELETE"),
   
-  N_A("N/A");
+  N_A("N/A"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -82,7 +84,7 @@ public enum ProviderStatus {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<ProviderStatus> {

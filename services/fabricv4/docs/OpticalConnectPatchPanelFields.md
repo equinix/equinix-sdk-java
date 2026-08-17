@@ -23,6 +23,7 @@ Patch Panel configuration.
 | SC | &quot;SC&quot; |
 | LC | &quot;LC&quot; |
 | ST | &quot;ST&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

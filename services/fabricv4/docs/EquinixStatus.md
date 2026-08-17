@@ -43,5 +43,7 @@
 
 * `PENDING_INTERFACE_CONFIGURATION` (value: `"PENDING_INTERFACE_CONFIGURATION"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

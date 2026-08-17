@@ -25,6 +25,7 @@
 | IPWAN | &quot;IPWAN&quot; |
 | EVPTREE | &quot;EVPTREE&quot; |
 | EPTREE | &quot;EPTREE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -35,6 +36,7 @@
 | LOCAL | &quot;LOCAL&quot; |
 | REGIONAL | &quot;REGIONAL&quot; |
 | GLOBAL | &quot;GLOBAL&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

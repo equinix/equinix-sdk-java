@@ -37,7 +37,9 @@ public enum LoaActionType {
   
   SEND_EMAIL_NOTIFICATION("LOA_SEND_EMAIL_NOTIFICATION"),
   
-  CANCEL("LOA_CANCEL");
+  CANCEL("LOA_CANCEL"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -60,7 +62,7 @@ public enum LoaActionType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<LoaActionType> {

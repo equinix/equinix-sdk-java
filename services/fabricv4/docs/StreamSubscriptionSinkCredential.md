@@ -25,6 +25,7 @@ Stream subscription sink credentials
 | INTEGRATION_KEY | &quot;INTEGRATION_KEY&quot; |
 | API_KEY | &quot;API_KEY&quot; |
 | USERNAME_PASSWORD | &quot;USERNAME_PASSWORD&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

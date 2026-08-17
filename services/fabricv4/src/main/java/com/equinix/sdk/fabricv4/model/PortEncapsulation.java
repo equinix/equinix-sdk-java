@@ -59,7 +59,9 @@ public class PortEncapsulation {
     
     QINQ("QINQ"),
     
-    UNTAGGED("UNTAGGED");
+    UNTAGGED("UNTAGGED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -82,7 +84,7 @@ public class PortEncapsulation {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

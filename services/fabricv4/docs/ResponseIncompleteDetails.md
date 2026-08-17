@@ -18,6 +18,7 @@ Details about why the response is incomplete.
 |---- | -----|
 | MAX_OUTPUT_TOKENS | &quot;max_output_tokens&quot; |
 | CONTENT_FILTER | &quot;content_filter&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

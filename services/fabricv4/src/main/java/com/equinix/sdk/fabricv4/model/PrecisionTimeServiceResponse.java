@@ -79,7 +79,9 @@ public class PrecisionTimeServiceResponse {
   public enum TypeEnum {
     NTP("NTP"),
     
-    PTP("PTP");
+    PTP("PTP"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -102,7 +104,7 @@ public class PrecisionTimeServiceResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -168,7 +170,9 @@ public class PrecisionTimeServiceResponse {
     
     REPROVISIONING("REPROVISIONING"),
     
-    REPROVISIONING_FAILED("REPROVISIONING_FAILED");
+    REPROVISIONING_FAILED("REPROVISIONING_FAILED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -191,7 +195,7 @@ public class PrecisionTimeServiceResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

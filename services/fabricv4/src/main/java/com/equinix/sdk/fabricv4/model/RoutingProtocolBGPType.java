@@ -58,7 +58,9 @@ public class RoutingProtocolBGPType {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    BGP("BGP");
+    BGP("BGP"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -81,7 +83,7 @@ public class RoutingProtocolBGPType {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

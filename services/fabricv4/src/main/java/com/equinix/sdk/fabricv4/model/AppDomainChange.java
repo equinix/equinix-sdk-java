@@ -64,7 +64,9 @@ public class AppDomainChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    APP_DOMAIN_UPDATE("APP_DOMAIN_UPDATE");
+    APP_DOMAIN_UPDATE("APP_DOMAIN_UPDATE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class AppDomainChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -123,7 +125,9 @@ public class AppDomainChange {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED");
+    REQUESTED("REQUESTED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -146,7 +150,7 @@ public class AppDomainChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {

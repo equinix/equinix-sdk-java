@@ -26,6 +26,7 @@ PTP Advanced Configuration.
 |---- | -----|
 | ARB | &quot;ARB&quot; |
 | PTP | &quot;PTP&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -38,6 +39,7 @@ PTP Advanced Configuration.
 | NUMBER_MINUS_1 | -1 |
 | NUMBER_0 | 0 |
 | NUMBER_1 | 1 |
+| NUMBER_unknown_default_open_api | 11184809 |
 
 
 
@@ -52,6 +54,7 @@ PTP Advanced Configuration.
 | NUMBER_MINUS_1 | -1 |
 | NUMBER_0 | 0 |
 | NUMBER_1 | 1 |
+| NUMBER_unknown_default_open_api | 11184809 |
 
 
 
@@ -66,6 +69,7 @@ PTP Advanced Configuration.
 | NUMBER_MINUS_1 | -1 |
 | NUMBER_0 | 0 |
 | NUMBER_1 | 1 |
+| NUMBER_unknown_default_open_api | 11184809 |
 
 
 
@@ -76,6 +80,7 @@ PTP Advanced Configuration.
 | MULTICAST | &quot;MULTICAST&quot; |
 | UNICAST | &quot;UNICAST&quot; |
 | HYBRID | &quot;HYBRID&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

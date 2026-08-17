@@ -32,6 +32,7 @@ Optical Metro Connect connection with its current state and the resolved        
 | Name | Value |
 |---- | -----|
 | OC | &quot;OC&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -42,6 +43,7 @@ Optical Metro Connect connection with its current state and the resolved        
 | COLO | &quot;COLO&quot; |
 | BMMR | &quot;BMMR&quot; |
 | REMOTE | &quot;REMOTE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -52,6 +54,7 @@ Optical Metro Connect connection with its current state and the resolved        
 | DUAL_DIVERSE | &quot;DUAL_DIVERSE&quot; |
 | PROTECTED | &quot;PROTECTED&quot; |
 | UNPROTECTED | &quot;UNPROTECTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -61,6 +64,7 @@ Optical Metro Connect connection with its current state and the resolved        
 |---- | -----|
 | EQUINIX | &quot;EQUINIX&quot; |
 | SELF | &quot;SELF&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -27,6 +27,7 @@ Request to order a single connection. The A-side is always a patch panel        
 | Name | Value |
 |---- | -----|
 | OC | &quot;OC&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -37,6 +38,7 @@ Request to order a single connection. The A-side is always a patch panel        
 | COLO | &quot;COLO&quot; |
 | BMMR | &quot;BMMR&quot; |
 | REMOTE | &quot;REMOTE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -47,6 +49,7 @@ Request to order a single connection. The A-side is always a patch panel        
 | DUAL_DIVERSE | &quot;DUAL_DIVERSE&quot; |
 | PROTECTED | &quot;PROTECTED&quot; |
 | UNPROTECTED | &quot;UNPROTECTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -56,6 +59,7 @@ Request to order a single connection. The A-side is always a patch panel        
 |---- | -----|
 | EQUINIX | &quot;EQUINIX&quot; |
 | SELF | &quot;SELF&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

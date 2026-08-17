@@ -28,6 +28,7 @@ Current state of latest service profile change
 | REJECTED | &quot;REJECTED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
 | SUBMITTED_FOR_APPROVAL | &quot;SUBMITTED_FOR_APPROVAL&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

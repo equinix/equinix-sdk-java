@@ -31,6 +31,7 @@ Either use 'and' for AND operations, 'or' for OR operations,  or specify 'proper
 | IN | &quot;IN&quot; |
 | NOT_IN | &quot;NOT IN&quot; |
 | BETWEEN | &quot;BETWEEN&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

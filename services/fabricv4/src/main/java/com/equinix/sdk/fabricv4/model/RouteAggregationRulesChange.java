@@ -65,7 +65,9 @@ public class RouteAggregationRulesChange {
     
     CREATION("BGP_IPv4_PREFIX_AGGREGATION_RULE_CREATION"),
     
-    DELETION("BGP_IPv4_PREFIX_AGGREGATION_RULE_DELETION");
+    DELETION("BGP_IPv4_PREFIX_AGGREGATION_RULE_DELETION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -88,7 +90,7 @@ public class RouteAggregationRulesChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AppServiceType.Adapter.class)
 public enum AppServiceType {
   
-  APP_SERVICE("APP_SERVICE");
+  APP_SERVICE("APP_SERVICE"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -52,7 +54,7 @@ public enum AppServiceType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<AppServiceType> {

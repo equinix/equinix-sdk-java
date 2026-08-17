@@ -57,7 +57,9 @@ public class AuthContext {
   public enum AuthtypeEnum {
     SYSTEM("system"),
     
-    USER("user");
+    USER("user"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -80,7 +82,7 @@ public class AuthContext {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<AuthtypeEnum> {
@@ -114,7 +116,9 @@ public class AuthContext {
   public enum AuthidEnum {
     EQUINIX("equinix"),
     
-    USERID("userId");
+    USERID("userId"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -137,7 +141,7 @@ public class AuthContext {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<AuthidEnum> {

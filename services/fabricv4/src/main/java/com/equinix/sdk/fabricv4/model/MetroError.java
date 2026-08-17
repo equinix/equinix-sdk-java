@@ -64,7 +64,9 @@ public class MetroError {
     
     _3036030("EQ-3036030"),
     
-    _3036100("EQ-3036100");
+    _3036100("EQ-3036100"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class MetroError {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ErrorCodeEnum> {
@@ -129,7 +131,9 @@ public class MetroError {
     
     INTERNAL_SERVER_ERROR("Internal Server Error"),
     
-    METRO_NOT_FOUND("Metro Not Found");
+    METRO_NOT_FOUND("Metro Not Found"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -152,7 +156,7 @@ public class MetroError {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ErrorMessageEnum> {

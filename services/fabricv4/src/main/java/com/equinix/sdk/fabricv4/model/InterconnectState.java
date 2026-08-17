@@ -35,7 +35,9 @@ public enum InterconnectState {
   
   DEPROVISIONING("DEPROVISIONING"),
   
-  DEPROVISIONED("DEPROVISIONED");
+  DEPROVISIONED("DEPROVISIONED"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -58,7 +60,7 @@ public enum InterconnectState {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<InterconnectState> {

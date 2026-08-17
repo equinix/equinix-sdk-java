@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(VirtualPortType.Adapter.class)
 public enum VirtualPortType {
   
-  XF_PORT("XF_PORT");
+  XF_PORT("XF_PORT"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -52,7 +54,7 @@ public enum VirtualPortType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<VirtualPortType> {

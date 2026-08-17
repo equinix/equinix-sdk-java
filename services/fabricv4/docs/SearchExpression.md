@@ -33,6 +33,7 @@
 | NOT_IN | &quot;NOT IN&quot; |
 | IS_NOT_NULL | &quot;IS NOT NULL&quot; |
 | IS_NULL | &quot;IS NULL&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

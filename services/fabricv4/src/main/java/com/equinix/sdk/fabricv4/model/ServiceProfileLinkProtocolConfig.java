@@ -61,7 +61,9 @@ public class ServiceProfileLinkProtocolConfig {
     
     BOTH("BOTH"),
     
-    NAMED("NAMED");
+    NAMED("NAMED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -84,7 +86,7 @@ public class ServiceProfileLinkProtocolConfig {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<EncapsulationStrategyEnum> {
@@ -135,7 +137,9 @@ public class ServiceProfileLinkProtocolConfig {
     
     DOT1Q("DOT1Q"),
     
-    UNTAGGED("UNTAGGED");
+    UNTAGGED("UNTAGGED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -158,7 +162,7 @@ public class ServiceProfileLinkProtocolConfig {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<EncapsulationEnum> {

@@ -24,6 +24,7 @@ Current state of latest route filter rule change
 | IPV6_PREFIX_FILTER_RULE_UPDATE | &quot;BGP_IPv6_PREFIX_FILTER_RULE_UPDATE&quot; |
 | IPV6_PREFIX_FILTER_RULE_CREATION | &quot;BGP_IPv6_PREFIX_FILTER_RULE_CREATION&quot; |
 | IPV6_PREFIX_FILTER_RULE_DELETION | &quot;BGP_IPv6_PREFIX_FILTER_RULE_DELETION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

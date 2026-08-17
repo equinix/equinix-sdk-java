@@ -65,7 +65,9 @@ public class MarketplaceSubscription {
     
     GCP_MARKETPLACE_SUBSCRIPTION("GCP_MARKETPLACE_SUBSCRIPTION"),
     
-    AZURE_MARKETPLACE_SUBSCRIPTION("AZURE_MARKETPLACE_SUBSCRIPTION");
+    AZURE_MARKETPLACE_SUBSCRIPTION("AZURE_MARKETPLACE_SUBSCRIPTION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -88,7 +90,7 @@ public class MarketplaceSubscription {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

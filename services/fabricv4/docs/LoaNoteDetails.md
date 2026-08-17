@@ -22,6 +22,7 @@ Represents a note added to a LOA by an  authorized user from either the issuer o
 |---- | -----|
 | ISSUER | &quot;ISSUER&quot; |
 | REQUESTOR | &quot;REQUESTOR&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

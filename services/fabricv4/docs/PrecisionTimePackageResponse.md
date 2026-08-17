@@ -28,6 +28,7 @@ EPT Service Package Information
 | Name | Value |
 |---- | -----|
 | TIME_SERVICE_PACKAGE | &quot;TIME_SERVICE_PACKAGE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -39,6 +40,7 @@ EPT Service Package Information
 | NTP_ENTERPRISE | &quot;NTP_ENTERPRISE&quot; |
 | PTP_STANDARD | &quot;PTP_STANDARD&quot; |
 | PTP_ENTERPRISE | &quot;PTP_ENTERPRISE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

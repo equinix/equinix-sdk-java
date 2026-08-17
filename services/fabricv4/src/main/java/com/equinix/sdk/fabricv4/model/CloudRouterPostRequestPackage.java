@@ -61,7 +61,9 @@ public class CloudRouterPostRequestPackage {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    ROUTER_PACKAGE("ROUTER_PACKAGE");
+    ROUTER_PACKAGE("ROUTER_PACKAGE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -84,7 +86,7 @@ public class CloudRouterPostRequestPackage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -124,7 +126,9 @@ public class CloudRouterPostRequestPackage {
     
     ADVANCED("ADVANCED"),
     
-    PREMIUM("PREMIUM");
+    PREMIUM("PREMIUM"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -147,7 +151,7 @@ public class CloudRouterPostRequestPackage {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<CodeEnum> {

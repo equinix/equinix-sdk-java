@@ -19,6 +19,7 @@ Optical Connect redundancy configuration. <br> Required only for DUAL_DIVERSE co
 |---- | -----|
 | PRIMARY | &quot;PRIMARY&quot; |
 | SECONDARY | &quot;SECONDARY&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

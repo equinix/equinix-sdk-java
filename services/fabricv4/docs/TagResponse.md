@@ -26,6 +26,7 @@ Equinix Fabric Tag Response Object
 | APPROVED | &quot;APPROVED&quot; |
 | PENDING_APPROVAL | &quot;PENDING_APPROVAL&quot; |
 | REJECTED | &quot;REJECTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -33,5 +33,7 @@
 
 * `CONNECTION_DELETION_RETRY` (value: `"CONNECTION_DELETION_RETRY"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

@@ -33,7 +33,9 @@ public enum InternetAccessBillingType {
   
   USAGE_BASED("USAGE_BASED"),
   
-  BURST_BASED("BURST_BASED");
+  BURST_BASED("BURST_BASED"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -56,7 +58,7 @@ public enum InternetAccessBillingType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<InternetAccessBillingType> {

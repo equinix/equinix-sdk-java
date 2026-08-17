@@ -62,7 +62,9 @@ public class RoutingProtocolChangeData {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED");
+    REQUESTED("REQUESTED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -85,7 +87,7 @@ public class RoutingProtocolChangeData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {
@@ -156,7 +158,9 @@ public class RoutingProtocolChangeData {
     
     CREATION("ROUTING_PROTOCOL_CREATION"),
     
-    DELETION("ROUTING_PROTOCOL_DELETION");
+    DELETION("ROUTING_PROTOCOL_DELETION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -179,7 +183,7 @@ public class RoutingProtocolChangeData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

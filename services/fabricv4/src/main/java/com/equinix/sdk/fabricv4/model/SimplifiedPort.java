@@ -138,7 +138,9 @@ public class SimplifiedPort {
   public enum ServiceTypeEnum {
     EPL("EPL"),
     
-    MSP("MSP");
+    MSP("MSP"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -161,7 +163,7 @@ public class SimplifiedPort {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ServiceTypeEnum> {

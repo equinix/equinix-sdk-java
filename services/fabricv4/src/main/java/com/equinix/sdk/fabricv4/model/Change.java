@@ -68,7 +68,9 @@ public class Change {
     
     DELETION("CONNECTION_DELETION"),
     
-    PROVIDER_STATUS_REQUEST("CONNECTION_PROVIDER_STATUS_REQUEST");
+    PROVIDER_STATUS_REQUEST("CONNECTION_PROVIDER_STATUS_REQUEST"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -91,7 +93,7 @@ public class Change {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -133,7 +135,9 @@ public class Change {
     
     REQUESTED("REQUESTED"),
     
-    SUBMITTED_FOR_APPROVAL("SUBMITTED_FOR_APPROVAL");
+    SUBMITTED_FOR_APPROVAL("SUBMITTED_FOR_APPROVAL"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -156,7 +160,7 @@ public class Change {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {

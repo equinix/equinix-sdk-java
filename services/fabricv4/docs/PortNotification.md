@@ -20,6 +20,7 @@
 | TECHNICAL | &quot;TECHNICAL&quot; |
 | PEERING | &quot;PEERING&quot; |
 | ESCALATION | &quot;ESCALATION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

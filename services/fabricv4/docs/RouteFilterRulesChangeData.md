@@ -27,6 +27,7 @@ Current state of latest route filter rules change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -40,6 +41,7 @@ Current state of latest route filter rules change
 | IPV6_PREFIX_FILTER_RULE_UPDATE | &quot;BGP_IPv6_PREFIX_FILTER_RULE_UPDATE&quot; |
 | IPV6_PREFIX_FILTER_RULE_CREATION | &quot;BGP_IPv6_PREFIX_FILTER_RULE_CREATION&quot; |
 | IPV6_PREFIX_FILTER_RULE_DELETION | &quot;BGP_IPv6_PREFIX_FILTER_RULE_DELETION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

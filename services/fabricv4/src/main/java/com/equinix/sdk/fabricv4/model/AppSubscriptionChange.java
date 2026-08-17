@@ -64,7 +64,9 @@ public class AppSubscriptionChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    APP_SUBSCRIPTION_UPDATE("APP_SUBSCRIPTION_UPDATE");
+    APP_SUBSCRIPTION_UPDATE("APP_SUBSCRIPTION_UPDATE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class AppSubscriptionChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -123,7 +125,9 @@ public class AppSubscriptionChange {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED");
+    REQUESTED("REQUESTED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -146,7 +150,7 @@ public class AppSubscriptionChange {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {

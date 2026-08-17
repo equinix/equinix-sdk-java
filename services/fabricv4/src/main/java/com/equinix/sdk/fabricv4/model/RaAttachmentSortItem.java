@@ -63,7 +63,9 @@ public class RaAttachmentSortItem {
     
     CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
     
-    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
+    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -86,7 +88,7 @@ public class RaAttachmentSortItem {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<PropertyEnum> {
@@ -120,7 +122,9 @@ public class RaAttachmentSortItem {
   public enum DirectionEnum {
     DESC("DESC"),
     
-    ASC("ASC");
+    ASC("ASC"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -143,7 +147,7 @@ public class RaAttachmentSortItem {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {

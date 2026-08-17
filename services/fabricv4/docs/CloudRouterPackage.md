@@ -27,6 +27,7 @@ Fabric Cloud Router Package
 | Name | Value |
 |---- | -----|
 | ROUTER_PACKAGE | &quot;ROUTER_PACKAGE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

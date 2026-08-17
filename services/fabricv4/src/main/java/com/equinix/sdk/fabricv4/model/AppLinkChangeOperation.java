@@ -59,7 +59,9 @@ public class AppLinkChangeOperation {
     
     ADD("add"),
     
-    REMOVE("remove");
+    REMOVE("remove"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -82,7 +84,7 @@ public class AppLinkChangeOperation {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<OpEnum> {
@@ -120,7 +122,9 @@ public class AppLinkChangeOperation {
     
     BANDWIDTH("/bandwidth"),
     
-    IPV4ADDRESS("/ipv4Address");
+    IPV4ADDRESS("/ipv4Address"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -143,7 +147,7 @@ public class AppLinkChangeOperation {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<PathEnum> {

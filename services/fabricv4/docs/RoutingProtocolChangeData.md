@@ -28,6 +28,7 @@ Current state of latest Routing Protocol change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -38,6 +39,7 @@ Current state of latest Routing Protocol change
 | UPDATE | &quot;ROUTING_PROTOCOL_UPDATE&quot; |
 | CREATION | &quot;ROUTING_PROTOCOL_CREATION&quot; |
 | DELETION | &quot;ROUTING_PROTOCOL_DELETION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

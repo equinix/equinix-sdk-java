@@ -33,7 +33,9 @@ public enum LoaType {
   
   PATCH_PANEL_LOA("PATCH_PANEL_LOA"),
   
-  PATCH_PANEL_PORT_LOA("PATCH_PANEL_PORT_LOA");
+  PATCH_PANEL_PORT_LOA("PATCH_PANEL_PORT_LOA"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -56,7 +58,7 @@ public enum LoaType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<LoaType> {

@@ -25,6 +25,7 @@ Z-Side configuration. <br> For COLO, specify the destination patch panel and por
 | SC | &quot;SC&quot; |
 | LC | &quot;LC&quot; |
 | ST | &quot;ST&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

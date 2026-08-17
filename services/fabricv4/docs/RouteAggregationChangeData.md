@@ -28,6 +28,7 @@ Current state of latest Route Aggregation change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -41,6 +42,7 @@ Current state of latest Route Aggregation change
 | IPV6_PREFIX_AGGREGATION_UPDATE | &quot;BGP_IPv6_PREFIX_AGGREGATION_UPDATE&quot; |
 | IPV6_PREFIX_AGGREGATION_CREATION | &quot;BGP_IPv6_PREFIX_AGGREGATION_CREATION&quot; |
 | IPV6_PREFIX_AGGREGATION_DELETION | &quot;BGP_IPv6_PREFIX_AGGREGATION_DELETION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

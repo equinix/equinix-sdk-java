@@ -47,7 +47,9 @@ public enum ServiceTokenSearchFieldName {
   
   CONNECTION_ASIDE_ACCESSPOINTSELECTORS_PORT_UUID("/connection/aSide/accessPointSelectors/port/uuid"),
   
-  CONNECTION_ZSIDE_ACCESSPOINTSELECTORS_PORT_UUID("/connection/zSide/accessPointSelectors/port/uuid");
+  CONNECTION_ZSIDE_ACCESSPOINTSELECTORS_PORT_UUID("/connection/zSide/accessPointSelectors/port/uuid"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -70,7 +72,7 @@ public enum ServiceTokenSearchFieldName {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<ServiceTokenSearchFieldName> {

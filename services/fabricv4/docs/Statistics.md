@@ -21,6 +21,7 @@ This API provides service-level traffic metrics so that you can view access and 
 |---- | -----|
 | ASIDE | &quot;aSide&quot; |
 | ZSIDE | &quot;zSide&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

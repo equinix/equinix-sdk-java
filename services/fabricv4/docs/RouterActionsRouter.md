@@ -20,6 +20,7 @@ Router object for router actions
 | Name | Value |
 |---- | -----|
 | XF_ROUTER | &quot;XF_ROUTER&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -31,7 +31,9 @@ public enum IpBlockType {
   
   IPV4("IPv4"),
   
-  IPV6("IPv6");
+  IPV6("IPv6"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -54,7 +56,7 @@ public enum IpBlockType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<IpBlockType> {

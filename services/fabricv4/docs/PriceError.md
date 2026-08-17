@@ -24,6 +24,7 @@ Error with details
 | _3038010 | &quot;EQ-3038010&quot; |
 | _3038022 | &quot;EQ-3038022&quot; |
 | _3038030 | &quot;EQ-3038030&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -34,6 +35,7 @@ Error with details
 | VALIDATION_FAILURE | &quot;Validation failure&quot; |
 | INVALID_VALUE | &quot;Invalid value&quot; |
 | INTERNAL_SERVER_ERROR | &quot;Internal Server Error&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

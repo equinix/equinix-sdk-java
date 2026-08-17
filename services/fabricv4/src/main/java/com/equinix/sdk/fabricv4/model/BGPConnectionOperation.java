@@ -60,7 +60,9 @@ public class BGPConnectionOperation {
     
     DOWN("DOWN"),
     
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -83,7 +85,7 @@ public class BGPConnectionOperation {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<OperationalStatusEnum> {

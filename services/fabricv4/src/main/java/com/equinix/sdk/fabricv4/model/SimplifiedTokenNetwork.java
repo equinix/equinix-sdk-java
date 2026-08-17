@@ -76,7 +76,9 @@ public class SimplifiedTokenNetwork {
     
     EVPTREE("EVPTREE"),
     
-    EPTREE("EPTREE");
+    EPTREE("EPTREE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -99,7 +101,7 @@ public class SimplifiedTokenNetwork {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -140,7 +142,9 @@ public class SimplifiedTokenNetwork {
     
     REGIONAL("REGIONAL"),
     
-    GLOBAL("GLOBAL");
+    GLOBAL("GLOBAL"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -163,7 +167,7 @@ public class SimplifiedTokenNetwork {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ScopeEnum> {

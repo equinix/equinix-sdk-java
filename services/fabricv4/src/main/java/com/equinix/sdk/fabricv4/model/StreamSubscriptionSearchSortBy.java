@@ -31,7 +31,9 @@ public enum StreamSubscriptionSearchSortBy {
   
   CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  UPDATEDDATETIME("/changeLog/updatedDateTime");
+  UPDATEDDATETIME("/changeLog/updatedDateTime"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -54,7 +56,7 @@ public enum StreamSubscriptionSearchSortBy {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<StreamSubscriptionSearchSortBy> {

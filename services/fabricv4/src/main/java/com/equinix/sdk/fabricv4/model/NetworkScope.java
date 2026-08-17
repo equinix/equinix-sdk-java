@@ -33,7 +33,9 @@ public enum NetworkScope {
   
   GLOBAL("GLOBAL"),
   
-  LOCAL("LOCAL");
+  LOCAL("LOCAL"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -56,7 +58,7 @@ public enum NetworkScope {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<NetworkScope> {

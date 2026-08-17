@@ -19,6 +19,7 @@ Device redundancy
 |---- | -----|
 | PRIMARY | &quot;PRIMARY&quot; |
 | SECONDARY | &quot;SECONDARY&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

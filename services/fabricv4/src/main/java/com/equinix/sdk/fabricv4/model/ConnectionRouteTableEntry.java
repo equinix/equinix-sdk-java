@@ -73,7 +73,9 @@ public class ConnectionRouteTableEntry {
   public enum StateEnum {
     ACTIVE("ACTIVE"),
     
-    INACTIVE("INACTIVE");
+    INACTIVE("INACTIVE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -96,7 +98,7 @@ public class ConnectionRouteTableEntry {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

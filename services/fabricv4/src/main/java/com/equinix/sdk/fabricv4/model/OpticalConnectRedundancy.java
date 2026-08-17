@@ -58,7 +58,9 @@ public class OpticalConnectRedundancy {
   public enum PriorityEnum {
     PRIMARY("PRIMARY"),
     
-    SECONDARY("SECONDARY");
+    SECONDARY("SECONDARY"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -81,7 +83,7 @@ public class OpticalConnectRedundancy {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<PriorityEnum> {

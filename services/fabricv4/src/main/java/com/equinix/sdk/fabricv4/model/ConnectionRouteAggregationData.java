@@ -63,7 +63,9 @@ public class ConnectionRouteAggregationData {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    BGP_IPV4_PREFIX_AGGREGATION("BGP_IPv4_PREFIX_AGGREGATION");
+    BGP_IPV4_PREFIX_AGGREGATION("BGP_IPv4_PREFIX_AGGREGATION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -86,7 +88,7 @@ public class ConnectionRouteAggregationData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -133,7 +135,9 @@ public class ConnectionRouteAggregationData {
     
     FAILED("FAILED"),
     
-    PENDING_BGP_CONFIGURATION("PENDING_BGP_CONFIGURATION");
+    PENDING_BGP_CONFIGURATION("PENDING_BGP_CONFIGURATION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -156,7 +160,7 @@ public class ConnectionRouteAggregationData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<AttachmentStatusEnum> {

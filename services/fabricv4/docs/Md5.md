@@ -19,6 +19,7 @@
 |---- | -----|
 | ASCII | &quot;ASCII&quot; |
 | HEX | &quot;HEX&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -55,7 +55,9 @@ public class RemoveOperation {
    */
   @JsonAdapter(OpEnum.Adapter.class)
   public enum OpEnum {
-    REMOVE("remove");
+    REMOVE("remove"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -78,7 +80,7 @@ public class RemoveOperation {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<OpEnum> {

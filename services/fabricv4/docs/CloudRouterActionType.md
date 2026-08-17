@@ -13,5 +13,7 @@
 
 * `ADVERTISED_ROUTE_ENTRY_UPDATE` (value: `"ADVERTISED_ROUTE_ENTRY_UPDATE"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

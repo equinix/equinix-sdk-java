@@ -57,7 +57,9 @@ public class PriceCharge {
   public enum TypeEnum {
     MONTHLY_RECURRING("MONTHLY_RECURRING"),
     
-    NON_RECURRING("NON_RECURRING");
+    NON_RECURRING("NON_RECURRING"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -80,7 +82,7 @@ public class PriceCharge {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

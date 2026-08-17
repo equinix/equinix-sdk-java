@@ -57,7 +57,9 @@ public class ResponseIncompleteDetails {
   public enum ReasonEnum {
     MAX_OUTPUT_TOKENS("max_output_tokens"),
     
-    CONTENT_FILTER("content_filter");
+    CONTENT_FILTER("content_filter"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -80,7 +82,7 @@ public class ResponseIncompleteDetails {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<ReasonEnum> {

@@ -21,6 +21,7 @@ Notification preferences for this connection.
 | NOTIFICATION | &quot;NOTIFICATION&quot; |
 | ORDERING | &quot;ORDERING&quot; |
 | TECHNICAL | &quot;TECHNICAL&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

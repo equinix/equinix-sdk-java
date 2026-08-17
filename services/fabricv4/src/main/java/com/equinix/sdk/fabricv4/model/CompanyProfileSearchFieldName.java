@@ -43,7 +43,9 @@ public enum CompanyProfileSearchFieldName {
   
   METROS_METROCODE("/metros/metroCode"),
   
-  CHANGE_STATUS("/change/status");
+  CHANGE_STATUS("/change/status"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -66,7 +68,7 @@ public enum CompanyProfileSearchFieldName {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<CompanyProfileSearchFieldName> {

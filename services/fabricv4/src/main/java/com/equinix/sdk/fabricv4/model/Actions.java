@@ -55,7 +55,9 @@ public enum Actions {
   
   CONNECTION_CREATION_RETRY("CONNECTION_CREATION_RETRY"),
   
-  CONNECTION_DELETION_RETRY("CONNECTION_DELETION_RETRY");
+  CONNECTION_DELETION_RETRY("CONNECTION_DELETION_RETRY"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -78,7 +80,7 @@ public enum Actions {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<Actions> {

@@ -65,7 +65,9 @@ public class ConnectionRouteFilterData {
   public enum TypeEnum {
     IPV4_PREFIX_FILTER("BGP_IPv4_PREFIX_FILTER"),
     
-    IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER");
+    IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -88,7 +90,7 @@ public class ConnectionRouteFilterData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -135,7 +137,9 @@ public class ConnectionRouteFilterData {
     
     FAILED("FAILED"),
     
-    PENDING_BGP_CONFIGURATION("PENDING_BGP_CONFIGURATION");
+    PENDING_BGP_CONFIGURATION("PENDING_BGP_CONFIGURATION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -158,7 +162,7 @@ public class ConnectionRouteFilterData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<AttachmentStatusEnum> {
@@ -192,7 +196,9 @@ public class ConnectionRouteFilterData {
   public enum DirectionEnum {
     INBOUND("INBOUND"),
     
-    OUTBOUND("OUTBOUND");
+    OUTBOUND("OUTBOUND"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -215,7 +221,7 @@ public class ConnectionRouteFilterData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {

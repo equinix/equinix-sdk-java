@@ -59,7 +59,9 @@ public enum ConnectionType {
   
   GW_VC("GW_VC"),
   
-  IPX_VC("IPX_VC");
+  IPX_VC("IPX_VC"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -82,7 +84,7 @@ public enum ConnectionType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<ConnectionType> {

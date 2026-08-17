@@ -31,6 +31,7 @@ Filter expression that can be AND, OR, or a simple expression
 | GREATER_THAN_OR_EQUAL_TO | &quot;&gt;&#x3D;&quot; |
 | LESS_THAN | &quot;&lt;&quot; |
 | LESS_THAN_OR_EQUAL_TO | &quot;&lt;&#x3D;&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

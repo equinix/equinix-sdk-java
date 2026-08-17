@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(EnvironmentActionTypeEnum.Adapter.class)
 public enum EnvironmentActionTypeEnum {
   
-  VALIDATE_ACTIVATION_KEY("VALIDATE_ACTIVATION_KEY");
+  VALIDATE_ACTIVATION_KEY("VALIDATE_ACTIVATION_KEY"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -52,7 +54,7 @@ public enum EnvironmentActionTypeEnum {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<EnvironmentActionTypeEnum> {

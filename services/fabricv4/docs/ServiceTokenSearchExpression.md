@@ -31,6 +31,7 @@
 | NOT_IN | &quot;NOT IN&quot; |
 | BETWEEN | &quot;BETWEEN&quot; |
 | NOT_BETWEEN | &quot;NOT BETWEEN&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

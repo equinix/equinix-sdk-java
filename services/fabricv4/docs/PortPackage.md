@@ -24,6 +24,7 @@ Port Package details
 | Name | Value |
 |---- | -----|
 | PORT_PACKAGE | &quot;PORT_PACKAGE&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -32,6 +33,7 @@ Port Package details
 | Name | Value |
 |---- | -----|
 | MSP | &quot;MSP&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

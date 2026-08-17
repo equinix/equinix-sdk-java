@@ -76,7 +76,9 @@ public class CustomField {
     
     LIST("LIST"),
     
-    NUMBER("NUMBER");
+    NUMBER("NUMBER"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -99,7 +101,7 @@ public class CustomField {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<DataTypeEnum> {

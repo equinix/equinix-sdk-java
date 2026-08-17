@@ -27,6 +27,7 @@ Current state of latest Route Aggregation Rules change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -37,6 +38,7 @@ Current state of latest Route Aggregation Rules change
 | UPDATE | &quot;BGP_IPv4_PREFIX_AGGREGATION_RULE_UPDATE&quot; |
 | CREATION | &quot;BGP_IPv4_PREFIX_AGGREGATION_RULE_CREATION&quot; |
 | DELETION | &quot;BGP_IPv4_PREFIX_AGGREGATION_RULE_DELETION&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -51,7 +51,9 @@ public enum PortSearchFieldName {
   
   OPERATION_MAINTENANCESTATUS("/operation/maintenanceStatus"),
   
-  OPERATION_LOCKENABLED("/operation/lockEnabled");
+  OPERATION_LOCKENABLED("/operation/lockEnabled"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -74,7 +76,7 @@ public enum PortSearchFieldName {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<PortSearchFieldName> {

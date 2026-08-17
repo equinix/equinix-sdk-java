@@ -25,6 +25,7 @@ List of criteria for selecting network access points with optimal efficiency, se
 | COLO | &quot;COLO&quot; |
 | VD | &quot;VD&quot; |
 | NETWORK | &quot;NETWORK&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

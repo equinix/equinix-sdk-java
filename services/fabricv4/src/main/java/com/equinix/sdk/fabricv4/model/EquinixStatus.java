@@ -65,7 +65,9 @@ public enum EquinixStatus {
   
   CANCELLED("CANCELLED"),
   
-  PENDING_INTERFACE_CONFIGURATION("PENDING_INTERFACE_CONFIGURATION");
+  PENDING_INTERFACE_CONFIGURATION("PENDING_INTERFACE_CONFIGURATION"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -88,7 +90,7 @@ public enum EquinixStatus {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<EquinixStatus> {

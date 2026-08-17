@@ -33,6 +33,7 @@ Stream object
 | SSH | &quot;SSH&quot; |
 | FAB | &quot;FAB&quot; |
 | CTRL | &quot;CTRL&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -45,6 +46,7 @@ Stream object
 | DETACHED | &quot;DETACHED&quot; |
 | DETACHING | &quot;DETACHING&quot; |
 | FAILED | &quot;FAILED&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

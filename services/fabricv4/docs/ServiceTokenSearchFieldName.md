@@ -25,5 +25,7 @@
 
 * `CONNECTION_ZSIDE_ACCESSPOINTSELECTORS_PORT_UUID` (value: `"/connection/zSide/accessPointSelectors/port/uuid"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

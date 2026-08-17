@@ -58,7 +58,9 @@ public class StreamSubscriptionPutRequest {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION");
+    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -81,7 +83,7 @@ public class StreamSubscriptionPutRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

@@ -113,7 +113,9 @@ public class Price {
     
     NUMBER_24(24),
     
-    NUMBER_36(36);
+    NUMBER_36(36),
+    
+    NUMBER_unknown_default_open_api(11184809);
 
     private Integer value;
 
@@ -136,7 +138,7 @@ public class Price {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return NUMBER_unknown_default_open_api;
     }
 
     public static class Adapter extends TypeAdapter<TermLengthEnum> {

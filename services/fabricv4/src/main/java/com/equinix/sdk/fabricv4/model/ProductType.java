@@ -39,7 +39,9 @@ public enum ProductType {
   
   PRECISION_TIME_PRODUCT("PRECISION_TIME_PRODUCT"),
   
-  OPTICAL_CONNECT_PRODUCT("OPTICAL_CONNECT_PRODUCT");
+  OPTICAL_CONNECT_PRODUCT("OPTICAL_CONNECT_PRODUCT"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -62,7 +64,7 @@ public enum ProductType {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<ProductType> {

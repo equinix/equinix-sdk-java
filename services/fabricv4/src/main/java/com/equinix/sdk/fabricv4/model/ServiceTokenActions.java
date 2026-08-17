@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ServiceTokenActions.Adapter.class)
 public enum ServiceTokenActions {
   
-  RESEND_EMAIL_NOTIFICATION("RESEND_EMAIL_NOTIFICATION");
+  RESEND_EMAIL_NOTIFICATION("RESEND_EMAIL_NOTIFICATION"),
+  
+  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
   private String value;
 
@@ -52,7 +54,7 @@ public enum ServiceTokenActions {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    return UNKNOWN_DEFAULT_OPEN_API;
   }
 
   public static class Adapter extends TypeAdapter<ServiceTokenActions> {

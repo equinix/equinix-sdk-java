@@ -11,5 +11,7 @@
 
 * `BURST_BASED` (value: `"BURST_BASED"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

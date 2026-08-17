@@ -62,7 +62,9 @@ public class PrecisionTimePackageResponse {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    TIME_SERVICE_PACKAGE("TIME_SERVICE_PACKAGE");
+    TIME_SERVICE_PACKAGE("TIME_SERVICE_PACKAGE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -85,7 +87,7 @@ public class PrecisionTimePackageResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -123,7 +125,9 @@ public class PrecisionTimePackageResponse {
     
     PTP_STANDARD("PTP_STANDARD"),
     
-    PTP_ENTERPRISE("PTP_ENTERPRISE");
+    PTP_ENTERPRISE("PTP_ENTERPRISE"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -146,7 +150,7 @@ public class PrecisionTimePackageResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<CodeEnum> {

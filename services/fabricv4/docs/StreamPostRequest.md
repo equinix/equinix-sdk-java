@@ -20,6 +20,7 @@ Create Stream
 | Name | Value |
 |---- | -----|
 | TELEMETRY_STREAM | &quot;TELEMETRY_STREAM&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

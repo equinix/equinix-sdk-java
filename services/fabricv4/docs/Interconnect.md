@@ -31,6 +31,7 @@ Interconnect specification <font color=\"red\"> <sup color='red'>Beta</sup></fon
 | Name | Value |
 |---- | -----|
 | XF_IC | &quot;XF_IC&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

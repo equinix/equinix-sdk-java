@@ -19,6 +19,7 @@ Router associated with the interconnect <font color=\"red\"> <sup color='red'>Be
 | Name | Value |
 |---- | -----|
 | IC_ROUTER | &quot;IC_ROUTER&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

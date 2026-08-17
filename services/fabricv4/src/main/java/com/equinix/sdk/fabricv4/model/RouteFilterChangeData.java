@@ -62,7 +62,9 @@ public class RouteFilterChangeData {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED");
+    REQUESTED("REQUESTED"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -85,7 +87,7 @@ public class RouteFilterChangeData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {
@@ -162,7 +164,9 @@ public class RouteFilterChangeData {
     
     IPV6_PREFIX_FILTER_CREATION("BGP_IPv6_PREFIX_FILTER_CREATION"),
     
-    IPV6_PREFIX_FILTER_DELETION("BGP_IPv6_PREFIX_FILTER_DELETION");
+    IPV6_PREFIX_FILTER_DELETION("BGP_IPv6_PREFIX_FILTER_DELETION"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -185,7 +189,7 @@ public class RouteFilterChangeData {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
