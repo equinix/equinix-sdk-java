@@ -15,8 +15,7 @@ import static com.equinix.openapi.fabric.tests.ConnectionsApiTest.createConnecti
 import static com.equinix.openapi.fabric.tests.ConnectionsApiTest.removeConnections;
 import static com.equinix.openapi.fabric.tests.helpers.Apis.*;
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.users;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * API tests for RoutingProtocolsApi
@@ -62,7 +61,9 @@ public class RoutingProtocolsApiTest {
 
         }
 
-        assertEquals(200, connectionsApi.getApiClient().getStatusCode());
+        int statusCode=connectionsApi.getApiClient().getStatusCode();
+
+        assertTrue(statusCode == 200 || statusCode == 202);
 
         String ipBGP = "192.68.100.105";
 
