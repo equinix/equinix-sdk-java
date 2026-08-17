@@ -71,9 +71,7 @@ public class SimplifiedNotification {
     
     TECHNICAL("TECHNICAL"),
     
-    ORDERING("ORDERING"),
-
-    QUOTE_NOTIFICATIONS("QUOTE_NOTIFICATIONS");
+    ORDERING("ORDERING");
 
     private String value;
 
