@@ -25,14 +25,17 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.equinix.sdk.fabricv4.model.EnvironmentActionRequest;
+import com.equinix.sdk.fabricv4.model.EnvironmentActionResponse;
 import com.equinix.sdk.fabricv4.model.Error;
-import com.equinix.sdk.fabricv4.model.JsonPatchOperation;
+import com.equinix.sdk.fabricv4.model.ProviderEnvironments;
 import com.equinix.sdk.fabricv4.model.ServiceMetros;
 import com.equinix.sdk.fabricv4.model.ServiceProfile;
 import com.equinix.sdk.fabricv4.model.ServiceProfileActionRequest;
 import com.equinix.sdk.fabricv4.model.ServiceProfileActionResponse;
 import com.equinix.sdk.fabricv4.model.ServiceProfileRequest;
 import com.equinix.sdk.fabricv4.model.ServiceProfileSearchRequest;
+import com.equinix.sdk.fabricv4.model.ServiceProfileUpdateOperation;
 import com.equinix.sdk.fabricv4.model.ServiceProfiles;
 import java.util.UUID;
 
@@ -682,6 +685,166 @@ public class ServiceProfilesApi {
         return localVarCall;
     }
     /**
+     * Build call for getServiceProfileEnvironmentsByUuid
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getServiceProfileEnvironmentsByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/serviceProfiles/{serviceProfileId}/environments"
+            .replace("{" + "serviceProfileId" + "}", localVarApiClient.escapeString(serviceProfileId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json; charset=UTF-8",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getServiceProfileEnvironmentsByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'serviceProfileId' is set
+        if (serviceProfileId == null) {
+            throw new ApiException("Missing the required parameter 'serviceProfileId' when calling getServiceProfileEnvironmentsByUuid(Async)");
+        }
+
+        return getServiceProfileEnvironmentsByUuidCall(serviceProfileId, offset, limit, _callback);
+
+    }
+
+    /**
+     * Get Profile Environments
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @return ProviderEnvironments
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ProviderEnvironments getServiceProfileEnvironmentsByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<ProviderEnvironments> localVarResp = getServiceProfileEnvironmentsByUuidWithHttpInfo(serviceProfileId, offset, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Profile Environments
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @return ApiResponse&lt;ProviderEnvironments&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ProviderEnvironments> getServiceProfileEnvironmentsByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getServiceProfileEnvironmentsByUuidValidateBeforeCall(serviceProfileId, offset, limit, null);
+        Type localVarReturnType = new TypeToken<ProviderEnvironments>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Profile Environments (asynchronously)
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getServiceProfileEnvironmentsByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<ProviderEnvironments> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getServiceProfileEnvironmentsByUuidValidateBeforeCall(serviceProfileId, offset, limit, _callback);
+        Type localVarReturnType = new TypeToken<ProviderEnvironments>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getServiceProfileMetrosByUuid
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
@@ -1320,9 +1483,172 @@ public class ServiceProfilesApi {
         return localVarCall;
     }
     /**
+     * Build call for serviceProfileEnvironmentAction
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param environmentId Provider Environment Reference (required)
+     * @param environmentActionRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful service profile environment action operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call serviceProfileEnvironmentActionCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String environmentId, @javax.annotation.Nonnull EnvironmentActionRequest environmentActionRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = environmentActionRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions"
+            .replace("{" + "serviceProfileId" + "}", localVarApiClient.escapeString(serviceProfileId.toString()))
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call serviceProfileEnvironmentActionValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String environmentId, @javax.annotation.Nonnull EnvironmentActionRequest environmentActionRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'serviceProfileId' is set
+        if (serviceProfileId == null) {
+            throw new ApiException("Missing the required parameter 'serviceProfileId' when calling serviceProfileEnvironmentAction(Async)");
+        }
+
+        // verify the required parameter 'environmentId' is set
+        if (environmentId == null) {
+            throw new ApiException("Missing the required parameter 'environmentId' when calling serviceProfileEnvironmentAction(Async)");
+        }
+
+        // verify the required parameter 'environmentActionRequest' is set
+        if (environmentActionRequest == null) {
+            throw new ApiException("Missing the required parameter 'environmentActionRequest' when calling serviceProfileEnvironmentAction(Async)");
+        }
+
+        return serviceProfileEnvironmentActionCall(serviceProfileId, environmentId, environmentActionRequest, _callback);
+
+    }
+
+    /**
+     * Service Profile Environment Actions
+     * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param environmentId Provider Environment Reference (required)
+     * @param environmentActionRequest  (required)
+     * @return EnvironmentActionResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful service profile environment action operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public EnvironmentActionResponse serviceProfileEnvironmentAction(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String environmentId, @javax.annotation.Nonnull EnvironmentActionRequest environmentActionRequest) throws ApiException {
+        ApiResponse<EnvironmentActionResponse> localVarResp = serviceProfileEnvironmentActionWithHttpInfo(serviceProfileId, environmentId, environmentActionRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Service Profile Environment Actions
+     * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param environmentId Provider Environment Reference (required)
+     * @param environmentActionRequest  (required)
+     * @return ApiResponse&lt;EnvironmentActionResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful service profile environment action operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EnvironmentActionResponse> serviceProfileEnvironmentActionWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String environmentId, @javax.annotation.Nonnull EnvironmentActionRequest environmentActionRequest) throws ApiException {
+        okhttp3.Call localVarCall = serviceProfileEnvironmentActionValidateBeforeCall(serviceProfileId, environmentId, environmentActionRequest, null);
+        Type localVarReturnType = new TypeToken<EnvironmentActionResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Service Profile Environment Actions (asynchronously)
+     * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+     * @param serviceProfileId Service Profile UUID (required)
+     * @param environmentId Provider Environment Reference (required)
+     * @param environmentActionRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful service profile environment action operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call serviceProfileEnvironmentActionAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull String environmentId, @javax.annotation.Nonnull EnvironmentActionRequest environmentActionRequest, final ApiCallback<EnvironmentActionResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = serviceProfileEnvironmentActionValidateBeforeCall(serviceProfileId, environmentId, environmentActionRequest, _callback);
+        Type localVarReturnType = new TypeToken<EnvironmentActionResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for updateServiceProfileByUuid
      * @param serviceProfileId Service Profile UUID (required)
-     * @param jsonPatchOperation  (required)
+     * @param serviceProfileUpdateOperation  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1338,7 +1664,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateServiceProfileByUuidCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1352,7 +1678,7 @@ public class ServiceProfilesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = jsonPatchOperation;
+        Object localVarPostBody = serviceProfileUpdateOperation;
 
         // create path and map variables
         String localVarPath = "/fabric/v4/serviceProfiles/{serviceProfileId}"
@@ -1386,18 +1712,18 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateServiceProfileByUuidValidateBeforeCall(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'serviceProfileId' is set
         if (serviceProfileId == null) {
             throw new ApiException("Missing the required parameter 'serviceProfileId' when calling updateServiceProfileByUuid(Async)");
         }
 
-        // verify the required parameter 'jsonPatchOperation' is set
-        if (jsonPatchOperation == null) {
-            throw new ApiException("Missing the required parameter 'jsonPatchOperation' when calling updateServiceProfileByUuid(Async)");
+        // verify the required parameter 'serviceProfileUpdateOperation' is set
+        if (serviceProfileUpdateOperation == null) {
+            throw new ApiException("Missing the required parameter 'serviceProfileUpdateOperation' when calling updateServiceProfileByUuid(Async)");
         }
 
-        return updateServiceProfileByUuidCall(serviceProfileId, jsonPatchOperation, _callback);
+        return updateServiceProfileByUuidCall(serviceProfileId, serviceProfileUpdateOperation, _callback);
 
     }
 
@@ -1405,7 +1731,7 @@ public class ServiceProfilesApi {
      * Update Profile
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
-     * @param jsonPatchOperation  (required)
+     * @param serviceProfileUpdateOperation  (required)
      * @return ServiceProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1420,8 +1746,8 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfile updateServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
-        ApiResponse<ServiceProfile> localVarResp = updateServiceProfileByUuidWithHttpInfo(serviceProfileId, jsonPatchOperation);
+    public ServiceProfile updateServiceProfileByUuid(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation) throws ApiException {
+        ApiResponse<ServiceProfile> localVarResp = updateServiceProfileByUuidWithHttpInfo(serviceProfileId, serviceProfileUpdateOperation);
         return localVarResp.getData();
     }
 
@@ -1429,7 +1755,7 @@ public class ServiceProfilesApi {
      * Update Profile
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
-     * @param jsonPatchOperation  (required)
+     * @param serviceProfileUpdateOperation  (required)
      * @return ApiResponse&lt;ServiceProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1444,8 +1770,8 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfile> updateServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
-        okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, jsonPatchOperation, null);
+    public ApiResponse<ServiceProfile> updateServiceProfileByUuidWithHttpInfo(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation) throws ApiException {
+        okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, serviceProfileUpdateOperation, null);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1454,7 +1780,7 @@ public class ServiceProfilesApi {
      * Update Profile (asynchronously)
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
-     * @param jsonPatchOperation  (required)
+     * @param serviceProfileUpdateOperation  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1470,9 +1796,9 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<ServiceProfile> _callback) throws ApiException {
+    public okhttp3.Call updateServiceProfileByUuidAsync(@javax.annotation.Nonnull UUID serviceProfileId, @javax.annotation.Nonnull List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation, final ApiCallback<ServiceProfile> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, jsonPatchOperation, _callback);
+        okhttp3.Call localVarCall = updateServiceProfileByUuidValidateBeforeCall(serviceProfileId, serviceProfileUpdateOperation, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfile>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

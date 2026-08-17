@@ -59,6 +59,11 @@ public class ServiceProfileLastMileProductCatalog {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
+  private String id;
+
   public static final String SERIALIZED_NAME_WEB_URL = "webUrl";
   @SerializedName(SERIALIZED_NAME_WEB_URL)
   @javax.annotation.Nullable
@@ -93,6 +98,25 @@ public class ServiceProfileLastMileProductCatalog {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public ServiceProfileLastMileProductCatalog id(@javax.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Last-mile provider or catalog identifier.
+   * @return id
+   */
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
   }
 
 
@@ -216,6 +240,7 @@ public class ServiceProfileLastMileProductCatalog {
     }
     ServiceProfileLastMileProductCatalog serviceProfileLastMileProductCatalog = (ServiceProfileLastMileProductCatalog) o;
     return Objects.equals(this.name, serviceProfileLastMileProductCatalog.name) &&
+        Objects.equals(this.id, serviceProfileLastMileProductCatalog.id) &&
         Objects.equals(this.webUrl, serviceProfileLastMileProductCatalog.webUrl) &&
         Objects.equals(this.deliveryDate, serviceProfileLastMileProductCatalog.deliveryDate) &&
         Objects.equals(this.offerings, serviceProfileLastMileProductCatalog.offerings)&&
@@ -224,7 +249,7 @@ public class ServiceProfileLastMileProductCatalog {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, webUrl, deliveryDate, offerings, additionalProperties);
+    return Objects.hash(name, id, webUrl, deliveryDate, offerings, additionalProperties);
   }
 
   @Override
@@ -232,6 +257,7 @@ public class ServiceProfileLastMileProductCatalog {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceProfileLastMileProductCatalog {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
     sb.append("    offerings: ").append(toIndentedString(offerings)).append("\n");
@@ -257,7 +283,7 @@ public class ServiceProfileLastMileProductCatalog {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("name", "webUrl", "deliveryDate", "offerings"));
+    openapiFields = new HashSet<String>(Arrays.asList("name", "id", "webUrl", "deliveryDate", "offerings"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -278,6 +304,9 @@ public class ServiceProfileLastMileProductCatalog {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("webUrl") != null && !jsonObj.get("webUrl").isJsonNull()) && !jsonObj.get("webUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webUrl").toString()));

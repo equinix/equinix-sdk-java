@@ -8,8 +8,16 @@ Remove sub-resource from an existing model
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**op** | **OpEnum** |  |  |
+|**op** | [**OpEnum**](#OpEnum) |  |  |
 |**path** | **String** | A JSON Pointer path. |  |
+
+
+
+## Enum: OpEnum
+
+| Name | Value |
+|---- | -----|
+| REMOVE | &quot;remove&quot; |
 
 
 

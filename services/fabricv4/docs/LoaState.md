@@ -13,8 +13,6 @@
 
 * `PENDING_ACCEPTANCE` (value: `"PENDING_ACCEPTANCE"`)
 
-* `REJECTED` (value: `"REJECTED"`)
-
 * `CANCELLED` (value: `"CANCELLED"`)
 
 * `INACTIVE` (value: `"INACTIVE"`)

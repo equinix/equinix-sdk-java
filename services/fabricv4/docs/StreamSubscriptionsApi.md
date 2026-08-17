@@ -8,6 +8,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**deleteStreamSubscriptionByUuid**](StreamSubscriptionsApi.md#deleteStreamSubscriptionByUuid) | **DELETE** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Delete Subscription |
 | [**getStreamSubscriptionByUuid**](StreamSubscriptionsApi.md#getStreamSubscriptionByUuid) | **GET** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Get Subscription |
 | [**getStreamSubscriptions**](StreamSubscriptionsApi.md#getStreamSubscriptions) | **GET** /fabric/v4/streams/{streamId}/subscriptions | Get Subscriptions |
+| [**searchStreamSubscriptions**](StreamSubscriptionsApi.md#searchStreamSubscriptions) | **POST** /fabric/v4/streamSubscriptions/search | Search Stream Subscriptions |
 | [**updateStreamSubscriptionByUuid**](StreamSubscriptionsApi.md#updateStreamSubscriptionByUuid) | **PUT** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Update Subscription |
 
 
@@ -303,6 +304,78 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchStreamSubscriptions"></a>
+# **searchStreamSubscriptions**
+> SearchStreamSubscriptionResponse searchStreamSubscriptions(streamSubscriptionSearchRequest)
+
+Search Stream Subscriptions
+
+This API provides capability to search stream subscriptions
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.StreamSubscriptionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
+    StreamSubscriptionSearchRequest streamSubscriptionSearchRequest = new StreamSubscriptionSearchRequest(); // StreamSubscriptionSearchRequest | 
+    try {
+      SearchStreamSubscriptionResponse result = apiInstance.searchStreamSubscriptions(streamSubscriptionSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StreamSubscriptionsApi#searchStreamSubscriptions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **streamSubscriptionSearchRequest** | [**StreamSubscriptionSearchRequest**](StreamSubscriptionSearchRequest.md)|  | |
+
+### Return type
+
+[**SearchStreamSubscriptionResponse**](SearchStreamSubscriptionResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |

@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.MaintenanceState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -135,6 +136,11 @@ public class PortOperation {
   @javax.annotation.Nullable
   private OffsetDateTime opStatusChangedAt;
 
+  public static final String SERIALIZED_NAME_MAINTENANCE_STATUS = "maintenanceStatus";
+  @SerializedName(SERIALIZED_NAME_MAINTENANCE_STATUS)
+  @javax.annotation.Nullable
+  private MaintenanceState maintenanceStatus;
+
   public PortOperation() {
   }
 
@@ -251,6 +257,25 @@ public class PortOperation {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 
+
+  public PortOperation maintenanceStatus(@javax.annotation.Nullable MaintenanceState maintenanceStatus) {
+    this.maintenanceStatus = maintenanceStatus;
+    return this;
+  }
+
+  /**
+   * Get maintenanceStatus
+   * @return maintenanceStatus
+   */
+  @javax.annotation.Nullable
+  public MaintenanceState getMaintenanceStatus() {
+    return maintenanceStatus;
+  }
+
+  public void setMaintenanceStatus(@javax.annotation.Nullable MaintenanceState maintenanceStatus) {
+    this.maintenanceStatus = maintenanceStatus;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -311,13 +336,14 @@ public class PortOperation {
         Objects.equals(this.evplVCCount, portOperation.evplVCCount) &&
         Objects.equals(this.fgVCCount, portOperation.fgVCCount) &&
         Objects.equals(this.accessVCCount, portOperation.accessVCCount) &&
-        Objects.equals(this.opStatusChangedAt, portOperation.opStatusChangedAt)&&
+        Objects.equals(this.opStatusChangedAt, portOperation.opStatusChangedAt) &&
+        Objects.equals(this.maintenanceStatus, portOperation.maintenanceStatus)&&
         Objects.equals(this.additionalProperties, portOperation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operationalStatus, connectionCount, evplVCCount, fgVCCount, accessVCCount, opStatusChangedAt, additionalProperties);
+    return Objects.hash(operationalStatus, connectionCount, evplVCCount, fgVCCount, accessVCCount, opStatusChangedAt, maintenanceStatus, additionalProperties);
   }
 
   @Override
@@ -330,6 +356,7 @@ public class PortOperation {
     sb.append("    fgVCCount: ").append(toIndentedString(fgVCCount)).append("\n");
     sb.append("    accessVCCount: ").append(toIndentedString(accessVCCount)).append("\n");
     sb.append("    opStatusChangedAt: ").append(toIndentedString(opStatusChangedAt)).append("\n");
+    sb.append("    maintenanceStatus: ").append(toIndentedString(maintenanceStatus)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -352,7 +379,7 @@ public class PortOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -377,6 +404,10 @@ public class PortOperation {
       // validate the optional field `operationalStatus`
       if (jsonObj.get("operationalStatus") != null && !jsonObj.get("operationalStatus").isJsonNull()) {
         OperationalStatusEnum.validateJsonElement(jsonObj.get("operationalStatus"));
+      }
+      // validate the optional field `maintenanceStatus`
+      if (jsonObj.get("maintenanceStatus") != null && !jsonObj.get("maintenanceStatus").isJsonNull()) {
+        MaintenanceState.validateJsonElement(jsonObj.get("maintenanceStatus"));
       }
   }
 

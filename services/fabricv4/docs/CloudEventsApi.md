@@ -7,6 +7,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getCloudEvent**](CloudEventsApi.md#getCloudEvent) | **GET** /fabric/v4/cloudevents/{cloudEventId} | Get Cloud Event |
 | [**getCloudEventByAssetId**](CloudEventsApi.md#getCloudEventByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/cloudevents | Get Cloud Events by Asset Id |
 | [**searchCloudEvents**](CloudEventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events |
+| [**searchLastOpEvents**](CloudEventsApi.md#searchLastOpEvents) | **POST** /fabric/v4/latestOperationalEvents/search | Search Last Operational Cloud Events |
 
 
 <a id="getCloudEvent"></a>
@@ -213,6 +214,77 @@ public class Example {
 ### Return type
 
 [**GetCloudEventsByAssetResponse**](GetCloudEventsByAssetResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchLastOpEvents"></a>
+# **searchLastOpEvents**
+> SearchOperationalEventResponse searchLastOpEvents(operationalEventSearchRequest)
+
+Search Last Operational Cloud Events
+
+This API provides capability to search last operational cloud events from a filtered query
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.CloudEventsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    CloudEventsApi apiInstance = new CloudEventsApi(defaultClient);
+    OperationalEventSearchRequest operationalEventSearchRequest = new OperationalEventSearchRequest(); // OperationalEventSearchRequest | 
+    try {
+      SearchOperationalEventResponse result = apiInstance.searchLastOpEvents(operationalEventSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CloudEventsApi#searchLastOpEvents");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **operationalEventSearchRequest** | [**OperationalEventSearchRequest**](OperationalEventSearchRequest.md)|  | |
+
+### Return type
+
+[**SearchOperationalEventResponse**](SearchOperationalEventResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,9 @@
 ## Enum
 
 
-* `_UUID` (value: `"/uuid"`)
+* `UUID` (value: `"/uuid"`)
+
+* `STREAMUUID` (value: `"/streamUuid"`)
 
 
 

@@ -13,13 +13,16 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,15 +58,15 @@ public class TagRequest {
   @javax.annotation.Nonnull
   private String type;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
-  private String name;
-
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "displayName";
   @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
   @javax.annotation.Nonnull
   private String displayName;
+
+  public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public TagRequest() {
   }
@@ -87,25 +90,6 @@ public class TagRequest {
   }
 
 
-  public TagRequest name(@javax.annotation.Nonnull String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Name of the Tag
-   * @return name
-   */
-  @javax.annotation.Nonnull
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nonnull String name) {
-    this.name = name;
-  }
-
-
   public TagRequest displayName(@javax.annotation.Nonnull String displayName) {
     this.displayName = displayName;
     return this;
@@ -122,6 +106,33 @@ public class TagRequest {
 
   public void setDisplayName(@javax.annotation.Nonnull String displayName) {
     this.displayName = displayName;
+  }
+
+
+  public TagRequest notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+
+  public TagRequest addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
+    return this;
+  }
+
+  /**
+   * Get notifications
+   * @return notifications
+   */
+  @javax.annotation.Nullable
+  public List<SimplifiedNotification> getNotifications() {
+    return notifications;
+  }
+
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
   }
 
   /**
@@ -180,14 +191,14 @@ public class TagRequest {
     }
     TagRequest tagRequest = (TagRequest) o;
     return Objects.equals(this.type, tagRequest.type) &&
-        Objects.equals(this.name, tagRequest.name) &&
-        Objects.equals(this.displayName, tagRequest.displayName)&&
+        Objects.equals(this.displayName, tagRequest.displayName) &&
+        Objects.equals(this.notifications, tagRequest.notifications)&&
         Objects.equals(this.additionalProperties, tagRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, displayName, additionalProperties);
+    return Objects.hash(type, displayName, notifications, additionalProperties);
   }
 
   @Override
@@ -195,8 +206,8 @@ public class TagRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TagRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -219,10 +230,10 @@ public class TagRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "displayName"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "displayName", "notifications"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "displayName"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "displayName"));
   }
 
   /**
@@ -248,11 +259,22 @@ public class TagRequest {
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if (!jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      }
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
       }
   }
 

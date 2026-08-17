@@ -17,9 +17,11 @@ import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.CompanyLogo;
 import com.equinix.sdk.fabricv4.model.CompanyMetro;
 import com.equinix.sdk.fabricv4.model.CompanyProfileChange;
+import com.equinix.sdk.fabricv4.model.CompanyProfileContact;
 import com.equinix.sdk.fabricv4.model.CompanyProfileResponseAccount;
 import com.equinix.sdk.fabricv4.model.CompanyServiceProfile;
 import com.equinix.sdk.fabricv4.model.PrivateService;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.equinix.sdk.fabricv4.model.TagResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -93,7 +95,7 @@ public class CompanyProfileResponse {
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
   @javax.annotation.Nullable
-  private Object state;
+  private String state;
 
   public static final String SERIALIZED_NAME_ACCOUNT = "account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -125,10 +127,20 @@ public class CompanyProfileResponse {
   @javax.annotation.Nullable
   private List<PrivateService> privateServices = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_POINT_OF_CONTACTS = "pointOfContacts";
+  @SerializedName(SERIALIZED_NAME_POINT_OF_CONTACTS)
+  @javax.annotation.Nullable
+  private List<CompanyProfileContact> pointOfContacts = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<Object> notifications = new ArrayList<>();
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_OVERVIEW = "overview";
+  @SerializedName(SERIALIZED_NAME_OVERVIEW)
+  @javax.annotation.Nullable
+  private String overview;
 
   public static final String SERIALIZED_NAME_WEB_URL = "webUrl";
   @SerializedName(SERIALIZED_NAME_WEB_URL)
@@ -267,21 +279,21 @@ public class CompanyProfileResponse {
   }
 
 
-  public CompanyProfileResponse state(@javax.annotation.Nullable Object state) {
+  public CompanyProfileResponse state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
   /**
-   * Get state
+   * Company Profile State
    * @return state
    */
   @javax.annotation.Nullable
-  public Object getState() {
+  public String getState() {
     return state;
   }
 
-  public void setState(@javax.annotation.Nullable Object state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
@@ -432,12 +444,39 @@ public class CompanyProfileResponse {
   }
 
 
-  public CompanyProfileResponse notifications(@javax.annotation.Nullable List<Object> notifications) {
+  public CompanyProfileResponse pointOfContacts(@javax.annotation.Nullable List<CompanyProfileContact> pointOfContacts) {
+    this.pointOfContacts = pointOfContacts;
+    return this;
+  }
+
+  public CompanyProfileResponse addPointOfContactsItem(CompanyProfileContact pointOfContactsItem) {
+    if (this.pointOfContacts == null) {
+      this.pointOfContacts = new ArrayList<>();
+    }
+    this.pointOfContacts.add(pointOfContactsItem);
+    return this;
+  }
+
+  /**
+   * Get pointOfContacts
+   * @return pointOfContacts
+   */
+  @javax.annotation.Nullable
+  public List<CompanyProfileContact> getPointOfContacts() {
+    return pointOfContacts;
+  }
+
+  public void setPointOfContacts(@javax.annotation.Nullable List<CompanyProfileContact> pointOfContacts) {
+    this.pointOfContacts = pointOfContacts;
+  }
+
+
+  public CompanyProfileResponse notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public CompanyProfileResponse addNotificationsItem(Object notificationsItem) {
+  public CompanyProfileResponse addNotificationsItem(SimplifiedNotification notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -450,12 +489,31 @@ public class CompanyProfileResponse {
    * @return notifications
    */
   @javax.annotation.Nullable
-  public List<Object> getNotifications() {
+  public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nullable List<Object> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
+  }
+
+
+  public CompanyProfileResponse overview(@javax.annotation.Nullable String overview) {
+    this.overview = overview;
+    return this;
+  }
+
+  /**
+   * Get overview
+   * @return overview
+   */
+  @javax.annotation.Nullable
+  public String getOverview() {
+    return overview;
+  }
+
+  public void setOverview(@javax.annotation.Nullable String overview) {
+    this.overview = overview;
   }
 
 
@@ -602,7 +660,9 @@ public class CompanyProfileResponse {
         Objects.equals(this.tags, companyProfileResponse.tags) &&
         Objects.equals(this.serviceProfiles, companyProfileResponse.serviceProfiles) &&
         Objects.equals(this.privateServices, companyProfileResponse.privateServices) &&
+        Objects.equals(this.pointOfContacts, companyProfileResponse.pointOfContacts) &&
         Objects.equals(this.notifications, companyProfileResponse.notifications) &&
+        Objects.equals(this.overview, companyProfileResponse.overview) &&
         Objects.equals(this.webUrl, companyProfileResponse.webUrl) &&
         Objects.equals(this.contactUrl, companyProfileResponse.contactUrl) &&
         Objects.equals(this.change, companyProfileResponse.change) &&
@@ -612,7 +672,7 @@ public class CompanyProfileResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, summary, description, state, account, metros, logo, tags, serviceProfiles, privateServices, notifications, webUrl, contactUrl, change, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, summary, description, state, account, metros, logo, tags, serviceProfiles, privateServices, pointOfContacts, notifications, overview, webUrl, contactUrl, change, changeLog, additionalProperties);
   }
 
   @Override
@@ -632,7 +692,9 @@ public class CompanyProfileResponse {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    serviceProfiles: ").append(toIndentedString(serviceProfiles)).append("\n");
     sb.append("    privateServices: ").append(toIndentedString(privateServices)).append("\n");
+    sb.append("    pointOfContacts: ").append(toIndentedString(pointOfContacts)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    overview: ").append(toIndentedString(overview)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    contactUrl: ").append(toIndentedString(contactUrl)).append("\n");
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
@@ -659,7 +721,7 @@ public class CompanyProfileResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "pointOfContacts", "notifications", "overview", "webUrl", "contactUrl", "change", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -695,6 +757,9 @@ public class CompanyProfileResponse {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
       }
       // validate the optional field `account`
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
@@ -760,9 +825,36 @@ public class CompanyProfileResponse {
           };
         }
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull() && !jsonObj.get("notifications").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+      if (jsonObj.get("pointOfContacts") != null && !jsonObj.get("pointOfContacts").isJsonNull()) {
+        JsonArray jsonArraypointOfContacts = jsonObj.getAsJsonArray("pointOfContacts");
+        if (jsonArraypointOfContacts != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("pointOfContacts").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `pointOfContacts` to be an array in the JSON string but got `%s`", jsonObj.get("pointOfContacts").toString()));
+          }
+
+          // validate the optional field `pointOfContacts` (array)
+          for (int i = 0; i < jsonArraypointOfContacts.size(); i++) {
+            CompanyProfileContact.validateJsonElement(jsonArraypointOfContacts.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("overview") != null && !jsonObj.get("overview").isJsonNull()) && !jsonObj.get("overview").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `overview` to be a primitive type in the JSON string but got `%s`", jsonObj.get("overview").toString()));
       }
       if ((jsonObj.get("webUrl") != null && !jsonObj.get("webUrl").isJsonNull()) && !jsonObj.get("webUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webUrl").toString()));

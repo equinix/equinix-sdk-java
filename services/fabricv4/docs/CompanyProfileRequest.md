@@ -11,8 +11,10 @@
 |**name** | **String** |  |  |
 |**summary** | **String** |  |  |
 |**description** | **String** |  |  |
-|**notifications** | **List&lt;Object&gt;** |  |  [optional] |
-|**webUrl** | **String** |  |  [optional] |
+|**pointOfContacts** | [**List&lt;CompanyProfileContact&gt;**](CompanyProfileContact.md) |  |  [optional] |
+|**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) |  |  [optional] |
+|**overview** | **String** |  |  [optional] |
+|**webUrl** | **String** |  |  |
 |**contactUrl** | **String** |  |  [optional] |
 
 

@@ -78,7 +78,7 @@ public class IpBlocksApi {
 
     /**
      * Build call for deleteIpBlockById
-     * @param uuid UUID of the Ip Block (required)
+     * @param uuid UUID of the IP Block (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -86,11 +86,11 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Ip Block cannot be deleted due to active products </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> IP Block cannot be deleted due to active products </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -151,20 +151,20 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete Ip Block by UUID
-     * Delete Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Delete IP Block by UUID
+     * Delete IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @return IpBlock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Ip Block cannot be deleted due to active products </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> IP Block cannot be deleted due to active products </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -174,20 +174,20 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete Ip Block by UUID
-     * Delete Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Delete IP Block by UUID
+     * Delete IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @return ApiResponse&lt;IpBlock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Ip Block cannot be deleted due to active products </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> IP Block cannot be deleted due to active products </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -198,9 +198,9 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete Ip Block by UUID (asynchronously)
-     * Delete Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Delete IP Block by UUID (asynchronously)
+     * Delete IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -208,11 +208,11 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Ip Block cannot be deleted due to active products </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> IP Block cannot be deleted due to active products </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -225,7 +225,7 @@ public class IpBlocksApi {
     }
     /**
      * Build call for getIpBlock
-     * @param uuid UUID of the Ip Block (required)
+     * @param uuid UUID of the IP Block (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -233,9 +233,9 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Block retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Block retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -296,18 +296,18 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve Ip Block by UUID
-     * Retrieve Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Retrieve IP Block by UUID
+     * Retrieve IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @return IpBlock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Block retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Block retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -317,18 +317,18 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve Ip Block by UUID
-     * Retrieve Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Retrieve IP Block by UUID
+     * Retrieve IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @return ApiResponse&lt;IpBlock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Block retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Block retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -339,9 +339,9 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve Ip Block by UUID (asynchronously)
-     * Retrieve Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * Retrieve IP Block by UUID (asynchronously)
+     * Retrieve IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -349,9 +349,9 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Block retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Block retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -364,7 +364,7 @@ public class IpBlocksApi {
     }
     /**
      * Build call for patchIpBlockById
-     * @param uuid UUID of the Ip Block (required)
+     * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -373,8 +373,8 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -441,9 +441,9 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch Ip Block by UUID
-     * patch Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * patch IP Block by UUID
+     * patch IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
      * @return IpBlock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -451,8 +451,8 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -462,9 +462,9 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch Ip Block by UUID
-     * patch Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * patch IP Block by UUID
+     * patch IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
      * @return ApiResponse&lt;IpBlock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -472,8 +472,8 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -484,9 +484,9 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch Ip Block by UUID (asynchronously)
-     * patch Ip Block by UUID
-     * @param uuid UUID of the Ip Block (required)
+     * patch IP Block by UUID (asynchronously)
+     * patch IP Block by UUID
+     * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -495,8 +495,8 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Ip Block not found </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> IP Block not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -517,7 +517,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Blocks found successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Blocks found successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -579,8 +579,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for Ip Blocks
-     * Search for Ip Blocks based on criteria
+     * Search for IP Blocks
+     * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @return IpBlockSearchResponseBody
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -588,7 +588,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Blocks found successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Blocks found successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -599,8 +599,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for Ip Blocks
-     * Search for Ip Blocks based on criteria
+     * Search for IP Blocks
+     * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @return ApiResponse&lt;IpBlockSearchResponseBody&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -608,7 +608,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Blocks found successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Blocks found successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -620,8 +620,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for Ip Blocks (asynchronously)
-     * Search for Ip Blocks based on criteria
+     * Search for IP Blocks (asynchronously)
+     * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -630,7 +630,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Ip Blocks found successfully </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> IP Blocks found successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -652,7 +652,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
@@ -715,8 +715,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned Ip Block request
-     * Submits new Equinix owned or customer owned Ip Block request
+     * Submits new Equinix owned or customer owned IP Block request
+     * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @return IpBlock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -724,7 +724,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
@@ -736,8 +736,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned Ip Block request
-     * Submits new Equinix owned or customer owned Ip Block request
+     * Submits new Equinix owned or customer owned IP Block request
+     * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @return ApiResponse&lt;IpBlock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -745,7 +745,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
@@ -758,8 +758,8 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned Ip Block request (asynchronously)
-     * Submits new Equinix owned or customer owned Ip Block request
+     * Submits new Equinix owned or customer owned IP Block request (asynchronously)
+     * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -768,7 +768,7 @@ public class IpBlocksApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> Ip Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
+        <tr><td> 202 </td><td> IP Block submitted, patched, or deletion accepted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input parameter </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>

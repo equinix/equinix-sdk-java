@@ -24,14 +24,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Loa Type
+ * Type of Letter of Authorization 
  */
 @JsonAdapter(LoaType.Adapter.class)
 public enum LoaType {
   
-  PATCH_PANEL_PORT_LOA("PATCH_PANEL_PORT_LOA"),
+  CAGE_LOA("CAGE_LOA"),
   
-  CAGE_LOA("CAGE_LOA");
+  PATCH_PANEL_LOA("PATCH_PANEL_LOA"),
+  
+  PATCH_PANEL_PORT_LOA("PATCH_PANEL_PORT_LOA");
 
   private String value;
 

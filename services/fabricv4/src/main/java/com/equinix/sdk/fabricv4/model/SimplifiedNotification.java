@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.Phone;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -71,7 +72,9 @@ public class SimplifiedNotification {
     
     TECHNICAL("TECHNICAL"),
     
-    ORDERING("ORDERING");
+    ORDERING("ORDERING"),
+    
+    QUOTE_NOTIFICATIONS("QUOTE_NOTIFICATIONS");
 
     private String value;
 
@@ -135,6 +138,11 @@ public class SimplifiedNotification {
   @SerializedName(SERIALIZED_NAME_REGISTERED_USERS)
   @javax.annotation.Nullable
   private List<String> registeredUsers = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_PHONE = "phone";
+  @SerializedName(SERIALIZED_NAME_PHONE)
+  @javax.annotation.Nullable
+  private List<Phone> phone = new ArrayList<>();
 
   public SimplifiedNotification() {
   }
@@ -230,6 +238,33 @@ public class SimplifiedNotification {
     this.registeredUsers = registeredUsers;
   }
 
+
+  public SimplifiedNotification phone(@javax.annotation.Nullable List<Phone> phone) {
+    this.phone = phone;
+    return this;
+  }
+
+  public SimplifiedNotification addPhoneItem(Phone phoneItem) {
+    if (this.phone == null) {
+      this.phone = new ArrayList<>();
+    }
+    this.phone.add(phoneItem);
+    return this;
+  }
+
+  /**
+   * Array of contact phone numbers
+   * @return phone
+   */
+  @javax.annotation.Nullable
+  public List<Phone> getPhone() {
+    return phone;
+  }
+
+  public void setPhone(@javax.annotation.Nullable List<Phone> phone) {
+    this.phone = phone;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -288,13 +323,14 @@ public class SimplifiedNotification {
     return Objects.equals(this.type, simplifiedNotification.type) &&
         Objects.equals(this.sendInterval, simplifiedNotification.sendInterval) &&
         Objects.equals(this.emails, simplifiedNotification.emails) &&
-        Objects.equals(this.registeredUsers, simplifiedNotification.registeredUsers)&&
+        Objects.equals(this.registeredUsers, simplifiedNotification.registeredUsers) &&
+        Objects.equals(this.phone, simplifiedNotification.phone)&&
         Objects.equals(this.additionalProperties, simplifiedNotification.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, sendInterval, emails, registeredUsers, additionalProperties);
+    return Objects.hash(type, sendInterval, emails, registeredUsers, phone, additionalProperties);
   }
 
   @Override
@@ -305,6 +341,7 @@ public class SimplifiedNotification {
     sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    registeredUsers: ").append(toIndentedString(registeredUsers)).append("\n");
+    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -327,7 +364,7 @@ public class SimplifiedNotification {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "sendInterval", "emails", "registeredUsers"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "sendInterval", "emails", "registeredUsers", "phone"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "emails"));
@@ -370,6 +407,20 @@ public class SimplifiedNotification {
       // ensure the optional json data is an array if present
       if (jsonObj.get("registeredUsers") != null && !jsonObj.get("registeredUsers").isJsonNull() && !jsonObj.get("registeredUsers").isJsonArray()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `registeredUsers` to be an array in the JSON string but got `%s`", jsonObj.get("registeredUsers").toString()));
+      }
+      if (jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) {
+        JsonArray jsonArrayphone = jsonObj.getAsJsonArray("phone");
+        if (jsonArrayphone != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("phone").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `phone` to be an array in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+          }
+
+          // validate the optional field `phone` (array)
+          for (int i = 0; i < jsonArrayphone.size(); i++) {
+            Phone.validateJsonElement(jsonArrayphone.get(i));
+          };
+        }
       }
   }
 

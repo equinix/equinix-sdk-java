@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.GeoScopeType;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceASide;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceConnectionType;
 import com.equinix.sdk.fabricv4.model.VirtualConnectionPriceZSide;
@@ -78,6 +79,11 @@ public class VirtualConnectionPrice {
   @SerializedName(SERIALIZED_NAME_Z_SIDE)
   @javax.annotation.Nullable
   private VirtualConnectionPriceZSide zSide;
+
+  public static final String SERIALIZED_NAME_GEO_SCOPE = "geoScope";
+  @SerializedName(SERIALIZED_NAME_GEO_SCOPE)
+  @javax.annotation.Nullable
+  private GeoScopeType geoScope;
 
   public VirtualConnectionPrice() {
   }
@@ -177,6 +183,25 @@ public class VirtualConnectionPrice {
     this.zSide = zSide;
   }
 
+
+  public VirtualConnectionPrice geoScope(@javax.annotation.Nullable GeoScopeType geoScope) {
+    this.geoScope = geoScope;
+    return this;
+  }
+
+  /**
+   * Get geoScope
+   * @return geoScope
+   */
+  @javax.annotation.Nullable
+  public GeoScopeType getGeoScope() {
+    return geoScope;
+  }
+
+  public void setGeoScope(@javax.annotation.Nullable GeoScopeType geoScope) {
+    this.geoScope = geoScope;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -236,13 +261,14 @@ public class VirtualConnectionPrice {
         Objects.equals(this.type, virtualConnectionPrice.type) &&
         Objects.equals(this.bandwidth, virtualConnectionPrice.bandwidth) &&
         Objects.equals(this.aSide, virtualConnectionPrice.aSide) &&
-        Objects.equals(this.zSide, virtualConnectionPrice.zSide)&&
+        Objects.equals(this.zSide, virtualConnectionPrice.zSide) &&
+        Objects.equals(this.geoScope, virtualConnectionPrice.geoScope)&&
         Objects.equals(this.additionalProperties, virtualConnectionPrice.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid, type, bandwidth, aSide, zSide, additionalProperties);
+    return Objects.hash(uuid, type, bandwidth, aSide, zSide, geoScope, additionalProperties);
   }
 
   @Override
@@ -254,6 +280,7 @@ public class VirtualConnectionPrice {
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    aSide: ").append(toIndentedString(aSide)).append("\n");
     sb.append("    zSide: ").append(toIndentedString(zSide)).append("\n");
+    sb.append("    geoScope: ").append(toIndentedString(geoScope)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -276,7 +303,7 @@ public class VirtualConnectionPrice {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "bandwidth", "aSide", "zSide"));
+    openapiFields = new HashSet<String>(Arrays.asList("uuid", "type", "bandwidth", "aSide", "zSide", "geoScope"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -309,6 +336,10 @@ public class VirtualConnectionPrice {
       // validate the optional field `zSide`
       if (jsonObj.get("zSide") != null && !jsonObj.get("zSide").isJsonNull()) {
         VirtualConnectionPriceZSide.validateJsonElement(jsonObj.get("zSide"));
+      }
+      // validate the optional field `geoScope`
+      if (jsonObj.get("geoScope") != null && !jsonObj.get("geoScope").isJsonNull()) {
+        GeoScopeType.validateJsonElement(jsonObj.get("geoScope"));
       }
   }
 

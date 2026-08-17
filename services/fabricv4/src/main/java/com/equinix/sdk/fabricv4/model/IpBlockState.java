@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Current state of the Ip Block
+ * Current state of the IP Block
  */
 @JsonAdapter(IpBlockState.Adapter.class)
 public enum IpBlockState {

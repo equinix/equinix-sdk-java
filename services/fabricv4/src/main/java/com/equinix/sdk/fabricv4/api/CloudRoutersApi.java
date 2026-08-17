@@ -38,6 +38,7 @@ import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterPackage;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequest;
+import com.equinix.sdk.fabricv4.model.CloudRouterReadResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterSearchRequest;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteSearchRequest;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteTableEntrySearchResponse;
@@ -1422,7 +1423,7 @@ public class CloudRoutersApi {
      * Get Routers
      * This API provides capability to retrieve user&#39;s Cloud Routers
      * @param routerId Cloud Router UUID (required)
-     * @return CloudRouter
+     * @return CloudRouterReadResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1435,8 +1436,8 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public CloudRouter getCloudRouterByUuid(@javax.annotation.Nonnull UUID routerId) throws ApiException {
-        ApiResponse<CloudRouter> localVarResp = getCloudRouterByUuidWithHttpInfo(routerId);
+    public CloudRouterReadResponse getCloudRouterByUuid(@javax.annotation.Nonnull UUID routerId) throws ApiException {
+        ApiResponse<CloudRouterReadResponse> localVarResp = getCloudRouterByUuidWithHttpInfo(routerId);
         return localVarResp.getData();
     }
 
@@ -1444,7 +1445,7 @@ public class CloudRoutersApi {
      * Get Routers
      * This API provides capability to retrieve user&#39;s Cloud Routers
      * @param routerId Cloud Router UUID (required)
-     * @return ApiResponse&lt;CloudRouter&gt;
+     * @return ApiResponse&lt;CloudRouterReadResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1457,9 +1458,9 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CloudRouter> getCloudRouterByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId) throws ApiException {
+    public ApiResponse<CloudRouterReadResponse> getCloudRouterByUuidWithHttpInfo(@javax.annotation.Nonnull UUID routerId) throws ApiException {
         okhttp3.Call localVarCall = getCloudRouterByUuidValidateBeforeCall(routerId, null);
-        Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
+        Type localVarReturnType = new TypeToken<CloudRouterReadResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1481,10 +1482,10 @@ public class CloudRoutersApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudRouterByUuidAsync(@javax.annotation.Nonnull UUID routerId, final ApiCallback<CloudRouter> _callback) throws ApiException {
+    public okhttp3.Call getCloudRouterByUuidAsync(@javax.annotation.Nonnull UUID routerId, final ApiCallback<CloudRouterReadResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudRouterByUuidValidateBeforeCall(routerId, _callback);
-        Type localVarReturnType = new TypeToken<CloudRouter>(){}.getType();
+        Type localVarReturnType = new TypeToken<CloudRouterReadResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

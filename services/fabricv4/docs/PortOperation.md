@@ -14,6 +14,7 @@ Operational specifications for ports.
 |**fgVCCount** | **Long** | Total number of connections. |  [optional] |
 |**accessVCCount** | **Long** | Total number of connections. |  [optional] |
 |**opStatusChangedAt** | **OffsetDateTime** | Date and time at which port availability changed. |  [optional] |
+|**maintenanceStatus** | **MaintenanceState** |  |  [optional] |
 
 
 

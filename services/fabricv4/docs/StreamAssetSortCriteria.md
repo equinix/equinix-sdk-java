@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**direction** | **StreamAssetSortDirection** |  |  [optional] |
-|**property** | **StreamAssetSortBy** |  |  [optional] |
+|**direction** | **StreamAssetSortDirection** |  |  |
+|**property** | **StreamAssetSortBy** |  |  |
 
 
 

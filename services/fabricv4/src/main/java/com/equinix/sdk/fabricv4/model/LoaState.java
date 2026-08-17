@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Loa State
+ * Current lifecycle state of the LOA.
  */
 @JsonAdapter(LoaState.Adapter.class)
 public enum LoaState {
@@ -36,8 +36,6 @@ public enum LoaState {
   PENDING_AUTHORIZATION("PENDING_AUTHORIZATION"),
   
   PENDING_ACCEPTANCE("PENDING_ACCEPTANCE"),
-  
-  REJECTED("REJECTED"),
   
   CANCELLED("CANCELLED"),
   

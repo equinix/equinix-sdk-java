@@ -59,9 +59,7 @@ public class ServiceProfileAccessPointCOLO {
   public enum TypeEnum {
     XF_PORT("XF_PORT"),
     
-    IX_PORT("IX_PORT"),
-    
-    XF_INTERCONNECT_PORT("XF_INTERCONNECT_PORT");
+    IX_PORT("IX_PORT");
 
     private String value;
 

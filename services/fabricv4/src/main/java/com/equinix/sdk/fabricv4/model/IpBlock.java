@@ -154,7 +154,7 @@ public class IpBlock {
   }
 
   /**
-   * Unique identifier for the Ip Block
+   * Unique identifier for the IP Block
    * @return uuid
    */
   @javax.annotation.Nonnull
@@ -173,7 +173,7 @@ public class IpBlock {
   }
 
   /**
-   * Resource URL path for the Ip Block
+   * Resource URL path for the IP Block
    * @return href
    */
   @javax.annotation.Nonnull
@@ -392,7 +392,7 @@ public class IpBlock {
   }
 
   /**
-   * Products using this Ip Block
+   * Products using this IP Block
    * @return assets
    */
   @javax.annotation.Nullable

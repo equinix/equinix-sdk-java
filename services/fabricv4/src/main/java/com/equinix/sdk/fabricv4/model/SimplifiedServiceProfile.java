@@ -164,10 +164,12 @@ public class SimplifiedServiceProfile {
   }
 
   public SimplifiedServiceProfile(
-     URI href
+     URI href, 
+     Boolean selfProfile
   ) {
     this();
     this.href = href;
+    this.selfProfile = selfProfile;
   }
 
   /**
@@ -525,7 +527,7 @@ public class SimplifiedServiceProfile {
   }
 
   /**
-   * Provider environments associated with this IC_PROFILE service profile.
+   * Provider environments associated with this IC_PROFILE service profile. &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
    * @return environments
    */
   @javax.annotation.Nullable
@@ -538,11 +540,6 @@ public class SimplifiedServiceProfile {
   }
 
 
-  public SimplifiedServiceProfile selfProfile(@javax.annotation.Nullable Boolean selfProfile) {
-    this.selfProfile = selfProfile;
-    return this;
-  }
-
   /**
    * response attribute indicates whether the profile belongs to the same organization as the api-invoker.
    * @return selfProfile
@@ -552,9 +549,6 @@ public class SimplifiedServiceProfile {
     return selfProfile;
   }
 
-  public void setSelfProfile(@javax.annotation.Nullable Boolean selfProfile) {
-    this.selfProfile = selfProfile;
-  }
 
 
   public SimplifiedServiceProfile projectId(@javax.annotation.Nullable String projectId) {

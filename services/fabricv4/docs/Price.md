@@ -22,6 +22,7 @@
 |**router** | [**FabricCloudRouterPrice**](FabricCloudRouterPrice.md) |  |  [optional] |
 |**port** | [**VirtualPortPrice**](VirtualPortPrice.md) |  |  [optional] |
 |**timeService** | [**TimeServicePrice**](TimeServicePrice.md) |  |  [optional] |
+|**opticalConnect** | [**OpticalConnectPrice**](OpticalConnectPrice.md) |  |  [optional] |
 
 
 

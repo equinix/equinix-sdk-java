@@ -81,7 +81,17 @@ public class StreamAsset {
     
     ORGANIZATION("ORGANIZATION"),
     
-    PROJECT("PROJECT");
+    PROJECT("PROJECT"),
+    
+    DATA("DATA"),
+    
+    MGMT("MGMT"),
+    
+    SSH("SSH"),
+    
+    FAB("FAB"),
+    
+    CTRL("CTRL");
 
     private String value;
 

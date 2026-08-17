@@ -13,6 +13,7 @@ Virtual Connection Product configuration
 |**bandwidth** | **Integer** |  |  [optional] |
 |**aSide** | [**VirtualConnectionPriceASide**](VirtualConnectionPriceASide.md) |  |  [optional] |
 |**zSide** | [**VirtualConnectionPriceZSide**](VirtualConnectionPriceZSide.md) |  |  [optional] |
+|**geoScope** | **GeoScopeType** |  |  [optional] |
 
 
 

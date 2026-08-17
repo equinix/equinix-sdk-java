@@ -14,7 +14,7 @@ Current state of latest service profile change
 |**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  |
 |**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  [optional] |
 |**information** | **String** | Additional information |  [optional] |
-|**data** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md) |  |  [optional] |
+|**data** | [**List&lt;ServiceProfileUpdateOperation&gt;**](ServiceProfileUpdateOperation.md) |  |  [optional] |
 
 
 

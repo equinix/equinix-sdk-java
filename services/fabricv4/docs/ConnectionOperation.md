@@ -13,6 +13,7 @@ Connection type-specific operational data
 |**operationalStatus** | [**OperationalStatusEnum**](#OperationalStatusEnum) | Connection operational status |  [optional] |
 |**errors** | [**List&lt;Error&gt;**](Error.md) |  |  [optional] |
 |**opStatusChangedAt** | **OffsetDateTime** | When connection transitioned into current operational status |  [optional] |
+|**maintenanceStatus** | **MaintenanceState** |  |  [optional] |
 
 
 

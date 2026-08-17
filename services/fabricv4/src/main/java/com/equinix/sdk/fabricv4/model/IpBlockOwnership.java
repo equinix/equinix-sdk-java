@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * IpBlockOwnership of the Ip Block
+ * IpBlockOwnership of the IP Block
  */
 @JsonAdapter(IpBlockOwnership.Adapter.class)
 public enum IpBlockOwnership {
