@@ -69,9 +69,7 @@ public class Stream {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    TELEMETRY_STREAM("TELEMETRY_STREAM"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    TELEMETRY_STREAM("TELEMETRY_STREAM");
 
     private String value;
 
@@ -94,7 +92,7 @@ public class Stream {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -151,9 +149,7 @@ public class Stream {
     
     DEPROVISIONED("DEPROVISIONED"),
     
-    FAILED("FAILED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    FAILED("FAILED");
 
     private String value;
 
@@ -176,7 +172,7 @@ public class Stream {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

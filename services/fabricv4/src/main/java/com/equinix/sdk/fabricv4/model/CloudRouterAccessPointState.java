@@ -41,9 +41,7 @@ public enum CloudRouterAccessPointState {
   
   NOT_PROVISIONED("NOT_PROVISIONED"),
   
-  NOT_DEPROVISIONED("NOT_DEPROVISIONED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  NOT_DEPROVISIONED("NOT_DEPROVISIONED");
 
   private String value;
 
@@ -66,7 +64,7 @@ public enum CloudRouterAccessPointState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterAccessPointState> {

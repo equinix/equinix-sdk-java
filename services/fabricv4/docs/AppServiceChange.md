@@ -22,7 +22,6 @@ Current state of latest AppService change
 | Name | Value |
 |---- | -----|
 | APP_SERVICE_UPDATE | &quot;APP_SERVICE_UPDATE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -33,7 +32,6 @@ Current state of latest AppService change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

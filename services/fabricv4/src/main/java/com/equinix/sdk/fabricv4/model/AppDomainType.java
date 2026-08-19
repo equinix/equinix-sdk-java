@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AppDomainType.Adapter.class)
 public enum AppDomainType {
   
-  APP_DOMAIN("APP_DOMAIN"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  APP_DOMAIN("APP_DOMAIN");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum AppDomainType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppDomainType> {

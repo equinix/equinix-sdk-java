@@ -77,9 +77,7 @@ public class Interconnect {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    XF_IC("XF_IC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    XF_IC("XF_IC");
 
     private String value;
 
@@ -102,7 +100,7 @@ public class Interconnect {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

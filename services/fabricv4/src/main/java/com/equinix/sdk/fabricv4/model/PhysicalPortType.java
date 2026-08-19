@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(PhysicalPortType.Adapter.class)
 public enum PhysicalPortType {
   
-  XF_PHYSICAL_PORT("XF_PHYSICAL_PORT"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  XF_PHYSICAL_PORT("XF_PHYSICAL_PORT");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum PhysicalPortType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<PhysicalPortType> {

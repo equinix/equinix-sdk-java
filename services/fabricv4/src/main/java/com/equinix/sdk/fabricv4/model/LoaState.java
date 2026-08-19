@@ -43,9 +43,7 @@ public enum LoaState {
   
   ACTIVE("ACTIVE"),
   
-  EXPIRED("EXPIRED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  EXPIRED("EXPIRED");
 
   private String value;
 
@@ -68,7 +66,7 @@ public enum LoaState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LoaState> {

@@ -59,9 +59,7 @@ public class PrecisionTimeChangeOperation {
     
     ADD("add"),
     
-    REMOVE("remove"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REMOVE("remove");
 
     private String value;
 
@@ -84,7 +82,7 @@ public class PrecisionTimeChangeOperation {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OpEnum> {
@@ -124,9 +122,7 @@ public class PrecisionTimeChangeOperation {
     
     NTPADVANCEDCONFIGURATION("/ntpAdvancedConfiguration"),
     
-    PTPADVANCEDCONFIGURATION("/ptpAdvancedConfiguration"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PTPADVANCEDCONFIGURATION("/ptpAdvancedConfiguration");
 
     private String value;
 
@@ -149,7 +145,7 @@ public class PrecisionTimeChangeOperation {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PathEnum> {

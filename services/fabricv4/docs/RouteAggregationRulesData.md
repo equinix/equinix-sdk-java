@@ -24,7 +24,6 @@
 | Name | Value |
 |---- | -----|
 | BGP_IPV4_PREFIX_AGGREGATION_RULE | &quot;BGP_IPv4_PREFIX_AGGREGATION_RULE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

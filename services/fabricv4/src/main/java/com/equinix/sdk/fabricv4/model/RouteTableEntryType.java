@@ -39,9 +39,7 @@ public enum RouteTableEntryType {
   
   IPV6_STATIC_ROUTE("IPv6_STATIC_ROUTE"),
   
-  IPV6_DIRECT_ROUTE("IPv6_DIRECT_ROUTE"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  IPV6_DIRECT_ROUTE("IPv6_DIRECT_ROUTE");
 
   private String value;
 
@@ -64,7 +62,7 @@ public enum RouteTableEntryType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<RouteTableEntryType> {

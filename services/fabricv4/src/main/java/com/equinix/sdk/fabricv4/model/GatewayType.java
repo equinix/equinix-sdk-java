@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(GatewayType.Adapter.class)
 public enum GatewayType {
   
-  VPN_GW("VPN_GW"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  VPN_GW("VPN_GW");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum GatewayType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<GatewayType> {

@@ -37,9 +37,7 @@ public enum IpBlockState {
   
   DELETED("DELETED"),
   
-  FAILED("FAILED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  FAILED("FAILED");
 
   private String value;
 
@@ -62,7 +60,7 @@ public enum IpBlockState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<IpBlockState> {

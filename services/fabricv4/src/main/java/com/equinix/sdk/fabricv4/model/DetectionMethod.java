@@ -57,9 +57,7 @@ public class DetectionMethod {
   public enum TypeEnum {
     THRESHOLD("THRESHOLD"),
     
-    OUTLIER("OUTLIER"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    OUTLIER("OUTLIER");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class DetectionMethod {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -121,9 +119,7 @@ public class DetectionMethod {
   public enum OperandEnum {
     ABOVE("ABOVE"),
     
-    BELOW("BELOW"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    BELOW("BELOW");
 
     private String value;
 
@@ -146,7 +142,7 @@ public class DetectionMethod {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OperandEnum> {

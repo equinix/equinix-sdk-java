@@ -37,9 +37,7 @@ public enum AppSubscriptionPrioritization {
   
   THRESHOLD("THRESHOLD"),
   
-  ANY_TAG("ANY_TAG"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  ANY_TAG("ANY_TAG");
 
   private String value;
 
@@ -62,7 +60,7 @@ public enum AppSubscriptionPrioritization {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppSubscriptionPrioritization> {

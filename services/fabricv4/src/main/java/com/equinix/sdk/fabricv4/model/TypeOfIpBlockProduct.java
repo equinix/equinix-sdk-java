@@ -31,9 +31,7 @@ public enum TypeOfIpBlockProduct {
   
   IPV4_IP_BLOCK("IPV4_IP_BLOCK"),
   
-  IPV6_IP_BLOCK("IPV6_IP_BLOCK"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  IPV6_IP_BLOCK("IPV6_IP_BLOCK");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum TypeOfIpBlockProduct {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<TypeOfIpBlockProduct> {

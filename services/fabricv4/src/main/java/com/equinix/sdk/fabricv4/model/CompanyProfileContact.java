@@ -58,9 +58,7 @@ public class CompanyProfileContact {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    SUPPORT("SUPPORT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    SUPPORT("SUPPORT");
 
     private String value;
 
@@ -83,7 +81,7 @@ public class CompanyProfileContact {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

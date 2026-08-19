@@ -67,9 +67,7 @@ public class Router {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    XF_ROUTER("XF_ROUTER"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    XF_ROUTER("XF_ROUTER");
 
     private String value;
 
@@ -92,7 +90,7 @@ public class Router {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

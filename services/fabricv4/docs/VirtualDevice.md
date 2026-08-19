@@ -22,7 +22,6 @@ Virtual Device AccessPoint Information
 | Name | Value |
 |---- | -----|
 | EDGE | &quot;EDGE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

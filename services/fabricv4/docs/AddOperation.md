@@ -19,7 +19,6 @@ Add Sub-Resource to the existing model
 | Name | Value |
 |---- | -----|
 | ADD | &quot;add&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

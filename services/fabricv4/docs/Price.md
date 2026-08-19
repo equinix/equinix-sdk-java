@@ -34,7 +34,6 @@
 | NUMBER_12 | 12 |
 | NUMBER_24 | 24 |
 | NUMBER_36 | 36 |
-| NUMBER_unknown_default_open_api | 11184809 |
 
 
 

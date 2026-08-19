@@ -20,7 +20,6 @@
 | Name | Value |
 |---- | -----|
 | _PROJECT_PROJECTID | &quot;/project/projectId&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -29,7 +28,6 @@
 | Name | Value |
 |---- | -----|
 | EQUAL | &quot;&#x3D;&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

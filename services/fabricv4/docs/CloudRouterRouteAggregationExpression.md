@@ -24,7 +24,6 @@ Filter expression that can be AND, OR, or a simple expression
 | ATTACHMENTSTATUS | &quot;/attachmentStatus&quot; |
 | CHANGELOG_CREATEDDATETIME | &quot;/changeLog/createdDateTime&quot; |
 | CHANGELOG_UPDATEDDATETIME | &quot;/changeLog/updatedDateTime&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

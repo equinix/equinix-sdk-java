@@ -59,9 +59,7 @@ public enum NetworkSearchFieldName {
   
   CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
   
-  STAR("/_*"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  STAR("/_*");
 
   private String value;
 
@@ -84,7 +82,7 @@ public enum NetworkSearchFieldName {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<NetworkSearchFieldName> {

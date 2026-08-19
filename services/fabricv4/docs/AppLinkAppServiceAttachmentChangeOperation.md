@@ -21,7 +21,6 @@ App Link change operation data
 | REPLACE | &quot;replace&quot; |
 | ADD | &quot;add&quot; |
 | REMOVE | &quot;remove&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -30,7 +29,6 @@ App Link change operation data
 | Name | Value |
 |---- | -----|
 | _DESTINATIONIP | &quot;/destinationIp&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

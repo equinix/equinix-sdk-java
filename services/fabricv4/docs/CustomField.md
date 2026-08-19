@@ -24,7 +24,6 @@ Define Custom Attributes
 | STRING | &quot;STRING&quot; |
 | LIST | &quot;LIST&quot; |
 | NUMBER | &quot;NUMBER&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

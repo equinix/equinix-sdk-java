@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ProviderEnvironmentTypeEnum.Adapter.class)
 public enum ProviderEnvironmentTypeEnum {
   
-  IC_ENV("IC_ENV"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  IC_ENV("IC_ENV");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum ProviderEnvironmentTypeEnum {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<ProviderEnvironmentTypeEnum> {

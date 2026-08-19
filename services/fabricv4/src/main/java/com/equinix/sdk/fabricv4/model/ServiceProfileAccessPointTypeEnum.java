@@ -31,9 +31,7 @@ public enum ServiceProfileAccessPointTypeEnum {
   
   VD("VD"),
   
-  COLO("COLO"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  COLO("COLO");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum ServiceProfileAccessPointTypeEnum {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<ServiceProfileAccessPointTypeEnum> {

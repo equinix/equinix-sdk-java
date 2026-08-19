@@ -79,9 +79,7 @@ public enum SortBy {
   
   OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
   
-  REDUNDANCY_PRIORITY("/redundancy/priority"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  REDUNDANCY_PRIORITY("/redundancy/priority");
 
   private String value;
 
@@ -104,7 +102,7 @@ public enum SortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<SortBy> {

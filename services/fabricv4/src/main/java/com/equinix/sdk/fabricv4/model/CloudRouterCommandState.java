@@ -35,9 +35,7 @@ public enum CloudRouterCommandState {
   
   FAILED("FAILED"),
   
-  DELETED("DELETED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DELETED("DELETED");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum CloudRouterCommandState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterCommandState> {

@@ -57,9 +57,7 @@ public class PtpAdvanceConfiguration {
   public enum TimeScaleEnum {
     ARB("ARB"),
     
-    PTP("PTP"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PTP("PTP");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class PtpAdvanceConfiguration {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TimeScaleEnum> {
@@ -137,9 +135,7 @@ public class PtpAdvanceConfiguration {
     
     NUMBER_0(0),
     
-    NUMBER_1(1),
-    
-    NUMBER_unknown_default_open_api(11184809);
+    NUMBER_1(1);
 
     private Integer value;
 
@@ -162,7 +158,7 @@ public class PtpAdvanceConfiguration {
           return b;
         }
       }
-      return NUMBER_unknown_default_open_api;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<LogAnnounceIntervalEnum> {
@@ -206,9 +202,7 @@ public class PtpAdvanceConfiguration {
     
     NUMBER_0(0),
     
-    NUMBER_1(1),
-    
-    NUMBER_unknown_default_open_api(11184809);
+    NUMBER_1(1);
 
     private Integer value;
 
@@ -231,7 +225,7 @@ public class PtpAdvanceConfiguration {
           return b;
         }
       }
-      return NUMBER_unknown_default_open_api;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<LogSyncIntervalEnum> {
@@ -275,9 +269,7 @@ public class PtpAdvanceConfiguration {
     
     NUMBER_0(0),
     
-    NUMBER_1(1),
-    
-    NUMBER_unknown_default_open_api(11184809);
+    NUMBER_1(1);
 
     private Integer value;
 
@@ -300,7 +292,7 @@ public class PtpAdvanceConfiguration {
           return b;
         }
       }
-      return NUMBER_unknown_default_open_api;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<LogDelayReqIntervalEnum> {
@@ -336,9 +328,7 @@ public class PtpAdvanceConfiguration {
     
     UNICAST("UNICAST"),
     
-    HYBRID("HYBRID"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    HYBRID("HYBRID");
 
     private String value;
 
@@ -361,7 +351,7 @@ public class PtpAdvanceConfiguration {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TransportModeEnum> {

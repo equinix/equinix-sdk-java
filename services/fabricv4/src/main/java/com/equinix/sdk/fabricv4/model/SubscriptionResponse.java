@@ -84,9 +84,7 @@ public class SubscriptionResponse {
     
     AZURE("AZURE"),
     
-    REDHAT("REDHAT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REDHAT("REDHAT");
 
     private String value;
 
@@ -109,7 +107,7 @@ public class SubscriptionResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<MarketplaceEnum> {
@@ -143,9 +141,7 @@ public class SubscriptionResponse {
   public enum OfferTypeEnum {
     PUBLIC("PUBLIC"),
     
-    PRIVATE_OFFER("PRIVATE_OFFER"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PRIVATE_OFFER("PRIVATE_OFFER");
 
     private String value;
 
@@ -168,7 +164,7 @@ public class SubscriptionResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OfferTypeEnum> {

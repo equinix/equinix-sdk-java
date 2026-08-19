@@ -91,9 +91,7 @@ public class StreamAsset {
     
     FAB("FAB"),
     
-    CTRL("CTRL"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    CTRL("CTRL");
 
     private String value;
 
@@ -116,7 +114,7 @@ public class StreamAsset {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -161,9 +159,7 @@ public class StreamAsset {
     
     DETACHING("DETACHING"),
     
-    FAILED("FAILED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    FAILED("FAILED");
 
     private String value;
 
@@ -186,7 +182,7 @@ public class StreamAsset {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<AttachmentStatusEnum> {

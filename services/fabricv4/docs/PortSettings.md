@@ -23,7 +23,6 @@ Port configuration settings
 | STANDARD | &quot;STANDARD&quot; |
 | UNLIMITED | &quot;UNLIMITED&quot; |
 | UNLIMITED_PLUS | &quot;UNLIMITED_PLUS&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

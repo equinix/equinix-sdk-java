@@ -28,7 +28,6 @@ Stream Subscription object
 | Name | Value |
 |---- | -----|
 | STREAM_SUBSCRIPTION | &quot;STREAM_SUBSCRIPTION&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -42,7 +41,6 @@ Stream Subscription object
 | DEPROVISIONING | &quot;DEPROVISIONING&quot; |
 | DEPROVISIONED | &quot;DEPROVISIONED&quot; |
 | FAILED | &quot;FAILED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

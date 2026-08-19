@@ -41,9 +41,7 @@ public enum VirtualConnectionPriceAccessPointType {
   
   NETWORK("NETWORK"),
   
-  METAL_NETWORK("METAL_NETWORK"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  METAL_NETWORK("METAL_NETWORK");
 
   private String value;
 
@@ -66,7 +64,7 @@ public enum VirtualConnectionPriceAccessPointType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<VirtualConnectionPriceAccessPointType> {

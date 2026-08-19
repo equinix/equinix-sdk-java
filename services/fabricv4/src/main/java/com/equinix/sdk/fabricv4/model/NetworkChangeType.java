@@ -33,9 +33,7 @@ public enum NetworkChangeType {
   
   UPDATE("NETWORK_UPDATE"),
   
-  DELETION("NETWORK_DELETION"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DELETION("NETWORK_DELETION");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum NetworkChangeType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<NetworkChangeType> {

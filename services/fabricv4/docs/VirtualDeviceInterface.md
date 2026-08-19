@@ -19,7 +19,6 @@ Virtual Device Interface Information
 | Name | Value |
 |---- | -----|
 | NETWORK | &quot;NETWORK&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

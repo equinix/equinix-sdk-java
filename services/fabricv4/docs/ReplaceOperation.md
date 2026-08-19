@@ -19,7 +19,6 @@ Replace attribute value or sub-resource in the existing model
 | Name | Value |
 |---- | -----|
 | REPLACE | &quot;replace&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

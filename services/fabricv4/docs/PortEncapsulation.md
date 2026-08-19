@@ -20,7 +20,6 @@ Port encapsulation configuration
 | DOT1Q | &quot;DOT1Q&quot; |
 | QINQ | &quot;QINQ&quot; |
 | UNTAGGED | &quot;UNTAGGED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -76,9 +76,7 @@ public class ExchangeServiceResponse {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    IX("IX"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    IX("IX");
 
     private String value;
 
@@ -101,7 +99,7 @@ public class ExchangeServiceResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -168,9 +166,7 @@ public class ExchangeServiceResponse {
     
     DEPROVISIONED("DEPROVISIONED"),
     
-    DEPROVISIONING_FAILED("DEPROVISIONING_FAILED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DEPROVISIONING_FAILED("DEPROVISIONING_FAILED");
 
     private String value;
 
@@ -193,7 +189,7 @@ public class ExchangeServiceResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

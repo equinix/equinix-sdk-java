@@ -24,7 +24,6 @@ Stream subscription sink settings
 |---- | -----|
 | CLOUDEVENT | &quot;CLOUDEVENT&quot; |
 | OPENTELEMETRY | &quot;OPENTELEMETRY&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

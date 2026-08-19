@@ -74,9 +74,7 @@ public class SimplifiedNotification {
     
     ORDERING("ORDERING"),
     
-    QUOTE_NOTIFICATIONS("QUOTE_NOTIFICATIONS"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    QUOTE_NOTIFICATIONS("QUOTE_NOTIFICATIONS");
 
     private String value;
 
@@ -99,7 +97,7 @@ public class SimplifiedNotification {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

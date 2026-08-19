@@ -30,7 +30,6 @@
 | Name | Value |
 |---- | -----|
 | IX | &quot;IX&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -49,7 +48,6 @@
 | DEPROVISIONING | &quot;DEPROVISIONING&quot; |
 | DEPROVISIONED | &quot;DEPROVISIONED&quot; |
 | DEPROVISIONING_FAILED | &quot;DEPROVISIONING_FAILED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

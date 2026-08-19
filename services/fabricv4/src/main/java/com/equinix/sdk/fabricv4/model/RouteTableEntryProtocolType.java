@@ -33,9 +33,7 @@ public enum RouteTableEntryProtocolType {
   
   STATIC("STATIC"),
   
-  DIRECT("DIRECT"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DIRECT("DIRECT");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum RouteTableEntryProtocolType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<RouteTableEntryProtocolType> {

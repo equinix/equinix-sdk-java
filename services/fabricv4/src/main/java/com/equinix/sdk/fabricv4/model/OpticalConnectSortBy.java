@@ -45,9 +45,7 @@ public enum OpticalConnectSortBy {
   
   CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
   
-  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
   private String value;
 
@@ -70,7 +68,7 @@ public enum OpticalConnectSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<OpticalConnectSortBy> {

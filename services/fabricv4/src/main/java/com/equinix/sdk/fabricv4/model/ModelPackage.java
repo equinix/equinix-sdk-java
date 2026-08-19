@@ -59,9 +59,7 @@ public class ModelPackage {
     
     UNLIMITED("UNLIMITED"),
     
-    UNLIMITED_PLUS("UNLIMITED_PLUS"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNLIMITED_PLUS("UNLIMITED_PLUS");
 
     private String value;
 
@@ -84,7 +82,7 @@ public class ModelPackage {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<CodeEnum> {

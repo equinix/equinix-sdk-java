@@ -56,9 +56,7 @@ public class StreamPostRequest {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    TELEMETRY_STREAM("TELEMETRY_STREAM"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    TELEMETRY_STREAM("TELEMETRY_STREAM");
 
     private String value;
 
@@ -81,7 +79,7 @@ public class StreamPostRequest {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

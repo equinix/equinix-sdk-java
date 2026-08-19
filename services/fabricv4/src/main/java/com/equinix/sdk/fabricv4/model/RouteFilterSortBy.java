@@ -43,9 +43,7 @@ public enum RouteFilterSortBy {
   
   CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
   
-  CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime");
 
   private String value;
 
@@ -68,7 +66,7 @@ public enum RouteFilterSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<RouteFilterSortBy> {

@@ -67,9 +67,7 @@ public class RouteFilterRulesData {
   public enum TypeEnum {
     IPV4_PREFIX_FILTER_RULE("BGP_IPv4_PREFIX_FILTER_RULE"),
     
-    IPV6_PREFIX_FILTER_RULE("BGP_IPv6_PREFIX_FILTER_RULE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    IPV6_PREFIX_FILTER_RULE("BGP_IPv6_PREFIX_FILTER_RULE");
 
     private String value;
 
@@ -92,7 +90,7 @@ public class RouteFilterRulesData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -156,9 +154,7 @@ public class RouteFilterRulesData {
   public enum ActionEnum {
     PERMIT("PERMIT"),
     
-    DENY("DENY"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DENY("DENY");
 
     private String value;
 
@@ -181,7 +177,7 @@ public class RouteFilterRulesData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ActionEnum> {

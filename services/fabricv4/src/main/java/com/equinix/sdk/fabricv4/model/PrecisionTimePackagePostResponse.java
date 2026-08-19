@@ -67,9 +67,7 @@ public class PrecisionTimePackagePostResponse {
     
     PTP_STANDARD("PTP_STANDARD"),
     
-    PTP_ENTERPRISE("PTP_ENTERPRISE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PTP_ENTERPRISE("PTP_ENTERPRISE");
 
     private String value;
 
@@ -92,7 +90,7 @@ public class PrecisionTimePackagePostResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<CodeEnum> {

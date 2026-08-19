@@ -65,9 +65,7 @@ public class ExchangeServiceNotification {
     
     ESCALATION("ESCALATION"),
     
-    ORDERING("ORDERING"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ORDERING("ORDERING");
 
     private String value;
 
@@ -90,7 +88,7 @@ public class ExchangeServiceNotification {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

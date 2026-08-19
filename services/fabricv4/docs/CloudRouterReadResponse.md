@@ -33,7 +33,6 @@ Fabric Cloud Router read response object
 |---- | -----|
 | IC_ROUTER | &quot;IC_ROUTER&quot; |
 | XF_ROUTER | &quot;XF_ROUTER&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

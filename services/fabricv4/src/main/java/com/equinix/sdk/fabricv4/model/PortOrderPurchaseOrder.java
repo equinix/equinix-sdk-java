@@ -87,9 +87,7 @@ public class PortOrderPurchaseOrder {
     
     NEW("NEW"),
     
-    BLANKET("BLANKET"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    BLANKET("BLANKET");
 
     private String value;
 
@@ -112,7 +110,7 @@ public class PortOrderPurchaseOrder {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<SelectionTypeEnum> {
@@ -151,9 +149,7 @@ public class PortOrderPurchaseOrder {
     
     NEW("NEW"),
     
-    BLANKET("BLANKET"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    BLANKET("BLANKET");
 
     private String value;
 
@@ -176,7 +172,7 @@ public class PortOrderPurchaseOrder {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

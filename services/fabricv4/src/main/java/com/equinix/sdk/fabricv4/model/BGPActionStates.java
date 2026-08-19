@@ -33,9 +33,7 @@ public enum BGPActionStates {
   
   FAILED("FAILED"),
   
-  SUCCEEDED("SUCCEEDED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  SUCCEEDED("SUCCEEDED");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum BGPActionStates {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<BGPActionStates> {

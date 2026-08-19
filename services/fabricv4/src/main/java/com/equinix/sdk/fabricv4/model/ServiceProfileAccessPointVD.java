@@ -57,9 +57,7 @@ public class ServiceProfileAccessPointVD {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    VD("VD"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    VD("VD");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class ServiceProfileAccessPointVD {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

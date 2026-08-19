@@ -20,7 +20,6 @@
 |---- | -----|
 | SYSTEM | &quot;system&quot; |
 | USER | &quot;user&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -30,7 +29,6 @@
 |---- | -----|
 | EQUINIX | &quot;equinix&quot; |
 | USERID | &quot;userId&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

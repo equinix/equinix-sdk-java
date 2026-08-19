@@ -74,9 +74,7 @@ public class ConnectionOperation {
   public enum OperationalStatusEnum {
     UP("UP"),
     
-    DOWN("DOWN"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DOWN("DOWN");
 
     private String value;
 
@@ -99,7 +97,7 @@ public class ConnectionOperation {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OperationalStatusEnum> {

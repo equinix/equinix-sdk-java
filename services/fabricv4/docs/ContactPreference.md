@@ -19,7 +19,6 @@ Contact preference for the phone number
 |---- | -----|
 | WORK_HOURS | &quot;WORK_HOURS&quot; |
 | ANYTIME | &quot;ANYTIME&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -27,7 +27,6 @@ Stream object
 | Name | Value |
 |---- | -----|
 | TELEMETRY_STREAM | &quot;TELEMETRY_STREAM&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -41,7 +40,6 @@ Stream object
 | DEPROVISIONING | &quot;DEPROVISIONING&quot; |
 | DEPROVISIONED | &quot;DEPROVISIONED&quot; |
 | FAILED | &quot;FAILED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -26,7 +26,6 @@ Current state of latest connection change
 | UPDATE | &quot;CONNECTION_UPDATE&quot; |
 | DELETION | &quot;CONNECTION_DELETION&quot; |
 | PROVIDER_STATUS_REQUEST | &quot;CONNECTION_PROVIDER_STATUS_REQUEST&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -40,7 +39,6 @@ Current state of latest connection change
 | REJECTED | &quot;REJECTED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
 | SUBMITTED_FOR_APPROVAL | &quot;SUBMITTED_FOR_APPROVAL&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

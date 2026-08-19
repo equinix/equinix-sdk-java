@@ -130,9 +130,7 @@ public class Port {
     
     _10GBASE_SMF("10GBASE_SMF"),
     
-    _400GBASE_LR4("400GBASE_LR4"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    _400GBASE_LR4("400GBASE_LR4");
 
     private String value;
 
@@ -155,7 +153,7 @@ public class Port {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PhysicalPortsTypeEnum> {
@@ -196,9 +194,7 @@ public class Port {
     
     BMMR("BMMR"),
     
-    REMOTE("REMOTE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REMOTE("REMOTE");
 
     private String value;
 
@@ -221,7 +217,7 @@ public class Port {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ConnectivitySourceTypeEnum> {
@@ -255,9 +251,7 @@ public class Port {
   public enum BmmrTypeEnum {
     SELF("SELF"),
     
-    EQUINIX("EQUINIX"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    EQUINIX("EQUINIX");
 
     private String value;
 
@@ -280,7 +274,7 @@ public class Port {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<BmmrTypeEnum> {
@@ -349,9 +343,7 @@ public class Port {
   public enum ServiceTypeEnum {
     EPL("EPL"),
     
-    MSP("MSP"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    MSP("MSP");
 
     private String value;
 
@@ -374,7 +366,7 @@ public class Port {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ServiceTypeEnum> {

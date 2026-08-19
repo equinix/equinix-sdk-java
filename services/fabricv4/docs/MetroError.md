@@ -25,7 +25,6 @@ Error with details
 | _3036013 | &quot;EQ-3036013&quot; |
 | _3036030 | &quot;EQ-3036030&quot; |
 | _3036100 | &quot;EQ-3036100&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -39,7 +38,6 @@ Error with details
 | INVALID_QUERY_OR_PATH_PARAMETER | &quot;Invalid Query or Path Parameter&quot; |
 | INTERNAL_SERVER_ERROR | &quot;Internal Server Error&quot; |
 | METRO_NOT_FOUND | &quot;Metro Not Found&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

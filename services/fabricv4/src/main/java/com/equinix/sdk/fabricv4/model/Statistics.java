@@ -69,9 +69,7 @@ public class Statistics {
   public enum ViewPointEnum {
     ASIDE("aSide"),
     
-    ZSIDE("zSide"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ZSIDE("zSide");
 
     private String value;
 
@@ -94,7 +92,7 @@ public class Statistics {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ViewPointEnum> {

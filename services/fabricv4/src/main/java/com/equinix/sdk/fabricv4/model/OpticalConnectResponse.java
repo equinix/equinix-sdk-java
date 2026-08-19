@@ -77,9 +77,7 @@ public class OpticalConnectResponse {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    OC("OC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    OC("OC");
 
     private String value;
 
@@ -102,7 +100,7 @@ public class OpticalConnectResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -153,9 +151,7 @@ public class OpticalConnectResponse {
     
     BMMR("BMMR"),
     
-    REMOTE("REMOTE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REMOTE("REMOTE");
 
     private String value;
 
@@ -178,7 +174,7 @@ public class OpticalConnectResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ConnectionDestinationTypeEnum> {
@@ -214,9 +210,7 @@ public class OpticalConnectResponse {
     
     PROTECTED("PROTECTED"),
     
-    UNPROTECTED("UNPROTECTED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNPROTECTED("UNPROTECTED");
 
     private String value;
 
@@ -239,7 +233,7 @@ public class OpticalConnectResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PathTypeEnum> {
@@ -273,9 +267,7 @@ public class OpticalConnectResponse {
   public enum BmmrTypeEnum {
     EQUINIX("EQUINIX"),
     
-    SELF("SELF"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    SELF("SELF");
 
     private String value;
 
@@ -298,7 +290,7 @@ public class OpticalConnectResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<BmmrTypeEnum> {

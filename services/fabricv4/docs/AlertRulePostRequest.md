@@ -23,7 +23,6 @@ Create Stream Alert Rules
 | Name | Value |
 |---- | -----|
 | METRIC_ALERT | &quot;METRIC_ALERT&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

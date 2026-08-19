@@ -62,9 +62,7 @@ public class PriceError {
     
     _3038022("EQ-3038022"),
     
-    _3038030("EQ-3038030"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    _3038030("EQ-3038030");
 
     private String value;
 
@@ -87,7 +85,7 @@ public class PriceError {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ErrorCodeEnum> {
@@ -123,9 +121,7 @@ public class PriceError {
     
     INVALID_VALUE("Invalid value"),
     
-    INTERNAL_SERVER_ERROR("Internal Server Error"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    INTERNAL_SERVER_ERROR("Internal Server Error");
 
     private String value;
 
@@ -148,7 +144,7 @@ public class PriceError {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<ErrorMessageEnum> {

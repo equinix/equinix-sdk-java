@@ -65,9 +65,7 @@ public class RoutingProtocolChange {
     
     CREATION("ROUTING_PROTOCOL_CREATION"),
     
-    DELETION("ROUTING_PROTOCOL_DELETION"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DELETION("ROUTING_PROTOCOL_DELETION");
 
     private String value;
 
@@ -90,7 +88,7 @@ public class RoutingProtocolChange {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

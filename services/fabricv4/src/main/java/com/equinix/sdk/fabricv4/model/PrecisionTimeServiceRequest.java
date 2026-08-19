@@ -66,9 +66,7 @@ public class PrecisionTimeServiceRequest {
   public enum TypeEnum {
     NTP("NTP"),
     
-    PTP("PTP"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PTP("PTP");
 
     private String value;
 
@@ -91,7 +89,7 @@ public class PrecisionTimeServiceRequest {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

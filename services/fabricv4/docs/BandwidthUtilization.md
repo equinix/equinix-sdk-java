@@ -20,7 +20,6 @@ Bandwidth utilization statistics (octet counters-based)
 | Name | Value |
 |---- | -----|
 | MBPS | &quot;Mbps&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

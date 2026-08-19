@@ -20,7 +20,6 @@ Time Service Product configuration
 |---- | -----|
 | NTP | &quot;NTP&quot; |
 | PTP | &quot;PTP&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

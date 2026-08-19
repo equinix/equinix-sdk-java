@@ -64,9 +64,7 @@ public class RoutingProtocolDirectData {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    DIRECT("DIRECT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DIRECT("DIRECT");
 
     private String value;
 
@@ -89,7 +87,7 @@ public class RoutingProtocolDirectData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -156,9 +154,7 @@ public class RoutingProtocolDirectData {
     
     REPROVISIONING("REPROVISIONING"),
     
-    FAILED("FAILED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    FAILED("FAILED");
 
     private String value;
 
@@ -181,7 +177,7 @@ public class RoutingProtocolDirectData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

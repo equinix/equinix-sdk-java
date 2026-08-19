@@ -62,9 +62,7 @@ public class ContactPreference {
   public enum AvailabilityEnum {
     WORK_HOURS("WORK_HOURS"),
     
-    ANYTIME("ANYTIME"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ANYTIME("ANYTIME");
 
     private String value;
 
@@ -87,7 +85,7 @@ public class ContactPreference {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<AvailabilityEnum> {

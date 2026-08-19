@@ -19,7 +19,6 @@ Fabric Cloud Router Package Type
 | Name | Value |
 |---- | -----|
 | ROUTER_PACKAGE | &quot;ROUTER_PACKAGE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -32,7 +31,6 @@ Fabric Cloud Router Package Type
 | STANDARD | &quot;STANDARD&quot; |
 | ADVANCED | &quot;ADVANCED&quot; |
 | PREMIUM | &quot;PREMIUM&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

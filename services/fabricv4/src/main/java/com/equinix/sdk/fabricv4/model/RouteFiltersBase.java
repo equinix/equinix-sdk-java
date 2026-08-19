@@ -58,9 +58,7 @@ public class RouteFiltersBase {
   public enum TypeEnum {
     IPV4_PREFIX_FILTER("BGP_IPv4_PREFIX_FILTER"),
     
-    IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    IPV6_PREFIX_FILTER("BGP_IPv6_PREFIX_FILTER");
 
     private String value;
 
@@ -83,7 +81,7 @@ public class RouteFiltersBase {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

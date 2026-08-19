@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AppSubscriptionType.Adapter.class)
 public enum AppSubscriptionType {
   
-  APP_SUBSCRIPTION("APP_SUBSCRIPTION"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  APP_SUBSCRIPTION("APP_SUBSCRIPTION");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum AppSubscriptionType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppSubscriptionType> {

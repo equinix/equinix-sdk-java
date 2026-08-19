@@ -31,9 +31,7 @@ public enum LinkProtocolState {
   
   RESERVED("RESERVED"),
   
-  RELEASED("RELEASED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  RELEASED("RELEASED");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum LinkProtocolState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LinkProtocolState> {

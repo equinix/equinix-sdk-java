@@ -60,9 +60,7 @@ public class LoaNoteDetails {
   public enum TypeEnum {
     ISSUER("ISSUER"),
     
-    REQUESTOR("REQUESTOR"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REQUESTOR("REQUESTOR");
 
     private String value;
 
@@ -85,7 +83,7 @@ public class LoaNoteDetails {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

@@ -31,9 +31,7 @@ public enum InternetAccessUseCase {
   
   MAIN("MAIN"),
   
-  MANAGEMENT_ACCESS("MANAGEMENT_ACCESS"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  MANAGEMENT_ACCESS("MANAGEMENT_ACCESS");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum InternetAccessUseCase {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<InternetAccessUseCase> {

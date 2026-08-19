@@ -76,9 +76,7 @@ public class StreamSubscriptionSink {
     
     TEAMS("TEAMS"),
     
-    WEBHOOK("WEBHOOK"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    WEBHOOK("WEBHOOK");
 
     private String value;
 
@@ -101,7 +99,7 @@ public class StreamSubscriptionSink {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

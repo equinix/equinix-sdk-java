@@ -71,9 +71,7 @@ public class StreamSubscription {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    STREAM_SUBSCRIPTION("STREAM_SUBSCRIPTION");
 
     private String value;
 
@@ -96,7 +94,7 @@ public class StreamSubscription {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -148,9 +146,7 @@ public class StreamSubscription {
     
     DEPROVISIONED("DEPROVISIONED"),
     
-    FAILED("FAILED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    FAILED("FAILED");
 
     private String value;
 
@@ -173,7 +169,7 @@ public class StreamSubscription {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

@@ -35,9 +35,7 @@ public enum SubscriptionState {
   
   CANCELLED("CANCELLED"),
   
-  GRACE_PERIOD("GRACE_PERIOD"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  GRACE_PERIOD("GRACE_PERIOD");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum SubscriptionState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<SubscriptionState> {

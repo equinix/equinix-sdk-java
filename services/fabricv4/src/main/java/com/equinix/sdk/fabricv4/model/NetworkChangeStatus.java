@@ -39,9 +39,7 @@ public enum NetworkChangeStatus {
   
   REQUESTED("REQUESTED"),
   
-  SUBMITTED_FOR_APPROVAL("SUBMITTED_FOR_APPROVAL"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  SUBMITTED_FOR_APPROVAL("SUBMITTED_FOR_APPROVAL");
 
   private String value;
 
@@ -64,7 +62,7 @@ public enum NetworkChangeStatus {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<NetworkChangeStatus> {

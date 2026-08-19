@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(AppLinkType.Adapter.class)
 public enum AppLinkType {
   
-  APP_LINK("APP_LINK"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  APP_LINK("APP_LINK");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum AppLinkType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppLinkType> {

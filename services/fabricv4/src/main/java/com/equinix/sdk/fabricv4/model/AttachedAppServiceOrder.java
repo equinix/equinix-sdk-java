@@ -31,9 +31,7 @@ public enum AttachedAppServiceOrder {
   
   DESC("DESC"),
   
-  ASC("ASC"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  ASC("ASC");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum AttachedAppServiceOrder {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AttachedAppServiceOrder> {

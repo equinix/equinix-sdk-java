@@ -58,9 +58,7 @@ public class Phone {
   public enum TypeEnum {
     MOBILE("MOBILE"),
     
-    OFFICE("OFFICE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    OFFICE("OFFICE");
 
     private String value;
 
@@ -83,7 +81,7 @@ public class Phone {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

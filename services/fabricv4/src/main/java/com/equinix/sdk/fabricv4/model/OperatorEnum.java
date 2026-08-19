@@ -43,9 +43,7 @@ public enum OperatorEnum {
   
   IN("IN"),
   
-  NOT_IN("NOT IN"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  NOT_IN("NOT IN");
 
   private String value;
 
@@ -68,7 +66,7 @@ public enum OperatorEnum {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<OperatorEnum> {

@@ -35,9 +35,7 @@ public enum InternetAccessExportPolicy {
   
   FULL_DEFAULT("FULL_DEFAULT"),
   
-  PARTIAL("PARTIAL"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  PARTIAL("PARTIAL");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum InternetAccessExportPolicy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<InternetAccessExportPolicy> {

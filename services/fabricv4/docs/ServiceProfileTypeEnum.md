@@ -17,7 +17,5 @@
 
 * `LMAAS_PROFILE` (value: `"LMAAS_PROFILE"`)
 
-* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
-
 
 

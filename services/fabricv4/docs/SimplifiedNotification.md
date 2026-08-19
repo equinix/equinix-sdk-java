@@ -28,7 +28,6 @@
 | TECHNICAL | &quot;TECHNICAL&quot; |
 | ORDERING | &quot;ORDERING&quot; |
 | QUOTE_NOTIFICATIONS | &quot;QUOTE_NOTIFICATIONS&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

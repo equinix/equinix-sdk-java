@@ -51,9 +51,7 @@ public enum VirtualConnectionPriceConnectionType {
   
   EPTREE_VC("EPTREE_VC"),
   
-  IA_VC("IA_VC"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  IA_VC("IA_VC");
 
   private String value;
 
@@ -76,7 +74,7 @@ public enum VirtualConnectionPriceConnectionType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<VirtualConnectionPriceConnectionType> {

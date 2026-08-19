@@ -58,9 +58,7 @@ public class AlertRulePostRequest {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    METRIC_ALERT("METRIC_ALERT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    METRIC_ALERT("METRIC_ALERT");
 
     private String value;
 
@@ -83,7 +81,7 @@ public class AlertRulePostRequest {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

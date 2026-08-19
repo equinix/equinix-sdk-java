@@ -25,7 +25,6 @@ Operational specifications for ports.
 | UP | &quot;UP&quot; |
 | DOWN | &quot;DOWN&quot; |
 | PARTIAL | &quot;PARTIAL&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -62,9 +62,7 @@ public class ConnectionLink {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    EVPL_VC("EVPL_VC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    EVPL_VC("EVPL_VC");
 
     private String value;
 
@@ -87,7 +85,7 @@ public class ConnectionLink {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

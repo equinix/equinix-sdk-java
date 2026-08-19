@@ -64,9 +64,7 @@ public class AppLinkAppServiceAttachmentChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    APP_LINK_UPDATE("APP_LINK_UPDATE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    APP_LINK_UPDATE("APP_LINK_UPDATE");
 
     private String value;
 
@@ -89,7 +87,7 @@ public class AppLinkAppServiceAttachmentChange {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -125,9 +123,7 @@ public class AppLinkAppServiceAttachmentChange {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REQUESTED("REQUESTED");
 
     private String value;
 
@@ -150,7 +146,7 @@ public class AppLinkAppServiceAttachmentChange {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {

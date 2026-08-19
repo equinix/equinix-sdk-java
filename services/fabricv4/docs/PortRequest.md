@@ -46,7 +46,6 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 | _1000BASE_SX | &quot;1000BASE_SX&quot; |
 | _10GBASE_SMF | &quot;10GBASE_SMF&quot; |
 | _400GBASE_LR4 | &quot;400GBASE_LR4&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -57,7 +56,6 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 | COLO | &quot;COLO&quot; |
 | BMMR | &quot;BMMR&quot; |
 | REMOTE | &quot;REMOTE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -67,7 +65,6 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |---- | -----|
 | SELF | &quot;SELF&quot; |
 | EQUINIX | &quot;EQUINIX&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -77,7 +74,6 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |---- | -----|
 | EPL | &quot;EPL&quot; |
 | MSP | &quot;MSP&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

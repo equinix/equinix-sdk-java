@@ -17,7 +17,5 @@
 
 * `SUBMITTED_FOR_APPROVAL` (value: `"SUBMITTED_FOR_APPROVAL"`)
 
-* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
-
 
 

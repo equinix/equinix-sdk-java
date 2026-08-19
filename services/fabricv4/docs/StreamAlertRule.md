@@ -27,7 +27,6 @@ Stream object
 | Name | Value |
 |---- | -----|
 | METRIC_ALERT | &quot;METRIC_ALERT&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -37,7 +36,6 @@ Stream object
 |---- | -----|
 | ACTIVE | &quot;ACTIVE&quot; |
 | INACTIVE | &quot;INACTIVE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

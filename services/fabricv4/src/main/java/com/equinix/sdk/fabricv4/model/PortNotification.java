@@ -63,9 +63,7 @@ public class PortNotification {
     
     PEERING("PEERING"),
     
-    ESCALATION("ESCALATION"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ESCALATION("ESCALATION");
 
     private String value;
 
@@ -88,7 +86,7 @@ public class PortNotification {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

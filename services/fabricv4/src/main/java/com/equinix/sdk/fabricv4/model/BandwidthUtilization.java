@@ -56,9 +56,7 @@ public class BandwidthUtilization {
    */
   @JsonAdapter(UnitEnum.Adapter.class)
   public enum UnitEnum {
-    MBPS("Mbps"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    MBPS("Mbps");
 
     private String value;
 
@@ -81,7 +79,7 @@ public class BandwidthUtilization {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<UnitEnum> {

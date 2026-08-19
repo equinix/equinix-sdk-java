@@ -31,7 +31,6 @@
 | IS_NULL | &quot;IS NULL&quot; |
 | IN | &quot;IN&quot; |
 | BETWEEN | &quot;BETWEEN&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

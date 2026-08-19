@@ -57,7 +57,5 @@
 
 * `REDUNDANCY_PRIORITY` (value: `"/redundancy/priority"`)
 
-* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
-
 
 

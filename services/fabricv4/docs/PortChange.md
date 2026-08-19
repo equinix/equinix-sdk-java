@@ -25,7 +25,6 @@ Current state of latest port change
 | CREATION | &quot;PORT_CREATION&quot; |
 | UPDATE | &quot;PORT_UPDATE&quot; |
 | DELETION | &quot;PORT_DELETION&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -36,7 +35,6 @@ Current state of latest port change
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 | REQUESTED | &quot;REQUESTED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

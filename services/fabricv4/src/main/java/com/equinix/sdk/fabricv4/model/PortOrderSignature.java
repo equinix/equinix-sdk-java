@@ -60,9 +60,7 @@ public class PortOrderSignature {
     
     SELF("SELF"),
     
-    ACCOUNT_SUPPORT("ACCOUNT_SUPPORT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ACCOUNT_SUPPORT("ACCOUNT_SUPPORT");
 
     private String value;
 
@@ -85,7 +83,7 @@ public class PortOrderSignature {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<SignatoryEnum> {

@@ -39,9 +39,7 @@ public enum ServiceProfileTypeEnum {
   
   IC_PROFILE("IC_PROFILE"),
   
-  LMAAS_PROFILE("LMAAS_PROFILE"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  LMAAS_PROFILE("LMAAS_PROFILE");
 
   private String value;
 
@@ -64,7 +62,7 @@ public enum ServiceProfileTypeEnum {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<ServiceProfileTypeEnum> {

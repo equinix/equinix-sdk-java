@@ -33,9 +33,7 @@ public enum LoaActionFieldName {
   
   STATE("/state"),
   
-  UUID("/uuid"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  UUID("/uuid");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum LoaActionFieldName {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LoaActionFieldName> {

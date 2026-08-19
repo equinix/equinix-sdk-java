@@ -66,9 +66,7 @@ public class PortChange {
     
     UPDATE("PORT_UPDATE"),
     
-    DELETION("PORT_DELETION"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DELETION("PORT_DELETION");
 
     private String value;
 
@@ -91,7 +89,7 @@ public class PortChange {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -127,9 +125,7 @@ public class PortChange {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REQUESTED("REQUESTED");
 
     private String value;
 
@@ -152,7 +148,7 @@ public class PortChange {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {

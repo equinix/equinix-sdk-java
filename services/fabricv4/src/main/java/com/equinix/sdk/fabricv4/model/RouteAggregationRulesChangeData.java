@@ -62,9 +62,7 @@ public class RouteAggregationRulesChangeData {
     
     FAILED("FAILED"),
     
-    REQUESTED("REQUESTED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REQUESTED("REQUESTED");
 
     private String value;
 
@@ -87,7 +85,7 @@ public class RouteAggregationRulesChangeData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StatusEnum> {
@@ -153,9 +151,7 @@ public class RouteAggregationRulesChangeData {
     
     CREATION("BGP_IPv4_PREFIX_AGGREGATION_RULE_CREATION"),
     
-    DELETION("BGP_IPv4_PREFIX_AGGREGATION_RULE_DELETION"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DELETION("BGP_IPv4_PREFIX_AGGREGATION_RULE_DELETION");
 
     private String value;
 
@@ -178,7 +174,7 @@ public class RouteAggregationRulesChangeData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

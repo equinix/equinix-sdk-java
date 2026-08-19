@@ -133,9 +133,7 @@ public enum SearchFieldName {
   
   ZSIDE_INTERNETACCESS_UUID("/zSide/internetAccess/uuid"),
   
-  STATE("/state"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  STATE("/state");
 
   private String value;
 
@@ -158,7 +156,7 @@ public enum SearchFieldName {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<SearchFieldName> {

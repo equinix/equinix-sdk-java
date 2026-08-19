@@ -37,9 +37,7 @@ public enum InternetAccessServiceState {
   
   DEPROVISIONING("DEPROVISIONING"),
   
-  DEPROVISIONED("DEPROVISIONED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DEPROVISIONED("DEPROVISIONED");
 
   private String value;
 
@@ -62,7 +60,7 @@ public enum InternetAccessServiceState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<InternetAccessServiceState> {

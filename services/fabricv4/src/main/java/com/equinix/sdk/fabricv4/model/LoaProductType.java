@@ -33,9 +33,7 @@ public enum LoaProductType {
   
   XF_PORT("XF_PORT"),
   
-  VD("VD"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  VD("VD");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum LoaProductType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LoaProductType> {

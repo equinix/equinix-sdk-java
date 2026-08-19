@@ -51,9 +51,7 @@ public enum CloudRouterSortBy {
   
   CHANGELOG_DELETEDDATETIME("/changeLog/deletedDateTime"),
   
-  ORDER_TERMLENGTH("/order/termLength"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  ORDER_TERMLENGTH("/order/termLength");
 
   private String value;
 
@@ -76,7 +74,7 @@ public enum CloudRouterSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterSortBy> {

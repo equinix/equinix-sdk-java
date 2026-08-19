@@ -74,9 +74,7 @@ public class ServiceTokenConnection {
     
     EVPTREE_VC("EVPTREE_VC"),
     
-    EPTREE_VC("EPTREE_VC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    EPTREE_VC("EPTREE_VC");
 
     private String value;
 
@@ -99,7 +97,7 @@ public class ServiceTokenConnection {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

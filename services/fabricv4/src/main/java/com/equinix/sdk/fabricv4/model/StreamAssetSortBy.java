@@ -31,9 +31,7 @@ public enum StreamAssetSortBy {
   
   UUID("/uuid"),
   
-  STREAMUUID("/streamUuid"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  STREAMUUID("/streamUuid");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum StreamAssetSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<StreamAssetSortBy> {

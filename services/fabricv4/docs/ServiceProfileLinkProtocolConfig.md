@@ -23,7 +23,6 @@ Configuration for dot1q to qinq translation support
 | CTAGED | &quot;CTAGED&quot; |
 | BOTH | &quot;BOTH&quot; |
 | NAMED | &quot;NAMED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -34,7 +33,6 @@ Configuration for dot1q to qinq translation support
 | QINQ | &quot;QINQ&quot; |
 | DOT1Q | &quot;DOT1Q&quot; |
 | UNTAGGED | &quot;UNTAGGED&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

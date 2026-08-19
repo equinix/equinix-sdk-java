@@ -43,9 +43,7 @@ public enum GeoScopeType {
   
   SWITZERLAND("SWITZERLAND"),
   
-  EU("EU"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  EU("EU");
 
   private String value;
 
@@ -68,7 +66,7 @@ public enum GeoScopeType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<GeoScopeType> {

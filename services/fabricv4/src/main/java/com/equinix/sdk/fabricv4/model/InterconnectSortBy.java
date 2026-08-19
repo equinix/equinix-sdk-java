@@ -35,9 +35,7 @@ public enum InterconnectSortBy {
   
   NAME("/name"),
   
-  STATE("/state"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  STATE("/state");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum InterconnectSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<InterconnectSortBy> {

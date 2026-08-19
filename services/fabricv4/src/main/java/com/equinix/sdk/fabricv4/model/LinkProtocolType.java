@@ -37,9 +37,7 @@ public enum LinkProtocolType {
   
   EVPN_VXLAN("EVPN_VXLAN"),
   
-  VXLAN("VXLAN"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  VXLAN("VXLAN");
 
   private String value;
 
@@ -62,7 +60,7 @@ public enum LinkProtocolType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LinkProtocolType> {

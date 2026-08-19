@@ -57,9 +57,7 @@ public class LoaSortCriteria {
   public enum DirectionEnum {
     DESC("DESC"),
     
-    ASC("ASC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ASC("ASC");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class LoaSortCriteria {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {
@@ -120,9 +118,7 @@ public class LoaSortCriteria {
     
     CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
     
-    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
     private String value;
 
@@ -145,7 +141,7 @@ public class LoaSortCriteria {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PropertyEnum> {

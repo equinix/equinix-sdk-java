@@ -95,9 +95,7 @@ public class Expression {
     
     IN("IN"),
     
-    BETWEEN("BETWEEN"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    BETWEEN("BETWEEN");
 
     private String value;
 
@@ -120,7 +118,7 @@ public class Expression {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OperatorEnum> {

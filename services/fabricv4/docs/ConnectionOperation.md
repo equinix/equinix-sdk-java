@@ -23,7 +23,6 @@ Connection type-specific operational data
 |---- | -----|
 | UP | &quot;UP&quot; |
 | DOWN | &quot;DOWN&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

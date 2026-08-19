@@ -57,9 +57,7 @@ public class ExchangeServicePropertyExpression {
    */
   @JsonAdapter(PropertyEnum.Adapter.class)
   public enum PropertyEnum {
-    _PROJECT_PROJECTID("/project/projectId"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    _PROJECT_PROJECTID("/project/projectId");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class ExchangeServicePropertyExpression {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PropertyEnum> {
@@ -114,9 +112,7 @@ public class ExchangeServicePropertyExpression {
    */
   @JsonAdapter(OperatorEnum.Adapter.class)
   public enum OperatorEnum {
-    EQUAL("="),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    EQUAL("=");
 
     private String value;
 
@@ -139,7 +135,7 @@ public class ExchangeServicePropertyExpression {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OperatorEnum> {

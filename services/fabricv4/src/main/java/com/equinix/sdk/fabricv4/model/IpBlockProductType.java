@@ -33,9 +33,7 @@ public enum IpBlockProductType {
   
   FABRIC("FABRIC"),
   
-  NE("NE"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  NE("NE");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum IpBlockProductType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<IpBlockProductType> {

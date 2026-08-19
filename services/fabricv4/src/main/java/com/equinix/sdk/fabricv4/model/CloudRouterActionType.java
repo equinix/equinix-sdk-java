@@ -35,9 +35,7 @@ public enum CloudRouterActionType {
   
   RECEIVED_ROUTE_ENTRY_UPDATE("RECEIVED_ROUTE_ENTRY_UPDATE"),
   
-  ADVERTISED_ROUTE_ENTRY_UPDATE("ADVERTISED_ROUTE_ENTRY_UPDATE"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  ADVERTISED_ROUTE_ENTRY_UPDATE("ADVERTISED_ROUTE_ENTRY_UPDATE");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum CloudRouterActionType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterActionType> {

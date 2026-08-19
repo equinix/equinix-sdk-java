@@ -33,9 +33,7 @@ public enum LoaActionState {
   
   FAILED("FAILED"),
   
-  PENDING("PENDING"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  PENDING("PENDING");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum LoaActionState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<LoaActionState> {

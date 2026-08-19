@@ -20,7 +20,6 @@ BGP IPv4 or IPv6 Connection State operational data
 | UP | &quot;UP&quot; |
 | DOWN | &quot;DOWN&quot; |
 | UNKNOWN | &quot;UNKNOWN&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

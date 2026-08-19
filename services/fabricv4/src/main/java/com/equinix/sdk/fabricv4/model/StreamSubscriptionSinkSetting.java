@@ -87,9 +87,7 @@ public class StreamSubscriptionSinkSetting {
   public enum FormatEnum {
     CLOUDEVENT("CLOUDEVENT"),
     
-    OPENTELEMETRY("OPENTELEMETRY"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    OPENTELEMETRY("OPENTELEMETRY");
 
     private String value;
 
@@ -112,7 +110,7 @@ public class StreamSubscriptionSinkSetting {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<FormatEnum> {

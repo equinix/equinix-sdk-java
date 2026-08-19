@@ -65,9 +65,7 @@ public class RouteAggregationRulesData {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    BGP_IPV4_PREFIX_AGGREGATION_RULE("BGP_IPv4_PREFIX_AGGREGATION_RULE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    BGP_IPV4_PREFIX_AGGREGATION_RULE("BGP_IPv4_PREFIX_AGGREGATION_RULE");
 
     private String value;
 
@@ -90,7 +88,7 @@ public class RouteAggregationRulesData {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

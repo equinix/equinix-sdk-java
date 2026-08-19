@@ -63,9 +63,7 @@ public class PortPackage {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    PORT_PACKAGE("PORT_PACKAGE"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    PORT_PACKAGE("PORT_PACKAGE");
 
     private String value;
 
@@ -88,7 +86,7 @@ public class PortPackage {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {
@@ -135,9 +133,7 @@ public class PortPackage {
    */
   @JsonAdapter(SupportedServiceTypesEnum.Adapter.class)
   public enum SupportedServiceTypesEnum {
-    MSP("MSP"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    MSP("MSP");
 
     private String value;
 
@@ -160,7 +156,7 @@ public class PortPackage {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<SupportedServiceTypesEnum> {

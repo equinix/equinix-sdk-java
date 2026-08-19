@@ -29,9 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(Presence.Adapter.class)
 public enum Presence {
   
-  MY_PORTS("MY_PORTS"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  MY_PORTS("MY_PORTS");
 
   private String value;
 
@@ -54,7 +52,7 @@ public enum Presence {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<Presence> {

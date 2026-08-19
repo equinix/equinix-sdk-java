@@ -35,9 +35,7 @@ public enum PeeringType {
   
   PUBLIC("PUBLIC"),
   
-  MANUAL("MANUAL"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  MANUAL("MANUAL");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum PeeringType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<PeeringType> {

@@ -21,7 +21,6 @@
 |---- | -----|
 | THRESHOLD | &quot;THRESHOLD&quot; |
 | OUTLIER | &quot;OUTLIER&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -31,7 +30,6 @@
 |---- | -----|
 | ABOVE | &quot;ABOVE&quot; |
 | BELOW | &quot;BELOW&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

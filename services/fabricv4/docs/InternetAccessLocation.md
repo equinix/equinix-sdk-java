@@ -21,7 +21,6 @@
 | APAC | &quot;APAC&quot; |
 | EMEA | &quot;EMEA&quot; |
 | AMER | &quot;AMER&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

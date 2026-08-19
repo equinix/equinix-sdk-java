@@ -55,9 +55,7 @@ public enum PortState {
   
   TO_BE_ADDED("TO_BE_ADDED"),
   
-  TO_BE_DELETED("TO_BE_DELETED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  TO_BE_DELETED("TO_BE_DELETED");
 
   private String value;
 
@@ -80,7 +78,7 @@ public enum PortState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<PortState> {

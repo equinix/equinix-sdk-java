@@ -35,9 +35,7 @@ public enum CloudRouterActionsSearchSortBy {
   
   CONNECTION_NAME("/connection/name"),
   
-  TYPE("/type"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  TYPE("/type");
 
   private String value;
 
@@ -60,7 +58,7 @@ public enum CloudRouterActionsSearchSortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterActionsSearchSortBy> {

@@ -39,9 +39,7 @@ public enum AppDomainState {
   
   DEPROVISIONING_FAILED("DEPROVISIONING_FAILED"),
   
-  DEPROVISIONED("DEPROVISIONED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DEPROVISIONED("DEPROVISIONED");
 
   private String value;
 
@@ -64,7 +62,7 @@ public enum AppDomainState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppDomainState> {

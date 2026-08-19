@@ -20,7 +20,6 @@
 | Name | Value |
 |---- | -----|
 | BGP_IPV4_PREFIX_AGGREGATION | &quot;BGP_IPv4_PREFIX_AGGREGATION&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -34,7 +33,6 @@
 | DETACHING | &quot;DETACHING&quot; |
 | FAILED | &quot;FAILED&quot; |
 | PENDING_BGP_CONFIGURATION | &quot;PENDING_BGP_CONFIGURATION&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

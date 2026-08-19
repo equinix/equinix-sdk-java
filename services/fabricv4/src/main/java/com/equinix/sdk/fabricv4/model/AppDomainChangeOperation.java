@@ -59,9 +59,7 @@ public class AppDomainChangeOperation {
     
     ADD("add"),
     
-    REMOVE("remove"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REMOVE("remove");
 
     private String value;
 
@@ -84,7 +82,7 @@ public class AppDomainChangeOperation {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OpEnum> {
@@ -116,9 +114,7 @@ public class AppDomainChangeOperation {
    */
   @JsonAdapter(PathEnum.Adapter.class)
   public enum PathEnum {
-    _DESCRIPTION("/description"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    _DESCRIPTION("/description");
 
     private String value;
 
@@ -141,7 +137,7 @@ public class AppDomainChangeOperation {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PathEnum> {

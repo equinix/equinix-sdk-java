@@ -31,9 +31,7 @@ public enum InternetAccessCustomerAsnRange {
   
   BITS_16("BITS_16"),
   
-  BITS_32("BITS_32"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  BITS_32("BITS_32");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum InternetAccessCustomerAsnRange {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<InternetAccessCustomerAsnRange> {

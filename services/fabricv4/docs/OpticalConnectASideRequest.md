@@ -23,7 +23,6 @@ A-Side configuration. Always a patch panel port from your cage.
 | SC | &quot;SC&quot; |
 | LC | &quot;LC&quot; |
 | ST | &quot;ST&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

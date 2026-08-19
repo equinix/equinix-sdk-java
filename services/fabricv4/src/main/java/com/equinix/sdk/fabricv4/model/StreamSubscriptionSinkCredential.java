@@ -61,9 +61,7 @@ public class StreamSubscriptionSinkCredential {
     
     API_KEY("API_KEY"),
     
-    USERNAME_PASSWORD("USERNAME_PASSWORD"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    USERNAME_PASSWORD("USERNAME_PASSWORD");
 
     private String value;
 
@@ -86,7 +84,7 @@ public class StreamSubscriptionSinkCredential {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

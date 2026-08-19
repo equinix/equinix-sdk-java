@@ -20,7 +20,6 @@ Precision Time Service Level Request
 | NTP_ENTERPRISE | &quot;NTP_ENTERPRISE&quot; |
 | PTP_STANDARD | &quot;PTP_STANDARD&quot; |
 | PTP_ENTERPRISE | &quot;PTP_ENTERPRISE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

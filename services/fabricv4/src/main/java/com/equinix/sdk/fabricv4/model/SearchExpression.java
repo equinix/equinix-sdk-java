@@ -98,9 +98,7 @@ public class SearchExpression {
     
     IS_NOT_NULL("IS NOT NULL"),
     
-    IS_NULL("IS NULL"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    IS_NULL("IS NULL");
 
     private String value;
 
@@ -123,7 +121,7 @@ public class SearchExpression {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<OperatorEnum> {

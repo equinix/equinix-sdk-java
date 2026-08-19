@@ -33,9 +33,7 @@ public enum MetricAssetType {
   
   CONNECTIONS("connections"),
   
-  METROS("metros"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  METROS("metros");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum MetricAssetType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<MetricAssetType> {

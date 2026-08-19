@@ -31,9 +31,7 @@ public enum CloudRouterCommandType {
   
   PING_COMMAND("PING_COMMAND"),
   
-  TRACEROUTE_COMMAND("TRACEROUTE_COMMAND"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  TRACEROUTE_COMMAND("TRACEROUTE_COMMAND");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum CloudRouterCommandType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<CloudRouterCommandType> {

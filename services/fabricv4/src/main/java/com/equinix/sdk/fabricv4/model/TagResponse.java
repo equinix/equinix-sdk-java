@@ -90,9 +90,7 @@ public class TagResponse {
     
     PENDING_APPROVAL("PENDING_APPROVAL"),
     
-    REJECTED("REJECTED"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    REJECTED("REJECTED");
 
     private String value;
 
@@ -115,7 +113,7 @@ public class TagResponse {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<StateEnum> {

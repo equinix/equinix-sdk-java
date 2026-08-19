@@ -31,9 +31,7 @@ public enum ServiceTokenType {
   
   VC_TOKEN("VC_TOKEN"),
   
-  EPL_TOKEN("EPL_TOKEN"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  EPL_TOKEN("EPL_TOKEN");
 
   private String value;
 
@@ -56,7 +54,7 @@ public enum ServiceTokenType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<ServiceTokenType> {

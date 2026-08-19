@@ -65,9 +65,7 @@ public class RfAttachmentSortItem {
     
     CHANGELOG_CREATEDDATETIME("/changeLog/createdDateTime"),
     
-    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    CHANGELOG_UPDATEDDATETIME("/changeLog/updatedDateTime");
 
     private String value;
 
@@ -90,7 +88,7 @@ public class RfAttachmentSortItem {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<PropertyEnum> {
@@ -124,9 +122,7 @@ public class RfAttachmentSortItem {
   public enum DirectionEnum {
     DESC("DESC"),
     
-    ASC("ASC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    ASC("ASC");
 
     private String value;
 
@@ -149,7 +145,7 @@ public class RfAttachmentSortItem {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {

@@ -26,7 +26,6 @@ Purchase Order information associate to the account
 | EXISTING | &quot;EXISTING&quot; |
 | NEW | &quot;NEW&quot; |
 | BLANKET | &quot;BLANKET&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -38,7 +37,6 @@ Purchase Order information associate to the account
 | EXISTING | &quot;EXISTING&quot; |
 | NEW | &quot;NEW&quot; |
 | BLANKET | &quot;BLANKET&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

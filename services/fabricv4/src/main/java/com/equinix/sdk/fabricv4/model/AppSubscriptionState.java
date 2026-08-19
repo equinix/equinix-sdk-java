@@ -41,9 +41,7 @@ public enum AppSubscriptionState {
   
   DEPROVISIONED("DEPROVISIONED"),
   
-  REPROVISIONING("REPROVISIONING"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  REPROVISIONING("REPROVISIONING");
 
   private String value;
 
@@ -66,7 +64,7 @@ public enum AppSubscriptionState {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<AppSubscriptionState> {

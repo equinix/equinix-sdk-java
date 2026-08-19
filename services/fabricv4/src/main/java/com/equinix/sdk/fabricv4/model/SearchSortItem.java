@@ -57,9 +57,7 @@ public class SearchSortItem {
   public enum DirectionEnum {
     ASC("ASC"),
     
-    DESC("DESC"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    DESC("DESC");
 
     private String value;
 
@@ -82,7 +80,7 @@ public class SearchSortItem {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<DirectionEnum> {

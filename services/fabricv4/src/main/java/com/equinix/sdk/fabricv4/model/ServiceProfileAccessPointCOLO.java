@@ -59,9 +59,7 @@ public class ServiceProfileAccessPointCOLO {
   public enum TypeEnum {
     XF_PORT("XF_PORT"),
     
-    IX_PORT("IX_PORT"),
-    
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    IX_PORT("IX_PORT");
 
     private String value;
 
@@ -84,7 +82,7 @@ public class ServiceProfileAccessPointCOLO {
           return b;
         }
       }
-      return UNKNOWN_DEFAULT_OPEN_API;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<TypeEnum> {

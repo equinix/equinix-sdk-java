@@ -30,7 +30,6 @@ Subscription Response
 | GCP | &quot;GCP&quot; |
 | AZURE | &quot;AZURE&quot; |
 | REDHAT | &quot;REDHAT&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -40,7 +39,6 @@ Subscription Response
 |---- | -----|
 | PUBLIC | &quot;PUBLIC&quot; |
 | PRIVATE_OFFER | &quot;PRIVATE_OFFER&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

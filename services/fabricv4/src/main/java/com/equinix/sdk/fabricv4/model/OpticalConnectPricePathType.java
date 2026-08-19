@@ -33,9 +33,7 @@ public enum OpticalConnectPricePathType {
   
   UNPROTECTED("UNPROTECTED"),
   
-  DUAL_DIVERSE("DUAL_DIVERSE"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  DUAL_DIVERSE("DUAL_DIVERSE");
 
   private String value;
 
@@ -58,7 +56,7 @@ public enum OpticalConnectPricePathType {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<OpticalConnectPricePathType> {

@@ -41,9 +41,7 @@ public enum RouteTableEntrySortBy {
   
   TYPE("/type"),
   
-  MED("/MED"),
-  
-  UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+  MED("/MED");
 
   private String value;
 
@@ -66,7 +64,7 @@ public enum RouteTableEntrySortBy {
         return b;
       }
     }
-    return UNKNOWN_DEFAULT_OPEN_API;
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
   public static class Adapter extends TypeAdapter<RouteTableEntrySortBy> {

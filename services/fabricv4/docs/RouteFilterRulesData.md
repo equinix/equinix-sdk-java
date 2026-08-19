@@ -27,7 +27,6 @@
 |---- | -----|
 | IPV4_PREFIX_FILTER_RULE | &quot;BGP_IPv4_PREFIX_FILTER_RULE&quot; |
 | IPV6_PREFIX_FILTER_RULE | &quot;BGP_IPv6_PREFIX_FILTER_RULE&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -37,7 +36,6 @@
 |---- | -----|
 | PERMIT | &quot;PERMIT&quot; |
 | DENY | &quot;DENY&quot; |
-| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

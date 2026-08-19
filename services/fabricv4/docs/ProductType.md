@@ -17,7 +17,5 @@
 
 * `OPTICAL_CONNECT_PRODUCT` (value: `"OPTICAL_CONNECT_PRODUCT"`)
 
-* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
-
 
 
