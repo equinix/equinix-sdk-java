@@ -46,21 +46,6 @@ jobs:
           NEW_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
           echo "new_version=$NEW_VERSION_NUM" >> "$GITHUB_OUTPUT"
 
-      - name: Bump SDK version
-        id: bump_version
-        if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
-        run: |
-          CURRENT_VERSION=$(cat version)
-          MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
-          MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
-          PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
-          NEW_VERSION="$MAJOR.$((MINOR + 1)).$PATCH"
-          echo -n "$NEW_VERSION" > version
-          make update-manual-versions
-          git add version pom.xml equinix-sdk-java/pom.xml equinix-openapi-fabric-tests/pom.xml
-          echo `git commit -m "chore: bump version to $NEW_VERSION"`
-          echo "new_sdk_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
-
       - name: Apply spec patches
         id: patch
         if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
