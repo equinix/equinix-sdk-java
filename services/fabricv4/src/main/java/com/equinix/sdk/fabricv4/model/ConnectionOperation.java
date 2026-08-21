@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.EquinixStatus;
 import com.equinix.sdk.fabricv4.model.Error;
+import com.equinix.sdk.fabricv4.model.MaintenanceState;
 import com.equinix.sdk.fabricv4.model.ProviderStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -133,6 +134,11 @@ public class ConnectionOperation {
   @javax.annotation.Nullable
   private OffsetDateTime opStatusChangedAt;
 
+  public static final String SERIALIZED_NAME_MAINTENANCE_STATUS = "maintenanceStatus";
+  @SerializedName(SERIALIZED_NAME_MAINTENANCE_STATUS)
+  @javax.annotation.Nullable
+  private MaintenanceState maintenanceStatus;
+
   public ConnectionOperation() {
   }
 
@@ -238,6 +244,25 @@ public class ConnectionOperation {
     this.opStatusChangedAt = opStatusChangedAt;
   }
 
+
+  public ConnectionOperation maintenanceStatus(@javax.annotation.Nullable MaintenanceState maintenanceStatus) {
+    this.maintenanceStatus = maintenanceStatus;
+    return this;
+  }
+
+  /**
+   * Get maintenanceStatus
+   * @return maintenanceStatus
+   */
+  @javax.annotation.Nullable
+  public MaintenanceState getMaintenanceStatus() {
+    return maintenanceStatus;
+  }
+
+  public void setMaintenanceStatus(@javax.annotation.Nullable MaintenanceState maintenanceStatus) {
+    this.maintenanceStatus = maintenanceStatus;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -297,13 +322,14 @@ public class ConnectionOperation {
         Objects.equals(this.equinixStatus, connectionOperation.equinixStatus) &&
         Objects.equals(this.operationalStatus, connectionOperation.operationalStatus) &&
         Objects.equals(this.errors, connectionOperation.errors) &&
-        Objects.equals(this.opStatusChangedAt, connectionOperation.opStatusChangedAt)&&
+        Objects.equals(this.opStatusChangedAt, connectionOperation.opStatusChangedAt) &&
+        Objects.equals(this.maintenanceStatus, connectionOperation.maintenanceStatus)&&
         Objects.equals(this.additionalProperties, connectionOperation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(providerStatus, equinixStatus, operationalStatus, errors, opStatusChangedAt, additionalProperties);
+    return Objects.hash(providerStatus, equinixStatus, operationalStatus, errors, opStatusChangedAt, maintenanceStatus, additionalProperties);
   }
 
   @Override
@@ -315,6 +341,7 @@ public class ConnectionOperation {
     sb.append("    operationalStatus: ").append(toIndentedString(operationalStatus)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    opStatusChangedAt: ").append(toIndentedString(opStatusChangedAt)).append("\n");
+    sb.append("    maintenanceStatus: ").append(toIndentedString(maintenanceStatus)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -337,7 +364,7 @@ public class ConnectionOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -384,6 +411,10 @@ public class ConnectionOperation {
             Error.validateJsonElement(jsonArrayerrors.get(i));
           };
         }
+      }
+      // validate the optional field `maintenanceStatus`
+      if (jsonObj.get("maintenanceStatus") != null && !jsonObj.get("maintenanceStatus").isJsonNull()) {
+        MaintenanceState.validateJsonElement(jsonObj.get("maintenanceStatus"));
       }
   }
 

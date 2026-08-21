@@ -33,7 +33,9 @@
 
 * `IX_VC` (value: `"IX_VC"`)
 
-* `IC_VC` (value: `"IC_VC"`)
+* `GW_VC` (value: `"GW_VC"`)
+
+* `IPX_VC` (value: `"IPX_VC"`)
 
 
 

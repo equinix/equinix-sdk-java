@@ -57,7 +57,9 @@ public enum ConnectionType {
   
   IX_VC("IX_VC"),
   
-  IC_VC("IC_VC");
+  GW_VC("GW_VC"),
+  
+  IPX_VC("IPX_VC");
 
   private String value;
 

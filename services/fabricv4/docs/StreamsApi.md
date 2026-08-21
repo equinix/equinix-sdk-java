@@ -10,7 +10,8 @@ All URIs are relative to *https://api.equinix.com*
 | [**getStreamAssetByUuid**](StreamsApi.md#getStreamAssetByUuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset |
 | [**getStreamByUuid**](StreamsApi.md#getStreamByUuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream |
 | [**getStreams**](StreamsApi.md#getStreams) | **GET** /fabric/v4/streams | Get Streams |
-| [**getStreamsAssets**](StreamsApi.md#getStreamsAssets) | **POST** /fabric/v4/streamAssets/search | Get Assets |
+| [**searchStreamAssets**](StreamsApi.md#searchStreamAssets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets |
+| [**searchStreams**](StreamsApi.md#searchStreams) | **POST** /fabric/v4/streams/search | Search Streams |
 | [**updateStreamAssetByUuid**](StreamsApi.md#updateStreamAssetByUuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset |
 | [**updateStreamByUuid**](StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream |
 
@@ -456,13 +457,13 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="getStreamsAssets"></a>
-# **getStreamsAssets**
-> GetAllStreamAssetResponse getStreamsAssets(streamAssetSearchRequest, offset, limit)
+<a id="searchStreamAssets"></a>
+# **searchStreamAssets**
+> SearchStreamAssetResponse searchStreamAssets(streamAssetSearchRequest)
 
-Get Assets
+Search Stream Assets
 
-This API provides capability to retrieve stream assets
+This API provides capability to search stream assets
 
 ### Example
 ```java
@@ -485,13 +486,11 @@ public class Example {
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
     StreamAssetSearchRequest streamAssetSearchRequest = new StreamAssetSearchRequest(); // StreamAssetSearchRequest | 
-    Integer offset = 1; // Integer | offset
-    Integer limit = 10; // Integer | number of records to fetch
     try {
-      GetAllStreamAssetResponse result = apiInstance.getStreamsAssets(streamAssetSearchRequest, offset, limit);
+      SearchStreamAssetResponse result = apiInstance.searchStreamAssets(streamAssetSearchRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling StreamsApi#getStreamsAssets");
+      System.err.println("Exception when calling StreamsApi#searchStreamAssets");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -506,12 +505,82 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **streamAssetSearchRequest** | [**StreamAssetSearchRequest**](StreamAssetSearchRequest.md)|  | |
-| **offset** | **Integer**| offset | [optional] |
-| **limit** | **Integer**| number of records to fetch | [optional] |
 
 ### Return type
 
-[**GetAllStreamAssetResponse**](GetAllStreamAssetResponse.md)
+[**SearchStreamAssetResponse**](SearchStreamAssetResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="searchStreams"></a>
+# **searchStreams**
+> SearchStreamResponse searchStreams(streamSearchRequest)
+
+Search Streams
+
+This API provides capability to search streams
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.StreamsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    StreamsApi apiInstance = new StreamsApi(defaultClient);
+    StreamSearchRequest streamSearchRequest = new StreamSearchRequest(); // StreamSearchRequest | 
+    try {
+      SearchStreamResponse result = apiInstance.searchStreams(streamSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StreamsApi#searchStreams");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **streamSearchRequest** | [**StreamSearchRequest**](StreamSearchRequest.md)|  | [optional] |
+
+### Return type
+
+[**SearchStreamResponse**](SearchStreamResponse.md)
 
 ### Authorization
 

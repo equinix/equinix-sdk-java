@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.JsonPatchOperation;
+import com.equinix.sdk.fabricv4.model.ServiceProfileUpdateOperation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -147,7 +147,7 @@ public class ServiceProfileChange {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private List<JsonPatchOperation> data = new ArrayList<>();
+  private List<ServiceProfileUpdateOperation> data = new ArrayList<>();
 
   public ServiceProfileChange() {
   }
@@ -266,12 +266,12 @@ public class ServiceProfileChange {
   }
 
 
-  public ServiceProfileChange data(@javax.annotation.Nullable List<JsonPatchOperation> data) {
+  public ServiceProfileChange data(@javax.annotation.Nullable List<ServiceProfileUpdateOperation> data) {
     this.data = data;
     return this;
   }
 
-  public ServiceProfileChange addDataItem(JsonPatchOperation dataItem) {
+  public ServiceProfileChange addDataItem(ServiceProfileUpdateOperation dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -284,11 +284,11 @@ public class ServiceProfileChange {
    * @return data
    */
   @javax.annotation.Nullable
-  public List<JsonPatchOperation> getData() {
+  public List<ServiceProfileUpdateOperation> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable List<JsonPatchOperation> data) {
+  public void setData(@javax.annotation.Nullable List<ServiceProfileUpdateOperation> data) {
     this.data = data;
   }
 
@@ -447,7 +447,7 @@ public class ServiceProfileChange {
 
           // validate the optional field `data` (array)
           for (int i = 0; i < jsonArraydata.size(); i++) {
-            JsonPatchOperation.validateJsonElement(jsonArraydata.get(i));
+            ServiceProfileUpdateOperation.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }

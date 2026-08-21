@@ -47,7 +47,11 @@ public enum PortSearchFieldName {
   
   ACCOUNT_ACCOUNTNUMBER("/account/accountNumber"),
   
-  LOCATION_METROCODE("/location/metroCode");
+  LOCATION_METROCODE("/location/metroCode"),
+  
+  OPERATION_MAINTENANCESTATUS("/operation/maintenanceStatus"),
+  
+  OPERATION_LOCKENABLED("/operation/lockEnabled");
 
   private String value;
 

@@ -14,10 +14,13 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AccessPointType;
+import com.equinix.sdk.fabricv4.model.Address;
 import com.equinix.sdk.fabricv4.model.CloudRouter;
+import com.equinix.sdk.fabricv4.model.Interconnect;
 import com.equinix.sdk.fabricv4.model.MetalInterconnection;
 import com.equinix.sdk.fabricv4.model.ModelInterface;
 import com.equinix.sdk.fabricv4.model.PeeringType;
+import com.equinix.sdk.fabricv4.model.ProductOffering;
 import com.equinix.sdk.fabricv4.model.ProviderEnvironment;
 import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
 import com.equinix.sdk.fabricv4.model.SimplifiedLinkProtocol;
@@ -113,6 +116,11 @@ public class AccessPoint {
   @SerializedName(SERIALIZED_NAME_NETWORK)
   @javax.annotation.Nullable
   private SimplifiedNetwork network;
+
+  public static final String SERIALIZED_NAME_INTERCONNECT = "interconnect";
+  @SerializedName(SERIALIZED_NAME_INTERCONNECT)
+  @javax.annotation.Nullable
+  private Interconnect interconnect;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
@@ -210,6 +218,26 @@ public class AccessPoint {
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
   private RoleEnum role;
+
+  public static final String SERIALIZED_NAME_PRODUCT_OFFERING = "productOffering";
+  @SerializedName(SERIALIZED_NAME_PRODUCT_OFFERING)
+  @javax.annotation.Nullable
+  private ProductOffering productOffering;
+
+  public static final String SERIALIZED_NAME_BANDWIDTH_COMMIT = "bandwidthCommit";
+  @SerializedName(SERIALIZED_NAME_BANDWIDTH_COMMIT)
+  @javax.annotation.Nullable
+  private Integer bandwidthCommit;
+
+  public static final String SERIALIZED_NAME_PROVIDER_IDENTIFIER = "providerIdentifier";
+  @SerializedName(SERIALIZED_NAME_PROVIDER_IDENTIFIER)
+  @javax.annotation.Nullable
+  private String providerIdentifier;
+
+  public static final String SERIALIZED_NAME_ADDRESS = "address";
+  @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
+  private Address address;
 
   public AccessPoint() {
   }
@@ -404,6 +432,25 @@ public class AccessPoint {
   }
 
 
+  public AccessPoint interconnect(@javax.annotation.Nullable Interconnect interconnect) {
+    this.interconnect = interconnect;
+    return this;
+  }
+
+  /**
+   * Get interconnect
+   * @return interconnect
+   */
+  @javax.annotation.Nullable
+  public Interconnect getInterconnect() {
+    return interconnect;
+  }
+
+  public void setInterconnect(@javax.annotation.Nullable Interconnect interconnect) {
+    this.interconnect = interconnect;
+  }
+
+
   public AccessPoint environment(@javax.annotation.Nullable ProviderEnvironment environment) {
     this.environment = environment;
     return this;
@@ -574,6 +621,84 @@ public class AccessPoint {
     this.role = role;
   }
 
+
+  public AccessPoint productOffering(@javax.annotation.Nullable ProductOffering productOffering) {
+    this.productOffering = productOffering;
+    return this;
+  }
+
+  /**
+   * Get productOffering
+   * @return productOffering
+   */
+  @javax.annotation.Nullable
+  public ProductOffering getProductOffering() {
+    return productOffering;
+  }
+
+  public void setProductOffering(@javax.annotation.Nullable ProductOffering productOffering) {
+    this.productOffering = productOffering;
+  }
+
+
+  public AccessPoint bandwidthCommit(@javax.annotation.Nullable Integer bandwidthCommit) {
+    this.bandwidthCommit = bandwidthCommit;
+    return this;
+  }
+
+  /**
+   * Bandwidth commit in Mbps
+   * minimum: 0
+   * maximum: 100000
+   * @return bandwidthCommit
+   */
+  @javax.annotation.Nullable
+  public Integer getBandwidthCommit() {
+    return bandwidthCommit;
+  }
+
+  public void setBandwidthCommit(@javax.annotation.Nullable Integer bandwidthCommit) {
+    this.bandwidthCommit = bandwidthCommit;
+  }
+
+
+  public AccessPoint providerIdentifier(@javax.annotation.Nullable String providerIdentifier) {
+    this.providerIdentifier = providerIdentifier;
+    return this;
+  }
+
+  /**
+   * Provider identifier
+   * @return providerIdentifier
+   */
+  @javax.annotation.Nullable
+  public String getProviderIdentifier() {
+    return providerIdentifier;
+  }
+
+  public void setProviderIdentifier(@javax.annotation.Nullable String providerIdentifier) {
+    this.providerIdentifier = providerIdentifier;
+  }
+
+
+  public AccessPoint address(@javax.annotation.Nullable Address address) {
+    this.address = address;
+    return this;
+  }
+
+  /**
+   * Get address
+   * @return address
+   */
+  @javax.annotation.Nullable
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(@javax.annotation.Nullable Address address) {
+    this.address = address;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -639,6 +764,7 @@ public class AccessPoint {
         Objects.equals(this.virtualDevice, accessPoint.virtualDevice) &&
         Objects.equals(this._interface, accessPoint._interface) &&
         Objects.equals(this.network, accessPoint.network) &&
+        Objects.equals(this.interconnect, accessPoint.interconnect) &&
         Objects.equals(this.environment, accessPoint.environment) &&
         Objects.equals(this.sellerRegion, accessPoint.sellerRegion) &&
         Objects.equals(this.peeringType, accessPoint.peeringType) &&
@@ -647,13 +773,17 @@ public class AccessPoint {
         Objects.equals(this.providerConnectionId, accessPoint.providerConnectionId) &&
         Objects.equals(this.virtualNetwork, accessPoint.virtualNetwork) &&
         Objects.equals(this.interconnection, accessPoint.interconnection) &&
-        Objects.equals(this.role, accessPoint.role)&&
+        Objects.equals(this.role, accessPoint.role) &&
+        Objects.equals(this.productOffering, accessPoint.productOffering) &&
+        Objects.equals(this.bandwidthCommit, accessPoint.bandwidthCommit) &&
+        Objects.equals(this.providerIdentifier, accessPoint.providerIdentifier) &&
+        Objects.equals(this.address, accessPoint.address)&&
         Objects.equals(this.additionalProperties, accessPoint.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, environment, sellerRegion, peeringType, authenticationKey, activationKey, providerConnectionId, virtualNetwork, interconnection, role, additionalProperties);
+    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, interconnect, environment, sellerRegion, peeringType, authenticationKey, activationKey, providerConnectionId, virtualNetwork, interconnection, role, productOffering, bandwidthCommit, providerIdentifier, address, additionalProperties);
   }
 
   @Override
@@ -670,6 +800,7 @@ public class AccessPoint {
     sb.append("    virtualDevice: ").append(toIndentedString(virtualDevice)).append("\n");
     sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    interconnect: ").append(toIndentedString(interconnect)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
     sb.append("    sellerRegion: ").append(toIndentedString(sellerRegion)).append("\n");
     sb.append("    peeringType: ").append(toIndentedString(peeringType)).append("\n");
@@ -679,6 +810,10 @@ public class AccessPoint {
     sb.append("    virtualNetwork: ").append(toIndentedString(virtualNetwork)).append("\n");
     sb.append("    interconnection: ").append(toIndentedString(interconnection)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    productOffering: ").append(toIndentedString(productOffering)).append("\n");
+    sb.append("    bandwidthCommit: ").append(toIndentedString(bandwidthCommit)).append("\n");
+    sb.append("    providerIdentifier: ").append(toIndentedString(providerIdentifier)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -701,7 +836,7 @@ public class AccessPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "interconnect", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -760,6 +895,10 @@ public class AccessPoint {
       if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonNull()) {
         SimplifiedNetwork.validateJsonElement(jsonObj.get("network"));
       }
+      // validate the optional field `interconnect`
+      if (jsonObj.get("interconnect") != null && !jsonObj.get("interconnect").isJsonNull()) {
+        Interconnect.validateJsonElement(jsonObj.get("interconnect"));
+      }
       // validate the optional field `environment`
       if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
         ProviderEnvironment.validateJsonElement(jsonObj.get("environment"));
@@ -794,6 +933,17 @@ public class AccessPoint {
       // validate the optional field `role`
       if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
         RoleEnum.validateJsonElement(jsonObj.get("role"));
+      }
+      // validate the optional field `productOffering`
+      if (jsonObj.get("productOffering") != null && !jsonObj.get("productOffering").isJsonNull()) {
+        ProductOffering.validateJsonElement(jsonObj.get("productOffering"));
+      }
+      if ((jsonObj.get("providerIdentifier") != null && !jsonObj.get("providerIdentifier").isJsonNull()) && !jsonObj.get("providerIdentifier").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `providerIdentifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("providerIdentifier").toString()));
+      }
+      // validate the optional field `address`
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
+        Address.validateJsonElement(jsonObj.get("address"));
       }
   }
 

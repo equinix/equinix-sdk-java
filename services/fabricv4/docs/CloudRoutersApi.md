@@ -620,7 +620,7 @@ public class Example {
 
 <a id="getCloudRouterByUuid"></a>
 # **getCloudRouterByUuid**
-> CloudRouter getCloudRouterByUuid(routerId)
+> CloudRouterReadResponse getCloudRouterByUuid(routerId)
 
 Get Routers
 
@@ -648,7 +648,7 @@ public class Example {
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
     UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
     try {
-      CloudRouter result = apiInstance.getCloudRouterByUuid(routerId);
+      CloudRouterReadResponse result = apiInstance.getCloudRouterByUuid(routerId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CloudRoutersApi#getCloudRouterByUuid");
@@ -669,7 +669,7 @@ public class Example {
 
 ### Return type
 
-[**CloudRouter**](CloudRouter.md)
+[**CloudRouterReadResponse**](CloudRouterReadResponse.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CloudRouter;
+import com.equinix.sdk.fabricv4.model.CloudRouterReadResponse;
 import com.equinix.sdk.fabricv4.model.Pagination;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -62,7 +62,7 @@ public class SearchResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private List<CloudRouter> data = new ArrayList<>();
+  private List<CloudRouterReadResponse> data = new ArrayList<>();
 
   public SearchResponse() {
   }
@@ -86,12 +86,12 @@ public class SearchResponse {
   }
 
 
-  public SearchResponse data(@javax.annotation.Nullable List<CloudRouter> data) {
+  public SearchResponse data(@javax.annotation.Nullable List<CloudRouterReadResponse> data) {
     this.data = data;
     return this;
   }
 
-  public SearchResponse addDataItem(CloudRouter dataItem) {
+  public SearchResponse addDataItem(CloudRouterReadResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -104,11 +104,11 @@ public class SearchResponse {
    * @return data
    */
   @javax.annotation.Nullable
-  public List<CloudRouter> getData() {
+  public List<CloudRouterReadResponse> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable List<CloudRouter> data) {
+  public void setData(@javax.annotation.Nullable List<CloudRouterReadResponse> data) {
     this.data = data;
   }
 
@@ -238,7 +238,7 @@ public class SearchResponse {
 
           // validate the optional field `data` (array)
           for (int i = 0; i < jsonArraydata.size(); i++) {
-            CloudRouter.validateJsonElement(jsonArraydata.get(i));
+            CloudRouterReadResponse.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }

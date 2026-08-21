@@ -170,10 +170,12 @@ public class ServiceProfileRequest {
   }
 
   public ServiceProfileRequest(
-     URI href
+     URI href, 
+     Boolean selfProfile
   ) {
     this();
     this.href = href;
+    this.selfProfile = selfProfile;
   }
 
   public ServiceProfileRequest project(@javax.annotation.Nullable Project project) {
@@ -550,7 +552,7 @@ public class ServiceProfileRequest {
   }
 
   /**
-   * Provider environments associated with this IC_PROFILE service profile.
+   * Provider environments associated with this IC_PROFILE service profile. &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
    * @return environments
    */
   @javax.annotation.Nullable
@@ -563,11 +565,6 @@ public class ServiceProfileRequest {
   }
 
 
-  public ServiceProfileRequest selfProfile(@javax.annotation.Nullable Boolean selfProfile) {
-    this.selfProfile = selfProfile;
-    return this;
-  }
-
   /**
    * response attribute indicates whether the profile belongs to the same organization as the api-invoker.
    * @return selfProfile
@@ -577,9 +574,6 @@ public class ServiceProfileRequest {
     return selfProfile;
   }
 
-  public void setSelfProfile(@javax.annotation.Nullable Boolean selfProfile) {
-    this.selfProfile = selfProfile;
-  }
 
 
   public ServiceProfileRequest projectId(@javax.annotation.Nullable String projectId) {

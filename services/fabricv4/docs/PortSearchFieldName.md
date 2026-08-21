@@ -25,5 +25,9 @@
 
 * `LOCATION_METROCODE` (value: `"/location/metroCode"`)
 
+* `OPERATION_MAINTENANCESTATUS` (value: `"/operation/maintenanceStatus"`)
+
+* `OPERATION_LOCKENABLED` (value: `"/operation/lockEnabled"`)
+
 
 

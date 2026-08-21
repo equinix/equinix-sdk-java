@@ -74,6 +74,192 @@ public class LogosApi {
     }
 
     /**
+     * Build call for createLogo
+     * @param logo Logo image file (required)
+     * @param name Name of the Logo (required)
+     * @param description Description of the logo (required)
+     * @param type Type of logo (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful Create operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createLogoCall(@javax.annotation.Nonnull File logo, @javax.annotation.Nonnull String name, @javax.annotation.Nonnull String description, @javax.annotation.Nonnull String type, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/logos";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (logo != null) {
+            localVarFormParams.put("logo", logo);
+        }
+
+        if (name != null) {
+            localVarFormParams.put("name", name);
+        }
+
+        if (description != null) {
+            localVarFormParams.put("description", description);
+        }
+
+        if (type != null) {
+            localVarFormParams.put("type", type);
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createLogoValidateBeforeCall(@javax.annotation.Nonnull File logo, @javax.annotation.Nonnull String name, @javax.annotation.Nonnull String description, @javax.annotation.Nonnull String type, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'logo' is set
+        if (logo == null) {
+            throw new ApiException("Missing the required parameter 'logo' when calling createLogo(Async)");
+        }
+
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling createLogo(Async)");
+        }
+
+        // verify the required parameter 'description' is set
+        if (description == null) {
+            throw new ApiException("Missing the required parameter 'description' when calling createLogo(Async)");
+        }
+
+        // verify the required parameter 'type' is set
+        if (type == null) {
+            throw new ApiException("Missing the required parameter 'type' when calling createLogo(Async)");
+        }
+
+        return createLogoCall(logo, name, description, type, _callback);
+
+    }
+
+    /**
+     * Create Logo
+     * Create Logo for Equinix Fabric™ Company Profile.
+     * @param logo Logo image file (required)
+     * @param name Name of the Logo (required)
+     * @param description Description of the logo (required)
+     * @param type Type of logo (required)
+     * @return LogoResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful Create operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public LogoResponse createLogo(@javax.annotation.Nonnull File logo, @javax.annotation.Nonnull String name, @javax.annotation.Nonnull String description, @javax.annotation.Nonnull String type) throws ApiException {
+        ApiResponse<LogoResponse> localVarResp = createLogoWithHttpInfo(logo, name, description, type);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Logo
+     * Create Logo for Equinix Fabric™ Company Profile.
+     * @param logo Logo image file (required)
+     * @param name Name of the Logo (required)
+     * @param description Description of the logo (required)
+     * @param type Type of logo (required)
+     * @return ApiResponse&lt;LogoResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful Create operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<LogoResponse> createLogoWithHttpInfo(@javax.annotation.Nonnull File logo, @javax.annotation.Nonnull String name, @javax.annotation.Nonnull String description, @javax.annotation.Nonnull String type) throws ApiException {
+        okhttp3.Call localVarCall = createLogoValidateBeforeCall(logo, name, description, type, null);
+        Type localVarReturnType = new TypeToken<LogoResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Logo (asynchronously)
+     * Create Logo for Equinix Fabric™ Company Profile.
+     * @param logo Logo image file (required)
+     * @param name Name of the Logo (required)
+     * @param description Description of the logo (required)
+     * @param type Type of logo (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Successful Create operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createLogoAsync(@javax.annotation.Nonnull File logo, @javax.annotation.Nonnull String name, @javax.annotation.Nonnull String description, @javax.annotation.Nonnull String type, final ApiCallback<LogoResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createLogoValidateBeforeCall(logo, name, description, type, _callback);
+        Type localVarReturnType = new TypeToken<LogoResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for deleteLogoByUuid
      * @param uuid UUID of the Logo (required)
      * @param _callback Callback for upload/download progress

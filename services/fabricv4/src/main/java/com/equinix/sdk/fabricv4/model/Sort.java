@@ -70,7 +70,7 @@ public class Sort {
   }
 
   /**
-   * Property to sort by((currently supports tags with filter syntax)
+   * Property to sort by. Supported values:  * &#x60;/name&#x60; - Company profile name  * &#x60;/state&#x60; - Company profile state  * &#x60;/changeLog/updatedDateTime&#x60; - Date and time the profile was last updated  * &#x60;/changeLog/createdDateTime&#x60; - Date and time the profile was created 
    * @return property
    */
   @javax.annotation.Nullable

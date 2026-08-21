@@ -1,0 +1,37 @@
+
+
+# AppServiceChange
+
+Current state of latest AppService change
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**uuid** | **String** | Uniquely identifies a change |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) | Type of change |  |
+|**status** | [**StatusEnum**](#StatusEnum) | Current outcome of the change flow |  [optional] |
+|**createdDateTime** | **OffsetDateTime** | Set when change flow starts |  [optional] |
+|**updatedDateTime** | **OffsetDateTime** | Set when change object is updated |  |
+|**data** | [**List&lt;AppServiceChangeOperation&gt;**](AppServiceChangeOperation.md) |  |  [optional] |
+
+
+
+## Enum: TypeEnum
+
+| Name | Value |
+|---- | -----|
+| APP_SERVICE_UPDATE | &quot;APP_SERVICE_UPDATE&quot; |
+
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+|---- | -----|
+| COMPLETED | &quot;COMPLETED&quot; |
+| FAILED | &quot;FAILED&quot; |
+| REQUESTED | &quot;REQUESTED&quot; |
+
+
+

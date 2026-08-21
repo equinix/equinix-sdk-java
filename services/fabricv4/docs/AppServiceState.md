@@ -1,0 +1,19 @@
+
+
+# AppServiceState
+
+## Enum
+
+
+* `PROVISIONING` (value: `"PROVISIONING"`)
+
+* `PROVISIONED` (value: `"PROVISIONED"`)
+
+* `DEPROVISIONING` (value: `"DEPROVISIONING"`)
+
+* `DEPROVISIONED` (value: `"DEPROVISIONED"`)
+
+* `REPROVISIONING` (value: `"REPROVISIONING"`)
+
+
+

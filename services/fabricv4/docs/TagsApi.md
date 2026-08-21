@@ -5,6 +5,7 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createTag**](TagsApi.md#createTag) | **POST** /fabric/v4/tags | Create Tag |
+| [**getTagByUuid**](TagsApi.md#getTagByUuid) | **GET** /fabric/v4/tags/{uuid} | Get Tag |
 | [**listTags**](TagsApi.md#listTags) | **GET** /fabric/v4/tags | List Tags |
 
 
@@ -73,10 +74,82 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful Create operation |  -  |
+| **202** | Successfully created tag and pending for approval |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **500** | Internal Server Error |  -  |
+
+<a id="getTagByUuid"></a>
+# **getTagByUuid**
+> TagResponse getTagByUuid(uuid)
+
+Get Tag
+
+Get Tag by UUID
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.TagsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    TagsApi apiInstance = new TagsApi(defaultClient);
+    UUID uuid = UUID.randomUUID(); // UUID | UUID of the Tag
+    try {
+      TagResponse result = apiInstance.getTagByUuid(uuid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TagsApi#getTagByUuid");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **UUID**| UUID of the Tag | |
+
+### Return type
+
+[**TagResponse**](TagResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Get operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
 <a id="listTags"></a>

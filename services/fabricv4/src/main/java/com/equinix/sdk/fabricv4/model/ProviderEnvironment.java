@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.ProviderEnvironmentTypeEnum;
+import com.equinix.sdk.fabricv4.model.ServiceMetro;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +53,7 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.JSON;
 
 /**
- * Provider Environment associated with an IC_PROFILE service profile
+ * Provider Environment associated with an IC_PROFILE service profile &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ProviderEnvironment {
@@ -90,6 +91,16 @@ public class ProviderEnvironment {
   @SerializedName(SERIALIZED_NAME_SUPPORTED_BANDWIDTHS)
   @javax.annotation.Nullable
   private List<Integer> supportedBandwidths = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_METROS = "metros";
+  @SerializedName(SERIALIZED_NAME_METROS)
+  @javax.annotation.Nullable
+  private List<ServiceMetro> metros = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SUPPORTED_FEATURES = "supportedFeatures";
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_FEATURES)
+  @javax.annotation.Nullable
+  private List<String> supportedFeatures = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -239,6 +250,60 @@ public class ProviderEnvironment {
   }
 
 
+  public ProviderEnvironment metros(@javax.annotation.Nullable List<ServiceMetro> metros) {
+    this.metros = metros;
+    return this;
+  }
+
+  public ProviderEnvironment addMetrosItem(ServiceMetro metrosItem) {
+    if (this.metros == null) {
+      this.metros = new ArrayList<>();
+    }
+    this.metros.add(metrosItem);
+    return this;
+  }
+
+  /**
+   * Derived response attribute.
+   * @return metros
+   */
+  @javax.annotation.Nullable
+  public List<ServiceMetro> getMetros() {
+    return metros;
+  }
+
+  public void setMetros(@javax.annotation.Nullable List<ServiceMetro> metros) {
+    this.metros = metros;
+  }
+
+
+  public ProviderEnvironment supportedFeatures(@javax.annotation.Nullable List<String> supportedFeatures) {
+    this.supportedFeatures = supportedFeatures;
+    return this;
+  }
+
+  public ProviderEnvironment addSupportedFeaturesItem(String supportedFeaturesItem) {
+    if (this.supportedFeatures == null) {
+      this.supportedFeatures = new ArrayList<>();
+    }
+    this.supportedFeatures.add(supportedFeaturesItem);
+    return this;
+  }
+
+  /**
+   * Supported Feature Types
+   * @return supportedFeatures
+   */
+  @javax.annotation.Nullable
+  public List<String> getSupportedFeatures() {
+    return supportedFeatures;
+  }
+
+  public void setSupportedFeatures(@javax.annotation.Nullable List<String> supportedFeatures) {
+    this.supportedFeatures = supportedFeatures;
+  }
+
+
   public ProviderEnvironment changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
@@ -319,13 +384,15 @@ public class ProviderEnvironment {
         Objects.equals(this.description, providerEnvironment.description) &&
         Objects.equals(this.region, providerEnvironment.region) &&
         Objects.equals(this.supportedBandwidths, providerEnvironment.supportedBandwidths) &&
+        Objects.equals(this.metros, providerEnvironment.metros) &&
+        Objects.equals(this.supportedFeatures, providerEnvironment.supportedFeatures) &&
         Objects.equals(this.changeLog, providerEnvironment.changeLog)&&
         Objects.equals(this.additionalProperties, providerEnvironment.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, region, supportedBandwidths, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, region, supportedBandwidths, metros, supportedFeatures, changeLog, additionalProperties);
   }
 
   @Override
@@ -339,6 +406,8 @@ public class ProviderEnvironment {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    supportedBandwidths: ").append(toIndentedString(supportedBandwidths)).append("\n");
+    sb.append("    metros: ").append(toIndentedString(metros)).append("\n");
+    sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -362,7 +431,7 @@ public class ProviderEnvironment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -403,6 +472,24 @@ public class ProviderEnvironment {
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedBandwidths` to be an array in the JSON string but got `%s`", jsonObj.get("supportedBandwidths").toString()));
+      }
+      if (jsonObj.get("metros") != null && !jsonObj.get("metros").isJsonNull()) {
+        JsonArray jsonArraymetros = jsonObj.getAsJsonArray("metros");
+        if (jsonArraymetros != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("metros").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metros` to be an array in the JSON string but got `%s`", jsonObj.get("metros").toString()));
+          }
+
+          // validate the optional field `metros` (array)
+          for (int i = 0; i < jsonArraymetros.size(); i++) {
+            ServiceMetro.validateJsonElement(jsonArraymetros.get(i));
+          };
+        }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("supportedFeatures") != null && !jsonObj.get("supportedFeatures").isJsonNull() && !jsonObj.get("supportedFeatures").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `supportedFeatures` to be an array in the JSON string but got `%s`", jsonObj.get("supportedFeatures").toString()));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

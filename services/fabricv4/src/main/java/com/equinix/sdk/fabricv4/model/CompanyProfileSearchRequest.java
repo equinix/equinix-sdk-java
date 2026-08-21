@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CompanyProfileSearchFilter;
+import com.equinix.sdk.fabricv4.model.CompanyProfileSearchFilters;
 import com.equinix.sdk.fabricv4.model.Pagination;
 import com.equinix.sdk.fabricv4.model.Sort;
 import com.google.gson.TypeAdapter;
@@ -56,7 +56,7 @@ public class CompanyProfileSearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
-  private CompanyProfileSearchFilter filter;
+  private CompanyProfileSearchFilters filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -71,7 +71,7 @@ public class CompanyProfileSearchRequest {
   public CompanyProfileSearchRequest() {
   }
 
-  public CompanyProfileSearchRequest filter(@javax.annotation.Nullable CompanyProfileSearchFilter filter) {
+  public CompanyProfileSearchRequest filter(@javax.annotation.Nullable CompanyProfileSearchFilters filter) {
     this.filter = filter;
     return this;
   }
@@ -81,11 +81,11 @@ public class CompanyProfileSearchRequest {
    * @return filter
    */
   @javax.annotation.Nullable
-  public CompanyProfileSearchFilter getFilter() {
+  public CompanyProfileSearchFilters getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable CompanyProfileSearchFilter filter) {
+  public void setFilter(@javax.annotation.Nullable CompanyProfileSearchFilters filter) {
     this.filter = filter;
   }
 
@@ -243,7 +243,7 @@ public class CompanyProfileSearchRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `filter`
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        CompanyProfileSearchFilter.validateJsonElement(jsonObj.get("filter"));
+        CompanyProfileSearchFilters.validateJsonElement(jsonObj.get("filter"));
       }
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {

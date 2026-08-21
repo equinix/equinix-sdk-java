@@ -8,10 +8,12 @@ All URIs are relative to *https://api.equinix.com*
 | [**createServiceProfileAction**](ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions |
 | [**deleteServiceProfileByUuid**](ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile |
 | [**getServiceProfileByUuid**](ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile |
+| [**getServiceProfileEnvironmentsByUuid**](ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments |
 | [**getServiceProfileMetrosByUuid**](ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros |
 | [**getServiceProfiles**](ServiceProfilesApi.md#getServiceProfiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles |
 | [**putServiceProfileByUuid**](ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile |
 | [**searchServiceProfiles**](ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search |
+| [**serviceProfileEnvironmentAction**](ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions |
 | [**updateServiceProfileByUuid**](ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile |
 
 
@@ -300,6 +302,81 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  * ETag -  <br>  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal Server Error |  -  |
+
+<a id="getServiceProfileEnvironmentsByUuid"></a>
+# **getServiceProfileEnvironmentsByUuid**
+> ProviderEnvironments getServiceProfileEnvironmentsByUuid(serviceProfileId, offset, limit)
+
+Get Profile Environments
+
+Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.ServiceProfilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    ServiceProfilesApi apiInstance = new ServiceProfilesApi(defaultClient);
+    UUID serviceProfileId = UUID.randomUUID(); // UUID | Service Profile UUID
+    Integer offset = 1; // Integer | offset
+    Integer limit = 10; // Integer | number of records to fetch
+    try {
+      ProviderEnvironments result = apiInstance.getServiceProfileEnvironmentsByUuid(serviceProfileId, offset, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ServiceProfilesApi#getServiceProfileEnvironmentsByUuid");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **serviceProfileId** | **UUID**| Service Profile UUID | |
+| **offset** | **Integer**| offset | [optional] |
+| **limit** | **Integer**| number of records to fetch | [optional] |
+
+### Return type
+
+[**ProviderEnvironments**](ProviderEnvironments.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json; charset=UTF-8, application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -603,9 +680,84 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **500** | Internal Server Error |  -  |
 
+<a id="serviceProfileEnvironmentAction"></a>
+# **serviceProfileEnvironmentAction**
+> EnvironmentActionResponse serviceProfileEnvironmentAction(serviceProfileId, environmentId, environmentActionRequest)
+
+Service Profile Environment Actions
+
+This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.ServiceProfilesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    ServiceProfilesApi apiInstance = new ServiceProfilesApi(defaultClient);
+    UUID serviceProfileId = UUID.randomUUID(); // UUID | Service Profile UUID
+    String environmentId = "environmentId_example"; // String | Provider Environment Reference
+    EnvironmentActionRequest environmentActionRequest = new EnvironmentActionRequest(); // EnvironmentActionRequest | 
+    try {
+      EnvironmentActionResponse result = apiInstance.serviceProfileEnvironmentAction(serviceProfileId, environmentId, environmentActionRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ServiceProfilesApi#serviceProfileEnvironmentAction");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **serviceProfileId** | **UUID**| Service Profile UUID | |
+| **environmentId** | **String**| Provider Environment Reference | |
+| **environmentActionRequest** | [**EnvironmentActionRequest**](EnvironmentActionRequest.md)|  | |
+
+### Return type
+
+[**EnvironmentActionResponse**](EnvironmentActionResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Successful service profile environment action operation |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal Server Error |  -  |
+
 <a id="updateServiceProfileByUuid"></a>
 # **updateServiceProfileByUuid**
-> ServiceProfile updateServiceProfileByUuid(serviceProfileId, jsonPatchOperation)
+> ServiceProfile updateServiceProfileByUuid(serviceProfileId, serviceProfileUpdateOperation)
 
 Update Profile
 
@@ -632,9 +784,9 @@ public class Example {
 
     ServiceProfilesApi apiInstance = new ServiceProfilesApi(defaultClient);
     UUID serviceProfileId = UUID.randomUUID(); // UUID | Service Profile UUID
-    List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
+    List<ServiceProfileUpdateOperation> serviceProfileUpdateOperation = Arrays.asList(); // List<ServiceProfileUpdateOperation> | 
     try {
-      ServiceProfile result = apiInstance.updateServiceProfileByUuid(serviceProfileId, jsonPatchOperation);
+      ServiceProfile result = apiInstance.updateServiceProfileByUuid(serviceProfileId, serviceProfileUpdateOperation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceProfilesApi#updateServiceProfileByUuid");
@@ -652,7 +804,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **serviceProfileId** | **UUID**| Service Profile UUID | |
-| **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
+| **serviceProfileUpdateOperation** | [**List&lt;ServiceProfileUpdateOperation&gt;**](ServiceProfileUpdateOperation.md)|  | |
 
 ### Return type
 

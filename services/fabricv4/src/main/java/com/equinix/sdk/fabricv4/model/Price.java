@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.FabricCloudRouterPrice;
 import com.equinix.sdk.fabricv4.model.IpBlockPrice;
+import com.equinix.sdk.fabricv4.model.OpticalConnectPrice;
 import com.equinix.sdk.fabricv4.model.PriceCategory;
 import com.equinix.sdk.fabricv4.model.PriceCharge;
 import com.equinix.sdk.fabricv4.model.ProductType;
@@ -191,6 +192,11 @@ public class Price {
   @SerializedName(SERIALIZED_NAME_TIME_SERVICE)
   @javax.annotation.Nullable
   private TimeServicePrice timeService;
+
+  public static final String SERIALIZED_NAME_OPTICAL_CONNECT = "opticalConnect";
+  @SerializedName(SERIALIZED_NAME_OPTICAL_CONNECT)
+  @javax.annotation.Nullable
+  private OpticalConnectPrice opticalConnect;
 
   public Price() {
   }
@@ -487,6 +493,25 @@ public class Price {
     this.timeService = timeService;
   }
 
+
+  public Price opticalConnect(@javax.annotation.Nullable OpticalConnectPrice opticalConnect) {
+    this.opticalConnect = opticalConnect;
+    return this;
+  }
+
+  /**
+   * Get opticalConnect
+   * @return opticalConnect
+   */
+  @javax.annotation.Nullable
+  public OpticalConnectPrice getOpticalConnect() {
+    return opticalConnect;
+  }
+
+  public void setOpticalConnect(@javax.annotation.Nullable OpticalConnectPrice opticalConnect) {
+    this.opticalConnect = opticalConnect;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -556,13 +581,14 @@ public class Price {
         Objects.equals(this.ipBlock, price.ipBlock) &&
         Objects.equals(this.router, price.router) &&
         Objects.equals(this.port, price.port) &&
-        Objects.equals(this.timeService, price.timeService)&&
+        Objects.equals(this.timeService, price.timeService) &&
+        Objects.equals(this.opticalConnect, price.opticalConnect)&&
         Objects.equals(this.additionalProperties, price.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, code, name, description, account, charges, currency, termLength, catgory, connection, ipBlock, router, port, timeService, additionalProperties);
+    return Objects.hash(href, type, code, name, description, account, charges, currency, termLength, catgory, connection, ipBlock, router, port, timeService, opticalConnect, additionalProperties);
   }
 
   @Override
@@ -584,6 +610,7 @@ public class Price {
     sb.append("    router: ").append(toIndentedString(router)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
     sb.append("    timeService: ").append(toIndentedString(timeService)).append("\n");
+    sb.append("    opticalConnect: ").append(toIndentedString(opticalConnect)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -606,7 +633,7 @@ public class Price {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "name", "description", "account", "charges", "currency", "termLength", "catgory", "connection", "ipBlock", "router", "port", "timeService"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "code", "name", "description", "account", "charges", "currency", "termLength", "catgory", "connection", "ipBlock", "router", "port", "timeService", "opticalConnect"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -689,6 +716,10 @@ public class Price {
       // validate the optional field `timeService`
       if (jsonObj.get("timeService") != null && !jsonObj.get("timeService").isJsonNull()) {
         TimeServicePrice.validateJsonElement(jsonObj.get("timeService"));
+      }
+      // validate the optional field `opticalConnect`
+      if (jsonObj.get("opticalConnect") != null && !jsonObj.get("opticalConnect").isJsonNull()) {
+        OpticalConnectPrice.validateJsonElement(jsonObj.get("opticalConnect"));
       }
   }
 

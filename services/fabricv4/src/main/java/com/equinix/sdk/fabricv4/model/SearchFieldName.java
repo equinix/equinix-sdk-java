@@ -87,6 +87,10 @@ public enum SearchFieldName {
   
   OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
   
+  OPERATION_MAINTENANCESTATUS("/operation/maintenanceStatus"),
+  
+  OPERATION_LOCKENABLED("/operation/lockEnabled"),
+  
   PROJECT_PROJECTID("/project/projectId"),
   
   REDUNDANCY_GROUP("/redundancy/group"),

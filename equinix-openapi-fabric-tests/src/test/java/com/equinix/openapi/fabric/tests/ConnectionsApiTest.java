@@ -19,6 +19,7 @@ import static com.equinix.openapi.fabric.tests.PortsApiTest.getPorts;
 import static com.equinix.openapi.fabric.tests.helpers.Apis.*;
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.users;
 import static com.equinix.openapi.fabric.tests.helpers.Utils.getRandomVlanNumber;
+import static com.equinix.sdk.fabricv4.model.CloudRouterChangeOperation.OpEnum.REPLACE;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
@@ -49,6 +50,186 @@ public class ConnectionsApiTest {
     public static void removeResources() {
         removeConnections(userName);
         CloudRoutersApiTest.removeCloudRouters(userName);
+    }
+
+    public static Connection createConnectionFCR2ToPort() throws ApiException {
+        CloudRouterReadResponse cloudRouter = createRouter();
+
+        UsersItem userDto = Utils.getUserData(getCurrentUser());
+
+        Random r = new Random();
+        List<Port> portList = getPorts(userName).getData().stream()
+                .filter(p -> p.getName().contains("Dot1q"))
+                .filter(p -> p.getLocation().getMetroCode().equals(cloudRouter.getLocation().getMetroCode()))
+                .collect(Collectors.toList());
+
+        Port port = portList.get(r.nextInt(portList.size()));
+
+        ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-fc2p")
+                .type(ConnectionType.IP_VC)
+                .bandwidth(1000)
+                .project(new Project().projectId(userDto.getProjectId()))
+                .aSide(new ConnectionSide().accessPoint(
+                        new AccessPoint()
+                                .type(AccessPointType.CLOUD_ROUTER)
+                                .router(new CloudRouter().uuid(cloudRouter.getUuid()))));
+
+        Connection connection = null;
+        for (int i = 0; i < 3; i++) {
+            int tag = getRandomVlanNumber();
+            connectionPostRequest.zSide(new ConnectionSide().accessPoint(
+                    new AccessPoint()
+                            .type(AccessPointType.COLO)
+                            .port(new SimplifiedPort().uuid(port.getUuid()))
+                            .linkProtocol(new SimplifiedLinkProtocol()
+                                    .type(LinkProtocolType.DOT1Q)
+                                    .vlanTag(tag))));
+
+            connection = connectionsApi.createConnection(connectionPostRequest, false);
+
+            if (connectionsApi.getApiClient().getStatusCode() == 201) {
+                break;
+            }
+        }
+
+        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
+
+        users.get(userName).getUserResources().addConnectionUuid(connection.getUuid());
+        return connection;
+    }
+
+    public static ConnectionPostRequest getDefaultConnectionRequest(String name) {
+        return new ConnectionPostRequest()
+                .name(name)
+                .notifications(singletonList(new SimplifiedNotification()
+                        .type(SimplifiedNotification.TypeEnum.ALL)
+                        .emails(singletonList("test@test.com"))));
+    }
+
+    public static Connection createPort2SpConnection() throws ApiException {
+        ServiceProfile serviceProfile = new ServiceProfilesApiTest().getServiceProfilesByQueryResponse("zSide")
+                .getData().stream()
+                .filter(sp -> sp.getState().equals(ServiceProfileStateEnum.ACTIVE))
+                .filter(sp -> sp.getMetros().stream().anyMatch(m -> m.getCode().equals("SV")))
+                .filter(sp -> !sp.getAccessPointTypeConfigs().get(0).getServiceProfileAccessPointTypeCOLO().getSupportedBandwidths().isEmpty())
+                .findAny().get();
+
+        UsersItem usersItem = Utils.getUserData(getCurrentUser());
+        PortDto portDto = usersItem.getPorts().get(0);
+
+        ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-p2sp")
+                .bandwidth(serviceProfile.getAccessPointTypeConfigs().get(0).getServiceProfileAccessPointTypeCOLO().getSupportedBandwidths().get(0))
+                .type(ConnectionType.EVPL_VC)
+                .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
+                .order(new Order().purchaseOrderNumber("pol123"))
+                .zSide(new ConnectionSide().accessPoint(
+                        new AccessPoint()
+                                .type(AccessPointType.SP)
+                                .profile(new SimplifiedServiceProfile()
+                                        .type(ServiceProfileTypeEnum.L2_PROFILE)
+                                        .uuid(serviceProfile.getUuid()))
+                                .location(new SimplifiedLocation()
+                                        .metroCode(serviceProfile.getMetros().get(0).getCode()))));
+
+        Connection connection = null;
+
+        for (int i = 0; i < 3; i++) {
+            int sTag = getRandomVlanNumber();
+            int cTag = getRandomVlanNumber();
+            connectionPostRequest.aSide(new ConnectionSide().accessPoint(
+                    new AccessPoint()
+                            .type(AccessPointType.COLO)
+                            .port(new SimplifiedPort().uuid(UUID.fromString(portDto.getUuid())))
+                            .linkProtocol(new SimplifiedLinkProtocol()
+                                    .type(LinkProtocolType.QINQ)
+                                    .vlanSTag(sTag)
+                                    .vlanCTag(cTag))));
+
+            connection = connectionsApi.createConnection(connectionPostRequest, false);
+
+            if (connectionsApi.getApiClient().getStatusCode() == 201) {
+                break;
+            }
+        }
+
+        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
+
+        return connection;
+    }
+
+    public static Connection createPort2Port() throws ApiException {
+        List<Port> port = getPorts(userName).getData().stream()
+                .filter(p -> p.getName().contains("Dot1q"))
+                .collect(Collectors.toList());
+
+        Connection connection = null;
+
+        for (int i = 0; i < 3; i++) {
+            int tagAside = getRandomVlanNumber();
+            int tagZside = getRandomVlanNumber();
+
+            ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-p2p")
+                    .bandwidth(1000)
+                    .type(ConnectionType.EVPL_VC)
+                    .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
+                    .aSide(new ConnectionSide().accessPoint(
+                            new AccessPoint()
+                                    .type(AccessPointType.COLO)
+                                    .port(new SimplifiedPort()
+                                            .uuid(port.get(0).getUuid()))
+                                    .linkProtocol(new SimplifiedLinkProtocol()
+                                            .type(LinkProtocolType.DOT1Q).vlanTag(tagAside))))
+                    .zSide(new ConnectionSide().accessPoint(
+                            new AccessPoint()
+                                    .type(AccessPointType.COLO)
+                                    .port(new SimplifiedPort()
+                                            .uuid(port.get(1).getUuid()))
+                                    .linkProtocol(new SimplifiedLinkProtocol()
+                                            .type(LinkProtocolType.DOT1Q)
+                                            .vlanTag(tagZside))));
+
+            connection = connectionsApi.createConnection(connectionPostRequest, false);
+
+            if (connectionsApi.getApiClient().getStatusCode() == 201) {
+                break;
+            }
+        }
+
+        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
+        users.get(userName).getUserResources().addConnectionUuid(connection.getUuid());
+        waitForConnectionIsInState(connection.getUuid(), EquinixStatus.PROVISIONED);
+        return connection;
+    }
+
+    public static boolean waitForConnectionIsInState(String connectionUuid, EquinixStatus... connectionState) throws ApiException {
+        boolean result = false;
+        EquinixStatus currentState = null;
+        for (int i = 0; i < 3; i++) {
+            Connection connection = connectionsApi.getConnectionByUuid(connectionUuid, null);
+            currentState = connection.getOperation().getEquinixStatus();
+
+            if (connectionState.length > 1) {
+                if (currentState.equals(connectionState[0]) || currentState.equals(connectionState[1])) {
+                    result = true;
+                    break;
+                }
+            } else {
+                if (currentState.equals(connectionState[0])) {
+                    result = true;
+                    break;
+                }
+            }
+            try {
+                Thread.sleep(30000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        if (!result) {
+            System.out.println("Connection has not reached the expected state: " + connectionState[0].getValue() + " current state: " + currentState.getValue());
+        }
+        return result;
     }
 
     @Test
@@ -153,112 +334,6 @@ public class ConnectionsApiTest {
         assertEquals(200, connectionsApi.getApiClient().getStatusCode());
     }
 
-    public static Connection createConnectionFCR2ToPort() throws ApiException {
-        CloudRouter cloudRouter = createRouter();
-
-        UsersItem userDto = Utils.getUserData(getCurrentUser());
-
-        Random r = new Random();
-        List<Port> portList = getPorts(userName).getData().stream()
-                .filter(p -> p.getName().contains("Dot1q"))
-                .filter(p -> p.getLocation().getMetroCode().equals(cloudRouter.getLocation().getMetroCode()))
-                .collect(Collectors.toList());
-
-        Port port = portList.get(r.nextInt(portList.size()));
-
-        ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-fc2p")
-                .type(ConnectionType.IP_VC)
-                .bandwidth(1000)
-                .project(new Project().projectId(userDto.getProjectId()))
-                .aSide(new ConnectionSide().accessPoint(
-                        new AccessPoint()
-                                .type(AccessPointType.CLOUD_ROUTER)
-                                .router(new CloudRouter().uuid(cloudRouter.getUuid()))));
-
-        Connection connection = null;
-        for (int i = 0; i < 3; i++) {
-            int tag = getRandomVlanNumber();
-            connectionPostRequest.zSide(new ConnectionSide().accessPoint(
-                    new AccessPoint()
-                            .type(AccessPointType.COLO)
-                            .port(new SimplifiedPort().uuid(port.getUuid()))
-                            .linkProtocol(new SimplifiedLinkProtocol()
-                                    .type(LinkProtocolType.DOT1Q)
-                                    .vlanTag(tag))));
-
-            connection = connectionsApi.createConnection(connectionPostRequest, false);
-
-            if (connectionsApi.getApiClient().getStatusCode() == 201) {
-                break;
-            }
-        }
-
-        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
-
-        users.get(userName).getUserResources().addConnectionUuid(connection.getUuid());
-        return connection;
-    }
-
-    public static ConnectionPostRequest getDefaultConnectionRequest(String name) {
-        return new ConnectionPostRequest()
-                .name(name)
-                .notifications(singletonList(new SimplifiedNotification()
-                        .type(SimplifiedNotification.TypeEnum.ALL)
-                        .emails(singletonList("test@test.com"))));
-    }
-
-    public static Connection createPort2SpConnection() throws ApiException {
-        ServiceProfile serviceProfile = new ServiceProfilesApiTest().getServiceProfilesByQueryResponse("zSide")
-                .getData().stream()
-                .filter(sp -> sp.getState().equals(ServiceProfileStateEnum.ACTIVE))
-                .filter(sp -> sp.getMetros().stream().anyMatch(m -> m.getCode().equals("SV")))
-                .filter(sp -> sp.getVisibility().equals(ServiceProfileVisibilityEnum.PUBLIC))
-                .filter(sp -> !sp.getAccessPointTypeConfigs().get(0).getServiceProfileAccessPointTypeCOLO().getSupportedBandwidths().isEmpty())
-                .findAny().get();
-
-        UsersItem usersItem = Utils.getUserData(getCurrentUser());
-        PortDto portDto = usersItem.getPorts().get(0);
-
-        ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-p2sp")
-                .bandwidth(serviceProfile.getAccessPointTypeConfigs().get(0).getServiceProfileAccessPointTypeCOLO().getSupportedBandwidths().get(0))
-                .type(ConnectionType.EVPL_VC)
-                .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
-                .order(new Order().purchaseOrderNumber("pol123"))
-                .zSide(new ConnectionSide().accessPoint(
-                        new AccessPoint()
-                                .type(AccessPointType.SP)
-                                .profile(new SimplifiedServiceProfile()
-                                        .type(ServiceProfileTypeEnum.L2_PROFILE)
-                                        .uuid(serviceProfile.getUuid()))
-                                .location(new SimplifiedLocation()
-                                        .metroCode(serviceProfile.getMetros().get(0).getCode()))));
-
-        Connection connection = null;
-
-        for (int i = 0; i < 3; i++) {
-            int sTag = getRandomVlanNumber();
-            int cTag = getRandomVlanNumber();
-            connectionPostRequest.aSide(new ConnectionSide().accessPoint(
-                    new AccessPoint()
-                            .type(AccessPointType.COLO)
-                            .port(new SimplifiedPort().uuid(UUID.fromString(portDto.getUuid())))
-                            .linkProtocol(new SimplifiedLinkProtocol()
-                                    .type(LinkProtocolType.QINQ)
-                                    .vlanSTag(sTag)
-                                    .vlanCTag(cTag))));
-
-            connection = connectionsApi.createConnection(connectionPostRequest, false);
-
-            if (connectionsApi.getApiClient().getStatusCode() == 201) {
-                break;
-            }
-        }
-
-        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
-
-        return connection;
-    }
-
     /**
      * Successful operation
      */
@@ -269,7 +344,7 @@ public class ConnectionsApiTest {
         String updatedName = "updated_p2p_connection";
 
         ConnectionChangeOperation connectionChangeOperation = new ConnectionChangeOperation()
-                .op(OpEnum.REPLACE.getValue())
+                .op(REPLACE.getValue())
                 .path("/name")
                 .value(updatedName);
 
@@ -290,81 +365,6 @@ public class ConnectionsApiTest {
             }
         }
         assertEquals(updatedConnection.getName(), updatedName);
-    }
-
-    public static Connection createPort2Port() throws ApiException {
-        List<Port> port = getPorts(userName).getData().stream()
-                .filter(p -> p.getName().contains("Dot1q"))
-                .collect(Collectors.toList());
-
-        Connection connection = null;
-
-        for (int i = 0; i < 3; i++) {
-            int tagAside = getRandomVlanNumber();
-            int tagZside = getRandomVlanNumber();
-
-            ConnectionPostRequest connectionPostRequest = getDefaultConnectionRequest("panthers-con-p2p")
-                    .bandwidth(1000)
-                    .type(ConnectionType.EVPL_VC)
-                    .redundancy(new ConnectionRedundancy().priority(ConnectionPriority.PRIMARY))
-                    .aSide(new ConnectionSide().accessPoint(
-                            new AccessPoint()
-                                    .type(AccessPointType.COLO)
-                                    .port(new SimplifiedPort()
-                                            .uuid(port.get(0).getUuid()))
-                                    .linkProtocol(new SimplifiedLinkProtocol()
-                                            .type(LinkProtocolType.DOT1Q).vlanTag(tagAside))))
-                    .zSide(new ConnectionSide().accessPoint(
-                            new AccessPoint()
-                                    .type(AccessPointType.COLO)
-                                    .port(new SimplifiedPort()
-                                            .uuid(port.get(1).getUuid()))
-                                    .linkProtocol(new SimplifiedLinkProtocol()
-                                            .type(LinkProtocolType.DOT1Q)
-                                            .vlanTag(tagZside))));
-
-            connection = connectionsApi.createConnection(connectionPostRequest, false);
-
-            if (connectionsApi.getApiClient().getStatusCode() == 201) {
-                break;
-            }
-        }
-
-        assertEquals(201, connectionsApi.getApiClient().getStatusCode());
-        users.get(userName).getUserResources().addConnectionUuid(connection.getUuid());
-        waitForConnectionIsInState(connection.getUuid(), EquinixStatus.PROVISIONED);
-        return connection;
-    }
-
-    public static boolean waitForConnectionIsInState(String connectionUuid, EquinixStatus... connectionState) throws ApiException {
-        boolean result = false;
-        EquinixStatus currentState = null;
-        for (int i = 0; i < 3; i++) {
-            Connection connection = connectionsApi.getConnectionByUuid(connectionUuid, null);
-            currentState = connection.getOperation().getEquinixStatus();
-
-            if (connectionState.length > 1) {
-                if (currentState.equals(connectionState[0]) || currentState.equals(connectionState[1])) {
-                    result = true;
-                    break;
-                }
-            } else {
-                if (currentState.equals(connectionState[0])) {
-                    result = true;
-                    break;
-                }
-            }
-            try {
-                Thread.sleep(30000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        if (!result) {
-            System.out.println("Connection has not reached the expected state: " + connectionState[0].getValue() + " current state: " + currentState.getValue());
-        }
-        return result;
     }
 
     private static void deleteConnection(String uuid) throws ApiException {

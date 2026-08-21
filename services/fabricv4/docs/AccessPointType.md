@@ -27,5 +27,7 @@
 
 * `APP_LINK` (value: `"APP_LINK"`)
 
+* `XF_IC` (value: `"XF_IC"`)
+
 
 

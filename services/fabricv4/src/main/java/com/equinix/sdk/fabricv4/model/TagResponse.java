@@ -13,6 +13,8 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.Changelog;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +22,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -77,10 +81,74 @@ public class TagResponse {
   @javax.annotation.Nullable
   private String displayName;
 
-  public static final String SERIALIZED_NAME_WEIGHT = "weight";
-  @SerializedName(SERIALIZED_NAME_WEIGHT)
+  /**
+   * Status of the Tag request. Can be APPROVED, PENDING_APPROVAL, REJECT
+   */
+  @JsonAdapter(StateEnum.Adapter.class)
+  public enum StateEnum {
+    APPROVED("APPROVED"),
+    
+    PENDING_APPROVAL("PENDING_APPROVAL"),
+    
+    REJECTED("REJECTED");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StateEnum fromValue(String value) {
+      for (StateEnum b : StateEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StateEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StateEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StateEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StateEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
   @javax.annotation.Nullable
-  private Integer weight;
+  private StateEnum state;
+
+  public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
+  @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
+  @javax.annotation.Nullable
+  private Changelog changeLog;
 
   public TagResponse() {
   }
@@ -180,22 +248,68 @@ public class TagResponse {
   }
 
 
-  public TagResponse weight(@javax.annotation.Nullable Integer weight) {
-    this.weight = weight;
+  public TagResponse state(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
     return this;
   }
 
   /**
-   * Get weight
-   * @return weight
+   * Status of the Tag request. Can be APPROVED, PENDING_APPROVAL, REJECT
+   * @return state
    */
   @javax.annotation.Nullable
-  public Integer getWeight() {
-    return weight;
+  public StateEnum getState() {
+    return state;
   }
 
-  public void setWeight(@javax.annotation.Nullable Integer weight) {
-    this.weight = weight;
+  public void setState(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
+  }
+
+
+  public TagResponse notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+
+  public TagResponse addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
+    return this;
+  }
+
+  /**
+   * Get notifications
+   * @return notifications
+   */
+  @javax.annotation.Nullable
+  public List<SimplifiedNotification> getNotifications() {
+    return notifications;
+  }
+
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+  }
+
+
+  public TagResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
+    return this;
+  }
+
+  /**
+   * Get changeLog
+   * @return changeLog
+   */
+  @javax.annotation.Nullable
+  public Changelog getChangeLog() {
+    return changeLog;
+  }
+
+  public void setChangeLog(@javax.annotation.Nullable Changelog changeLog) {
+    this.changeLog = changeLog;
   }
 
   /**
@@ -258,13 +372,15 @@ public class TagResponse {
         Objects.equals(this.type, tagResponse.type) &&
         Objects.equals(this.name, tagResponse.name) &&
         Objects.equals(this.displayName, tagResponse.displayName) &&
-        Objects.equals(this.weight, tagResponse.weight)&&
+        Objects.equals(this.state, tagResponse.state) &&
+        Objects.equals(this.notifications, tagResponse.notifications) &&
+        Objects.equals(this.changeLog, tagResponse.changeLog)&&
         Objects.equals(this.additionalProperties, tagResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, displayName, weight, additionalProperties);
+    return Objects.hash(href, uuid, type, name, displayName, state, notifications, changeLog, additionalProperties);
   }
 
   @Override
@@ -276,7 +392,9 @@ public class TagResponse {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -299,7 +417,7 @@ public class TagResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "displayName", "weight"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "displayName", "state", "notifications", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -332,6 +450,31 @@ public class TagResponse {
       }
       if ((jsonObj.get("displayName") != null && !jsonObj.get("displayName").isJsonNull()) && !jsonObj.get("displayName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `displayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayName").toString()));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
+      }
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
+      }
+      // validate the optional field `changeLog`
+      if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {
+        Changelog.validateJsonElement(jsonObj.get("changeLog"));
       }
   }
 

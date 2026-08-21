@@ -24,20 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Loa Action Type
+ * Action to perform on the LOA.
  */
 @JsonAdapter(LoaActionType.Adapter.class)
 public enum LoaActionType {
   
-  AUTHORIZE_LOA("AUTHORIZE_LOA"),
+  ISSUER_AUTHORIZATION("LOA_ISSUER_AUTHORIZATION"),
   
-  ACCEPT_LOA("ACCEPT_LOA"),
+  REQUESTOR_ACCEPTANCE("LOA_REQUESTOR_ACCEPTANCE"),
   
-  COPY_LOA("COPY_LOA"),
+  COPY_LINK("LOA_COPY_LINK"),
   
-  SEND_LOA("SEND_LOA"),
+  SEND_EMAIL_NOTIFICATION("LOA_SEND_EMAIL_NOTIFICATION"),
   
-  CANCEL_LOA("CANCEL_LOA");
+  CANCEL("LOA_CANCEL");
 
   private String value;
 

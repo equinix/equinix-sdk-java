@@ -28,6 +28,11 @@ Stream object
 | XF_ROUTER | &quot;XF_ROUTER&quot; |
 | ORGANIZATION | &quot;ORGANIZATION&quot; |
 | PROJECT | &quot;PROJECT&quot; |
+| DATA | &quot;DATA&quot; |
+| MGMT | &quot;MGMT&quot; |
+| SSH | &quot;SSH&quot; |
+| FAB | &quot;FAB&quot; |
+| CTRL | &quot;CTRL&quot; |
 
 
 

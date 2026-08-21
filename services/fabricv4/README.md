@@ -1,7 +1,7 @@
 # fabricv4
 
 Equinix Fabric API v4
-- API version: 4.30
+- API version: 4.31
   - Generator version: 7.16.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
@@ -86,7 +86,7 @@ import com.equinix.sdk.fabricv4.ApiException;
 import com.equinix.sdk.fabricv4.Configuration;
 import com.equinix.sdk.fabricv4.auth.*;
 import com.equinix.sdk.fabricv4.model.*;
-import com.equinix.sdk.fabricv4.api.AgentTemplatesApi;
+import com.equinix.sdk.fabricv4.api.ApplicationDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -97,15 +97,13 @@ public class Example {
     HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
     BearerAuth.setBearerToken("BEARER TOKEN");
 
-    AgentTemplatesApi apiInstance = new AgentTemplatesApi(defaultClient);
-    UUID agentTemplateId = UUID.randomUUID(); // UUID | Agent Template UUID
-    Integer offset = 1; // Integer | offset
-    Integer limit = 10; // Integer | number of records to fetch
+    ApplicationDomainsApi apiInstance = new ApplicationDomainsApi(defaultClient);
+    AppDomainPostRequest appDomainPostRequest = new AppDomainPostRequest(); // AppDomainPostRequest | 
     try {
-      AgentTemplates result = apiInstance.getAgentTemplateByUuid(agentTemplateId, offset, limit);
+      AppDomain result = apiInstance.createAppDomain(appDomainPostRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AgentTemplatesApi#getAgentTemplateByUuid");
+      System.err.println("Exception when calling ApplicationDomainsApi#createAppDomain");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -122,17 +120,45 @@ All URIs are relative to *https://api.equinix.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgentTemplatesApi* | [**getAgentTemplateByUuid**](docs/AgentTemplatesApi.md#getAgentTemplateByUuid) | **GET** /fabric/v4/agentTemplates/{agentTemplateId} | Get Agent Template by UUID
-*AgentTemplatesApi* | [**getAgentTemplates**](docs/AgentTemplatesApi.md#getAgentTemplates) | **GET** /fabric/v4/agentTemplates | Get Agent Templates
-*AgentsApi* | [**createAgent**](docs/AgentsApi.md#createAgent) | **POST** /fabric/v4/agents | Create Agent
-*AgentsApi* | [**deleteAgentByUuid**](docs/AgentsApi.md#deleteAgentByUuid) | **DELETE** /fabric/v4/agents/{agentId} | Delete Agent by UUID
-*AgentsApi* | [**getAgentActivities**](docs/AgentsApi.md#getAgentActivities) | **GET** /fabric/v4/agents/{agentId}/activities | Get Agent Activities
-*AgentsApi* | [**getAgentByUuid**](docs/AgentsApi.md#getAgentByUuid) | **GET** /fabric/v4/agents/{agentId} | Get Agent by UUID
-*AgentsApi* | [**getAgents**](docs/AgentsApi.md#getAgents) | **GET** /fabric/v4/agents | Get Agents
-*AgentsApi* | [**patchAgentByUuid**](docs/AgentsApi.md#patchAgentByUuid) | **PATCH** /fabric/v4/agents/{agentId} | Update Agent by UUID
+*ApplicationDomainsApi* | [**createAppDomain**](docs/ApplicationDomainsApi.md#createAppDomain) | **POST** /fabric/v4/appDomains | Create App Domain
+*ApplicationDomainsApi* | [**deleteAppDomainByUuid**](docs/ApplicationDomainsApi.md#deleteAppDomainByUuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete App Domain
+*ApplicationDomainsApi* | [**getAppDomainByUuid**](docs/ApplicationDomainsApi.md#getAppDomainByUuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get App Domain
+*ApplicationDomainsApi* | [**getAttachedAppLinksByAppDomainId**](docs/ApplicationDomainsApi.md#getAttachedAppLinksByAppDomainId) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get attached App Links for App Domain
+*ApplicationDomainsApi* | [**searchAppDomains**](docs/ApplicationDomainsApi.md#searchAppDomains) | **POST** /fabric/v4/appDomains/search | Search App Domains
+*ApplicationDomainsApi* | [**updateAppDomainByUuid**](docs/ApplicationDomainsApi.md#updateAppDomainByUuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update App Domain
+*ApplicationLinksApi* | [**attachAppDomainToAppLink**](docs/ApplicationLinksApi.md#attachAppDomainToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Attach App Domain to App Link
+*ApplicationLinksApi* | [**attachAppServiceToAppLink**](docs/ApplicationLinksApi.md#attachAppServiceToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Attach App Service to App Link
+*ApplicationLinksApi* | [**createAppLink**](docs/ApplicationLinksApi.md#createAppLink) | **POST** /fabric/v4/appLinks | Create App Link
+*ApplicationLinksApi* | [**deleteAppLinkByUuid**](docs/ApplicationLinksApi.md#deleteAppLinkByUuid) | **DELETE** /fabric/v4/appLinks/{appLinkId} | Delete App Link
+*ApplicationLinksApi* | [**detachAppDomainFromAppLink**](docs/ApplicationLinksApi.md#detachAppDomainFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Detach App Domain from App Link
+*ApplicationLinksApi* | [**detachAppServiceFromAppLink**](docs/ApplicationLinksApi.md#detachAppServiceFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Detach App Service from App Link
+*ApplicationLinksApi* | [**getAppLinkByUuid**](docs/ApplicationLinksApi.md#getAppLinkByUuid) | **GET** /fabric/v4/appLinks/{appLinkId} | Get App Link
+*ApplicationLinksApi* | [**getAttachedAppDomainByUuid**](docs/ApplicationLinksApi.md#getAttachedAppDomainByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Get attached App Domain for App Link
+*ApplicationLinksApi* | [**getAttachedAppDomainsByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppDomainsByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains | Get attached App Domains for App Link
+*ApplicationLinksApi* | [**getAttachedAppServiceByUuid**](docs/ApplicationLinksApi.md#getAttachedAppServiceByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Get attached App Service for App Link
+*ApplicationLinksApi* | [**getAttachedAppServicesByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppServicesByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices | Get attached App Services for App Link
+*ApplicationLinksApi* | [**searchAppLinks**](docs/ApplicationLinksApi.md#searchAppLinks) | **POST** /fabric/v4/appLinks/search | Search App Links
+*ApplicationLinksApi* | [**searchAttachedAppDomains**](docs/ApplicationLinksApi.md#searchAttachedAppDomains) | **POST** /fabric/v4/appLinks/{appLinkId}/appDomains/search | Search attached App Domain to App Link
+*ApplicationLinksApi* | [**searchAttachedAppServices**](docs/ApplicationLinksApi.md#searchAttachedAppServices) | **POST** /fabric/v4/appLinks/{appLinkId}/appServices/search | Search attached App Service to App Link
+*ApplicationLinksApi* | [**updateAppLinkByUuid**](docs/ApplicationLinksApi.md#updateAppLinkByUuid) | **PATCH** /fabric/v4/appLinks/{appLinkId} | Update App Link
+*ApplicationLinksApi* | [**updateAppServiceAttachmentToAppLink**](docs/ApplicationLinksApi.md#updateAppServiceAttachmentToAppLink) | **PATCH** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Update App Service attachment to App Link
+*ApplicationServicesApi* | [**createAppService**](docs/ApplicationServicesApi.md#createAppService) | **POST** /fabric/v4/appServices | Create App Service
+*ApplicationServicesApi* | [**deleteAppServiceByUuid**](docs/ApplicationServicesApi.md#deleteAppServiceByUuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete App Service
+*ApplicationServicesApi* | [**getAppServiceByUuid**](docs/ApplicationServicesApi.md#getAppServiceByUuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get App Service
+*ApplicationServicesApi* | [**getAttachedAppLinksByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppLinksByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get attached App Links for App Service
+*ApplicationServicesApi* | [**getAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppSubscriptionsByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get attached App Subscriptions for App Service
+*ApplicationServicesApi* | [**searchAppServices**](docs/ApplicationServicesApi.md#searchAppServices) | **POST** /fabric/v4/appServices/search | Search App Services
+*ApplicationServicesApi* | [**searchAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#searchAttachedAppSubscriptionsByAppServiceId) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search attached App Subscriptions
+*ApplicationServicesApi* | [**updateAppServiceByUuid**](docs/ApplicationServicesApi.md#updateAppServiceByUuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update App Service
+*ApplicationSubscriptionsApi* | [**createAppSubscription**](docs/ApplicationSubscriptionsApi.md#createAppSubscription) | **POST** /fabric/v4/appSubscriptions | Create App Subscription
+*ApplicationSubscriptionsApi* | [**deleteAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#deleteAppSubscriptionByUuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete App Subscription
+*ApplicationSubscriptionsApi* | [**getAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#getAppSubscriptionByUuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get App Subscription
+*ApplicationSubscriptionsApi* | [**searchAppSubscriptions**](docs/ApplicationSubscriptionsApi.md#searchAppSubscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search App Subscriptions
+*ApplicationSubscriptionsApi* | [**updateAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#updateAppSubscriptionByUuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update App Subscription
 *CloudEventsApi* | [**getCloudEvent**](docs/CloudEventsApi.md#getCloudEvent) | **GET** /fabric/v4/cloudevents/{cloudEventId} | Get Cloud Event
 *CloudEventsApi* | [**getCloudEventByAssetId**](docs/CloudEventsApi.md#getCloudEventByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/cloudevents | Get Cloud Events by Asset Id
 *CloudEventsApi* | [**searchCloudEvents**](docs/CloudEventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events
+*CloudEventsApi* | [**searchLastOpEvents**](docs/CloudEventsApi.md#searchLastOpEvents) | **POST** /fabric/v4/latestOperationalEvents/search | Search Last Operational Cloud Events
 *CloudRoutersApi* | [**createCloudRouter**](docs/CloudRoutersApi.md#createCloudRouter) | **POST** /fabric/v4/routers | Create Routers
 *CloudRoutersApi* | [**createCloudRouterAction**](docs/CloudRoutersApi.md#createCloudRouterAction) | **POST** /fabric/v4/routers/{routerId}/actions | Create Route Table Action
 *CloudRoutersApi* | [**createCloudRouterCommand**](docs/CloudRoutersApi.md#createCloudRouterCommand) | **POST** /fabric/v4/routers/{routerId}/commands | Initiate Command
@@ -172,17 +198,39 @@ Class | Method | HTTP request | Description
 *ConnectionsApi* | [**searchConnections**](docs/ConnectionsApi.md#searchConnections) | **POST** /fabric/v4/connections/search | Search connections
 *ConnectionsApi* | [**updateConnectionByUuid**](docs/ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update by ID
 *ConnectionsApi* | [**validateConnections**](docs/ConnectionsApi.md#validateConnections) | **POST** /fabric/v4/connections/validate | Validate Connection
+*FabricOneApi* | [**createInterconnect**](docs/FabricOneApi.md#createInterconnect) | **POST** /fabric/v4/interconnects | Create Interconnect
+*FabricOneApi* | [**deleteInterconnectByUuid**](docs/FabricOneApi.md#deleteInterconnectByUuid) | **DELETE** /fabric/v4/interconnects/{interconnectId} | Delete Interconnect By ID
+*FabricOneApi* | [**getInterconnectByUuid**](docs/FabricOneApi.md#getInterconnectByUuid) | **GET** /fabric/v4/interconnects/{interconnectId} | Get Interconnect By ID
+*FabricOneApi* | [**getInterconnectPackages**](docs/FabricOneApi.md#getInterconnectPackages) | **GET** /fabric/v4/interconnectPackages | Get All Interconnect Packages
+*FabricOneApi* | [**searchInterconnects**](docs/FabricOneApi.md#searchInterconnects) | **POST** /fabric/v4/interconnects/search | Search Interconnects
+*GatewaysApi* | [**createGateway**](docs/GatewaysApi.md#createGateway) | **POST** /fabric/v4/gateways | Create Gateway
+*GatewaysApi* | [**deleteGatewayByUuid**](docs/GatewaysApi.md#deleteGatewayByUuid) | **DELETE** /fabric/v4/gateways/{gatewayId} | Delete Gateway
+*GatewaysApi* | [**getGatewayByUuid**](docs/GatewaysApi.md#getGatewayByUuid) | **GET** /fabric/v4/gateways/{gatewayId} | Get Gateway
+*GatewaysApi* | [**updateGatewayByUuid**](docs/GatewaysApi.md#updateGatewayByUuid) | **PATCH** /fabric/v4/gateways/{gatewayId} | Update Gateway by ID
 *HealthApi* | [**getStatus**](docs/HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get service status
 *InternetAccessServicesApi* | [**createEiaService**](docs/InternetAccessServicesApi.md#createEiaService) | **POST** /fabric/v4/internetAccessServices | Creates Internet Access Service
 *InternetAccessServicesApi* | [**deleteEiaService**](docs/InternetAccessServicesApi.md#deleteEiaService) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by UUID
 *InternetAccessServicesApi* | [**getEiaService**](docs/InternetAccessServicesApi.md#getEiaService) | **GET** /fabric/v4/internetAccessServices/{uuid} | Retrieve Internet Access Service by UUID
 *InternetAccessServicesApi* | [**patchEiaService**](docs/InternetAccessServicesApi.md#patchEiaService) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Patch Internet Access Service by UUID
 *InternetAccessServicesApi* | [**searchEiaServices**](docs/InternetAccessServicesApi.md#searchEiaServices) | **POST** /fabric/v4/internetAccessServices/search | Search for Internet Access Services
-*IpBlocksApi* | [**deleteIpBlockById**](docs/IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete Ip Block by UUID
-*IpBlocksApi* | [**getIpBlock**](docs/IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve Ip Block by UUID
-*IpBlocksApi* | [**patchIpBlockById**](docs/IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch Ip Block by UUID
-*IpBlocksApi* | [**searchIpBlocks**](docs/IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for Ip Blocks
-*IpBlocksApi* | [**submitIpBlock**](docs/IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned Ip Block request
+*InternetExchangeServicesApi* | [**getExchangeServiceById**](docs/InternetExchangeServicesApi.md#getExchangeServiceById) | **GET** /fabric/v4/exchangeServices/{exchangeServiceId} | Get Internet Exchange Service
+*InternetExchangeServicesApi* | [**searchExchangeService**](docs/InternetExchangeServicesApi.md#searchExchangeService) | **POST** /fabric/v4/exchangeServices/search | Search Internet Exchange Service
+*IpBlocksApi* | [**deleteIpBlockById**](docs/IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by UUID
+*IpBlocksApi* | [**getIpBlock**](docs/IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by UUID
+*IpBlocksApi* | [**patchIpBlockById**](docs/IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch IP Block by UUID
+*IpBlocksApi* | [**searchIpBlocks**](docs/IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for IP Blocks
+*IpBlocksApi* | [**submitIpBlock**](docs/IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned IP Block request
+*LoasApi* | [**createLoa**](docs/LoasApi.md#createLoa) | **POST** /fabric/v4/loas | Create Loa
+*LoasApi* | [**createLoaNoteByLoaId**](docs/LoasApi.md#createLoaNoteByLoaId) | **POST** /fabric/v4/loas/{loaId}/notes | Create Loa Note
+*LoasApi* | [**getLoaActionsByUuid**](docs/LoasApi.md#getLoaActionsByUuid) | **GET** /fabric/v4/loas/{loaId}/actions/{actionId} | Get Loa Action by Action ID
+*LoasApi* | [**getLoaByUuid**](docs/LoasApi.md#getLoaByUuid) | **GET** /fabric/v4/loas/{loaId} | Get Loa
+*LoasApi* | [**getLoaConsumersByLoaId**](docs/LoasApi.md#getLoaConsumersByLoaId) | **GET** /fabric/v4/loas/{loaId}/consumers | Get Loa Consumers
+*LoasApi* | [**getLoaNotesByUuid**](docs/LoasApi.md#getLoaNotesByUuid) | **GET** /fabric/v4/loas/{loaId}/notes | Get Loa Notes
+*LoasApi* | [**performLoaAction**](docs/LoasApi.md#performLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions | Loa Actions
+*LoasApi* | [**searchLoa**](docs/LoasApi.md#searchLoa) | **POST** /fabric/v4/loas/search | Search Loas
+*LoasApi* | [**searchLoaAction**](docs/LoasApi.md#searchLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions/search | Search Loa Actions
+*LoasApi* | [**updateLoaByUuid**](docs/LoasApi.md#updateLoaByUuid) | **PATCH** /fabric/v4/loas/{loaId} | Update Loa
+*LogosApi* | [**createLogo**](docs/LogosApi.md#createLogo) | **POST** /fabric/v4/logos | Create Logo
 *LogosApi* | [**deleteLogoByUuid**](docs/LogosApi.md#deleteLogoByUuid) | **DELETE** /fabric/v4/logos/{uuid} | Delete Logo
 *LogosApi* | [**getLogoByUuid**](docs/LogosApi.md#getLogoByUuid) | **GET** /fabric/v4/logos/{uuid} | Get Logo
 *MarketplaceSubscriptionsApi* | [**getSubscriptionById**](docs/MarketplaceSubscriptionsApi.md#getSubscriptionById) | **GET** /fabric/v4/marketplaceSubscriptions/{subscriptionId} | Get Subscription
@@ -199,6 +247,10 @@ Class | Method | HTTP request | Description
 *NetworksApi* | [**getNetworkChanges**](docs/NetworksApi.md#getNetworkChanges) | **GET** /fabric/v4/networks/{networkId}/changes | Get Network Changes
 *NetworksApi* | [**searchNetworks**](docs/NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Network
 *NetworksApi* | [**updateNetworkByUuid**](docs/NetworksApi.md#updateNetworkByUuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID
+*OpticalMetroConnectsApi* | [**createBulkOpticalConnect**](docs/OpticalMetroConnectsApi.md#createBulkOpticalConnect) | **POST** /fabric/v4/opticalConnects/bulk | Create Dual Diverse Optical Metro Connect Service
+*OpticalMetroConnectsApi* | [**createOpticalConnect**](docs/OpticalMetroConnectsApi.md#createOpticalConnect) | **POST** /fabric/v4/opticalConnects | Create Optical Metro Connect Service
+*OpticalMetroConnectsApi* | [**getOpticalConnectByUuid**](docs/OpticalMetroConnectsApi.md#getOpticalConnectByUuid) | **GET** /fabric/v4/opticalConnects/{opticalConnectId} | Get Optical Metro Connect Service
+*OpticalMetroConnectsApi* | [**searchOpticalConnect**](docs/OpticalMetroConnectsApi.md#searchOpticalConnect) | **POST** /fabric/v4/opticalConnects/search | Search Optical Metro Connect Services
 *PortPackagesApi* | [**getPortPackages**](docs/PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | Get All Port Packages
 *PortsApi* | [**addToLag**](docs/PortsApi.md#addToLag) | **POST** /fabric/v4/ports/{portId}/physicalPorts/bulk | Add to Lag
 *PortsApi* | [**createPort**](docs/PortsApi.md#createPort) | **POST** /fabric/v4/ports | Create Port
@@ -281,10 +333,12 @@ Class | Method | HTTP request | Description
 *ServiceProfilesApi* | [**createServiceProfileAction**](docs/ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions
 *ServiceProfilesApi* | [**deleteServiceProfileByUuid**](docs/ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile
 *ServiceProfilesApi* | [**getServiceProfileByUuid**](docs/ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile
+*ServiceProfilesApi* | [**getServiceProfileEnvironmentsByUuid**](docs/ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments
 *ServiceProfilesApi* | [**getServiceProfileMetrosByUuid**](docs/ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros
 *ServiceProfilesApi* | [**getServiceProfiles**](docs/ServiceProfilesApi.md#getServiceProfiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles
 *ServiceProfilesApi* | [**putServiceProfileByUuid**](docs/ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile
 *ServiceProfilesApi* | [**searchServiceProfiles**](docs/ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search
+*ServiceProfilesApi* | [**serviceProfileEnvironmentAction**](docs/ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions
 *ServiceProfilesApi* | [**updateServiceProfileByUuid**](docs/ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile
 *ServiceTokensApi* | [**createServiceToken**](docs/ServiceTokensApi.md#createServiceToken) | **POST** /fabric/v4/serviceTokens | Create Service Token
 *ServiceTokensApi* | [**createServiceTokenAction**](docs/ServiceTokensApi.md#createServiceTokenAction) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | ServiceToken Actions
@@ -304,6 +358,7 @@ Class | Method | HTTP request | Description
 *StreamSubscriptionsApi* | [**deleteStreamSubscriptionByUuid**](docs/StreamSubscriptionsApi.md#deleteStreamSubscriptionByUuid) | **DELETE** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Delete Subscription
 *StreamSubscriptionsApi* | [**getStreamSubscriptionByUuid**](docs/StreamSubscriptionsApi.md#getStreamSubscriptionByUuid) | **GET** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Get Subscription
 *StreamSubscriptionsApi* | [**getStreamSubscriptions**](docs/StreamSubscriptionsApi.md#getStreamSubscriptions) | **GET** /fabric/v4/streams/{streamId}/subscriptions | Get Subscriptions
+*StreamSubscriptionsApi* | [**searchStreamSubscriptions**](docs/StreamSubscriptionsApi.md#searchStreamSubscriptions) | **POST** /fabric/v4/streamSubscriptions/search | Search Stream Subscriptions
 *StreamSubscriptionsApi* | [**updateStreamSubscriptionByUuid**](docs/StreamSubscriptionsApi.md#updateStreamSubscriptionByUuid) | **PUT** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Update Subscription
 *StreamsApi* | [**createStreams**](docs/StreamsApi.md#createStreams) | **POST** /fabric/v4/streams | Create Stream
 *StreamsApi* | [**deleteStreamAssetByUuid**](docs/StreamsApi.md#deleteStreamAssetByUuid) | **DELETE** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Detach Asset
@@ -311,10 +366,12 @@ Class | Method | HTTP request | Description
 *StreamsApi* | [**getStreamAssetByUuid**](docs/StreamsApi.md#getStreamAssetByUuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset
 *StreamsApi* | [**getStreamByUuid**](docs/StreamsApi.md#getStreamByUuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream
 *StreamsApi* | [**getStreams**](docs/StreamsApi.md#getStreams) | **GET** /fabric/v4/streams | Get Streams
-*StreamsApi* | [**getStreamsAssets**](docs/StreamsApi.md#getStreamsAssets) | **POST** /fabric/v4/streamAssets/search | Get Assets
+*StreamsApi* | [**searchStreamAssets**](docs/StreamsApi.md#searchStreamAssets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets
+*StreamsApi* | [**searchStreams**](docs/StreamsApi.md#searchStreams) | **POST** /fabric/v4/streams/search | Search Streams
 *StreamsApi* | [**updateStreamAssetByUuid**](docs/StreamsApi.md#updateStreamAssetByUuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 *StreamsApi* | [**updateStreamByUuid**](docs/StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
 *TagsApi* | [**createTag**](docs/TagsApi.md#createTag) | **POST** /fabric/v4/tags | Create Tag
+*TagsApi* | [**getTagByUuid**](docs/TagsApi.md#getTagByUuid) | **GET** /fabric/v4/tags/{uuid} | Get Tag
 *TagsApi* | [**listTags**](docs/TagsApi.md#listTags) | **GET** /fabric/v4/tags | List Tags
 
 
@@ -323,32 +380,134 @@ Class | Method | HTTP request | Description
  - [AccessPoint](docs/AccessPoint.md)
  - [AccessPointSelector](docs/AccessPointSelector.md)
  - [AccessPointType](docs/AccessPointType.md)
+ - [Account](docs/Account.md)
  - [Actions](docs/Actions.md)
+ - [ActivationKeyDetails](docs/ActivationKeyDetails.md)
  - [AddOperation](docs/AddOperation.md)
- - [Agent](docs/Agent.md)
- - [AgentActivities](docs/AgentActivities.md)
- - [AgentActivitiesMetadata](docs/AgentActivitiesMetadata.md)
- - [AgentDefinition](docs/AgentDefinition.md)
- - [AgentGetActivities](docs/AgentGetActivities.md)
- - [AgentGetAllResponse](docs/AgentGetAllResponse.md)
- - [AgentPatchRequest](docs/AgentPatchRequest.md)
- - [AgentPostRequest](docs/AgentPostRequest.md)
- - [AgentTemplate](docs/AgentTemplate.md)
- - [AgentTemplateGetAllResponse](docs/AgentTemplateGetAllResponse.md)
- - [AgentTemplates](docs/AgentTemplates.md)
- - [Agents](docs/Agents.md)
+ - [Address](docs/Address.md)
  - [AlertRulePostRequest](docs/AlertRulePostRequest.md)
  - [AlertRulePutRequest](docs/AlertRulePutRequest.md)
+ - [AllInterconnectPackagesResponse](docs/AllInterconnectPackagesResponse.md)
  - [AllPhysicalPortsResponse](docs/AllPhysicalPortsResponse.md)
  - [AllPortPackagesResponse](docs/AllPortPackagesResponse.md)
  - [AllPortsResponse](docs/AllPortsResponse.md)
  - [ApiConfig](docs/ApiConfig.md)
  - [ApiServices](docs/ApiServices.md)
+ - [AppDomain](docs/AppDomain.md)
+ - [AppDomainAttachedAppLink](docs/AppDomainAttachedAppLink.md)
+ - [AppDomainAttachedAppLinks](docs/AppDomainAttachedAppLinks.md)
+ - [AppDomainChange](docs/AppDomainChange.md)
+ - [AppDomainChangeOperation](docs/AppDomainChangeOperation.md)
+ - [AppDomainFilter](docs/AppDomainFilter.md)
+ - [AppDomainFilters](docs/AppDomainFilters.md)
+ - [AppDomainOrFilter](docs/AppDomainOrFilter.md)
+ - [AppDomainPostRequest](docs/AppDomainPostRequest.md)
+ - [AppDomainSearchRequest](docs/AppDomainSearchRequest.md)
+ - [AppDomainSearchResponse](docs/AppDomainSearchResponse.md)
+ - [AppDomainSimpleExpression](docs/AppDomainSimpleExpression.md)
+ - [AppDomainSortCriteria](docs/AppDomainSortCriteria.md)
+ - [AppDomainSortDirection](docs/AppDomainSortDirection.md)
+ - [AppDomainState](docs/AppDomainState.md)
+ - [AppDomainType](docs/AppDomainType.md)
+ - [AppLink](docs/AppLink.md)
+ - [AppLinkAppDomainAttachment](docs/AppLinkAppDomainAttachment.md)
+ - [AppLinkAppServiceAttachment](docs/AppLinkAppServiceAttachment.md)
+ - [AppLinkAppServiceAttachmentChange](docs/AppLinkAppServiceAttachmentChange.md)
+ - [AppLinkAppServiceAttachmentChangeOperation](docs/AppLinkAppServiceAttachmentChangeOperation.md)
+ - [AppLinkAttachDomainFilter](docs/AppLinkAttachDomainFilter.md)
+ - [AppLinkAttachDomainFilters](docs/AppLinkAttachDomainFilters.md)
+ - [AppLinkAttachDomainOrFilter](docs/AppLinkAttachDomainOrFilter.md)
+ - [AppLinkAttachDomainSearchRequest](docs/AppLinkAttachDomainSearchRequest.md)
+ - [AppLinkAttachDomainSearchResponse](docs/AppLinkAttachDomainSearchResponse.md)
+ - [AppLinkAttachDomainSimpleExpression](docs/AppLinkAttachDomainSimpleExpression.md)
+ - [AppLinkAttachDomainSortCriteria](docs/AppLinkAttachDomainSortCriteria.md)
+ - [AppLinkAttachDomainSortDirection](docs/AppLinkAttachDomainSortDirection.md)
+ - [AppLinkAttachServiceFilter](docs/AppLinkAttachServiceFilter.md)
+ - [AppLinkAttachServiceFilters](docs/AppLinkAttachServiceFilters.md)
+ - [AppLinkAttachServiceOrFilter](docs/AppLinkAttachServiceOrFilter.md)
+ - [AppLinkAttachServiceRequest](docs/AppLinkAttachServiceRequest.md)
+ - [AppLinkAttachServiceSearchRequest](docs/AppLinkAttachServiceSearchRequest.md)
+ - [AppLinkAttachServiceSearchResponse](docs/AppLinkAttachServiceSearchResponse.md)
+ - [AppLinkAttachServiceSimpleExpression](docs/AppLinkAttachServiceSimpleExpression.md)
+ - [AppLinkAttachServiceSortCriteria](docs/AppLinkAttachServiceSortCriteria.md)
+ - [AppLinkAttachServiceSortDirection](docs/AppLinkAttachServiceSortDirection.md)
+ - [AppLinkAttachState](docs/AppLinkAttachState.md)
+ - [AppLinkAttachedAppDomain](docs/AppLinkAttachedAppDomain.md)
+ - [AppLinkAttachedAppDomains](docs/AppLinkAttachedAppDomains.md)
+ - [AppLinkAttachedAppService](docs/AppLinkAttachedAppService.md)
+ - [AppLinkAttachedAppServices](docs/AppLinkAttachedAppServices.md)
+ - [AppLinkChange](docs/AppLinkChange.md)
+ - [AppLinkChangeOperation](docs/AppLinkChangeOperation.md)
+ - [AppLinkCloudRouter](docs/AppLinkCloudRouter.md)
+ - [AppLinkFilter](docs/AppLinkFilter.md)
+ - [AppLinkFilters](docs/AppLinkFilters.md)
+ - [AppLinkOrFilter](docs/AppLinkOrFilter.md)
+ - [AppLinkPostRequest](docs/AppLinkPostRequest.md)
+ - [AppLinkPostRequestRouter](docs/AppLinkPostRequestRouter.md)
+ - [AppLinkSearchRequest](docs/AppLinkSearchRequest.md)
+ - [AppLinkSearchResponse](docs/AppLinkSearchResponse.md)
+ - [AppLinkSimpleExpression](docs/AppLinkSimpleExpression.md)
+ - [AppLinkSortCriteria](docs/AppLinkSortCriteria.md)
+ - [AppLinkSortDirection](docs/AppLinkSortDirection.md)
+ - [AppLinkState](docs/AppLinkState.md)
+ - [AppLinkType](docs/AppLinkType.md)
+ - [AppService](docs/AppService.md)
+ - [AppServiceAttachedAppLink](docs/AppServiceAttachedAppLink.md)
+ - [AppServiceAttachedAppLinks](docs/AppServiceAttachedAppLinks.md)
+ - [AppServiceAttachedAppSubscription](docs/AppServiceAttachedAppSubscription.md)
+ - [AppServiceAttachedAppSubscriptionFilter](docs/AppServiceAttachedAppSubscriptionFilter.md)
+ - [AppServiceAttachedAppSubscriptionFilters](docs/AppServiceAttachedAppSubscriptionFilters.md)
+ - [AppServiceAttachedAppSubscriptionOrFilter](docs/AppServiceAttachedAppSubscriptionOrFilter.md)
+ - [AppServiceAttachedAppSubscriptionSearchRequest](docs/AppServiceAttachedAppSubscriptionSearchRequest.md)
+ - [AppServiceAttachedAppSubscriptionSearchResponse](docs/AppServiceAttachedAppSubscriptionSearchResponse.md)
+ - [AppServiceAttachedAppSubscriptionSimpleExpression](docs/AppServiceAttachedAppSubscriptionSimpleExpression.md)
+ - [AppServiceAttachedAppSubscriptionSortCriteria](docs/AppServiceAttachedAppSubscriptionSortCriteria.md)
+ - [AppServiceAttachedAppSubscriptionSortDirection](docs/AppServiceAttachedAppSubscriptionSortDirection.md)
+ - [AppServiceAttachedAppSubscriptions](docs/AppServiceAttachedAppSubscriptions.md)
+ - [AppServiceChange](docs/AppServiceChange.md)
+ - [AppServiceChangeOperation](docs/AppServiceChangeOperation.md)
+ - [AppServiceFilter](docs/AppServiceFilter.md)
+ - [AppServiceFilters](docs/AppServiceFilters.md)
+ - [AppServiceOrFilter](docs/AppServiceOrFilter.md)
+ - [AppServicePostRequest](docs/AppServicePostRequest.md)
+ - [AppServiceSearchRequest](docs/AppServiceSearchRequest.md)
+ - [AppServiceSearchResponse](docs/AppServiceSearchResponse.md)
+ - [AppServiceSimpleExpression](docs/AppServiceSimpleExpression.md)
+ - [AppServiceSortCriteria](docs/AppServiceSortCriteria.md)
+ - [AppServiceSortDirection](docs/AppServiceSortDirection.md)
+ - [AppServiceState](docs/AppServiceState.md)
+ - [AppServiceType](docs/AppServiceType.md)
+ - [AppSubscription](docs/AppSubscription.md)
+ - [AppSubscriptionChange](docs/AppSubscriptionChange.md)
+ - [AppSubscriptionChangeOperation](docs/AppSubscriptionChangeOperation.md)
+ - [AppSubscriptionFilter](docs/AppSubscriptionFilter.md)
+ - [AppSubscriptionFilters](docs/AppSubscriptionFilters.md)
+ - [AppSubscriptionOrFilter](docs/AppSubscriptionOrFilter.md)
+ - [AppSubscriptionPostRequest](docs/AppSubscriptionPostRequest.md)
+ - [AppSubscriptionPrioritization](docs/AppSubscriptionPrioritization.md)
+ - [AppSubscriptionSearchRequest](docs/AppSubscriptionSearchRequest.md)
+ - [AppSubscriptionSearchResponse](docs/AppSubscriptionSearchResponse.md)
+ - [AppSubscriptionSimpleExpression](docs/AppSubscriptionSimpleExpression.md)
+ - [AppSubscriptionSortCriteria](docs/AppSubscriptionSortCriteria.md)
+ - [AppSubscriptionSortDirection](docs/AppSubscriptionSortDirection.md)
+ - [AppSubscriptionSource](docs/AppSubscriptionSource.md)
+ - [AppSubscriptionSourceAppLink](docs/AppSubscriptionSourceAppLink.md)
+ - [AppSubscriptionSourceRequest](docs/AppSubscriptionSourceRequest.md)
+ - [AppSubscriptionSourceRequestAppLink](docs/AppSubscriptionSourceRequestAppLink.md)
+ - [AppSubscriptionState](docs/AppSubscriptionState.md)
+ - [AppSubscriptionTarget](docs/AppSubscriptionTarget.md)
+ - [AppSubscriptionTargetAppService](docs/AppSubscriptionTargetAppService.md)
+ - [AppSubscriptionTargetRequest](docs/AppSubscriptionTargetRequest.md)
+ - [AppSubscriptionTargetRequestAppService](docs/AppSubscriptionTargetRequestAppService.md)
+ - [AppSubscriptionType](docs/AppSubscriptionType.md)
  - [Asset](docs/Asset.md)
- - [AttachLogoResponse](docs/AttachLogoResponse.md)
  - [AttachPrivateServiceResponse](docs/AttachPrivateServiceResponse.md)
  - [AttachServiceProfileResponse](docs/AttachServiceProfileResponse.md)
  - [AttachTagResponse](docs/AttachTagResponse.md)
+ - [AttachedAppDomainOrder](docs/AttachedAppDomainOrder.md)
+ - [AttachedAppLinkOrder](docs/AttachedAppLinkOrder.md)
+ - [AttachedAppServiceOrder](docs/AttachedAppServiceOrder.md)
+ - [AttachedAppSubscriptionOrder](docs/AttachedAppSubscriptionOrder.md)
  - [AuthContext](docs/AuthContext.md)
  - [AuthenticationKey](docs/AuthenticationKey.md)
  - [BGPActionData](docs/BGPActionData.md)
@@ -360,11 +519,10 @@ Class | Method | HTTP request | Description
  - [BGPConnectionIpv6](docs/BGPConnectionIpv6.md)
  - [BGPConnectionOperation](docs/BGPConnectionOperation.md)
  - [BandwidthUtilization](docs/BandwidthUtilization.md)
+ - [BulkOpticalConnectRequest](docs/BulkOpticalConnectRequest.md)
  - [BulkPhysicalPort](docs/BulkPhysicalPort.md)
- - [BulkPortRequest](docs/BulkPortRequest.md)
  - [Change](docs/Change.md)
  - [Changelog](docs/Changelog.md)
- - [ChatMessage](docs/ChatMessage.md)
  - [CloudEvent](docs/CloudEvent.md)
  - [CloudEventAssetType](docs/CloudEventAssetType.md)
  - [CloudEventData](docs/CloudEventData.md)
@@ -414,6 +572,7 @@ Class | Method | HTTP request | Description
  - [CloudRouterPostRequest](docs/CloudRouterPostRequest.md)
  - [CloudRouterPostRequestBase](docs/CloudRouterPostRequestBase.md)
  - [CloudRouterPostRequestPackage](docs/CloudRouterPostRequestPackage.md)
+ - [CloudRouterReadResponse](docs/CloudRouterReadResponse.md)
  - [CloudRouterRouteAggregationAndExpression](docs/CloudRouterRouteAggregationAndExpression.md)
  - [CloudRouterRouteAggregationExpression](docs/CloudRouterRouteAggregationExpression.md)
  - [CloudRouterRouteAggregationOrExpression](docs/CloudRouterRouteAggregationOrExpression.md)
@@ -436,14 +595,19 @@ Class | Method | HTTP request | Description
  - [Code](docs/Code.md)
  - [CompanyLogo](docs/CompanyLogo.md)
  - [CompanyMetro](docs/CompanyMetro.md)
- - [CompanyProfileActionRequest](docs/CompanyProfileActionRequest.md)
  - [CompanyProfileChange](docs/CompanyProfileChange.md)
+ - [CompanyProfileContact](docs/CompanyProfileContact.md)
+ - [CompanyProfileContactContacts](docs/CompanyProfileContactContacts.md)
  - [CompanyProfileRequest](docs/CompanyProfileRequest.md)
  - [CompanyProfileResponse](docs/CompanyProfileResponse.md)
  - [CompanyProfileResponseAccount](docs/CompanyProfileResponseAccount.md)
+ - [CompanyProfileSearchFieldName](docs/CompanyProfileSearchFieldName.md)
  - [CompanyProfileSearchFilter](docs/CompanyProfileSearchFilter.md)
+ - [CompanyProfileSearchFilters](docs/CompanyProfileSearchFilters.md)
+ - [CompanyProfileSearchOrFilter](docs/CompanyProfileSearchOrFilter.md)
  - [CompanyProfileSearchRequest](docs/CompanyProfileSearchRequest.md)
  - [CompanyProfileSearchResponse](docs/CompanyProfileSearchResponse.md)
+ - [CompanyProfileSearchSimpleExpression](docs/CompanyProfileSearchSimpleExpression.md)
  - [CompanyProfileSortDirection](docs/CompanyProfileSortDirection.md)
  - [CompanyServiceProfile](docs/CompanyServiceProfile.md)
  - [ConnectedMetro](docs/ConnectedMetro.md)
@@ -452,7 +616,6 @@ Class | Method | HTTP request | Description
  - [ConnectionAction](docs/ConnectionAction.md)
  - [ConnectionActionRequest](docs/ConnectionActionRequest.md)
  - [ConnectionChangeOperation](docs/ConnectionChangeOperation.md)
- - [ConnectionCompanyProfile](docs/ConnectionCompanyProfile.md)
  - [ConnectionDirection](docs/ConnectionDirection.md)
  - [ConnectionInvitation](docs/ConnectionInvitation.md)
  - [ConnectionLink](docs/ConnectionLink.md)
@@ -483,6 +646,9 @@ Class | Method | HTTP request | Description
  - [ConnectionType](docs/ConnectionType.md)
  - [ConnectivitySource](docs/ConnectivitySource.md)
  - [ConnectivitySourceType](docs/ConnectivitySourceType.md)
+ - [ContactPreference](docs/ContactPreference.md)
+ - [CreateLoa](docs/CreateLoa.md)
+ - [CreateLoaNote](docs/CreateLoaNote.md)
  - [CustomField](docs/CustomField.md)
  - [DetectionMethod](docs/DetectionMethod.md)
  - [DetectionMethodResponse](docs/DetectionMethodResponse.md)
@@ -490,15 +656,33 @@ Class | Method | HTTP request | Description
  - [DirectConnectionIpv6](docs/DirectConnectionIpv6.md)
  - [Direction](docs/Direction.md)
  - [EndCustomer](docs/EndCustomer.md)
+ - [EnvironmentActionRequest](docs/EnvironmentActionRequest.md)
+ - [EnvironmentActionResponse](docs/EnvironmentActionResponse.md)
+ - [EnvironmentActionStateEnum](docs/EnvironmentActionStateEnum.md)
+ - [EnvironmentActionTypeEnum](docs/EnvironmentActionTypeEnum.md)
  - [EquinixStatus](docs/EquinixStatus.md)
  - [Error](docs/Error.md)
+ - [ExchangeServiceAndExpression](docs/ExchangeServiceAndExpression.md)
+ - [ExchangeServiceNotification](docs/ExchangeServiceNotification.md)
+ - [ExchangeServiceOrExpression](docs/ExchangeServiceOrExpression.md)
+ - [ExchangeServicePropertyExpression](docs/ExchangeServicePropertyExpression.md)
+ - [ExchangeServiceResponse](docs/ExchangeServiceResponse.md)
+ - [ExchangeServiceResponseBgp](docs/ExchangeServiceResponseBgp.md)
+ - [ExchangeServiceSearchExpression](docs/ExchangeServiceSearchExpression.md)
+ - [ExchangeServiceSearchRequest](docs/ExchangeServiceSearchRequest.md)
+ - [ExchangeServiceSearchResponse](docs/ExchangeServiceSearchResponse.md)
+ - [ExchangeServiceSearchSortCriteria](docs/ExchangeServiceSearchSortCriteria.md)
  - [Expression](docs/Expression.md)
  - [FabricCloudRouterCode](docs/FabricCloudRouterCode.md)
  - [FabricCloudRouterPackages](docs/FabricCloudRouterPackages.md)
  - [FabricCloudRouterPrice](docs/FabricCloudRouterPrice.md)
  - [FilterBody](docs/FilterBody.md)
- - [GatewayAttachmentListResponse](docs/GatewayAttachmentListResponse.md)
- - [GatewayAttachmentResponse](docs/GatewayAttachmentResponse.md)
+ - [Gateway](docs/Gateway.md)
+ - [GatewayChangeOperation](docs/GatewayChangeOperation.md)
+ - [GatewayIpv4](docs/GatewayIpv4.md)
+ - [GatewayPostRequest](docs/GatewayPostRequest.md)
+ - [GatewayState](docs/GatewayState.md)
+ - [GatewayType](docs/GatewayType.md)
  - [GeoCoordinates](docs/GeoCoordinates.md)
  - [GeoScopeType](docs/GeoScopeType.md)
  - [GeoZone](docs/GeoZone.md)
@@ -506,7 +690,6 @@ Class | Method | HTTP request | Description
  - [GetAllConnectionRouteAggregationsResponse](docs/GetAllConnectionRouteAggregationsResponse.md)
  - [GetAllConnectionRouteFiltersResponse](docs/GetAllConnectionRouteFiltersResponse.md)
  - [GetAllStreamAlertRuleResponse](docs/GetAllStreamAlertRuleResponse.md)
- - [GetAllStreamAssetResponse](docs/GetAllStreamAssetResponse.md)
  - [GetAllStreamResponse](docs/GetAllStreamResponse.md)
  - [GetAllStreamSubscriptionResponse](docs/GetAllStreamSubscriptionResponse.md)
  - [GetCloudEventsByAssetResponse](docs/GetCloudEventsByAssetResponse.md)
@@ -520,6 +703,24 @@ Class | Method | HTTP request | Description
  - [HealthResponse](docs/HealthResponse.md)
  - [Hop](docs/Hop.md)
  - [HopProbes](docs/HopProbes.md)
+ - [Interconnect](docs/Interconnect.md)
+ - [InterconnectFilter](docs/InterconnectFilter.md)
+ - [InterconnectLocation](docs/InterconnectLocation.md)
+ - [InterconnectLocationRequest](docs/InterconnectLocationRequest.md)
+ - [InterconnectNotification](docs/InterconnectNotification.md)
+ - [InterconnectPackage](docs/InterconnectPackage.md)
+ - [InterconnectPostRequest](docs/InterconnectPostRequest.md)
+ - [InterconnectRouter](docs/InterconnectRouter.md)
+ - [InterconnectSearchFieldName](docs/InterconnectSearchFieldName.md)
+ - [InterconnectSearchRequest](docs/InterconnectSearchRequest.md)
+ - [InterconnectSearchResponse](docs/InterconnectSearchResponse.md)
+ - [InterconnectSortBy](docs/InterconnectSortBy.md)
+ - [InterconnectSortByResponse](docs/InterconnectSortByResponse.md)
+ - [InterconnectSortCriteria](docs/InterconnectSortCriteria.md)
+ - [InterconnectSortCriteriaResponse](docs/InterconnectSortCriteriaResponse.md)
+ - [InterconnectSortDirection](docs/InterconnectSortDirection.md)
+ - [InterconnectSortDirectionResponse](docs/InterconnectSortDirectionResponse.md)
+ - [InterconnectState](docs/InterconnectState.md)
  - [InternetAccess](docs/InternetAccess.md)
  - [InternetAccessAccount](docs/InternetAccessAccount.md)
  - [InternetAccessBilling](docs/InternetAccessBilling.md)
@@ -548,7 +749,9 @@ Class | Method | HTTP request | Description
  - [InternetAccessPostRequestBilling](docs/InternetAccessPostRequestBilling.md)
  - [InternetAccessRoutingProtocol](docs/InternetAccessRoutingProtocol.md)
  - [InternetAccessRoutingProtocolBgp](docs/InternetAccessRoutingProtocolBgp.md)
+ - [InternetAccessRoutingProtocolBgpAsn](docs/InternetAccessRoutingProtocolBgpAsn.md)
  - [InternetAccessRoutingProtocolBgpRequest](docs/InternetAccessRoutingProtocolBgpRequest.md)
+ - [InternetAccessRoutingProtocolBgpRequestAsn](docs/InternetAccessRoutingProtocolBgpRequestAsn.md)
  - [InternetAccessRoutingProtocolDirect](docs/InternetAccessRoutingProtocolDirect.md)
  - [InternetAccessRoutingProtocolDirectRequest](docs/InternetAccessRoutingProtocolDirectRequest.md)
  - [InternetAccessRoutingProtocolRequest](docs/InternetAccessRoutingProtocolRequest.md)
@@ -584,9 +787,7 @@ Class | Method | HTTP request | Description
  - [IpBlockType](docs/IpBlockType.md)
  - [IpBlocksSearchRequestBody](docs/IpBlocksSearchRequestBody.md)
  - [Ipv4](docs/Ipv4.md)
- - [JsonPatchOperation](docs/JsonPatchOperation.md)
- - [LastMileConfig](docs/LastMileConfig.md)
- - [LastMileNotificationInfo](docs/LastMileNotificationInfo.md)
+ - [IssueLoa](docs/IssueLoa.md)
  - [Link](docs/Link.md)
  - [LinkAggregationGroup](docs/LinkAggregationGroup.md)
  - [LinkProtocolConnection](docs/LinkProtocolConnection.md)
@@ -596,16 +797,50 @@ Class | Method | HTTP request | Description
  - [LinkProtocolServiceToken](docs/LinkProtocolServiceToken.md)
  - [LinkProtocolState](docs/LinkProtocolState.md)
  - [LinkProtocolType](docs/LinkProtocolType.md)
+ - [LoaActionData](docs/LoaActionData.md)
+ - [LoaActionFieldName](docs/LoaActionFieldName.md)
+ - [LoaActionFilter](docs/LoaActionFilter.md)
+ - [LoaActionOrFilter](docs/LoaActionOrFilter.md)
+ - [LoaActionRequest](docs/LoaActionRequest.md)
+ - [LoaActionResponse](docs/LoaActionResponse.md)
+ - [LoaActionSearchFilters](docs/LoaActionSearchFilters.md)
+ - [LoaActionSearchRequest](docs/LoaActionSearchRequest.md)
+ - [LoaActionSearchResponse](docs/LoaActionSearchResponse.md)
+ - [LoaActionSearchSimpleExpressions](docs/LoaActionSearchSimpleExpressions.md)
+ - [LoaActionSortCriteria](docs/LoaActionSortCriteria.md)
  - [LoaActionState](docs/LoaActionState.md)
  - [LoaActionType](docs/LoaActionType.md)
+ - [LoaChangelog](docs/LoaChangelog.md)
+ - [LoaConsumer](docs/LoaConsumer.md)
+ - [LoaConsumersResponse](docs/LoaConsumersResponse.md)
+ - [LoaDemarcationPoint](docs/LoaDemarcationPoint.md)
+ - [LoaFieldName](docs/LoaFieldName.md)
+ - [LoaFilter](docs/LoaFilter.md)
+ - [LoaIssuer](docs/LoaIssuer.md)
+ - [LoaLocation](docs/LoaLocation.md)
+ - [LoaNoteDetails](docs/LoaNoteDetails.md)
+ - [LoaNotesResponse](docs/LoaNotesResponse.md)
+ - [LoaOpEnum](docs/LoaOpEnum.md)
+ - [LoaOrFilter](docs/LoaOrFilter.md)
+ - [LoaPatchPanelConnectorType](docs/LoaPatchPanelConnectorType.md)
+ - [LoaProductType](docs/LoaProductType.md)
+ - [LoaReplaceOperation](docs/LoaReplaceOperation.md)
+ - [LoaRequest](docs/LoaRequest.md)
+ - [LoaRequestor](docs/LoaRequestor.md)
+ - [LoaResponse](docs/LoaResponse.md)
+ - [LoaResponseOperation](docs/LoaResponseOperation.md)
+ - [LoaSearchFilters](docs/LoaSearchFilters.md)
+ - [LoaSearchRequest](docs/LoaSearchRequest.md)
+ - [LoaSearchResponse](docs/LoaSearchResponse.md)
+ - [LoaSimpleExpression](docs/LoaSimpleExpression.md)
+ - [LoaSortCriteria](docs/LoaSortCriteria.md)
  - [LoaState](docs/LoaState.md)
  - [LoaType](docs/LoaType.md)
- - [LogoRequest](docs/LogoRequest.md)
  - [LogoResponse](docs/LogoResponse.md)
+ - [MaintenanceState](docs/MaintenanceState.md)
  - [MarketingInfo](docs/MarketingInfo.md)
  - [MarketplaceSubscription](docs/MarketplaceSubscription.md)
  - [Md5](docs/Md5.md)
- - [MessagesInner](docs/MessagesInner.md)
  - [MetalInterconnection](docs/MetalInterconnection.md)
  - [Metric](docs/Metric.md)
  - [MetricAssetType](docs/MetricAssetType.md)
@@ -620,7 +855,6 @@ Class | Method | HTTP request | Description
  - [Metro](docs/Metro.md)
  - [MetroError](docs/MetroError.md)
  - [MetroResponse](docs/MetroResponse.md)
- - [ModelConfiguration](docs/ModelConfiguration.md)
  - [ModelInterface](docs/ModelInterface.md)
  - [ModelPackage](docs/ModelPackage.md)
  - [Network](docs/Network.md)
@@ -646,9 +880,41 @@ Class | Method | HTTP request | Description
  - [NetworkSortDirectionResponse](docs/NetworkSortDirectionResponse.md)
  - [NetworkState](docs/NetworkState.md)
  - [NetworkType](docs/NetworkType.md)
- - [OpEnum](docs/OpEnum.md)
  - [Operation](docs/Operation.md)
+ - [OperationalEventFilters](docs/OperationalEventFilters.md)
+ - [OperationalEventSearchRequest](docs/OperationalEventSearchRequest.md)
+ - [OperationalEventSimpleExpression](docs/OperationalEventSimpleExpression.md)
  - [OperationalStatus](docs/OperationalStatus.md)
+ - [OperatorEnum](docs/OperatorEnum.md)
+ - [OpticalConnectASideRequest](docs/OpticalConnectASideRequest.md)
+ - [OpticalConnectASideResponse](docs/OpticalConnectASideResponse.md)
+ - [OpticalConnectBulk](docs/OpticalConnectBulk.md)
+ - [OpticalConnectConnectionDestinationType](docs/OpticalConnectConnectionDestinationType.md)
+ - [OpticalConnectFilter](docs/OpticalConnectFilter.md)
+ - [OpticalConnectFilters](docs/OpticalConnectFilters.md)
+ - [OpticalConnectLOA](docs/OpticalConnectLOA.md)
+ - [OpticalConnectLocation](docs/OpticalConnectLocation.md)
+ - [OpticalConnectNotification](docs/OpticalConnectNotification.md)
+ - [OpticalConnectOrFilter](docs/OpticalConnectOrFilter.md)
+ - [OpticalConnectOrder](docs/OpticalConnectOrder.md)
+ - [OpticalConnectPatchPanelFields](docs/OpticalConnectPatchPanelFields.md)
+ - [OpticalConnectPostRequest](docs/OpticalConnectPostRequest.md)
+ - [OpticalConnectPrice](docs/OpticalConnectPrice.md)
+ - [OpticalConnectPriceASide](docs/OpticalConnectPriceASide.md)
+ - [OpticalConnectPriceLocation](docs/OpticalConnectPriceLocation.md)
+ - [OpticalConnectPricePathType](docs/OpticalConnectPricePathType.md)
+ - [OpticalConnectPriceZSide](docs/OpticalConnectPriceZSide.md)
+ - [OpticalConnectRedundancy](docs/OpticalConnectRedundancy.md)
+ - [OpticalConnectResponse](docs/OpticalConnectResponse.md)
+ - [OpticalConnectSearchRequest](docs/OpticalConnectSearchRequest.md)
+ - [OpticalConnectServiceSearchResponse](docs/OpticalConnectServiceSearchResponse.md)
+ - [OpticalConnectSimpleExpression](docs/OpticalConnectSimpleExpression.md)
+ - [OpticalConnectSortBy](docs/OpticalConnectSortBy.md)
+ - [OpticalConnectSortCriteria](docs/OpticalConnectSortCriteria.md)
+ - [OpticalConnectSortDirection](docs/OpticalConnectSortDirection.md)
+ - [OpticalConnectState](docs/OpticalConnectState.md)
+ - [OpticalConnectZSideRequest](docs/OpticalConnectZSideRequest.md)
+ - [OpticalConnectZSideResponse](docs/OpticalConnectZSideResponse.md)
  - [Order](docs/Order.md)
  - [OutputStructuredPing](docs/OutputStructuredPing.md)
  - [OutputStructuredPingResponseItem](docs/OutputStructuredPingResponseItem.md)
@@ -659,8 +925,8 @@ Class | Method | HTTP request | Description
  - [PaginationRequest](docs/PaginationRequest.md)
  - [PatchIpBlockRequestBodyItem](docs/PatchIpBlockRequestBodyItem.md)
  - [PatchIpBlockRequestBodyItemValue](docs/PatchIpBlockRequestBodyItemValue.md)
- - [PatchOperation](docs/PatchOperation.md)
  - [PeeringType](docs/PeeringType.md)
+ - [Phone](docs/Phone.md)
  - [PhysicalPort](docs/PhysicalPort.md)
  - [PhysicalPortSettings](docs/PhysicalPortSettings.md)
  - [PhysicalPortType](docs/PhysicalPortType.md)
@@ -719,15 +985,19 @@ Class | Method | HTTP request | Description
  - [PrivateService](docs/PrivateService.md)
  - [PrivateServiceListResponse](docs/PrivateServiceListResponse.md)
  - [ProcessStep](docs/ProcessStep.md)
+ - [ProductOffering](docs/ProductOffering.md)
  - [ProductType](docs/ProductType.md)
  - [Project](docs/Project.md)
  - [ProviderEnvironment](docs/ProviderEnvironment.md)
  - [ProviderEnvironmentTypeEnum](docs/ProviderEnvironmentTypeEnum.md)
+ - [ProviderEnvironments](docs/ProviderEnvironments.md)
  - [ProviderStatus](docs/ProviderStatus.md)
  - [PtpAdvanceConfiguration](docs/PtpAdvanceConfiguration.md)
+ - [PublicPeeringConnectionResponse](docs/PublicPeeringConnectionResponse.md)
  - [RaAttachmentSortItem](docs/RaAttachmentSortItem.md)
  - [RemoveOperation](docs/RemoveOperation.md)
  - [ReplaceOperation](docs/ReplaceOperation.md)
+ - [RequestLoa](docs/RequestLoa.md)
  - [ResourceData](docs/ResourceData.md)
  - [ResourceSelector](docs/ResourceSelector.md)
  - [ResourceSelectorResponse](docs/ResourceSelectorResponse.md)
@@ -769,6 +1039,7 @@ Class | Method | HTTP request | Description
  - [RouteAggregationsPatchRequestItem](docs/RouteAggregationsPatchRequestItem.md)
  - [RouteAggregationsSearchRequest](docs/RouteAggregationsSearchRequest.md)
  - [RouteAggregationsSearchResponse](docs/RouteAggregationsSearchResponse.md)
+ - [RouteCollector](docs/RouteCollector.md)
  - [RouteFilterChangeData](docs/RouteFilterChangeData.md)
  - [RouteFilterChangeDataResponse](docs/RouteFilterChangeDataResponse.md)
  - [RouteFilterConnectionsData](docs/RouteFilterConnectionsData.md)
@@ -817,6 +1088,7 @@ Class | Method | HTTP request | Description
  - [RouteTableEntrySortDirection](docs/RouteTableEntrySortDirection.md)
  - [RouteTableEntryState](docs/RouteTableEntryState.md)
  - [RouteTableEntryType](docs/RouteTableEntryType.md)
+ - [Router](docs/Router.md)
  - [RouterActionsConnection](docs/RouterActionsConnection.md)
  - [RouterActionsRouter](docs/RouterActionsRouter.md)
  - [RouterPackageCode](docs/RouterPackageCode.md)
@@ -834,16 +1106,21 @@ Class | Method | HTTP request | Description
  - [RoutingProtocolDirectType](docs/RoutingProtocolDirectType.md)
  - [RoutingProtocolOperation](docs/RoutingProtocolOperation.md)
  - [RoutingProtocolProject](docs/RoutingProtocolProject.md)
+ - [RoutingProtocolResponse](docs/RoutingProtocolResponse.md)
  - [SearchAndExpression](docs/SearchAndExpression.md)
  - [SearchExpression](docs/SearchExpression.md)
  - [SearchFieldName](docs/SearchFieldName.md)
  - [SearchFilter](docs/SearchFilter.md)
  - [SearchFilterExpression](docs/SearchFilterExpression.md)
+ - [SearchOperationalEventResponse](docs/SearchOperationalEventResponse.md)
  - [SearchOrExpression](docs/SearchOrExpression.md)
  - [SearchRequest](docs/SearchRequest.md)
  - [SearchResponse](docs/SearchResponse.md)
  - [SearchSimpleExpression](docs/SearchSimpleExpression.md)
  - [SearchSortItem](docs/SearchSortItem.md)
+ - [SearchStreamAssetResponse](docs/SearchStreamAssetResponse.md)
+ - [SearchStreamResponse](docs/SearchStreamResponse.md)
+ - [SearchStreamSubscriptionResponse](docs/SearchStreamSubscriptionResponse.md)
  - [ServiceMetro](docs/ServiceMetro.md)
  - [ServiceMetros](docs/ServiceMetros.md)
  - [ServiceProfile](docs/ServiceProfile.md)
@@ -858,10 +1135,9 @@ Class | Method | HTTP request | Description
  - [ServiceProfileAndFilter](docs/ServiceProfileAndFilter.md)
  - [ServiceProfileChange](docs/ServiceProfileChange.md)
  - [ServiceProfileFilter](docs/ServiceProfileFilter.md)
- - [ServiceProfileLastMileAddress](docs/ServiceProfileLastMileAddress.md)
+ - [ServiceProfileLastMileApiIntegration](docs/ServiceProfileLastMileApiIntegration.md)
  - [ServiceProfileLastMileConfig](docs/ServiceProfileLastMileConfig.md)
  - [ServiceProfileLastMileDeliveryDateRange](docs/ServiceProfileLastMileDeliveryDateRange.md)
- - [ServiceProfileLastMileNotification](docs/ServiceProfileLastMileNotification.md)
  - [ServiceProfileLastMileOffering](docs/ServiceProfileLastMileOffering.md)
  - [ServiceProfileLastMilePriceRange](docs/ServiceProfileLastMilePriceRange.md)
  - [ServiceProfileLastMileProductCatalog](docs/ServiceProfileLastMileProductCatalog.md)
@@ -876,6 +1152,7 @@ Class | Method | HTTP request | Description
  - [ServiceProfileSortDirection](docs/ServiceProfileSortDirection.md)
  - [ServiceProfileStateEnum](docs/ServiceProfileStateEnum.md)
  - [ServiceProfileTypeEnum](docs/ServiceProfileTypeEnum.md)
+ - [ServiceProfileUpdateOperation](docs/ServiceProfileUpdateOperation.md)
  - [ServiceProfileVisibilityEnum](docs/ServiceProfileVisibilityEnum.md)
  - [ServiceProfiles](docs/ServiceProfiles.md)
  - [ServiceSearchResponse](docs/ServiceSearchResponse.md)
@@ -929,6 +1206,15 @@ Class | Method | HTTP request | Description
  - [StreamFilterSimpleExpression](docs/StreamFilterSimpleExpression.md)
  - [StreamPostRequest](docs/StreamPostRequest.md)
  - [StreamPutRequest](docs/StreamPutRequest.md)
+ - [StreamSearchAsset](docs/StreamSearchAsset.md)
+ - [StreamSearchFilter](docs/StreamSearchFilter.md)
+ - [StreamSearchFilters](docs/StreamSearchFilters.md)
+ - [StreamSearchOrFilter](docs/StreamSearchOrFilter.md)
+ - [StreamSearchRequest](docs/StreamSearchRequest.md)
+ - [StreamSearchSimpleExpression](docs/StreamSearchSimpleExpression.md)
+ - [StreamSearchSortBy](docs/StreamSearchSortBy.md)
+ - [StreamSearchSortCriteria](docs/StreamSearchSortCriteria.md)
+ - [StreamSearchSortDirection](docs/StreamSearchSortDirection.md)
  - [StreamSubscription](docs/StreamSubscription.md)
  - [StreamSubscriptionFilter](docs/StreamSubscriptionFilter.md)
  - [StreamSubscriptionOperation](docs/StreamSubscriptionOperation.md)
@@ -936,11 +1222,20 @@ Class | Method | HTTP request | Description
  - [StreamSubscriptionOperationErrors](docs/StreamSubscriptionOperationErrors.md)
  - [StreamSubscriptionPostRequest](docs/StreamSubscriptionPostRequest.md)
  - [StreamSubscriptionPutRequest](docs/StreamSubscriptionPutRequest.md)
+ - [StreamSubscriptionSearchFilter](docs/StreamSubscriptionSearchFilter.md)
+ - [StreamSubscriptionSearchFilters](docs/StreamSubscriptionSearchFilters.md)
+ - [StreamSubscriptionSearchOrFilter](docs/StreamSubscriptionSearchOrFilter.md)
+ - [StreamSubscriptionSearchRequest](docs/StreamSubscriptionSearchRequest.md)
+ - [StreamSubscriptionSearchSimpleExpression](docs/StreamSubscriptionSearchSimpleExpression.md)
+ - [StreamSubscriptionSearchSortBy](docs/StreamSubscriptionSearchSortBy.md)
+ - [StreamSubscriptionSearchSortCriteria](docs/StreamSubscriptionSearchSortCriteria.md)
+ - [StreamSubscriptionSearchSortDirection](docs/StreamSubscriptionSearchSortDirection.md)
  - [StreamSubscriptionSelector](docs/StreamSubscriptionSelector.md)
  - [StreamSubscriptionSink](docs/StreamSubscriptionSink.md)
  - [StreamSubscriptionSinkCredential](docs/StreamSubscriptionSinkCredential.md)
  - [StreamSubscriptionSinkResponse](docs/StreamSubscriptionSinkResponse.md)
  - [StreamSubscriptionSinkSetting](docs/StreamSubscriptionSinkSetting.md)
+ - [Style](docs/Style.md)
  - [SubInterface](docs/SubInterface.md)
  - [SubmitIpBlockRequestBody](docs/SubmitIpBlockRequestBody.md)
  - [SubscriptionAsset](docs/SubscriptionAsset.md)
@@ -965,7 +1260,6 @@ Class | Method | HTTP request | Description
  - [TimeServiceSortCriteria](docs/TimeServiceSortCriteria.md)
  - [TimeServiceSortDirection](docs/TimeServiceSortDirection.md)
  - [TimeServicesSearchRequest](docs/TimeServicesSearchRequest.md)
- - [ToolCallInformationInner](docs/ToolCallInformationInner.md)
  - [TypeOfIpBlockProduct](docs/TypeOfIpBlockProduct.md)
  - [ValidateConnectionResponse](docs/ValidateConnectionResponse.md)
  - [ValidateRequest](docs/ValidateRequest.md)

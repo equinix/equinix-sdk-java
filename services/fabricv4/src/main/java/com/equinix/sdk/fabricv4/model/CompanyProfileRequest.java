@@ -13,6 +13,8 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.CompanyProfileContact;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -72,14 +74,24 @@ public class CompanyProfileRequest {
   @javax.annotation.Nonnull
   private String description;
 
+  public static final String SERIALIZED_NAME_POINT_OF_CONTACTS = "pointOfContacts";
+  @SerializedName(SERIALIZED_NAME_POINT_OF_CONTACTS)
+  @javax.annotation.Nullable
+  private List<CompanyProfileContact> pointOfContacts = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<Object> notifications = new ArrayList<>();
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_OVERVIEW = "overview";
+  @SerializedName(SERIALIZED_NAME_OVERVIEW)
+  @javax.annotation.Nullable
+  private String overview;
 
   public static final String SERIALIZED_NAME_WEB_URL = "webUrl";
   @SerializedName(SERIALIZED_NAME_WEB_URL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String webUrl;
 
   public static final String SERIALIZED_NAME_CONTACT_URL = "contactUrl";
@@ -166,12 +178,39 @@ public class CompanyProfileRequest {
   }
 
 
-  public CompanyProfileRequest notifications(@javax.annotation.Nullable List<Object> notifications) {
+  public CompanyProfileRequest pointOfContacts(@javax.annotation.Nullable List<CompanyProfileContact> pointOfContacts) {
+    this.pointOfContacts = pointOfContacts;
+    return this;
+  }
+
+  public CompanyProfileRequest addPointOfContactsItem(CompanyProfileContact pointOfContactsItem) {
+    if (this.pointOfContacts == null) {
+      this.pointOfContacts = new ArrayList<>();
+    }
+    this.pointOfContacts.add(pointOfContactsItem);
+    return this;
+  }
+
+  /**
+   * Get pointOfContacts
+   * @return pointOfContacts
+   */
+  @javax.annotation.Nullable
+  public List<CompanyProfileContact> getPointOfContacts() {
+    return pointOfContacts;
+  }
+
+  public void setPointOfContacts(@javax.annotation.Nullable List<CompanyProfileContact> pointOfContacts) {
+    this.pointOfContacts = pointOfContacts;
+  }
+
+
+  public CompanyProfileRequest notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public CompanyProfileRequest addNotificationsItem(Object notificationsItem) {
+  public CompanyProfileRequest addNotificationsItem(SimplifiedNotification notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -184,16 +223,35 @@ public class CompanyProfileRequest {
    * @return notifications
    */
   @javax.annotation.Nullable
-  public List<Object> getNotifications() {
+  public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nullable List<Object> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
 
-  public CompanyProfileRequest webUrl(@javax.annotation.Nullable String webUrl) {
+  public CompanyProfileRequest overview(@javax.annotation.Nullable String overview) {
+    this.overview = overview;
+    return this;
+  }
+
+  /**
+   * Get overview
+   * @return overview
+   */
+  @javax.annotation.Nullable
+  public String getOverview() {
+    return overview;
+  }
+
+  public void setOverview(@javax.annotation.Nullable String overview) {
+    this.overview = overview;
+  }
+
+
+  public CompanyProfileRequest webUrl(@javax.annotation.Nonnull String webUrl) {
     this.webUrl = webUrl;
     return this;
   }
@@ -202,12 +260,12 @@ public class CompanyProfileRequest {
    * Get webUrl
    * @return webUrl
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getWebUrl() {
     return webUrl;
   }
 
-  public void setWebUrl(@javax.annotation.Nullable String webUrl) {
+  public void setWebUrl(@javax.annotation.Nonnull String webUrl) {
     this.webUrl = webUrl;
   }
 
@@ -289,7 +347,9 @@ public class CompanyProfileRequest {
         Objects.equals(this.name, companyProfileRequest.name) &&
         Objects.equals(this.summary, companyProfileRequest.summary) &&
         Objects.equals(this.description, companyProfileRequest.description) &&
+        Objects.equals(this.pointOfContacts, companyProfileRequest.pointOfContacts) &&
         Objects.equals(this.notifications, companyProfileRequest.notifications) &&
+        Objects.equals(this.overview, companyProfileRequest.overview) &&
         Objects.equals(this.webUrl, companyProfileRequest.webUrl) &&
         Objects.equals(this.contactUrl, companyProfileRequest.contactUrl)&&
         Objects.equals(this.additionalProperties, companyProfileRequest.additionalProperties);
@@ -297,7 +357,7 @@ public class CompanyProfileRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, summary, description, notifications, webUrl, contactUrl, additionalProperties);
+    return Objects.hash(type, name, summary, description, pointOfContacts, notifications, overview, webUrl, contactUrl, additionalProperties);
   }
 
   @Override
@@ -308,7 +368,9 @@ public class CompanyProfileRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    pointOfContacts: ").append(toIndentedString(pointOfContacts)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    sb.append("    overview: ").append(toIndentedString(overview)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    contactUrl: ").append(toIndentedString(contactUrl)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -333,10 +395,10 @@ public class CompanyProfileRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description", "notifications", "webUrl", "contactUrl"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description", "pointOfContacts", "notifications", "overview", "webUrl", "contactUrl"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "summary", "description", "webUrl"));
   }
 
   /**
@@ -371,11 +433,38 @@ public class CompanyProfileRequest {
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull() && !jsonObj.get("notifications").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+      if (jsonObj.get("pointOfContacts") != null && !jsonObj.get("pointOfContacts").isJsonNull()) {
+        JsonArray jsonArraypointOfContacts = jsonObj.getAsJsonArray("pointOfContacts");
+        if (jsonArraypointOfContacts != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("pointOfContacts").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `pointOfContacts` to be an array in the JSON string but got `%s`", jsonObj.get("pointOfContacts").toString()));
+          }
+
+          // validate the optional field `pointOfContacts` (array)
+          for (int i = 0; i < jsonArraypointOfContacts.size(); i++) {
+            CompanyProfileContact.validateJsonElement(jsonArraypointOfContacts.get(i));
+          };
+        }
       }
-      if ((jsonObj.get("webUrl") != null && !jsonObj.get("webUrl").isJsonNull()) && !jsonObj.get("webUrl").isJsonPrimitive()) {
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("overview") != null && !jsonObj.get("overview").isJsonNull()) && !jsonObj.get("overview").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `overview` to be a primitive type in the JSON string but got `%s`", jsonObj.get("overview").toString()));
+      }
+      if (!jsonObj.get("webUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `webUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webUrl").toString()));
       }
       if ((jsonObj.get("contactUrl") != null && !jsonObj.get("contactUrl").isJsonNull()) && !jsonObj.get("contactUrl").isJsonPrimitive()) {

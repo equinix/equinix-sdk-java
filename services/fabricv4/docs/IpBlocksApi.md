@@ -4,20 +4,20 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteIpBlockById**](IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete Ip Block by UUID |
-| [**getIpBlock**](IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve Ip Block by UUID |
-| [**patchIpBlockById**](IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch Ip Block by UUID |
-| [**searchIpBlocks**](IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for Ip Blocks |
-| [**submitIpBlock**](IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned Ip Block request |
+| [**deleteIpBlockById**](IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by UUID |
+| [**getIpBlock**](IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by UUID |
+| [**patchIpBlockById**](IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch IP Block by UUID |
+| [**searchIpBlocks**](IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for IP Blocks |
+| [**submitIpBlock**](IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned IP Block request |
 
 
 <a id="deleteIpBlockById"></a>
 # **deleteIpBlockById**
 > IpBlock deleteIpBlockById(uuid)
 
-Delete Ip Block by UUID
+Delete IP Block by UUID
 
-Delete Ip Block by UUID
+Delete IP Block by UUID
 
 ### Example
 ```java
@@ -39,7 +39,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     IpBlocksApi apiInstance = new IpBlocksApi(defaultClient);
-    UUID uuid = UUID.randomUUID(); // UUID | UUID of the Ip Block
+    UUID uuid = UUID.randomUUID(); // UUID | UUID of the IP Block
     try {
       IpBlock result = apiInstance.deleteIpBlockById(uuid);
       System.out.println(result);
@@ -58,7 +58,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **uuid** | **UUID**| UUID of the Ip Block | |
+| **uuid** | **UUID**| UUID of the IP Block | |
 
 ### Return type
 
@@ -76,20 +76,20 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **202** | Ip Block submitted, patched, or deletion accepted |  -  |
+| **202** | IP Block submitted, patched, or deletion accepted |  -  |
 | **400** | Invalid input parameter |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Ip Block not found |  -  |
-| **409** | Ip Block cannot be deleted due to active products |  -  |
+| **404** | IP Block not found |  -  |
+| **409** | IP Block cannot be deleted due to active products |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="getIpBlock"></a>
 # **getIpBlock**
 > IpBlock getIpBlock(uuid)
 
-Retrieve Ip Block by UUID
+Retrieve IP Block by UUID
 
-Retrieve Ip Block by UUID
+Retrieve IP Block by UUID
 
 ### Example
 ```java
@@ -111,7 +111,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     IpBlocksApi apiInstance = new IpBlocksApi(defaultClient);
-    UUID uuid = UUID.randomUUID(); // UUID | UUID of the Ip Block
+    UUID uuid = UUID.randomUUID(); // UUID | UUID of the IP Block
     try {
       IpBlock result = apiInstance.getIpBlock(uuid);
       System.out.println(result);
@@ -130,7 +130,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **uuid** | **UUID**| UUID of the Ip Block | |
+| **uuid** | **UUID**| UUID of the IP Block | |
 
 ### Return type
 
@@ -148,18 +148,18 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Ip Block retrieved successfully |  -  |
+| **200** | IP Block retrieved successfully |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Ip Block not found |  -  |
+| **404** | IP Block not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="patchIpBlockById"></a>
 # **patchIpBlockById**
 > IpBlock patchIpBlockById(uuid, patchIpBlockRequestBodyItem)
 
-patch Ip Block by UUID
+patch IP Block by UUID
 
-patch Ip Block by UUID
+patch IP Block by UUID
 
 ### Example
 ```java
@@ -181,7 +181,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     IpBlocksApi apiInstance = new IpBlocksApi(defaultClient);
-    UUID uuid = UUID.randomUUID(); // UUID | UUID of the Ip Block
+    UUID uuid = UUID.randomUUID(); // UUID | UUID of the IP Block
     List<PatchIpBlockRequestBodyItem> patchIpBlockRequestBodyItem = Arrays.asList(); // List<PatchIpBlockRequestBodyItem> | 
     try {
       IpBlock result = apiInstance.patchIpBlockById(uuid, patchIpBlockRequestBodyItem);
@@ -201,7 +201,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **uuid** | **UUID**| UUID of the Ip Block | |
+| **uuid** | **UUID**| UUID of the IP Block | |
 | **patchIpBlockRequestBodyItem** | [**List&lt;PatchIpBlockRequestBodyItem&gt;**](PatchIpBlockRequestBodyItem.md)|  | |
 
 ### Return type
@@ -220,17 +220,17 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **202** | Ip Block submitted, patched, or deletion accepted |  -  |
-| **404** | Ip Block not found |  -  |
+| **202** | IP Block submitted, patched, or deletion accepted |  -  |
+| **404** | IP Block not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="searchIpBlocks"></a>
 # **searchIpBlocks**
 > IpBlockSearchResponseBody searchIpBlocks(ipBlocksSearchRequestBody)
 
-Search for Ip Blocks
+Search for IP Blocks
 
-Search for Ip Blocks based on criteria
+Search for IP Blocks based on criteria
 
 ### Example
 ```java
@@ -289,7 +289,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Ip Blocks found successfully |  -  |
+| **200** | IP Blocks found successfully |  -  |
 | **400** | Invalid input parameter |  -  |
 | **500** | Internal server error |  -  |
 
@@ -297,9 +297,9 @@ public class Example {
 # **submitIpBlock**
 > IpBlock submitIpBlock(submitIpBlockRequestBody)
 
-Submits new Equinix owned or customer owned Ip Block request
+Submits new Equinix owned or customer owned IP Block request
 
-Submits new Equinix owned or customer owned Ip Block request
+Submits new Equinix owned or customer owned IP Block request
 
 ### Example
 ```java
@@ -358,7 +358,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **202** | Ip Block submitted, patched, or deletion accepted |  -  |
+| **202** | IP Block submitted, patched, or deletion accepted |  -  |
 | **400** | Invalid input parameter |  -  |
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |

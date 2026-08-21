@@ -29,7 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(StreamAssetSortBy.Adapter.class)
 public enum StreamAssetSortBy {
   
-  _UUID("/uuid");
+  UUID("/uuid"),
+  
+  STREAMUUID("/streamUuid");
 
   private String value;
 

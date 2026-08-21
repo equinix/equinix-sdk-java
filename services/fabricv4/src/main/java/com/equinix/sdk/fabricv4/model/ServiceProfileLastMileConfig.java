@@ -13,8 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.ServiceProfileLastMileAddress;
-import com.equinix.sdk.fabricv4.model.ServiceProfileLastMileNotification;
+import com.equinix.sdk.fabricv4.model.ServiceProfileLastMileApiIntegration;
 import com.equinix.sdk.fabricv4.model.ServiceProfileLastMileProductCatalog;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -55,40 +54,35 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class ServiceProfileLastMileConfig {
-  public static final String SERIALIZED_NAME_ADDRESS = "address";
-  @SerializedName(SERIALIZED_NAME_ADDRESS)
+  public static final String SERIALIZED_NAME_API_INTEGRATION = "apiIntegration";
+  @SerializedName(SERIALIZED_NAME_API_INTEGRATION)
   @javax.annotation.Nullable
-  private ServiceProfileLastMileAddress address;
+  private ServiceProfileLastMileApiIntegration apiIntegration;
 
   public static final String SERIALIZED_NAME_PRODUCT_CATALOGS = "productCatalogs";
   @SerializedName(SERIALIZED_NAME_PRODUCT_CATALOGS)
   @javax.annotation.Nullable
   private List<ServiceProfileLastMileProductCatalog> productCatalogs = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
-  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
-  @javax.annotation.Nullable
-  private List<ServiceProfileLastMileNotification> notifications = new ArrayList<>();
-
   public ServiceProfileLastMileConfig() {
   }
 
-  public ServiceProfileLastMileConfig address(@javax.annotation.Nullable ServiceProfileLastMileAddress address) {
-    this.address = address;
+  public ServiceProfileLastMileConfig apiIntegration(@javax.annotation.Nullable ServiceProfileLastMileApiIntegration apiIntegration) {
+    this.apiIntegration = apiIntegration;
     return this;
   }
 
   /**
-   * Get address
-   * @return address
+   * Get apiIntegration
+   * @return apiIntegration
    */
   @javax.annotation.Nullable
-  public ServiceProfileLastMileAddress getAddress() {
-    return address;
+  public ServiceProfileLastMileApiIntegration getApiIntegration() {
+    return apiIntegration;
   }
 
-  public void setAddress(@javax.annotation.Nullable ServiceProfileLastMileAddress address) {
-    this.address = address;
+  public void setApiIntegration(@javax.annotation.Nullable ServiceProfileLastMileApiIntegration apiIntegration) {
+    this.apiIntegration = apiIntegration;
   }
 
 
@@ -116,33 +110,6 @@ public class ServiceProfileLastMileConfig {
 
   public void setProductCatalogs(@javax.annotation.Nullable List<ServiceProfileLastMileProductCatalog> productCatalogs) {
     this.productCatalogs = productCatalogs;
-  }
-
-
-  public ServiceProfileLastMileConfig notifications(@javax.annotation.Nullable List<ServiceProfileLastMileNotification> notifications) {
-    this.notifications = notifications;
-    return this;
-  }
-
-  public ServiceProfileLastMileConfig addNotificationsItem(ServiceProfileLastMileNotification notificationsItem) {
-    if (this.notifications == null) {
-      this.notifications = new ArrayList<>();
-    }
-    this.notifications.add(notificationsItem);
-    return this;
-  }
-
-  /**
-   * Contact details for notifications related to last-mile provisioning and ordering.
-   * @return notifications
-   */
-  @javax.annotation.Nullable
-  public List<ServiceProfileLastMileNotification> getNotifications() {
-    return notifications;
-  }
-
-  public void setNotifications(@javax.annotation.Nullable List<ServiceProfileLastMileNotification> notifications) {
-    this.notifications = notifications;
   }
 
   /**
@@ -200,24 +167,22 @@ public class ServiceProfileLastMileConfig {
       return false;
     }
     ServiceProfileLastMileConfig serviceProfileLastMileConfig = (ServiceProfileLastMileConfig) o;
-    return Objects.equals(this.address, serviceProfileLastMileConfig.address) &&
-        Objects.equals(this.productCatalogs, serviceProfileLastMileConfig.productCatalogs) &&
-        Objects.equals(this.notifications, serviceProfileLastMileConfig.notifications)&&
+    return Objects.equals(this.apiIntegration, serviceProfileLastMileConfig.apiIntegration) &&
+        Objects.equals(this.productCatalogs, serviceProfileLastMileConfig.productCatalogs)&&
         Objects.equals(this.additionalProperties, serviceProfileLastMileConfig.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, productCatalogs, notifications, additionalProperties);
+    return Objects.hash(apiIntegration, productCatalogs, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceProfileLastMileConfig {\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    apiIntegration: ").append(toIndentedString(apiIntegration)).append("\n");
     sb.append("    productCatalogs: ").append(toIndentedString(productCatalogs)).append("\n");
-    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -240,7 +205,7 @@ public class ServiceProfileLastMileConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("address", "productCatalogs", "notifications"));
+    openapiFields = new HashSet<String>(Arrays.asList("apiIntegration", "productCatalogs"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -259,9 +224,9 @@ public class ServiceProfileLastMileConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `address`
-      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonNull()) {
-        ServiceProfileLastMileAddress.validateJsonElement(jsonObj.get("address"));
+      // validate the optional field `apiIntegration`
+      if (jsonObj.get("apiIntegration") != null && !jsonObj.get("apiIntegration").isJsonNull()) {
+        ServiceProfileLastMileApiIntegration.validateJsonElement(jsonObj.get("apiIntegration"));
       }
       if (jsonObj.get("productCatalogs") != null && !jsonObj.get("productCatalogs").isJsonNull()) {
         JsonArray jsonArrayproductCatalogs = jsonObj.getAsJsonArray("productCatalogs");
@@ -274,20 +239,6 @@ public class ServiceProfileLastMileConfig {
           // validate the optional field `productCatalogs` (array)
           for (int i = 0; i < jsonArrayproductCatalogs.size(); i++) {
             ServiceProfileLastMileProductCatalog.validateJsonElement(jsonArrayproductCatalogs.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
-        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
-        if (jsonArraynotifications != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("notifications").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
-          }
-
-          // validate the optional field `notifications` (array)
-          for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            ServiceProfileLastMileNotification.validateJsonElement(jsonArraynotifications.get(i));
           };
         }
       }

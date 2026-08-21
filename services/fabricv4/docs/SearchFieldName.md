@@ -63,6 +63,10 @@
 
 * `OPERATION_PROVIDERSTATUS` (value: `"/operation/providerStatus"`)
 
+* `OPERATION_MAINTENANCESTATUS` (value: `"/operation/maintenanceStatus"`)
+
+* `OPERATION_LOCKENABLED` (value: `"/operation/lockEnabled"`)
+
 * `PROJECT_PROJECTID` (value: `"/project/projectId"`)
 
 * `REDUNDANCY_GROUP` (value: `"/redundancy/group"`)

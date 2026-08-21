@@ -27,14 +27,16 @@ import java.io.IOException;
 
 import com.equinix.sdk.fabricv4.model.Asset;
 import com.equinix.sdk.fabricv4.model.Error;
-import com.equinix.sdk.fabricv4.model.GetAllStreamAssetResponse;
 import com.equinix.sdk.fabricv4.model.GetAllStreamResponse;
+import com.equinix.sdk.fabricv4.model.SearchStreamAssetResponse;
+import com.equinix.sdk.fabricv4.model.SearchStreamResponse;
 import com.equinix.sdk.fabricv4.model.Stream;
 import com.equinix.sdk.fabricv4.model.StreamAsset;
 import com.equinix.sdk.fabricv4.model.StreamAssetPutRequest;
 import com.equinix.sdk.fabricv4.model.StreamAssetSearchRequest;
 import com.equinix.sdk.fabricv4.model.StreamPostRequest;
 import com.equinix.sdk.fabricv4.model.StreamPutRequest;
+import com.equinix.sdk.fabricv4.model.StreamSearchRequest;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1005,10 +1007,8 @@ public class StreamsApi {
         return localVarCall;
     }
     /**
-     * Build call for getStreamsAssets
+     * Build call for searchStreamAssets
      * @param streamAssetSearchRequest  (required)
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1017,13 +1017,14 @@ public class StreamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsAssetsCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchStreamAssetsCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1048,13 +1049,151 @@ public class StreamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (offset != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
         }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call searchStreamAssetsValidateBeforeCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'streamAssetSearchRequest' is set
+        if (streamAssetSearchRequest == null) {
+            throw new ApiException("Missing the required parameter 'streamAssetSearchRequest' when calling searchStreamAssets(Async)");
+        }
+
+        return searchStreamAssetsCall(streamAssetSearchRequest, _callback);
+
+    }
+
+    /**
+     * Search Stream Assets
+     * This API provides capability to search stream assets
+     * @param streamAssetSearchRequest  (required)
+     * @return SearchStreamAssetResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public SearchStreamAssetResponse searchStreamAssets(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest) throws ApiException {
+        ApiResponse<SearchStreamAssetResponse> localVarResp = searchStreamAssetsWithHttpInfo(streamAssetSearchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search Stream Assets
+     * This API provides capability to search stream assets
+     * @param streamAssetSearchRequest  (required)
+     * @return ApiResponse&lt;SearchStreamAssetResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SearchStreamAssetResponse> searchStreamAssetsWithHttpInfo(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = searchStreamAssetsValidateBeforeCall(streamAssetSearchRequest, null);
+        Type localVarReturnType = new TypeToken<SearchStreamAssetResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search Stream Assets (asynchronously)
+     * This API provides capability to search stream assets
+     * @param streamAssetSearchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchStreamAssetsAsync(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, final ApiCallback<SearchStreamAssetResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = searchStreamAssetsValidateBeforeCall(streamAssetSearchRequest, _callback);
+        Type localVarReturnType = new TypeToken<SearchStreamAssetResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for searchStreams
+     * @param streamSearchRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchStreamsCall(@javax.annotation.Nullable StreamSearchRequest streamSearchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = streamSearchRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/streams/search";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
             "application/json"
@@ -1077,23 +1216,16 @@ public class StreamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamsAssetsValidateBeforeCall(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'streamAssetSearchRequest' is set
-        if (streamAssetSearchRequest == null) {
-            throw new ApiException("Missing the required parameter 'streamAssetSearchRequest' when calling getStreamsAssets(Async)");
-        }
-
-        return getStreamsAssetsCall(streamAssetSearchRequest, offset, limit, _callback);
+    private okhttp3.Call searchStreamsValidateBeforeCall(@javax.annotation.Nullable StreamSearchRequest streamSearchRequest, final ApiCallback _callback) throws ApiException {
+        return searchStreamsCall(streamSearchRequest, _callback);
 
     }
 
     /**
-     * Get Assets
-     * This API provides capability to retrieve stream assets
-     * @param streamAssetSearchRequest  (required)
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @return GetAllStreamAssetResponse
+     * Search Streams
+     * This API provides capability to search streams
+     * @param streamSearchRequest  (optional)
+     * @return SearchStreamResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1106,18 +1238,16 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAllStreamAssetResponse getStreamsAssets(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<GetAllStreamAssetResponse> localVarResp = getStreamsAssetsWithHttpInfo(streamAssetSearchRequest, offset, limit);
+    public SearchStreamResponse searchStreams(@javax.annotation.Nullable StreamSearchRequest streamSearchRequest) throws ApiException {
+        ApiResponse<SearchStreamResponse> localVarResp = searchStreamsWithHttpInfo(streamSearchRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Get Assets
-     * This API provides capability to retrieve stream assets
-     * @param streamAssetSearchRequest  (required)
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @return ApiResponse&lt;GetAllStreamAssetResponse&gt;
+     * Search Streams
+     * This API provides capability to search streams
+     * @param streamSearchRequest  (optional)
+     * @return ApiResponse&lt;SearchStreamResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1130,18 +1260,16 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAllStreamAssetResponse> getStreamsAssetsWithHttpInfo(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = getStreamsAssetsValidateBeforeCall(streamAssetSearchRequest, offset, limit, null);
-        Type localVarReturnType = new TypeToken<GetAllStreamAssetResponse>(){}.getType();
+    public ApiResponse<SearchStreamResponse> searchStreamsWithHttpInfo(@javax.annotation.Nullable StreamSearchRequest streamSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = searchStreamsValidateBeforeCall(streamSearchRequest, null);
+        Type localVarReturnType = new TypeToken<SearchStreamResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Assets (asynchronously)
-     * This API provides capability to retrieve stream assets
-     * @param streamAssetSearchRequest  (required)
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
+     * Search Streams (asynchronously)
+     * This API provides capability to search streams
+     * @param streamSearchRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1156,10 +1284,10 @@ public class StreamsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamsAssetsAsync(@javax.annotation.Nonnull StreamAssetSearchRequest streamAssetSearchRequest, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetAllStreamAssetResponse> _callback) throws ApiException {
+    public okhttp3.Call searchStreamsAsync(@javax.annotation.Nullable StreamSearchRequest streamSearchRequest, final ApiCallback<SearchStreamResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getStreamsAssetsValidateBeforeCall(streamAssetSearchRequest, offset, limit, _callback);
-        Type localVarReturnType = new TypeToken<GetAllStreamAssetResponse>(){}.getType();
+        okhttp3.Call localVarCall = searchStreamsValidateBeforeCall(streamSearchRequest, _callback);
+        Type localVarReturnType = new TypeToken<SearchStreamResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

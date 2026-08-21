@@ -73,7 +73,27 @@ public class PortExpression {
    */
   @JsonAdapter(OperatorEnum.Adapter.class)
   public enum OperatorEnum {
-    EQUAL("=");
+    EQUAL("="),
+    
+    NOT_EQUAL("!="),
+    
+    GREATER_THAN(">"),
+    
+    GREATER_THAN_OR_EQUAL_TO(">="),
+    
+    LESS_THAN("<"),
+    
+    LESS_THAN_OR_EQUAL_TO("<="),
+    
+    LIKE("LIKE"),
+    
+    ILIKE("ILIKE"),
+    
+    IN("IN"),
+    
+    NOT_IN("NOT IN"),
+    
+    BETWEEN("BETWEEN");
 
     private String value;
 

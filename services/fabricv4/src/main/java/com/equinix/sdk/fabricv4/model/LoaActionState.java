@@ -24,7 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Loa Action State
+ * Action State
  */
 @JsonAdapter(LoaActionState.Adapter.class)
 public enum LoaActionState {

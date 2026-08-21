@@ -54,18 +54,18 @@ import com.equinix.sdk.fabricv4.JSON;
 public class StreamAssetSortCriteria {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private StreamAssetSortDirection direction = StreamAssetSortDirection.DESC;
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
-  @javax.annotation.Nullable
-  private StreamAssetSortBy property = StreamAssetSortBy._UUID;
+  @javax.annotation.Nonnull
+  private StreamAssetSortBy property = StreamAssetSortBy.UUID;
 
   public StreamAssetSortCriteria() {
   }
 
-  public StreamAssetSortCriteria direction(@javax.annotation.Nullable StreamAssetSortDirection direction) {
+  public StreamAssetSortCriteria direction(@javax.annotation.Nonnull StreamAssetSortDirection direction) {
     this.direction = direction;
     return this;
   }
@@ -74,17 +74,17 @@ public class StreamAssetSortCriteria {
    * Get direction
    * @return direction
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StreamAssetSortDirection getDirection() {
     return direction;
   }
 
-  public void setDirection(@javax.annotation.Nullable StreamAssetSortDirection direction) {
+  public void setDirection(@javax.annotation.Nonnull StreamAssetSortDirection direction) {
     this.direction = direction;
   }
 
 
-  public StreamAssetSortCriteria property(@javax.annotation.Nullable StreamAssetSortBy property) {
+  public StreamAssetSortCriteria property(@javax.annotation.Nonnull StreamAssetSortBy property) {
     this.property = property;
     return this;
   }
@@ -93,12 +93,12 @@ public class StreamAssetSortCriteria {
    * Get property
    * @return property
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StreamAssetSortBy getProperty() {
     return property;
   }
 
-  public void setProperty(@javax.annotation.Nullable StreamAssetSortBy property) {
+  public void setProperty(@javax.annotation.Nonnull StreamAssetSortBy property) {
     this.property = property;
   }
 
@@ -198,7 +198,7 @@ public class StreamAssetSortCriteria {
     openapiFields = new HashSet<String>(Arrays.asList("direction", "property"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("direction", "property"));
   }
 
   /**
@@ -213,15 +213,18 @@ public class StreamAssetSortCriteria {
           throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in StreamAssetSortCriteria is not found in the empty JSON string", StreamAssetSortCriteria.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : StreamAssetSortCriteria.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `direction`
-      if (jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) {
-        StreamAssetSortDirection.validateJsonElement(jsonObj.get("direction"));
-      }
-      // validate the optional field `property`
-      if (jsonObj.get("property") != null && !jsonObj.get("property").isJsonNull()) {
-        StreamAssetSortBy.validateJsonElement(jsonObj.get("property"));
-      }
+      // validate the required field `direction`
+      StreamAssetSortDirection.validateJsonElement(jsonObj.get("direction"));
+      // validate the required field `property`
+      StreamAssetSortBy.validateJsonElement(jsonObj.get("property"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -49,7 +49,9 @@ public enum AccessPointType {
   
   VPIC_INTERFACE("VPIC_INTERFACE"),
   
-  APP_LINK("APP_LINK");
+  APP_LINK("APP_LINK"),
+  
+  XF_IC("XF_IC");
 
   private String value;
 

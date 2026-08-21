@@ -11,6 +11,7 @@
 |**sendInterval** | **String** |  |  [optional] |
 |**emails** | **List&lt;String&gt;** | Array of contact emails |  |
 |**registeredUsers** | **List&lt;String&gt;** | Array of registered users |  [optional] |
+|**phone** | [**List&lt;Phone&gt;**](Phone.md) | Array of contact phone numbers |  [optional] |
 
 
 
@@ -26,6 +27,7 @@
 | SALES_REP_NOTIFICATIONS | &quot;SALES_REP_NOTIFICATIONS&quot; |
 | TECHNICAL | &quot;TECHNICAL&quot; |
 | ORDERING | &quot;ORDERING&quot; |
+| QUOTE_NOTIFICATIONS | &quot;QUOTE_NOTIFICATIONS&quot; |
 
 
 
