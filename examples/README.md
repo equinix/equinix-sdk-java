@@ -15,6 +15,17 @@ Examples read their configuration from the environment, using the same variable 
 | `EQUINIX_API_TOKEN` | Bearer token; used as-is when set |
 | `EQUINIX_API_CLIENTID`, `EQUINIX_API_CLIENTSECRET` | Exchanged for a token when `EQUINIX_API_TOKEN` is not set |
 
+## What each service covers
+
+Every service module provides, at minimum:
+
+- a basic example for the service's main read operations
+- an error handling example: catching the generated `ApiException` and reporting the HTTP status,
+  response headers and the service's error body
+- a pagination example for each list or search operation that pages its results, walking every
+  page until the service reports no more; where a service has no paged operation, the module says so
+  in its package documentation instead
+
 ## Running
 
 ```sh
