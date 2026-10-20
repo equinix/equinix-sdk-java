@@ -9,11 +9,12 @@
     <version>0.11.0</version>
 
     <!--
-    TODO: this modules section needs to be regenerated
-    whenever a new service is onboarded
+    NOTE: script/onboard_service.sh registers new services in this modules section
+    when a service is onboarded
     -->
     <modules>
         <module>services/fabricv4</module>
+        <module>examples</module>
         <module>equinix-sdk-java</module>
     </modules>
 </project>
