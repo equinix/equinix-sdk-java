@@ -61,6 +61,16 @@ public class Example {
 }
 ```
 
+## Adding a service
+
+Services are onboarded with `script/onboard_service.sh <service> <spec-url>`, which scaffolds the
+generator configuration, a spec-sync workflow, the Maven module registrations and an
+[examples](examples/README.md) module. Generated code is never edited by hand; fixes go in as spec
+or output patches (see [CONTRIBUTING](CONTRIBUTING.md)).
+
+The SDK is generated from each service's published OpenAPI document, so the shape of a client
+follows its specification rather than any earlier standalone sample client.
+
 ## Equinix Internet Access (EIA)
 
 The Fabric v4 module supports **Equinix Internet Access (EIA)** services. The generated

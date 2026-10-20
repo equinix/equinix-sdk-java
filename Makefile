@@ -39,7 +39,7 @@ generate-all: update-manual-versions
 # are under sdk/<service>/ and anything closer
 # to the root is hand-maintained
 update-manual-versions: version
-	find . -name pom.xml -maxdepth 2 -type f -exec sed -i.bak '1,/<version>.*<\/version>/s,<version>.*</version>,<version>$(shell cat version)</version>,' {} \;
+	find . -name pom.xml -maxdepth 3 -type f -exec sed -i.bak '1,/<version>.*<\/version>/s,<version>.*</version>,<version>$(shell cat version)</version>,' {} \;
 	find . -name pom.xml.bak -exec rm {} \;
 
 stage:
