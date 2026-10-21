@@ -1,0 +1,598 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Attachments as a Service API
+  description: Attachment Management API for Equinix Customer Portal
+  termsOfService: https://www.equinix.com/about/legal/terms
+  contact:
+    name: Equinix API Support
+    url: https://docs.equinix.com/api-support.htm
+host: api.equinix.com
+schemes:
+- https
+paths:
+  /v1/attachments/file:
+    post:
+      operationId: createAttachment
+      summary: Upload a Multipart File
+      tags:
+      - Attachments
+      description: This method can be used to upload an attachment as a multipart file.
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: uploadFile
+        in: formData
+        description: The file to be uploaded
+        required: true
+        type: file
+      - name: purpose
+        in: query
+        description: Purpose of the file is uploaded. [ ex. LOA is for Cross connect, PO is for Purchar order ]
+        type: string
+        enum:
+        - LOA
+        - PO_DOCUMENT
+      - $ref: '#/parameters/authHeader'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/attachment'
+          examples:
+            application/json:
+              attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+              attachmentName: Example_Invoice.xlsx
+              attachmentType: xlsx
+              attachmentSize: 259387
+              createdDate: '2017-01-31T09:03:08.340Z'
+              createdBy: john.doe@example.com
+              lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+        '405':
+          description: method not allowed
+        '500':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-500
+                message: The system had encountered an unexpected problem and we are tracking it with error code.
+              ticketId: '180321033350179'
+        '503':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-500
+                message: System unavaliable.
+              ticketId: '180321033356789'
+  /v1/attachments/{attachmentId}:
+    parameters:
+    - name: attachmentId
+      in: path
+      description: The id of the attachment.
+      required: true
+      type: string
+      format: uuid
+    delete:
+      operationId: deleteAttachment
+      summary: Delete Attachment by Id
+      tags:
+      - Attachments
+      description: This method deletes the attachment with a specific id value.
+      produces:
+      - application/json
+      parameters:
+      - $ref: '#/parameters/authHeader'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/status'
+          examples:
+            application/json:
+              status: true
+        '403':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-403
+                message: User is not Authorized to access attachment.
+              ticketId: '180321033350179'
+        '404':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-404
+                message: AttachmentId is not found
+              ticketId: '171019115315603'
+        '405':
+          description: method not allowed
+        '500':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-500
+                message: The system had encountered an unexpected problem and we are tracking it with error code.
+              ticketId: '180321033350179'
+        '503':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-716-500
+                message: System unavaliable.
+              ticketId: '180321033356789'
+    get:
+      operationId: getAttachment
+      summary: Get Attachment by Id
+      tags:
+        - Attachments
+      description: >
+        This method gets the metadata for the attachment file with a specific.
+        attachment id value.
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/authHeader'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/attachment'
+          examples:
+            application/json:
+              attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+              attachmentName: Example_Invoice.pdf
+              attachmentType: application/pdf
+              attachmentSize: 259387
+              createdDate: '2017-01-31T09:03:08.340Z'
+              createdBy: john.doe@example.com
+              lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+        '404':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+                - code: EQX-716-404
+                  message: AttachmentId is not found
+              ticketId: '171019115315603'
+        '403':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-403
+                    message: User is not Authorized to access attachment.
+                ticketId: '180321033350179'
+        '500':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: The system had encountered an unexpected problem and we are tracking it with error code.
+                ticketId: '180321033350179'
+        '503':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: System unavaliable.
+                ticketId: '180321033356789'
+        '405':
+            description: 'method not allowed'
+  /v1/attachments/{attachmentId}/file:
+    parameters:
+      - name: attachmentId
+        in: path
+        description: The id of the attachment record you want to get binary data from.
+        required: true
+        type: string
+        format: uuid
+    get:
+      operationId: getAttachedFile
+      summary: Download Attachment File
+      tags:
+        - Attachments
+      description:
+        This method gets the binary file attachment with a specific attachment
+        id value.
+      produces:
+        - application/octet-stream
+        - application/json
+      parameters:
+        - $ref: '#/parameters/authHeader'
+      responses:
+        '200':
+          description: 'FileName will be mentioned in the CONTENT_DISPOSITION Header, File will be downloaded automatically if used browser'
+        '404':
+          description: ''
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+                - code: EQX-716-404
+                  fields:
+                    - attachmentId
+                  message: AttachmentId is not found
+              ticketId: '171019115315603'
+        '403':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-403
+                    message: User is not Authorized to access attachment.
+                ticketId: '180321033350179'
+        '500':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: The system had encountered an unexpected problem and we are tracking it with error code.
+                ticketId: '180321033350179'
+        '503':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: System unavaliable.
+                ticketId: '180321033356789'
+        '405':
+            description: 'method not allowed'
+  /v1/attachments:
+    get:
+      operationId: getAttachments
+      summary: Get List of Attachments
+      tags:
+        - Attachments
+      description: >-
+        This method gets the metadata for multiple attachments. The response is
+        paginated and will output limited number of records per page.
+      produces:
+        - application/json
+      parameters:
+        - name: offset
+          in: query
+          description: Page number to skip the results
+          type: integer
+          default: 0
+          minimum: 0
+        - name: limit
+          in: query
+          description: Number of expected records in the response
+          type: integer
+          default: 20
+          minimum: 0
+          maximum: 100
+        - name: attachmentIds
+          in: query
+          description: Comma separated attachment ids to search
+          type: array
+          uniqueItems: true
+          minItems: 1
+          items:
+            type: string
+          collectionFormat: csv
+        - $ref: '#/parameters/authHeader'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/records'
+          examples:
+            application/json:
+              data:
+                - attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+                  attachmentName: Example_Invoice.xlsx
+                  attachmentType: xlsx
+                  attachmentSize: 259387
+                  createdDate: '2017-01-31T09:03:08.340Z'
+                  createdBy: john.doe@example.com
+                  lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+                - attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+                  attachmentName: Example_Invoice.xlsx
+                  attachmentType: xlsx
+                  attachmentSize: 259387
+                  createdDate: '2017-01-31T09:03:08.340Z'
+                  createdBy: john.doe@example.com
+                  lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+              page:
+                total: 100
+                limit: 10
+                offset: 0
+                sorts:
+                  - '-createdDate'
+              _links:
+                first:
+                  href: /attachments?limit=10&offset=0
+                next:
+                  href: /attachments?limit=10&offset=50
+                self:
+                  href: /attachments?limit=10&offset=40
+                prev:
+                  href: /attachments?limit=10&offset=30
+                last:
+                  href: /attachments?limit=10&offset=100
+        '500':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: The system had encountered an unexpected problem and we are tracking it with error code.
+                ticketId: '180321033350179'
+        '503':
+            description: ''
+            schema:
+              $ref: '#/definitions/genricerrorinfo'
+            examples:
+              application/json:
+                errors:
+                  - code: EQX-716-500
+                    message: System unavaliable.
+                ticketId: '180321033356789'
+        '405':
+            description: 'method not allowed'
+definitions:
+  attachment:
+    title: Attachment
+    type: object
+    description: Attachment meta data
+    properties:
+      attachmentId:
+        type: string
+        description: Unique Identifier for the attachment
+        format: uuid
+      attachmentName:
+        type: string
+        description: File name of the attachment
+      attachmentType:
+        type: string
+        description: Extension of the document
+      attachmentSize:
+        type: number
+        default: 0
+        description: size of the attachment in bytes
+        minimum: 0
+        maximum: 1000000000
+        exclusiveMaximum: true
+      createdDate:
+        type: string
+        description: Created date
+        format: date-time
+      createdBy:
+        type: string
+        description: User key of the author of the attachment
+      lastUpdatedDate:
+        type: string
+        description: Last accessed date for the record
+        format: date-time
+    required:
+    - attachmentId
+    - attachmentName
+    - attachmentType
+    - attachmentSize
+    - createdDate
+    - createdBy
+    - lastUpdatedDate
+    example:
+      attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+      attachmentName: Example_Invoice.pdf
+      attachmentType: application/pdf
+      attachmentSize: 259387
+      createdDate: '2017-01-31T09:03:08.340Z'
+      createdBy: john.doe@example.com
+      lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+  status:
+    title: Status
+    type: object
+    properties:
+      status:
+        type: boolean
+        description: Status message
+        default: false
+    required:
+    - status
+    example:
+      status: false
+  genricerrortype:
+    title: GenricErrorType
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    required:
+    - code
+    - message
+    example:
+      code: EQX-716-404
+      message: AttachmentId is not found
+  genricerrorinfo:
+    title: GenricErrorInfo
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/genricerrortype'
+      ticketId:
+        type: string
+    example:
+      errors:
+      - code: EQX-716-404
+        message: AttachmentId is not found
+      ticketId: '171019115315603'
+  records:
+    title: Records
+    type: object
+    properties:
+      data:
+        type: array
+        description: List of records
+        minItems: 0
+        items:
+          $ref: '#/definitions/attachment'
+      page:
+        $ref: '#/definitions/page'
+      _links:
+        $ref: '#/definitions/links'
+    required:
+      - data
+      - _links
+    example:
+      data:
+        - attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2094
+          attachmentName: Example_Invoice_1.xlsx
+          attachmentType: xlsx
+          attachmentSize: 259388
+          createdDate: '2017-01-31T09:03:08.340Z'
+          createdBy: john.doe@example.com
+          lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+        - attachmentId: 56d10de6-f2c0-4edd-ba29-b70736aa2093
+          attachmentName: Example_Invoice_2.xlsx
+          attachmentType: xlsx
+          attachmentSize: 259387
+          createdDate: '2017-01-31T09:03:08.340Z'
+          createdBy: john.doe@example.com
+          lastUpdatedDate: '2017-04-06T17:10:44.807Z'
+      page:
+        total: 1200
+        limit: 100
+        offset: 0
+        sorts:
+          - '-createdDate'
+          - attachmentId
+      _links:
+        first:
+          href: /attachments?limit=10&offset=0
+        next:
+          href: /attachments?limit=10&offset=50
+        self:
+          href: /attachments?limit=10&offset=40
+        prev:
+          href: /attachments?limit=10&offset=30
+        last:
+          href: /attachments?limit=10&offset=100
+  reference-link:
+    title: ReferenceLink
+    type: object
+    properties:
+      href:
+        type: string
+        description: href of the link
+        minLength: 1
+    required:
+      - href
+    example:
+      href: /attachments?limit=10
+  links:
+    title: Links
+    type: object
+    properties:
+      first:
+        $ref: '#/definitions/reference-link'
+      next:
+        $ref: '#/definitions/reference-link'
+      self:
+        $ref: '#/definitions/reference-link'
+      prev:
+        $ref: '#/definitions/reference-link'
+      last:
+        $ref: '#/definitions/reference-link'
+    required:
+      - first
+      - self
+    example:
+      first:
+        href: /attachments?limit=10&offset=0
+      next:
+        href: /attachments?limit=10&offset=50
+      self:
+        href: /attachments?limit=10&offset=40
+      prev:
+        href: /attachments?limit=10&offset=30
+      last:
+        href: /attachments?limit=10&offset=100
+  page:
+    title: Page
+    type: object
+    properties:
+      total:
+        type: number
+        minimum: 0
+        description: Total number of records
+        default: 0
+      limit:
+        type: integer
+        minimum: 0
+        default: 0
+        description: Number of records per page
+      offset:
+        type: integer
+        minimum: 0
+        default: 0
+        description: The page number
+      sorts:
+        type: array
+        description: Sorted by latest created attachments
+        items:
+          type: string
+    required:
+      - total
+      - limit
+      - offset
+    example:
+      total: 100
+      limit: 20
+      offset: 0
+      sorts:
+        - '-createdDate'
+parameters:
+  authHeader:
+    name: Authorization
+    in: header
+    description: Specify the Access token with prefix 'Bearer '.
+    type: string
+    minimum: 1
+    required: true
