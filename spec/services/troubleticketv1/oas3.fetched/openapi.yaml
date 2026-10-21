@@ -1,0 +1,928 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "If you are experiencing an issue that is impacting your service, please enter your information and submit a trouble ticket. If this issue is not impacting your service, please submit a Smart Hands request.",
+    "version": "1.0",
+    "title": "Trouble Ticket",
+    "termsOfService": "https://www.equinix.com/about/legal/terms",
+    "contact": {
+      "name": "Equinix Api Support",
+      "url": "https://docs.equinix.com/api-support.htm"
+    }
+  },
+  "host": "api.equinix.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/orders/troubleticket/types": {
+      "get": {
+        "operationId": "getTroubleTicketType",
+        "summary": "Get list of all Equinix Trouble Ticket Types",
+        "tags": [
+          "Troubleticket"
+        ],
+        "description": "This operation will return all Equinix trouble ticket problems categories and corresponding details. API can be filtered by trouble ticket category.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "To get results by trouble ticket category.",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "Cross Connect",
+              "Network",
+              "Power",
+              "Environment",
+              "Hardware",
+              "Security",
+              "Managed Services",
+              "Smartview"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Trouble Ticket Problem Types",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "troubleTicketTypes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/troubleTicketType"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "troubleticketTypes": [
+                  {
+                    "category": "Cross Connect",
+                    "code": "cc01",
+                    "description": "A live Cross Connect circuit stopped working",
+                    "severity": "s1"
+                  },
+                  {
+                    "category": "Managed Services",
+                    "code": "ms01",
+                    "description": "Managed Firewall",
+                    "severity": "S1",
+                    "additionalDetails": {
+                      "subCategories": [
+                        "Firewall Issue",
+                        "VPN Issue",
+                        "Load Balancer Issue"
+                      ],
+                      "enabledIBXs": [
+                        "DB1",
+                        "DB2",
+                        "DB3",
+                        "DB4"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/troubleticket/locations": {
+      "get": {
+        "operationId": "getLocation",
+        "summary": "Get Locations(ibx, cage) Details for Trouble Ticket  Based on Trouble Ticket Permission for User",
+        "tags": [
+          "Troubleticket"
+        ],
+        "description": "This API returns list of permissible to ibx/cage/account/cabinets",
+        "parameters": [
+          {
+            "name": "detail",
+            "in": "query",
+            "description": "When enable this flag returns detailed permission with Cage & Cabinets.",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "ibxs",
+            "in": "query",
+            "description": "CH1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "cages",
+            "in": "query",
+            "description": "Eg: CH1:01:0101",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return list of Ibx, Cage, Cabinets where user has access",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "locations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/location"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "locations": [
+                  {
+                    "ibx": "AM1",
+                    "cages": [
+                      {
+                        "cage": "AM1:02:002MC1",
+                        "cageTypes": [
+                          "Shared"
+                        ],
+                        "accounts": [
+                          {
+                            "number": "1111",
+                            "name": "ABC Network Services",
+                            "poTracking": false,
+                            "pricingEnabled": false,
+                            "pricingEnforced": false,
+                            "cabinets": [
+                              {
+                                "cabinet": "AM1:02:002MC1:0601",
+                                "cabinetType": "Shared"
+                              },
+                              {
+                                "cabinet": "AM1:02:002MC1:0602",
+                                "cabinetType": "Shared"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/troubleticket": {
+      "post": {
+        "operationId": "placeTroubleTicketOrder",
+        "summary": "If you are experiencing an issue that is impacting your service, please enter your information and submit a trouble ticket",
+        "tags": [
+          "Troubleticket"
+        ],
+        "description": "If you are experiencing an issue that is impacting your service, please enter your information and submit a trouble ticket",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TroubleTicketOrderRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Trouble Ticket Order Successfully",
+            "schema": {
+              "$ref": "#/definitions/troubleTicketResponse"
+            },
+            "examples": {
+              "application/json": {
+                "OrderNumber": "1-128726682521"
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "contactInfo": {
+      "title": "Contact Info",
+      "type": "object",
+      "properties": {
+        "contactType": {
+          "type": "string",
+          "description": "Contact Type, possible values are ORDERING, NOTIFICATION, TECHNICAL",
+          "enum": [
+            "TECHNICAL",
+            "ORDERING",
+            "NOTIFICATION"
+          ],
+          "example": "TECHNICAL"
+        },
+        "userName": {
+          "type": "string",
+          "description": "User Name",
+          "example": "kmo00re@abc.com"
+        },
+        "name": {
+          "type": "string",
+          "description": "Technical Contact Name",
+          "example": "David"
+        },
+        "email": {
+          "$ref": "#/definitions/emailDef"
+        },
+        "workPhoneCountryCode": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "workPhone": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "maxLength": 40,
+          "example": "111-111-1111"
+        },
+        "workPhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "mobilePhoneCountryCode": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "maxLength": 40,
+          "example": "111-111-1112"
+        },
+        "mobilePhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "workPhoneTimeZone": {
+          "type": "string",
+          "description": "Work Phone TimeZone",
+          "maxLength": 40,
+          "example": "America/LosAngeles"
+        },
+        "mobilePhoneTimeZone": {
+          "type": "string",
+          "description": "Mobile Phone TimeZone",
+          "maxLength": 40,
+          "example": "America/LosAngeles"
+        }
+      },
+      "required": [
+        "contactType"
+      ]
+    },
+    "TroubleTicketOrderRequest": {
+      "title": "Trouble Ticket Order Request",
+      "type": "object",
+      "required": [
+        "ibxLocation",
+        "serviceDetails",
+        "contacts"
+      ],
+      "properties": {
+        "customerReferenceNumber": {
+          "type": "string",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "maxLength": 50
+        },
+        "ibxLocation": {
+          "$ref": "#/definitions/ibxLocation"
+        },
+        "contacts": {
+          "type": "array",
+          "minLength": 2,
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Ordering contact and notification contact are mandatory.Only one ordering contact, technical contact are allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal",
+          "items": {
+            "$ref": "#/definitions/contactInfo"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API",
+          "items": {
+            "$ref": "#/definitions/attachment"
+          }
+        },
+        "serviceDetails": {
+          "type": "object",
+          "description": "Use this object to pass all trouble related information.",
+          "required": [
+            "incidentDateTime",
+            "problemCode"
+          ],
+          "properties": {
+            "incidentDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Date and time of received event (ISO Date)<br> Cannot be in the future. ",
+              "example": "2017-04-05T12:00:00Z"
+            },
+            "problemCode": {
+              "type": "string",
+              "enum": [
+                "cc01",
+                "cc02",
+                "cc03",
+                "net01",
+                "net02",
+                "env01",
+                "env02",
+                "env03",
+                "env04",
+                "hdw01",
+                "pwr01",
+                "pwr02",
+                "sec01",
+                "sec02",
+                "ms01",
+                "ms04",
+                "ms05",
+                "ms06",
+                "ms07",
+                "ms08",
+                "ms12",
+                "ms13",
+                "sv04",
+                "sv02",
+                "sv03",
+                "sv05",
+                "sv01"
+              ],
+              "description": "Code matching the problem description. For more details see API /orders/troubleticket/types"
+            },
+            "serviceName": {
+              "type": "string",
+              "description": "Subcategory for managed services. It will be a mandatory field for managed services trouble ticket",
+              "example": "Firewall Issue"
+            },
+            "callFromCage": {
+              "type": "boolean",
+              "description": "Allow the technician to call from the cage.",
+              "example": false
+            },
+            "needSupportFromASubmarineCableStationEngineer": {
+              "type": "boolean",
+              "description": "This flag is only applicable to Submarine Cable IBXs",
+              "example": false
+            },
+            "additionalDetails": {
+              "type": "string",
+              "description": "Use this field to enter any information that applies to this trouble ticket request.",
+              "minLength": 1,
+              "maxLength": 4000
+            }
+          }
+        }
+      },
+      "example": {
+        "customerReferenceNumber": "RQT0036422",
+        "ibxLocation": {
+          "ibx": "CH1",
+          "cages": [
+            {
+              "cage": "CH1:05:000750",
+              "accountNumber": "12345",
+              "cabinets": [
+                "CH1:05:000750:01"
+              ]
+            }
+          ]
+        },
+        "serviceDetails": {
+          "incidentDateTime": "2019-04-10T13:45:59.123Z",
+          "problemCode": "ms13",
+          "serviceName": "OS Issue",
+          "callFromCage": true,
+          "additionalDetails": "test"
+        },
+        "contacts": [
+          {
+            "contactType": "ORDERING",
+            "userName": "test"
+          },
+          {
+            "contactType": "NOTIFICATION",
+            "userName": "test"
+          },
+          {
+            "contactType": "TECHNICAL",
+            "userName": "test",
+            "workPhone": "1111111",
+            "workPhonePrefToCall": "ANYTIME",
+            "mobilePhone": "1111111",
+            "mobilePhonePrefToCall": "ANYTIME"
+          }
+        ],
+        "attachments": [
+          {
+            "id": "eb9ab7e9-3785-41e4-af24-74b8dc37b254",
+            "name": "test.pdf"
+          }
+        ]
+      }
+    },
+    "account": {
+      "title": "Account",
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string",
+          "description": "Account Number",
+          "example": "136008"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Account",
+          "example": "Service Corporation"
+        },
+        "pricingEnabled": {
+          "type": "boolean",
+          "description": "Pricing enabled for account",
+          "example": "false"
+        },
+        "pricingEnforced": {
+          "type": "boolean",
+          "description": "Pricing enforced for account",
+          "example": "false"
+        },
+        "poTracking": {
+          "type": "boolean",
+          "description": "PO Tracking Account",
+          "example": "false"
+        },
+        "cabinets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cabinets"
+          },
+          "description": "List of Cabinets"
+        }
+      },
+      "required": [
+        "number",
+        "name"
+      ]
+    },
+    "cabinets": {
+      "title": "Cabinets",
+      "type": "object",
+      "properties": {
+        "cabinet": {
+          "type": "string",
+          "description": "Cabinet Type",
+          "example": "LD5:01:001MC3:0718"
+        },
+        "cabinetType": {
+          "type": "string",
+          "description": "Cabinet Type"
+        }
+      }
+    },
+    "emailDef": {
+      "title": "emailDef",
+      "type": "string",
+      "description": "Contact Email",
+      "maxLength": 100,
+      "pattern": "^(([^<>()\\[\\]\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
+    },
+    "troubleTicketType": {
+      "title": "TroubleTicket Type",
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Type of trouble ticket."
+        },
+        "code": {
+          "type": "string",
+          "description": "Code of trouble ticket. Use this code while placing Trouble Ticket Order"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description trouble ticket."
+        },
+        "severity": {
+          "type": "string",
+          "description": "Severity of trouble ticket."
+        },
+        "additionalDetails": {
+          "type": "object",
+          "properties": {
+            "subCategories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "enabledIBXs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "category",
+        "code",
+        "description",
+        "severity"
+      ],
+      "example": {
+        "category": "Managed Services",
+        "code": "ms01",
+        "description": "Managed Firewall",
+        "severity": "S1",
+        "additionalDetails": {
+          "subCategories": [
+            "Firewall_Issue",
+            "VPN_Issue"
+          ],
+          "enabledIBXs": [
+            "DA1"
+          ]
+        }
+      }
+    },
+    "cage": {
+      "title": "Cage",
+      "type": "object",
+      "properties": {
+        "cage": {
+          "type": "string",
+          "description": "Cage or Suite",
+          "example": "LD5:01:001MC3"
+        },
+        "cageTypes": {
+          "type": "array",
+          "description": "Cage Types",
+          "example": "Shared",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "description": "List of Accounts",
+          "items": {
+            "$ref": "#/definitions/account"
+          }
+        }
+      },
+      "required": [
+        "cage"
+      ]
+    },
+    "troubleTicketResponse": {
+      "title": "Trouble Ticket Response",
+      "type": "object",
+      "properties": {
+        "OrderNumber": {
+          "type": "string",
+          "description": "Order Number",
+          "example": "1-108124419634"
+        }
+      }
+    },
+    "ibxLocation": {
+      "title": "IBX Location",
+      "type": "object",
+      "description": "IBX, Cage, Accounts and Cabinet  information",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "example": "AM1",
+          "minLength": 1,
+          "maxLength": 10
+        },
+        "cages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "cage": {
+                "type": "string",
+                "example": "AM1:01:001MC3",
+                "minLength": 1
+              },
+              "accountNumber": {
+                "type": "string",
+                "example": "12345",
+                "minLength": 1
+              },
+              "cabinets": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "0102"
+                }
+              }
+            },
+            "required": [
+              "cage",
+              "accountNumber"
+            ]
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ]
+    },
+    "location": {
+      "title": "Location",
+      "type": "object",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "description": "Ibx Name",
+          "example": "AM1"
+        },
+        "cages": {
+          "type": "array",
+          "description": "List of cage",
+          "items": {
+            "$ref": "#/definitions/cage"
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ]
+    },
+    "attachment": {
+      "title": "Attachment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Attachement Id generated from Attachment Api",
+          "minLength": 1,
+          "example": "eb9ab7e9-3785-41e4-af24-112dff"
+        },
+        "name": {
+          "type": "string",
+          "description": "Attachment file name. Please make sure to select an attachment name which is used while uploading via the attachment api.",
+          "minLength": 1,
+          "example": "eb9ab7e9-3785-41e4-af24-asfsa5424"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "genericError": {
+      "type": "object",
+      "title": "Application Errors",
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ticketId": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "authorizationHeader": {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the Access token with prefix 'Bearer'.",
+      "type": "string",
+      "required": true
+    }
+  }
+}
