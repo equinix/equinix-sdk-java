@@ -16,5 +16,6 @@
     <!-- onboard_service.sh adds one module per service here -->
     <modules>
         <module>common</module>
+        <module>accesstokenv1</module>
     </modules>
 </project>
