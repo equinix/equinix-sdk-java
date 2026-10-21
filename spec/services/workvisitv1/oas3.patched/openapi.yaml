@@ -1,0 +1,908 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Schedule a Work Visit by providing the IBX and cage you will need access to, the dates and times of the visit, and some basic information about the visitors who will be arriving at the site. Work visits have a maximum duration of two weeks. If a visitor needs to be on-site for more than two weeks please add them as a user with IBX access.",
+    "version": "1.0",
+    "title": "Work Visit",
+    "termsOfService": "https://www.equinix.com/about/legal/terms",
+    "contact": {
+      "name": "Equinix API Support",
+      "url": "https://docs.equinix.com/api-support.htm"
+    }
+  },
+  "host": "api.equinix.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/orders/workvisit/locations": {
+      "get": {
+        "operationId": "getLocation",
+        "summary": "Get Work visit Locations",
+        "tags": [
+          "Workvisit"
+        ],
+        "deprecated": true,
+        "description": "The Get work visit locations API returns all IBXs and related cages where the user has 'IBX Access Services Request' permission. The authorization token and content-type are the only headers that are passed to this API and a response is received based on the values passed.",
+        "parameters": [
+          {
+            "name": "detail",
+            "in": "query",
+            "description": "When enable this flag returns detailed permission with Cage & Cabinets.",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "ibxs",
+            "description": "IBX Filter. Example: AM1, AM2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "cages",
+            "description": "Cage Filter. Example: AM1:0G:00EQ",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return list of Ibx, Cage, Cabinets where user has access to place Work Visit Order",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "locations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/location"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "locations": [
+                  {
+                    "ibx": "AM1",
+                    "cages": [
+                      {
+                        "cage": "AM1:02:002MC1",
+                        "cageTypes": [
+                          "Shared"
+                        ],
+                        "accounts": [
+                          {
+                            "number": "1111",
+                            "name": "ABC Network Services",
+                            "isCreditHold": false,
+                            "isPOBearing": true,
+                            "isMonetAccount": false,
+                            "cabinets": [
+                              {
+                                "cabinet": "AM1:02:002MC1:0601",
+                                "cabinetType": "Shared"
+                              },
+                              {
+                                "cabinet": "AM1:02:002MC1:0602",
+                                "cabinetType": "Shared"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/workvisit": {
+      "post": {
+        "operationId": "workVisitOrder",
+        "summary": "Schedule Work Visit",
+        "tags": [
+          "Workvisit"
+        ],
+        "deprecated": true,
+        "description": "The Post work visit API creates a work visit request to grant IBX visitors access for up to two weeks. This can only be done under a user with 'IBX Access Services Request' permission.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/workVisitRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Order Created ",
+            "schema": {
+              "$ref": "#/definitions/orderItemResponse"
+            },
+            "examples": {
+              "application/json": {
+                "successes": [
+                  {
+                    "ibxLocation": {
+                      "ibx": "AM1",
+                      "cageDetails": [
+                        {
+                          "cage": "AM1:0G:00E",
+                          "accountNumber": "1111",
+                          "cabinets": [
+                            {
+                              "cabinet": "0501"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "response": {
+                      "OrderNumber": "1-1111"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-123-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "contactInfo": {
+      "title": "Contact Info",
+      "type": "object",
+      "properties": {
+        "contactType": {
+          "type": "string",
+          "description": "Contact Type, possible values are ORDERING, NOTIFICATION, TECHNICAL",
+          "enum": [
+            "TECHNICAL",
+            "ORDERING",
+            "NOTIFICATION"
+          ],
+          "example": "TECHNICAL"
+        },
+        "userName": {
+          "type": "string",
+          "description": "User Name",
+          "example": "kmo00re@abc.com"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[\\s.]*([^\\s.][\\s.]*){0,100}$",
+          "description": "Technical Contact Name",
+          "example": "David"
+        },
+        "email": {
+          "$ref": "#/definitions/emailDef"
+        },
+        "workPhoneCountryCode": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "workPhone": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "pattern": "^[0-9\\.\\-() ]{2,40}(?:(x|ext).+)?$",
+          "example": "111-111-1111"
+        },
+        "workPhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "mobilePhoneCountryCode": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "pattern": "^[0-9\\.\\-() ]{2,40}(?:(x|ext).+)?$",
+          "example": "111-111-1112"
+        },
+        "mobilePhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "workPhoneTimeZone": {
+          "$ref": "#/definitions/timeZoneEnum"
+        },
+        "mobilePhoneTimeZone": {
+          "$ref": "#/definitions/timeZoneEnum"
+        }
+      },
+      "required": [
+        "contactType"
+      ]
+    },
+    "workVisitRequest": {
+      "title": "Work Visit Request",
+      "type": "object",
+      "properties": {
+        "contacts": {
+          "type": "array",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal. Only username and contactType are valid for ordering and notification contacts, all other attributes will be ignored. <br> <br> Technical contact is optional. workPhoneCountryCode, workPhone and workPhonePrefToCall attributes are mandatory for Technical Contact(when Provided).  <br><br>  If notification contact is not available to pass, please use ordering contact as notification contact also. <br> ",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/contactInfo"
+          },
+          "example": [
+            {
+              "contactType": "ORDERING",
+              "userName": "jondoe@test.com"
+            },
+            {
+              "contactType": "NOTIFICATION",
+              "userName": "jondoe@test.com"
+            },
+            {
+              "contactType": "TECHNICAL",
+              "name": "John Doe",
+              "workPhone": "1111111",
+              "workPhonePrefToCall": "ANYTIME",
+              "mobilePhone": "1111111",
+              "mobilePhonePrefToCall": "ANYTIME"
+            }
+          ]
+        },
+        "customerReferenceNumber": {
+          "type": "string",
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "minLength": 1,
+          "maxLength": 50,
+          "example": "cust-ref-123"
+        },
+        "ibxLocation": {
+          "$ref": "#/definitions/ibxLocation"
+        },
+        "attachments": {
+          "type": "array",
+          "description": "Use this to pass uploaded attachments. Attachments need to be uploaded using the attachments API",
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/definitions/attachment"
+          }
+        },
+        "serviceDetails": {
+          "$ref": "#/definitions/serviceDetail"
+        }
+      },
+      "required": [
+        "ibxLocation",
+        "serviceDetails",
+        "contacts"
+      ]
+    },
+    "visitor": {
+      "title": "Visitor",
+      "type": "object",
+      "description": "Vistor Information, either username or (firstname,lastname,company) are mandatory",
+      "properties": {
+        "userName": {
+          "type": "string",
+          "description": "Equinix registered username. when username passed other attributes for vistor model will be ignored."
+        },
+        "firstName": {
+          "type": "string",
+          "maxLength": 30,
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "maxLength": 30,
+          "example": "Doe"
+        },
+        "company": {
+          "type": "string",
+          "maxLength": 80,
+          "example": "Test Organization"
+        },
+        "email": {
+          "type": "string",
+          "description": "Visitor Email",
+          "example": "abc@xyz.com",
+          "pattern": "^(([^<>()\\[\\]\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
+        },
+        "mobilePhoneCountryCode": {
+          "type": "string",
+          "description": "Mobile country code of the visitor",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Phone number allowed special characters are -.() and spaces. First character should either be numeric digit or '('. Last character should only be a numeric digit.",
+          "maxLength": 40,
+          "example": "111-111-1112",
+          "pattern": "^[0-9(]+[0-9-.()\\s]+[0-9]+$"
+        }
+      }
+    },
+    "cabinets": {
+      "title": "Cabinets",
+      "type": "object",
+      "properties": {
+        "cabinet": {
+          "type": "string",
+          "description": "Cabinet Type",
+          "example": "LD5:01:001MC3:0718"
+        },
+        "cabinetType": {
+          "type": "string",
+          "description": "Cabinet Type"
+        }
+      }
+    },
+    "account": {
+      "title": "Account",
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string",
+          "description": "Account Number",
+          "example": "136008"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Account",
+          "example": "Service Corporation"
+        },
+        "isCreditHold": {
+          "type": "boolean",
+          "description": "Is credit Hold account",
+          "example": "false"
+        },
+        "isPOBearing": {
+          "type": "boolean",
+          "description": "Is PO Bearing account",
+          "example": "false"
+        },
+        "cabinets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cabinets"
+          },
+          "description": "List of Cabinets"
+        }
+      },
+      "required": [
+        "number",
+        "name"
+      ]
+    },
+    "ibxLocation": {
+      "title": "IBX Location",
+      "type": "object",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10,
+          "example": "AM1"
+        },
+        "cages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "cage": {
+                "type": "string",
+                "minLength": 1,
+                "example": "AM1:0G:00E"
+              },
+              "cabinets": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "0101"
+                }
+              },
+              "accountNumber": {
+                "type": "string",
+                "minLength": 1,
+                "example": "12345"
+              }
+            },
+            "required": [
+              "cage",
+              "accountNumber"
+            ]
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ]
+    },
+    "attachment": {
+      "title": "Attachment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Attachement Id",
+          "minLength": 1,
+          "example": "eb9ab7e9-3785-41e4-af24-74b8dc37b254"
+        },
+        "name": {
+          "type": "string",
+          "description": "Attachment file name",
+          "minLength": 1,
+          "example": "uecp-finance-service-api-swagger.yml"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "orderItemResponse": {
+      "title": "Work Visit Order Item Response",
+      "type": "object",
+      "properties": {
+        "successes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ibxLocation": {
+                "type": "object",
+                "properties": {
+                  "ibx": {
+                    "type": "string"
+                  },
+                  "cageDetails": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cage": {
+                          "type": "string"
+                        },
+                        "accountNumber": {
+                          "type": "string"
+                        },
+                        "cabinets": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "cabinet": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "response": {
+                "type": "object",
+                "properties": {
+                  "OrderNumber": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cage": {
+      "title": "Cage",
+      "type": "object",
+      "properties": {
+        "cage": {
+          "type": "string",
+          "description": "Cage",
+          "example": "AM1:0G:00E"
+        },
+        "cageTypes": {
+          "type": "array",
+          "description": "Cage Types",
+          "example": "Shared",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "description": "List of Accounts",
+          "items": {
+            "$ref": "#/definitions/account"
+          }
+        }
+      },
+      "required": [
+        "cage"
+      ]
+    },
+    "location": {
+      "title": "Location",
+      "type": "object",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "description": "Ibx Name",
+          "example": "AM1"
+        },
+        "cages": {
+          "type": "array",
+          "description": "List of cage",
+          "items": {
+            "$ref": "#/definitions/cage"
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ]
+    },
+    "emailDef": {
+      "title": "emailDef",
+      "type": "string",
+      "description": "Contact Email",
+      "maxLength": 100,
+      "pattern": "^(([^<>()\\[\\]\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
+    },
+    "serviceDetail": {
+      "title": "Service Detail",
+      "type": "object",
+      "properties": {
+        "additionalDetails": {
+          "type": "string",
+          "description": "Any additional information related to work visit",
+          "minLength": 1,
+          "maxLength": 4000,
+          "example": "Additional notes related to order"
+        },
+        "schedule": {
+          "type": "object",
+          "description": "A work visit ticket is active for up to two weeks. For durations longer than two weeks, request security access order",
+          "properties": {
+            "startDateTime": {
+              "type": "string",
+              "description": "Start Date Time (ISO Date)<br> Cannot Past Date.",
+              "format": "date-time",
+              "example": "2017-04-05T10:00:00Z"
+            },
+            "endDateTime": {
+              "type": "string",
+              "description": "End Date Time (ISO Date)<br>Cannot Past Date.",
+              "format": "date-time",
+              "example": "2017-04-05T12:00:00Z"
+            }
+          },
+          "required": [
+            "startDateTime",
+            "endDateTime"
+          ]
+        },
+        "visitors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/visitor"
+          },
+          "example": [
+            {
+              "firstName": "John",
+              "lastName": "Doe",
+              "company": "Test Organization",
+              "email": "abc@xyz.com",
+              "mobilePhoneCountryCode": 1,
+              "mobilePhone": "111-111-1112"
+            },
+            {
+              "userName": "testuser@test.com"
+            }
+          ]
+        },
+        "openCabinet": {
+          "type": "boolean",
+          "default": "false"
+        },
+        "supervisionRequired":{
+          "type": "boolean",
+          "default": "false"
+        }
+      },
+      "required": [
+        "visitors",
+        "schedule"
+      ]
+    },
+    "genericError": {
+      "type": "object",
+      "title": "Application Errors",
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ticketId": {
+          "type": "string"
+        }
+      }
+    },
+    "timeZoneEnum": {
+      "title": "TimeZoneEnum",
+      "type": "string",
+      "description": "Time Zone Enum values.",
+      "example": "America/Los_Angeles",
+      "enum": [
+        "Atlantic/Canary",
+        "Europe/Dublin",
+        "Europe/London",
+        "Europe/Lisbon",
+        "Africa/Algiers",
+        "Europe/Berlin",
+        "Europe/Amsterdam",
+        "Europe/Copenhagen",
+        "Europe/Madrid",
+        "Europe/Paris",
+        "Europe/Stockholm",
+        "Europe/Zurich",
+        "Europe/Warsaw",
+        "Africa/Cairo",
+        "Africa/Johannesburg",
+        "Europe/Sofia",
+        "Africa/Nairobi",
+        "Asia/Jerusalem",
+        "Europe/Istanbul",
+        "Europe/Moscow",
+        "Asia/Riyadh",
+        "Asia/Dubai",
+        "Asia/Kabul",
+        "Asia/Tehran",
+        "Asia/Karachi",
+        "Indian/Maldives",
+        "Asia/Kolkata",
+        "Asia/Kathmandu",
+        "Asia/Omsk",
+        "Asia/Rangoon",
+        "Asia/Jakarta",
+        "Asia/Ho_Chi_Minh",
+        "Asia/Brunei",
+        "Asia/Hong_Kong",
+        "Asia/Kuala_Lumpur",
+        "Asia/Manila",
+        "Asia/Shanghai",
+        "Asia/Singapore",
+        "Asia/Taipei",
+        "Australia/Perth",
+        "Asia/Seoul",
+        "Asia/Tokyo",
+        "Australia/Darwin",
+        "Australia/Brisbane",
+        "Pacific/Guam",
+        "Australia/Adelaide",
+        "Australia/Sydney",
+        "Pacific/Auckland",
+        "Pacific/Chatham",
+        "Indian/Christmas",
+        "America/Scoresbysund",
+        "Atlantic/South_Georgia",
+        "America/Sao_Paulo",
+        "America/Detroit",
+        "America/New_York",
+        "America/Puerto_Rico",
+        "America/Toronto",
+        "America/Bogota",
+        "America/Chicago",
+        "America/Winnipeg",
+        "America/Denver",
+        "America/Edmonton",
+        "America/Mexico_City",
+        "America/Los_Angeles",
+        "America/Vancouver",
+        "America/Phoenix",
+        "America/Anchorage",
+        "Pacific/Gambier",
+        "Pacific/Marquesas",
+        "Pacific/Honolulu",
+        "Pacific/Fiji",
+        "Asia/Muscat",
+        "America/Argentina/Buenos_Aires",
+        "America/Caracas",
+        "Etc/GMT+12",
+        "UTC",
+        "GMT",
+        "America/Santiago",
+        "America/St_Johns",
+        "Asia/Almaty",
+        "Asia/Bankgkok",
+        "Asia/Calcutta",
+        "Asia/Magadan",
+        "Asia/Yekaterinburg",
+        "Australia/Eucla",
+        "Australia/Lord_Howe",
+        "Europe/Bratislava",
+        "Europe/Brussels",
+        "Europe/Prague",
+        "Europe/Rome",
+        "Pacific/Kiritimati",
+        "Pacific/Midway",
+        "Pacific/Tongatapu"
+      ]
+    }
+  },
+  "parameters": {
+    "authorizationHeader": {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the Access token with prefix 'Bearer'.",
+      "type": "string",
+      "required": true
+    }
+  }
+}
