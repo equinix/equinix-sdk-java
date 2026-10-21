@@ -16,5 +16,6 @@
         <module>services/fabricv4</module>
         <module>examples</module>
         <module>equinix-sdk-java</module>
+        <module>services/assetsv1</module>
     </modules>
 </project>
