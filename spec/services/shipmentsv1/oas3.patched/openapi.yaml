@@ -1,0 +1,1442 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "To submit a Shipment order.",
+    "version": "1.0",
+    "title": "Shipment",
+    "termsOfService": "https://www.equinix.com/about/legal/terms",
+    "contact": {
+      "name": "Equinix Api Support",
+      "url": "https://docs.equinix.com/api-support.htm"
+    }
+  },
+  "host": "api.equinix.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/orders/shipment/outbound": {
+      "post": {
+        "operationId": "outbound_shipment_submit",
+        "summary": "Created Outbound Shipment.",
+        "tags": [
+          "Shipment"
+        ],
+        "description": "This API is used to submit an Outbound Shipment order.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/outboundShipmentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Outbound Shipment Order Successfully",
+            "schema": {
+              "$ref": "#/definitions/shipment-order-response"
+            },
+            "examples": {
+              "application/json": {
+                "OrderNumber": "1-128726682521"
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/shipment/locations": {
+      "get": {
+        "operationId": "getLocation",
+        "summary": "Get Locations(ibx, cage) Details for Shipment  Based on Place Shipment Permission for User",
+        "tags": [
+          "Shipment"
+        ],
+        "description": "This API is use to check user's permission's & access to ibx",
+        "parameters": [
+          {
+            "name": "detail",
+            "in": "query",
+            "description": "When enable this flag returns detailed permission with Cage & Cabinets. Default value is false",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "ibxs",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "cages",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return list of Ibx, Cage, Cabinets where user has access",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "locations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/location"
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "locations": [
+                  {
+                    "ibx": "AM1",
+                    "cages": [
+                      {
+                        "cage": "AM1:02:002MC1",
+                        "cageTypes": [
+                          "Shared"
+                        ],
+                        "accounts": [
+                          {
+                            "number": "1111",
+                            "name": "ABC Network Services",
+                            "isCreditHold": false,
+                            "isPOBearing": true,
+                            "isMonetAccount": false,
+                            "cabinets": [
+                              {
+                                "cabinet": "AM1:02:002MC1:0601",
+                                "cabinetType": "Shared"
+                              },
+                              {
+                                "cabinet": "AM1:02:002MC1:0602",
+                                "cabinetType": "Shared"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/shipment/inbound": {
+      "post": {
+        "operationId": "shipment-inbound",
+        "summary": "Inbound Shipment Order",
+        "tags": [
+          "Shipment"
+        ],
+        "description": "This API is used to submit an Inbound Shipment order.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/inboundShipmentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Inbound Shipment Order Successfully",
+            "schema": {
+              "$ref": "#/definitions/shipment-order-response"
+            },
+            "examples": {
+              "application/json": {
+                "OrderNumber": "1-128726682522"
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    },
+    "/v1/orders/shipment/pendingStorage": {
+      "post": {
+        "operationId": "shipment-pending",
+        "summary": "Pending Storage Order",
+        "tags": [
+          "Shipment"
+        ],
+        "description": "This API is used to submit the Pending Inbound Shipment order.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/pending-storage-request"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created Pending Shipment Order Successfully",
+            "schema": {
+              "$ref": "#/definitions/pending-storage-order-response"
+            },
+            "examples": {
+              "application/json": {
+                "OrderNumber": "1-128726682522"
+              }
+            }
+          },
+          "400": {
+            "description": "Http Bad Request",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-1234",
+                    "fields": [
+                      "xpath"
+                    ],
+                    "message": "Error message.",
+                    "messageParams": [
+                      "Message place holder params"
+                    ]
+                  }
+                ],
+                "ticketId": "190619221547671"
+              }
+            }
+          },
+          "403": {
+            "description": "Http Authorization Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-403",
+                    "message": "Insufficient permission to access the resource or invoke the request."
+                  }
+                ],
+                "ticketId": "190619221547672"
+              }
+            }
+          },
+          "500": {
+            "description": "Http Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/genericError"
+            },
+            "examples": {
+              "application/json": {
+                "errors": [
+                  {
+                    "code": "EQX-161-500",
+                    "message": "The system had encountered an unexpected problem and we are tracking it with error code."
+                  }
+                ],
+                "ticketId": "190619221547673"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/parameters/authorizationHeader"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "pending-storage-request": {
+      "title": "Pending Storage Request",
+      "type": "object",
+      "properties": {
+        "shipmentDetails": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "storageId": {
+                "type": "string"
+              },
+              "cage": {
+                "type": "string"
+              },
+              "accountNumber": {
+                "type": "string"
+              },
+              "deliverToCage": {
+                "type": "boolean"
+              },
+              "additionalDetails": {
+                "type": "string",
+                "description": "Scope of work",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "customerReferenceNumber": {
+                "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+                "minLength": 1,
+                "maxLength": 50,
+                "example": "cust-ref-123"
+              },
+              "purchaseInformation": {
+                "type": "string",
+                "description": "Purchase Order Number",
+                "example": "1234567890",
+                "minLength": 1,
+                "maxLength": 30
+              }
+            },
+            "required": [
+              "storageId",
+              "cage",
+              "accountNumber",
+              "deliverToCage"
+            ]
+          }
+        },
+        "contacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/contactInfo"
+          }
+        }
+      },
+      "required": [
+        "shipmentDetails",
+        "contacts"
+      ],
+      "example": {
+        "contacts": [
+          {
+            "contactType": "ORDERING",
+            "userName": "jondoe@test.com"
+          },
+          {
+            "contactType": "NOTIFICATION",
+            "userName": "jondoe@test.com"
+          }
+        ],
+        "shipmentDetails": [
+          {
+            "storageId": "1-275PQCAS",
+            "cage": "CH1:05:313",
+            "deliverToCage": true,
+            "accountNumber": "133333"
+          },
+          {
+            "storageId": "1-275PQCGBF",
+            "cage": "SV1:05:31113",
+            "deliverToCage": false,
+            "accountNumber": "133335"
+          }
+        ]
+      }
+    },
+    "pending-storage-order-response": {
+      "title": "Pending Storage Order Response",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "OrderReferenceId": {
+            "type": "string",
+            "description": "Order Reference Id"
+          },
+          "orderNumber": {
+            "type": "string",
+            "description": "Order Number",
+            "example": "1-108124419634"
+          },
+          "Id": {
+            "type": "string",
+            "description": "Order Id"
+          },
+          "SRNumber": {
+            "type": "string",
+            "description": "SR Number"
+          },
+          "storageID": {
+            "type": "string"
+          },
+          "Ibx": {
+            "type": "string"
+          },
+          "cage": {
+            "type": "string"
+          },
+          "accountNumber": {
+            "type": "string"
+          },
+          "trackingNumber": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "orderNumber",
+          "storageID",
+          "Ibx",
+          "cage",
+          "accountNumber",
+          "trackingNumber"
+        ]
+      }
+    },
+    "outboundServiceDetail": {
+      "title": "Outbound Service Detail",
+      "type": "object",
+      "properties": {
+        "outboundRequestDescription": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "estimatedDateTime": {
+          "type": "string",
+          "description": "Date and time of received event (ISO Date)<br> Cannot in Past. ",
+          "format": "date-time"
+        },
+        "shipmentDetails": {
+          "type": "object",
+          "required": [
+            "outboundType"
+          ],
+          "properties": {
+            "outboundType": {
+              "type": "string",
+              "enum": [
+                "CARRIER",
+                "CUSTOMER_CARRY"
+              ],
+              "description": "Outbound Type",
+              "example": "CARRIER"
+            },
+            "carrierName": {
+              "type": "string",
+              "enum": [
+                "UPS",
+                "FEDEX",
+                "DHL",
+                "OTHER"
+              ]
+            },
+            "trackingNumber": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "noOfBoxes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100000,
+              "exclusiveMaximum": false
+            },
+            "declaredValue": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20
+            },
+            "labelExists": {
+              "type": "boolean"
+            },
+            "shipToAddress": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "address": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "city": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "state": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "country": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "zipCode": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20
+                },
+                "carrierAccountNumber": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              },
+              "required": [
+                "name",
+                "address",
+                "city",
+                "state",
+                "country",
+                "zipCode",
+                "phoneNumber",
+                "carrierAccountNumber"
+              ]
+            },
+            "otherCarrierName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "uploadedLabel": {
+              "$ref": "#/definitions/attachment"
+            },
+            "insureShipment": {
+              "type": "boolean"
+            },
+            "pickUpFromCageSuite": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        }
+      },
+      "required": [
+        "estimatedDateTime",
+        "shipmentDetails"
+      ]
+    },
+    "clientError": {
+      "title": "Client Error",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/clientErrorType"
+      }
+    },
+    "serverError": {
+      "title": "Server Error",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/serverErrorType"
+      }
+    },
+    "shipment-order-response": {
+      "title": "Shipment Order Response",
+      "type": "object",
+      "properties": {
+        "OrderReferenceId": {
+          "type": "string",
+          "description": "Order Reference Id"
+        },
+        "orderNumber": {
+          "type": "string",
+          "description": "Order Number",
+          "example": "1-108124419634"
+        },
+        "Id": {
+          "type": "string",
+          "description": "Order Id"
+        },
+        "SRNumber": {
+          "type": "string",
+          "description": "SR Number"
+        }
+      },
+      "required": [
+        "orderNumber"
+      ]
+    },
+    "ibxLocation": {
+      "title": "ibxLocation",
+      "type": "object",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 10
+        },
+        "cages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "cage": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accountNumber": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cage",
+              "accountNumber"
+            ]
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ],
+      "example": {
+        "ibx": "PA2",
+        "cages": [
+          {
+            "cage": "PA2:02:002MC1"
+          }
+        ]
+      }
+    },
+    "price": {
+      "title": "Price",
+      "type": "object",
+      "description": "The \"amount\" attribute denotes how much money the Purchase Order contains. This \"amount\" is measured in the currency type listed in the customer's account.",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Price",
+          "minimum": 0,
+          "maximum": 999999999999999
+        }
+      }
+    },
+    "cage": {
+      "title": "Cage",
+      "type": "object",
+      "properties": {
+        "cage": {
+          "type": "string",
+          "description": "Cage",
+          "example": "LD5:01:001MC3"
+        },
+        "cageTypes": {
+          "type": "array",
+          "description": "Cage Types",
+          "example": "Shared",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "description": "List of Accounts",
+          "items": {
+            "$ref": "#/definitions/account"
+          }
+        }
+      },
+      "required": [
+        "cage"
+      ]
+    },
+    "clientErrorType": {
+      "title": "Client Error Type",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "example": "EQX-161-1234"
+        },
+        "message": {
+          "type": "string",
+          "example": "Input supplied is invalid"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "inboundServiceDetail": {
+      "title": "Inbound Service Detail",
+      "type": "object",
+      "example": {
+        "estimatedDateTime": "2018-10-15T05:00:00.420-08:00",
+        "shipmentDetails": {
+          "noOfBoxes": 10,
+          "isOverSized": true,
+          "description": "hello",
+          "trackingNumber": [
+            "1235467869",
+            "1",
+            "4",
+            "5"
+          ],
+          "inboundType": "CARRIER",
+          "carrierName": "OTHER",
+          "otherCarrierName": "test"
+        },
+        "deliverToCage": true,
+        "inboundRequestDescription": "hello"
+      },
+      "properties": {
+        "shipmentDetails": {
+          "type": "object",
+          "required": [
+            "noOfBoxes",
+            "inboundType"
+          ],
+          "properties": {
+            "noOfBoxes": {
+              "type": "integer",
+              "description": "No of boxes",
+              "maximum": 10000000000000000000
+            },
+            "isOverSized": {
+              "type": "boolean",
+              "description": "if Box is oversized",
+              "example": true
+            },
+            "description": {
+              "type": "string",
+              "description": "description of inbound shipment",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "trackingNumber": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 10,
+              "description": "Tracking number",
+              "example": "1,2,3",
+              "items": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 100
+              }
+            },
+            "inboundType": {
+              "type": "string",
+              "enum": [
+                "CARRIER",
+                "CUSTOMER_CARRY"
+              ],
+              "description": "Inbound Type",
+              "example": "CARRIER"
+            },
+            "carrierName": {
+              "type": "string",
+              "enum": [
+                "FEDEX",
+                "DHL",
+                "UPS",
+                "OTHER"
+              ],
+              "description": "Carrier Name of shipment",
+              "example": "FEDEX"
+            },
+            "otherCarrierName": {
+              "type": "string",
+              "description": "Other Carrier Name",
+              "minLength": 1,
+              "maxLength": 50
+            }
+          }
+        },
+        "deliverToCage": {
+          "type": "boolean",
+          "description": "Deliver To cage",
+          "example": true
+        },
+        "inboundRequestDescription": {
+          "type": "string",
+          "description": "Scope of work",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "storageId": {
+          "type": "string",
+          "description": "Storage ID",
+          "example": 123
+        },
+        "estimatedDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "estimatedDateTime of Shipment (ISO Date)<br> Cannot in Past. ",
+          "example": "2018-10-15T05:00:00.420-08:00"
+        }
+      },
+      "required": [
+        "shipmentDetails",
+        "estimatedDateTime"
+      ]
+    },
+    "genericErrorType": {
+      "title": "Generic Error Type",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "example": "EQX-161-403/500"
+        },
+        "message": {
+          "type": "string",
+          "example": "Error message"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "attachment": {
+      "title": "Attachment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Attachment ID",
+          "minLength": 1,
+          "example": "eb9ab7e9-3785-41e4-af24-74b8dc37b254"
+        },
+        "name": {
+          "type": "string",
+          "description": "Attachment filename",
+          "minLength": 1,
+          "example": "uecp-finance-service-api-swagger.yml"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "emailDef": {
+      "title": "emailDef",
+      "type": "string",
+      "description": "Contact Email",
+      "pattern": "^(([^<>()\\[\\]\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
+      "example": "toanupdixit@gmail.com"
+    },
+    "inboundShipmentRequest": {
+      "title": "Inbound Shipment Request",
+      "type": "object",
+      "example": {
+        "attachments": [],
+        "contacts": [
+          {
+            "contactType": "ORDERING",
+            "userName": "jondoe@test.com"
+          },
+          {
+            "contactType": "NOTIFICATION",
+            "userName": "jondoe@test.com"
+          },
+          {
+            "contactType": "TECHNICAL",
+            "userName": "jondoe@test.com"
+          }
+        ],
+        "customerReferenceNumber": "RQT0036422",
+        "ibxLocation": {
+          "ibx": "LD8",
+          "cages": [
+            {
+              "cage": "LD8:02:02MC2T",
+              "accountNumber": "111"
+            }
+          ]
+        },
+        "purchaseOrder": {
+          "startDate": "2018-04-09T02:47:42.320Z",
+          "endDate": "2018-10-19T20:29:25.682Z",
+          "number": "6",
+          "price": {
+            "amount": 12.5
+          }
+        },
+        "serviceDetails": {
+          "estimatedDateTime": "2018-10-15T05:00:00.420-08:00",
+          "shipmentDetails": {
+            "noOfBoxes": 10,
+            "isOverSized": true,
+            "description": "hello",
+            "trackingNumber": [
+              "1",
+              "2"
+            ],
+            "inboundType": "CARRIER",
+            "carrierName": "OTHER",
+            "otherCarrierName": "test"
+          },
+          "deliverToCage": true,
+          "inboundRequestDescription": "hello"
+        }
+      },
+      "properties": {
+        "contacts": {
+          "type": "array",
+          "description": "Use this array to pass ordering contact, notification contacts and technical contact. Only one ordering contact, technical contact is allowed. One or more notification contacts are allowed. Ordering and notification contacts are always registered customers with the customer portal. Only username and contactType are valid for ordering and notification contacts, all other attributes will be ignored. <br> <br> Technical contact is optional. workPhoneCountryCode, workPhone and workPhonePrefToCall attributes are mandatory for Technical Contact(when Provided).  <br><br>  If notification contact is not available to pass, please use ordering contact as notification contact also. <br> ",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/contactInfo"
+          },
+          "example": [
+            {
+              "contactType": "ORDERING",
+              "userName": "jondoe@test.com"
+            },
+            {
+              "contactType": "NOTIFICATION",
+              "userName": "jondoe@test.com"
+            },
+            {
+              "contactType": "TECHNICAL",
+              "name": "John Doe",
+              "workPhone": "1111111",
+              "workPhonePrefToCall": "ANYTIME",
+              "mobilePhone": "1111111",
+              "mobilePhonePrefToCall": "ANYTIME"
+            }
+          ]
+        },
+        "customerReferenceNumber": {
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "minLength": 1,
+          "maxLength": 50,
+          "example": "cust-ref-123"
+        },
+        "purchaseOrder": {
+          "$ref": "#/definitions/purchaseOrder"
+        },
+        "ibxLocation": {
+          "$ref": "#/definitions/ibxLocation"
+        },
+        "attachments": {
+          "type": "array",
+          "description": "Attachments",
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/definitions/attachment"
+          }
+        },
+        "serviceDetails": {
+          "$ref": "#/definitions/inboundServiceDetail"
+        }
+      },
+      "required": [
+        "serviceDetails",
+        "ibxLocation",
+        "contacts"
+      ]
+    },
+    "purchaseOrder": {
+      "title": "Purchase Order",
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Purchase Order Start Date",
+          "example": "2017-10-09T02:47:42.320Z"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Purchase Order End Date",
+          "example": "2017-10-10T02:47:42.320Z"
+        },
+        "number": {
+          "type": "string",
+          "pattern": "^(.{1,30})$",
+          "description": "Purchase Order Number",
+          "example": "1-1234567890"
+        },
+        "price": {
+          "$ref": "#/definitions/price"
+        }
+      }
+    },
+    "account": {
+      "title": "Account",
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string",
+          "description": "Account Number",
+          "example": "136008"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Account",
+          "example": "Service Corporation"
+        },
+        "isCreditHold": {
+          "type": "boolean",
+          "description": "Is credit Hold account",
+          "example": "false"
+        },
+        "isPOBearing": {
+          "type": "boolean",
+          "description": "Is PO Bearing account",
+          "example": "false"
+        }
+      },
+      "required": [
+        "number",
+        "name"
+      ]
+    },
+    "genericError": {
+      "title": "Generic Error",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/genericErrorType"
+      }
+    },
+    "contactInfo": {
+      "title": "Contact Info",
+      "type": "object",
+      "properties": {
+        "contactType": {
+          "type": "string",
+          "description": "Contact Type, possible values are ORDERING, NOTIFICATION, TECHNICAL",
+          "enum": [
+            "TECHNICAL",
+            "ORDERING",
+            "NOTIFICATION"
+          ],
+          "example": "TECHNICAL"
+        },
+        "userName": {
+          "type": "string",
+          "description": "User Name",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[\\s.]*([^\\s.][\\s.]*){0,100}$",
+          "description": "Technical Contact Name",
+          "example": "David"
+        },
+        "email": {
+          "$ref": "#/definitions/emailDef"
+        },
+        "workPhoneCountryCode": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "workPhone": {
+          "type": "string",
+          "description": "Primary Phone of the contact",
+          "maxLength": 40,
+          "example": "111-111-1111"
+        },
+        "workPhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "mobilePhoneCountryCode": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "pattern": "^\\+[0-9]{1,6}$",
+          "example": "+1"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Mobile Phone of the contact",
+          "maxLength": 40,
+          "example": "111-111-1112"
+        },
+        "mobilePhonePrefToCall": {
+          "type": "string",
+          "description": "Possible values are NEVER, ANYTIME, BUSINESS_HOURS, MY_BUSINESS_HOURS,IBX_BUSINESS_HOURS. But BUSINESS_HOURS is deprecated and will be removed in future release",
+          "enum": [
+            "NEVER",
+            "ANYTIME",
+            "MY_BUSINESS_HOURS",
+            "IBX_BUSINESS_HOURS",
+            "BUSINESS_HOURS"
+          ],
+          "example": "ANYTIME"
+        },
+        "workPhoneTimeZone": {
+          "type": "string",
+          "description": "Work Phone TimeZone",
+          "maxLength": 40,
+          "example": "America/LosAngeles"
+        },
+        "mobilePhoneTimeZone": {
+          "type": "string",
+          "description": "Mobile Phone TimeZone",
+          "maxLength": 40,
+          "example": "America/LosAngeles"
+        }
+      },
+      "required": [
+        "contactType"
+      ]
+    },
+    "serverErrorType": {
+      "title": "Server Error Type",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "example": "EQX-161-500"
+        },
+        "message": {
+          "type": "string",
+          "example": "Error message"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "location": {
+      "title": "Location",
+      "type": "object",
+      "properties": {
+        "ibx": {
+          "type": "string",
+          "description": "Ibx Name",
+          "example": "AM1"
+        },
+        "cages": {
+          "type": "array",
+          "description": "List of cage",
+          "items": {
+            "$ref": "#/definitions/cage"
+          }
+        }
+      },
+      "required": [
+        "ibx",
+        "cages"
+      ]
+    },
+    "outboundShipmentRequest": {
+      "title": "Outbound Shipment Request",
+      "type": "object",
+      "example": {
+        "attachments": [],
+        "ibxLocation": {
+          "cages": [
+            {
+              "cage": "AM1:0G:00EQ11-1",
+              "cabinets": [],
+              "accountNumber": "108812"
+            }
+          ],
+          "ibx": "AM1"
+        },
+        "purchaseOrder": {},
+        "serviceDetails": {
+          "estimatedDateTime": "2018-11-28T19:09:30.211Z",
+          "shipmentDetails": {
+            "outboundType": "CARRIER",
+            "noOfBoxes": 3,
+            "carrierName": "DHL",
+            "trackingNumber": "33,333",
+            "declaredValue": "3",
+            "labelExists": false,
+            "shipToAddress": {
+              "address": "1188 test address",
+              "carrierAccountNumber": "111",
+              "city": "Sunnyvale",
+              "country": "US",
+              "name": "test",
+              "state": "CALIFORNIA",
+              "zipCode": "94085",
+              "phoneNumber": "+1 1331313"
+            }
+          }
+        },
+        "contacts": [
+          {
+            "contactType": "ORDERING",
+            "userName": "jondoe@test.com"
+          },
+          {
+            "contactType": "NOTIFICATION",
+            "userName": "jondoe@test.com"
+          },
+          {
+            "contactType": "TECHNICAL",
+            "userName": "jondoe@test.com"
+          }
+        ]
+      },
+      "properties": {
+        "contacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/contactInfo"
+          }
+        },
+        "customerReferenceNumber": {
+          "description": "You may use numbers and text in this field to enter reference information for your records. This will also appear in your reports and details. You may use this information to search for this content on the submitted requests page.",
+          "minLength": 1,
+          "maxLength": 50,
+          "example": "cust-ref-123"
+        },
+        "purchaseOrder": {
+          "$ref": "#/definitions/purchaseOrder"
+        },
+        "ibxLocation": {
+          "$ref": "#/definitions/ibxLocation"
+        },
+        "serviceDetails": {
+          "$ref": "#/definitions/outboundServiceDetail"
+        },
+        "attachments": {
+          "type": "array",
+          "description": "Attachments",
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/definitions/attachment"
+          }
+        }
+      },
+      "required": [
+        "serviceDetails",
+        "ibxLocation",
+        "contacts"
+      ]
+    }
+  },
+  "parameters": {
+    "authorizationHeader": {
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the Access token with prefix 'Bearer'.",
+      "type": "string",
+      "required": true
+    }
+  }
+}
