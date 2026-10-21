@@ -1,0 +1,559 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Install Bases Asset API
+  description: Assets are all the products and equipment belonging to your organization that are installed in Equinix's IBXs. These assets can be viewed by users with the appropriate permissions. Assets can be searched by a filter criterion, or the details of an individual asset can be looked up by its asset ID.
+  termsOfService: https://www.equinix.com/about/legal/terms
+  contact:
+    name: Equinix API Support
+    url: https://docs.equinix.com/api-support.htm
+host: api.equinix.com
+schemes:
+- https
+produces:
+- application/json
+paths:
+  /v1/assets/search:
+    post:
+      operationId: searchAssets
+      summary: Search permissible assets
+      description: The POST assets API returns all assets for a specific asset from search form. The authorization token and content-type are the only headers that are passed to this API and a response is received based on the values passed.
+      tags:
+      - Assets
+      consumes:
+      - application/json
+      parameters:
+      - name: sorts
+        in: query
+        description: 'Sort fields '
+        type: array
+        collectionFormat: csv
+        items:
+          type: string
+          enum:
+          - SERIAL_NUMBER
+          - ORDER_NUMBER
+          - PRODUCT_TYPE
+          - PRODUCT_NAME
+          - CAGE
+          - IBX
+          - PRODUCT_DESCRIPTION
+          - ACCOUNT_NUMBER
+          - INSTALLED_DATE
+          - ASSET_NUMBER
+          - -SERIAL_NUMBER
+          - -ORDER_NUMBER
+          - -PRODUCT_TYPE
+          - -PRODUCT_NAME
+          - -CAGE
+          - -IBX
+          - -PRODUCT_DESCRIPTION
+          - -ACCOUNT_NUMBER
+          - -INSTALLED_DATE
+          - -ASSET_NUMBER
+      - name: source
+        in: query
+        description: '"q" parameter will be searched in these fields, by default search
+          will performed on all fields'
+        type: array
+        collectionFormat: csv
+        items:
+          type: string
+          enum:
+          - LEGACY_CAGE
+          - LEGACY_CABINET
+          - LEGACY_PATCH_PANEL
+          - LEGACY_SALES_ORDER
+          - BILLING_AGREEMENT
+          - CAGE
+          - CABINET
+          - PATCH_PANEL
+          - ASSET_NUMBER
+          - CUSTOMER_INTERNAL_REFERENCE
+          - SALES_ORDER_NUMBER
+          - CABLE_ID
+          - CARRIER_CIRCUIT_ID
+          - SERIAL_NUMBER
+          - EXTERNAL_REFERENCE_NUMBER
+          - ACCOUNT_NUMBER
+      - name: q
+        in: query
+        description: To support add a keyword, free text search on source fields. Min 3 character for efficient search results.
+        required: false
+        type: string
+      - name: exactMatch
+        in: query
+        description: flag determines the q should be Exact match or partial match, By default flag is false
+        required: false
+        type: boolean
+      - $ref: '#/parameters/offset'
+      - $ref: '#/parameters/limit'
+      - name: body
+        in: body
+        schema:
+          $ref: '#/definitions/assets-search-request'
+      responses:
+        '200':
+          description: Assets search response
+          schema:
+            $ref: '#/definitions/assets-search-response'
+          examples:
+            application/json:
+              data:
+              - assetNumber: 4-123456789
+                serialNumber: 123456-A
+                orderNumber: 1-123456789
+                productName: CROSS_CONNECT
+                ibx: AB1
+                cage: ACB1:01:001AB1
+                productDescription: Network Cable Connection
+                accountNumber: '123456'
+                accountName: Equinix customer
+                installationDate: '2017-08-24T17:46:35Z'
+                customerReferenceNumber: ABZ-12345
+                status: ACTIVE
+                additionalDetails:
+                  cabinetNumber: ACB1:01:001AB1:1234
+                  customerOrCarrierCircuitID: 121513A
+              - assetNumber: 4-123456789
+                serialNumber: 123456-A
+                orderNumber: 1-123456789
+                productName: CROSS_CONNECT
+                ibx: AB1
+                cage: ACB1:01:001AB1
+                productDescription: Network Cable Connection
+                accountNumber: '123456'
+                accountName: Equinix customer
+                installationDate: '2017-08-24T17:46:35Z'
+                customerReferenceNumber: ABZ-12345
+                status: ACTIVE
+                additionalDetails:
+                  cabinetNumber: ACB1:01:001AB1:1234
+                  customerOrCarrierCircuitID: 121513A
+              page:
+                total: 20
+                limit: 2
+                offset: 0
+                sorts:
+                - ASSET_NUMBER
+              _links:
+                self:
+                  href: /assets/search?limit=2&exactMatch=true&offset=0&sorts=ASSET_NUMBER
+                next:
+                  href: /assets/search?limit=2&exactMatch=true&offset=2&sorts=ASSET_NUMBER
+                previous:
+                  href: /assets/search?limit=2&exactMatch=true&offset=0&sorts=ASSET_NUMBER
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-403
+                message: Insufficient permission to access the resource or invoke the request.
+              ticketId: '180321033352341'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-500
+                message: The system had encountered an unexpected problem and we are tracking it with error code.
+              ticketId: '18032103331214'
+        '503':
+          description: System unavaiable
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-500
+                message: System unavaliable.
+              ticketId: '18032103331314'
+    parameters:
+    - $ref: '#/parameters/authorizationHeader'
+  /v1/assets/{assetId}:
+    get:
+      operationId: getAssetById
+      summary: Get details of an asset 
+      description: The Get assets by Id API returns all details for a specific asset from its identification number. The authorization token and content-type are the only headers that are passed to this API and a response is received based on the values passed.
+      tags:
+      - Assets
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: assetId
+        in: path
+        type: string
+        description: "{assetId} identification number"
+        required: true
+      responses:
+        '200':
+          description: Assets search response
+          schema:
+            $ref: '#/definitions/asset'
+          examples:
+            application/json:
+              data:
+              - assetNumber: 4-123456789
+                serialNumber: 123456-A
+                orderNumber: 1-123456789
+                productName: CROSS_CONNECT
+                ibx: AB1
+                cage: ACB1:01:001AB1
+                productDescription: Network Cable Connection
+                accountNumber: '123456'
+                accountName: Equinix customer
+                installationDate: '2017-08-24T17:46:35Z'
+                customerReferenceNumber: ABZ-12345
+                status: ACTIVE
+                productDetails:
+                - key: ACCOUNT
+                  value: Equinix customer
+                  Tag: HEADER
+                - key: A-SIDE-Customer
+                  value: A-side-customer
+                  Tag: A_SIDE_INFORMATION
+                - key: Z-SIDE-Customer
+                  value: Z-side-customer
+                  Tag: Z_SIDE_INFORMATION
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-403
+                message: Insufficient permission to access the resource or invoke the request.
+              ticketId: '180321033352341'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-404
+                message: No Asset found for the Id:4-12345678910.
+              ticketId: '180321033352341'
+        '500':
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-500
+                message: The system had encountered an unexpected problem and we are tracking it with error code.
+              ticketId: '18032103331214'
+        '503':
+          description: System unavaiable
+          schema:
+            $ref: '#/definitions/genricerrorinfo'
+          examples:
+            application/json:
+              errors:
+              - code: EQX-434-500
+                message: System unavaliable.
+              ticketId: '18032103331314'
+    parameters:
+    - $ref: '#/parameters/authorizationHeader'
+parameters:
+  limit:
+    name: limit
+    in: query
+    description: Number of entries in response.
+    required: false
+    type: integer
+    minimum: 1
+    maximum: 100
+  offset:
+    name: offset
+    in: query
+    description: The start index from which the list is created.
+    required: false
+    type: integer
+    minimum: 0
+  authorizationHeader:
+    name: Authorization
+    in: header
+    description: Specify the Access token with prefix 'Bearer '.
+    type: string
+    required: true
+definitions:
+  _links:
+    title: _links
+    type: object
+    properties:
+      next:
+        $ref: '#/definitions/reference-link'
+      self:
+        $ref: '#/definitions/reference-link'
+      previous:
+        $ref: '#/definitions/reference-link'
+  assetsSummary:
+    title: AssetsSummary
+    type: object
+    properties:
+      assetNumber:
+        type: string
+        description: Asset number.
+      serialNumber:
+        type: string
+        description: Serial number of the asset.
+      orderNumber:
+        type: string
+        description: Order number associated with the asset/service.
+      productName:
+        type: string
+        description: Product type.
+      ibx:
+        type: string
+        description: Ibx of the location.
+      cage:
+        type: string
+        description: Cage of the location.
+      productDescription:
+        type: string
+        description: Product description.
+      accountNumber:
+        type: string
+        description: Account number of the product/services belongs to.
+      accountName:
+        type: string
+        description: Account name of the product/services.
+      installationDate:
+        type: string
+        format: date-time
+        description: Date time of the product or service is purchased/installed.
+      customerReferenceNumber:
+        type: string
+        description: Customer reference number.
+      status:
+        type: string
+        enum:
+        - ACTIVE
+        - INACTIVE
+      additionalDetails:
+        $ref: '#/definitions/additionalDetails'
+  asset:
+    title: Asset
+    type: object
+    description: assets details.
+    properties:
+      assetNumber:
+        type: string
+        description: Asset number.
+      serialNumber:
+        type: string
+        description: Serial number of the asset.
+      orderNumber:
+        type: string
+        description: Order number associated with the asset/service.
+      productName:
+        type: string
+        description: Product type.
+      ibx:
+        type: string
+        description: Ibx of the location.
+      cage:
+        type: string
+        description: Cage of the location.
+      productDescription:
+        type: string
+        description: Product description.
+      accountNumber:
+        type: string
+        description: Account number of the product/services belongs to.
+      accountName:
+        type: string
+        description: Account name of the product/services.
+      installationDate:
+        type: string
+        format: date-time
+        description: Date time of the product or service is purchased/installed.
+      customerReferenceNumber:
+        type: string
+        description: Customer reference number.
+      status:
+        type: string
+        enum:
+        - ACTIVE
+        - INACTIVE
+      productDetails:
+        type: array
+        description: key/value pairs of product details.
+        items:
+          $ref: '#/definitions/assetsProperty'
+  assetsProperty:
+    title: AssetsProperty
+    type: object
+    description: key/value pair representing assets property.
+    properties:
+      key:
+        type: string
+        description: Key of the property.
+      value:
+        type: string
+        description: Value of the property.
+      tag:
+        type: string
+        description: Stands for a logical grouping on where the asset belogs to for a particular product. e.g - A-SIDE for Cross Connect.
+    required:
+    - key
+    - value
+  assets-search-request:
+    title: AssetsSearchRequest
+    type: object
+    properties:
+      filter:
+        description: assets search filter.
+        type: object
+        properties:
+          ibxs:
+            description: List of IBX to be filtered.
+            type: array
+            items:
+              type: string
+              example: AM5 
+          cages:
+            description: List of cages to be filtered.
+            type: array
+            items:
+              type: string
+              example: 'AM5:01:000Z3C'
+          productTypes:
+            type: array
+            description: List of product types to be filtered.
+            items:
+              type: string
+              enum:
+              - ACCESSORIES
+              - CABINET
+              - CAGE
+              - CROSS_CONNECT
+              - CROSS_CONNECT_Z_SIDE
+              - EQUINIX_ETHERNET_EXCHANGE
+              - EQUINIX_CLOUD_EXCHANGE
+              - PATCH_PANEL
+              - POWER
+              - IBX_SMARTVIEW
+              - OTHERS
+              - VIRTUAL_CIRCUIT
+              - BCTR_BCS_ROOM
+              - EQUINIX_CONNECT
+          dateRange:
+            description: Date range filter. The installed date should be within this data range.
+            type: object
+            properties:
+              fromDate:
+                type: string
+                description: Start date to filter the installed date.
+                format: date-time
+              toDate:
+                type: string
+                description: End date to filter the installed date.
+                format: date-time
+            required:
+              - fromDate
+              - toDate
+  page-info:
+    title: PageInfo
+    type: object
+    properties:
+      limit:
+        type: integer
+        description: Starting count based on offset.
+      offset:
+        type: integer
+        description: Limit count per page.
+      total:
+        type: integer
+        description: Matching record count / total number records matched with filter.
+      sorts:
+        type: array
+        items:
+          type: string
+          enum:
+            - SERIAL_NUMBER
+            - -SERIAL_NUMBER
+            - ORDER_NUMBER
+            - -ORDER_NUMBER
+            - PRODUCT_TYPE
+            - -PRODUCT_TYPE
+            - CAGE
+            - -CAGE
+            - IBX
+            - -IBX
+            - PRODUCT_DESCRIPTION
+            - -PRODUCT_DESCRIPTION
+            - ACCOUNT_NUMBER
+            - -ACCOUNT_NUMBER
+            - INSTALLED_DATE
+            - -INSTALLED_DATE
+  assets-search-response:
+    title: AssetsSearchResponse
+    allOf:
+    - properties:
+        data:
+          type: array
+          items:
+            $ref: '#/definitions/assetsSummary'
+        page:
+          $ref: '#/definitions/page-info'
+        _links:
+          $ref: '#/definitions/_links'
+    type: object
+  reference-link:
+    title: ReferenceLink
+    type: object
+    properties:
+      href:
+        type: string
+    required:
+    - href
+  additionalDetails:
+    type: object
+    title: AdditionalDetails
+    description: These are additional details specific to the asset
+    properties:
+      cabinetNumber:
+        type: string
+      customerOrCarrierCircuitID:
+        type: string
+  genricerrorinfo:
+    title: GenricErrorInfo
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/genricerrorType'
+      ticketId:
+        type: string
+    example:
+      errors:
+      - code: EQX-434-404
+        message: No Asset found for the Id:4-12345678910
+      ticketId: '171019113634168'
+  genricerrorType:
+    title: GenricErrorType
+    type: object
+    properties:
+      code:
+        type: string
+      fields:
+        type: array
+        items:
+          type: string
+      message:
+        type: string
+    example:
+      code: EQX-434-404
+      message: No Asset found for the Id:4-12345678910
