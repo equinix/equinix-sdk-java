@@ -1,0 +1,1649 @@
+{
+    "openapi": "3.0.0",
+    "x-eqx-api-linter-skip-rules": [
+        3,
+        24
+    ],
+    "info": {
+        "title": "Cross Connect",
+        "description": "A Cross Connect is a physical cable connection that uses a coaxial, fiber or sometimes copper cable to connect customers equipment directly to other customers equipment inside Equinix data centers. Since cross connects transmit data point-to-point between computing systems inside our facility, they are not susceptible to the latency or congestion problems of the public Internet and can be relied upon to operate at consistently high speeds.",
+        "version": "2.0",
+        "termsOfService": "https://www.equinix.com/about/legal/terms",
+        "contact": {
+            "name": "Equinix API Support",
+            "url": "https://docs.equinix.com/api-support.htm"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://api.equinix.com"
+        },
+        {
+            "url": "https://sandboxapi.equinix.com"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Cross Connects",
+            "description": "Cross Connects"
+        }
+    ],
+    "paths": {
+        "/colocations/v2/orders/crossConnects": {
+            "post": {
+                "tags": [
+                    "Cross Connects"
+                ],
+                "operationId": "Order cross connects",
+                "summary": "Order cross connects",
+                "description": "This method creates an order for single or multiple standard cross connects at locations where a user has cross connects ordering permission.",
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Layer1_Create"
+                            },
+                            "examples": {
+                                "new_provider_payload": {
+                                    "value": {
+                                        "customerReferenceId": "Customer Reference information free text",
+                                        "description": "Please provide any additonal details the technician may need to complete your request.",
+                                        "details": [
+                                            {
+                                                "aSide": {
+                                                    "connectionService": "COAX",
+                                                    "mediaType": "COAX",
+                                                    "protocolType": "E3",
+                                                    "connectorType": "BNC",
+                                                    "patchPanel": {
+                                                        "id": "CP:0104:0123129",
+                                                        "portA": 10,
+                                                        "portB": 11
+                                                    }
+                                                },
+                                                "zSide": {
+                                                    "providerName": "New Customer Name for connections",
+                                                    "ibx": "AM1",
+                                                    "connectionService": "COAX",
+                                                    "loaAttachmentId": "85d9660a-f877-405a-b38e-8e61a4f77f44"
+                                                }
+                                            }
+                                        ],
+                                        "purchaseOrder": {
+                                            "type": "NEW",
+                                            "amount": 10000,
+                                            "startDate": "2020-03-04",
+                                            "endDate": "2021-03-04",
+                                            "attachmentId": "85d9660a-f877-405a-b38e-8e61a4f77f44"
+                                        },
+                                        "attachments": [
+                                            {
+                                                "id": "85d9660a-f877-405a-b38e-8e61a4f77f44",
+                                                "name": "additionalattachment.docx"
+                                            }
+                                        ],
+                                        "contacts": [
+                                            {
+                                                "type": "TECHNICAL",
+                                                "firstName": "John'",
+                                                "lastName": "Doe",
+                                                "availability": "WORK_HOURS",
+                                                "timezone": "America/New_York",
+                                                "details": [
+                                                    {
+                                                        "value": "johndoe@acme.com",
+                                                        "type": "EMAIL"
+                                                    },
+                                                    {
+                                                        "value": "+65-1111111",
+                                                        "type": "PHONE"
+                                                    },
+                                                    {
+                                                        "value": "+65-1111111",
+                                                        "type": "MOBILE"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "registeredUsers": [
+                                                    "johndoe@acme.com"
+                                                ],
+                                                "type": "NOTIFICATION"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "minimum_payload": {
+                                    "value": {
+                                        "details": [
+                                            {
+                                                "aSide": {
+                                                    "connectionService": "SINGLE_MODE_FIBER",
+                                                    "mediaType": "SINGLE_MODE_FIBER",
+                                                    "protocolType": "10 GIG ETHERNET",
+                                                    "connectorType": "FC",
+                                                    "patchPanel": {
+                                                        "id": "CP:0104:1199890"
+                                                    }
+                                                },
+                                                "zSide": {
+                                                    "patchPanel": {
+                                                        "id": "PP:0104:1190123"
+                                                    },
+                                                    "connectionsService": "MULTI_MODE_FIBER",
+                                                    "circuitId": "1-12312312",
+                                                    "connectorType": "LC"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "expedite_payload": {
+                                    "value": {
+                                        "description": "Please provide any additonal details the technician may need to complete your request.",
+                                        "expediteDateTime": "2020-03-04T06:09:22.395Z",
+                                        "details": [
+                                            {
+                                                "aSide": {
+                                                    "connectionService": "SINGLE_MODE_FIBER",
+                                                    "mediaType": "SINGLE_MODE_FIBER",
+                                                    "protocolType": "10_GIG_ETHERNET",
+                                                    "connectorType": "FC",
+                                                    "patchPanel": {
+                                                        "id": "CP:0104:1199890"
+                                                    }
+                                                },
+                                                "zSide": {
+                                                    "patchPanel": {
+                                                        "id": "PP:0104:1190123"
+                                                    },
+                                                    "circuitId": "1-12312312",
+                                                    "connectorType": "LC"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "most_common_payload": {
+                                    "value": {
+                                        "customerReferenceId": "Customer Reference information free text",
+                                        "description": "Please provide any additonal details the technician may need to complete your request.",
+                                        "details": [
+                                            {
+                                                "aSide": {
+                                                    "connectionService": "SINGLE_MODE_FIBER",
+                                                    "mediaType": "SINGLE_MODE_FIBER",
+                                                    "protocolType": "10_GIG_ETHERNET",
+                                                    "connectorType": "FC",
+                                                    "patchPanel": {
+                                                        "id": "CP:0104:1199890"
+                                                    },
+                                                    "patchEquipment": {
+                                                        "cabinetId": "AM1:000:0000:000",
+                                                        "connectorType": "FC",
+                                                        "details": "Device specific details",
+                                                        "port": 10
+                                                    }
+                                                },
+                                                "zSide": {
+                                                    "patchPanel": {
+                                                        "id": "PP:0104:1190123"
+                                                    },
+                                                    "circuitId": "12312312",
+                                                    "connectorType": "LC"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Layer 1 Created",
+                        "headers": {
+                            "Location": {
+                                "description": "Location on newly created layer",
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "/orders/1-23232322"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "single_field_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012025",
+                                                "errorMessage": "Selected value is not in allowed list of values",
+                                                "correlationId": "99740113403329",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "connectorService",
+                                                        "reason": "Selected code is invalid. Allowed list are COAX, MP4_CABLE, MULI_MODE_FIBER, POTS, SINGLE_MODE_FIBER, UTP",
+                                                        "value": "CO_AX"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "multiple_field_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012010",
+                                                "errorMessage": "One or more property is having miss leading input fields/properties",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "connectorService",
+                                                        "reason": "Selected code is invalid. Allowed list are COAX, MP4_CABLE, MULI_MODE_FIBER, POTS, SINGLE_MODE_FIBER, UTP",
+                                                        "value": "CO_AX"
+                                                    },
+                                                    {
+                                                        "property": "expediteDateTime",
+                                                        "reason": "timestamp is invalid",
+                                                        "value": "2020-06-18T06:41:10.562sdasZ"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "purchase_order_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012722",
+                                                "errorMessage": "Provided Purchase Order number not exists.",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/purchaseOrder/number",
+                                                        "value": "12309123098"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "selected_same_ports_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012629",
+                                                "errorMessage": "PortA and PortB should be different",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/patchpanel/id",
+                                                        "value": "PP:0101:196397"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "ports_not_available_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012504",
+                                                "errorMessage": "Patch Panel Port {0} is not a valid Available Port",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/patchpanel/portA",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "property": "/details[0]/aside/patchpanel/portB",
+                                                        "value": "3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "all_ports_occupied_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012603",
+                                                "errorMessage": "Ports are not available",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/patchpanel/id",
+                                                        "value": "PP:0101:196397"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "connection_service_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012607",
+                                                "errorMessage": "Connection Service {0} is invalid, path {1}",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/connectionService"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "media_type_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012608",
+                                                "errorMessage": "Media Type {0} is invalid, path {1}",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/mediaType"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "connector_type_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012608",
+                                                "errorMessage": "Connector Type {0} is invalid",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/connectorType"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "foc_delivery_date_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012727",
+                                                "errorMessage": "Carrier Circuit Delivery Date has to be either current or Future Date",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/focDate"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "expedite_foc_error": {
+                                        "value": [
+                                            {
+                                                "errorCode": "EQ-2012617",
+                                                "errorMessage": "Expedite is not allowed when FOC Date is not current.",
+                                                "correlationId": "99740129126918",
+                                                "additionalInfo": [
+                                                    {
+                                                        "property": "/details[0]/aside/focDate",
+                                                        "value": "2020-07-24T00:00:00.000Z"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012006",
+                                        "errorMessage": "Permission denied to create. Please ensure you have appropriate permissions",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012101",
+                                        "errorMessage": "The server has encountered an unexpected error. We apologize for the inconvenience. Please try again later.",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/colocations/v2/orders/crossConnects/{orderId}": {
+            "patch": {
+                "tags": [
+                    "Cross Connects"
+                ],
+                "operationId": "Update a Cross Connect Order",
+                "summary": "Update a cross connects order",
+                "description": "This method updates a cross connects order by its ID for a user with permission to view this request.",
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "orderId",
+                        "in": "path",
+                        "description": "Identifier of the cross connect order",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "maxLength": 100,
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "The cross connect to be updated",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Modify_request"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Accepted",
+                        "headers": {
+                            "Location": {
+                                "description": "Location of updated l1 request \"/orders/1-23232322\"",
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "/orders/1-23232322"
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "No content",
+                        "headers": {
+                            "Location": {
+                                "description": "Location of updated l1 request \"/orders/1-23232322\"",
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "/orders/1-23232322"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012025",
+                                        "errorMessage": "Selected value is not in allowed list of values.",
+                                        "correlationId": "210407001942756",
+                                        "additionalInfo": [
+                                            {
+                                                "property": "contacts[0].type",
+                                                "reason": "Selected contacts[0].type is invalid. Allowed list is NOTIFICATION",
+                                                "value": "NOTIFICATIO"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012007",
+                                        "errorMessage": "Permission denied to update or cancel. Please ensure you have appropriate permissions.",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012101",
+                                        "errorMessage": "The server has encountered an unexpected error. We apologize for the inconvenience. Please try again later.",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/colocations/v2/orders/crossConnects/deinstall": {
+            "post": {
+                "tags": [
+                    "Cross Connects"
+                ],
+                "summary": "Place cross connect deinstallation order",
+                "description": "This API allows user to initiate a cross connect deinstallation request. Cross connect asset will be removed according to order placed.",
+                "operationId": "Place cross connect deinstallation order",
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Layer1_Deinstall_request"
+                            },
+                            "examples": {
+                                "deinstall_cc": {
+                                    "value": {
+                                        "customerReferenceId": "Customer Reference information free text",
+                                        "description": "Please proceed with deinstallation.",
+                                        "details": [
+                                            {
+                                                "assetId": "4-1234567890",
+                                                "proceedWithLiveTraffic": false,
+                                                "patchEquipment": {
+                                                    "cabinetId": "CH3:01:123456:0000",
+                                                    "details": "patch cable for this port",
+                                                    "port": 12
+                                                }
+                                            }
+                                        ],
+                                        "removalDate": "2022-11-23",
+                                        "purchaseOrder": {
+                                            "type": "NEW",
+                                            "number": "1111111111",
+                                            "amount": 10000,
+                                            "startDate": "2020-03-04",
+                                            "endDate": "2021-03-04",
+                                            "attachmentId": "85d9660a-f877-405a-b38e-8e61a4f77f44"
+                                        },
+                                        "attachments": [
+                                            {
+                                                "id": "85d9660a-f877-405a-b38e-8e61a4f77f44",
+                                                "name": "additionalattachment.docx"
+                                            }
+                                        ],
+                                        "contacts": [
+                                            {
+                                                "type": "TECHNICAL",
+                                                "firstName": "john",
+                                                "lastName": "doe",
+                                                "availability": "ANYTIME",
+                                                "timezone": "Atlantic/Canary",
+                                                "details": [
+                                                    {
+                                                        "value": "+1234567890",
+                                                        "type": "PHONE"
+                                                    },
+                                                    {
+                                                        "value": "+1234567890",
+                                                        "type": "MOBILE"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "registeredUsers": [
+                                                    "johndoe@acme.com",
+                                                    "janedoe@acme.com"
+                                                ],
+                                                "type": "NOTIFICATION",
+                                                "availability": "ANYTIME",
+                                                "timezone": "Atlantic/Canary"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Layer 1 deinstall requested",
+                        "headers": {
+                            "Location": {
+                                "description": "Location on newly created deinstall request",
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "/orders/1-23232322"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012010",
+                                        "errorMessage": "One or more properties are invalid",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012006",
+                                        "errorMessage": "Permission denied to create. Please ensure you have appropriate permissions.",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "example": [
+                                    {
+                                        "errorCode": "EQ-2012101",
+                                        "errorMessage": "The server has encountered an unexpected error. We apologize for the inconvenience. Please try again later.",
+                                        "correlationId": "99740129126918"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "schemas": {
+            "Error": {
+                "title": "Error Info",
+                "type": "array",
+                "items": {
+                    "title": "Error details",
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": "string",
+                            "example": "EQ-20YYXXX"
+                        },
+                        "errorMessage": {
+                            "type": "string",
+                            "example": "Error message"
+                        },
+                        "details": {
+                            "type": "string",
+                            "example": "Error details"
+                        },
+                        "correlationId": {
+                            "type": "string",
+                            "example": "Correlation ID to trace the error back"
+                        },
+                        "help": {
+                            "type": "string",
+                            "example": "URL to a help page for the corresponding errorCode"
+                        },
+                        "additionalInfo": {
+                            "title": "Error details",
+                            "type": "object",
+                            "properties": {
+                                "property": {
+                                    "type": "string",
+                                    "example": "id"
+                                },
+                                "reason": {
+                                    "type": "string",
+                                    "example": "missing id"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Layer1_Create": {
+                "required": [
+                    "details"
+                ],
+                "type": "object",
+                "properties": {
+                    "customerReferenceId": {
+                        "type": "string",
+                        "description": "Customer Reference Identifier / External Reference Identifier",
+                        "minLength": 1,
+                        "maxLength": 40,
+                        "example": "048837d6-4cd8-401f-ba41-a4ac015c3f3e"
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "description": "File(s) attached to the Cross Connect",
+                        "maxItems": 5,
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment_Request"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of Cross Connect",
+                        "minLength": 0,
+                        "maxLength": 4000,
+                        "example": "Any additonal details the technician may need to complete your request"
+                    },
+                    "expediteDateTime": {
+                        "type": "string",
+                        "description": "Expedite orders are delivered within the next 2 - 24 hours. Value must be in ISO-8601 UTC timezone format.",
+                        "format": "date-time",
+                        "example": "2020-05-22T19:23:51.000Z"
+                    },
+                    "details": {
+                        "type": "array",
+                        "description": "Cross connections details",
+                        "minItems": 1,
+                        "maxItems": 10,
+                        "items": {
+                            "$ref": "#/components/schemas/Layer1_Details"
+                        }
+                    },
+                    "purchaseOrder": {
+                        "$ref": "#/components/schemas/purchaseOrder"
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/ContactRequestRegisteredUser"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ContactRequestNonRegisteredUser"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "description": "A layer 1 Physical interconnections establishment between aSide and zSide"
+            },
+            "Layer1_Details": {
+                "type": "object",
+                "required": [
+                    "aSide",
+                    "zSide"
+                ],
+                "properties": {
+                    "aSide": {
+                        "$ref": "#/components/schemas/aSide"
+                    },
+                    "zSide": {
+                        "$ref": "#/components/schemas/zSide"
+                    },
+                    "diverseConnections": {
+                        "$ref": "#/components/schemas/diverseConnections"
+                    },
+                    "verifyLink": {
+                        "type": "boolean",
+                        "description": "When `true`, light link verification is carried out. This may incur fixed fee based on your contract pricing."
+                    },
+                    "circuitDeliveryDate": {
+                        "type": "string",
+                        "description": "Carrier Circuit Delivery Date",
+                        "format": "date",
+                        "example": "2020-05-22T00:00:00.000Z"
+                    },
+                    "submarineEngineerRequired": {
+                        "type": "boolean",
+                        "description": "Set to `true` if submarine cable station engineer is required.",
+                        "default": false
+                    }
+                }
+            },
+            "Modify_request": {
+                "type": "object",
+                "properties": {
+                    "contacts": {
+                        "type": "array",
+                        "maxItems": 1,
+                        "items": {
+                            "$ref": "#/components/schemas/ContactRequestRegisteredUser_Update"
+                        }
+                    }
+                }
+            },
+            "Layer1_Deinstall_request": {
+                "type": "object",
+                "required": [
+                    "details",
+                    "removalDate"
+                ],
+                "properties": {
+                    "customerReferenceId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 40,
+                        "description": "Customer Reference Identifier / External Reference Identifier"
+                    },
+                    "purchaseOrder": {
+                        "$ref": "#/components/schemas/purchaseOrder"
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/ContactRequestRegisteredUser"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ContactRequestNonRegisteredUser"
+                                }
+                            ]
+                        }
+                    },
+                    "attachments": {
+                        "type": "array",
+                        "description": "File(s) attached to the layer #1 connections",
+                        "maxItems": 5,
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment_Request"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of deinstallation",
+                        "minLength": 0,
+                        "maxLength": 4000,
+                        "example": "Any additonal details the technician may need to complete your request"
+                    },
+                    "details": {
+                        "type": "array",
+                        "description": " layer #1 connections details",
+                        "minItems": 1,
+                        "maxItems": 10,
+                        "items": {
+                            "$ref": "#/components/schemas/Layer1_Deinstall_Details"
+                        }
+                    },
+                    "removalDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2022-11-23",
+                        "description": "Equinix will aim to terminate this Cross Connect at this date subjected to operation availability."
+                    }
+                }
+            },
+            "Layer1_Deinstall_Details": {
+                "type": "object",
+                "required": [
+                    "assetId"
+                ],
+                "properties": {
+                    "assetId": {
+                        "type": "string",
+                        "example": "4-1234567890",
+                        "description": "Asset ID of the cross connect you wish to de-install"
+                    },
+                    "proceedWithLiveTraffic": {
+                        "type": "boolean",
+                        "example": false,
+                        "description": "When `true`, Equinix will proceed with deinstallation request despite detecting live traffic."
+                    },
+                    "patchEquipment": {
+                        "type": "object",
+                        "required": [
+                            "cabinetId",
+                            "details",
+                            "port"
+                        ],
+                        "properties": {
+                            "cabinetId": {
+                                "type": "string",
+                                "example": "CH3:01:123456:0000",
+                                "description": "The cabinet to remove patch cable from"
+                            },
+                            "details": {
+                                "type": "string",
+                                "example": "Patch cable for this port",
+                                "description": "Provide additional information to facilitate patch equipment removal"
+                            },
+                            "port": {
+                                "type": "number",
+                                "minimum": 1,
+                                "example": 12,
+                                "description": "Device port number to be removed"
+                            }
+                        }
+                    }
+                }
+            },
+            "purchaseOrder": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "number"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "EXEMPTED",
+                            "NEW",
+                            "EXISTING"
+                        ],
+                        "default": "EXEMPTED",
+                        "description": "Type of the Purchase Order"
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "Purchase order number is applicable when `type` is EXISTING or NEW"
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "This is only applicable when `type` is NEW",
+                        "example": "2020"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "This is only applicable when `type` is NEW",
+                        "example": "2020-05-22"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "This is only applicable when `type` is NEW",
+                        "example": "2021-05-22"
+                    },
+                    "attachmentId": {
+                        "type": "string",
+                        "description": "Attachment ID of Purchase Order document.",
+                        "minLength": 36,
+                        "maxLength": 36,
+                        "example": "8d0bef9c-cca9-11ea-87d0-0242ac130003"
+                    }
+                },
+                "description": "Purchase Order"
+            },
+            "aSide": {
+                "description": "A-Side source patch panel to establish connection to another customer. Connections Service , Media Type and Protocol Type is mandatory to establish new connection. ",
+                "type": "object",
+                "required": [
+                    "patchPanel",
+                    "connectionService",
+                    "mediaType",
+                    "protocolType",
+                    "connectorType"
+                ],
+                "properties": {
+                    "patchPanel": {
+                        "$ref": "#/components/schemas/patchPanel"
+                    },
+                    "connectionService": {
+                        "$ref": "#/components/schemas/Connection_services"
+                    },
+                    "mediaType": {
+                        "$ref": "#/components/schemas/media_types"
+                    },
+                    "protocolType": {
+                        "$ref": "#/components/schemas/protocol_types"
+                    },
+                    "connectorType": {
+                        "$ref": "#/components/schemas/connector_types"
+                    },
+                    "mediaConverterRequired": {
+                        "type": "boolean",
+                        "description": "When `false`, Equinix will not proceed with cross connect installation that requires media conversion"
+                    },
+                    "ifcCircuitCount": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 48,
+                        "example": 4,
+                        "description": "Use this field to request an intra-facility cable IFC with this order. Note that there might be a delay in fulfilment of Cross Connect as it is pending intra facility cabling"
+                    },
+                    "patchEquipment": {
+                        "$ref": "#/components/schemas/patchEquipment"
+                    }
+                }
+            },
+            "zSideWithLOA": {
+                "type": "object",
+                "required": [
+                    "loaAttachmentId",
+                    "ibx",
+                    "providerName"
+                ],
+                "properties": {
+                    "loaAttachmentId": {
+                        "type": "string",
+                        "description": "Attachment ID of Letter of Authorization (LOA). Refer to Attachment API to upload documents via API.",
+                        "minLength": 36,
+                        "maxLength": 36,
+                        "example": "8d0bef9c-cca9-11ea-87d0-0242ac130003"
+                    },
+                    "ibx": {
+                        "type": "string",
+                        "description": "IBX location code."
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "description": "Account name of service provider.",
+                        "example": "Carigan Communications  "
+                    }
+                }
+            },
+            "zSideWithPatchPanel": {
+                "type": "object",
+                "required": [
+                    "patchPanel",
+                    "connectorType"
+                ],
+                "properties": {
+                    "connectorType": {
+                        "$ref": "#/components/schemas/connector_types"
+                    },
+                    "patchPanel": {
+                        "$ref": "#/components/schemas/patchPanel"
+                    },
+                    "circuitId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Customer or carrier circuit ID cable reference number for verification purposes."
+                    }
+                }
+            },
+            "zSide": {
+                "type": "object",
+                "description": "Z-Side can be an existing or a new customer without patch panel. For an existing customer, only `patchPanel` and `connectorType` are required. For a new customer or patch panel, `providerName`, `ibx`, and `loaAttachmentId` are required",
+                "properties": {
+                    "notificationEmail": {
+                        "type": "string",
+                        "description": "Z-Side customer will be notified when cross connect is complete via specified email address",
+                        "example": "firstname.lastname@company.com"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/zSideWithLOA"
+                    },
+                    {
+                        "$ref": "#/components/schemas/zSideWithPatchPanel"
+                    }
+                ]
+            },
+            "patchEquipment": {
+                "type": "object",
+                "description": "Patch equipment is chargeable as an additional service. This request will enable Equinix to install the cross connect from demarcation panel to your equipment.",
+                "required": [
+                    "cabinetId",
+                    "connectorType",
+                    "port",
+                    "details"
+                ],
+                "properties": {
+                    "cabinetId": {
+                        "type": "string",
+                        "description": "Device Cabinet Id. The cabinet for patching must belong to the specific cage defined in the A-side details."
+                    },
+                    "connectorType": {
+                        "type": "string",
+                        "description": "Device Connector Type to facilitate cross connection. ",
+                        "example": "BNC"
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Provide additional information to facilitate patch equipment connection",
+                        "example": "Call the technical contact before patching.  ",
+                        "minLength": 1,
+                        "maxLength": 4000
+                    },
+                    "port": {
+                        "type": "number",
+                        "description": "Device port number to be connected"
+                    }
+                }
+            },
+            "patchPanel": {
+                "type": "object",
+                "description": "The patch panel is a device which has a series of connector ports.  This device is to identify the source and destination location to connect. Patch Panel can be installed with a cabinet.",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Patch Panel ID"
+                    },
+                    "portA": {
+                        "type": "number",
+                        "description": "Specify the desired port number for port A. When ports are not selected, next available ports will be used"
+                    },
+                    "portB": {
+                        "type": "number",
+                        "description": "Specify the desired port number for port B. When ports are not selected, next available ports will be used. If no selection is required, use value of `-1`"
+                    }
+                }
+            },
+            "diverseConnections": {
+                "type": "object",
+                "description": "Diversified cross connect or redundant cross connect for the availability. If its a new redundant connection, A-Side and Z-Side is mandatory. If it is existing connection, Cross Connect serial number and type is mandatory.",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Redundant connection with existing connections or new connections",
+                        "default": "EXISTING",
+                        "enum": [
+                            "NEW",
+                            "EXISTING"
+                        ]
+                    },
+                    "serialNumber": {
+                        "type": "string",
+                        "description": "The serial number of Cross Connect is expecting when Diversified connection required from a previously provisioned connection"
+                    },
+                    "aSide": {
+                        "type": "object",
+                        "properties": {
+                            "patchPanel": {
+                                "$ref": "#/components/schemas/patchPanel"
+                            },
+                            "connectorType": {
+                                "$ref": "#/components/schemas/connector_types"
+                            },
+                            "mediaConverterRequired": {
+                                "type": "boolean",
+                                "description": "ASide media Converter Required",
+                                "default": false
+                            },
+                            "ifcCircuitCount": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 48,
+                                "example": 4,
+                                "description": "Use this field to request an intra-facility cable IFC with this order. Note that there might be a delay in fulfilment of Cross Connect as it is pending intra facility cabling"
+                            },
+                            "patchEquipment": {
+                                "$ref": "#/components/schemas/patchEquipment"
+                            }
+                        }
+                    },
+                    "zSide": {
+                        "type": "object",
+                        "properties": {
+                            "patchPanel": {
+                                "$ref": "#/components/schemas/patchPanel"
+                            },
+                            "connectorType": {
+                                "$ref": "#/components/schemas/connector_types"
+                            },
+                            "circuitId": {
+                                "type": "string",
+                                "description": "Unique Circut ID for future reference",
+                                "minLength": 1,
+                                "example": "100931"
+                            }
+                        }
+                    }
+                }
+            },
+            "ContactRequestRegisteredUser_Update": {
+                "type": "object",
+                "description": "Contact information.",
+                "required": [
+                    "registeredUsers",
+                    "type"
+                ],
+                "properties": {
+                    "registeredUsers": {
+                        "description": "Username for the registered user party",
+                        "type": "array",
+                        "maxItems": 10,
+                        "items": {
+                            "type": "string",
+                            "example": "john_doe"
+                        },
+                        "minItems": 1
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Type of contact",
+                        "enum": [
+                            "NOTIFICATION"
+                        ]
+                    }
+                }
+            },
+            "Connection_services": {
+                "type": "string",
+                "description": "The name of the available connection service.",
+                "example": "SINGLE_MODE_FIBER",
+                "enum": [
+                    "COAX",
+                    "MP4_CABLE",
+                    "MULTI_MODE_FIBER",
+                    "POTS",
+                    "SINGLE_MODE_FIBER",
+                    "UTP"
+                ]
+            },
+            "media_types": {
+                "type": "string",
+                "description": "Name of media type.",
+                "example": "SINGLE_MODE_FIBER",
+                "enum": [
+                    "COAX",
+                    "MP4_CABLE",
+                    "50_MICRON_MULTI_MODE_FIBER",
+                    "50_MICRON_MULTI_MODE_FIBER_OM2",
+                    "50_MICRON_MULTI_MODE_FIBER_OM3",
+                    "50_MICRON_MULTI_MODE_FIBER_OM4",
+                    "62.5_MICRON_MULTI_MODE_FIBER",
+                    "62.5_MICRON_MULTI_MODE_FIBER_OM1",
+                    "ABAM",
+                    "CAT3",
+                    "CAT5E",
+                    "CAT6",
+                    "CAT6A",
+                    "OS1",
+                    "SINGLE_MODE_FIBER"
+                ]
+            },
+            "protocol_types": {
+                "type": "string",
+                "description": "Name of protocol type.",
+                "example": "FAST_ETHERNET",
+                "enum": [
+                    "ANTENNA",
+                    "DS-3",
+                    "E1",
+                    "E3",
+                    "ETHERNET",
+                    "FAST_ETHERNET",
+                    "GIGABIT_ETHERNET",
+                    "POTS",
+                    "T1",
+                    "FIBRE_CHANNEL",
+                    "10_GIG_ETHERNET",
+                    "100_GIG_ETHERNET",
+                    "40_GIG_ETHERNET",
+                    "DARK_FIBER",
+                    "DWDM",
+                    "56K",
+                    "ISDN",
+                    "OC-12",
+                    "OC-192",
+                    "OC-3",
+                    "OC-48",
+                    "STM-1",
+                    "STM-16",
+                    "STM-4",
+                    "STM-64",
+                    "NA"
+                ]
+            },
+            "connector_types": {
+                "type": "string",
+                "description": "Name of connector type.",
+                "example": "LC",
+                "enum": [
+                    "BNC",
+                    "LC",
+                    "FC",
+                    "SC",
+                    "ST",
+                    "WIRE_WRAP",
+                    "RJ45",
+                    "E2000",
+                    "RJ11"
+                ]
+            },
+            "ContactRequestRegisteredUser": {
+                "required": [
+                    "registeredUsers",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "registeredUsers": {
+                        "description": "Username of a registered user.",
+                        "maxItems": 10,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "example": "john_doe"
+                        }
+                    },
+                    "availability": {
+                        "type": "string",
+                        "description": "Contact's availability to receive calls.",
+                        "default": "ANYTIME",
+                        "enum": [
+                            "WORK_HOURS",
+                            "ANYTIME"
+                        ]
+                    },
+                    "timezone": {
+                        "$ref": "#/components/schemas/TIME_ZONE_LIST"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Note that only one technical contact is allowed.",
+                        "default": "NOTIFICATION",
+                        "enum": [
+                            "NOTIFICATION",
+                            "TECHNICAL"
+                        ]
+                    }
+                },
+                "description": "Contact information of a registered user. Ensure that the user status of this contact is approved, active or locked."
+            },
+            "ContactRequestNonRegisteredUser": {
+                "required": [
+                    "firstName",
+                    "lastName",
+                    "details",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "description": "First name of the contact.",
+                        "example": "John"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "description": "Last name of the contact.",
+                        "example": "Doe"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Note that only one technical contact is allowed.",
+                        "default": "TECHNICAL",
+                        "enum": [
+                            "TECHNICAL"
+                        ]
+                    },
+                    "availability": {
+                        "type": "string",
+                        "description": "Contact's availability to receive calls.",
+                        "default": "ANYTIME",
+                        "enum": [
+                            "WORK_HOURS",
+                            "ANYTIME"
+                        ]
+                    },
+                    "timezone": {
+                        "$ref": "#/components/schemas/TIME_ZONE_LIST"
+                    },
+                    "details": {
+                        "maxItems": 3,
+                        "minItems": 2,
+                        "type": "array",
+                        "description": "Reference of the related party, could be a party reference or a party role reference",
+                        "items": {
+                            "$ref": "#/components/schemas/ContactsRequestDetails"
+                        }
+                    }
+                },
+                "description": "Contact information of a non-registered contact, including contact details."
+            },
+            "ContactsRequestDetails": {
+                "required": [
+                    "type",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Contact information such as email, phone and mobile number. Note that email is always required.",
+                        "example": "PHONE",
+                        "enum": [
+                            "PHONE",
+                            "MOBILE",
+                            "EMAIL"
+                        ]
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Value of related `type`. Use email addresss when type of `EMAIL`. Use phone number and prefix with country (i.e. +1 for US) for `PHONE` and `MOBILE` type.",
+                        "example": "+1-4601231122"
+                    }
+                },
+                "description": "Contact details."
+            },
+            "Attachment_Request": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "maxLength": 36,
+                        "minLength": 36,
+                        "type": "string",
+                        "description": "Identifier of the binary attachment UUID.",
+                        "example": "c77c5f58-a7ea-4e88-9fc4-1a2900027425"
+                    },
+                    "name": {
+                        "maxLength": 100,
+                        "minLength": 5,
+                        "type": "string",
+                        "description": "Name of the binary attachment."
+                    }
+                },
+                "description": "Attachment request"
+            },
+            "TIME_ZONE_LIST": {
+                "type": "string",
+                "description": "Time Zone Enum values.",
+                "example": "America/Los_Angeles",
+                "enum": [
+                    "Atlantic/Canary",
+                    "Europe/Dublin",
+                    "Europe/London",
+                    "Europe/Lisbon",
+                    "Africa/Algiers",
+                    "Europe/Berlin",
+                    "Europe/Amsterdam",
+                    "Europe/Copenhagen",
+                    "Europe/Madrid",
+                    "Europe/Paris",
+                    "Europe/Stockholm",
+                    "Europe/Zurich",
+                    "Europe/Warsaw",
+                    "Africa/Cairo",
+                    "Africa/Johannesburg",
+                    "Africa/Lagos",
+                    "Europe/Sofia",
+                    "Africa/Nairobi",
+                    "Asia/Jerusalem",
+                    "Europe/Istanbul",
+                    "Europe/Moscow",
+                    "Asia/Riyadh",
+                    "Asia/Dubai",
+                    "Asia/Kabul",
+                    "Asia/Tehran",
+                    "Asia/Karachi",
+                    "Indian/Maldives",
+                    "Asia/Kolkata",
+                    "Asia/Kathmandu",
+                    "Asia/Omsk",
+                    "Asia/Rangoon",
+                    "Asia/Jakarta",
+                    "Asia/Ho_Chi_Minh",
+                    "Asia/Brunei",
+                    "Asia/Hong_Kong",
+                    "Asia/Kuala_Lumpur",
+                    "Asia/Manila",
+                    "Asia/Shanghai",
+                    "Asia/Singapore",
+                    "Asia/Taipei",
+                    "Australia/Perth",
+                    "Asia/Seoul",
+                    "Asia/Tokyo",
+                    "Australia/Darwin",
+                    "Australia/Brisbane",
+                    "Pacific/Guam",
+                    "Australia/Adelaide",
+                    "Australia/Sydney",
+                    "Pacific/Auckland",
+                    "Pacific/Chatham",
+                    "Indian/Christmas",
+                    "America/Scoresbysund",
+                    "Atlantic/South_Georgia",
+                    "America/Sao_Paulo",
+                    "America/Detroit",
+                    "America/New_York",
+                    "America/Puerto_Rico",
+                    "America/Toronto",
+                    "America/Bogota",
+                    "America/Chicago",
+                    "America/Winnipeg",
+                    "America/Denver",
+                    "America/Edmonton",
+                    "America/Mexico_City",
+                    "America/Los_Angeles",
+                    "America/Vancouver",
+                    "America/Phoenix",
+                    "America/Anchorage",
+                    "America/Halifax",
+                    "America/Lima",
+                    "America/Monterrey",
+                    "Pacific/Gambier",
+                    "Pacific/Marquesas",
+                    "Pacific/Honolulu",
+                    "Pacific/Fiji",
+                    "Asia/Muscat",
+                    "America/Argentina/Buenos_Aires",
+                    "America/Caracas",
+                    "Etc/GMT+12",
+                    "UTC",
+                    "GMT",
+                    "America/Santiago",
+                    "America/St_Johns",
+                    "Asia/Almaty",
+                    "Asia/Bangkok",
+                    "Asia/Calcutta",
+                    "Asia/Magadan",
+                    "Asia/Yekaterinburg",
+                    "Australia/Eucla",
+                    "Australia/Lord_Howe",
+                    "Europe/Bratislava",
+                    "Europe/Brussels",
+                    "Europe/Prague",
+                    "Europe/Rome",
+                    "Europe/Helsinki",
+                    "Pacific/Kiritimati",
+                    "Pacific/Midway",
+                    "Pacific/Tongatapu",
+                    "Australia/Melbourne",
+                    "Australia/NSW",
+                    "Australia/Queensland",
+                    "Australia/South",
+                    "Australia/Victoria",
+                    "Australia/West",
+                    "Australia/Canberra"
+                ]
+            }
+        }
+    }
+}
