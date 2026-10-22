@@ -1,0 +1,2415 @@
+openapi: 3.0.3
+info:
+  title: Equinix Internet Access API
+  description: Equinix Internet Access provides direct access to the Internet with scalable bandwidth options in IBX data centers.
+  termsOfService: https://www.equinix.com/about/legal/terms
+  contact:
+    name: Equinix API Support
+    url: https://docs.equinix.com/api-support.htm
+    email: api-support@equinix.com
+  license:
+    name: Equinix Inc
+    url: https://developer.equinix.com/agreement
+  version: 2.7.3
+externalDocs:
+  description: Find more information on Equinix Developer Portal
+  url: https://developer.equinix.com
+servers:
+  - url: https://api.equinix.com
+    description: Equinix API
+security:
+  - BearerAuth: []
+tags:
+  - name: Product Availability
+    description: IBXs where Equinix Internet Access is available
+  - name: EIA Service
+    description: Equinix Internet Access Service API
+paths:
+  /internetAccess/v2/ibxs:
+    get:
+      tags:
+        - Product Availability
+      summary: Returns IBXs where EIA is available
+      description: Get IBXs
+      operationId: getIbxs
+      parameters:
+        - name: offset
+          in: query
+          description: Pagination offset
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            example: 0
+            default: 0
+        - name: limit
+          in: query
+          description: Max number of returned results
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            example: 50
+            default: 50
+        - name: service.connection.type
+          in: query
+          description: "Service connection type (physical, virtual)"
+          required: true
+          style: form
+          explode: true
+          schema:
+            $ref: "#/components/schemas/ConnectionType"
+        - name: connection.aside.accessPoint.type
+          in: query
+          description: "Service connection access point type. When not provided, COLO type is used by default."
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            enum:
+              - COLO
+              - VD
+              - PORT
+        - name: asset.type
+          in: query
+          description: Specifies the type of an asset the user must have in the IBX
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: CABINET
+            enum:
+              - CABINET
+      responses:
+        "200":
+          description: List of Metros and IBXs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IbxPage"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100010
+                      errorMessage: Validation Failure
+                      correlationId: sampleCorrelationId
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100001
+                      errorMessage: Unauthorized
+                      correlationId: sampleCorrelationId
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100002
+                      errorMessage: Forbidden
+                      correlationId: sampleCorrelationId
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100003
+                      errorMessage: Not found
+                      correlationId: sampleCorrelationId
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                internalServerError:
+                  value:
+                    - errorCode: EQ-7100030
+                      errorMessage: Internal Server Error
+                      correlationId: sampleCorrelationId
+  /internetAccess/v2/services:
+    post:
+      tags:
+        - EIA Service
+      summary: Creates Equinix Internet Access Service
+      description: |
+        By passing in the appropriate options, you can create Equinix Internet Access Service product. The entire request either succeeds or fails. In case of failure all the changes in the system are rolled back, so the system gets back to its stated before submitting the request
+      operationId: createEquinixInternetAccessv2
+      requestBody:
+        description: Options for creating Equinix Internet Access Service product
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ServiceCreateRequest"
+        required: true
+      responses:
+        "201":
+          description: Equinix Internet Access Service Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceCreateResponse"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100010
+                      errorMessage: Validation Failure
+                      correlationId: sampleCorrelationId
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100001
+                      errorMessage: Unauthorized
+                      correlationId: sampleCorrelationId
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100002
+                      errorMessage: Forbidden
+                      correlationId: sampleCorrelationId
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100003
+                      errorMessage: Not found
+                      correlationId: sampleCorrelationId
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                internalServerError:
+                  value:
+                    - errorCode: EQ-7100030
+                      errorMessage: Internal Server Error
+                      correlationId: sampleCorrelationId
+  /internetAccess/v2/services/{serviceId}:
+    get:
+      tags:
+        - EIA Service
+      summary: Get Equinix Internet Access Service details
+      description: Get Equinix Internet Access Service details. <font color="red"><sup color="red">Beta</sup></font>
+      operationId: getEquinixInternetAccessServiceDetails
+      parameters:
+        - name: serviceId
+          in: path
+          description: Service identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/ServiceId"
+      responses:
+        "200":
+          description: Equinix Internet Access Service details response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceReadModel"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100010
+                      errorMessage: Validation Failure
+                      correlationId: sampleCorrelationId
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100001
+                      errorMessage: Unauthorized
+                      correlationId: sampleCorrelationId
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100002
+                      errorMessage: Forbidden
+                      correlationId: sampleCorrelationId
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100003
+                      errorMessage: Not found
+                      correlationId: sampleCorrelationId
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                internalServerError:
+                  value:
+                    - errorCode: EQ-7100030
+                      errorMessage: Internal Server Error
+                      correlationId: sampleCorrelationId
+    delete:
+      tags:
+        - EIA Service
+      summary: Deletes Equinix Internet Access Service
+      description: |
+        Delete Equinix Internet Access product by passing the id of the service.
+        The entire request either succeeds or fails. <font color="red"><sup color="red">Beta</sup></font>
+      operationId: deleteEquinixInternetAccess
+      parameters:
+        - name: serviceId
+          in: path
+          description: Service identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/ServiceId"
+        - name: dryRun
+          in: query
+          description: Setting this parameter to true will perform only request validation without actually deleting the service
+          required: false
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            description: Setting this parameter to true will perform only request validation without actually deleting the service
+            example: true
+      responses:
+        "202":
+          description: Accepted deletion request
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100010
+                      errorMessage: Validation Failure
+                      correlationId: sampleCorrelationId
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100001
+                      errorMessage: Unauthorized
+                      correlationId: sampleCorrelationId
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100002
+                      errorMessage: Forbidden
+                      correlationId: sampleCorrelationId
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100003
+                      errorMessage: Not found
+                      correlationId: sampleCorrelationId
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                internalServerError:
+                  value:
+                    - errorCode: EQ-7100030
+                      errorMessage: Internal Server Error
+                      correlationId: sampleCorrelationId
+    patch:
+      tags:
+        - EIA Service
+      summary: Updates Equinix Internet Access Service
+      description: |
+        Updates properties of Equinix Internet Access
+      operationId: updateEquinixInternetAccess
+      parameters:
+        - name: serviceId
+          in: path
+          description: Service identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/ServiceId"
+        - name: dryRun
+          in: query
+          description: Setting this parameter to true will perform only request validation without actually updating the service
+          required: false
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            description: Setting this parameter to true will perform only request validation without actually updating the service
+            example: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeRequest"
+        required: true
+      responses:
+        "202":
+          description: Accepted update request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ServiceReadModel"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100010
+                      errorMessage: Validation Failure
+                      correlationId: sampleCorrelationId
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100001
+                      errorMessage: Unauthorized
+                      correlationId: sampleCorrelationId
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100002
+                      errorMessage: Forbidden
+                      correlationId: sampleCorrelationId
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                invalidProperty:
+                  value:
+                    - errorCode: EQ-7100003
+                      errorMessage: Not found
+                      correlationId: sampleCorrelationId
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+              examples:
+                internalServerError:
+                  value:
+                    - errorCode: EQ-7100030
+                      errorMessage: Internal Server Error
+                      correlationId: sampleCorrelationId
+  /internetAccess/v2/services/search:
+    post:
+      tags:
+        - EIA Service
+      summary: Get Equinix Internet Access Services
+      description: Get Equinix Internet Access Services that match specified criteria. <font color="red"><sup color="red">Beta</sup></font>
+      operationId: getEquinixInternetAccessServices
+      parameters:
+        - name: offset
+          in: query
+          description: Search result offset
+          required: false
+          style: form
+          explode: false
+          schema:
+            type: number
+            example: 20
+        - name: limit
+          in: query
+          description: Search result limit
+          required: false
+          style: form
+          explode: false
+          schema:
+            type: number
+            example: 35
+        - name: sort
+          in: query
+          description: Search result sorting
+          required: false
+          style: form
+          explode: false
+          schema:
+            pattern: "^([-]?[\\/][a-z]+[,]?)+$"
+            type: string
+            example: "/name,-/type"
+      requestBody:
+        description: Search filters
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SearchRequest"
+      responses:
+        "200":
+          description: Equinix Internet Access Viewer response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResponse"
+        "400":
+          description: Invalid input parameter
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+        "401":
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+        "403":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorList"
+      x-preview: true
+components:
+  schemas:
+    ServiceId:
+      type: string
+      description: Service identifier
+      format: uuid
+      example: 919ac898-a4b9-4f9d-b684-aa09ddc65b1b
+    ErrorList:
+      type: array
+      description: List of Error Message
+      items:
+        $ref: "#/components/schemas/Error"
+    Error:
+      required:
+        - errorCode
+        - errorMessage
+      type: object
+      properties:
+        errorCode:
+          pattern: "^EQ-\\d{7}$"
+          type: string
+          description: |
+            Error code
+          readOnly: true
+          example: EQ-7100100
+        errorMessage:
+          type: string
+          description: Error message
+          readOnly: true
+          example: |
+            Unknown error occurred in Internet Access
+        correlationId:
+          type: string
+          description: |
+            Correlation ID identifying the request
+          readOnly: true
+          example: 4e7b5042-b553-4d5e-a2ac-c73bf6d4ee27
+        details:
+          type: string
+          description: |
+            Error details
+          readOnly: true
+          example: |
+            Unknown error occurred in Internet Access
+        help:
+          type: string
+          description: |
+            Link to the help information
+          format: uri
+          readOnly: true
+          example: https://developer.equinix.com/faq
+        additionalInfo:
+          type: array
+          description: |
+            Collection of additional information
+          readOnly: true
+          items:
+            $ref: "#/components/schemas/ErrorAdditionalInfo"
+      description: Error Response with details
+      readOnly: true
+    ErrorAdditionalInfo:
+      type: object
+      properties:
+        reason:
+          type: string
+          description: |
+            Reason of the error
+          example: |
+            Unsupported request parameter value
+        property:
+          type: string
+          description: |
+            Request property that caused the error
+          example: work.emailId
+      description: Additional info for error
+    PurchaseOrderType:
+      type: string
+      description: Purchase order type
+      enum:
+        - STANDARD_PURCHASE_ORDER
+        - BLANKET_PURCHASE_ORDER
+    ContactType:
+      type: string
+      description: Contact type
+      example: ORDERING
+      enum:
+        - NOTIFICATION
+        - TECHNICAL
+        - ORDERING
+        - RESELLING
+        - BILLING
+    ServiceName:
+      maxLength: 64
+      type: string
+    ServiceDescription:
+      maxLength: 255
+      type: string
+    ServiceCreateRequest:
+      allOf:
+        - $ref: "#/components/schemas/Taggable"
+        - required:
+            - connections
+            - routingProtocol
+            - type
+          type: object
+          properties:
+            name:
+              $ref: "#/components/schemas/ServiceName"
+            description:
+              $ref: "#/components/schemas/ServiceDescription"
+            type:
+              $ref: "#/components/schemas/ServiceType"
+            connections:
+              maxItems: 2
+              minItems: 1
+              type: array
+              description: Collection of service connections uuids
+              items:
+                $ref: "#/components/schemas/ConnectionId"
+            routingProtocol:
+              $ref: "#/components/schemas/RoutingProtocolRequest"
+            order:
+              $ref: "#/components/schemas/ServiceOrder"
+    ChangeRequest:
+      maxItems: 100
+      minItems: 1
+      type: array
+      description: Only one replace operation allowed for "/bandwidth" path.
+      items:
+        $ref: "#/components/schemas/ChangeOperationUpdate"
+    RoutingProtocolRequest:
+      discriminator:
+        propertyName: type
+        mapping:
+          DIRECT: "#/components/schemas/RoutingProtocolRequestDirect"
+          STATIC: "#/components/schemas/RoutingProtocolRequestStatic"
+          BGP: "#/components/schemas/RoutingProtocolRequestBgp"
+      oneOf:
+        - $ref: "#/components/schemas/RoutingProtocolRequestDirect"
+        - $ref: "#/components/schemas/RoutingProtocolRequestStatic"
+        - $ref: "#/components/schemas/RoutingProtocolRequestBgp"
+    ServiceCreateResponse:
+      required:
+        - change
+        - connections
+        - routingProtocol
+        - state
+        - type
+        - useCase
+        - uuid
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/ServiceName"
+        description:
+          $ref: "#/components/schemas/ServiceDescription"
+        type:
+          $ref: "#/components/schemas/ServiceType"
+        connections:
+          maxItems: 2
+          minItems: 1
+          type: array
+          description: Collection of service connections uuids
+          items:
+            $ref: "#/components/schemas/Connection"
+        routingProtocol:
+          $ref: "#/components/schemas/RoutingProtocolReadModel"
+        bandwidth:
+          type: integer
+          description: Service bandwidth in Mbps
+          example: 1000
+        project:
+          $ref: "#/components/schemas/ProjectReadModel"
+        account:
+          $ref: "#/components/schemas/Account"
+        change:
+          $ref: "#/components/schemas/Change"
+        changeLog:
+          $ref: "#/components/schemas/ChangeLog"
+        order:
+          $ref: "#/components/schemas/ServiceOrderReadModel"
+        uuid:
+          $ref: "#/components/schemas/ServiceId"
+        state:
+          $ref: "#/components/schemas/ServiceState"
+        useCase:
+          $ref: "#/components/schemas/UseCase"
+    UseCase:
+      type: string
+      enum:
+        - MAIN
+        - BACKUP
+        - MANAGEMENT_ACCESS
+    ServiceState:
+      type: string
+      enum:
+        - PENDING
+        - PROVISIONING
+        - ACTIVE
+        - INACTIVE
+        - DEPROVISIONING
+        - DEPROVISIONED
+        - FAILED
+    Taggable:
+      type: object
+      properties:
+        tags:
+          type: array
+          example:
+            - tag1
+            - tag2
+            - tag3
+          items:
+            type: string
+    RoutingProtocolType:
+      type: string
+      description: |
+        Allowed values:
+        - BGP
+        - DIRECT
+        - STATIC
+      format: ^(BGP|DIRECT|STATIC)$
+    RoutingProtocolRequestBase:
+      allOf:
+        - $ref: "#/components/schemas/Taggable"
+        - required:
+            - type
+          type: object
+          properties:
+            type:
+              $ref: "#/components/schemas/RoutingProtocolType"
+            name:
+              type: string
+              description: |
+                Name of the routing protocol instance.
+              example: WebServers Routes
+            description:
+              type: string
+              description: |
+                Description of the routing protocol instance
+              example: |
+                Routes to customer facing web server
+    RoutingProtocolRequestDirect:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolRequestBase"
+        - required:
+            - type
+          type: object
+          properties:
+            type:
+              type: string
+              default: DIRECT
+            ipv4:
+              $ref: "#/components/schemas/DirectRoutingProtocolIpv4Request"
+            ipv6:
+              $ref: "#/components/schemas/DirectRoutingProtocolIpv6Request"
+          description: Direct routing protocol
+    DirectRoutingProtocolIpv4Request:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolIpv4Request"
+        - type: object
+          properties:
+            peerings:
+              maxItems: 2
+              minItems: 0
+              type: array
+              items:
+                $ref: "#/components/schemas/DirectPeeringIpv4Request"
+    DirectPeeringIpv4Request:
+      type: object
+      properties:
+        connection:
+          $ref: "#/components/schemas/Connection"
+        equinixPeerIps:
+          type: array
+          description: |
+            Peering IP addresses in Version 4 (IPv4)
+          items:
+            pattern: "^(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\/(?:[0-2]?[0-9]|3[0-2]))?$"
+            type: string
+        equinixVRRPIp:
+          pattern: "^(?:\\d{1,3}\\.){3}\\d{1,3}(?:\\/(?:[0-2]?[0-9]|3[0-2]))?$"
+          type: string
+          description: |
+            Virtual router group IP addresses in Version 4 (IPv4)
+          example: 18.15.15.18
+    RoutingProtocolIpv4Request:
+      required:
+        - customerRoutes
+      type: object
+      properties:
+        customerRoutes:
+          minItems: 1
+          type: array
+          description: Collection of customer routes of IP Version 4 (IPv4)
+          items:
+            $ref: "#/components/schemas/CustomerRouteIpv4Request"
+    DirectRoutingProtocolIpv6Request:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolIpv6Request"
+        - type: object
+          properties:
+            peerings:
+              maxItems: 2
+              minItems: 0
+              type: array
+              items:
+                $ref: "#/components/schemas/DirectPeeringIpv6Request"
+    DirectPeeringIpv6Request:
+      type: object
+      properties:
+        connection:
+          $ref: "#/components/schemas/ConnectionId"
+        equinixPeerIps:
+          type: array
+          description: |
+            Peering IP addresses in Version 6 (IPv6)
+          items:
+            pattern: "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))(\\/(?:[6-9]|[1-5][0-9]|6[0-4]))?$"
+            type: string
+        equinixVRRPIp:
+          pattern: "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))(\\/(?:[6-9]|[1-5][0-9]|6[0-4]))?$"
+          type: string
+          description: |
+            Virtual router group IP addresses in Version 6 (IPv6)
+          example: 1002:0db8:85a3:0000:0000:8a2e:0370:6223
+    RoutingProtocolRequestStatic:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolRequestBase"
+        - required:
+            - type
+          type: object
+          properties:
+            type:
+              type: string
+              default: STATIC
+            ipv4:
+              $ref: "#/components/schemas/RoutingProtocolIpv4Request"
+            ipv6:
+              $ref: "#/components/schemas/RoutingProtocolIpv6Request"
+          description: Static routing protocol
+    RoutingProtocolIpv6Request:
+      required:
+        - customerRoutes
+      type: object
+      properties:
+        customerRoutes:
+          minItems: 1
+          type: array
+          description: Collection of customer routes of IP Version 6 (IPv6)
+          items:
+            $ref: "#/components/schemas/CustomerRouteIpv6Request"
+    AsnRange:
+      type: string
+      description: Customer Autonomous System Number range
+      x-enum-varnames:
+        - BITS_16
+        - BITS_32
+      enum:
+        - BITS_16
+        - BITS_32
+    BgpExportPolicy:
+      type: string
+      description: Denotes which routes should be advertised to the internet
+      example: FULL
+      enum:
+        - FULL
+        - DEFAULT
+        - FULL_DEFAULT
+        - PARTIAL
+    RoutingProtocolRequestBgp:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolRequestBase"
+        - required:
+            - exportPolicy
+            - type
+          type: object
+          properties:
+            type:
+              type: string
+              default: BGP
+            customerAsnRange:
+              $ref: "#/components/schemas/AsnRange"
+            customerAsn:
+              $ref: "#/components/schemas/AsnNumber"
+            bgpAuthKey:
+              type: string
+              description: BGP authentication key
+              example: SecretKey
+            exportPolicy:
+              $ref: "#/components/schemas/BgpExportPolicy"
+            ipv4:
+              $ref: "#/components/schemas/RoutingProtocolIpv4Request"
+            ipv6:
+              $ref: "#/components/schemas/RoutingProtocolIpv6Request"
+          description: BGP routing protocol
+    PrefixIpv4:
+      pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/[0-2]*\\d{1}|/3[0-2]){1}$"
+      type: string
+      description: Subnet prefix
+      example: 198.51.100.0/24
+    PrefixIpv6:
+      pattern: "^s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:)))(%.+)?s*(\\/([0-9]|[1-9][0-9]|1[0-1][0-9]|12[0-8]))?$"
+      type: string
+      description: Subnet prefix
+      example: 2001:db8::/64
+    CustomerRouteIpv4Request:
+      type: object
+      properties:
+        ipBlock:
+          $ref: "#/components/schemas/IpBlockIpv4Request"
+        prefix:
+          $ref: "#/components/schemas/PrefixIpv4"
+    CustomerRouteIpv6Request:
+      type: object
+      properties:
+        ipBlock:
+          $ref: "#/components/schemas/IpBlockIpv6Request"
+        prefix:
+          $ref: "#/components/schemas/PrefixIpv6"
+    IpBlock:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+    IpBlockIpv4Request:
+      allOf:
+        - $ref: "#/components/schemas/IpBlock"
+        - required:
+            - prefixLength
+          type: object
+          properties:
+            prefixLength:
+              maximum: 30
+              minimum: 24
+              type: integer
+              description: "Length of the IP block, number after the / (slash)"
+            addressingPlans:
+              type: array
+              description: Collection of addressing plans
+              items:
+                $ref: "#/components/schemas/IpBlockAddressingPlans"
+            questions:
+              type: array
+              description: |
+                Connection of questions
+              items:
+                $ref: "#/components/schemas/IpBlockQuestions"
+    IpBlockIpv6Request:
+      allOf:
+        - $ref: "#/components/schemas/IpBlock"
+        - required:
+            - prefixLength
+          type: object
+          properties:
+            prefixLength:
+              maximum: 126
+              minimum: 48
+              type: integer
+              description: |
+                Length of the IP block, number after the / (slash)
+    IpBlockAddressingPlans:
+      required:
+        - size
+      type: object
+      properties:
+        size:
+          minimum: 1
+          type: integer
+        purpose:
+          $ref: "#/components/schemas/PurposeOfIpBlock"
+    PurposeOfIpBlock:
+      type: string
+      description: Purpose of PA Ip block for regulatory reasons
+      example: ROUTERS
+      enum:
+        - ROUTERS
+        - SWITCHES
+        - FIREWALLS
+        - SERVERS
+        - LOAD_BALANCERS
+        - VPN_ENDPOINTS
+        - END_USERS
+    IpBlockQuestions:
+      required:
+        - answer
+        - type
+      type: object
+      properties:
+        type:
+          type: string
+          description: |
+            Type of question relevant to requesting public IP Subnet
+          example: PRIVATE_SPACE_CONSIDERED
+          enum:
+            - PRIVATE_SPACE_CONSIDERED
+            - REFUSED_PREVIOUSLY
+            - RETURNING_ADDRESS_SPACE
+        answer:
+          type: string
+          enum:
+            - "YES"
+            - "NO"
+    ServiceOrder:
+      type: object
+      properties:
+        contacts:
+          type: array
+          items:
+            $ref: "#/components/schemas/ContactItem"
+        purchaseOrder:
+          $ref: "#/components/schemas/ServicePurchaseOrder"
+        referenceNumber:
+          type: string
+          example: "239384723943"
+        signature:
+          $ref: "#/components/schemas/OrderSignature"
+    ServiceOrderStatus:
+      type: string
+      description: Order status
+      example: COMPLETED
+      enum:
+        - PROCESSING
+        - AWAITING_SIGNATURE
+        - SIGNATURE_REJECTED
+        - SIGNATURE_EXPIRED
+        - SUBMITTED
+        - COMPLETED
+        - FAILED
+    ServiceOrderReadModel:
+      allOf:
+        - $ref: "#/components/schemas/ServiceOrder"
+        - required:
+            - changeLog
+            - href
+            - number
+            - status
+            - type
+            - uuid
+          type: object
+          properties:
+            href:
+              type: string
+              description: Order URI
+              example: https://api.equinix.com/internetAccess/v1/orders/cd67f685-41b0-1b07-6de0-320a5c00abee
+            uuid:
+              $ref: "#/components/schemas/ServiceOrderId"
+            type:
+              $ref: "#/components/schemas/ServiceOrderType"
+            status:
+              $ref: "#/components/schemas/ServiceOrderStatus"
+            changeLog:
+              $ref: "#/components/schemas/ChangeLog"
+            number:
+              type: string
+              description: Order number
+              example: 1-9234239473
+    UserIdentifier:
+      type: string
+      description: |
+        Identifies (e.g., contactId, userId, userKey) a registered user.
+      example: john_doe
+    ContactAvailability:
+      type: string
+      example: WORK_HOURS
+      enum:
+        - WORK_HOURS
+        - ANYTIME
+        - CUSTOMER_BUSINESS_HOURS
+        - NOT_AVAILABLE
+    ServicePurchaseOrder:
+      required:
+        - number
+      type: object
+      properties:
+        type:
+          $ref: "#/components/schemas/PurchaseOrderType"
+        number:
+          type: string
+          description: |
+            Purchase order number
+          example: "129105284100"
+        amount:
+          minimum: 1
+          type: number
+          description: Amount
+          example: 100.5
+        startDate:
+          type: string
+          description: Start date in YYYY-MM-DD format
+          format: date
+        endDate:
+          type: string
+          description: End date in YYYY-MM-DD format
+          format: date
+        description:
+          maxLength: 4096
+          type: string
+          description: Purchase order description
+          example: example purchase order description
+        attachment:
+          $ref: "#/components/schemas/ServicePurchaseOrderAttachment"
+    ServicePurchaseOrderAttachment:
+      type: object
+      properties:
+        attachmentId:
+          type: string
+          format: uuid
+    ServiceOrderType:
+      type: string
+      enum:
+        - NEW
+        - AMENDMENT
+    ServiceOrderId:
+      type: string
+      format: uuid
+    OrderSignature:
+      required:
+        - signatory
+      type: object
+      properties:
+        signatory:
+          type: string
+          example: SELF
+          enum:
+            - SELF
+            - DELEGATE
+            - SUPPORT
+        delegate:
+          $ref: "#/components/schemas/OrderSignatureDelegate"
+    OrderSignatureDelegate:
+      required:
+        - email
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          description: |
+            Email address that the signature request should be sent to in case of DELEGATE signature
+          format: email
+          example: cto@business.com
+    SearchRequest:
+      properties:
+        filter:
+          $ref: "#/components/schemas/Filter"
+    Filter:
+      type: object
+      properties:
+        and:
+          type: array
+          items:
+            $ref: "#/components/schemas/AndQuery"
+    AndQuery:
+      required:
+        - operator
+        - property
+        - values
+      type: object
+      properties:
+        property:
+          type: string
+        operator:
+          type: string
+          enum:
+            - =
+        values:
+          type: array
+          items:
+            type: string
+    SearchResponse:
+      required:
+        - data
+        - pagination
+        - sort
+      properties:
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+        sort:
+          type: array
+          items:
+            $ref: "#/components/schemas/Sort"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceReadModel"
+    Pagination:
+      required:
+        - limit
+        - offset
+        - total
+      type: object
+      properties:
+        offset:
+          minimum: 0
+          type: integer
+          format: int64
+          example: 0
+        limit:
+          minimum: 0
+          type: integer
+          format: int64
+          example: 20
+        total:
+          type: integer
+          format: int64
+          example: 2
+        next:
+          type: string
+          description: Next page link
+        previous:
+          type: string
+          description: Previous page link
+    Sort:
+      required:
+        - direction
+        - property
+      type: object
+      properties:
+        direction:
+          type: string
+          description: direction of sorting.
+          example: ASC
+          default: ASC
+          enum:
+            - ASC
+            - DESC
+        property:
+          type: string
+          description: property used for sorting
+          example: /name
+    ServiceReadModel:
+      allOf:
+        - $ref: "#/components/schemas/Taggable"
+        - required:
+            - account
+            - bandwidth
+            - billing
+            - billingEnabled
+            - change
+            - changeLog
+            - connections
+            - href
+            - locations
+            - name
+            - order
+            - project
+            - routingProtocol
+            - state
+            - type
+            - useCase
+            - uuid
+          type: object
+          properties:
+            href:
+              type: string
+              description: Internet access URI
+              format: uri
+              example: https://api.equinix.com/internetAccess/v1/services/2a4fb415-5a7f-436f-bae6-02f5e403deec
+            uuid:
+              $ref: "#/components/schemas/ServiceId"
+            type:
+              $ref: "#/components/schemas/ServiceType"
+            name:
+              type: string
+              description: |
+                Name of the service
+                This name should only contain spaces, the characters "_", "-", letters or numbers. The name cannot
+                start or end with a "-". This name can have only maximum of 24 characters
+              example: Internet Access
+            description:
+              type: string
+              description: Description of the service
+              example: Internet access service
+            bandwidth:
+              minimum: 1000
+              type: integer
+              description: Bandwidth of the service in Mbps
+              format: int64
+              example: 1000
+            billing:
+              $ref: "#/components/schemas/ServiceBilling"
+            billingEnabled:
+              type: boolean
+              description: Indicates whether the service is billed
+            billingStartDate:
+              type: string
+              description: "Contains billing start date, if the service is billed"
+              format: date
+            state:
+              $ref: "#/components/schemas/ServiceState"
+            change:
+              $ref: "#/components/schemas/Change"
+            changeLog:
+              $ref: "#/components/schemas/ChangeLog"
+            connections:
+              minItems: 1
+              type: array
+              items:
+                $ref: "#/components/schemas/ConnectionReadModel"
+            routingProtocol:
+              $ref: "#/components/schemas/RoutingProtocolReadModel"
+            locations:
+              minItems: 1
+              type: array
+              items:
+                $ref: "#/components/schemas/Location"
+            account:
+              $ref: "#/components/schemas/Account"
+            project:
+              $ref: "#/components/schemas/ProjectReadModel"
+            order:
+              $ref: "#/components/schemas/ServiceOrderReadModel"
+            useCase:
+              $ref: "#/components/schemas/UseCase"
+    ServiceType:
+      type: string
+      description: |
+        SINGLE - Internet Access Service supported with one Connection originating from one AccessPoint on the ASide
+        DUAL - Internet Access Service supported with two redundant Connections originating from two redundant AccessPoints on the Aside and terminating to two redundant Internet Routers on the ZSide
+      example: SINGLE
+      enum:
+        - SINGLE
+        - DUAL
+    ServiceBilling:
+      type: string
+      description: Billing type of service
+      example: FIXED
+      enum:
+        - FIXED
+        - USAGE_BASED
+        - BURST_BASED
+    ChangeLog:
+      required:
+        - createdBy
+        - createdByEmail
+        - createdByFullName
+        - createdDateTime
+        - updatedBy
+        - updatedByEmail
+        - updatedByFullName
+        - updatedDateTime
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: Account number of the account used for object creation
+          example: "1232"
+        createdByFullName:
+          type: string
+          description: Full name of the account used for object creation
+          example: John Doe
+        createdByEmail:
+          type: string
+          description: E-mail of the account used for object creation
+          format: email
+          example: john.doe@company.com
+        createdDateTime:
+          type: string
+          description: Date and time of object creation
+          format: date-time
+        updatedBy:
+          type: string
+          description: Account number of the account that updated the object last time
+          example: "1234"
+        updatedByFullName:
+          type: string
+          description: Full name of the account that updated the object last time
+          example: Ryan Einstein
+        updatedByEmail:
+          type: string
+          description: E-mail of the account that updated the object last time
+          format: email
+          example: ryan.einstein@company.com
+        updatedDateTime:
+          type: string
+          description: Date and time of the account that updated the object last time
+          format: date-time
+        deletedBy:
+          type: string
+          description: Account number of the account that updated the object last time
+          example: "1234"
+        deletedByFullName:
+          type: string
+          description: Full name of the account that updated the object last time
+          example: Ryan Einstein
+        deletedByEmail:
+          type: string
+          description: E-mail of the account that updated the object last time
+          format: email
+          example: ryan.einstein@company.com
+        deletedDateTime:
+          type: string
+          description: Date and time of the account that updated the object last time
+          format: date-time
+    Connection:
+      required:
+        - uuid
+      type: object
+      properties:
+        uuid:
+          $ref: "#/components/schemas/ConnectionId"
+    ConnectionReadModel:
+      allOf:
+        - $ref: "#/components/schemas/Connection"
+        - required:
+            - aSide
+            - href
+          type: object
+          properties:
+            href:
+              $ref: "#/components/schemas/ConnectionHref"
+            type:
+              $ref: "#/components/schemas/ConnectionType"
+            aSide:
+              $ref: "#/components/schemas/ASide"
+    ASide:
+      required:
+        - service
+        - type
+      type: object
+      properties:
+        type:
+          $ref: "#/components/schemas/ASideType"
+        service:
+          $ref: "#/components/schemas/ASideService"
+    ASideService:
+      required:
+        - uuid
+      type: object
+      properties:
+        uuid:
+          $ref: "#/components/schemas/ASideServiceUuid"
+    ASideServiceUuid:
+      type: string
+      format: uuid
+    ASideType:
+      type: string
+    ConnectionHref:
+      type: string
+      description: Connection URI
+      format: URI
+      example: https://api.equinix.com/internetAccess/v1/services/df043001-bf0a-446b-a48f-bcdcca68a9f3/connections/9b8c5042-b553-4d5e-a2ac-c73bf6d4fd81
+    ConnectionType:
+      type: string
+      example: IA_C
+      x-enum-varnames:
+        - IA_C
+        - IA_VC
+      enum:
+        - IA_C
+        - IA_VC
+    ConnectionId:
+      type: string
+      format: uuid
+      example: 9b8c5042-b553-4d5e-a2ac-c73bf6d4fd81
+    RoutingProtocolReadModel:
+      discriminator:
+        propertyName: type
+        mapping:
+          DIRECT: "#/components/schemas/RoutingProtocolReadModelDirect"
+          STATIC: "#/components/schemas/RoutingProtocolReadModelStatic"
+          BGP: "#/components/schemas/RoutingProtocolReadModelBgp"
+      oneOf:
+        - $ref: "#/components/schemas/RoutingProtocolReadModelDirect"
+        - $ref: "#/components/schemas/RoutingProtocolReadModelStatic"
+        - $ref: "#/components/schemas/RoutingProtocolReadModelBgp"
+    RoutingProtocolId:
+      type: string
+      description: Routing protocol identifier
+      format: uuid
+      example: 9b8c5042-b553-4d5e-a2ac-c73bf6d4fd81
+    RoutingProtocolReadModelBase:
+      allOf:
+        - $ref: "#/components/schemas/Taggable"
+        - required:
+            - name
+            - type
+          type: object
+          properties:
+            href:
+              type: string
+              description: Routing protocol URI
+              format: URI
+              example: https://api.equinix.com/internetAccess/v1/services/df043001-bf0a-446b-a48f-bcdcca68a9f3/routingProtocols/9b8c5042-b553-4d5e-a2ac-c73bf6d4fd81
+            uuid:
+              $ref: "#/components/schemas/RoutingProtocolId"
+            type:
+              $ref: "#/components/schemas/RoutingProtocolType"
+            name:
+              type: string
+              description: Name of the routing protocol instance.
+              example: WebServers Routes
+            description:
+              type: string
+              description: Description of the routing protocol instance
+              example: Routes to customer facing web servers
+            ipv4:
+              $ref: "#/components/schemas/RoutingProtocolIpv4"
+            ipv6:
+              $ref: "#/components/schemas/RoutingProtocolIpv6"
+            changeLog:
+              $ref: "#/components/schemas/ChangeLog"
+    RoutingProtocolReadModelDirect:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolReadModelBase"
+        - required:
+            - type
+          properties:
+            type:
+              type: string
+              default: DIRECT
+    RoutingProtocolReadModelStatic:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolReadModelBase"
+        - required:
+            - type
+          properties:
+            type:
+              type: string
+              default: STATIC
+    RoutingProtocolReadModelBgp:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolReadModelBase"
+        - $ref: "#/components/schemas/RoutingProtocolReadModelBgpAdditionalFields"
+        - required:
+            - type
+          properties:
+            type:
+              type: string
+              default: BGP
+    AsnNumber:
+      maximum: 4294967295
+      minimum: 0
+      type: integer
+      description: Autonomous System Number
+      format: int64
+      example: 16220
+    BgpAuthenticationType:
+      type: string
+      description: BGP authentication type
+      enum:
+        - AUTH_KEY
+        - NONE
+    RoutingProtocolReadModelBgpAdditionalFields:
+      required:
+        - customerAsn
+        - equinixAsn
+        - exportPolicy
+      type: object
+      properties:
+        customerAsn:
+          $ref: "#/components/schemas/AsnNumber"
+        customerAsnRange:
+          $ref: "#/components/schemas/AsnRange"
+        equinixAsn:
+          $ref: "#/components/schemas/AsnNumber"
+        bgpAuthenticationType:
+          $ref: "#/components/schemas/BgpAuthenticationType"
+        exportPolicy:
+          $ref: "#/components/schemas/ExportPolicy"
+      description: BGP routing protocol
+    ExportPolicy:
+      type: string
+      description: |
+        Denotes which routes should be advertised to the internet
+      enum:
+        - FULL
+        - DEFAULT
+        - FULL_DEFAULT
+        - PARTIAL
+    RoutingProtocolIpv4:
+      required:
+        - customerRoutes
+        - peerings
+      type: object
+      properties:
+        customerRoutes:
+          minItems: 1
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv4"
+        peerings:
+          minItems: 0
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolPeeringIpv4"
+    RoutingProtocolIpv6:
+      required:
+        - customerRoutes
+        - peerings
+      type: object
+      properties:
+        customerRoutes:
+          minItems: 1
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv6"
+        peerings:
+          minItems: 0
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolPeeringIpv6"
+    RoutingProtocolCustomerRouteIpBase:
+      required:
+        - importPolicy
+      type: object
+      properties:
+        importPolicy:
+          $ref: "#/components/schemas/ImportPolicy"
+    IpBlockReadModelIpv4:
+      allOf:
+        - $ref: "#/components/schemas/IpBlockReadModel"
+        - type: object
+          properties:
+            prefix:
+              $ref: "#/components/schemas/PrefixIpv4"
+            prefixLength:
+              maximum: 32
+              minimum: 1
+              type: integer
+              description: Determines the size of ip subnet
+              example: 30
+            addressingPlans:
+              type: array
+              description: Collection of addressing plans
+              items:
+                $ref: "#/components/schemas/IpBlockAddressingPlans"
+            questions:
+              type: array
+              description: Connection of questions
+              items:
+                $ref: "#/components/schemas/IpBlockQuestions"
+    RoutingProtocolCustomerRouteIpv4PA:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpBase"
+        - required:
+            - importPolicy
+            - ipBlock
+          properties:
+            importPolicy:
+              type: string
+              default: PA
+            ipBlock:
+              $ref: "#/components/schemas/IpBlockReadModelIpv4"
+    RoutingProtocolCustomerRouteIpv4PI:
+      required:
+        - importPolicy
+      properties:
+        importPolicy:
+          type: string
+          default: PI
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpBase"
+        - required:
+            - prefix
+          type: object
+          properties:
+            prefix:
+              $ref: "#/components/schemas/PrefixIpv4"
+    RoutingProtocolCustomerRouteIpv4:
+      discriminator:
+        propertyName: importPolicy
+        mapping:
+          PA: "#/components/schemas/RoutingProtocolCustomerRouteIpv4PA"
+          PI: "#/components/schemas/RoutingProtocolCustomerRouteIpv4PI"
+      oneOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv4PA"
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv4PI"
+    RoutingProtocolPeeringIpv4:
+      required:
+        - equinixPeerIps
+        - peerSubnet
+        - vrrpEnabled
+      type: object
+      properties:
+        connections:
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolPeeringConnectionItem"
+        customerPeerIps:
+          type: array
+          items:
+            type: string
+        peerSubnet:
+          $ref: "#/components/schemas/RoutingProtocolPeeringIpv4_peerSubnet"
+        vrrpEnabled:
+          type: boolean
+          description: Indicates if VRRP is enabled.
+          example: true
+        equinixPeerIps:
+          type: array
+          items:
+            pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+            type: string
+        equinixVRRPIp:
+          pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+          type: string
+        customerVRRPIp:
+          pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+          type: string
+    IpBlockReadModelIpv6:
+      allOf:
+        - $ref: "#/components/schemas/IpBlockReadModel"
+        - type: object
+          properties:
+            prefix:
+              $ref: "#/components/schemas/PrefixIpv6"
+            prefixLength:
+              maximum: 128
+              minimum: 1
+              type: integer
+              description: Determines the size of ip subnet
+              example: 64
+    RoutingProtocolCustomerRouteIpv6PA:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpBase"
+        - required:
+            - importPolicy
+            - ipBlock
+          properties:
+            importPolicy:
+              type: string
+              default: PA
+            ipBlock:
+              $ref: "#/components/schemas/IpBlockReadModelIpv6"
+    RoutingProtocolCustomerRouteIpv6PI:
+      allOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpBase"
+        - required:
+            - importPolicy
+            - prefix
+          properties:
+            importPolicy:
+              type: string
+              default: PI
+            prefix:
+              $ref: "#/components/schemas/PrefixIpv6"
+    RoutingProtocolCustomerRouteIpv6:
+      discriminator:
+        propertyName: importPolicy
+        mapping:
+          PA: "#/components/schemas/RoutingProtocolCustomerRouteIpv6PA"
+          PI: "#/components/schemas/RoutingProtocolCustomerRouteIpv6PI"
+      oneOf:
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv6PA"
+        - $ref: "#/components/schemas/RoutingProtocolCustomerRouteIpv6PI"
+    RoutingProtocolPeeringIpv6:
+      required:
+        - equinixPeerIps
+        - peerSubnet
+        - vrrpEnabled
+      type: object
+      properties:
+        connections:
+          type: array
+          items:
+            $ref: "#/components/schemas/RoutingProtocolPeeringConnectionItem"
+        customerPeerIps:
+          type: array
+          items:
+            type: string
+        peerSubnet:
+          $ref: "#/components/schemas/RoutingProtocolPeeringIpv6_peerSubnet"
+        vrrpEnabled:
+          type: boolean
+          description: Indicates if VRRP is enabled.
+          example: true
+        equinixPeerIps:
+          type: array
+          items:
+            pattern: "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$"
+            type: string
+        equinixVRRPIp:
+          pattern: "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$"
+          type: string
+        customerVRRPIp:
+          pattern: "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$"
+          type: string
+    ImportPolicy:
+      pattern: ^(PA|PI)$
+      type: string
+      description: |
+        Provider Assigned (PA) means that Equinix will assign ip address space.  Provider Independent (PI) means that the API caller must supply ip address space. Allowed values: PA, PI
+    IpBlockReadModel:
+      required:
+        - type
+      type: object
+      properties:
+        href:
+          type: string
+          description: Ip block URI
+          format: URI
+          example: https://api.equinix.com/internetAccess/v1/ipBlocks/71a1eb68-4daf-4ef0-bd7f-6970727b6fe8
+        uuid:
+          type: string
+          format: uuid
+          example: 71a1eb68-4daf-4ef0-bd7f-6970727b6fe8
+        type:
+          type: string
+          description: Determines the type of Routing Protocol
+          example: IA_IP_BLOCK
+          enum:
+            - IA_IP_BLOCK
+    RoutingProtocolPeeringConnectionItem:
+      required:
+        - href
+        - type
+        - uuid
+      type: object
+      properties:
+        href:
+          type: string
+          description: Ip block URI
+          format: URI
+          example: https://api.equinix.com/internetAccess/v1/services/df043001-bf0a-446b-a48f-bcdcca68a9f3/connections/38a1eb68-4daf-4ef0-bd7f-6970727b6fc1
+        uuid:
+          $ref: "#/components/schemas/ConnectionId"
+    RoutingProtocolPeeringIpv4_peerSubnet:
+      required:
+        - prefix
+        - prefixLength
+      type: object
+      properties:
+        prefix:
+          type: string
+          description: Subnet used for peering
+          example: 7.7.7.0/30
+        prefixLength:
+          maximum: 32
+          minimum: 8
+          type: integer
+          format: int32
+          example: 30
+    RoutingProtocolPeeringIpv6_peerSubnet:
+      required:
+        - prefix
+        - prefixLength
+      type: object
+      properties:
+        prefix:
+          type: string
+          description: Subnet used for peering
+          example: 2000:3333:0000:0000:0000:0000:0000:0000/64
+        prefixLength:
+          maximum: 128
+          minimum: 8
+          type: integer
+          format: int32
+          example: 64
+    AccountNumber:
+      type: string
+      description: Account identifier
+      example: "1234533211"
+    Account:
+      required:
+        - accountNumber
+        - href
+      type: object
+      properties:
+        href:
+          type: string
+          description: Account URI
+          format: URI
+          example: https://api.equinix.com/internetAccess/v1/accounts/1234
+        accountNumber:
+          $ref: "#/components/schemas/AccountNumber"
+        accountName:
+          type: string
+          description: Name of account
+          example: Company account
+        orgId:
+          type: string
+          description: Customer organization identifier
+          example: "1232"
+        organizationName:
+          type: string
+          description: Customer organization name
+          example: "Equinix, Inc."
+    ProjectReadModel:
+      required:
+        - href
+        - projectId
+      type: object
+      properties:
+        href:
+          type: string
+          description: Project URI
+          format: uri
+          example: https://api.equinix.com/resourceManager/v1/projects/371
+        projectId:
+          type: string
+          description: identifier of the project
+          example: "9713123422221"
+        projectName:
+          type: string
+          description: name of the project
+          example: US Office
+        parentOrganizationId:
+          type: string
+          example: "22331"
+        parentOrganizationName:
+          type: string
+          description: Name of the parent organization
+          example: ABC Company
+    ContactItem:
+      required:
+        - type
+      type: object
+      properties:
+        href:
+          type: string
+          description: Account URI
+          example: https://api.equinix.com/access/v2/users/john_doe
+        type:
+          $ref: "#/components/schemas/ContactType"
+        registeredUser:
+          $ref: "#/components/schemas/UserIdentifier"
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        timezone:
+          type: string
+          example: Pacific
+        availability:
+          $ref: "#/components/schemas/ContactAvailability"
+        notes:
+          type: string
+          description: |
+            Describe any contact preferences
+          example: For urgent cases please make a phone call.
+        details:
+          type: array
+          items:
+            $ref: "#/components/schemas/ContactItemDetails"
+    ContactItemDetails:
+      properties:
+        type:
+          type: string
+          example: EMAIL
+          enum:
+            - EMAIL
+            - PHONE
+            - MOBILE
+            - SECONDARY_EMAIL
+        value:
+          type: string
+          example: john.doe@nowhere.com
+        notes:
+          type: string
+          description: |
+            Contact additional info
+          example: org internal communication only
+    IbxPage:
+      required:
+        - data
+        - pagination
+      type: object
+      properties:
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Ibx"
+    Ibx:
+      required:
+        - href
+      type: object
+      properties:
+        href:
+          type: string
+          example: https://api.equinix.com/internetAccess/ibxs/WA1
+        countryCode:
+          type: string
+          example: PL
+        countryName:
+          type: string
+          example: Poland
+        region:
+          type: string
+          example: EMEA
+          enum:
+            - APAC
+            - EMEA
+            - AMER
+        metroCode:
+          $ref: "#/components/schemas/MetroCode"
+        ibxCode:
+          $ref: "#/components/schemas/IbxCode"
+        geoCoordinates:
+          $ref: "#/components/schemas/GeoCoordinates"
+      description: IBX object
+    MetroCode:
+      pattern: "^[A-Z]{2,2}$"
+      type: string
+      example: WA
+    IbxCode:
+      type: string
+      description: IBX data center code
+      format: "^[A-Z]{2,2}[0-9]+X?$"
+      example: WA1
+    Region:
+      type: string
+      example: APAC
+      enum:
+        - APAC
+        - EMEA
+        - AMER
+    Location:
+      required:
+        - ibxCode
+        - metroCode
+        - region
+      type: object
+      properties:
+        metroCode:
+          $ref: "#/components/schemas/MetroCode"
+        ibxCode:
+          $ref: "#/components/schemas/IbxCode"
+        region:
+          $ref: "#/components/schemas/Region"
+    GeoCoordinates:
+      required:
+        - latitude
+        - longitude
+      type: object
+      properties:
+        latitude:
+          type: number
+          example: 53.55
+        longitude:
+          type: number
+          example: 9.95
+    ChangeId:
+      type: string
+      description: Uniquely identifies a change
+    ChangeStatus:
+      type: string
+      description: |
+        Current outcome of the change flow. Allowed values:
+        - REQUESTED
+        - SUBMITTED_FOR_APPROVAL
+        - APPROVED
+        - REJECTED
+        - COMPLETED
+        - FAILED
+      format: ^(REQUESTED|SUBMITTED_FOR_APPROVAL|APPROVED|REJECTED|COMPLETED|FAILED)$
+    ChangeType:
+      type: string
+      enum:
+        - SERVICE_CREATION
+        - SERVICE_UPDATE
+        - SERVICE_DELETION
+    Change:
+      description: Current state of latest service change
+      discriminator:
+        propertyName: status
+        mapping:
+          REQUESTED: "#/components/schemas/ChangeRequested"
+          SUBMITTED_FOR_APPROVAL: "#/components/schemas/ChangeSubmittedForApproval"
+          APPROVED: "#/components/schemas/ChangeApproved"
+          REJECTED: "#/components/schemas/ChangeRejected"
+          COMPLETED: "#/components/schemas/ChangeCompleted"
+          FAILED: "#/components/schemas/ChangeFailed"
+      oneOf:
+        - $ref: "#/components/schemas/ChangeRequested"
+        - $ref: "#/components/schemas/ChangeSubmittedForApproval"
+        - $ref: "#/components/schemas/ChangeApproved"
+        - $ref: "#/components/schemas/ChangeRejected"
+        - $ref: "#/components/schemas/ChangeCompleted"
+        - $ref: "#/components/schemas/ChangeFailed"
+    ChangeBase:
+      required:
+        - createdDateTime
+        - data
+        - status
+        - type
+        - uuid
+      type: object
+      properties:
+        uuid:
+          $ref: "#/components/schemas/ChangeId"
+        type:
+          $ref: "#/components/schemas/ChangeType"
+        status:
+          $ref: "#/components/schemas/ChangeStatus"
+        createdDateTime:
+          type: string
+          description: Set when change flow starts
+          format: date-time
+          example: 2020-11-06T07:00:00Z
+        updatedDateTime:
+          type: string
+          description: Set when change object is updated
+          format: date-time
+          example: 2020-11-06T07:00:00Z
+        information:
+          type: string
+          description: Additional information
+        data:
+          $ref: "#/components/schemas/ChangeData"
+    ChangeDataService:
+      required:
+        - uuid
+      type: object
+      properties:
+        uuid:
+          $ref: "#/components/schemas/ServiceId"
+    ChangeData:
+      required:
+        - request
+        - service
+      type: object
+      properties:
+        service:
+          $ref: "#/components/schemas/ChangeDataService"
+        request:
+          type: string
+    ChangeRequested:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: REQUESTED
+            data:
+              $ref: "#/components/schemas/ChangeData"
+    ChangeSubmittedForApproval:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: SUBMITTED_FOR_APPROVAL
+            data:
+              $ref: "#/components/schemas/ChangeData"
+    ChangeApproved:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: APPROVED
+            data:
+              $ref: "#/components/schemas/ChangeData"
+    ChangeRejected:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: REJECTED
+            data:
+              $ref: "#/components/schemas/ChangeRejectedData"
+    ChangeRejectedData:
+      allOf:
+        - $ref: "#/components/schemas/ChangeData"
+        - required:
+            - rejectionReason
+          type: object
+          properties:
+            rejectionReason:
+              type: string
+    ChangeCompleted:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: COMPLETED
+            data:
+              $ref: "#/components/schemas/ChangeData"
+    ChangeFailed:
+      allOf:
+        - $ref: "#/components/schemas/ChangeBase"
+        - required:
+            - data
+            - status
+            - type
+          type: object
+          properties:
+            status:
+              type: string
+              default: FAILED
+            data:
+              $ref: "#/components/schemas/ChangeFailedData"
+    ChangeFailedData:
+      allOf:
+        - $ref: "#/components/schemas/ChangeData"
+        - required:
+            - errors
+          type: object
+          properties:
+            errors:
+              $ref: "#/components/schemas/ErrorList"
+    ChangeOperationUpdateAllowedOp:
+      type: string
+      description: |
+        Operation type. Allowed values:
+        - replace
+        - add
+        - remove
+      format: ^(replace|add|remove)$
+    ChangeOperationUpdateAllowedPath:
+      type: string
+      description: |
+        Path inside document leading to updated parameter. Allowed values:
+        - /bandwidth
+        - /routingProtocol/ipv4/customerRoutes[*]
+        - /routingProtocol/ipv6/customerRoutes[*]
+      format: "^(\\/bandwidth|\\/routingProtocol\\/(?:ipv4|ipv6)\\/(?:customerRoutes\\[\\*\\]|peerings\\[\\*\\]\\/(?:equinixPeerIps|equinixVRRPIp)))$"
+      example: /bandwidth
+    ChangeOperationUpdate:
+      required:
+        - op
+        - path
+        - value
+      type: object
+      properties:
+        op:
+          $ref: "#/components/schemas/ChangeOperationUpdateAllowedOp"
+        path:
+          $ref: "#/components/schemas/ChangeOperationUpdateAllowedPath"
+        value:
+          type: string
+          description: |
+            New value for updated parameter.
+
+            Allowed value for PA is prefixLength, e.g. "30"
+            Allowed value for PI is prefix with subnetSize. e.g. "192.168.1.0/24"
+        order:
+          $ref: "#/components/schemas/ServiceOrder"
+      description: Change operation data
+  responses:
+    "400":
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorList"
+          examples:
+            invalidProperty:
+              value:
+                - errorCode: EQ-7100010
+                  errorMessage: Validation Failure
+                  correlationId: sampleCorrelationId
+    "401":
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorList"
+          examples:
+            invalidProperty:
+              value:
+                - errorCode: EQ-7100001
+                  errorMessage: Unauthorized
+                  correlationId: sampleCorrelationId
+    "403":
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorList"
+          examples:
+            invalidProperty:
+              value:
+                - errorCode: EQ-7100002
+                  errorMessage: Forbidden
+                  correlationId: sampleCorrelationId
+    "404":
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorList"
+          examples:
+            invalidProperty:
+              value:
+                - errorCode: EQ-7100003
+                  errorMessage: Not found
+                  correlationId: sampleCorrelationId
+    "500":
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorList"
+          examples:
+            internalServerError:
+              value:
+                - errorCode: EQ-7100030
+                  errorMessage: Internal Server Error
+                  correlationId: sampleCorrelationId
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

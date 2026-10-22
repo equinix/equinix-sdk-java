@@ -18,5 +18,10 @@
             <artifactId>fabricv4</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.equinix.sdk</groupId>
+            <artifactId>internetaccessv2</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
