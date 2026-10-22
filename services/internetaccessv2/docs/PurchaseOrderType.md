@@ -1,0 +1,13 @@
+
+
+# PurchaseOrderType
+
+## Enum
+
+
+* `STANDARD_PURCHASE_ORDER` (value: `"STANDARD_PURCHASE_ORDER"`)
+
+* `BLANKET_PURCHASE_ORDER` (value: `"BLANKET_PURCHASE_ORDER"`)
+
+
+
