@@ -163,7 +163,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Create RARule
+     * Create Route Aggregation Rule
      * This API provides capability to create a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesBase  (required)
@@ -188,7 +188,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Create RARule
+     * Create Route Aggregation Rule
      * This API provides capability to create a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesBase  (required)
@@ -214,7 +214,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Create RARule (asynchronously)
+     * Create Route Aggregation Rule (asynchronously)
      * This API provides capability to create a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesBase  (required)
@@ -324,7 +324,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Bulk RARules
+     * Bulk Create Route Aggregation Rules
      * This API provides capability to create bulk route aggregation rules
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesPostRequest  (required)
@@ -349,7 +349,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Bulk RARules
+     * Bulk Create Route Aggregation Rules
      * This API provides capability to create bulk route aggregation rules
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesPostRequest  (required)
@@ -375,7 +375,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Bulk RARules (asynchronously)
+     * Bulk Create Route Aggregation Rules (asynchronously)
      * This API provides capability to create bulk route aggregation rules
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRulesPostRequest  (required)
@@ -485,7 +485,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * DeleteRARule
+     * Delete Route Aggregation Rule
      * This API provides capability to delete a Route aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -510,7 +510,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * DeleteRARule
+     * Delete Route Aggregation Rule
      * This API provides capability to delete a Route aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -536,7 +536,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * DeleteRARule (asynchronously)
+     * Delete Route Aggregation Rule (asynchronously)
      * This API provides capability to delete a Route aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -646,7 +646,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARule By UUID
+     * Get Route Aggregation Rule by ID
      * This API provides capability to view a Route Aggregation Rule by UUID
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -671,7 +671,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARule By UUID
+     * Get Route Aggregation Rule by ID
      * This API provides capability to view a Route Aggregation Rule by UUID
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -697,7 +697,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARule By UUID (asynchronously)
+     * Get Route Aggregation Rule by ID (asynchronously)
      * This API provides capability to view a Route Aggregation Rule by UUID
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -983,7 +983,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Aggregation Rule Changes
      * This API provides capability to retrieve all of a Route Aggregation Rule&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1009,7 +1009,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Aggregation Rule Changes
      * This API provides capability to retrieve all of a Route Aggregation Rule&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1036,7 +1036,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * Get All Changes (asynchronously)
+     * Get Route Aggregation Rule Changes (asynchronously)
      * This API provides capability to retrieve all of a Route Aggregation Rule&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1149,7 +1149,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARules
+     * Get Route Aggregation Rules
      * This API provides capability to get all Route Aggregations Rules for Fabric
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1174,7 +1174,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARules
+     * Get Route Aggregation Rules
      * This API provides capability to get all Route Aggregations Rules for Fabric
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1200,7 +1200,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * GetRARules (asynchronously)
+     * Get Route Aggregation Rules (asynchronously)
      * This API provides capability to get all Route Aggregations Rules for Fabric
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1318,7 +1318,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * PatchRARule
+     * Update Route Aggregation Rule
      * This API provides capability to partially update a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1344,7 +1344,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * PatchRARule
+     * Update Route Aggregation Rule
      * This API provides capability to partially update a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1371,7 +1371,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * PatchRARule (asynchronously)
+     * Update Route Aggregation Rule (asynchronously)
      * This API provides capability to partially update a Route Aggregation Rule
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1489,7 +1489,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * ReplaceRARule
+     * Replace Route Aggregation Rule
      * This API provides capability to replace a Route Aggregation Rule completely
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1515,7 +1515,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * ReplaceRARule
+     * Replace Route Aggregation Rule
      * This API provides capability to replace a Route Aggregation Rule completely
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)
@@ -1542,7 +1542,7 @@ public class RouteAggregationRulesApi {
     }
 
     /**
-     * ReplaceRARule (asynchronously)
+     * Replace Route Aggregation Rule (asynchronously)
      * This API provides capability to replace a Route Aggregation Rule completely
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationRuleId Route Aggregation Rules Id (required)

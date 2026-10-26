@@ -17,11 +17,12 @@
 |**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  |  [optional] |
 |**publicPeeringConnection** | [**PublicPeeringConnectionResponse**](PublicPeeringConnectionResponse.md) |  |  [optional] |
 |**routingProtocol** | [**RoutingProtocolResponse**](RoutingProtocolResponse.md) |  |  [optional] |
-|**order** | [**Order**](Order.md) |  |  [optional] |
+|**order** | [**ExchangeServiceOrder**](ExchangeServiceOrder.md) |  |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
 |**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  |  [optional] |
 |**notifications** | [**List&lt;ExchangeServiceNotification&gt;**](ExchangeServiceNotification.md) | Preferences for notifications on Internet Exchange Service configuration or status changes |  [optional] |
 |**changelog** | [**PlatformChangelog**](PlatformChangelog.md) |  |  [optional] |
+|**additionalInfo** | [**ExchangeServiceAdditionalInfo**](ExchangeServiceAdditionalInfo.md) |  |  [optional] |
 
 
 

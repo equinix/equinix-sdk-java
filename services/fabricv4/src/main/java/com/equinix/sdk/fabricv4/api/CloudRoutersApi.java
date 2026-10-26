@@ -36,7 +36,6 @@ import com.equinix.sdk.fabricv4.model.CloudRouterCommand;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandPostRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterCommandSearchResponse;
-import com.equinix.sdk.fabricv4.model.CloudRouterPackage;
 import com.equinix.sdk.fabricv4.model.CloudRouterPostRequest;
 import com.equinix.sdk.fabricv4.model.CloudRouterReadResponse;
 import com.equinix.sdk.fabricv4.model.CloudRouterSearchRequest;
@@ -44,10 +43,8 @@ import com.equinix.sdk.fabricv4.model.ConnectionRouteSearchRequest;
 import com.equinix.sdk.fabricv4.model.ConnectionRouteTableEntrySearchResponse;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.GetAllCloudRouterCommands;
-import com.equinix.sdk.fabricv4.model.PackageResponse;
 import com.equinix.sdk.fabricv4.model.RouteTableEntrySearchRequest;
 import com.equinix.sdk.fabricv4.model.RouteTableEntrySearchResponse;
-import com.equinix.sdk.fabricv4.model.RouterPackageCode;
 import com.equinix.sdk.fabricv4.model.SearchResponse;
 import java.util.UUID;
 
@@ -174,8 +171,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Create Routers
-     * This API provides capability to create user&#39;s Cloud Routers
+     * Create Router
+     * This API provides capability to create user&#39;s Cloud Router
      * @param cloudRouterPostRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return CloudRouter
@@ -198,8 +195,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Create Routers
-     * This API provides capability to create user&#39;s Cloud Routers
+     * Create Router
+     * This API provides capability to create user&#39;s Cloud Router
      * @param cloudRouterPostRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;CloudRouter&gt;
@@ -223,8 +220,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Create Routers (asynchronously)
-     * This API provides capability to create user&#39;s Cloud Routers
+     * Create Router (asynchronously)
+     * This API provides capability to create user&#39;s Cloud Router
      * @param cloudRouterPostRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
@@ -493,7 +490,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Initiate Command
+     * Create Command
      * This API provides capability to initiate Command
      * @param routerId Router UUID (required)
      * @param cloudRouterCommandPostRequest  (required)
@@ -518,7 +515,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Initiate Command
+     * Create Command
      * This API provides capability to initiate Command
      * @param routerId Router UUID (required)
      * @param cloudRouterCommandPostRequest  (required)
@@ -544,7 +541,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Initiate Command (asynchronously)
+     * Create Command (asynchronously)
      * This API provides capability to initiate Command
      * @param routerId Router UUID (required)
      * @param cloudRouterCommandPostRequest  (required)
@@ -646,8 +643,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Delete Routers
-     * This API provides capability to delete user&#39;s Cloud Routers
+     * Delete Router
+     * This API provides capability to delete user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -667,8 +664,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Delete Routers
-     * This API provides capability to delete user&#39;s Cloud Routers
+     * Delete Router
+     * This API provides capability to delete user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -690,8 +687,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Delete Routers (asynchronously)
-     * This API provides capability to delete user&#39;s Cloud Routers
+     * Delete Router (asynchronously)
+     * This API provides capability to delete user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1420,8 +1417,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Get Routers
-     * This API provides capability to retrieve user&#39;s Cloud Routers
+     * Get Router
+     * This API provides capability to retrieve user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @return CloudRouterReadResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1442,8 +1439,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Get Routers
-     * This API provides capability to retrieve user&#39;s Cloud Routers
+     * Get Router
+     * This API provides capability to retrieve user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @return ApiResponse&lt;CloudRouterReadResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1465,8 +1462,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Get Routers (asynchronously)
-     * This API provides capability to retrieve user&#39;s Cloud Routers
+     * Get Router (asynchronously)
+     * This API provides capability to retrieve user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1647,302 +1644,6 @@ public class CloudRoutersApi {
 
         okhttp3.Call localVarCall = getCloudRouterCommandValidateBeforeCall(routerId, commandId, _callback);
         Type localVarReturnType = new TypeToken<CloudRouterCommand>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for getCloudRouterPackageByCode
-     * @param routerPackageCode Equinix-assigned Cloud Router package identifier (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Package details </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getCloudRouterPackageByCodeCall(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/fabric/v4/routerPackages/{routerPackageCode}"
-            .replace("{" + "routerPackageCode" + "}", localVarApiClient.escapeString(routerPackageCode.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "BearerAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterPackageByCodeValidateBeforeCall(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'routerPackageCode' is set
-        if (routerPackageCode == null) {
-            throw new ApiException("Missing the required parameter 'routerPackageCode' when calling getCloudRouterPackageByCode(Async)");
-        }
-
-        return getCloudRouterPackageByCodeCall(routerPackageCode, _callback);
-
-    }
-
-    /**
-     * Get Package Details
-     * This API provides capability to retrieve user&#39;s Cloud Routers Package Details
-     * @param routerPackageCode Equinix-assigned Cloud Router package identifier (required)
-     * @return CloudRouterPackage
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Package details </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public CloudRouterPackage getCloudRouterPackageByCode(@javax.annotation.Nonnull RouterPackageCode routerPackageCode) throws ApiException {
-        ApiResponse<CloudRouterPackage> localVarResp = getCloudRouterPackageByCodeWithHttpInfo(routerPackageCode);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get Package Details
-     * This API provides capability to retrieve user&#39;s Cloud Routers Package Details
-     * @param routerPackageCode Equinix-assigned Cloud Router package identifier (required)
-     * @return ApiResponse&lt;CloudRouterPackage&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Package details </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<CloudRouterPackage> getCloudRouterPackageByCodeWithHttpInfo(@javax.annotation.Nonnull RouterPackageCode routerPackageCode) throws ApiException {
-        okhttp3.Call localVarCall = getCloudRouterPackageByCodeValidateBeforeCall(routerPackageCode, null);
-        Type localVarReturnType = new TypeToken<CloudRouterPackage>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get Package Details (asynchronously)
-     * This API provides capability to retrieve user&#39;s Cloud Routers Package Details
-     * @param routerPackageCode Equinix-assigned Cloud Router package identifier (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Package details </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getCloudRouterPackageByCodeAsync(@javax.annotation.Nonnull RouterPackageCode routerPackageCode, final ApiCallback<CloudRouterPackage> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getCloudRouterPackageByCodeValidateBeforeCall(routerPackageCode, _callback);
-        Type localVarReturnType = new TypeToken<CloudRouterPackage>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for getCloudRouterPackages
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Packages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getCloudRouterPackagesCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/fabric/v4/routerPackages";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (offset != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
-        }
-
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "BearerAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudRouterPackagesValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
-        return getCloudRouterPackagesCall(offset, limit, _callback);
-
-    }
-
-    /**
-     * List Packages
-     * This API provides capability to retrieve user&#39;s Cloud Routers Packages
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @return PackageResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Packages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public PackageResponse getCloudRouterPackages(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<PackageResponse> localVarResp = getCloudRouterPackagesWithHttpInfo(offset, limit);
-        return localVarResp.getData();
-    }
-
-    /**
-     * List Packages
-     * This API provides capability to retrieve user&#39;s Cloud Routers Packages
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @return ApiResponse&lt;PackageResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Packages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<PackageResponse> getCloudRouterPackagesWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = getCloudRouterPackagesValidateBeforeCall(offset, limit, null);
-        Type localVarReturnType = new TypeToken<PackageResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * List Packages (asynchronously)
-     * This API provides capability to retrieve user&#39;s Cloud Routers Packages
-     * @param offset offset (optional)
-     * @param limit number of records to fetch (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Fabric Cloud Router Packages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getCloudRouterPackagesAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<PackageResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getCloudRouterPackagesValidateBeforeCall(offset, limit, _callback);
-        Type localVarReturnType = new TypeToken<PackageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2190,7 +1891,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Search Route Table
+     * Search Route Tables
      * The API provides capability to get list of user&#39;s Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
      * @param routerId Router UUID (required)
      * @param routeTableEntrySearchRequest  (required)
@@ -2215,7 +1916,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Search Route Table
+     * Search Route Tables
      * The API provides capability to get list of user&#39;s Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
      * @param routerId Router UUID (required)
      * @param routeTableEntrySearchRequest  (required)
@@ -2241,7 +1942,7 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Search Route Table (asynchronously)
+     * Search Route Tables (asynchronously)
      * The API provides capability to get list of user&#39;s Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
      * @param routerId Router UUID (required)
      * @param routeTableEntrySearchRequest  (required)
@@ -2965,8 +2666,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Update Routers
-     * This API provides capability to update user&#39;s Cloud Routers
+     * Update Router
+     * This API provides capability to update user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @param cloudRouterChangeOperation  (required)
      * @return CloudRouter
@@ -2990,8 +2691,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Update Routers
-     * This API provides capability to update user&#39;s Cloud Routers
+     * Update Router
+     * This API provides capability to update user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @param cloudRouterChangeOperation  (required)
      * @return ApiResponse&lt;CloudRouter&gt;
@@ -3016,8 +2717,8 @@ public class CloudRoutersApi {
     }
 
     /**
-     * Update Routers (asynchronously)
-     * This API provides capability to update user&#39;s Cloud Routers
+     * Update Router (asynchronously)
+     * This API provides capability to update user&#39;s Cloud Router
      * @param routerId Cloud Router UUID (required)
      * @param cloudRouterChangeOperation  (required)
      * @param _callback The callback to be executed when the API call finishes

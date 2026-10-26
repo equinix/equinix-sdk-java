@@ -16,6 +16,7 @@ Equinix Fabric Tag Response Object
 |**state** | [**StateEnum**](#StateEnum) | Status of the Tag request. Can be APPROVED, PENDING_APPROVAL, REJECT |  [optional] |
 |**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) |  |  [optional] |
 |**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
+|**weight** | **Integer** |  |  [optional] |
 
 
 

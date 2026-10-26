@@ -51,7 +51,7 @@ public enum AccessPointType {
   
   APP_LINK("APP_LINK"),
   
-  XF_IC("XF_IC");
+  IC("IC");
 
   private String value;
 

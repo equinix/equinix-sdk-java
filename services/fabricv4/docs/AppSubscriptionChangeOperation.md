@@ -8,7 +8,7 @@ App Subscription change operation data
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**op** | [**OpEnum**](#OpEnum) | Handy shortcut for operation name |  |
+|**op** | [**OpEnum**](#OpEnum) | operation type applied to the resource |  |
 |**path** | **String** | path inside document leading to updated parameter |  |
 |**value** | **Object** | new value for updated parameter |  |
 

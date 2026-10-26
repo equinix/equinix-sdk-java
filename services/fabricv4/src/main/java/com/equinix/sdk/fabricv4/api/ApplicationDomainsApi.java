@@ -155,7 +155,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Create App Domain
+     * Create Domain
      * This API provides capability to create user&#39;s App Domain
      * @param appDomainPostRequest  (required)
      * @return AppDomain
@@ -178,7 +178,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Create App Domain
+     * Create Domain
      * This API provides capability to create user&#39;s App Domain
      * @param appDomainPostRequest  (required)
      * @return ApiResponse&lt;AppDomain&gt;
@@ -202,7 +202,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Create App Domain (asynchronously)
+     * Create Domain (asynchronously)
      * This API provides capability to create user&#39;s App Domain
      * @param appDomainPostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -302,8 +302,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Delete App Domain
-     * This API provides capability to delete user&#39;s App Domain
+     * Delete Domain
+     * This API provides capability to delete user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @return AppDomain
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -325,8 +325,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Delete App Domain
-     * This API provides capability to delete user&#39;s App Domain
+     * Delete Domain
+     * This API provides capability to delete user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @return ApiResponse&lt;AppDomain&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -349,8 +349,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Delete App Domain (asynchronously)
-     * This API provides capability to delete user&#39;s App Domain
+     * Delete Domain (asynchronously)
+     * This API provides capability to delete user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -448,8 +448,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get App Domain
-     * This API provides capability to retrieve user&#39;s App Domain
+     * Get Domain
+     * This API provides capability to retrieve user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @return AppDomain
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -470,8 +470,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get App Domain
-     * This API provides capability to retrieve user&#39;s App Domain
+     * Get Domain
+     * This API provides capability to retrieve user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @return ApiResponse&lt;AppDomain&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -493,8 +493,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get App Domain (asynchronously)
-     * This API provides capability to retrieve user&#39;s App Domain
+     * Get Domain (asynchronously)
+     * This API provides capability to retrieve user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -617,8 +617,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get attached App Links for App Domain
-     * This API provides capability to retrieve App Links attached to an App Domain.
+     * Get Attached Links for Domain
+     * This API provides capability to retrieve App Links attached to an App Domain
      * @param appDomainId App Domain UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -645,8 +645,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get attached App Links for App Domain
-     * This API provides capability to retrieve App Links attached to an App Domain.
+     * Get Attached Links for Domain
+     * This API provides capability to retrieve App Links attached to an App Domain
      * @param appDomainId App Domain UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -674,8 +674,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Get attached App Links for App Domain (asynchronously)
-     * This API provides capability to retrieve App Links attached to an App Domain.
+     * Get Attached Links for Domain (asynchronously)
+     * This API provides capability to retrieve App Links attached to an App Domain
      * @param appDomainId App Domain UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -779,7 +779,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Search App Domains
+     * Search Domains
      * The API provides capability to get list of user&#39;s App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appDomainSearchRequest  (required)
      * @return AppDomainSearchResponse
@@ -802,7 +802,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Search App Domains
+     * Search Domains
      * The API provides capability to get list of user&#39;s App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appDomainSearchRequest  (required)
      * @return ApiResponse&lt;AppDomainSearchResponse&gt;
@@ -826,7 +826,7 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Search App Domains (asynchronously)
+     * Search Domains (asynchronously)
      * The API provides capability to get list of user&#39;s App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appDomainSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -934,8 +934,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Update App Domain
-     * This API provides capability to update user&#39;s App Domain
+     * Update Domain
+     * This API provides capability to update user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @param appDomainChangeOperation  (required)
      * @return AppDomain
@@ -959,8 +959,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Update App Domain
-     * This API provides capability to update user&#39;s App Domain
+     * Update Domain
+     * This API provides capability to update user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @param appDomainChangeOperation  (required)
      * @return ApiResponse&lt;AppDomain&gt;
@@ -985,8 +985,8 @@ public class ApplicationDomainsApi {
     }
 
     /**
-     * Update App Domain (asynchronously)
-     * This API provides capability to update user&#39;s App Domain
+     * Update Domain (asynchronously)
+     * This API provides capability to update user&#39;s Domain
      * @param appDomainId App Domain UUID (required)
      * @param appDomainChangeOperation  (required)
      * @param _callback The callback to be executed when the API call finishes

@@ -7,13 +7,16 @@ All URIs are relative to *https://api.equinix.com*
 | [**createStreams**](StreamsApi.md#createStreams) | **POST** /fabric/v4/streams | Create Stream |
 | [**deleteStreamAssetByUuid**](StreamsApi.md#deleteStreamAssetByUuid) | **DELETE** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Detach Asset |
 | [**deleteStreamByUuid**](StreamsApi.md#deleteStreamByUuid) | **DELETE** /fabric/v4/streams/{streamId} | Delete Stream |
+| [**deleteStreamDevice**](StreamsApi.md#deleteStreamDevice) | **DELETE** /fabric/v4/streams/{streamId}/devices/{deviceId} | Detach Network Edge Device |
 | [**getStreamAssetByUuid**](StreamsApi.md#getStreamAssetByUuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset |
 | [**getStreamByUuid**](StreamsApi.md#getStreamByUuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream |
+| [**getStreamDevice**](StreamsApi.md#getStreamDevice) | **GET** /fabric/v4/streams/{streamId}/devices/{deviceId} | Get Network Edge Device |
 | [**getStreams**](StreamsApi.md#getStreams) | **GET** /fabric/v4/streams | Get Streams |
 | [**searchStreamAssets**](StreamsApi.md#searchStreamAssets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets |
 | [**searchStreams**](StreamsApi.md#searchStreams) | **POST** /fabric/v4/streams/search | Search Streams |
 | [**updateStreamAssetByUuid**](StreamsApi.md#updateStreamAssetByUuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset |
 | [**updateStreamByUuid**](StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream |
+| [**updateStreamDevice**](StreamsApi.md#updateStreamDevice) | **PUT** /fabric/v4/streams/{streamId}/devices/{deviceId} | Attach Network Edge Device Interfaces |
 
 
 <a id="createStreams"></a>
@@ -138,7 +141,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 
 ### Return type
@@ -236,6 +239,80 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="deleteStreamDevice"></a>
+# **deleteStreamDevice**
+> StreamAsset deleteStreamDevice(streamId, deviceId)
+
+Detach Network Edge Device
+
+This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.StreamsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    StreamsApi apiInstance = new StreamsApi(defaultClient);
+    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    try {
+      StreamAsset result = apiInstance.deleteStreamDevice(streamId, deviceId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StreamsApi#deleteStreamDevice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **streamId** | **UUID**| Stream UUID | |
+| **deviceId** | **UUID**| Network Edge Device UUID | |
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | Stream Network Edge Device asset object |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="getStreamAssetByUuid"></a>
 # **getStreamAssetByUuid**
 > StreamAsset getStreamAssetByUuid(assetId, asset, streamId)
@@ -286,7 +363,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 
 ### Return type
@@ -378,6 +455,80 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Stream object |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="getStreamDevice"></a>
+# **getStreamDevice**
+> StreamAsset getStreamDevice(streamId, deviceId)
+
+Get Network Edge Device
+
+This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.StreamsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    StreamsApi apiInstance = new StreamsApi(defaultClient);
+    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    try {
+      StreamAsset result = apiInstance.getStreamDevice(streamId, deviceId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StreamsApi#getStreamDevice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **streamId** | **UUID**| Stream UUID | |
+| **deviceId** | **UUID**| Network Edge Device UUID | |
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Stream Network Edge Device asset object |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -651,7 +802,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **assetId** | **UUID**| asset UUID | |
-| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, networkEdgeDevices, companyProfiles] |
+| **asset** | [**Asset**](.md)| asset | [enum: ports, connections, routers, metros, organizations, projects, companyProfiles] |
 | **streamId** | **UUID**| Stream UUID | |
 | **streamAssetPutRequest** | [**StreamAssetPutRequest**](StreamAssetPutRequest.md)|  | |
 
@@ -747,6 +898,83 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **202** | Stream object |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **415** | Unsupported Media Type |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="updateStreamDevice"></a>
+# **updateStreamDevice**
+> StreamAsset updateStreamDevice(streamId, deviceId, streamDevicePutRequest)
+
+Attach Network Edge Device Interfaces
+
+This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+
+### Example
+```java
+// Import classes:
+import com.equinix.sdk.fabricv4.ApiClient;
+import com.equinix.sdk.fabricv4.ApiException;
+import com.equinix.sdk.fabricv4.Configuration;
+import com.equinix.sdk.fabricv4.auth.*;
+import com.equinix.sdk.fabricv4.models.*;
+import com.equinix.sdk.fabricv4.api.StreamsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.equinix.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    StreamsApi apiInstance = new StreamsApi(defaultClient);
+    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    StreamDevicePutRequest streamDevicePutRequest = new StreamDevicePutRequest(); // StreamDevicePutRequest | 
+    try {
+      StreamAsset result = apiInstance.updateStreamDevice(streamId, deviceId, streamDevicePutRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StreamsApi#updateStreamDevice");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **streamId** | **UUID**| Stream UUID | |
+| **deviceId** | **UUID**| Network Edge Device UUID | |
+| **streamDevicePutRequest** | [**StreamDevicePutRequest**](StreamDevicePutRequest.md)|  | |
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **202** | Stream Network Edge Device asset object |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |

@@ -8,7 +8,7 @@ Search requests containing criteria
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filter** | [**CloudRouterFilters**](CloudRouterFilters.md) |  |  [optional] |
+|**filter** | [**CloudRouterExpression**](CloudRouterExpression.md) |  |  [optional] |
 |**pagination** | [**PaginationRequest**](PaginationRequest.md) |  |  [optional] |
 |**sort** | [**List&lt;CloudRouterSortCriteria&gt;**](CloudRouterSortCriteria.md) |  |  [optional] |
 

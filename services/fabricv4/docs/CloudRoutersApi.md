@@ -4,34 +4,32 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createCloudRouter**](CloudRoutersApi.md#createCloudRouter) | **POST** /fabric/v4/routers | Create Routers |
+| [**createCloudRouter**](CloudRoutersApi.md#createCloudRouter) | **POST** /fabric/v4/routers | Create Router |
 | [**createCloudRouterAction**](CloudRoutersApi.md#createCloudRouterAction) | **POST** /fabric/v4/routers/{routerId}/actions | Create Route Table Action |
-| [**createCloudRouterCommand**](CloudRoutersApi.md#createCloudRouterCommand) | **POST** /fabric/v4/routers/{routerId}/commands | Initiate Command |
-| [**deleteCloudRouterByUuid**](CloudRoutersApi.md#deleteCloudRouterByUuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Routers |
+| [**createCloudRouterCommand**](CloudRoutersApi.md#createCloudRouterCommand) | **POST** /fabric/v4/routers/{routerId}/commands | Create Command |
+| [**deleteCloudRouterByUuid**](CloudRoutersApi.md#deleteCloudRouterByUuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Router |
 | [**deleteCloudRouterCommandByUuid**](CloudRoutersApi.md#deleteCloudRouterCommandByUuid) | **DELETE** /fabric/v4/routers/{routerId}/commands/{commandId} | Delete Command |
 | [**getAllCloudRouterCommands**](CloudRoutersApi.md#getAllCloudRouterCommands) | **GET** /fabric/v4/routers/{routerId}/commands | Get Commands |
 | [**getCloudRouterActions**](CloudRoutersApi.md#getCloudRouterActions) | **GET** /fabric/v4/routers/{routerId}/actions | Get Route Table Actions |
 | [**getCloudRouterActionsByUuid**](CloudRoutersApi.md#getCloudRouterActionsByUuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get Route Table Action by ID |
-| [**getCloudRouterByUuid**](CloudRoutersApi.md#getCloudRouterByUuid) | **GET** /fabric/v4/routers/{routerId} | Get Routers |
+| [**getCloudRouterByUuid**](CloudRoutersApi.md#getCloudRouterByUuid) | **GET** /fabric/v4/routers/{routerId} | Get Router |
 | [**getCloudRouterCommand**](CloudRoutersApi.md#getCloudRouterCommand) | **GET** /fabric/v4/routers/{routerId}/commands/{commandId} | Get Command |
-| [**getCloudRouterPackageByCode**](CloudRoutersApi.md#getCloudRouterPackageByCode) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details |
-| [**getCloudRouterPackages**](CloudRoutersApi.md#getCloudRouterPackages) | **GET** /fabric/v4/routerPackages | List Packages |
 | [**searchCloudRouterCommands**](CloudRoutersApi.md#searchCloudRouterCommands) | **POST** /fabric/v4/routers/{routerId}/commands/search | Search Commands |
-| [**searchCloudRouterRoutes**](CloudRoutersApi.md#searchCloudRouterRoutes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table |
+| [**searchCloudRouterRoutes**](CloudRoutersApi.md#searchCloudRouterRoutes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Tables |
 | [**searchCloudRouters**](CloudRoutersApi.md#searchCloudRouters) | **POST** /fabric/v4/routers/search | Search Routers |
 | [**searchConnectionAdvertisedRoutes**](CloudRoutersApi.md#searchConnectionAdvertisedRoutes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | Search Advertised Routes |
 | [**searchConnectionReceivedRoutes**](CloudRoutersApi.md#searchConnectionReceivedRoutes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search Received Routes |
 | [**searchRouterActions**](CloudRoutersApi.md#searchRouterActions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search Route Table Actions |
-| [**updateCloudRouterByUuid**](CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers |
+| [**updateCloudRouterByUuid**](CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Router |
 
 
 <a id="createCloudRouter"></a>
 # **createCloudRouter**
 > CloudRouter createCloudRouter(cloudRouterPostRequest, dryRun)
 
-Create Routers
+Create Router
 
-This API provides capability to create user&#39;s Cloud Routers
+This API provides capability to create user&#39;s Cloud Router
 
 ### Example
 ```java
@@ -178,7 +176,7 @@ public class Example {
 # **createCloudRouterCommand**
 > CloudRouterCommand createCloudRouterCommand(routerId, cloudRouterCommandPostRequest)
 
-Initiate Command
+Create Command
 
 This API provides capability to initiate Command
 
@@ -253,9 +251,9 @@ public class Example {
 # **deleteCloudRouterByUuid**
 > deleteCloudRouterByUuid(routerId)
 
-Delete Routers
+Delete Router
 
-This API provides capability to delete user&#39;s Cloud Routers
+This API provides capability to delete user&#39;s Cloud Router
 
 ### Example
 ```java
@@ -622,9 +620,9 @@ public class Example {
 # **getCloudRouterByUuid**
 > CloudRouterReadResponse getCloudRouterByUuid(routerId)
 
-Get Routers
+Get Router
 
-This API provides capability to retrieve user&#39;s Cloud Routers
+This API provides capability to retrieve user&#39;s Cloud Router
 
 ### Example
 ```java
@@ -764,151 +762,6 @@ public class Example {
 | **415** | Internal server error |  -  |
 | **500** | Internal server error |  -  |
 
-<a id="getCloudRouterPackageByCode"></a>
-# **getCloudRouterPackageByCode**
-> CloudRouterPackage getCloudRouterPackageByCode(routerPackageCode)
-
-Get Package Details
-
-This API provides capability to retrieve user&#39;s Cloud Routers Package Details
-
-### Example
-```java
-// Import classes:
-import com.equinix.sdk.fabricv4.ApiClient;
-import com.equinix.sdk.fabricv4.ApiException;
-import com.equinix.sdk.fabricv4.Configuration;
-import com.equinix.sdk.fabricv4.auth.*;
-import com.equinix.sdk.fabricv4.models.*;
-import com.equinix.sdk.fabricv4.api.CloudRoutersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.equinix.com");
-    
-    // Configure HTTP bearer authorization: BearerAuth
-    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
-    BearerAuth.setBearerToken("BEARER TOKEN");
-
-    CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    RouterPackageCode routerPackageCode = RouterPackageCode.fromValue("LAB"); // RouterPackageCode | Equinix-assigned Cloud Router package identifier
-    try {
-      CloudRouterPackage result = apiInstance.getCloudRouterPackageByCode(routerPackageCode);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CloudRoutersApi#getCloudRouterPackageByCode");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **routerPackageCode** | [**RouterPackageCode**](.md)| Equinix-assigned Cloud Router package identifier | [enum: LAB, BASIC, STANDARD, ADVANCED, PREMIUM] |
-
-### Return type
-
-[**CloudRouterPackage**](CloudRouterPackage.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Fabric Cloud Router Package details |  -  |
-| **400** | Bad request |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **415** | Unsupported Media Type |  -  |
-| **500** | Internal server error |  -  |
-
-<a id="getCloudRouterPackages"></a>
-# **getCloudRouterPackages**
-> PackageResponse getCloudRouterPackages(offset, limit)
-
-List Packages
-
-This API provides capability to retrieve user&#39;s Cloud Routers Packages
-
-### Example
-```java
-// Import classes:
-import com.equinix.sdk.fabricv4.ApiClient;
-import com.equinix.sdk.fabricv4.ApiException;
-import com.equinix.sdk.fabricv4.Configuration;
-import com.equinix.sdk.fabricv4.auth.*;
-import com.equinix.sdk.fabricv4.models.*;
-import com.equinix.sdk.fabricv4.api.CloudRoutersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.equinix.com");
-    
-    // Configure HTTP bearer authorization: BearerAuth
-    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
-    BearerAuth.setBearerToken("BEARER TOKEN");
-
-    CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    Integer offset = 1; // Integer | offset
-    Integer limit = 10; // Integer | number of records to fetch
-    try {
-      PackageResponse result = apiInstance.getCloudRouterPackages(offset, limit);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CloudRoutersApi#getCloudRouterPackages");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **offset** | **Integer**| offset | [optional] |
-| **limit** | **Integer**| number of records to fetch | [optional] |
-
-### Return type
-
-[**PackageResponse**](PackageResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Fabric Cloud Router Packages |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **415** | Unsupported Media Type |  -  |
-| **500** | Internal server error |  -  |
-
 <a id="searchCloudRouterCommands"></a>
 # **searchCloudRouterCommands**
 > CloudRouterCommandSearchResponse searchCloudRouterCommands(routerId, cloudRouterCommandSearchRequest)
@@ -988,7 +841,7 @@ public class Example {
 # **searchCloudRouterRoutes**
 > RouteTableEntrySearchResponse searchCloudRouterRoutes(routerId, routeTableEntrySearchRequest)
 
-Search Route Table
+Search Route Tables
 
 The API provides capability to get list of user&#39;s Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
 
@@ -1356,9 +1209,9 @@ public class Example {
 # **updateCloudRouterByUuid**
 > CloudRouter updateCloudRouterByUuid(routerId, cloudRouterChangeOperation)
 
-Update Routers
+Update Router
 
-This API provides capability to update user&#39;s Cloud Routers
+This API provides capability to update user&#39;s Cloud Router
 
 ### Example
 ```java

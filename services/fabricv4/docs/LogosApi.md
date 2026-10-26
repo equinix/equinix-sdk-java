@@ -15,7 +15,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Create Logo
 
-Create Logo for Equinix Fabric™ Company Profile.
+Create Logo for Equinix Fabric™ Company Profile
 
 ### Example
 ```java

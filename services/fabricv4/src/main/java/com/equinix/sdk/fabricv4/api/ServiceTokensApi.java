@@ -309,7 +309,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * ServiceToken Actions
+     * Create Service Token Action
      * This API provides capability to accept/reject user&#39;s servicetokens
      * @param serviceTokenId Service Token UUID (required)
      * @param serviceTokenActionRequest  (required)
@@ -332,7 +332,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * ServiceToken Actions
+     * Create Service Token Action
      * This API provides capability to accept/reject user&#39;s servicetokens
      * @param serviceTokenId Service Token UUID (required)
      * @param serviceTokenActionRequest  (required)
@@ -356,7 +356,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * ServiceToken Actions (asynchronously)
+     * Create Service Token Action (asynchronously)
      * This API provides capability to accept/reject user&#39;s servicetokens
      * @param serviceTokenId Service Token UUID (required)
      * @param serviceTokenActionRequest  (required)
@@ -454,8 +454,8 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Delete Token by uuid
-     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+     * Delete Service Token by ID
+     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
      * @param serviceTokenId Service Token UUID (required)
      * @return ServiceToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -475,8 +475,8 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Delete Token by uuid
-     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+     * Delete Service Token by ID
+     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
      * @param serviceTokenId Service Token UUID (required)
      * @return ApiResponse&lt;ServiceToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -497,8 +497,8 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Delete Token by uuid (asynchronously)
-     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+     * Delete Service Token by ID (asynchronously)
+     * Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
      * @param serviceTokenId Service Token UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -593,7 +593,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get Token by uuid
+     * Get Service Token by ID
      * Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token&#39;s type, state, location, bandwidth, and other key properties.
      * @param serviceTokenId Service Token UUID (required)
      * @return ServiceToken
@@ -614,7 +614,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get Token by uuid
+     * Get Service Token by ID
      * Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token&#39;s type, state, location, bandwidth, and other key properties.
      * @param serviceTokenId Service Token UUID (required)
      * @return ApiResponse&lt;ServiceToken&gt;
@@ -636,7 +636,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get Token by uuid (asynchronously)
+     * Get Service Token by ID (asynchronously)
      * Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token&#39;s type, state, location, bandwidth, and other key properties.
      * @param serviceTokenId Service Token UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -733,7 +733,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get All Tokens
+     * Get Service Tokens
      * Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber&#39;s account.
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -753,7 +753,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get All Tokens
+     * Get Service Tokens
      * Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber&#39;s account.
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -774,7 +774,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Get All Tokens (asynchronously)
+     * Get Service Tokens (asynchronously)
      * Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber&#39;s account.
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -880,7 +880,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Search servicetokens
+     * Search Service Tokens
      * The API provides capability to get list of user&#39;s servicetokens using search criteria, including optional filtering, pagination and sorting
      * @param serviceTokenSearchRequest  (required)
      * @param offset offset (optional)
@@ -904,7 +904,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Search servicetokens
+     * Search Service Tokens
      * The API provides capability to get list of user&#39;s servicetokens using search criteria, including optional filtering, pagination and sorting
      * @param serviceTokenSearchRequest  (required)
      * @param offset offset (optional)
@@ -929,7 +929,7 @@ public class ServiceTokensApi {
     }
 
     /**
-     * Search servicetokens (asynchronously)
+     * Search Service Tokens (asynchronously)
      * The API provides capability to get list of user&#39;s servicetokens using search criteria, including optional filtering, pagination and sorting
      * @param serviceTokenSearchRequest  (required)
      * @param offset offset (optional)

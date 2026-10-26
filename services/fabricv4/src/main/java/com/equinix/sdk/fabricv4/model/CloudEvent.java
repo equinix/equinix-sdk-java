@@ -53,10 +53,10 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class CloudEvent {
-  public static final String SERIALIZED_NAME_SPEC = "spec";
-  @SerializedName(SERIALIZED_NAME_SPEC)
+  public static final String SERIALIZED_NAME_SPECVERSION = "specversion";
+  @SerializedName(SERIALIZED_NAME_SPECVERSION)
   @javax.annotation.Nullable
-  private String spec;
+  private String specversion;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -147,19 +147,19 @@ public class CloudEvent {
   }
 
   public CloudEvent(
-     String spec
+     String specversion
   ) {
     this();
-    this.spec = spec;
+    this.specversion = specversion;
   }
 
   /**
    * Cloud Event Open Telemetry specification
-   * @return spec
+   * @return specversion
    */
   @javax.annotation.Nullable
-  public String getSpec() {
-    return spec;
+  public String getSpecversion() {
+    return specversion;
   }
 
 
@@ -541,7 +541,7 @@ public class CloudEvent {
       return false;
     }
     CloudEvent cloudEvent = (CloudEvent) o;
-    return Objects.equals(this.spec, cloudEvent.spec) &&
+    return Objects.equals(this.specversion, cloudEvent.specversion) &&
         Objects.equals(this.source, cloudEvent.source) &&
         Objects.equals(this.id, cloudEvent.id) &&
         Objects.equals(this.type, cloudEvent.type) &&
@@ -564,14 +564,14 @@ public class CloudEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(spec, source, id, type, subject, time, dataschema, datacontenttype, severitynumber, severitytext, equinixalert, equinixorganization, equinixproject, authtype, authid, traceparent, tracestate, data, additionalProperties);
+    return Objects.hash(specversion, source, id, type, subject, time, dataschema, datacontenttype, severitynumber, severitytext, equinixalert, equinixorganization, equinixproject, authtype, authid, traceparent, tracestate, data, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CloudEvent {\n");
-    sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+    sb.append("    specversion: ").append(toIndentedString(specversion)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -611,7 +611,7 @@ public class CloudEvent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("spec", "source", "id", "type", "subject", "time", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixalert", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"));
+    openapiFields = new HashSet<String>(Arrays.asList("specversion", "source", "id", "type", "subject", "time", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixalert", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -630,8 +630,8 @@ public class CloudEvent {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("spec") != null && !jsonObj.get("spec").isJsonNull()) && !jsonObj.get("spec").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `spec` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spec").toString()));
+      if ((jsonObj.get("specversion") != null && !jsonObj.get("specversion").isJsonNull()) && !jsonObj.get("specversion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `specversion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("specversion").toString()));
       }
       if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));

@@ -149,7 +149,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Creates Internet Access Service
+     * Create Internet Access Service
      * Creates Internet Access Service
      * @param internetAccessPostRequest  (required)
      * @return InternetAccessService
@@ -170,7 +170,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Creates Internet Access Service
+     * Create Internet Access Service
      * Creates Internet Access Service
      * @param internetAccessPostRequest  (required)
      * @return ApiResponse&lt;InternetAccessService&gt;
@@ -192,7 +192,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Creates Internet Access Service (asynchronously)
+     * Create Internet Access Service (asynchronously)
      * Creates Internet Access Service
      * @param internetAccessPostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -287,7 +287,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Delete Internet Access Service by UUID
+     * Delete Internet Access Service by ID
      * Delete Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @return InternetAccessService
@@ -307,7 +307,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Delete Internet Access Service by UUID
+     * Delete Internet Access Service by ID
      * Delete Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @return ApiResponse&lt;InternetAccessService&gt;
@@ -328,7 +328,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Delete Internet Access Service by UUID (asynchronously)
+     * Delete Internet Access Service by ID (asynchronously)
      * Delete Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -421,7 +421,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Retrieve Internet Access Service by UUID
+     * Get Internet Access Service by ID
      * Retrieve Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @return InternetAccessService
@@ -440,7 +440,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Retrieve Internet Access Service by UUID
+     * Get Internet Access Service by ID
      * Retrieve Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @return ApiResponse&lt;InternetAccessService&gt;
@@ -460,7 +460,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Retrieve Internet Access Service by UUID (asynchronously)
+     * Get Internet Access Service by ID (asynchronously)
      * Retrieve Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -559,7 +559,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Patch Internet Access Service by UUID
+     * Update Internet Access Service by ID
      * Patch Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @param internetAccessPatchOperationUpdate  (required)
@@ -579,7 +579,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Patch Internet Access Service by UUID
+     * Update Internet Access Service by ID
      * Patch Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @param internetAccessPatchOperationUpdate  (required)
@@ -600,7 +600,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Patch Internet Access Service by UUID (asynchronously)
+     * Update Internet Access Service by ID (asynchronously)
      * Patch Internet Access Service by UUID
      * @param uuid UUID of the EIA Service (required)
      * @param internetAccessPatchOperationUpdate  (required)
@@ -695,7 +695,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Search for Internet Access Services
+     * Search Internet Access Services
      * Search for Internet Access Services
      * @param internetAccessSearchRequest  (required)
      * @return InternetAccessServices
@@ -716,7 +716,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Search for Internet Access Services
+     * Search Internet Access Services
      * Search for Internet Access Services
      * @param internetAccessSearchRequest  (required)
      * @return ApiResponse&lt;InternetAccessServices&gt;
@@ -738,7 +738,7 @@ public class InternetAccessServicesApi {
     }
 
     /**
-     * Search for Internet Access Services (asynchronously)
+     * Search Internet Access Services (asynchronously)
      * Search for Internet Access Services
      * @param internetAccessSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes

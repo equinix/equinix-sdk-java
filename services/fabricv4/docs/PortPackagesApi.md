@@ -4,16 +4,16 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getPortPackages**](PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | Get All Port Packages |
+| [**getPortPackages**](PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | List Port Packages |
 
 
 <a id="getPortPackages"></a>
 # **getPortPackages**
 > AllPortPackagesResponse getPortPackages()
 
-Get All Port Packages
+List Port Packages
 
-Get All Port Packages returns details of all available port packages for the specified user credentials.
+Get All Port Packages returns details of all available port packages for the specified user credentials
 
 ### Example
 ```java

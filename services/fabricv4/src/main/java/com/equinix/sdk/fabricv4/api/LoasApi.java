@@ -1068,7 +1068,7 @@ public class LoasApi {
     }
 
     /**
-     * Loa Actions
+     * Create LOA Action
      * The API provides capability to perform actions on Loa
      * @param loaId Loa UUID (required)
      * @param loaActionRequest  (required)
@@ -1092,7 +1092,7 @@ public class LoasApi {
     }
 
     /**
-     * Loa Actions
+     * Create LOA Action
      * The API provides capability to perform actions on Loa
      * @param loaId Loa UUID (required)
      * @param loaActionRequest  (required)
@@ -1117,7 +1117,7 @@ public class LoasApi {
     }
 
     /**
-     * Loa Actions (asynchronously)
+     * Create LOA Action (asynchronously)
      * The API provides capability to perform actions on Loa
      * @param loaId Loa UUID (required)
      * @param loaActionRequest  (required)
@@ -1501,7 +1501,7 @@ public class LoasApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json-patch+json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {

@@ -116,7 +116,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get customerPeerIp
+   * Customer peer IP address
    * @return customerPeerIp
    */
   @javax.annotation.Nullable
@@ -135,7 +135,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get domainName
+   * Domain name for BGP
    * @return domainName
    */
   @javax.annotation.Nullable
@@ -154,7 +154,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get primaryRouteServerIp
+   * Primary route server IP address with prefix length
    * @return primaryRouteServerIp
    */
   @javax.annotation.Nullable
@@ -173,7 +173,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get secondaryRouteServerIp
+   * Secondary route server IP address with prefix length
    * @return secondaryRouteServerIp
    */
   @javax.annotation.Nullable
@@ -192,7 +192,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get asSet
+   * AS-SET used to filter the prefixes announced by the customer
    * @return asSet
    */
   @javax.annotation.Nullable
@@ -211,7 +211,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get mlpeEnabled
+   * Whether Multi-Lateral Peering Exchange (MLPE) is enabled
    * @return mlpeEnabled
    */
   @javax.annotation.Nullable
@@ -230,7 +230,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get md5AuthKey
+   * MD5 key for BGP
    * @return md5AuthKey
    */
   @javax.annotation.Nullable
@@ -249,7 +249,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get rcMd5AuthKey
+   * RC MD5 key for BGP
    * @return rcMd5AuthKey
    */
   @javax.annotation.Nullable
@@ -295,7 +295,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get maxPrefixLimit
+   * Max Prefix Limit number
    * @return maxPrefixLimit
    */
   @javax.annotation.Nullable
@@ -314,7 +314,7 @@ public class ExchangeServiceResponseBgp {
   }
 
   /**
-   * Get prependSelfEnabled
+   * Prepend Self Enabled
    * @return prependSelfEnabled
    */
   @javax.annotation.Nullable

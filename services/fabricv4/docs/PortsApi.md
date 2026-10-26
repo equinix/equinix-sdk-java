@@ -6,12 +6,12 @@ All URIs are relative to *https://api.equinix.com*
 |------------- | ------------- | -------------|
 | [**addToLag**](PortsApi.md#addToLag) | **POST** /fabric/v4/ports/{portId}/physicalPorts/bulk | Add to Lag |
 | [**createPort**](PortsApi.md#createPort) | **POST** /fabric/v4/ports | Create Port |
-| [**deletePort**](PortsApi.md#deletePort) | **DELETE** /fabric/v4/ports/{portId} | Delete a single port |
-| [**getPortByUuid**](PortsApi.md#getPortByUuid) | **GET** /fabric/v4/ports/{portId} | Get Port by uuid |
+| [**deletePort**](PortsApi.md#deletePort) | **DELETE** /fabric/v4/ports/{portId} | Delete Port |
+| [**getPortByUuid**](PortsApi.md#getPortByUuid) | **GET** /fabric/v4/ports/{portId} | Get Port by ID |
 | [**getPorts**](PortsApi.md#getPorts) | **GET** /fabric/v4/ports | Get All Ports |
 | [**getVlans**](PortsApi.md#getVlans) | **GET** /fabric/v4/ports/{portUuid}/linkProtocols | Get Vlans |
-| [**searchPorts**](PortsApi.md#searchPorts) | **POST** /fabric/v4/ports/search | Search ports |
-| [**updatePortByUuid**](PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update by UUID |
+| [**searchPorts**](PortsApi.md#searchPorts) | **POST** /fabric/v4/ports/search | Search Ports |
+| [**updatePortByUuid**](PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update Port by ID |
 
 
 <a id="addToLag"></a>
@@ -93,7 +93,7 @@ public class Example {
 
 Create Port
 
-Creates Equinix Fabric™ Port.
+Creates Equinix Fabric™ Port
 
 ### Example
 ```java
@@ -164,7 +164,7 @@ public class Example {
 # **deletePort**
 > Port deletePort(portId, dryRun)
 
-Delete a single port
+Delete Port
 
 The API provides capability to delete a single port
 
@@ -237,9 +237,9 @@ public class Example {
 # **getPortByUuid**
 > Port getPortByUuid(portId)
 
-Get Port by uuid
+Get Port by ID
 
-Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
 
 ### Example
 ```java
@@ -309,7 +309,7 @@ public class Example {
 
 Get All Ports
 
-Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
 
 ### Example
 ```java
@@ -376,11 +376,11 @@ public class Example {
 
 <a id="getVlans"></a>
 # **getVlans**
-> LinkProtocolGetResponse getVlans(portUuid)
+> LinkProtocolGetResponse getVlans(portUuid, offset, limit)
 
 Get Vlans
 
-The API provides capability to retrieve Vlans for a Port.
+The API provides capability to retrieve Vlans for a Port
 
 ### Example
 ```java
@@ -403,8 +403,10 @@ public class Example {
 
     PortsApi apiInstance = new PortsApi(defaultClient);
     UUID portUuid = UUID.randomUUID(); // UUID | Port UUID
+    Integer offset = 1; // Integer | offset
+    Integer limit = 10; // Integer | number of records to fetch
     try {
-      LinkProtocolGetResponse result = apiInstance.getVlans(portUuid);
+      LinkProtocolGetResponse result = apiInstance.getVlans(portUuid, offset, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PortsApi#getVlans");
@@ -422,6 +424,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **portUuid** | **UUID**| Port UUID | |
+| **offset** | **Integer**| offset | [optional] |
+| **limit** | **Integer**| number of records to fetch | [optional] |
 
 ### Return type
 
@@ -447,7 +451,7 @@ public class Example {
 # **searchPorts**
 > AllPortsResponse searchPorts(portV4SearchRequest)
 
-Search ports
+Search Ports
 
 The API provides capability to get list of user&#39;s virtual ports using search criteria, including optional filtering, pagination and sorting
 
@@ -518,7 +522,7 @@ public class Example {
 # **updatePortByUuid**
 > AllPortsResponse updatePortByUuid(portId, portChangeOperation, dryRun)
 
-Update by UUID
+Update Port by ID
 
 Update Port by UUID
 

@@ -61,7 +61,9 @@ public class StreamSubscriptionSinkCredential {
     
     API_KEY("API_KEY"),
     
-    USERNAME_PASSWORD("USERNAME_PASSWORD");
+    USERNAME_PASSWORD("USERNAME_PASSWORD"),
+    
+    API_TOKEN("API_TOKEN");
 
     private String value;
 
@@ -135,6 +137,11 @@ public class StreamSubscriptionSinkCredential {
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
   private String password;
+
+  public static final String SERIALIZED_NAME_API_TOKEN = "apiToken";
+  @SerializedName(SERIALIZED_NAME_API_TOKEN)
+  @javax.annotation.Nullable
+  private String apiToken;
 
   public StreamSubscriptionSinkCredential() {
   }
@@ -252,6 +259,25 @@ public class StreamSubscriptionSinkCredential {
     this.password = password;
   }
 
+
+  public StreamSubscriptionSinkCredential apiToken(@javax.annotation.Nullable String apiToken) {
+    this.apiToken = apiToken;
+    return this;
+  }
+
+  /**
+   * passed as Authorization header value
+   * @return apiToken
+   */
+  @javax.annotation.Nullable
+  public String getApiToken() {
+    return apiToken;
+  }
+
+  public void setApiToken(@javax.annotation.Nullable String apiToken) {
+    this.apiToken = apiToken;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -312,13 +338,14 @@ public class StreamSubscriptionSinkCredential {
         Objects.equals(this.integrationKey, streamSubscriptionSinkCredential.integrationKey) &&
         Objects.equals(this.apiKey, streamSubscriptionSinkCredential.apiKey) &&
         Objects.equals(this.username, streamSubscriptionSinkCredential.username) &&
-        Objects.equals(this.password, streamSubscriptionSinkCredential.password)&&
+        Objects.equals(this.password, streamSubscriptionSinkCredential.password) &&
+        Objects.equals(this.apiToken, streamSubscriptionSinkCredential.apiToken)&&
         Objects.equals(this.additionalProperties, streamSubscriptionSinkCredential.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, accessToken, integrationKey, apiKey, username, password, additionalProperties);
+    return Objects.hash(type, accessToken, integrationKey, apiKey, username, password, apiToken, additionalProperties);
   }
 
   @Override
@@ -331,6 +358,7 @@ public class StreamSubscriptionSinkCredential {
     sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    apiToken: ").append(toIndentedString(apiToken)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -353,7 +381,7 @@ public class StreamSubscriptionSinkCredential {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "accessToken", "integrationKey", "apiKey", "username", "password"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "accessToken", "integrationKey", "apiKey", "username", "password", "apiToken"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -393,6 +421,9 @@ public class StreamSubscriptionSinkCredential {
       }
       if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      }
+      if ((jsonObj.get("apiToken") != null && !jsonObj.get("apiToken").isJsonNull()) && !jsonObj.get("apiToken").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `apiToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiToken").toString()));
       }
   }
 

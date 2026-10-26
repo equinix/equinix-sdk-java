@@ -34,6 +34,7 @@ import com.equinix.sdk.fabricv4.model.Stream;
 import com.equinix.sdk.fabricv4.model.StreamAsset;
 import com.equinix.sdk.fabricv4.model.StreamAssetPutRequest;
 import com.equinix.sdk.fabricv4.model.StreamAssetSearchRequest;
+import com.equinix.sdk.fabricv4.model.StreamDevicePutRequest;
 import com.equinix.sdk.fabricv4.model.StreamPostRequest;
 import com.equinix.sdk.fabricv4.model.StreamPutRequest;
 import com.equinix.sdk.fabricv4.model.StreamSearchRequest;
@@ -544,6 +545,163 @@ public class StreamsApi {
         return localVarCall;
     }
     /**
+     * Build call for deleteStreamDevice
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteStreamDeviceCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/streams/{streamId}/devices/{deviceId}"
+            .replace("{" + "streamId" + "}", localVarApiClient.escapeString(streamId.toString()))
+            .replace("{" + "deviceId" + "}", localVarApiClient.escapeString(deviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteStreamDeviceValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'streamId' is set
+        if (streamId == null) {
+            throw new ApiException("Missing the required parameter 'streamId' when calling deleteStreamDevice(Async)");
+        }
+
+        // verify the required parameter 'deviceId' is set
+        if (deviceId == null) {
+            throw new ApiException("Missing the required parameter 'deviceId' when calling deleteStreamDevice(Async)");
+        }
+
+        return deleteStreamDeviceCall(streamId, deviceId, _callback);
+
+    }
+
+    /**
+     * Detach Network Edge Device
+     * This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @return StreamAsset
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public StreamAsset deleteStreamDevice(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId) throws ApiException {
+        ApiResponse<StreamAsset> localVarResp = deleteStreamDeviceWithHttpInfo(streamId, deviceId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Detach Network Edge Device
+     * This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @return ApiResponse&lt;StreamAsset&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<StreamAsset> deleteStreamDeviceWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId) throws ApiException {
+        okhttp3.Call localVarCall = deleteStreamDeviceValidateBeforeCall(streamId, deviceId, null);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Detach Network Edge Device (asynchronously)
+     * This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteStreamDeviceAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback<StreamAsset> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteStreamDeviceValidateBeforeCall(streamId, deviceId, _callback);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getStreamAssetByUuid
      * @param assetId asset UUID (required)
      * @param asset asset (required)
@@ -854,6 +1012,163 @@ public class StreamsApi {
 
         okhttp3.Call localVarCall = getStreamByUuidValidateBeforeCall(streamId, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getStreamDevice
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getStreamDeviceCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/streams/{streamId}/devices/{deviceId}"
+            .replace("{" + "streamId" + "}", localVarApiClient.escapeString(streamId.toString()))
+            .replace("{" + "deviceId" + "}", localVarApiClient.escapeString(deviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getStreamDeviceValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'streamId' is set
+        if (streamId == null) {
+            throw new ApiException("Missing the required parameter 'streamId' when calling getStreamDevice(Async)");
+        }
+
+        // verify the required parameter 'deviceId' is set
+        if (deviceId == null) {
+            throw new ApiException("Missing the required parameter 'deviceId' when calling getStreamDevice(Async)");
+        }
+
+        return getStreamDeviceCall(streamId, deviceId, _callback);
+
+    }
+
+    /**
+     * Get Network Edge Device
+     * This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @return StreamAsset
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public StreamAsset getStreamDevice(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId) throws ApiException {
+        ApiResponse<StreamAsset> localVarResp = getStreamDeviceWithHttpInfo(streamId, deviceId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Network Edge Device
+     * This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @return ApiResponse&lt;StreamAsset&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<StreamAsset> getStreamDeviceWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId) throws ApiException {
+        okhttp3.Call localVarCall = getStreamDeviceValidateBeforeCall(streamId, deviceId, null);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Network Edge Device (asynchronously)
+     * This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getStreamDeviceAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, final ApiCallback<StreamAsset> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getStreamDeviceValidateBeforeCall(streamId, deviceId, _callback);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1630,6 +1945,177 @@ public class StreamsApi {
 
         okhttp3.Call localVarCall = updateStreamByUuidValidateBeforeCall(streamId, streamPutRequest, _callback);
         Type localVarReturnType = new TypeToken<Stream>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateStreamDevice
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param streamDevicePutRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateStreamDeviceCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, @javax.annotation.Nonnull StreamDevicePutRequest streamDevicePutRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = streamDevicePutRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/streams/{streamId}/devices/{deviceId}"
+            .replace("{" + "streamId" + "}", localVarApiClient.escapeString(streamId.toString()))
+            .replace("{" + "deviceId" + "}", localVarApiClient.escapeString(deviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateStreamDeviceValidateBeforeCall(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, @javax.annotation.Nonnull StreamDevicePutRequest streamDevicePutRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'streamId' is set
+        if (streamId == null) {
+            throw new ApiException("Missing the required parameter 'streamId' when calling updateStreamDevice(Async)");
+        }
+
+        // verify the required parameter 'deviceId' is set
+        if (deviceId == null) {
+            throw new ApiException("Missing the required parameter 'deviceId' when calling updateStreamDevice(Async)");
+        }
+
+        // verify the required parameter 'streamDevicePutRequest' is set
+        if (streamDevicePutRequest == null) {
+            throw new ApiException("Missing the required parameter 'streamDevicePutRequest' when calling updateStreamDevice(Async)");
+        }
+
+        return updateStreamDeviceCall(streamId, deviceId, streamDevicePutRequest, _callback);
+
+    }
+
+    /**
+     * Attach Network Edge Device Interfaces
+     * This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param streamDevicePutRequest  (required)
+     * @return StreamAsset
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public StreamAsset updateStreamDevice(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, @javax.annotation.Nonnull StreamDevicePutRequest streamDevicePutRequest) throws ApiException {
+        ApiResponse<StreamAsset> localVarResp = updateStreamDeviceWithHttpInfo(streamId, deviceId, streamDevicePutRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Attach Network Edge Device Interfaces
+     * This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param streamDevicePutRequest  (required)
+     * @return ApiResponse&lt;StreamAsset&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<StreamAsset> updateStreamDeviceWithHttpInfo(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, @javax.annotation.Nonnull StreamDevicePutRequest streamDevicePutRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateStreamDeviceValidateBeforeCall(streamId, deviceId, streamDevicePutRequest, null);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Attach Network Edge Device Interfaces (asynchronously)
+     * This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+     * @param streamId Stream UUID (required)
+     * @param deviceId Network Edge Device UUID (required)
+     * @param streamDevicePutRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Stream Network Edge Device asset object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateStreamDeviceAsync(@javax.annotation.Nonnull UUID streamId, @javax.annotation.Nonnull UUID deviceId, @javax.annotation.Nonnull StreamDevicePutRequest streamDevicePutRequest, final ApiCallback<StreamAsset> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateStreamDeviceValidateBeforeCall(streamId, deviceId, streamDevicePutRequest, _callback);
+        Type localVarReturnType = new TypeToken<StreamAsset>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

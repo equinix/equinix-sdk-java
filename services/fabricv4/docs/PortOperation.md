@@ -15,6 +15,7 @@ Operational specifications for ports.
 |**accessVCCount** | **Long** | Total number of connections. |  [optional] |
 |**opStatusChangedAt** | **OffsetDateTime** | Date and time at which port availability changed. |  [optional] |
 |**maintenanceStatus** | **MaintenanceState** |  |  [optional] |
+|**lockEnabled** | **Boolean** | Indicates whether the port configuration is locked due to an ongoing or scheduled maintenance. |  [optional] |
 
 
 

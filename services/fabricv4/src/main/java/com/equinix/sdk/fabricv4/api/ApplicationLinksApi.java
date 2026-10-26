@@ -27,21 +27,27 @@ import java.io.IOException;
 
 import com.equinix.sdk.fabricv4.model.AppLink;
 import com.equinix.sdk.fabricv4.model.AppLinkAppDomainAttachment;
+import com.equinix.sdk.fabricv4.model.AppLinkAppProcessorAttachment;
 import com.equinix.sdk.fabricv4.model.AppLinkAppServiceAttachment;
 import com.equinix.sdk.fabricv4.model.AppLinkAppServiceAttachmentChangeOperation;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachDomainSearchRequest;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachDomainSearchResponse;
+import com.equinix.sdk.fabricv4.model.AppLinkAttachProcessorRequest;
+import com.equinix.sdk.fabricv4.model.AppLinkAttachProcessorSearchRequest;
+import com.equinix.sdk.fabricv4.model.AppLinkAttachProcessorSearchResponse;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachServiceRequest;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachServiceSearchRequest;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachServiceSearchResponse;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachState;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachedAppDomains;
+import com.equinix.sdk.fabricv4.model.AppLinkAttachedAppProcessors;
 import com.equinix.sdk.fabricv4.model.AppLinkAttachedAppServices;
 import com.equinix.sdk.fabricv4.model.AppLinkChangeOperation;
 import com.equinix.sdk.fabricv4.model.AppLinkPostRequest;
 import com.equinix.sdk.fabricv4.model.AppLinkSearchRequest;
 import com.equinix.sdk.fabricv4.model.AppLinkSearchResponse;
 import com.equinix.sdk.fabricv4.model.AttachedAppDomainOrder;
+import com.equinix.sdk.fabricv4.model.AttachedAppProcessorOrder;
 import com.equinix.sdk.fabricv4.model.AttachedAppServiceOrder;
 import com.equinix.sdk.fabricv4.model.Error;
 import com.equinix.sdk.fabricv4.model.Style;
@@ -172,8 +178,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Domain to App Link
-     * This API provides ability to attach the user&#39;s App Domain to App Link.
+     * Attach Domain to Link
+     * This API provides ability to attach the user&#39;s App Domain to App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @return AppLinkAppDomainAttachment
@@ -196,8 +202,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Domain to App Link
-     * This API provides ability to attach the user&#39;s App Domain to App Link.
+     * Attach Domain to Link
+     * This API provides ability to attach the user&#39;s App Domain to App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @return ApiResponse&lt;AppLinkAppDomainAttachment&gt;
@@ -221,8 +227,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Domain to App Link (asynchronously)
-     * This API provides ability to attach the user&#39;s App Domain to App Link.
+     * Attach Domain to Link (asynchronously)
+     * This API provides ability to attach the user&#39;s App Domain to App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -244,6 +250,177 @@ public class ApplicationLinksApi {
 
         okhttp3.Call localVarCall = attachAppDomainToAppLinkValidateBeforeCall(appLinkId, appDomainId, _callback);
         Type localVarReturnType = new TypeToken<AppLinkAppDomainAttachment>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for attachAppProcessorToAppLink
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param appLinkAttachProcessorRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Attach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call attachAppProcessorToAppLinkCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, @javax.annotation.Nonnull AppLinkAttachProcessorRequest appLinkAttachProcessorRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = appLinkAttachProcessorRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}"
+            .replace("{" + "appLinkId" + "}", localVarApiClient.escapeString(appLinkId.toString()))
+            .replace("{" + "appProcessorId" + "}", localVarApiClient.escapeString(appProcessorId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call attachAppProcessorToAppLinkValidateBeforeCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, @javax.annotation.Nonnull AppLinkAttachProcessorRequest appLinkAttachProcessorRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appLinkId' is set
+        if (appLinkId == null) {
+            throw new ApiException("Missing the required parameter 'appLinkId' when calling attachAppProcessorToAppLink(Async)");
+        }
+
+        // verify the required parameter 'appProcessorId' is set
+        if (appProcessorId == null) {
+            throw new ApiException("Missing the required parameter 'appProcessorId' when calling attachAppProcessorToAppLink(Async)");
+        }
+
+        // verify the required parameter 'appLinkAttachProcessorRequest' is set
+        if (appLinkAttachProcessorRequest == null) {
+            throw new ApiException("Missing the required parameter 'appLinkAttachProcessorRequest' when calling attachAppProcessorToAppLink(Async)");
+        }
+
+        return attachAppProcessorToAppLinkCall(appLinkId, appProcessorId, appLinkAttachProcessorRequest, _callback);
+
+    }
+
+    /**
+     * Attach Processor to Link
+     * This API provides ability to attach an App Processor to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param appLinkAttachProcessorRequest  (required)
+     * @return AppLinkAppProcessorAttachment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Attach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppLinkAppProcessorAttachment attachAppProcessorToAppLink(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, @javax.annotation.Nonnull AppLinkAttachProcessorRequest appLinkAttachProcessorRequest) throws ApiException {
+        ApiResponse<AppLinkAppProcessorAttachment> localVarResp = attachAppProcessorToAppLinkWithHttpInfo(appLinkId, appProcessorId, appLinkAttachProcessorRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Attach Processor to Link
+     * This API provides ability to attach an App Processor to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param appLinkAttachProcessorRequest  (required)
+     * @return ApiResponse&lt;AppLinkAppProcessorAttachment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Attach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppLinkAppProcessorAttachment> attachAppProcessorToAppLinkWithHttpInfo(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, @javax.annotation.Nonnull AppLinkAttachProcessorRequest appLinkAttachProcessorRequest) throws ApiException {
+        okhttp3.Call localVarCall = attachAppProcessorToAppLinkValidateBeforeCall(appLinkId, appProcessorId, appLinkAttachProcessorRequest, null);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Attach Processor to Link (asynchronously)
+     * This API provides ability to attach an App Processor to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param appLinkAttachProcessorRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Attach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call attachAppProcessorToAppLinkAsync(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, @javax.annotation.Nonnull AppLinkAttachProcessorRequest appLinkAttachProcessorRequest, final ApiCallback<AppLinkAppProcessorAttachment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = attachAppProcessorToAppLinkValidateBeforeCall(appLinkId, appProcessorId, appLinkAttachProcessorRequest, _callback);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -335,8 +512,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Service to App Link
-     * This API provides ability to attach the user&#39;s App Service to App Link.
+     * Attach Service to Link
+     * This API provides ability to attach the user&#39;s App Service to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAttachServiceRequest  (required)
@@ -359,8 +536,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Service to App Link
-     * This API provides ability to attach the user&#39;s App Service to App Link.
+     * Attach Service to Link
+     * This API provides ability to attach the user&#39;s App Service to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAttachServiceRequest  (required)
@@ -384,8 +561,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Attach App Service to App Link (asynchronously)
-     * This API provides ability to attach the user&#39;s App Service to App Link.
+     * Attach Service to Link (asynchronously)
+     * This API provides ability to attach the user&#39;s App Service to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAttachServiceRequest  (required)
@@ -485,8 +662,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Create App Link
-     * This API provides capability to create user&#39;s App Link
+     * Create Link
+     * This API provides capability to create user&#39;s Link
      * @param appLinkPostRequest  (required)
      * @return AppLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -508,8 +685,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Create App Link
-     * This API provides capability to create user&#39;s App Link
+     * Create Link
+     * This API provides capability to create user&#39;s Link
      * @param appLinkPostRequest  (required)
      * @return ApiResponse&lt;AppLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -532,8 +709,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Create App Link (asynchronously)
-     * This API provides capability to create user&#39;s App Link
+     * Create Link (asynchronously)
+     * This API provides capability to create user&#39;s Link
      * @param appLinkPostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -632,8 +809,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Delete App Link
-     * This API provides capability to delete user&#39;s App Link
+     * Delete Link
+     * This API provides capability to delete user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @return AppLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -655,8 +832,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Delete App Link
-     * This API provides capability to delete user&#39;s App Link
+     * Delete Link
+     * This API provides capability to delete user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @return ApiResponse&lt;AppLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -679,8 +856,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Delete App Link (asynchronously)
-     * This API provides capability to delete user&#39;s App Link
+     * Delete Link (asynchronously)
+     * This API provides capability to delete user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -786,7 +963,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Domain from App Link
+     * Detach Domain from Link
      * This API provides ability to detach App Domain from App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
@@ -810,7 +987,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Domain from App Link
+     * Detach Domain from Link
      * This API provides ability to detach App Domain from App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
@@ -835,7 +1012,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Domain from App Link (asynchronously)
+     * Detach Domain from Link (asynchronously)
      * This API provides ability to detach App Domain from App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
@@ -858,6 +1035,163 @@ public class ApplicationLinksApi {
 
         okhttp3.Call localVarCall = detachAppDomainFromAppLinkValidateBeforeCall(appLinkId, appDomainId, _callback);
         Type localVarReturnType = new TypeToken<AppLinkAppDomainAttachment>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for detachAppProcessorFromAppLink
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Detach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call detachAppProcessorFromAppLinkCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}"
+            .replace("{" + "appLinkId" + "}", localVarApiClient.escapeString(appLinkId.toString()))
+            .replace("{" + "appProcessorId" + "}", localVarApiClient.escapeString(appProcessorId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call detachAppProcessorFromAppLinkValidateBeforeCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appLinkId' is set
+        if (appLinkId == null) {
+            throw new ApiException("Missing the required parameter 'appLinkId' when calling detachAppProcessorFromAppLink(Async)");
+        }
+
+        // verify the required parameter 'appProcessorId' is set
+        if (appProcessorId == null) {
+            throw new ApiException("Missing the required parameter 'appProcessorId' when calling detachAppProcessorFromAppLink(Async)");
+        }
+
+        return detachAppProcessorFromAppLinkCall(appLinkId, appProcessorId, _callback);
+
+    }
+
+    /**
+     * Detach App Processor from App Link
+     * This API provides ability to detach an App Processor from an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @return AppLinkAppProcessorAttachment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Detach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppLinkAppProcessorAttachment detachAppProcessorFromAppLink(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId) throws ApiException {
+        ApiResponse<AppLinkAppProcessorAttachment> localVarResp = detachAppProcessorFromAppLinkWithHttpInfo(appLinkId, appProcessorId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Detach App Processor from App Link
+     * This API provides ability to detach an App Processor from an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @return ApiResponse&lt;AppLinkAppProcessorAttachment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Detach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppLinkAppProcessorAttachment> detachAppProcessorFromAppLinkWithHttpInfo(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId) throws ApiException {
+        okhttp3.Call localVarCall = detachAppProcessorFromAppLinkValidateBeforeCall(appLinkId, appProcessorId, null);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Detach App Processor from App Link (asynchronously)
+     * This API provides ability to detach an App Processor from an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Detach App Processor object </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call detachAppProcessorFromAppLinkAsync(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback<AppLinkAppProcessorAttachment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = detachAppProcessorFromAppLinkValidateBeforeCall(appLinkId, appProcessorId, _callback);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -943,7 +1277,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Service from App Link
+     * Detach Service from Link
      * This API provides ability to detach App Service from App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
@@ -967,7 +1301,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Service from App Link
+     * Detach Service from Link
      * This API provides ability to detach App Service from App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
@@ -992,7 +1326,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Detach App Service from App Link (asynchronously)
+     * Detach Service from Link (asynchronously)
      * This API provides ability to detach App Service from App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
@@ -1092,8 +1426,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get App Link
-     * This API provides capability to retrieve user&#39;s App Link
+     * Get Link
+     * This API provides capability to retrieve user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @return AppLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1114,8 +1448,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get App Link
-     * This API provides capability to retrieve user&#39;s App Link
+     * Get Link
+     * This API provides capability to retrieve user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @return ApiResponse&lt;AppLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1137,8 +1471,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get App Link (asynchronously)
-     * This API provides capability to retrieve user&#39;s App Link
+     * Get Link (asynchronously)
+     * This API provides capability to retrieve user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1242,8 +1576,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domain for App Link
-     * This API provides ability to retrieve an App Domain attached to an App Link.
+     * Get Attached Domain for Link
+     * This API provides ability to retrieve an App Domain attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @return AppLinkAppDomainAttachment
@@ -1265,8 +1599,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domain for App Link
-     * This API provides ability to retrieve an App Domain attached to an App Link.
+     * Get Attached Domain for Link
+     * This API provides ability to retrieve an App Domain attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @return ApiResponse&lt;AppLinkAppDomainAttachment&gt;
@@ -1289,8 +1623,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domain for App Link (asynchronously)
-     * This API provides ability to retrieve an App Domain attached to an App Link.
+     * Get Attached Domain for Link (asynchronously)
+     * This API provides ability to retrieve an App Domain attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appDomainId App Domain UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1414,8 +1748,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domains for App Link
-     * This API provides capability to retrieve App Domains attached to an App Link.
+     * Get Attached Domains for Link
+     * This API provides capability to retrieve App Domains attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1442,8 +1776,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domains for App Link
-     * This API provides capability to retrieve App Domains attached to an App Link.
+     * Get Attached Domains for Link
+     * This API provides capability to retrieve App Domains attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1471,8 +1805,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Domains for App Link (asynchronously)
-     * This API provides capability to retrieve App Domains attached to an App Link.
+     * Get Attached Domains for Link (asynchronously)
+     * This API provides capability to retrieve App Domains attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1498,6 +1832,346 @@ public class ApplicationLinksApi {
 
         okhttp3.Call localVarCall = getAttachedAppDomainsByAppLinkIdValidateBeforeCall(appLinkId, offset, limit, attachmentStatus, order, style, _callback);
         Type localVarReturnType = new TypeToken<AppLinkAttachedAppDomains>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getAttachedAppProcessor
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> App Processor attachment object </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAttachedAppProcessorCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}"
+            .replace("{" + "appLinkId" + "}", localVarApiClient.escapeString(appLinkId.toString()))
+            .replace("{" + "appProcessorId" + "}", localVarApiClient.escapeString(appProcessorId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAttachedAppProcessorValidateBeforeCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appLinkId' is set
+        if (appLinkId == null) {
+            throw new ApiException("Missing the required parameter 'appLinkId' when calling getAttachedAppProcessor(Async)");
+        }
+
+        // verify the required parameter 'appProcessorId' is set
+        if (appProcessorId == null) {
+            throw new ApiException("Missing the required parameter 'appProcessorId' when calling getAttachedAppProcessor(Async)");
+        }
+
+        return getAttachedAppProcessorCall(appLinkId, appProcessorId, _callback);
+
+    }
+
+    /**
+     * Get attached App Processor for App Link
+     * This API provides ability to get an App Processor attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @return AppLinkAppProcessorAttachment
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> App Processor attachment object </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppLinkAppProcessorAttachment getAttachedAppProcessor(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId) throws ApiException {
+        ApiResponse<AppLinkAppProcessorAttachment> localVarResp = getAttachedAppProcessorWithHttpInfo(appLinkId, appProcessorId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get attached App Processor for App Link
+     * This API provides ability to get an App Processor attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @return ApiResponse&lt;AppLinkAppProcessorAttachment&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> App Processor attachment object </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppLinkAppProcessorAttachment> getAttachedAppProcessorWithHttpInfo(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId) throws ApiException {
+        okhttp3.Call localVarCall = getAttachedAppProcessorValidateBeforeCall(appLinkId, appProcessorId, null);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get attached App Processor for App Link (asynchronously)
+     * This API provides ability to get an App Processor attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param appProcessorId App Processor UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> App Processor attachment object </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAttachedAppProcessorAsync(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull UUID appProcessorId, final ApiCallback<AppLinkAppProcessorAttachment> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAttachedAppProcessorValidateBeforeCall(appLinkId, appProcessorId, _callback);
+        Type localVarReturnType = new TypeToken<AppLinkAppProcessorAttachment>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getAttachedAppProcessorsByAppLinkId
+     * @param appLinkId App Link UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param attachmentStatus Filter attached App Processors by one or more attachment lifecycle states. (optional)
+     * @param order Sort order for attached App Processors. (optional, default to DESC)
+     * @param style Detail level of the response. (optional, default to MEDIUM)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAttachedAppProcessorsByAppLinkIdCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable List<AppLinkAttachState> attachmentStatus, @javax.annotation.Nullable AttachedAppProcessorOrder order, @javax.annotation.Nullable Style style, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/appLinks/{appLinkId}/appProcessors"
+            .replace("{" + "appLinkId" + "}", localVarApiClient.escapeString(appLinkId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (attachmentStatus != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "attachmentStatus", attachmentStatus));
+        }
+
+        if (order != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order", order));
+        }
+
+        if (style != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("style", style));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAttachedAppProcessorsByAppLinkIdValidateBeforeCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable List<AppLinkAttachState> attachmentStatus, @javax.annotation.Nullable AttachedAppProcessorOrder order, @javax.annotation.Nullable Style style, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appLinkId' is set
+        if (appLinkId == null) {
+            throw new ApiException("Missing the required parameter 'appLinkId' when calling getAttachedAppProcessorsByAppLinkId(Async)");
+        }
+
+        return getAttachedAppProcessorsByAppLinkIdCall(appLinkId, offset, limit, attachmentStatus, order, style, _callback);
+
+    }
+
+    /**
+     * Get attached Processors for Link
+     * This API provides capability to retrieve App Processors attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param attachmentStatus Filter attached App Processors by one or more attachment lifecycle states. (optional)
+     * @param order Sort order for attached App Processors. (optional, default to DESC)
+     * @param style Detail level of the response. (optional, default to MEDIUM)
+     * @return AppLinkAttachedAppProcessors
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppLinkAttachedAppProcessors getAttachedAppProcessorsByAppLinkId(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable List<AppLinkAttachState> attachmentStatus, @javax.annotation.Nullable AttachedAppProcessorOrder order, @javax.annotation.Nullable Style style) throws ApiException {
+        ApiResponse<AppLinkAttachedAppProcessors> localVarResp = getAttachedAppProcessorsByAppLinkIdWithHttpInfo(appLinkId, offset, limit, attachmentStatus, order, style);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get attached Processors for Link
+     * This API provides capability to retrieve App Processors attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param attachmentStatus Filter attached App Processors by one or more attachment lifecycle states. (optional)
+     * @param order Sort order for attached App Processors. (optional, default to DESC)
+     * @param style Detail level of the response. (optional, default to MEDIUM)
+     * @return ApiResponse&lt;AppLinkAttachedAppProcessors&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppLinkAttachedAppProcessors> getAttachedAppProcessorsByAppLinkIdWithHttpInfo(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable List<AppLinkAttachState> attachmentStatus, @javax.annotation.Nullable AttachedAppProcessorOrder order, @javax.annotation.Nullable Style style) throws ApiException {
+        okhttp3.Call localVarCall = getAttachedAppProcessorsByAppLinkIdValidateBeforeCall(appLinkId, offset, limit, attachmentStatus, order, style, null);
+        Type localVarReturnType = new TypeToken<AppLinkAttachedAppProcessors>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get attached Processors for Link (asynchronously)
+     * This API provides capability to retrieve App Processors attached to an App Link.
+     * @param appLinkId App Link UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
+     * @param attachmentStatus Filter attached App Processors by one or more attachment lifecycle states. (optional)
+     * @param order Sort order for attached App Processors. (optional, default to DESC)
+     * @param style Detail level of the response. (optional, default to MEDIUM)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAttachedAppProcessorsByAppLinkIdAsync(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable List<AppLinkAttachState> attachmentStatus, @javax.annotation.Nullable AttachedAppProcessorOrder order, @javax.annotation.Nullable Style style, final ApiCallback<AppLinkAttachedAppProcessors> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAttachedAppProcessorsByAppLinkIdValidateBeforeCall(appLinkId, offset, limit, attachmentStatus, order, style, _callback);
+        Type localVarReturnType = new TypeToken<AppLinkAttachedAppProcessors>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1582,8 +2256,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Service for App Link
-     * This API provides ability to retrieve an App Service attached to an App Link.
+     * Get Attached Service for Link
+     * This API provides ability to retrieve an App Service attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @return AppLinkAppServiceAttachment
@@ -1605,8 +2279,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Service for App Link
-     * This API provides ability to retrieve an App Service attached to an App Link.
+     * Get Attached Service for Link
+     * This API provides ability to retrieve an App Service attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @return ApiResponse&lt;AppLinkAppServiceAttachment&gt;
@@ -1629,8 +2303,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Service for App Link (asynchronously)
-     * This API provides ability to retrieve an App Service attached to an App Link.
+     * Get Attached Service for Link (asynchronously)
+     * This API provides ability to retrieve an App Service attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1754,8 +2428,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Services for App Link
-     * This API provides capability to retrieve App Services attached to an App Link.
+     * Get Attached Services for Link
+     * This API provides capability to retrieve App Services attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1782,8 +2456,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Services for App Link
-     * This API provides capability to retrieve App Services attached to an App Link.
+     * Get Attached Services for Link
+     * This API provides capability to retrieve App Services attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1811,8 +2485,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Get attached App Services for App Link (asynchronously)
-     * This API provides capability to retrieve App Services attached to an App Link.
+     * Get Attached Services for Link (asynchronously)
+     * This API provides capability to retrieve App Services attached to an App Link
      * @param appLinkId App Link UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1916,7 +2590,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search App Links
+     * Search Links
      * The API provides capability to get list of user&#39;s App Links using search criteria, including optional filtering, pagination and sorting
      * @param appLinkSearchRequest  (required)
      * @return AppLinkSearchResponse
@@ -1939,7 +2613,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search App Links
+     * Search Links
      * The API provides capability to get list of user&#39;s App Links using search criteria, including optional filtering, pagination and sorting
      * @param appLinkSearchRequest  (required)
      * @return ApiResponse&lt;AppLinkSearchResponse&gt;
@@ -1963,7 +2637,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search App Links (asynchronously)
+     * Search Links (asynchronously)
      * The API provides capability to get list of user&#39;s App Links using search criteria, including optional filtering, pagination and sorting
      * @param appLinkSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -2070,7 +2744,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Domain to App Link
+     * Search Attached Domains for Link
      * The API provides capability to get list of user&#39;s attached App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachDomainSearchRequest  (required)
@@ -2094,7 +2768,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Domain to App Link
+     * Search Attached Domains for Link
      * The API provides capability to get list of user&#39;s attached App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachDomainSearchRequest  (required)
@@ -2119,7 +2793,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Domain to App Link (asynchronously)
+     * Search Attached Domains for Link (asynchronously)
      * The API provides capability to get list of user&#39;s attached App Domains using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachDomainSearchRequest  (required)
@@ -2142,6 +2816,163 @@ public class ApplicationLinksApi {
 
         okhttp3.Call localVarCall = searchAttachedAppDomainsValidateBeforeCall(appLinkId, appLinkAttachDomainSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<AppLinkAttachDomainSearchResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for searchAttachedAppProcessors
+     * @param appLinkId App Link UUID (required)
+     * @param appLinkAttachProcessorSearchRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchAttachedAppProcessorsCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = appLinkAttachProcessorSearchRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/appLinks/{appLinkId}/appProcessors/search"
+            .replace("{" + "appLinkId" + "}", localVarApiClient.escapeString(appLinkId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call searchAttachedAppProcessorsValidateBeforeCall(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appLinkId' is set
+        if (appLinkId == null) {
+            throw new ApiException("Missing the required parameter 'appLinkId' when calling searchAttachedAppProcessors(Async)");
+        }
+
+        // verify the required parameter 'appLinkAttachProcessorSearchRequest' is set
+        if (appLinkAttachProcessorSearchRequest == null) {
+            throw new ApiException("Missing the required parameter 'appLinkAttachProcessorSearchRequest' when calling searchAttachedAppProcessors(Async)");
+        }
+
+        return searchAttachedAppProcessorsCall(appLinkId, appLinkAttachProcessorSearchRequest, _callback);
+
+    }
+
+    /**
+     * Search attached Processors to Link
+     * The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+     * @param appLinkId App Link UUID (required)
+     * @param appLinkAttachProcessorSearchRequest  (required)
+     * @return AppLinkAttachProcessorSearchResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppLinkAttachProcessorSearchResponse searchAttachedAppProcessors(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest) throws ApiException {
+        ApiResponse<AppLinkAttachProcessorSearchResponse> localVarResp = searchAttachedAppProcessorsWithHttpInfo(appLinkId, appLinkAttachProcessorSearchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search attached Processors to Link
+     * The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+     * @param appLinkId App Link UUID (required)
+     * @param appLinkAttachProcessorSearchRequest  (required)
+     * @return ApiResponse&lt;AppLinkAttachProcessorSearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppLinkAttachProcessorSearchResponse> searchAttachedAppProcessorsWithHttpInfo(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = searchAttachedAppProcessorsValidateBeforeCall(appLinkId, appLinkAttachProcessorSearchRequest, null);
+        Type localVarReturnType = new TypeToken<AppLinkAttachProcessorSearchResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search attached Processors to Link (asynchronously)
+     * The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+     * @param appLinkId App Link UUID (required)
+     * @param appLinkAttachProcessorSearchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> Unsupported Media Type </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call searchAttachedAppProcessorsAsync(@javax.annotation.Nonnull UUID appLinkId, @javax.annotation.Nonnull AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest, final ApiCallback<AppLinkAttachProcessorSearchResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = searchAttachedAppProcessorsValidateBeforeCall(appLinkId, appLinkAttachProcessorSearchRequest, _callback);
+        Type localVarReturnType = new TypeToken<AppLinkAttachProcessorSearchResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2227,7 +3058,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Service to App Link
+     * Search Attached Services for Link
      * The API provides capability to get list of user&#39;s attached App Services using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachServiceSearchRequest  (required)
@@ -2251,7 +3082,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Service to App Link
+     * Search Attached Services for Link
      * The API provides capability to get list of user&#39;s attached App Services using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachServiceSearchRequest  (required)
@@ -2276,7 +3107,7 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Search attached App Service to App Link (asynchronously)
+     * Search Attached Services for Link (asynchronously)
      * The API provides capability to get list of user&#39;s attached App Services using search criteria, including optional filtering, pagination and sorting
      * @param appLinkId App Link UUID (required)
      * @param appLinkAttachServiceSearchRequest  (required)
@@ -2385,8 +3216,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Link
-     * This API provides capability to update user&#39;s App Link
+     * Update Link
+     * This API provides capability to update user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @param appLinkChangeOperation  (required)
      * @return AppLink
@@ -2410,8 +3241,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Link
-     * This API provides capability to update user&#39;s App Link
+     * Update Link
+     * This API provides capability to update user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @param appLinkChangeOperation  (required)
      * @return ApiResponse&lt;AppLink&gt;
@@ -2436,8 +3267,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Link (asynchronously)
-     * This API provides capability to update user&#39;s App Link
+     * Update Link (asynchronously)
+     * This API provides capability to update user&#39;s Link
      * @param appLinkId App Link UUID (required)
      * @param appLinkChangeOperation  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -2553,8 +3384,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Service attachment to App Link
-     * This API provides ability to update the App Service attachment to App Link.
+     * Update Service Attachment for Link
+     * This API provides ability to update the App Service attachment to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAppServiceAttachmentChangeOperation  (required)
@@ -2579,8 +3410,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Service attachment to App Link
-     * This API provides ability to update the App Service attachment to App Link.
+     * Update Service Attachment for Link
+     * This API provides ability to update the App Service attachment to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAppServiceAttachmentChangeOperation  (required)
@@ -2606,8 +3437,8 @@ public class ApplicationLinksApi {
     }
 
     /**
-     * Update App Service attachment to App Link (asynchronously)
-     * This API provides ability to update the App Service attachment to App Link.
+     * Update Service Attachment for Link (asynchronously)
+     * This API provides ability to update the App Service attachment to App Link
      * @param appLinkId App Link UUID (required)
      * @param appServiceId App Service UUID (required)
      * @param appLinkAppServiceAttachmentChangeOperation  (required)

@@ -4,26 +4,26 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createServiceProfile**](ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Profile |
-| [**createServiceProfileAction**](ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions |
-| [**deleteServiceProfileByUuid**](ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile |
-| [**getServiceProfileByUuid**](ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile |
-| [**getServiceProfileEnvironmentsByUuid**](ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments |
-| [**getServiceProfileMetrosByUuid**](ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros |
-| [**getServiceProfiles**](ServiceProfilesApi.md#getServiceProfiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles |
-| [**putServiceProfileByUuid**](ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile |
-| [**searchServiceProfiles**](ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search |
-| [**serviceProfileEnvironmentAction**](ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions |
-| [**updateServiceProfileByUuid**](ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile |
+| [**createServiceProfile**](ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Service Profile |
+| [**createServiceProfileAction**](ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Create Service Profile Action |
+| [**deleteServiceProfileByUuid**](ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Service Profile |
+| [**getServiceProfileByUuid**](ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Service Profile |
+| [**getServiceProfileEnvironmentsByUuid**](ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Service Profile Environments |
+| [**getServiceProfileMetrosByUuid**](ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Service Profile Metros |
+| [**listServiceProfiles**](ServiceProfilesApi.md#listServiceProfiles) | **GET** /fabric/v4/serviceProfiles | List Service Profiles |
+| [**putServiceProfileByUuid**](ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Service Profile |
+| [**searchServiceProfiles**](ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Search Service Profiles |
+| [**serviceProfileEnvironmentAction**](ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Create Service Profile Environment Action |
+| [**updateServiceProfileByUuid**](ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Service Profile |
 
 
 <a id="createServiceProfile"></a>
 # **createServiceProfile**
 > ServiceProfile createServiceProfile(serviceProfileRequest)
 
-Create Profile
+Create Service Profile
 
-Create Service Profile creates Equinix Fabric™ Service Profile.
+Create Service Profile creates Equinix Fabric™ Service Profile
 
 ### Example
 ```java
@@ -92,7 +92,7 @@ public class Example {
 # **createServiceProfileAction**
 > ServiceProfileActionResponse createServiceProfileAction(serviceProfileId, serviceProfileActionRequest)
 
-Profile Actions
+Create Service Profile Action
 
 This API provides capability to accept/reject service profile update requests
 
@@ -166,7 +166,7 @@ public class Example {
 # **deleteServiceProfileByUuid**
 > ServiceProfile deleteServiceProfileByUuid(serviceProfileId)
 
-Delete Profile
+Delete Service Profile
 
 delete Service Profile by UUID
 
@@ -238,9 +238,9 @@ public class Example {
 # **getServiceProfileByUuid**
 > ServiceProfile getServiceProfileByUuid(serviceProfileId, viewPoint)
 
-Get Profile
+Get Service Profile
 
-Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view.
+Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view
 
 ### Example
 ```java
@@ -311,9 +311,9 @@ public class Example {
 # **getServiceProfileEnvironmentsByUuid**
 > ProviderEnvironments getServiceProfileEnvironmentsByUuid(serviceProfileId, offset, limit)
 
-Get Profile Environments
+Get Service Profile Environments
 
-Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
 ### Example
 ```java
@@ -386,9 +386,9 @@ public class Example {
 # **getServiceProfileMetrosByUuid**
 > ServiceMetros getServiceProfileMetrosByUuid(serviceProfileId, offset, limit)
 
-Get Profile Metros
+Get Service Profile Metros
 
-Get service profile metros by UUID.
+Get service profile metros by UUID
 
 ### Example
 ```java
@@ -457,13 +457,13 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal Server Error |  -  |
 
-<a id="getServiceProfiles"></a>
-# **getServiceProfiles**
-> ServiceProfiles getServiceProfiles(offset, limit, viewPoint)
+<a id="listServiceProfiles"></a>
+# **listServiceProfiles**
+> ServiceProfiles listServiceProfiles(offset, limit, viewPoint)
 
-Get all Profiles
+List Service Profiles
 
-The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
 
 ### Example
 ```java
@@ -489,10 +489,10 @@ public class Example {
     Integer limit = 10; // Integer | number of records to fetch
     String viewPoint = "aSide"; // String | flips view between buyer and seller representation
     try {
-      ServiceProfiles result = apiInstance.getServiceProfiles(offset, limit, viewPoint);
+      ServiceProfiles result = apiInstance.listServiceProfiles(offset, limit, viewPoint);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ServiceProfilesApi#getServiceProfiles");
+      System.err.println("Exception when calling ServiceProfilesApi#listServiceProfiles");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -536,7 +536,7 @@ public class Example {
 # **putServiceProfileByUuid**
 > ServiceProfile putServiceProfileByUuid(serviceProfileId, ifMatch, serviceProfileRequest)
 
-Replace Profile
+Replace Service Profile
 
 This API request replaces a service profile definition
 
@@ -612,7 +612,7 @@ public class Example {
 # **searchServiceProfiles**
 > ServiceProfiles searchServiceProfiles(serviceProfileSearchRequest, viewPoint)
 
-Profile Search
+Search Service Profiles
 
 Search service profiles by search criteria
 
@@ -684,7 +684,7 @@ public class Example {
 # **serviceProfileEnvironmentAction**
 > EnvironmentActionResponse serviceProfileEnvironmentAction(serviceProfileId, environmentId, environmentActionRequest)
 
-Service Profile Environment Actions
+Create Service Profile Environment Action
 
 This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 
@@ -759,7 +759,7 @@ public class Example {
 # **updateServiceProfileByUuid**
 > ServiceProfile updateServiceProfileByUuid(serviceProfileId, serviceProfileUpdateOperation)
 
-Update Profile
+Update Service Profile
 
 Update Service Profile by UUID
 

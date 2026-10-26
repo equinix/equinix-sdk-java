@@ -151,7 +151,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete IP Block by UUID
+     * Delete IP Block by ID
      * Delete IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @return IpBlock
@@ -174,7 +174,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete IP Block by UUID
+     * Delete IP Block by ID
      * Delete IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @return ApiResponse&lt;IpBlock&gt;
@@ -198,7 +198,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Delete IP Block by UUID (asynchronously)
+     * Delete IP Block by ID (asynchronously)
      * Delete IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -296,7 +296,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve IP Block by UUID
+     * Retrieve IP Block by ID
      * Retrieve IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @return IpBlock
@@ -317,7 +317,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve IP Block by UUID
+     * Retrieve IP Block by ID
      * Retrieve IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @return ApiResponse&lt;IpBlock&gt;
@@ -339,7 +339,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Retrieve IP Block by UUID (asynchronously)
+     * Retrieve IP Block by ID (asynchronously)
      * Retrieve IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -441,7 +441,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch IP Block by UUID
+     * Update IP Block by ID
      * patch IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
@@ -462,7 +462,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch IP Block by UUID
+     * Update IP Block by ID
      * patch IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
@@ -484,7 +484,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * patch IP Block by UUID (asynchronously)
+     * Update IP Block by ID (asynchronously)
      * patch IP Block by UUID
      * @param uuid UUID of the IP Block (required)
      * @param patchIpBlockRequestBodyItem  (required)
@@ -579,7 +579,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for IP Blocks
+     * Search IP Blocks
      * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @return IpBlockSearchResponseBody
@@ -599,7 +599,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for IP Blocks
+     * Search IP Blocks
      * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @return ApiResponse&lt;IpBlockSearchResponseBody&gt;
@@ -620,7 +620,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Search for IP Blocks (asynchronously)
+     * Search IP Blocks (asynchronously)
      * Search for IP Blocks based on criteria
      * @param ipBlocksSearchRequestBody  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -715,7 +715,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned IP Block request
+     * Create IP Block
      * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @return IpBlock
@@ -736,7 +736,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned IP Block request
+     * Create IP Block
      * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @return ApiResponse&lt;IpBlock&gt;
@@ -758,7 +758,7 @@ public class IpBlocksApi {
     }
 
     /**
-     * Submits new Equinix owned or customer owned IP Block request (asynchronously)
+     * Create IP Block (asynchronously)
      * Submits new Equinix owned or customer owned IP Block request
      * @param submitIpBlockRequestBody  (required)
      * @param _callback The callback to be executed when the API call finishes

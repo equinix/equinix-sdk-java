@@ -8,7 +8,7 @@ Cloud Event object
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**spec** | **String** | Cloud Event Open Telemetry specification |  [optional] [readonly] |
+|**specversion** | **String** | Cloud Event Open Telemetry specification |  [optional] [readonly] |
 |**source** | **String** | Cloud Event source |  [optional] |
 |**id** | **UUID** | Cloud Event identifier |  [optional] |
 |**type** | **String** | Equinix supported event type |  [optional] |

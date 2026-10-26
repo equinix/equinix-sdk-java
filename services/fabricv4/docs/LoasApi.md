@@ -10,7 +10,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getLoaByUuid**](LoasApi.md#getLoaByUuid) | **GET** /fabric/v4/loas/{loaId} | Get Loa |
 | [**getLoaConsumersByLoaId**](LoasApi.md#getLoaConsumersByLoaId) | **GET** /fabric/v4/loas/{loaId}/consumers | Get Loa Consumers |
 | [**getLoaNotesByUuid**](LoasApi.md#getLoaNotesByUuid) | **GET** /fabric/v4/loas/{loaId}/notes | Get Loa Notes |
-| [**performLoaAction**](LoasApi.md#performLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions | Loa Actions |
+| [**performLoaAction**](LoasApi.md#performLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions | Create LOA Action |
 | [**searchLoa**](LoasApi.md#searchLoa) | **POST** /fabric/v4/loas/search | Search Loas |
 | [**searchLoaAction**](LoasApi.md#searchLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions/search | Search Loa Actions |
 | [**updateLoaByUuid**](LoasApi.md#updateLoaByUuid) | **PATCH** /fabric/v4/loas/{loaId} | Update Loa |
@@ -456,7 +456,7 @@ public class Example {
 # **performLoaAction**
 > LoaActionResponse performLoaAction(loaId, loaActionRequest)
 
-Loa Actions
+Create LOA Action
 
 The API provides capability to perform actions on Loa
 
@@ -733,7 +733,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json-patch+json
  - **Accept**: application/json
 
 ### HTTP response details

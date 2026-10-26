@@ -646,7 +646,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get Route Filter Rule By UUID
+     * Get Route Filter Rule by ID
      * This API provides capability to view a Route Filter Rule by UUID
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -671,7 +671,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get Route Filter Rule By UUID
+     * Get Route Filter Rule by ID
      * This API provides capability to view a Route Filter Rule by UUID
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -697,7 +697,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get Route Filter Rule By UUID (asynchronously)
+     * Get Route Filter Rule by ID (asynchronously)
      * This API provides capability to view a Route Filter Rule by UUID
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -983,7 +983,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Filter Rule Changes
      * This API provides capability to retrieve all of a Route Filter Rule&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -1009,7 +1009,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Filter Rule Changes
      * This API provides capability to retrieve all of a Route Filter Rule&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -1036,7 +1036,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Get All Changes (asynchronously)
+     * Get Route Filter Rule Changes (asynchronously)
      * This API provides capability to retrieve all of a Route Filter Rule&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -1318,7 +1318,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Patch Route Filter Rule
+     * Update Route Filter Rule
      * This API provides capability to partially update a Route Filter Rule
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -1344,7 +1344,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Patch Route Filter Rule
+     * Update Route Filter Rule
      * This API provides capability to partially update a Route Filter Rule
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)
@@ -1371,7 +1371,7 @@ public class RouteFilterRulesApi {
     }
 
     /**
-     * Patch Route Filter Rule (asynchronously)
+     * Update Route Filter Rule (asynchronously)
      * This API provides capability to partially update a Route Filter Rule
      * @param routeFilterId Route Filters Id (required)
      * @param routeFilterRuleId Route  Filter  Rules Id (required)

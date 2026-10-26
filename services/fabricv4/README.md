@@ -1,7 +1,7 @@
 # fabricv4
 
 Equinix Fabric API v4
-- API version: 4.31
+- API version: 4.34.0
   - Generator version: 7.16.0
 
 Equinix Fabric is an advanced software-defined interconnection solution that enables you to directly, securely and dynamically connect to distributed infrastructure and digital ecosystems on platform Equinix via a single port, Customers can use Fabric to connect to: </br> 1. Cloud Service Providers - Clouds, network and other service providers.  </br> 2. Enterprises - Other Equinix customers, vendors and partners.  </br> 3. Myself - Another customer instance deployed at Equinix. </br> </br> <b>Integrations (SDKs, Tools) links:</b> </br> <a href=\"https://github.com/equinix/equinix-sdk-java\">Fabric Java SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-go\">Fabric Go SDK</a> </br> <a href=\"https://github.com/equinix/equinix-sdk-python\">Fabric Python SDK</a> </br> <a href=\"https://registry.terraform.io/providers/equinix/equinix/latest/docs\">Equinix Terraform Provider</a> </br> <a href=\"https://registry.terraform.io/modules/equinix/fabric/equinix/latest\">Fabric Terraform Modules</a> </br> <a href=\"https://www.pulumi.com/registry/packages/equinix/\">Equinix Pulumi Provider</a> </br>
@@ -120,64 +120,67 @@ All URIs are relative to *https://api.equinix.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApplicationDomainsApi* | [**createAppDomain**](docs/ApplicationDomainsApi.md#createAppDomain) | **POST** /fabric/v4/appDomains | Create App Domain
-*ApplicationDomainsApi* | [**deleteAppDomainByUuid**](docs/ApplicationDomainsApi.md#deleteAppDomainByUuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete App Domain
-*ApplicationDomainsApi* | [**getAppDomainByUuid**](docs/ApplicationDomainsApi.md#getAppDomainByUuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get App Domain
-*ApplicationDomainsApi* | [**getAttachedAppLinksByAppDomainId**](docs/ApplicationDomainsApi.md#getAttachedAppLinksByAppDomainId) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get attached App Links for App Domain
-*ApplicationDomainsApi* | [**searchAppDomains**](docs/ApplicationDomainsApi.md#searchAppDomains) | **POST** /fabric/v4/appDomains/search | Search App Domains
-*ApplicationDomainsApi* | [**updateAppDomainByUuid**](docs/ApplicationDomainsApi.md#updateAppDomainByUuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update App Domain
-*ApplicationLinksApi* | [**attachAppDomainToAppLink**](docs/ApplicationLinksApi.md#attachAppDomainToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Attach App Domain to App Link
-*ApplicationLinksApi* | [**attachAppServiceToAppLink**](docs/ApplicationLinksApi.md#attachAppServiceToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Attach App Service to App Link
-*ApplicationLinksApi* | [**createAppLink**](docs/ApplicationLinksApi.md#createAppLink) | **POST** /fabric/v4/appLinks | Create App Link
-*ApplicationLinksApi* | [**deleteAppLinkByUuid**](docs/ApplicationLinksApi.md#deleteAppLinkByUuid) | **DELETE** /fabric/v4/appLinks/{appLinkId} | Delete App Link
-*ApplicationLinksApi* | [**detachAppDomainFromAppLink**](docs/ApplicationLinksApi.md#detachAppDomainFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Detach App Domain from App Link
-*ApplicationLinksApi* | [**detachAppServiceFromAppLink**](docs/ApplicationLinksApi.md#detachAppServiceFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Detach App Service from App Link
-*ApplicationLinksApi* | [**getAppLinkByUuid**](docs/ApplicationLinksApi.md#getAppLinkByUuid) | **GET** /fabric/v4/appLinks/{appLinkId} | Get App Link
-*ApplicationLinksApi* | [**getAttachedAppDomainByUuid**](docs/ApplicationLinksApi.md#getAttachedAppDomainByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Get attached App Domain for App Link
-*ApplicationLinksApi* | [**getAttachedAppDomainsByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppDomainsByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains | Get attached App Domains for App Link
-*ApplicationLinksApi* | [**getAttachedAppServiceByUuid**](docs/ApplicationLinksApi.md#getAttachedAppServiceByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Get attached App Service for App Link
-*ApplicationLinksApi* | [**getAttachedAppServicesByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppServicesByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices | Get attached App Services for App Link
-*ApplicationLinksApi* | [**searchAppLinks**](docs/ApplicationLinksApi.md#searchAppLinks) | **POST** /fabric/v4/appLinks/search | Search App Links
-*ApplicationLinksApi* | [**searchAttachedAppDomains**](docs/ApplicationLinksApi.md#searchAttachedAppDomains) | **POST** /fabric/v4/appLinks/{appLinkId}/appDomains/search | Search attached App Domain to App Link
-*ApplicationLinksApi* | [**searchAttachedAppServices**](docs/ApplicationLinksApi.md#searchAttachedAppServices) | **POST** /fabric/v4/appLinks/{appLinkId}/appServices/search | Search attached App Service to App Link
-*ApplicationLinksApi* | [**updateAppLinkByUuid**](docs/ApplicationLinksApi.md#updateAppLinkByUuid) | **PATCH** /fabric/v4/appLinks/{appLinkId} | Update App Link
-*ApplicationLinksApi* | [**updateAppServiceAttachmentToAppLink**](docs/ApplicationLinksApi.md#updateAppServiceAttachmentToAppLink) | **PATCH** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Update App Service attachment to App Link
-*ApplicationServicesApi* | [**createAppService**](docs/ApplicationServicesApi.md#createAppService) | **POST** /fabric/v4/appServices | Create App Service
-*ApplicationServicesApi* | [**deleteAppServiceByUuid**](docs/ApplicationServicesApi.md#deleteAppServiceByUuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete App Service
-*ApplicationServicesApi* | [**getAppServiceByUuid**](docs/ApplicationServicesApi.md#getAppServiceByUuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get App Service
-*ApplicationServicesApi* | [**getAttachedAppLinksByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppLinksByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get attached App Links for App Service
-*ApplicationServicesApi* | [**getAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppSubscriptionsByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get attached App Subscriptions for App Service
-*ApplicationServicesApi* | [**searchAppServices**](docs/ApplicationServicesApi.md#searchAppServices) | **POST** /fabric/v4/appServices/search | Search App Services
-*ApplicationServicesApi* | [**searchAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#searchAttachedAppSubscriptionsByAppServiceId) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search attached App Subscriptions
-*ApplicationServicesApi* | [**updateAppServiceByUuid**](docs/ApplicationServicesApi.md#updateAppServiceByUuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update App Service
-*ApplicationSubscriptionsApi* | [**createAppSubscription**](docs/ApplicationSubscriptionsApi.md#createAppSubscription) | **POST** /fabric/v4/appSubscriptions | Create App Subscription
-*ApplicationSubscriptionsApi* | [**deleteAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#deleteAppSubscriptionByUuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete App Subscription
-*ApplicationSubscriptionsApi* | [**getAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#getAppSubscriptionByUuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get App Subscription
-*ApplicationSubscriptionsApi* | [**searchAppSubscriptions**](docs/ApplicationSubscriptionsApi.md#searchAppSubscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search App Subscriptions
-*ApplicationSubscriptionsApi* | [**updateAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#updateAppSubscriptionByUuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update App Subscription
-*CloudEventsApi* | [**getCloudEvent**](docs/CloudEventsApi.md#getCloudEvent) | **GET** /fabric/v4/cloudevents/{cloudEventId} | Get Cloud Event
-*CloudEventsApi* | [**getCloudEventByAssetId**](docs/CloudEventsApi.md#getCloudEventByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/cloudevents | Get Cloud Events by Asset Id
-*CloudEventsApi* | [**searchCloudEvents**](docs/CloudEventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events
-*CloudEventsApi* | [**searchLastOpEvents**](docs/CloudEventsApi.md#searchLastOpEvents) | **POST** /fabric/v4/latestOperationalEvents/search | Search Last Operational Cloud Events
-*CloudRoutersApi* | [**createCloudRouter**](docs/CloudRoutersApi.md#createCloudRouter) | **POST** /fabric/v4/routers | Create Routers
+*ApplicationDomainsApi* | [**createAppDomain**](docs/ApplicationDomainsApi.md#createAppDomain) | **POST** /fabric/v4/appDomains | Create Domain
+*ApplicationDomainsApi* | [**deleteAppDomainByUuid**](docs/ApplicationDomainsApi.md#deleteAppDomainByUuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete Domain
+*ApplicationDomainsApi* | [**getAppDomainByUuid**](docs/ApplicationDomainsApi.md#getAppDomainByUuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get Domain
+*ApplicationDomainsApi* | [**getAttachedAppLinksByAppDomainId**](docs/ApplicationDomainsApi.md#getAttachedAppLinksByAppDomainId) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get Attached Links for Domain
+*ApplicationDomainsApi* | [**searchAppDomains**](docs/ApplicationDomainsApi.md#searchAppDomains) | **POST** /fabric/v4/appDomains/search | Search Domains
+*ApplicationDomainsApi* | [**updateAppDomainByUuid**](docs/ApplicationDomainsApi.md#updateAppDomainByUuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update Domain
+*ApplicationLinksApi* | [**attachAppDomainToAppLink**](docs/ApplicationLinksApi.md#attachAppDomainToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Attach Domain to Link
+*ApplicationLinksApi* | [**attachAppProcessorToAppLink**](docs/ApplicationLinksApi.md#attachAppProcessorToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId} | Attach Processor to Link
+*ApplicationLinksApi* | [**attachAppServiceToAppLink**](docs/ApplicationLinksApi.md#attachAppServiceToAppLink) | **PUT** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Attach Service to Link
+*ApplicationLinksApi* | [**createAppLink**](docs/ApplicationLinksApi.md#createAppLink) | **POST** /fabric/v4/appLinks | Create Link
+*ApplicationLinksApi* | [**deleteAppLinkByUuid**](docs/ApplicationLinksApi.md#deleteAppLinkByUuid) | **DELETE** /fabric/v4/appLinks/{appLinkId} | Delete Link
+*ApplicationLinksApi* | [**detachAppDomainFromAppLink**](docs/ApplicationLinksApi.md#detachAppDomainFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Detach Domain from Link
+*ApplicationLinksApi* | [**detachAppProcessorFromAppLink**](docs/ApplicationLinksApi.md#detachAppProcessorFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId} | Detach App Processor from App Link
+*ApplicationLinksApi* | [**detachAppServiceFromAppLink**](docs/ApplicationLinksApi.md#detachAppServiceFromAppLink) | **DELETE** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Detach Service from Link
+*ApplicationLinksApi* | [**getAppLinkByUuid**](docs/ApplicationLinksApi.md#getAppLinkByUuid) | **GET** /fabric/v4/appLinks/{appLinkId} | Get Link
+*ApplicationLinksApi* | [**getAttachedAppDomainByUuid**](docs/ApplicationLinksApi.md#getAttachedAppDomainByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains/{appDomainId} | Get Attached Domain for Link
+*ApplicationLinksApi* | [**getAttachedAppDomainsByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppDomainsByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appDomains | Get Attached Domains for Link
+*ApplicationLinksApi* | [**getAttachedAppProcessor**](docs/ApplicationLinksApi.md#getAttachedAppProcessor) | **GET** /fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId} | Get attached App Processor for App Link
+*ApplicationLinksApi* | [**getAttachedAppProcessorsByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppProcessorsByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appProcessors | Get attached Processors for Link
+*ApplicationLinksApi* | [**getAttachedAppServiceByUuid**](docs/ApplicationLinksApi.md#getAttachedAppServiceByUuid) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Get Attached Service for Link
+*ApplicationLinksApi* | [**getAttachedAppServicesByAppLinkId**](docs/ApplicationLinksApi.md#getAttachedAppServicesByAppLinkId) | **GET** /fabric/v4/appLinks/{appLinkId}/appServices | Get Attached Services for Link
+*ApplicationLinksApi* | [**searchAppLinks**](docs/ApplicationLinksApi.md#searchAppLinks) | **POST** /fabric/v4/appLinks/search | Search Links
+*ApplicationLinksApi* | [**searchAttachedAppDomains**](docs/ApplicationLinksApi.md#searchAttachedAppDomains) | **POST** /fabric/v4/appLinks/{appLinkId}/appDomains/search | Search Attached Domains for Link
+*ApplicationLinksApi* | [**searchAttachedAppProcessors**](docs/ApplicationLinksApi.md#searchAttachedAppProcessors) | **POST** /fabric/v4/appLinks/{appLinkId}/appProcessors/search | Search attached Processors to Link
+*ApplicationLinksApi* | [**searchAttachedAppServices**](docs/ApplicationLinksApi.md#searchAttachedAppServices) | **POST** /fabric/v4/appLinks/{appLinkId}/appServices/search | Search Attached Services for Link
+*ApplicationLinksApi* | [**updateAppLinkByUuid**](docs/ApplicationLinksApi.md#updateAppLinkByUuid) | **PATCH** /fabric/v4/appLinks/{appLinkId} | Update Link
+*ApplicationLinksApi* | [**updateAppServiceAttachmentToAppLink**](docs/ApplicationLinksApi.md#updateAppServiceAttachmentToAppLink) | **PATCH** /fabric/v4/appLinks/{appLinkId}/appServices/{appServiceId} | Update Service Attachment for Link
+*ApplicationProcessorsApi* | [**getAppProcessorByUuid**](docs/ApplicationProcessorsApi.md#getAppProcessorByUuid) | **GET** /fabric/v4/appProcessors/{appProcessorId} | Get Processor
+*ApplicationProcessorsApi* | [**searchAppProcessors**](docs/ApplicationProcessorsApi.md#searchAppProcessors) | **POST** /fabric/v4/appProcessors/search | Search Processors
+*ApplicationServicesApi* | [**createAppService**](docs/ApplicationServicesApi.md#createAppService) | **POST** /fabric/v4/appServices | Create Service
+*ApplicationServicesApi* | [**deleteAppServiceByUuid**](docs/ApplicationServicesApi.md#deleteAppServiceByUuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete Service
+*ApplicationServicesApi* | [**getAppServiceByUuid**](docs/ApplicationServicesApi.md#getAppServiceByUuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get Service
+*ApplicationServicesApi* | [**getAttachedAppLinksByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppLinksByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get Attached Links for Service
+*ApplicationServicesApi* | [**getAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#getAttachedAppSubscriptionsByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get Attached Subscriptions for Service
+*ApplicationServicesApi* | [**searchAppServices**](docs/ApplicationServicesApi.md#searchAppServices) | **POST** /fabric/v4/appServices/search | Search Services
+*ApplicationServicesApi* | [**searchAttachedAppSubscriptionsByAppServiceId**](docs/ApplicationServicesApi.md#searchAttachedAppSubscriptionsByAppServiceId) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search Attached Subscriptions
+*ApplicationServicesApi* | [**updateAppServiceByUuid**](docs/ApplicationServicesApi.md#updateAppServiceByUuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update Service
+*ApplicationSubscriptionsApi* | [**createAppSubscription**](docs/ApplicationSubscriptionsApi.md#createAppSubscription) | **POST** /fabric/v4/appSubscriptions | Create Subscription
+*ApplicationSubscriptionsApi* | [**deleteAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#deleteAppSubscriptionByUuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete Subscription
+*ApplicationSubscriptionsApi* | [**getAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#getAppSubscriptionByUuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get Subscription
+*ApplicationSubscriptionsApi* | [**searchAppSubscriptions**](docs/ApplicationSubscriptionsApi.md#searchAppSubscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search Subscriptions
+*ApplicationSubscriptionsApi* | [**updateAppSubscriptionByUuid**](docs/ApplicationSubscriptionsApi.md#updateAppSubscriptionByUuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update Subscription
+*CloudRouterPackagesApi* | [**getCloudRouterPackageByCode**](docs/CloudRouterPackagesApi.md#getCloudRouterPackageByCode) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
+*CloudRouterPackagesApi* | [**getCloudRouterPackages**](docs/CloudRouterPackagesApi.md#getCloudRouterPackages) | **GET** /fabric/v4/routerPackages | List Packages
+*CloudRoutersApi* | [**createCloudRouter**](docs/CloudRoutersApi.md#createCloudRouter) | **POST** /fabric/v4/routers | Create Router
 *CloudRoutersApi* | [**createCloudRouterAction**](docs/CloudRoutersApi.md#createCloudRouterAction) | **POST** /fabric/v4/routers/{routerId}/actions | Create Route Table Action
-*CloudRoutersApi* | [**createCloudRouterCommand**](docs/CloudRoutersApi.md#createCloudRouterCommand) | **POST** /fabric/v4/routers/{routerId}/commands | Initiate Command
-*CloudRoutersApi* | [**deleteCloudRouterByUuid**](docs/CloudRoutersApi.md#deleteCloudRouterByUuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Routers
+*CloudRoutersApi* | [**createCloudRouterCommand**](docs/CloudRoutersApi.md#createCloudRouterCommand) | **POST** /fabric/v4/routers/{routerId}/commands | Create Command
+*CloudRoutersApi* | [**deleteCloudRouterByUuid**](docs/CloudRoutersApi.md#deleteCloudRouterByUuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Router
 *CloudRoutersApi* | [**deleteCloudRouterCommandByUuid**](docs/CloudRoutersApi.md#deleteCloudRouterCommandByUuid) | **DELETE** /fabric/v4/routers/{routerId}/commands/{commandId} | Delete Command
 *CloudRoutersApi* | [**getAllCloudRouterCommands**](docs/CloudRoutersApi.md#getAllCloudRouterCommands) | **GET** /fabric/v4/routers/{routerId}/commands | Get Commands
 *CloudRoutersApi* | [**getCloudRouterActions**](docs/CloudRoutersApi.md#getCloudRouterActions) | **GET** /fabric/v4/routers/{routerId}/actions | Get Route Table Actions
 *CloudRoutersApi* | [**getCloudRouterActionsByUuid**](docs/CloudRoutersApi.md#getCloudRouterActionsByUuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get Route Table Action by ID
-*CloudRoutersApi* | [**getCloudRouterByUuid**](docs/CloudRoutersApi.md#getCloudRouterByUuid) | **GET** /fabric/v4/routers/{routerId} | Get Routers
+*CloudRoutersApi* | [**getCloudRouterByUuid**](docs/CloudRoutersApi.md#getCloudRouterByUuid) | **GET** /fabric/v4/routers/{routerId} | Get Router
 *CloudRoutersApi* | [**getCloudRouterCommand**](docs/CloudRoutersApi.md#getCloudRouterCommand) | **GET** /fabric/v4/routers/{routerId}/commands/{commandId} | Get Command
-*CloudRoutersApi* | [**getCloudRouterPackageByCode**](docs/CloudRoutersApi.md#getCloudRouterPackageByCode) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
-*CloudRoutersApi* | [**getCloudRouterPackages**](docs/CloudRoutersApi.md#getCloudRouterPackages) | **GET** /fabric/v4/routerPackages | List Packages
 *CloudRoutersApi* | [**searchCloudRouterCommands**](docs/CloudRoutersApi.md#searchCloudRouterCommands) | **POST** /fabric/v4/routers/{routerId}/commands/search | Search Commands
-*CloudRoutersApi* | [**searchCloudRouterRoutes**](docs/CloudRoutersApi.md#searchCloudRouterRoutes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table
+*CloudRoutersApi* | [**searchCloudRouterRoutes**](docs/CloudRoutersApi.md#searchCloudRouterRoutes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Tables
 *CloudRoutersApi* | [**searchCloudRouters**](docs/CloudRoutersApi.md#searchCloudRouters) | **POST** /fabric/v4/routers/search | Search Routers
 *CloudRoutersApi* | [**searchConnectionAdvertisedRoutes**](docs/CloudRoutersApi.md#searchConnectionAdvertisedRoutes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | Search Advertised Routes
 *CloudRoutersApi* | [**searchConnectionReceivedRoutes**](docs/CloudRoutersApi.md#searchConnectionReceivedRoutes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search Received Routes
 *CloudRoutersApi* | [**searchRouterActions**](docs/CloudRoutersApi.md#searchRouterActions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search Route Table Actions
-*CloudRoutersApi* | [**updateCloudRouterByUuid**](docs/CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers
+*CloudRoutersApi* | [**updateCloudRouterByUuid**](docs/CloudRoutersApi.md#updateCloudRouterByUuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Router
 *CompanyProfilesApi* | [**attachPrivateServiceToProfile**](docs/CompanyProfilesApi.md#attachPrivateServiceToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Attach Private Service
 *CompanyProfilesApi* | [**attachServiceProfileToProfile**](docs/CompanyProfilesApi.md#attachServiceProfileToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Attach Service Profile
 *CompanyProfilesApi* | [**attachTagToProfile**](docs/CompanyProfilesApi.md#attachTagToProfile) | **PUT** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Attach Tag
@@ -186,47 +189,57 @@ Class | Method | HTTP request | Description
 *CompanyProfilesApi* | [**detachPrivateServiceFromProfile**](docs/CompanyProfilesApi.md#detachPrivateServiceFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Detach Private Service
 *CompanyProfilesApi* | [**detachServiceProfileFromProfile**](docs/CompanyProfilesApi.md#detachServiceProfileFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Detach Service Profile
 *CompanyProfilesApi* | [**detachTagFromProfile**](docs/CompanyProfilesApi.md#detachTagFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Detach Tag
-*CompanyProfilesApi* | [**getCompanyProfile**](docs/CompanyProfilesApi.md#getCompanyProfile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by UUID
+*CompanyProfilesApi* | [**getCompanyProfile**](docs/CompanyProfilesApi.md#getCompanyProfile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by ID
 *CompanyProfilesApi* | [**getCompanyProfilePrivateServices**](docs/CompanyProfilesApi.md#getCompanyProfilePrivateServices) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/privateServices | Get Private Services
 *CompanyProfilesApi* | [**getCompanyProfileServiceProfiles**](docs/CompanyProfilesApi.md#getCompanyProfileServiceProfiles) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles | Get Service Profiles
 *CompanyProfilesApi* | [**getTags**](docs/CompanyProfilesApi.md#getTags) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/tags | Get Tags
 *CompanyProfilesApi* | [**searchCompanyProfile**](docs/CompanyProfilesApi.md#searchCompanyProfile) | **POST** /fabric/v4/companyProfiles/search | Search Company Profiles
 *ConnectionsApi* | [**createConnection**](docs/ConnectionsApi.md#createConnection) | **POST** /fabric/v4/connections | Create Connection
-*ConnectionsApi* | [**createConnectionAction**](docs/ConnectionsApi.md#createConnectionAction) | **POST** /fabric/v4/connections/{connectionId}/actions | Connection Actions
-*ConnectionsApi* | [**deleteConnectionByUuid**](docs/ConnectionsApi.md#deleteConnectionByUuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete by ID
+*ConnectionsApi* | [**createConnectionAction**](docs/ConnectionsApi.md#createConnectionAction) | **POST** /fabric/v4/connections/{connectionId}/actions | Create Connection Action
+*ConnectionsApi* | [**deleteConnectionByUuid**](docs/ConnectionsApi.md#deleteConnectionByUuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete Connection by ID
 *ConnectionsApi* | [**getConnectionByUuid**](docs/ConnectionsApi.md#getConnectionByUuid) | **GET** /fabric/v4/connections/{connectionId} | Get Connection by ID
-*ConnectionsApi* | [**searchConnections**](docs/ConnectionsApi.md#searchConnections) | **POST** /fabric/v4/connections/search | Search connections
-*ConnectionsApi* | [**updateConnectionByUuid**](docs/ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update by ID
+*ConnectionsApi* | [**searchConnections**](docs/ConnectionsApi.md#searchConnections) | **POST** /fabric/v4/connections/search | Search Connections
+*ConnectionsApi* | [**updateConnectionByUuid**](docs/ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update Connection by ID
 *ConnectionsApi* | [**validateConnections**](docs/ConnectionsApi.md#validateConnections) | **POST** /fabric/v4/connections/validate | Validate Connection
-*FabricOneApi* | [**createInterconnect**](docs/FabricOneApi.md#createInterconnect) | **POST** /fabric/v4/interconnects | Create Interconnect
-*FabricOneApi* | [**deleteInterconnectByUuid**](docs/FabricOneApi.md#deleteInterconnectByUuid) | **DELETE** /fabric/v4/interconnects/{interconnectId} | Delete Interconnect By ID
-*FabricOneApi* | [**getInterconnectByUuid**](docs/FabricOneApi.md#getInterconnectByUuid) | **GET** /fabric/v4/interconnects/{interconnectId} | Get Interconnect By ID
-*FabricOneApi* | [**getInterconnectPackages**](docs/FabricOneApi.md#getInterconnectPackages) | **GET** /fabric/v4/interconnectPackages | Get All Interconnect Packages
-*FabricOneApi* | [**searchInterconnects**](docs/FabricOneApi.md#searchInterconnects) | **POST** /fabric/v4/interconnects/search | Search Interconnects
-*GatewaysApi* | [**createGateway**](docs/GatewaysApi.md#createGateway) | **POST** /fabric/v4/gateways | Create Gateway
-*GatewaysApi* | [**deleteGatewayByUuid**](docs/GatewaysApi.md#deleteGatewayByUuid) | **DELETE** /fabric/v4/gateways/{gatewayId} | Delete Gateway
-*GatewaysApi* | [**getGatewayByUuid**](docs/GatewaysApi.md#getGatewayByUuid) | **GET** /fabric/v4/gateways/{gatewayId} | Get Gateway
-*GatewaysApi* | [**updateGatewayByUuid**](docs/GatewaysApi.md#updateGatewayByUuid) | **PATCH** /fabric/v4/gateways/{gatewayId} | Update Gateway by ID
-*HealthApi* | [**getStatus**](docs/HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get service status
-*InternetAccessServicesApi* | [**createEiaService**](docs/InternetAccessServicesApi.md#createEiaService) | **POST** /fabric/v4/internetAccessServices | Creates Internet Access Service
-*InternetAccessServicesApi* | [**deleteEiaService**](docs/InternetAccessServicesApi.md#deleteEiaService) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by UUID
-*InternetAccessServicesApi* | [**getEiaService**](docs/InternetAccessServicesApi.md#getEiaService) | **GET** /fabric/v4/internetAccessServices/{uuid} | Retrieve Internet Access Service by UUID
-*InternetAccessServicesApi* | [**patchEiaService**](docs/InternetAccessServicesApi.md#patchEiaService) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Patch Internet Access Service by UUID
-*InternetAccessServicesApi* | [**searchEiaServices**](docs/InternetAccessServicesApi.md#searchEiaServices) | **POST** /fabric/v4/internetAccessServices/search | Search for Internet Access Services
+*CrossConnectsApi* | [**createCrossConnect**](docs/CrossConnectsApi.md#createCrossConnect) | **POST** /fabric/v4/crossConnects | Create Cross Connect
+*CrossConnectsApi* | [**createDiverseCrossConnect**](docs/CrossConnectsApi.md#createDiverseCrossConnect) | **POST** /fabric/v4/crossConnects/bulk | Create Diverse Cross Connect
+*CrossConnectsApi* | [**getCrossConnectActionByUuid**](docs/CrossConnectsApi.md#getCrossConnectActionByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId}/actions/{actionId} | Get Cross Connect Action by Action ID
+*CrossConnectsApi* | [**getCrossConnectAttachmentsByUuid**](docs/CrossConnectsApi.md#getCrossConnectAttachmentsByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId}/attachments | Get Cross Connect Attachments
+*CrossConnectsApi* | [**getCrossConnectByUuid**](docs/CrossConnectsApi.md#getCrossConnectByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId} | Get Cross Connect
+*CrossConnectsApi* | [**getCrossConnectNotesByUuid**](docs/CrossConnectsApi.md#getCrossConnectNotesByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId}/notes | Get Cross Connect Notes
+*CrossConnectsApi* | [**getCrossConnectSchedulesByUuid**](docs/CrossConnectsApi.md#getCrossConnectSchedulesByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId}/schedules | Get Cross Connect Schedules
+*CrossConnectsApi* | [**getCrossConnectServicesByUuid**](docs/CrossConnectsApi.md#getCrossConnectServicesByUuid) | **GET** /fabric/v4/crossConnects/{crossConnectId}/services | Get Cross Connect Services
+*CrossConnectsApi* | [**performCrossConnectAction**](docs/CrossConnectsApi.md#performCrossConnectAction) | **POST** /fabric/v4/crossConnects/{crossConnectId}/actions | Cross Connect Actions
+*CrossConnectsApi* | [**searchCrossConnectAction**](docs/CrossConnectsApi.md#searchCrossConnectAction) | **POST** /fabric/v4/crossConnects/{crossConnectId}/actions/search | Search Cross Connect Actions
+*CrossConnectsApi* | [**searchCrossConnectSchedules**](docs/CrossConnectsApi.md#searchCrossConnectSchedules) | **POST** /fabric/v4/crossConnectSchedules/search | Search Cross Connect Schedules
+*CrossConnectsApi* | [**searchCrossConnects**](docs/CrossConnectsApi.md#searchCrossConnects) | **POST** /fabric/v4/crossConnects/search | Search Cross Connects
+*EventsApi* | [**getCloudEvent**](docs/EventsApi.md#getCloudEvent) | **GET** /fabric/v4/cloudevents/{cloudEventId} | Get Cloud Event
+*EventsApi* | [**getCloudEventByAssetId**](docs/EventsApi.md#getCloudEventByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/cloudevents | Get Cloud Events by Asset Id (Deprecated)
+*EventsApi* | [**searchCloudEvents**](docs/EventsApi.md#searchCloudEvents) | **POST** /fabric/v4/cloudevents/search | Search Cloud Events
+*EventsApi* | [**searchLastOpEvents**](docs/EventsApi.md#searchLastOpEvents) | **POST** /fabric/v4/liveEvents/search | Search last Operational Cloud Events
+*HealthApi* | [**getStatus**](docs/HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get Service Status
+*InternetAccessServicesApi* | [**createEiaService**](docs/InternetAccessServicesApi.md#createEiaService) | **POST** /fabric/v4/internetAccessServices | Create Internet Access Service
+*InternetAccessServicesApi* | [**deleteEiaService**](docs/InternetAccessServicesApi.md#deleteEiaService) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by ID
+*InternetAccessServicesApi* | [**getEiaService**](docs/InternetAccessServicesApi.md#getEiaService) | **GET** /fabric/v4/internetAccessServices/{uuid} | Get Internet Access Service by ID
+*InternetAccessServicesApi* | [**patchEiaService**](docs/InternetAccessServicesApi.md#patchEiaService) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Update Internet Access Service by ID
+*InternetAccessServicesApi* | [**searchEiaServices**](docs/InternetAccessServicesApi.md#searchEiaServices) | **POST** /fabric/v4/internetAccessServices/search | Search Internet Access Services
+*InternetExchangeServicesApi* | [**createExchangeService**](docs/InternetExchangeServicesApi.md#createExchangeService) | **POST** /fabric/v4/exchangeServices | Create Internet Exchange Service
+*InternetExchangeServicesApi* | [**createExchangeServiceAction**](docs/InternetExchangeServicesApi.md#createExchangeServiceAction) | **POST** /fabric/v4/exchangeServices/{exchangeServiceId}/actions | Create Internet Exchange Service Action
 *InternetExchangeServicesApi* | [**getExchangeServiceById**](docs/InternetExchangeServicesApi.md#getExchangeServiceById) | **GET** /fabric/v4/exchangeServices/{exchangeServiceId} | Get Internet Exchange Service
-*InternetExchangeServicesApi* | [**searchExchangeService**](docs/InternetExchangeServicesApi.md#searchExchangeService) | **POST** /fabric/v4/exchangeServices/search | Search Internet Exchange Service
-*IpBlocksApi* | [**deleteIpBlockById**](docs/IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by UUID
-*IpBlocksApi* | [**getIpBlock**](docs/IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by UUID
-*IpBlocksApi* | [**patchIpBlockById**](docs/IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch IP Block by UUID
-*IpBlocksApi* | [**searchIpBlocks**](docs/IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for IP Blocks
-*IpBlocksApi* | [**submitIpBlock**](docs/IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned IP Block request
+*InternetExchangeServicesApi* | [**searchExchangeService**](docs/InternetExchangeServicesApi.md#searchExchangeService) | **POST** /fabric/v4/exchangeServices/search | Search Internet Exchange Services
+*InternetExchangeServicesApi* | [**updateExchangeServiceById**](docs/InternetExchangeServicesApi.md#updateExchangeServiceById) | **PATCH** /fabric/v4/exchangeServices/{exchangeServiceId} | Update Internet Exchange Service
+*IpBlocksApi* | [**deleteIpBlockById**](docs/IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by ID
+*IpBlocksApi* | [**getIpBlock**](docs/IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by ID
+*IpBlocksApi* | [**patchIpBlockById**](docs/IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | Update IP Block by ID
+*IpBlocksApi* | [**searchIpBlocks**](docs/IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search IP Blocks
+*IpBlocksApi* | [**submitIpBlock**](docs/IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Create IP Block
 *LoasApi* | [**createLoa**](docs/LoasApi.md#createLoa) | **POST** /fabric/v4/loas | Create Loa
 *LoasApi* | [**createLoaNoteByLoaId**](docs/LoasApi.md#createLoaNoteByLoaId) | **POST** /fabric/v4/loas/{loaId}/notes | Create Loa Note
 *LoasApi* | [**getLoaActionsByUuid**](docs/LoasApi.md#getLoaActionsByUuid) | **GET** /fabric/v4/loas/{loaId}/actions/{actionId} | Get Loa Action by Action ID
 *LoasApi* | [**getLoaByUuid**](docs/LoasApi.md#getLoaByUuid) | **GET** /fabric/v4/loas/{loaId} | Get Loa
 *LoasApi* | [**getLoaConsumersByLoaId**](docs/LoasApi.md#getLoaConsumersByLoaId) | **GET** /fabric/v4/loas/{loaId}/consumers | Get Loa Consumers
 *LoasApi* | [**getLoaNotesByUuid**](docs/LoasApi.md#getLoaNotesByUuid) | **GET** /fabric/v4/loas/{loaId}/notes | Get Loa Notes
-*LoasApi* | [**performLoaAction**](docs/LoasApi.md#performLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions | Loa Actions
+*LoasApi* | [**performLoaAction**](docs/LoasApi.md#performLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions | Create LOA Action
 *LoasApi* | [**searchLoa**](docs/LoasApi.md#searchLoa) | **POST** /fabric/v4/loas/search | Search Loas
 *LoasApi* | [**searchLoaAction**](docs/LoasApi.md#searchLoaAction) | **POST** /fabric/v4/loas/{loaId}/actions/search | Search Loa Actions
 *LoasApi* | [**updateLoaByUuid**](docs/LoasApi.md#updateLoaByUuid) | **PATCH** /fabric/v4/loas/{loaId} | Update Loa
@@ -234,126 +247,126 @@ Class | Method | HTTP request | Description
 *LogosApi* | [**deleteLogoByUuid**](docs/LogosApi.md#deleteLogoByUuid) | **DELETE** /fabric/v4/logos/{uuid} | Delete Logo
 *LogosApi* | [**getLogoByUuid**](docs/LogosApi.md#getLogoByUuid) | **GET** /fabric/v4/logos/{uuid} | Get Logo
 *MarketplaceSubscriptionsApi* | [**getSubscriptionById**](docs/MarketplaceSubscriptionsApi.md#getSubscriptionById) | **GET** /fabric/v4/marketplaceSubscriptions/{subscriptionId} | Get Subscription
-*MetricsApi* | [**getMetricByAssetId**](docs/MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id
+*MetricsApi* | [**getMetricByAssetId**](docs/MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id (Deprecated)
 *MetricsApi* | [**getMetricByName**](docs/MetricsApi.md#getMetricByName) | **GET** /fabric/v4/metrics | Get Metrics by Name
 *MetricsApi* | [**searchMetrics**](docs/MetricsApi.md#searchMetrics) | **POST** /fabric/v4/metrics/search | Search Metrics
 *MetrosApi* | [**getMetroByCode**](docs/MetrosApi.md#getMetroByCode) | **GET** /fabric/v4/metros/{metroCode} | Get Metro by Code
-*MetrosApi* | [**getMetros**](docs/MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get all Metros
+*MetrosApi* | [**getMetros**](docs/MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get Metros
 *NetworksApi* | [**createNetwork**](docs/NetworksApi.md#createNetwork) | **POST** /fabric/v4/networks | Create Network
 *NetworksApi* | [**deleteNetworkByUuid**](docs/NetworksApi.md#deleteNetworkByUuid) | **DELETE** /fabric/v4/networks/{networkId} | Delete Network By ID
 *NetworksApi* | [**getConnectionsByNetworkUuid**](docs/NetworksApi.md#getConnectionsByNetworkUuid) | **GET** /fabric/v4/networks/{networkId}/connections | Get Connections
 *NetworksApi* | [**getNetworkByUuid**](docs/NetworksApi.md#getNetworkByUuid) | **GET** /fabric/v4/networks/{networkId} | Get Network By ID
 *NetworksApi* | [**getNetworkChangeByUuid**](docs/NetworksApi.md#getNetworkChangeByUuid) | **GET** /fabric/v4/networks/{networkId}/changes/{changeId} | Get Change By ID
 *NetworksApi* | [**getNetworkChanges**](docs/NetworksApi.md#getNetworkChanges) | **GET** /fabric/v4/networks/{networkId}/changes | Get Network Changes
-*NetworksApi* | [**searchNetworks**](docs/NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Network
+*NetworksApi* | [**searchNetworks**](docs/NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Networks
 *NetworksApi* | [**updateNetworkByUuid**](docs/NetworksApi.md#updateNetworkByUuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID
 *OpticalMetroConnectsApi* | [**createBulkOpticalConnect**](docs/OpticalMetroConnectsApi.md#createBulkOpticalConnect) | **POST** /fabric/v4/opticalConnects/bulk | Create Dual Diverse Optical Metro Connect Service
 *OpticalMetroConnectsApi* | [**createOpticalConnect**](docs/OpticalMetroConnectsApi.md#createOpticalConnect) | **POST** /fabric/v4/opticalConnects | Create Optical Metro Connect Service
 *OpticalMetroConnectsApi* | [**getOpticalConnectByUuid**](docs/OpticalMetroConnectsApi.md#getOpticalConnectByUuid) | **GET** /fabric/v4/opticalConnects/{opticalConnectId} | Get Optical Metro Connect Service
 *OpticalMetroConnectsApi* | [**searchOpticalConnect**](docs/OpticalMetroConnectsApi.md#searchOpticalConnect) | **POST** /fabric/v4/opticalConnects/search | Search Optical Metro Connect Services
-*PortPackagesApi* | [**getPortPackages**](docs/PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | Get All Port Packages
+*PortPackagesApi* | [**getPortPackages**](docs/PortPackagesApi.md#getPortPackages) | **GET** /fabric/v4/portPackages | List Port Packages
 *PortsApi* | [**addToLag**](docs/PortsApi.md#addToLag) | **POST** /fabric/v4/ports/{portId}/physicalPorts/bulk | Add to Lag
 *PortsApi* | [**createPort**](docs/PortsApi.md#createPort) | **POST** /fabric/v4/ports | Create Port
-*PortsApi* | [**deletePort**](docs/PortsApi.md#deletePort) | **DELETE** /fabric/v4/ports/{portId} | Delete a single port
-*PortsApi* | [**getPortByUuid**](docs/PortsApi.md#getPortByUuid) | **GET** /fabric/v4/ports/{portId} | Get Port by uuid
+*PortsApi* | [**deletePort**](docs/PortsApi.md#deletePort) | **DELETE** /fabric/v4/ports/{portId} | Delete Port
+*PortsApi* | [**getPortByUuid**](docs/PortsApi.md#getPortByUuid) | **GET** /fabric/v4/ports/{portId} | Get Port by ID
 *PortsApi* | [**getPorts**](docs/PortsApi.md#getPorts) | **GET** /fabric/v4/ports | Get All Ports
 *PortsApi* | [**getVlans**](docs/PortsApi.md#getVlans) | **GET** /fabric/v4/ports/{portUuid}/linkProtocols | Get Vlans
-*PortsApi* | [**searchPorts**](docs/PortsApi.md#searchPorts) | **POST** /fabric/v4/ports/search | Search ports
-*PortsApi* | [**updatePortByUuid**](docs/PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update by UUID
-*PrecisionTimeApi* | [**createTimeServices**](docs/PrecisionTimeApi.md#createTimeServices) | **POST** /fabric/v4/timeServices | Create Time Service
-*PrecisionTimeApi* | [**deleteTimeServiceById**](docs/PrecisionTimeApi.md#deleteTimeServiceById) | **DELETE** /fabric/v4/timeServices/{serviceId} | Delete by ID.
-*PrecisionTimeApi* | [**fulfillTimeServices**](docs/PrecisionTimeApi.md#fulfillTimeServices) | **PUT** /fabric/v4/timeServices/{serviceId} | Configure Service.
-*PrecisionTimeApi* | [**getTimeServicesById**](docs/PrecisionTimeApi.md#getTimeServicesById) | **GET** /fabric/v4/timeServices/{serviceId} | Get Service By ID.
-*PrecisionTimeApi* | [**getTimeServicesConnectionsByServiceId**](docs/PrecisionTimeApi.md#getTimeServicesConnectionsByServiceId) | **GET** /fabric/v4/timeServices/{serviceId}/connections | Get Connection Links
-*PrecisionTimeApi* | [**getTimeServicesPackageByCode**](docs/PrecisionTimeApi.md#getTimeServicesPackageByCode) | **GET** /fabric/v4/timeServicePackages/{packageCode} | Get Package By Code
-*PrecisionTimeApi* | [**getTimeServicesPackages**](docs/PrecisionTimeApi.md#getTimeServicesPackages) | **GET** /fabric/v4/timeServicePackages | Get Packages
-*PrecisionTimeApi* | [**searchTimeServices**](docs/PrecisionTimeApi.md#searchTimeServices) | **POST** /fabric/v4/timeServices/search | Search Time Services
-*PrecisionTimeApi* | [**updateTimeServicesById**](docs/PrecisionTimeApi.md#updateTimeServicesById) | **PATCH** /fabric/v4/timeServices/{serviceId} | Update By ID.
-*PricesApi* | [**searchPrices**](docs/PricesApi.md#searchPrices) | **POST** /fabric/v4/prices/search | Get Prices
-*RouteAggregationRulesApi* | [**createRouteAggregationRule**](docs/RouteAggregationRulesApi.md#createRouteAggregationRule) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Create RARule
-*RouteAggregationRulesApi* | [**createRouteAggregationRulesInBulk**](docs/RouteAggregationRulesApi.md#createRouteAggregationRulesInBulk) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/bulk | Bulk RARules
-*RouteAggregationRulesApi* | [**deleteRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#deleteRouteAggregationRuleByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | DeleteRARule
-*RouteAggregationRulesApi* | [**getRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#getRouteAggregationRuleByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | GetRARule By UUID
+*PortsApi* | [**searchPorts**](docs/PortsApi.md#searchPorts) | **POST** /fabric/v4/ports/search | Search Ports
+*PortsApi* | [**updatePortByUuid**](docs/PortsApi.md#updatePortByUuid) | **PATCH** /fabric/v4/ports/{portId} | Update Port by ID
+*PrecisionTimePackagesApi* | [**getTimeServicesPackageByCode**](docs/PrecisionTimePackagesApi.md#getTimeServicesPackageByCode) | **GET** /fabric/v4/timeServicePackages/{packageCode} | Get Package By Code
+*PrecisionTimePackagesApi* | [**getTimeServicesPackages**](docs/PrecisionTimePackagesApi.md#getTimeServicesPackages) | **GET** /fabric/v4/timeServicePackages | Get Packages
+*PrecisionTimeServicesApi* | [**createTimeServices**](docs/PrecisionTimeServicesApi.md#createTimeServices) | **POST** /fabric/v4/timeServices | Create Time Service
+*PrecisionTimeServicesApi* | [**deleteTimeServiceById**](docs/PrecisionTimeServicesApi.md#deleteTimeServiceById) | **DELETE** /fabric/v4/timeServices/{serviceId} | Delete Time Service by ID
+*PrecisionTimeServicesApi* | [**fulfillTimeServices**](docs/PrecisionTimeServicesApi.md#fulfillTimeServices) | **PUT** /fabric/v4/timeServices/{serviceId} | Update Time Service
+*PrecisionTimeServicesApi* | [**getTimeServicesById**](docs/PrecisionTimeServicesApi.md#getTimeServicesById) | **GET** /fabric/v4/timeServices/{serviceId} | Get Time Service by ID
+*PrecisionTimeServicesApi* | [**getTimeServicesConnectionsByServiceId**](docs/PrecisionTimeServicesApi.md#getTimeServicesConnectionsByServiceId) | **GET** /fabric/v4/timeServices/{serviceId}/connections | Get Connection Links
+*PrecisionTimeServicesApi* | [**searchTimeServices**](docs/PrecisionTimeServicesApi.md#searchTimeServices) | **POST** /fabric/v4/timeServices/search | Search Time Services
+*PrecisionTimeServicesApi* | [**updateTimeServicesById**](docs/PrecisionTimeServicesApi.md#updateTimeServicesById) | **PATCH** /fabric/v4/timeServices/{serviceId} | Update Time Service by ID
+*PricesApi* | [**searchPrices**](docs/PricesApi.md#searchPrices) | **POST** /fabric/v4/prices/search | Search Prices
+*RouteAggregationRulesApi* | [**createRouteAggregationRule**](docs/RouteAggregationRulesApi.md#createRouteAggregationRule) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Create Route Aggregation Rule
+*RouteAggregationRulesApi* | [**createRouteAggregationRulesInBulk**](docs/RouteAggregationRulesApi.md#createRouteAggregationRulesInBulk) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/bulk | Bulk Create Route Aggregation Rules
+*RouteAggregationRulesApi* | [**deleteRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#deleteRouteAggregationRuleByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Delete Route Aggregation Rule
+*RouteAggregationRulesApi* | [**getRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#getRouteAggregationRuleByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Get Route Aggregation Rule by ID
 *RouteAggregationRulesApi* | [**getRouteAggregationRuleChangeByUuid**](docs/RouteAggregationRulesApi.md#getRouteAggregationRuleChangeByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes/{changeId} | Get Change By ID
-*RouteAggregationRulesApi* | [**getRouteAggregationRuleChanges**](docs/RouteAggregationRulesApi.md#getRouteAggregationRuleChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes | Get All Changes
-*RouteAggregationRulesApi* | [**getRouteAggregationRules**](docs/RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | GetRARules
-*RouteAggregationRulesApi* | [**patchRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | PatchRARule
-*RouteAggregationRulesApi* | [**replaceRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | ReplaceRARule
+*RouteAggregationRulesApi* | [**getRouteAggregationRuleChanges**](docs/RouteAggregationRulesApi.md#getRouteAggregationRuleChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes | Get Route Aggregation Rule Changes
+*RouteAggregationRulesApi* | [**getRouteAggregationRules**](docs/RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Get Route Aggregation Rules
+*RouteAggregationRulesApi* | [**patchRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Update Route Aggregation Rule
+*RouteAggregationRulesApi* | [**replaceRouteAggregationRuleByUuid**](docs/RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Replace Route Aggregation Rule
 *RouteAggregationRulesApi* | [**searchRouteAggregationRules**](docs/RouteAggregationRulesApi.md#searchRouteAggregationRules) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/search | Search Route Aggregation Rules
 *RouteAggregationsApi* | [**attachConnectionRouteAggregation**](docs/RouteAggregationsApi.md#attachConnectionRouteAggregation) | **PUT** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Attach Aggregation
-*RouteAggregationsApi* | [**createRouteAggregation**](docs/RouteAggregationsApi.md#createRouteAggregation) | **POST** /fabric/v4/routeAggregations | Create Aggregations
+*RouteAggregationsApi* | [**createRouteAggregation**](docs/RouteAggregationsApi.md#createRouteAggregation) | **POST** /fabric/v4/routeAggregations | Create Route Aggregation
 *RouteAggregationsApi* | [**deleteRouteAggregationByUuid**](docs/RouteAggregationsApi.md#deleteRouteAggregationByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId} | Delete Aggregation
 *RouteAggregationsApi* | [**detachConnectionRouteAggregation**](docs/RouteAggregationsApi.md#detachConnectionRouteAggregation) | **DELETE** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Detach Aggregation
 *RouteAggregationsApi* | [**getConnectionRouteAggregationByUuid**](docs/RouteAggregationsApi.md#getConnectionRouteAggregationByUuid) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Get Aggregation
-*RouteAggregationsApi* | [**getConnectionRouteAggregations**](docs/RouteAggregationsApi.md#getConnectionRouteAggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get All Aggregations
+*RouteAggregationsApi* | [**getConnectionRouteAggregations**](docs/RouteAggregationsApi.md#getConnectionRouteAggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get Connection Route Aggregations
 *RouteAggregationsApi* | [**getRouteAggregationByUuid**](docs/RouteAggregationsApi.md#getRouteAggregationByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId} | Get Aggregation
 *RouteAggregationsApi* | [**getRouteAggregationChangeByUuid**](docs/RouteAggregationsApi.md#getRouteAggregationChangeByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes/{changeId} | Get Change By ID
-*RouteAggregationsApi* | [**getRouteAggregationChanges**](docs/RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes
-*RouteAggregationsApi* | [**getRouteAggregationConnections**](docs/RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation
-*RouteAggregationsApi* | [**patchRouteAggregationByUuid**](docs/RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation
+*RouteAggregationsApi* | [**getRouteAggregationChanges**](docs/RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get Route Aggregation Changes
+*RouteAggregationsApi* | [**getRouteAggregationConnections**](docs/RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get Route Aggregation Connections
+*RouteAggregationsApi* | [**patchRouteAggregationByUuid**](docs/RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Update Route Aggregation
 *RouteAggregationsApi* | [**searchCloudRouterRouteAggregationAttachments**](docs/RouteAggregationsApi.md#searchCloudRouterRouteAggregationAttachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments
-*RouteAggregationsApi* | [**searchRouteAggregations**](docs/RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations
+*RouteAggregationsApi* | [**searchRouteAggregations**](docs/RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Route Aggregations
 *RouteFilterRulesApi* | [**createRouteFilterRule**](docs/RouteFilterRulesApi.md#createRouteFilterRule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create Route Filter Rule
 *RouteFilterRulesApi* | [**createRouteFilterRulesInBulk**](docs/RouteFilterRulesApi.md#createRouteFilterRulesInBulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk Create Route Filter Rules
 *RouteFilterRulesApi* | [**deleteRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#deleteRouteFilterRuleByUuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Delete Route Filter Rule
-*RouteFilterRulesApi* | [**getRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#getRouteFilterRuleByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule By UUID
+*RouteFilterRulesApi* | [**getRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#getRouteFilterRuleByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule by ID
 *RouteFilterRulesApi* | [**getRouteFilterRuleChangeByUuid**](docs/RouteFilterRulesApi.md#getRouteFilterRuleChangeByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes/{changeId} | Get Change By ID
-*RouteFilterRulesApi* | [**getRouteFilterRuleChanges**](docs/RouteFilterRulesApi.md#getRouteFilterRuleChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get All Changes
+*RouteFilterRulesApi* | [**getRouteFilterRuleChanges**](docs/RouteFilterRulesApi.md#getRouteFilterRuleChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get Route Filter Rule Changes
 *RouteFilterRulesApi* | [**getRouteFilterRules**](docs/RouteFilterRulesApi.md#getRouteFilterRules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules
-*RouteFilterRulesApi* | [**patchRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule
+*RouteFilterRulesApi* | [**patchRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Update Route Filter Rule
 *RouteFilterRulesApi* | [**replaceRouteFilterRuleByUuid**](docs/RouteFilterRulesApi.md#replaceRouteFilterRuleByUuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule
 *RouteFilterRulesApi* | [**searchRouteFilterRules**](docs/RouteFilterRulesApi.md#searchRouteFilterRules) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/search | Search Route Filter Rules
 *RouteFiltersApi* | [**attachConnectionRouteFilter**](docs/RouteFiltersApi.md#attachConnectionRouteFilter) | **PUT** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Attach Route Filter
-*RouteFiltersApi* | [**createRouteFilter**](docs/RouteFiltersApi.md#createRouteFilter) | **POST** /fabric/v4/routeFilters | Create Route Filters
+*RouteFiltersApi* | [**createRouteFilter**](docs/RouteFiltersApi.md#createRouteFilter) | **POST** /fabric/v4/routeFilters | Create Route Filter
 *RouteFiltersApi* | [**deleteRouteFilterByUuid**](docs/RouteFiltersApi.md#deleteRouteFilterByUuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId} | Delete Route Filter
 *RouteFiltersApi* | [**detachConnectionRouteFilter**](docs/RouteFiltersApi.md#detachConnectionRouteFilter) | **DELETE** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Detach Route Filter
 *RouteFiltersApi* | [**getConnectionRouteFilterByUuid**](docs/RouteFiltersApi.md#getConnectionRouteFilterByUuid) | **GET** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Get Route Filter
-*RouteFiltersApi* | [**getConnectionRouteFilters**](docs/RouteFiltersApi.md#getConnectionRouteFilters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get All Route Filters
-*RouteFiltersApi* | [**getRouteFilterByUuid**](docs/RouteFiltersApi.md#getRouteFilterByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter By UUID
+*RouteFiltersApi* | [**getConnectionRouteFilters**](docs/RouteFiltersApi.md#getConnectionRouteFilters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get Connection Route Filters
+*RouteFiltersApi* | [**getRouteFilterByUuid**](docs/RouteFiltersApi.md#getRouteFilterByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter by ID
 *RouteFiltersApi* | [**getRouteFilterChangeByUuid**](docs/RouteFiltersApi.md#getRouteFilterChangeByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes/{changeId} | Get Change By ID
-*RouteFiltersApi* | [**getRouteFilterChanges**](docs/RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes
+*RouteFiltersApi* | [**getRouteFilterChanges**](docs/RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get Route Filter Changes
 *RouteFiltersApi* | [**getRouteFilterConnections**](docs/RouteFiltersApi.md#getRouteFilterConnections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter
-*RouteFiltersApi* | [**patchRouteFilterByUuid**](docs/RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter
+*RouteFiltersApi* | [**patchRouteFilterByUuid**](docs/RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Update Route Filter
 *RouteFiltersApi* | [**searchCloudRouterRouteFilterAttachments**](docs/RouteFiltersApi.md#searchCloudRouterRouteFilterAttachments) | **POST** /fabric/v4/routers/{routerId}/routeFilters/search | Search Cloud Router Route Filter Attachments
 *RouteFiltersApi* | [**searchRouteFilters**](docs/RouteFiltersApi.md#searchRouteFilters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters
-*RoutingProtocolsApi* | [**createConnectionRoutingProtocol**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Protocol
-*RoutingProtocolsApi* | [**createConnectionRoutingProtocolsInBulk**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocolsInBulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Protocol
+*RoutingProtocolsApi* | [**createConnectionRoutingProtocol**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Routing Protocol
+*RoutingProtocolsApi* | [**createConnectionRoutingProtocolsInBulk**](docs/RoutingProtocolsApi.md#createConnectionRoutingProtocolsInBulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Routing Protocols
 *RoutingProtocolsApi* | [**deleteConnectionRoutingProtocolByUuid**](docs/RoutingProtocolsApi.md#deleteConnectionRoutingProtocolByUuid) | **DELETE** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Delete Protocol
 *RoutingProtocolsApi* | [**getConnectionRoutingProtocolAllBgpActions**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolAllBgpActions) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Get BGP Actions
 *RoutingProtocolsApi* | [**getConnectionRoutingProtocolByUuid**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Get Protocol
-*RoutingProtocolsApi* | [**getConnectionRoutingProtocols**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | GetRoutingProtocols
+*RoutingProtocolsApi* | [**getConnectionRoutingProtocols**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | Get Routing Protocols
 *RoutingProtocolsApi* | [**getConnectionRoutingProtocolsBgpActionByUuid**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolsBgpActionByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions/{actionId} | Get BGP Action
 *RoutingProtocolsApi* | [**getConnectionRoutingProtocolsChangeByUuid**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolsChangeByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes/{changeId} | Get Change By ID
-*RoutingProtocolsApi* | [**getConnectionRoutingProtocolsChanges**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolsChanges) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Changes
+*RoutingProtocolsApi* | [**getConnectionRoutingProtocolsChanges**](docs/RoutingProtocolsApi.md#getConnectionRoutingProtocolsChanges) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Routing Protocol Changes
 *RoutingProtocolsApi* | [**patchConnectionRoutingProtocolByUuid**](docs/RoutingProtocolsApi.md#patchConnectionRoutingProtocolByUuid) | **PATCH** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Patch Protocol
 *RoutingProtocolsApi* | [**postConnectionRoutingProtocolBgpActionByUuid**](docs/RoutingProtocolsApi.md#postConnectionRoutingProtocolBgpActionByUuid) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Clear/Reset BGP
 *RoutingProtocolsApi* | [**replaceConnectionRoutingProtocolByUuid**](docs/RoutingProtocolsApi.md#replaceConnectionRoutingProtocolByUuid) | **PUT** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Replace Protocol
 *RoutingProtocolsApi* | [**validateRoutingProtocol**](docs/RoutingProtocolsApi.md#validateRoutingProtocol) | **POST** /fabric/v4/routers/{routerId}/validate | Validate Subnet
-*ServiceProfilesApi* | [**createServiceProfile**](docs/ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Profile
-*ServiceProfilesApi* | [**createServiceProfileAction**](docs/ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions
-*ServiceProfilesApi* | [**deleteServiceProfileByUuid**](docs/ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile
-*ServiceProfilesApi* | [**getServiceProfileByUuid**](docs/ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile
-*ServiceProfilesApi* | [**getServiceProfileEnvironmentsByUuid**](docs/ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments
-*ServiceProfilesApi* | [**getServiceProfileMetrosByUuid**](docs/ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros
-*ServiceProfilesApi* | [**getServiceProfiles**](docs/ServiceProfilesApi.md#getServiceProfiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles
-*ServiceProfilesApi* | [**putServiceProfileByUuid**](docs/ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile
-*ServiceProfilesApi* | [**searchServiceProfiles**](docs/ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search
-*ServiceProfilesApi* | [**serviceProfileEnvironmentAction**](docs/ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions
-*ServiceProfilesApi* | [**updateServiceProfileByUuid**](docs/ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile
+*ServiceProfilesApi* | [**createServiceProfile**](docs/ServiceProfilesApi.md#createServiceProfile) | **POST** /fabric/v4/serviceProfiles | Create Service Profile
+*ServiceProfilesApi* | [**createServiceProfileAction**](docs/ServiceProfilesApi.md#createServiceProfileAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Create Service Profile Action
+*ServiceProfilesApi* | [**deleteServiceProfileByUuid**](docs/ServiceProfilesApi.md#deleteServiceProfileByUuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Service Profile
+*ServiceProfilesApi* | [**getServiceProfileByUuid**](docs/ServiceProfilesApi.md#getServiceProfileByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Service Profile
+*ServiceProfilesApi* | [**getServiceProfileEnvironmentsByUuid**](docs/ServiceProfilesApi.md#getServiceProfileEnvironmentsByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Service Profile Environments
+*ServiceProfilesApi* | [**getServiceProfileMetrosByUuid**](docs/ServiceProfilesApi.md#getServiceProfileMetrosByUuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Service Profile Metros
+*ServiceProfilesApi* | [**listServiceProfiles**](docs/ServiceProfilesApi.md#listServiceProfiles) | **GET** /fabric/v4/serviceProfiles | List Service Profiles
+*ServiceProfilesApi* | [**putServiceProfileByUuid**](docs/ServiceProfilesApi.md#putServiceProfileByUuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Service Profile
+*ServiceProfilesApi* | [**searchServiceProfiles**](docs/ServiceProfilesApi.md#searchServiceProfiles) | **POST** /fabric/v4/serviceProfiles/search | Search Service Profiles
+*ServiceProfilesApi* | [**serviceProfileEnvironmentAction**](docs/ServiceProfilesApi.md#serviceProfileEnvironmentAction) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Create Service Profile Environment Action
+*ServiceProfilesApi* | [**updateServiceProfileByUuid**](docs/ServiceProfilesApi.md#updateServiceProfileByUuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Service Profile
 *ServiceTokensApi* | [**createServiceToken**](docs/ServiceTokensApi.md#createServiceToken) | **POST** /fabric/v4/serviceTokens | Create Service Token
-*ServiceTokensApi* | [**createServiceTokenAction**](docs/ServiceTokensApi.md#createServiceTokenAction) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | ServiceToken Actions
-*ServiceTokensApi* | [**deleteServiceTokenByUuid**](docs/ServiceTokensApi.md#deleteServiceTokenByUuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Token by uuid
-*ServiceTokensApi* | [**getServiceTokenByUuid**](docs/ServiceTokensApi.md#getServiceTokenByUuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Token by uuid
-*ServiceTokensApi* | [**getServiceTokens**](docs/ServiceTokensApi.md#getServiceTokens) | **GET** /fabric/v4/serviceTokens | Get All Tokens
-*ServiceTokensApi* | [**searchServiceTokens**](docs/ServiceTokensApi.md#searchServiceTokens) | **POST** /fabric/v4/serviceTokens/search | Search servicetokens
+*ServiceTokensApi* | [**createServiceTokenAction**](docs/ServiceTokensApi.md#createServiceTokenAction) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | Create Service Token Action
+*ServiceTokensApi* | [**deleteServiceTokenByUuid**](docs/ServiceTokensApi.md#deleteServiceTokenByUuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Service Token by ID
+*ServiceTokensApi* | [**getServiceTokenByUuid**](docs/ServiceTokensApi.md#getServiceTokenByUuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Service Token by ID
+*ServiceTokensApi* | [**getServiceTokens**](docs/ServiceTokensApi.md#getServiceTokens) | **GET** /fabric/v4/serviceTokens | Get Service Tokens
+*ServiceTokensApi* | [**searchServiceTokens**](docs/ServiceTokensApi.md#searchServiceTokens) | **POST** /fabric/v4/serviceTokens/search | Search Service Tokens
 *ServiceTokensApi* | [**updateServiceTokenByUuid**](docs/ServiceTokensApi.md#updateServiceTokenByUuid) | **PATCH** /fabric/v4/serviceTokens/{serviceTokenId} | Update Token By ID
-*StatisticsApi* | [**getConnectionStatsByPortUuid**](docs/StatisticsApi.md#getConnectionStatsByPortUuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by uuid **(DEPRECATED)**
-*StatisticsApi* | [**getPortStatsByPortUuid**](docs/StatisticsApi.md#getPortStatsByPortUuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid **(DEPRECATED)**
-*StreamAlertRulesApi* | [**createStreamAlertRules**](docs/StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rules
-*StreamAlertRulesApi* | [**deleteStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rules
-*StreamAlertRulesApi* | [**getStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rules
+*StatisticsApi* | [**getConnectionStatsByPortUuid**](docs/StatisticsApi.md#getConnectionStatsByPortUuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by ID (DEPRECATED)
+*StatisticsApi* | [**getPortStatsByPortUuid**](docs/StatisticsApi.md#getPortStatsByPortUuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by ID (DEPRECATED)
+*StreamAlertRulesApi* | [**createStreamAlertRules**](docs/StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rule
+*StreamAlertRulesApi* | [**deleteStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rule
+*StreamAlertRulesApi* | [**getStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rule
 *StreamAlertRulesApi* | [**getStreamAlertRules**](docs/StreamAlertRulesApi.md#getStreamAlertRules) | **GET** /fabric/v4/streams/{streamId}/alertRules | Get Stream Alert Rules
-*StreamAlertRulesApi* | [**updateStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules
+*StreamAlertRulesApi* | [**updateStreamAlertRuleByUuid**](docs/StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rule
 *StreamSubscriptionsApi* | [**createStreamSubscriptions**](docs/StreamSubscriptionsApi.md#createStreamSubscriptions) | **POST** /fabric/v4/streams/{streamId}/subscriptions | Create Subscription
 *StreamSubscriptionsApi* | [**deleteStreamSubscriptionByUuid**](docs/StreamSubscriptionsApi.md#deleteStreamSubscriptionByUuid) | **DELETE** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Delete Subscription
 *StreamSubscriptionsApi* | [**getStreamSubscriptionByUuid**](docs/StreamSubscriptionsApi.md#getStreamSubscriptionByUuid) | **GET** /fabric/v4/streams/{streamId}/subscriptions/{subscriptionId} | Get Subscription
@@ -363,13 +376,16 @@ Class | Method | HTTP request | Description
 *StreamsApi* | [**createStreams**](docs/StreamsApi.md#createStreams) | **POST** /fabric/v4/streams | Create Stream
 *StreamsApi* | [**deleteStreamAssetByUuid**](docs/StreamsApi.md#deleteStreamAssetByUuid) | **DELETE** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Detach Asset
 *StreamsApi* | [**deleteStreamByUuid**](docs/StreamsApi.md#deleteStreamByUuid) | **DELETE** /fabric/v4/streams/{streamId} | Delete Stream
+*StreamsApi* | [**deleteStreamDevice**](docs/StreamsApi.md#deleteStreamDevice) | **DELETE** /fabric/v4/streams/{streamId}/devices/{deviceId} | Detach Network Edge Device
 *StreamsApi* | [**getStreamAssetByUuid**](docs/StreamsApi.md#getStreamAssetByUuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset
 *StreamsApi* | [**getStreamByUuid**](docs/StreamsApi.md#getStreamByUuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream
+*StreamsApi* | [**getStreamDevice**](docs/StreamsApi.md#getStreamDevice) | **GET** /fabric/v4/streams/{streamId}/devices/{deviceId} | Get Network Edge Device
 *StreamsApi* | [**getStreams**](docs/StreamsApi.md#getStreams) | **GET** /fabric/v4/streams | Get Streams
 *StreamsApi* | [**searchStreamAssets**](docs/StreamsApi.md#searchStreamAssets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets
 *StreamsApi* | [**searchStreams**](docs/StreamsApi.md#searchStreams) | **POST** /fabric/v4/streams/search | Search Streams
 *StreamsApi* | [**updateStreamAssetByUuid**](docs/StreamsApi.md#updateStreamAssetByUuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 *StreamsApi* | [**updateStreamByUuid**](docs/StreamsApi.md#updateStreamByUuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
+*StreamsApi* | [**updateStreamDevice**](docs/StreamsApi.md#updateStreamDevice) | **PUT** /fabric/v4/streams/{streamId}/devices/{deviceId} | Attach Network Edge Device Interfaces
 *TagsApi* | [**createTag**](docs/TagsApi.md#createTag) | **POST** /fabric/v4/tags | Create Tag
 *TagsApi* | [**getTagByUuid**](docs/TagsApi.md#getTagByUuid) | **GET** /fabric/v4/tags/{uuid} | Get Tag
 *TagsApi* | [**listTags**](docs/TagsApi.md#listTags) | **GET** /fabric/v4/tags | List Tags
@@ -380,14 +396,12 @@ Class | Method | HTTP request | Description
  - [AccessPoint](docs/AccessPoint.md)
  - [AccessPointSelector](docs/AccessPointSelector.md)
  - [AccessPointType](docs/AccessPointType.md)
- - [Account](docs/Account.md)
  - [Actions](docs/Actions.md)
  - [ActivationKeyDetails](docs/ActivationKeyDetails.md)
  - [AddOperation](docs/AddOperation.md)
  - [Address](docs/Address.md)
  - [AlertRulePostRequest](docs/AlertRulePostRequest.md)
  - [AlertRulePutRequest](docs/AlertRulePutRequest.md)
- - [AllInterconnectPackagesResponse](docs/AllInterconnectPackagesResponse.md)
  - [AllPhysicalPortsResponse](docs/AllPhysicalPortsResponse.md)
  - [AllPortPackagesResponse](docs/AllPortPackagesResponse.md)
  - [AllPortsResponse](docs/AllPortsResponse.md)
@@ -411,6 +425,7 @@ Class | Method | HTTP request | Description
  - [AppDomainType](docs/AppDomainType.md)
  - [AppLink](docs/AppLink.md)
  - [AppLinkAppDomainAttachment](docs/AppLinkAppDomainAttachment.md)
+ - [AppLinkAppProcessorAttachment](docs/AppLinkAppProcessorAttachment.md)
  - [AppLinkAppServiceAttachment](docs/AppLinkAppServiceAttachment.md)
  - [AppLinkAppServiceAttachmentChange](docs/AppLinkAppServiceAttachmentChange.md)
  - [AppLinkAppServiceAttachmentChangeOperation](docs/AppLinkAppServiceAttachmentChangeOperation.md)
@@ -422,6 +437,15 @@ Class | Method | HTTP request | Description
  - [AppLinkAttachDomainSimpleExpression](docs/AppLinkAttachDomainSimpleExpression.md)
  - [AppLinkAttachDomainSortCriteria](docs/AppLinkAttachDomainSortCriteria.md)
  - [AppLinkAttachDomainSortDirection](docs/AppLinkAttachDomainSortDirection.md)
+ - [AppLinkAttachProcessorFilter](docs/AppLinkAttachProcessorFilter.md)
+ - [AppLinkAttachProcessorFilters](docs/AppLinkAttachProcessorFilters.md)
+ - [AppLinkAttachProcessorOrFilter](docs/AppLinkAttachProcessorOrFilter.md)
+ - [AppLinkAttachProcessorRequest](docs/AppLinkAttachProcessorRequest.md)
+ - [AppLinkAttachProcessorSearchRequest](docs/AppLinkAttachProcessorSearchRequest.md)
+ - [AppLinkAttachProcessorSearchResponse](docs/AppLinkAttachProcessorSearchResponse.md)
+ - [AppLinkAttachProcessorSimpleExpression](docs/AppLinkAttachProcessorSimpleExpression.md)
+ - [AppLinkAttachProcessorSortCriteria](docs/AppLinkAttachProcessorSortCriteria.md)
+ - [AppLinkAttachProcessorSortDirection](docs/AppLinkAttachProcessorSortDirection.md)
  - [AppLinkAttachServiceFilter](docs/AppLinkAttachServiceFilter.md)
  - [AppLinkAttachServiceFilters](docs/AppLinkAttachServiceFilters.md)
  - [AppLinkAttachServiceOrFilter](docs/AppLinkAttachServiceOrFilter.md)
@@ -434,6 +458,7 @@ Class | Method | HTTP request | Description
  - [AppLinkAttachState](docs/AppLinkAttachState.md)
  - [AppLinkAttachedAppDomain](docs/AppLinkAttachedAppDomain.md)
  - [AppLinkAttachedAppDomains](docs/AppLinkAttachedAppDomains.md)
+ - [AppLinkAttachedAppProcessors](docs/AppLinkAttachedAppProcessors.md)
  - [AppLinkAttachedAppService](docs/AppLinkAttachedAppService.md)
  - [AppLinkAttachedAppServices](docs/AppLinkAttachedAppServices.md)
  - [AppLinkChange](docs/AppLinkChange.md)
@@ -451,6 +476,20 @@ Class | Method | HTTP request | Description
  - [AppLinkSortDirection](docs/AppLinkSortDirection.md)
  - [AppLinkState](docs/AppLinkState.md)
  - [AppLinkType](docs/AppLinkType.md)
+ - [AppProcessor](docs/AppProcessor.md)
+ - [AppProcessorChange](docs/AppProcessorChange.md)
+ - [AppProcessorChangeOperation](docs/AppProcessorChangeOperation.md)
+ - [AppProcessorFilter](docs/AppProcessorFilter.md)
+ - [AppProcessorFilters](docs/AppProcessorFilters.md)
+ - [AppProcessorMarketplace](docs/AppProcessorMarketplace.md)
+ - [AppProcessorOrFilter](docs/AppProcessorOrFilter.md)
+ - [AppProcessorSearchRequest](docs/AppProcessorSearchRequest.md)
+ - [AppProcessorSearchResponse](docs/AppProcessorSearchResponse.md)
+ - [AppProcessorSimpleExpression](docs/AppProcessorSimpleExpression.md)
+ - [AppProcessorSortCriteria](docs/AppProcessorSortCriteria.md)
+ - [AppProcessorSortDirection](docs/AppProcessorSortDirection.md)
+ - [AppProcessorState](docs/AppProcessorState.md)
+ - [AppProcessorType](docs/AppProcessorType.md)
  - [AppService](docs/AppService.md)
  - [AppServiceAttachedAppLink](docs/AppServiceAttachedAppLink.md)
  - [AppServiceAttachedAppLinks](docs/AppServiceAttachedAppLinks.md)
@@ -500,12 +539,17 @@ Class | Method | HTTP request | Description
  - [AppSubscriptionTargetRequest](docs/AppSubscriptionTargetRequest.md)
  - [AppSubscriptionTargetRequestAppService](docs/AppSubscriptionTargetRequestAppService.md)
  - [AppSubscriptionType](docs/AppSubscriptionType.md)
+ - [AsnOwnershipChallengeDetails](docs/AsnOwnershipChallengeDetails.md)
+ - [AsnOwnershipChallengeLoa](docs/AsnOwnershipChallengeLoa.md)
+ - [AsnOwnershipChallengeRpki](docs/AsnOwnershipChallengeRpki.md)
+ - [AsnOwnershipChallengeType](docs/AsnOwnershipChallengeType.md)
  - [Asset](docs/Asset.md)
  - [AttachPrivateServiceResponse](docs/AttachPrivateServiceResponse.md)
  - [AttachServiceProfileResponse](docs/AttachServiceProfileResponse.md)
  - [AttachTagResponse](docs/AttachTagResponse.md)
  - [AttachedAppDomainOrder](docs/AttachedAppDomainOrder.md)
  - [AttachedAppLinkOrder](docs/AttachedAppLinkOrder.md)
+ - [AttachedAppProcessorOrder](docs/AttachedAppProcessorOrder.md)
  - [AttachedAppServiceOrder](docs/AttachedAppServiceOrder.md)
  - [AttachedAppSubscriptionOrder](docs/AttachedAppSubscriptionOrder.md)
  - [AuthContext](docs/AuthContext.md)
@@ -519,6 +563,7 @@ Class | Method | HTTP request | Description
  - [BGPConnectionIpv6](docs/BGPConnectionIpv6.md)
  - [BGPConnectionOperation](docs/BGPConnectionOperation.md)
  - [BandwidthUtilization](docs/BandwidthUtilization.md)
+ - [BmmrType](docs/BmmrType.md)
  - [BulkOpticalConnectRequest](docs/BulkOpticalConnectRequest.md)
  - [BulkPhysicalPort](docs/BulkPhysicalPort.md)
  - [Change](docs/Change.md)
@@ -565,9 +610,7 @@ Class | Method | HTTP request | Description
  - [CloudRouterCommandState](docs/CloudRouterCommandState.md)
  - [CloudRouterCommandTracerouteResponse](docs/CloudRouterCommandTracerouteResponse.md)
  - [CloudRouterCommandType](docs/CloudRouterCommandType.md)
- - [CloudRouterFilter](docs/CloudRouterFilter.md)
- - [CloudRouterFilters](docs/CloudRouterFilters.md)
- - [CloudRouterOrFilter](docs/CloudRouterOrFilter.md)
+ - [CloudRouterExpression](docs/CloudRouterExpression.md)
  - [CloudRouterPackage](docs/CloudRouterPackage.md)
  - [CloudRouterPostRequest](docs/CloudRouterPostRequest.md)
  - [CloudRouterPostRequestBase](docs/CloudRouterPostRequestBase.md)
@@ -588,7 +631,6 @@ Class | Method | HTTP request | Description
  - [CloudRouterRouteFiltersSearchBase](docs/CloudRouterRouteFiltersSearchBase.md)
  - [CloudRouterRouteFiltersSearchResponse](docs/CloudRouterRouteFiltersSearchResponse.md)
  - [CloudRouterSearchRequest](docs/CloudRouterSearchRequest.md)
- - [CloudRouterSimpleExpression](docs/CloudRouterSimpleExpression.md)
  - [CloudRouterSortBy](docs/CloudRouterSortBy.md)
  - [CloudRouterSortCriteria](docs/CloudRouterSortCriteria.md)
  - [CloudRouterSortDirection](docs/CloudRouterSortDirection.md)
@@ -596,6 +638,7 @@ Class | Method | HTTP request | Description
  - [CompanyLogo](docs/CompanyLogo.md)
  - [CompanyMetro](docs/CompanyMetro.md)
  - [CompanyProfileChange](docs/CompanyProfileChange.md)
+ - [CompanyProfileChangeItem](docs/CompanyProfileChangeItem.md)
  - [CompanyProfileContact](docs/CompanyProfileContact.md)
  - [CompanyProfileContactContacts](docs/CompanyProfileContactContacts.md)
  - [CompanyProfileRequest](docs/CompanyProfileRequest.md)
@@ -647,14 +690,92 @@ Class | Method | HTTP request | Description
  - [ConnectivitySource](docs/ConnectivitySource.md)
  - [ConnectivitySourceType](docs/ConnectivitySourceType.md)
  - [ContactPreference](docs/ContactPreference.md)
+ - [CreateCrossConnect](docs/CreateCrossConnect.md)
  - [CreateLoa](docs/CreateLoa.md)
  - [CreateLoaNote](docs/CreateLoaNote.md)
+ - [CrossConnectASideDemarcationPoint](docs/CrossConnectASideDemarcationPoint.md)
+ - [CrossConnectASideRequest](docs/CrossConnectASideRequest.md)
+ - [CrossConnectASideRequestDemarcationPoint](docs/CrossConnectASideRequestDemarcationPoint.md)
+ - [CrossConnectASideResponse](docs/CrossConnectASideResponse.md)
+ - [CrossConnectAccount](docs/CrossConnectAccount.md)
+ - [CrossConnectActionAttachmentResponse](docs/CrossConnectActionAttachmentResponse.md)
+ - [CrossConnectActionData](docs/CrossConnectActionData.md)
+ - [CrossConnectActionFieldName](docs/CrossConnectActionFieldName.md)
+ - [CrossConnectActionFilter](docs/CrossConnectActionFilter.md)
+ - [CrossConnectActionNote](docs/CrossConnectActionNote.md)
+ - [CrossConnectActionNoteResponse](docs/CrossConnectActionNoteResponse.md)
+ - [CrossConnectActionOrFilter](docs/CrossConnectActionOrFilter.md)
+ - [CrossConnectActionRequest](docs/CrossConnectActionRequest.md)
+ - [CrossConnectActionResponse](docs/CrossConnectActionResponse.md)
+ - [CrossConnectActionResponseData](docs/CrossConnectActionResponseData.md)
+ - [CrossConnectActionSearchFilters](docs/CrossConnectActionSearchFilters.md)
+ - [CrossConnectActionSearchRequest](docs/CrossConnectActionSearchRequest.md)
+ - [CrossConnectActionSearchResponse](docs/CrossConnectActionSearchResponse.md)
+ - [CrossConnectActionSearchSimpleExpressions](docs/CrossConnectActionSearchSimpleExpressions.md)
+ - [CrossConnectActionSortCriteria](docs/CrossConnectActionSortCriteria.md)
+ - [CrossConnectActionState](docs/CrossConnectActionState.md)
+ - [CrossConnectActionType](docs/CrossConnectActionType.md)
+ - [CrossConnectAttachment](docs/CrossConnectAttachment.md)
+ - [CrossConnectAttachmentResponse](docs/CrossConnectAttachmentResponse.md)
+ - [CrossConnectAttachmentsResponse](docs/CrossConnectAttachmentsResponse.md)
+ - [CrossConnectChangelog](docs/CrossConnectChangelog.md)
+ - [CrossConnectContactAvailability](docs/CrossConnectContactAvailability.md)
+ - [CrossConnectContactPreference](docs/CrossConnectContactPreference.md)
+ - [CrossConnectDemarcationPoint](docs/CrossConnectDemarcationPoint.md)
+ - [CrossConnectDiverse](docs/CrossConnectDiverse.md)
+ - [CrossConnectEndCustomer](docs/CrossConnectEndCustomer.md)
+ - [CrossConnectFieldName](docs/CrossConnectFieldName.md)
+ - [CrossConnectFilter](docs/CrossConnectFilter.md)
+ - [CrossConnectLink](docs/CrossConnectLink.md)
+ - [CrossConnectLoaRef](docs/CrossConnectLoaRef.md)
+ - [CrossConnectLocation](docs/CrossConnectLocation.md)
+ - [CrossConnectNoteRequest](docs/CrossConnectNoteRequest.md)
+ - [CrossConnectNoteResponse](docs/CrossConnectNoteResponse.md)
+ - [CrossConnectNotesResponse](docs/CrossConnectNotesResponse.md)
+ - [CrossConnectNotification](docs/CrossConnectNotification.md)
+ - [CrossConnectOrFilter](docs/CrossConnectOrFilter.md)
+ - [CrossConnectParentNote](docs/CrossConnectParentNote.md)
+ - [CrossConnectPhone](docs/CrossConnectPhone.md)
+ - [CrossConnectProject](docs/CrossConnectProject.md)
+ - [CrossConnectProvider](docs/CrossConnectProvider.md)
+ - [CrossConnectRedundancy](docs/CrossConnectRedundancy.md)
+ - [CrossConnectResponse](docs/CrossConnectResponse.md)
+ - [CrossConnectResponseAllowedActions](docs/CrossConnectResponseAllowedActions.md)
+ - [CrossConnectScheduleAvailability](docs/CrossConnectScheduleAvailability.md)
+ - [CrossConnectScheduleAvailabilityASide](docs/CrossConnectScheduleAvailabilityASide.md)
+ - [CrossConnectScheduleAvailabilityZSide](docs/CrossConnectScheduleAvailabilityZSide.md)
+ - [CrossConnectScheduleFieldName](docs/CrossConnectScheduleFieldName.md)
+ - [CrossConnectScheduleResponse](docs/CrossConnectScheduleResponse.md)
+ - [CrossConnectScheduleSearchFilters](docs/CrossConnectScheduleSearchFilters.md)
+ - [CrossConnectScheduleSearchRequest](docs/CrossConnectScheduleSearchRequest.md)
+ - [CrossConnectScheduleSearchSimpleExpressions](docs/CrossConnectScheduleSearchSimpleExpressions.md)
+ - [CrossConnectScheduleSortCriteria](docs/CrossConnectScheduleSortCriteria.md)
+ - [CrossConnectScheduleState](docs/CrossConnectScheduleState.md)
+ - [CrossConnectSearchFilters](docs/CrossConnectSearchFilters.md)
+ - [CrossConnectSearchRequest](docs/CrossConnectSearchRequest.md)
+ - [CrossConnectSearchResponse](docs/CrossConnectSearchResponse.md)
+ - [CrossConnectSearchSimpleExpressions](docs/CrossConnectSearchSimpleExpressions.md)
+ - [CrossConnectServiceRequest](docs/CrossConnectServiceRequest.md)
+ - [CrossConnectServiceResponse](docs/CrossConnectServiceResponse.md)
+ - [CrossConnectServiceState](docs/CrossConnectServiceState.md)
+ - [CrossConnectServiceType](docs/CrossConnectServiceType.md)
+ - [CrossConnectServicesResponse](docs/CrossConnectServicesResponse.md)
+ - [CrossConnectSortCriteria](docs/CrossConnectSortCriteria.md)
+ - [CrossConnectState](docs/CrossConnectState.md)
+ - [CrossConnectType](docs/CrossConnectType.md)
+ - [CrossConnectZSideRequest](docs/CrossConnectZSideRequest.md)
+ - [CrossConnectZSideRequestDemarcationPoint](docs/CrossConnectZSideRequestDemarcationPoint.md)
+ - [CrossConnectZSideResponse](docs/CrossConnectZSideResponse.md)
+ - [CrossConnectZSideResponseDemarcationPoint](docs/CrossConnectZSideResponseDemarcationPoint.md)
  - [CustomField](docs/CustomField.md)
+ - [DeinstallScheduleRequest](docs/DeinstallScheduleRequest.md)
+ - [DeleteCrossConnect](docs/DeleteCrossConnect.md)
  - [DetectionMethod](docs/DetectionMethod.md)
  - [DetectionMethodResponse](docs/DetectionMethodResponse.md)
  - [DirectConnectionIpv4](docs/DirectConnectionIpv4.md)
  - [DirectConnectionIpv6](docs/DirectConnectionIpv6.md)
  - [Direction](docs/Direction.md)
+ - [DiverseCrossConnectRequest](docs/DiverseCrossConnectRequest.md)
  - [EndCustomer](docs/EndCustomer.md)
  - [EnvironmentActionRequest](docs/EnvironmentActionRequest.md)
  - [EnvironmentActionResponse](docs/EnvironmentActionResponse.md)
@@ -662,10 +783,18 @@ Class | Method | HTTP request | Description
  - [EnvironmentActionTypeEnum](docs/EnvironmentActionTypeEnum.md)
  - [EquinixStatus](docs/EquinixStatus.md)
  - [Error](docs/Error.md)
+ - [ExchangeServiceActionRequest](docs/ExchangeServiceActionRequest.md)
+ - [ExchangeServiceActionResponse](docs/ExchangeServiceActionResponse.md)
+ - [ExchangeServiceAdditionalInfo](docs/ExchangeServiceAdditionalInfo.md)
  - [ExchangeServiceAndExpression](docs/ExchangeServiceAndExpression.md)
+ - [ExchangeServiceCreateRequest](docs/ExchangeServiceCreateRequest.md)
  - [ExchangeServiceNotification](docs/ExchangeServiceNotification.md)
+ - [ExchangeServiceOpEnum](docs/ExchangeServiceOpEnum.md)
  - [ExchangeServiceOrExpression](docs/ExchangeServiceOrExpression.md)
+ - [ExchangeServiceOrder](docs/ExchangeServiceOrder.md)
  - [ExchangeServicePropertyExpression](docs/ExchangeServicePropertyExpression.md)
+ - [ExchangeServiceReplaceOperation](docs/ExchangeServiceReplaceOperation.md)
+ - [ExchangeServiceRequestBgp](docs/ExchangeServiceRequestBgp.md)
  - [ExchangeServiceResponse](docs/ExchangeServiceResponse.md)
  - [ExchangeServiceResponseBgp](docs/ExchangeServiceResponseBgp.md)
  - [ExchangeServiceSearchExpression](docs/ExchangeServiceSearchExpression.md)
@@ -677,12 +806,14 @@ Class | Method | HTTP request | Description
  - [FabricCloudRouterPackages](docs/FabricCloudRouterPackages.md)
  - [FabricCloudRouterPrice](docs/FabricCloudRouterPrice.md)
  - [FilterBody](docs/FilterBody.md)
- - [Gateway](docs/Gateway.md)
- - [GatewayChangeOperation](docs/GatewayChangeOperation.md)
  - [GatewayIpv4](docs/GatewayIpv4.md)
- - [GatewayPostRequest](docs/GatewayPostRequest.md)
- - [GatewayState](docs/GatewayState.md)
- - [GatewayType](docs/GatewayType.md)
+ - [GatewayPackageCode](docs/GatewayPackageCode.md)
+ - [GatewaySearchRequest](docs/GatewaySearchRequest.md)
+ - [GatewaySortCriteria](docs/GatewaySortCriteria.md)
+ - [GatewaySortDirection](docs/GatewaySortDirection.md)
+ - [GatewayTunnelSearchRequest](docs/GatewayTunnelSearchRequest.md)
+ - [GatewayTunnelSortCriteria](docs/GatewayTunnelSortCriteria.md)
+ - [GatewayTunnelSortDirection](docs/GatewayTunnelSortDirection.md)
  - [GeoCoordinates](docs/GeoCoordinates.md)
  - [GeoScopeType](docs/GeoScopeType.md)
  - [GeoZone](docs/GeoZone.md)
@@ -703,26 +834,9 @@ Class | Method | HTTP request | Description
  - [HealthResponse](docs/HealthResponse.md)
  - [Hop](docs/Hop.md)
  - [HopProbes](docs/HopProbes.md)
- - [Interconnect](docs/Interconnect.md)
- - [InterconnectFilter](docs/InterconnectFilter.md)
- - [InterconnectLocation](docs/InterconnectLocation.md)
- - [InterconnectLocationRequest](docs/InterconnectLocationRequest.md)
- - [InterconnectNotification](docs/InterconnectNotification.md)
- - [InterconnectPackage](docs/InterconnectPackage.md)
- - [InterconnectPostRequest](docs/InterconnectPostRequest.md)
- - [InterconnectRouter](docs/InterconnectRouter.md)
- - [InterconnectSearchFieldName](docs/InterconnectSearchFieldName.md)
- - [InterconnectSearchRequest](docs/InterconnectSearchRequest.md)
- - [InterconnectSearchResponse](docs/InterconnectSearchResponse.md)
- - [InterconnectSortBy](docs/InterconnectSortBy.md)
- - [InterconnectSortByResponse](docs/InterconnectSortByResponse.md)
- - [InterconnectSortCriteria](docs/InterconnectSortCriteria.md)
- - [InterconnectSortCriteriaResponse](docs/InterconnectSortCriteriaResponse.md)
- - [InterconnectSortDirection](docs/InterconnectSortDirection.md)
- - [InterconnectSortDirectionResponse](docs/InterconnectSortDirectionResponse.md)
- - [InterconnectState](docs/InterconnectState.md)
  - [InternetAccess](docs/InternetAccess.md)
  - [InternetAccessAccount](docs/InternetAccessAccount.md)
+ - [InternetAccessBgpAuthType](docs/InternetAccessBgpAuthType.md)
  - [InternetAccessBilling](docs/InternetAccessBilling.md)
  - [InternetAccessBillingType](docs/InternetAccessBillingType.md)
  - [InternetAccessChange](docs/InternetAccessChange.md)
@@ -797,6 +911,9 @@ Class | Method | HTTP request | Description
  - [LinkProtocolServiceToken](docs/LinkProtocolServiceToken.md)
  - [LinkProtocolState](docs/LinkProtocolState.md)
  - [LinkProtocolType](docs/LinkProtocolType.md)
+ - [LiveEventFilters](docs/LiveEventFilters.md)
+ - [LiveEventSearchRequest](docs/LiveEventSearchRequest.md)
+ - [LiveEventSimpleExpression](docs/LiveEventSimpleExpression.md)
  - [LoaActionData](docs/LoaActionData.md)
  - [LoaActionFieldName](docs/LoaActionFieldName.md)
  - [LoaActionFilter](docs/LoaActionFilter.md)
@@ -880,16 +997,15 @@ Class | Method | HTTP request | Description
  - [NetworkSortDirectionResponse](docs/NetworkSortDirectionResponse.md)
  - [NetworkState](docs/NetworkState.md)
  - [NetworkType](docs/NetworkType.md)
+ - [NotificationType](docs/NotificationType.md)
  - [Operation](docs/Operation.md)
- - [OperationalEventFilters](docs/OperationalEventFilters.md)
- - [OperationalEventSearchRequest](docs/OperationalEventSearchRequest.md)
- - [OperationalEventSimpleExpression](docs/OperationalEventSimpleExpression.md)
  - [OperationalStatus](docs/OperationalStatus.md)
  - [OperatorEnum](docs/OperatorEnum.md)
  - [OpticalConnectASideRequest](docs/OpticalConnectASideRequest.md)
  - [OpticalConnectASideResponse](docs/OpticalConnectASideResponse.md)
  - [OpticalConnectBulk](docs/OpticalConnectBulk.md)
  - [OpticalConnectConnectionDestinationType](docs/OpticalConnectConnectionDestinationType.md)
+ - [OpticalConnectDemarcationPoint](docs/OpticalConnectDemarcationPoint.md)
  - [OpticalConnectFilter](docs/OpticalConnectFilter.md)
  - [OpticalConnectFilters](docs/OpticalConnectFilters.md)
  - [OpticalConnectLOA](docs/OpticalConnectLOA.md)
@@ -897,7 +1013,6 @@ Class | Method | HTTP request | Description
  - [OpticalConnectNotification](docs/OpticalConnectNotification.md)
  - [OpticalConnectOrFilter](docs/OpticalConnectOrFilter.md)
  - [OpticalConnectOrder](docs/OpticalConnectOrder.md)
- - [OpticalConnectPatchPanelFields](docs/OpticalConnectPatchPanelFields.md)
  - [OpticalConnectPostRequest](docs/OpticalConnectPostRequest.md)
  - [OpticalConnectPrice](docs/OpticalConnectPrice.md)
  - [OpticalConnectPriceASide](docs/OpticalConnectPriceASide.md)
@@ -906,6 +1021,7 @@ Class | Method | HTTP request | Description
  - [OpticalConnectPriceZSide](docs/OpticalConnectPriceZSide.md)
  - [OpticalConnectRedundancy](docs/OpticalConnectRedundancy.md)
  - [OpticalConnectResponse](docs/OpticalConnectResponse.md)
+ - [OpticalConnectResponseDemarcationPoint](docs/OpticalConnectResponseDemarcationPoint.md)
  - [OpticalConnectSearchRequest](docs/OpticalConnectSearchRequest.md)
  - [OpticalConnectServiceSearchResponse](docs/OpticalConnectServiceSearchResponse.md)
  - [OpticalConnectSimpleExpression](docs/OpticalConnectSimpleExpression.md)
@@ -916,6 +1032,8 @@ Class | Method | HTTP request | Description
  - [OpticalConnectZSideRequest](docs/OpticalConnectZSideRequest.md)
  - [OpticalConnectZSideResponse](docs/OpticalConnectZSideResponse.md)
  - [Order](docs/Order.md)
+ - [OrderRequest](docs/OrderRequest.md)
+ - [OrderResponse](docs/OrderResponse.md)
  - [OutputStructuredPing](docs/OutputStructuredPing.md)
  - [OutputStructuredPingResponseItem](docs/OutputStructuredPingResponseItem.md)
  - [OutputStructuredTraceroute](docs/OutputStructuredTraceroute.md)
@@ -923,6 +1041,8 @@ Class | Method | HTTP request | Description
  - [PackageResponse](docs/PackageResponse.md)
  - [Pagination](docs/Pagination.md)
  - [PaginationRequest](docs/PaginationRequest.md)
+ - [PatchEquipmentRequest](docs/PatchEquipmentRequest.md)
+ - [PatchEquipmentResponse](docs/PatchEquipmentResponse.md)
  - [PatchIpBlockRequestBodyItem](docs/PatchIpBlockRequestBodyItem.md)
  - [PatchIpBlockRequestBodyItemValue](docs/PatchIpBlockRequestBodyItemValue.md)
  - [PeeringType](docs/PeeringType.md)
@@ -993,7 +1113,9 @@ Class | Method | HTTP request | Description
  - [ProviderEnvironments](docs/ProviderEnvironments.md)
  - [ProviderStatus](docs/ProviderStatus.md)
  - [PtpAdvanceConfiguration](docs/PtpAdvanceConfiguration.md)
+ - [PublicPeeringConnectionRequest](docs/PublicPeeringConnectionRequest.md)
  - [PublicPeeringConnectionResponse](docs/PublicPeeringConnectionResponse.md)
+ - [PurchaseOrder](docs/PurchaseOrder.md)
  - [RaAttachmentSortItem](docs/RaAttachmentSortItem.md)
  - [RemoveOperation](docs/RemoveOperation.md)
  - [ReplaceOperation](docs/ReplaceOperation.md)
@@ -1106,16 +1228,21 @@ Class | Method | HTTP request | Description
  - [RoutingProtocolDirectType](docs/RoutingProtocolDirectType.md)
  - [RoutingProtocolOperation](docs/RoutingProtocolOperation.md)
  - [RoutingProtocolProject](docs/RoutingProtocolProject.md)
+ - [RoutingProtocolRequest](docs/RoutingProtocolRequest.md)
  - [RoutingProtocolResponse](docs/RoutingProtocolResponse.md)
+ - [ScheduleRequest](docs/ScheduleRequest.md)
+ - [ScheduleType](docs/ScheduleType.md)
+ - [SchedulesResponse](docs/SchedulesResponse.md)
  - [SearchAndExpression](docs/SearchAndExpression.md)
  - [SearchExpression](docs/SearchExpression.md)
  - [SearchFieldName](docs/SearchFieldName.md)
  - [SearchFilter](docs/SearchFilter.md)
  - [SearchFilterExpression](docs/SearchFilterExpression.md)
- - [SearchOperationalEventResponse](docs/SearchOperationalEventResponse.md)
+ - [SearchLiveEventResponse](docs/SearchLiveEventResponse.md)
  - [SearchOrExpression](docs/SearchOrExpression.md)
  - [SearchRequest](docs/SearchRequest.md)
  - [SearchResponse](docs/SearchResponse.md)
+ - [SearchSchedulesResponse](docs/SearchSchedulesResponse.md)
  - [SearchSimpleExpression](docs/SearchSimpleExpression.md)
  - [SearchSortItem](docs/SearchSortItem.md)
  - [SearchStreamAssetResponse](docs/SearchStreamAssetResponse.md)
@@ -1137,6 +1264,7 @@ Class | Method | HTTP request | Description
  - [ServiceProfileFilter](docs/ServiceProfileFilter.md)
  - [ServiceProfileLastMileApiIntegration](docs/ServiceProfileLastMileApiIntegration.md)
  - [ServiceProfileLastMileConfig](docs/ServiceProfileLastMileConfig.md)
+ - [ServiceProfileLastMileContactInfoItem](docs/ServiceProfileLastMileContactInfoItem.md)
  - [ServiceProfileLastMileDeliveryDateRange](docs/ServiceProfileLastMileDeliveryDateRange.md)
  - [ServiceProfileLastMileOffering](docs/ServiceProfileLastMileOffering.md)
  - [ServiceProfileLastMilePriceRange](docs/ServiceProfileLastMilePriceRange.md)
@@ -1169,6 +1297,8 @@ Class | Method | HTTP request | Description
  - [ServiceTokenType](docs/ServiceTokenType.md)
  - [ServiceTokens](docs/ServiceTokens.md)
  - [Services](docs/Services.md)
+ - [SignatureRequest](docs/SignatureRequest.md)
+ - [SignatureType](docs/SignatureType.md)
  - [SimplifiedAccount](docs/SimplifiedAccount.md)
  - [SimplifiedAccountRequest](docs/SimplifiedAccountRequest.md)
  - [SimplifiedLinkProtocol](docs/SimplifiedLinkProtocol.md)
@@ -1194,6 +1324,7 @@ Class | Method | HTTP request | Description
  - [StreamAsset](docs/StreamAsset.md)
  - [StreamAssetFilter](docs/StreamAssetFilter.md)
  - [StreamAssetFilters](docs/StreamAssetFilters.md)
+ - [StreamAssetInterface](docs/StreamAssetInterface.md)
  - [StreamAssetOrFilter](docs/StreamAssetOrFilter.md)
  - [StreamAssetPutRequest](docs/StreamAssetPutRequest.md)
  - [StreamAssetSearchRequest](docs/StreamAssetSearchRequest.md)
@@ -1201,6 +1332,8 @@ Class | Method | HTTP request | Description
  - [StreamAssetSortBy](docs/StreamAssetSortBy.md)
  - [StreamAssetSortCriteria](docs/StreamAssetSortCriteria.md)
  - [StreamAssetSortDirection](docs/StreamAssetSortDirection.md)
+ - [StreamDeviceInterfaceRequest](docs/StreamDeviceInterfaceRequest.md)
+ - [StreamDevicePutRequest](docs/StreamDevicePutRequest.md)
  - [StreamFilter](docs/StreamFilter.md)
  - [StreamFilterOrFilter](docs/StreamFilterOrFilter.md)
  - [StreamFilterSimpleExpression](docs/StreamFilterSimpleExpression.md)
@@ -1260,6 +1393,8 @@ Class | Method | HTTP request | Description
  - [TimeServiceSortCriteria](docs/TimeServiceSortCriteria.md)
  - [TimeServiceSortDirection](docs/TimeServiceSortDirection.md)
  - [TimeServicesSearchRequest](docs/TimeServicesSearchRequest.md)
+ - [TunnelRoutingProtocolIpv4](docs/TunnelRoutingProtocolIpv4.md)
+ - [TunnelRoutingProtocolPostRequestIpv4](docs/TunnelRoutingProtocolPostRequestIpv4.md)
  - [TypeOfIpBlockProduct](docs/TypeOfIpBlockProduct.md)
  - [ValidateConnectionResponse](docs/ValidateConnectionResponse.md)
  - [ValidateRequest](docs/ValidateRequest.md)

@@ -83,6 +83,8 @@ public class StreamAsset {
     
     PROJECT("PROJECT"),
     
+    VIRTUAL_DEVICE("VIRTUAL_DEVICE"),
+    
     DATA("DATA"),
     
     MGMT("MGMT"),

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -73,6 +74,71 @@ public class ServiceProfileLastMileProductCatalog {
   @SerializedName(SERIALIZED_NAME_DELIVERY_DATE)
   @javax.annotation.Nullable
   private ServiceProfileLastMileDeliveryDateRange deliveryDate;
+
+  /**
+   * Gets or Sets billingTerms
+   */
+  @JsonAdapter(BillingTermsEnum.Adapter.class)
+  public enum BillingTermsEnum {
+    NUMBER_1(1),
+    
+    NUMBER_12(12),
+    
+    NUMBER_24(24),
+    
+    NUMBER_36(36),
+    
+    NUMBER_48(48),
+    
+    NUMBER_60(60);
+
+    private Integer value;
+
+    BillingTermsEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static BillingTermsEnum fromValue(Integer value) {
+      for (BillingTermsEnum b : BillingTermsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<BillingTermsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final BillingTermsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public BillingTermsEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value =  jsonReader.nextInt();
+        return BillingTermsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      BillingTermsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_BILLING_TERMS = "billingTerms";
+  @SerializedName(SERIALIZED_NAME_BILLING_TERMS)
+  @javax.annotation.Nullable
+  private List<BillingTermsEnum> billingTerms;
 
   public static final String SERIALIZED_NAME_OFFERINGS = "offerings";
   @SerializedName(SERIALIZED_NAME_OFFERINGS)
@@ -155,6 +221,33 @@ public class ServiceProfileLastMileProductCatalog {
 
   public void setDeliveryDate(@javax.annotation.Nullable ServiceProfileLastMileDeliveryDateRange deliveryDate) {
     this.deliveryDate = deliveryDate;
+  }
+
+
+  public ServiceProfileLastMileProductCatalog billingTerms(@javax.annotation.Nullable List<BillingTermsEnum> billingTerms) {
+    this.billingTerms = billingTerms;
+    return this;
+  }
+
+  public ServiceProfileLastMileProductCatalog addBillingTermsItem(BillingTermsEnum billingTermsItem) {
+    if (this.billingTerms == null) {
+      this.billingTerms = new ArrayList<>();
+    }
+    this.billingTerms.add(billingTermsItem);
+    return this;
+  }
+
+  /**
+   * Available billing terms in months.
+   * @return billingTerms
+   */
+  @javax.annotation.Nullable
+  public List<BillingTermsEnum> getBillingTerms() {
+    return billingTerms;
+  }
+
+  public void setBillingTerms(@javax.annotation.Nullable List<BillingTermsEnum> billingTerms) {
+    this.billingTerms = billingTerms;
   }
 
 
@@ -243,13 +336,25 @@ public class ServiceProfileLastMileProductCatalog {
         Objects.equals(this.id, serviceProfileLastMileProductCatalog.id) &&
         Objects.equals(this.webUrl, serviceProfileLastMileProductCatalog.webUrl) &&
         Objects.equals(this.deliveryDate, serviceProfileLastMileProductCatalog.deliveryDate) &&
+        Objects.equals(this.billingTerms, serviceProfileLastMileProductCatalog.billingTerms) &&
         Objects.equals(this.offerings, serviceProfileLastMileProductCatalog.offerings)&&
         Objects.equals(this.additionalProperties, serviceProfileLastMileProductCatalog.additionalProperties);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, webUrl, deliveryDate, offerings, additionalProperties);
+    return Objects.hash(name, id, webUrl, deliveryDate, billingTerms, offerings, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -260,6 +365,7 @@ public class ServiceProfileLastMileProductCatalog {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
     sb.append("    deliveryDate: ").append(toIndentedString(deliveryDate)).append("\n");
+    sb.append("    billingTerms: ").append(toIndentedString(billingTerms)).append("\n");
     sb.append("    offerings: ").append(toIndentedString(offerings)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -283,7 +389,7 @@ public class ServiceProfileLastMileProductCatalog {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("name", "id", "webUrl", "deliveryDate", "offerings"));
+    openapiFields = new HashSet<String>(Arrays.asList("name", "id", "webUrl", "deliveryDate", "billingTerms", "offerings"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -314,6 +420,10 @@ public class ServiceProfileLastMileProductCatalog {
       // validate the optional field `deliveryDate`
       if (jsonObj.get("deliveryDate") != null && !jsonObj.get("deliveryDate").isJsonNull()) {
         ServiceProfileLastMileDeliveryDateRange.validateJsonElement(jsonObj.get("deliveryDate"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("billingTerms") != null && !jsonObj.get("billingTerms").isJsonNull() && !jsonObj.get("billingTerms").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `billingTerms` to be an array in the JSON string but got `%s`", jsonObj.get("billingTerms").toString()));
       }
       if (jsonObj.get("offerings") != null && !jsonObj.get("offerings").isJsonNull()) {
         JsonArray jsonArrayofferings = jsonObj.getAsJsonArray("offerings");

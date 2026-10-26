@@ -35,5 +35,7 @@
 
 * `SERVICECODE` (value: `"/serviceCode"`)
 
+* `OPERATION_MAINTENANCESTATUS` (value: `"/operation/maintenanceStatus"`)
+
 
 

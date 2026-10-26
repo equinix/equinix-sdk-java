@@ -98,7 +98,9 @@ public class MetricsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMetricByAssetIdCall(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -165,6 +167,7 @@ public class MetricsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getMetricByAssetIdValidateBeforeCall(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'asset' is set
@@ -187,7 +190,7 @@ public class MetricsApi {
     }
 
     /**
-     * Get Metrics by Asset Id
+     * Get Metrics by Asset Id (Deprecated)
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
@@ -208,14 +211,16 @@ public class MetricsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public GetMetricsByAssetResponse getMetricByAssetId(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         ApiResponse<GetMetricsByAssetResponse> localVarResp = getMetricByAssetIdWithHttpInfo(asset, assetId, name, fromDateTime, toDateTime, offset, limit);
         return localVarResp.getData();
     }
 
     /**
-     * Get Metrics by Asset Id
+     * Get Metrics by Asset Id (Deprecated)
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
@@ -236,7 +241,9 @@ public class MetricsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<GetMetricsByAssetResponse> getMetricByAssetIdWithHttpInfo(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, null);
         Type localVarReturnType = new TypeToken<GetMetricsByAssetResponse>(){}.getType();
@@ -244,7 +251,7 @@ public class MetricsApi {
     }
 
     /**
-     * Get Metrics by Asset Id (asynchronously)
+     * Get Metrics by Asset Id (Deprecated) (asynchronously)
      * This API provides capability to retrieve Metrics of an asset id
      * @param asset asset (required)
      * @param assetId asset UUID (required)
@@ -266,7 +273,9 @@ public class MetricsApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMetricByAssetIdAsync(@javax.annotation.Nonnull MetricAssetType asset, @javax.annotation.Nonnull UUID assetId, @javax.annotation.Nonnull String name, @javax.annotation.Nullable OffsetDateTime fromDateTime, @javax.annotation.Nullable OffsetDateTime toDateTime, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<GetMetricsByAssetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetricByAssetIdValidateBeforeCall(asset, assetId, name, fromDateTime, toDateTime, offset, limit, _callback);

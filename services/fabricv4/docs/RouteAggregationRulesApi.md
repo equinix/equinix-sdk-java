@@ -4,15 +4,15 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createRouteAggregationRule**](RouteAggregationRulesApi.md#createRouteAggregationRule) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Create RARule |
-| [**createRouteAggregationRulesInBulk**](RouteAggregationRulesApi.md#createRouteAggregationRulesInBulk) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/bulk | Bulk RARules |
-| [**deleteRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#deleteRouteAggregationRuleByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | DeleteRARule |
-| [**getRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#getRouteAggregationRuleByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | GetRARule By UUID |
+| [**createRouteAggregationRule**](RouteAggregationRulesApi.md#createRouteAggregationRule) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Create Route Aggregation Rule |
+| [**createRouteAggregationRulesInBulk**](RouteAggregationRulesApi.md#createRouteAggregationRulesInBulk) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/bulk | Bulk Create Route Aggregation Rules |
+| [**deleteRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#deleteRouteAggregationRuleByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Delete Route Aggregation Rule |
+| [**getRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#getRouteAggregationRuleByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Get Route Aggregation Rule by ID |
 | [**getRouteAggregationRuleChangeByUuid**](RouteAggregationRulesApi.md#getRouteAggregationRuleChangeByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes/{changeId} | Get Change By ID |
-| [**getRouteAggregationRuleChanges**](RouteAggregationRulesApi.md#getRouteAggregationRuleChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes | Get All Changes |
-| [**getRouteAggregationRules**](RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | GetRARules |
-| [**patchRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | PatchRARule |
-| [**replaceRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | ReplaceRARule |
+| [**getRouteAggregationRuleChanges**](RouteAggregationRulesApi.md#getRouteAggregationRuleChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId}/changes | Get Route Aggregation Rule Changes |
+| [**getRouteAggregationRules**](RouteAggregationRulesApi.md#getRouteAggregationRules) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules | Get Route Aggregation Rules |
+| [**patchRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#patchRouteAggregationRuleByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Update Route Aggregation Rule |
+| [**replaceRouteAggregationRuleByUuid**](RouteAggregationRulesApi.md#replaceRouteAggregationRuleByUuid) | **PUT** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/{routeAggregationRuleId} | Replace Route Aggregation Rule |
 | [**searchRouteAggregationRules**](RouteAggregationRulesApi.md#searchRouteAggregationRules) | **POST** /fabric/v4/routeAggregations/{routeAggregationId}/routeAggregationRules/search | Search Route Aggregation Rules |
 
 
@@ -20,7 +20,7 @@ All URIs are relative to *https://api.equinix.com*
 # **createRouteAggregationRule**
 > RouteAggregationRulesData createRouteAggregationRule(routeAggregationId, routeAggregationRulesBase)
 
-Create RARule
+Create Route Aggregation Rule
 
 This API provides capability to create a Route Aggregation Rule
 
@@ -95,7 +95,7 @@ public class Example {
 # **createRouteAggregationRulesInBulk**
 > GetRouteAggregationRulesResponse createRouteAggregationRulesInBulk(routeAggregationId, routeAggregationRulesPostRequest)
 
-Bulk RARules
+Bulk Create Route Aggregation Rules
 
 This API provides capability to create bulk route aggregation rules
 
@@ -170,7 +170,7 @@ public class Example {
 # **deleteRouteAggregationRuleByUuid**
 > RouteAggregationRulesData deleteRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId)
 
-DeleteRARule
+Delete Route Aggregation Rule
 
 This API provides capability to delete a Route aggregation Rule
 
@@ -245,7 +245,7 @@ public class Example {
 # **getRouteAggregationRuleByUuid**
 > RouteAggregationRulesData getRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId)
 
-GetRARule By UUID
+Get Route Aggregation Rule by ID
 
 This API provides capability to view a Route Aggregation Rule by UUID
 
@@ -396,7 +396,7 @@ public class Example {
 # **getRouteAggregationRuleChanges**
 > RouteAggregationRulesChangeDataResponse getRouteAggregationRuleChanges(routeAggregationId, routeAggregationRuleId, offset, limit)
 
-Get All Changes
+Get Route Aggregation Rule Changes
 
 This API provides capability to retrieve all of a Route Aggregation Rule&#39;s Changes
 
@@ -474,7 +474,7 @@ public class Example {
 # **getRouteAggregationRules**
 > GetRouteAggregationRulesResponse getRouteAggregationRules(routeAggregationId, offset, limit)
 
-GetRARules
+Get Route Aggregation Rules
 
 This API provides capability to get all Route Aggregations Rules for Fabric
 
@@ -550,7 +550,7 @@ public class Example {
 # **patchRouteAggregationRuleByUuid**
 > RouteAggregationRulesData patchRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem)
 
-PatchRARule
+Update Route Aggregation Rule
 
 This API provides capability to partially update a Route Aggregation Rule
 
@@ -627,7 +627,7 @@ public class Example {
 # **replaceRouteAggregationRuleByUuid**
 > RouteAggregationRulesData replaceRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase)
 
-ReplaceRARule
+Replace Route Aggregation Rule
 
 This API provides capability to replace a Route Aggregation Rule completely
 

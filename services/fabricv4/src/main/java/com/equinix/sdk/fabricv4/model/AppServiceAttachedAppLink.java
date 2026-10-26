@@ -91,6 +91,11 @@ public class AppServiceAttachedAppLink {
   @javax.annotation.Nullable
   private AppLinkCloudRouter router;
 
+  public static final String SERIALIZED_NAME_IPV4_SUBNET = "ipv4Subnet";
+  @SerializedName(SERIALIZED_NAME_IPV4_SUBNET)
+  @javax.annotation.Nullable
+  private String ipv4Subnet;
+
   public static final String SERIALIZED_NAME_IPV4_ADDRESS = "ipv4Address";
   @SerializedName(SERIALIZED_NAME_IPV4_ADDRESS)
   @javax.annotation.Nullable
@@ -241,6 +246,25 @@ public class AppServiceAttachedAppLink {
   }
 
 
+  public AppServiceAttachedAppLink ipv4Subnet(@javax.annotation.Nullable String ipv4Subnet) {
+    this.ipv4Subnet = ipv4Subnet;
+    return this;
+  }
+
+  /**
+   * Customer-provided IP subnet for AppLink setup (/29 or larger subnet)
+   * @return ipv4Subnet
+   */
+  @javax.annotation.Nullable
+  public String getIpv4Subnet() {
+    return ipv4Subnet;
+  }
+
+  public void setIpv4Subnet(@javax.annotation.Nullable String ipv4Subnet) {
+    this.ipv4Subnet = ipv4Subnet;
+  }
+
+
   public AppServiceAttachedAppLink ipv4Address(@javax.annotation.Nullable String ipv4Address) {
     this.ipv4Address = ipv4Address;
     return this;
@@ -359,6 +383,7 @@ public class AppServiceAttachedAppLink {
         Objects.equals(this.description, appServiceAttachedAppLink.description) &&
         Objects.equals(this.state, appServiceAttachedAppLink.state) &&
         Objects.equals(this.router, appServiceAttachedAppLink.router) &&
+        Objects.equals(this.ipv4Subnet, appServiceAttachedAppLink.ipv4Subnet) &&
         Objects.equals(this.ipv4Address, appServiceAttachedAppLink.ipv4Address) &&
         Objects.equals(this.bandwidth, appServiceAttachedAppLink.bandwidth) &&
         Objects.equals(this.project, appServiceAttachedAppLink.project)&&
@@ -367,7 +392,7 @@ public class AppServiceAttachedAppLink {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, name, description, state, router, ipv4Address, bandwidth, project, additionalProperties);
+    return Objects.hash(href, type, uuid, name, description, state, router, ipv4Subnet, ipv4Address, bandwidth, project, additionalProperties);
   }
 
   @Override
@@ -381,6 +406,7 @@ public class AppServiceAttachedAppLink {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    router: ").append(toIndentedString(router)).append("\n");
+    sb.append("    ipv4Subnet: ").append(toIndentedString(ipv4Subnet)).append("\n");
     sb.append("    ipv4Address: ").append(toIndentedString(ipv4Address)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
@@ -406,7 +432,7 @@ public class AppServiceAttachedAppLink {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "state", "router", "ipv4Address", "bandwidth", "project"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "state", "router", "ipv4Subnet", "ipv4Address", "bandwidth", "project"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "uuid"));
@@ -453,6 +479,9 @@ public class AppServiceAttachedAppLink {
       // validate the optional field `router`
       if (jsonObj.get("router") != null && !jsonObj.get("router").isJsonNull()) {
         AppLinkCloudRouter.validateJsonElement(jsonObj.get("router"));
+      }
+      if ((jsonObj.get("ipv4Subnet") != null && !jsonObj.get("ipv4Subnet").isJsonNull()) && !jsonObj.get("ipv4Subnet").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipv4Subnet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipv4Subnet").toString()));
       }
       if ((jsonObj.get("ipv4Address") != null && !jsonObj.get("ipv4Address").isJsonNull()) && !jsonObj.get("ipv4Address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipv4Address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipv4Address").toString()));

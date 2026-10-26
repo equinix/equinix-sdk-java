@@ -133,8 +133,8 @@ public class HealthApi {
     }
 
     /**
-     * Get service status
-     * GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+     * Get Service Status
+     * Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
      * @return HealthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -150,8 +150,8 @@ public class HealthApi {
     }
 
     /**
-     * Get service status
-     * GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+     * Get Service Status
+     * Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
      * @return ApiResponse&lt;HealthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -168,8 +168,8 @@ public class HealthApi {
     }
 
     /**
-     * Get service status (asynchronously)
-     * GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+     * Get Service Status (asynchronously)
+     * Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

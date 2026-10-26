@@ -59,7 +59,9 @@ public enum ProviderStatus {
   
   PENDING_DELETE("PENDING DELETE"),
   
-  N_A("N/A");
+  N_A("N/A"),
+  
+  QUOTING("QUOTING");
 
   private String value;
 

@@ -179,7 +179,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)**
+     * Get Stats by ID (DEPRECATED)
      * This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
      * @param connectionId Connection UUID (required)
      * @param startDateTime startDateTime (required)
@@ -204,7 +204,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)**
+     * Get Stats by ID (DEPRECATED)
      * This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
      * @param connectionId Connection UUID (required)
      * @param startDateTime startDateTime (required)
@@ -230,7 +230,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)** (asynchronously)
+     * Get Stats by ID (DEPRECATED) (asynchronously)
      * This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
      * @param connectionId Connection UUID (required)
      * @param startDateTime startDateTime (required)
@@ -353,7 +353,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)**
+     * Get Stats by ID (DEPRECATED)
      * This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
      * @param portId Port UUID (required)
      * @param startDateTime startDateTime (required)
@@ -378,7 +378,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)**
+     * Get Stats by ID (DEPRECATED)
      * This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
      * @param portId Port UUID (required)
      * @param startDateTime startDateTime (required)
@@ -404,7 +404,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Get Stats by uuid **(DEPRECATED)** (asynchronously)
+     * Get Stats by ID (DEPRECATED) (asynchronously)
      * This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
      * @param portId Port UUID (required)
      * @param startDateTime startDateTime (required)

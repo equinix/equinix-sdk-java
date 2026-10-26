@@ -160,8 +160,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Create App Service
-     * This API provides capability to create user&#39;s App Service
+     * Create Service
+     * This API provides capability to create user&#39;s Service
      * @param appServicePostRequest  (required)
      * @return AppService
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -183,8 +183,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Create App Service
-     * This API provides capability to create user&#39;s App Service
+     * Create Service
+     * This API provides capability to create user&#39;s Service
      * @param appServicePostRequest  (required)
      * @return ApiResponse&lt;AppService&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -207,8 +207,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Create App Service (asynchronously)
-     * This API provides capability to create user&#39;s App Service
+     * Create Service (asynchronously)
+     * This API provides capability to create user&#39;s Service
      * @param appServicePostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -307,8 +307,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Delete App Service
-     * This API provides capability to delete user&#39;s App Service
+     * Delete Service
+     * This API provides capability to delete user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @return AppService
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -330,8 +330,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Delete App Service
-     * This API provides capability to delete user&#39;s App Service
+     * Delete Service
+     * This API provides capability to delete user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @return ApiResponse&lt;AppService&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -354,8 +354,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Delete App Service (asynchronously)
-     * This API provides capability to delete user&#39;s App Service
+     * Delete Service (asynchronously)
+     * This API provides capability to delete user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -453,8 +453,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get App Service
-     * This API provides capability to retrieve user&#39;s App Service
+     * Get Service
+     * This API provides capability to retrieve user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @return AppService
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -475,8 +475,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get App Service
-     * This API provides capability to retrieve user&#39;s App Service
+     * Get Service
+     * This API provides capability to retrieve user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @return ApiResponse&lt;AppService&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -498,8 +498,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get App Service (asynchronously)
-     * This API provides capability to retrieve user&#39;s App Service
+     * Get Service (asynchronously)
+     * This API provides capability to retrieve user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -622,8 +622,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Links for App Service
-     * This API provides capability to retrieve App Links attached to an App Service.
+     * Get Attached Links for Service
+     * This API provides capability to retrieve App Links attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -650,8 +650,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Links for App Service
-     * This API provides capability to retrieve App Links attached to an App Service.
+     * Get Attached Links for Service
+     * This API provides capability to retrieve App Links attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -679,8 +679,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Links for App Service (asynchronously)
-     * This API provides capability to retrieve App Links attached to an App Service.
+     * Get Attached Links for Service (asynchronously)
+     * This API provides capability to retrieve App Links attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -809,8 +809,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Subscriptions for App Service
-     * This API provides capability to retrieve App Subscriptions attached to an App Service.
+     * Get Attached Subscriptions for Service
+     * This API provides capability to retrieve App Subscriptions attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -837,8 +837,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Subscriptions for App Service
-     * This API provides capability to retrieve App Subscriptions attached to an App Service.
+     * Get Attached Subscriptions for Service
+     * This API provides capability to retrieve App Subscriptions attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -866,8 +866,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Get attached App Subscriptions for App Service (asynchronously)
-     * This API provides capability to retrieve App Subscriptions attached to an App Service.
+     * Get Attached Subscriptions for Service (asynchronously)
+     * This API provides capability to retrieve App Subscriptions attached to an App Service
      * @param appServiceId App Service UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -971,7 +971,7 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search App Services
+     * Search Services
      * The API provides capability to get list of user&#39;s App Services using search criteria, including optional filtering, pagination and sorting
      * @param appServiceSearchRequest  (required)
      * @return AppServiceSearchResponse
@@ -994,7 +994,7 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search App Services
+     * Search Services
      * The API provides capability to get list of user&#39;s App Services using search criteria, including optional filtering, pagination and sorting
      * @param appServiceSearchRequest  (required)
      * @return ApiResponse&lt;AppServiceSearchResponse&gt;
@@ -1018,7 +1018,7 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search App Services (asynchronously)
+     * Search Services (asynchronously)
      * The API provides capability to get list of user&#39;s App Services using search criteria, including optional filtering, pagination and sorting
      * @param appServiceSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1125,8 +1125,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search attached App Subscriptions
-     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+     * Search Attached Subscriptions
+     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
      * @param appServiceId App Service UUID (required)
      * @param appServiceAttachedAppSubscriptionSearchRequest  (required)
      * @return AppServiceAttachedAppSubscriptionSearchResponse
@@ -1149,8 +1149,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search attached App Subscriptions
-     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+     * Search Attached Subscriptions
+     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
      * @param appServiceId App Service UUID (required)
      * @param appServiceAttachedAppSubscriptionSearchRequest  (required)
      * @return ApiResponse&lt;AppServiceAttachedAppSubscriptionSearchResponse&gt;
@@ -1174,8 +1174,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Search attached App Subscriptions (asynchronously)
-     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+     * Search Attached Subscriptions (asynchronously)
+     * The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
      * @param appServiceId App Service UUID (required)
      * @param appServiceAttachedAppSubscriptionSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1283,8 +1283,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Update App Service
-     * This API provides capability to update user&#39;s App Service
+     * Update Service
+     * This API provides capability to update user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @param appServiceChangeOperation  (required)
      * @return AppService
@@ -1308,8 +1308,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Update App Service
-     * This API provides capability to update user&#39;s App Service
+     * Update Service
+     * This API provides capability to update user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @param appServiceChangeOperation  (required)
      * @return ApiResponse&lt;AppService&gt;
@@ -1334,8 +1334,8 @@ public class ApplicationServicesApi {
     }
 
     /**
-     * Update App Service (asynchronously)
-     * This API provides capability to update user&#39;s App Service
+     * Update Service (asynchronously)
+     * This API provides capability to update user&#39;s Service
      * @param appServiceId App Service UUID (required)
      * @param appServiceChangeOperation  (required)
      * @param _callback The callback to be executed when the API call finishes

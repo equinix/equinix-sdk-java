@@ -56,6 +56,11 @@ public class LoaDemarcationPoint {
   @javax.annotation.Nullable
   private String cageUniqueSpaceId;
 
+  public static final String SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID = "cabinetUniqueSpaceId";
+  @SerializedName(SERIALIZED_NAME_CABINET_UNIQUE_SPACE_ID)
+  @javax.annotation.Nullable
+  private String cabinetUniqueSpaceId;
+
   public static final String SERIALIZED_NAME_PATCH_PANEL_ID = "patchPanelId";
   @SerializedName(SERIALIZED_NAME_PATCH_PANEL_ID)
   @javax.annotation.Nullable
@@ -95,6 +100,25 @@ public class LoaDemarcationPoint {
 
   public void setCageUniqueSpaceId(@javax.annotation.Nullable String cageUniqueSpaceId) {
     this.cageUniqueSpaceId = cageUniqueSpaceId;
+  }
+
+
+  public LoaDemarcationPoint cabinetUniqueSpaceId(@javax.annotation.Nullable String cabinetUniqueSpaceId) {
+    this.cabinetUniqueSpaceId = cabinetUniqueSpaceId;
+    return this;
+  }
+
+  /**
+   * Unique identifier of the Cabinet.
+   * @return cabinetUniqueSpaceId
+   */
+  @javax.annotation.Nullable
+  public String getCabinetUniqueSpaceId() {
+    return cabinetUniqueSpaceId;
+  }
+
+  public void setCabinetUniqueSpaceId(@javax.annotation.Nullable String cabinetUniqueSpaceId) {
+    this.cabinetUniqueSpaceId = cabinetUniqueSpaceId;
   }
 
 
@@ -229,6 +253,7 @@ public class LoaDemarcationPoint {
     }
     LoaDemarcationPoint loaDemarcationPoint = (LoaDemarcationPoint) o;
     return Objects.equals(this.cageUniqueSpaceId, loaDemarcationPoint.cageUniqueSpaceId) &&
+        Objects.equals(this.cabinetUniqueSpaceId, loaDemarcationPoint.cabinetUniqueSpaceId) &&
         Objects.equals(this.patchPanelId, loaDemarcationPoint.patchPanelId) &&
         Objects.equals(this.patchPanelPortA, loaDemarcationPoint.patchPanelPortA) &&
         Objects.equals(this.patchPanelPortB, loaDemarcationPoint.patchPanelPortB) &&
@@ -238,7 +263,7 @@ public class LoaDemarcationPoint {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cageUniqueSpaceId, patchPanelId, patchPanelPortA, patchPanelPortB, connectorType, additionalProperties);
+    return Objects.hash(cageUniqueSpaceId, cabinetUniqueSpaceId, patchPanelId, patchPanelPortA, patchPanelPortB, connectorType, additionalProperties);
   }
 
   @Override
@@ -246,6 +271,7 @@ public class LoaDemarcationPoint {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoaDemarcationPoint {\n");
     sb.append("    cageUniqueSpaceId: ").append(toIndentedString(cageUniqueSpaceId)).append("\n");
+    sb.append("    cabinetUniqueSpaceId: ").append(toIndentedString(cabinetUniqueSpaceId)).append("\n");
     sb.append("    patchPanelId: ").append(toIndentedString(patchPanelId)).append("\n");
     sb.append("    patchPanelPortA: ").append(toIndentedString(patchPanelPortA)).append("\n");
     sb.append("    patchPanelPortB: ").append(toIndentedString(patchPanelPortB)).append("\n");
@@ -272,7 +298,7 @@ public class LoaDemarcationPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cageUniqueSpaceId", "patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType"));
+    openapiFields = new HashSet<String>(Arrays.asList("cageUniqueSpaceId", "cabinetUniqueSpaceId", "patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -293,6 +319,9 @@ public class LoaDemarcationPoint {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("cageUniqueSpaceId") != null && !jsonObj.get("cageUniqueSpaceId").isJsonNull()) && !jsonObj.get("cageUniqueSpaceId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cageUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cageUniqueSpaceId").toString()));
+      }
+      if ((jsonObj.get("cabinetUniqueSpaceId") != null && !jsonObj.get("cabinetUniqueSpaceId").isJsonNull()) && !jsonObj.get("cabinetUniqueSpaceId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `cabinetUniqueSpaceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cabinetUniqueSpaceId").toString()));
       }
       if ((jsonObj.get("patchPanelId") != null && !jsonObj.get("patchPanelId").isJsonNull()) && !jsonObj.get("patchPanelId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelId").toString()));

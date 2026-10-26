@@ -14,6 +14,7 @@ Last-mile API integration details.
 |**poqEnabled** | **Boolean** | Whether product qualification is enabled for the last-mile provider. |  [optional] |
 |**quoteEnabled** | **Boolean** | Whether quote generation is enabled for the last-mile provider. |  [optional] |
 |**placeOrderEnabled** | **Boolean** | Whether place order is enabled for the last-mile provider. |  [optional] |
+|**quoteViaAggregatorEnabled** | **Boolean** | Whether quote via aggregator is enabled for the last-mile provider. |  [optional] |
 
 
 

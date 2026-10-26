@@ -14,6 +14,7 @@ Stream subscription sink credentials
 |**apiKey** | **String** | passed as Authorization header value |  [optional] |
 |**username** | **String** | passed as Authorization header value |  [optional] |
 |**password** | **String** | passed as Authorization header value |  [optional] |
+|**apiToken** | **String** | passed as Authorization header value |  [optional] |
 
 
 
@@ -25,6 +26,7 @@ Stream subscription sink credentials
 | INTEGRATION_KEY | &quot;INTEGRATION_KEY&quot; |
 | API_KEY | &quot;API_KEY&quot; |
 | USERNAME_PASSWORD | &quot;USERNAME_PASSWORD&quot; |
+| API_TOKEN | &quot;API_TOKEN&quot; |
 
 
 

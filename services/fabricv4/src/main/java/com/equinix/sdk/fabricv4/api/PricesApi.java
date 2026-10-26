@@ -144,7 +144,7 @@ public class PricesApi {
     }
 
     /**
-     * Get Prices
+     * Search Prices
      * Search prices by search criteria
      * @param filterBody  (required)
      * @return PriceSearchResponse
@@ -164,7 +164,7 @@ public class PricesApi {
     }
 
     /**
-     * Get Prices
+     * Search Prices
      * Search prices by search criteria
      * @param filterBody  (required)
      * @return ApiResponse&lt;PriceSearchResponse&gt;
@@ -185,7 +185,7 @@ public class PricesApi {
     }
 
     /**
-     * Get Prices (asynchronously)
+     * Search Prices (asynchronously)
      * Search prices by search criteria
      * @param filterBody  (required)
      * @param _callback The callback to be executed when the API call finishes

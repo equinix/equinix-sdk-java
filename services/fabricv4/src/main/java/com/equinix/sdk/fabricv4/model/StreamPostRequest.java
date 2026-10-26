@@ -14,13 +14,17 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Project;
+import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -121,6 +125,16 @@ public class StreamPostRequest {
   @javax.annotation.Nonnull
   private Project project;
 
+  public static final String SERIALIZED_NAME_ACCOUNT = "account";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
+  private SimplifiedAccount account;
+
+  public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
+
   public StreamPostRequest() {
   }
 
@@ -199,6 +213,52 @@ public class StreamPostRequest {
     this.project = project;
   }
 
+
+  public StreamPostRequest account(@javax.annotation.Nullable SimplifiedAccount account) {
+    this.account = account;
+    return this;
+  }
+
+  /**
+   * Get account
+   * @return account
+   */
+  @javax.annotation.Nullable
+  public SimplifiedAccount getAccount() {
+    return account;
+  }
+
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
+    this.account = account;
+  }
+
+
+  public StreamPostRequest notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+
+  public StreamPostRequest addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
+    return this;
+  }
+
+  /**
+   * Preferences for stream notifications. Optional; at most one entry, of type ALL, with up to 12 emails. Set at creation only.
+   * @return notifications
+   */
+  @javax.annotation.Nullable
+  public List<SimplifiedNotification> getNotifications() {
+    return notifications;
+  }
+
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -257,13 +317,15 @@ public class StreamPostRequest {
     return Objects.equals(this.type, streamPostRequest.type) &&
         Objects.equals(this.name, streamPostRequest.name) &&
         Objects.equals(this.description, streamPostRequest.description) &&
-        Objects.equals(this.project, streamPostRequest.project)&&
+        Objects.equals(this.project, streamPostRequest.project) &&
+        Objects.equals(this.account, streamPostRequest.account) &&
+        Objects.equals(this.notifications, streamPostRequest.notifications)&&
         Objects.equals(this.additionalProperties, streamPostRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, project, additionalProperties);
+    return Objects.hash(type, name, description, project, account, notifications, additionalProperties);
   }
 
   @Override
@@ -274,6 +336,8 @@ public class StreamPostRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -296,7 +360,7 @@ public class StreamPostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "project"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "project", "account", "notifications"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "project"));
@@ -335,6 +399,24 @@ public class StreamPostRequest {
       }
       // validate the required field `project`
       Project.validateJsonElement(jsonObj.get("project"));
+      // validate the optional field `account`
+      if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
+      }
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

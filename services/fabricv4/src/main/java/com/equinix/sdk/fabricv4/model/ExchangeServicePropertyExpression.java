@@ -57,7 +57,23 @@ public class ExchangeServicePropertyExpression {
    */
   @JsonAdapter(PropertyEnum.Adapter.class)
   public enum PropertyEnum {
-    _PROJECT_PROJECTID("/project/projectId");
+    PROJECT_PROJECTID("/project/projectId"),
+    
+    UUID("/uuid"),
+    
+    STATE("/state"),
+    
+    NAME("/name"),
+    
+    BANDWIDTH("/bandwidth"),
+    
+    CHANGELOG_CREATEDDATETIME("/changelog/createdDateTime"),
+    
+    CHANGELOG_UPDATEDDATETIME("/changelog/updatedDateTime"),
+    
+    CHANGELOG_DELETEDDATETIME("/changelog/deletedDateTime"),
+    
+    LOCATION_METROCODE("/location/metroCode");
 
     private String value;
 
@@ -112,7 +128,25 @@ public class ExchangeServicePropertyExpression {
    */
   @JsonAdapter(OperatorEnum.Adapter.class)
   public enum OperatorEnum {
-    EQUAL("=");
+    EQUAL("="),
+    
+    NOT_EQUAL("!="),
+    
+    BETWEEN("BETWEEN"),
+    
+    LESS_THAN("<"),
+    
+    LESS_THAN_OR_EQUAL_TO("<="),
+    
+    GREATER_THAN(">"),
+    
+    GREATER_THAN_OR_EQUAL_TO(">="),
+    
+    LIKE("LIKE"),
+    
+    ILIKE("ILIKE"),
+    
+    IN("IN");
 
     private String value;
 

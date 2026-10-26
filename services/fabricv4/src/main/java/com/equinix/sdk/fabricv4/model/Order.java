@@ -189,9 +189,9 @@ public class Order {
   }
 
   /**
-   * Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case).
+   * Term length in months, valid values are 1, 12, 24, 36, 60 where 1 is the default value (for on-demand case).
    * minimum: 1
-   * maximum: 36
+   * maximum: 60
    * @return termLength
    */
   @javax.annotation.Nullable

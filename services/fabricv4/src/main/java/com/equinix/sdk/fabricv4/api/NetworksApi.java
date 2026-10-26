@@ -1033,8 +1033,8 @@ public class NetworksApi {
     }
 
     /**
-     * Search Network
-     * The API provides capability to get list of user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
+     * Search Networks
+     * The API provides capability to search user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
      * @param networkSearchRequest  (required)
      * @return NetworkSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1055,8 +1055,8 @@ public class NetworksApi {
     }
 
     /**
-     * Search Network
-     * The API provides capability to get list of user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
+     * Search Networks
+     * The API provides capability to search user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
      * @param networkSearchRequest  (required)
      * @return ApiResponse&lt;NetworkSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1078,8 +1078,8 @@ public class NetworksApi {
     }
 
     /**
-     * Search Network (asynchronously)
-     * The API provides capability to get list of user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
+     * Search Networks (asynchronously)
+     * The API provides capability to search user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
      * @param networkSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

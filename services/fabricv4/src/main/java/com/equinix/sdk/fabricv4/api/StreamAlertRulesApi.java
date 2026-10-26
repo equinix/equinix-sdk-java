@@ -157,7 +157,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Create Stream Alert Rules
+     * Create Stream Alert Rule
      * This API provides capability to create user&#39;s Stream Alert Rules
      * @param streamId Stream UUID (required)
      * @param alertRulePostRequest  (required)
@@ -181,7 +181,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Create Stream Alert Rules
+     * Create Stream Alert Rule
      * This API provides capability to create user&#39;s Stream Alert Rules
      * @param streamId Stream UUID (required)
      * @param alertRulePostRequest  (required)
@@ -206,7 +206,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Create Stream Alert Rules (asynchronously)
+     * Create Stream Alert Rule (asynchronously)
      * This API provides capability to create user&#39;s Stream Alert Rules
      * @param streamId Stream UUID (required)
      * @param alertRulePostRequest  (required)
@@ -314,7 +314,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Delete Stream Alert Rules
+     * Delete Stream Alert Rule
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -338,7 +338,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Delete Stream Alert Rules
+     * Delete Stream Alert Rule
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -363,7 +363,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Delete Stream Alert Rules (asynchronously)
+     * Delete Stream Alert Rule (asynchronously)
      * This API provides capability to delete a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -471,8 +471,8 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Get Stream Alert Rules
-     * This API provides capability to get user&#39;s stream alert rules
+     * Get Stream Alert Rule
+     * This API provides capability to get user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
      * @return StreamAlertRule
@@ -495,8 +495,8 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Get Stream Alert Rules
-     * This API provides capability to get user&#39;s stream alert rules
+     * Get Stream Alert Rule
+     * This API provides capability to get user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
      * @return ApiResponse&lt;StreamAlertRule&gt;
@@ -520,8 +520,8 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Get Stream Alert Rules (asynchronously)
-     * This API provides capability to get user&#39;s stream alert rules
+     * Get Stream Alert Rule (asynchronously)
+     * This API provides capability to get user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -795,7 +795,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules
+     * Update Stream Alert Rule
      * This API provides capability to update a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -821,7 +821,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules
+     * Update Stream Alert Rule
      * This API provides capability to update a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)
@@ -848,7 +848,7 @@ public class StreamAlertRulesApi {
     }
 
     /**
-     * Update Stream Alert Rules (asynchronously)
+     * Update Stream Alert Rule (asynchronously)
      * This API provides capability to update a user&#39;s stream alert rule
      * @param streamId Stream UUID (required)
      * @param alertRuleId alert rule UUID (required)

@@ -157,8 +157,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Create Profile
-     * Create Service Profile creates Equinix Fabric™ Service Profile.
+     * Create Service Profile
+     * Create Service Profile creates Equinix Fabric™ Service Profile
      * @param serviceProfileRequest  (required)
      * @return ServiceProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -179,8 +179,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Create Profile
-     * Create Service Profile creates Equinix Fabric™ Service Profile.
+     * Create Service Profile
+     * Create Service Profile creates Equinix Fabric™ Service Profile
      * @param serviceProfileRequest  (required)
      * @return ApiResponse&lt;ServiceProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -202,8 +202,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Create Profile (asynchronously)
-     * Create Service Profile creates Equinix Fabric™ Service Profile.
+     * Create Service Profile (asynchronously)
+     * Create Service Profile creates Equinix Fabric™ Service Profile
      * @param serviceProfileRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -309,7 +309,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Actions
+     * Create Service Profile Action
      * This API provides capability to accept/reject service profile update requests
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileActionRequest  (required)
@@ -333,7 +333,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Actions
+     * Create Service Profile Action
      * This API provides capability to accept/reject service profile update requests
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileActionRequest  (required)
@@ -358,7 +358,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Actions (asynchronously)
+     * Create Service Profile Action (asynchronously)
      * This API provides capability to accept/reject service profile update requests
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileActionRequest  (required)
@@ -460,7 +460,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Delete Profile
+     * Delete Service Profile
      * delete Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @return ServiceProfile
@@ -483,7 +483,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Delete Profile
+     * Delete Service Profile
      * delete Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @return ApiResponse&lt;ServiceProfile&gt;
@@ -507,7 +507,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Delete Profile (asynchronously)
+     * Delete Service Profile (asynchronously)
      * delete Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -612,8 +612,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile
-     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view.
+     * Get Service Profile
+     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view
      * @param serviceProfileId Service Profile UUID (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
      * @return ServiceProfile
@@ -635,8 +635,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile
-     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view.
+     * Get Service Profile
+     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view
      * @param serviceProfileId Service Profile UUID (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
      * @return ApiResponse&lt;ServiceProfile&gt;
@@ -659,8 +659,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile (asynchronously)
-     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view.
+     * Get Service Profile (asynchronously)
+     * Get service profile by UUID. View Point parameter if set to zSide will give seller&#39;s view of the profile otherwise buyer&#39;s view
      * @param serviceProfileId Service Profile UUID (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
      * @param _callback The callback to be executed when the API call finishes
@@ -769,8 +769,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Environments
-     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * Get Service Profile Environments
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -793,8 +793,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Environments
-     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * Get Service Profile Environments
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -818,8 +818,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Environments (asynchronously)
-     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;.
+     * Get Service Profile Environments (asynchronously)
+     * Get service profile provider environments by UUID &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -929,8 +929,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Metros
-     * Get service profile metros by UUID.
+     * Get Service Profile Metros
+     * Get service profile metros by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -953,8 +953,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Metros
-     * Get service profile metros by UUID.
+     * Get Service Profile Metros
+     * Get service profile metros by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -978,8 +978,8 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Get Profile Metros (asynchronously)
-     * Get service profile metros by UUID.
+     * Get Service Profile Metros (asynchronously)
+     * Get service profile metros by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
@@ -1005,7 +1005,7 @@ public class ServiceProfilesApi {
         return localVarCall;
     }
     /**
-     * Build call for getServiceProfiles
+     * Build call for listServiceProfiles
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1023,7 +1023,7 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfilesCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listServiceProfilesCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1081,14 +1081,14 @@ public class ServiceProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceProfilesValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
-        return getServiceProfilesCall(offset, limit, viewPoint, _callback);
+    private okhttp3.Call listServiceProfilesValidateBeforeCall(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback _callback) throws ApiException {
+        return listServiceProfilesCall(offset, limit, viewPoint, _callback);
 
     }
 
     /**
-     * Get all Profiles
-     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+     * List Service Profiles
+     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1105,14 +1105,14 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceProfiles getServiceProfiles(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
-        ApiResponse<ServiceProfiles> localVarResp = getServiceProfilesWithHttpInfo(offset, limit, viewPoint);
+    public ServiceProfiles listServiceProfiles(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
+        ApiResponse<ServiceProfiles> localVarResp = listServiceProfilesWithHttpInfo(offset, limit, viewPoint);
         return localVarResp.getData();
     }
 
     /**
-     * Get all Profiles
-     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+     * List Service Profiles
+     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1129,15 +1129,15 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceProfiles> getServiceProfilesWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
-        okhttp3.Call localVarCall = getServiceProfilesValidateBeforeCall(offset, limit, viewPoint, null);
+    public ApiResponse<ServiceProfiles> listServiceProfilesWithHttpInfo(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint) throws ApiException {
+        okhttp3.Call localVarCall = listServiceProfilesValidateBeforeCall(offset, limit, viewPoint, null);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get all Profiles (asynchronously)
-     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+     * List Service Profiles (asynchronously)
+     * The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
      * @param offset offset (optional)
      * @param limit number of records to fetch (optional)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1155,9 +1155,9 @@ public class ServiceProfilesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceProfilesAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
+    public okhttp3.Call listServiceProfilesAsync(@javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String viewPoint, final ApiCallback<ServiceProfiles> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getServiceProfilesValidateBeforeCall(offset, limit, viewPoint, _callback);
+        okhttp3.Call localVarCall = listServiceProfilesValidateBeforeCall(offset, limit, viewPoint, _callback);
         Type localVarReturnType = new TypeToken<ServiceProfiles>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1256,7 +1256,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Replace Profile
+     * Replace Service Profile
      * This API request replaces a service profile definition
      * @param serviceProfileId Service Profile UUID (required)
      * @param ifMatch conditional request (required)
@@ -1281,7 +1281,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Replace Profile
+     * Replace Service Profile
      * This API request replaces a service profile definition
      * @param serviceProfileId Service Profile UUID (required)
      * @param ifMatch conditional request (required)
@@ -1307,7 +1307,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Replace Profile (asynchronously)
+     * Replace Service Profile (asynchronously)
      * This API request replaces a service profile definition
      * @param serviceProfileId Service Profile UUID (required)
      * @param ifMatch conditional request (required)
@@ -1413,7 +1413,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Search
+     * Search Service Profiles
      * Search service profiles by search criteria
      * @param serviceProfileSearchRequest  (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1435,7 +1435,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Search
+     * Search Service Profiles
      * Search service profiles by search criteria
      * @param serviceProfileSearchRequest  (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1458,7 +1458,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Profile Search (asynchronously)
+     * Search Service Profiles (asynchronously)
      * Search service profiles by search criteria
      * @param serviceProfileSearchRequest  (required)
      * @param viewPoint flips view between buyer and seller representation (optional, default to aSide)
@@ -1570,7 +1570,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Service Profile Environment Actions
+     * Create Service Profile Environment Action
      * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param environmentId Provider Environment Reference (required)
@@ -1594,7 +1594,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Service Profile Environment Actions
+     * Create Service Profile Environment Action
      * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param environmentId Provider Environment Reference (required)
@@ -1619,7 +1619,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Service Profile Environment Actions (asynchronously)
+     * Create Service Profile Environment Action (asynchronously)
      * This API provides capability to perform actions on a service profile environment, such as validating an activation key.&lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param serviceProfileId Service Profile UUID (required)
      * @param environmentId Provider Environment Reference (required)
@@ -1728,7 +1728,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Update Profile
+     * Update Service Profile
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileUpdateOperation  (required)
@@ -1752,7 +1752,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Update Profile
+     * Update Service Profile
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileUpdateOperation  (required)
@@ -1777,7 +1777,7 @@ public class ServiceProfilesApi {
     }
 
     /**
-     * Update Profile (asynchronously)
+     * Update Service Profile (asynchronously)
      * Update Service Profile by UUID
      * @param serviceProfileId Service Profile UUID (required)
      * @param serviceProfileUpdateOperation  (required)

@@ -35,7 +35,9 @@ public enum MaintenanceState {
   
   COMPLETED("COMPLETED"),
   
-  DEFERRED("DEFERRED");
+  CANCELLED("CANCELLED"),
+  
+  POSTPONED("POSTPONED");
 
   private String value;
 

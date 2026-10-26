@@ -7,11 +7,11 @@ All URIs are relative to *https://api.equinix.com*
 | [**createRouteFilterRule**](RouteFilterRulesApi.md#createRouteFilterRule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create Route Filter Rule |
 | [**createRouteFilterRulesInBulk**](RouteFilterRulesApi.md#createRouteFilterRulesInBulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk Create Route Filter Rules |
 | [**deleteRouteFilterRuleByUuid**](RouteFilterRulesApi.md#deleteRouteFilterRuleByUuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Delete Route Filter Rule |
-| [**getRouteFilterRuleByUuid**](RouteFilterRulesApi.md#getRouteFilterRuleByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule By UUID |
+| [**getRouteFilterRuleByUuid**](RouteFilterRulesApi.md#getRouteFilterRuleByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule by ID |
 | [**getRouteFilterRuleChangeByUuid**](RouteFilterRulesApi.md#getRouteFilterRuleChangeByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes/{changeId} | Get Change By ID |
-| [**getRouteFilterRuleChanges**](RouteFilterRulesApi.md#getRouteFilterRuleChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get All Changes |
+| [**getRouteFilterRuleChanges**](RouteFilterRulesApi.md#getRouteFilterRuleChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get Route Filter Rule Changes |
 | [**getRouteFilterRules**](RouteFilterRulesApi.md#getRouteFilterRules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules |
-| [**patchRouteFilterRuleByUuid**](RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule |
+| [**patchRouteFilterRuleByUuid**](RouteFilterRulesApi.md#patchRouteFilterRuleByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Update Route Filter Rule |
 | [**replaceRouteFilterRuleByUuid**](RouteFilterRulesApi.md#replaceRouteFilterRuleByUuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule |
 | [**searchRouteFilterRules**](RouteFilterRulesApi.md#searchRouteFilterRules) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/search | Search Route Filter Rules |
 
@@ -245,7 +245,7 @@ public class Example {
 # **getRouteFilterRuleByUuid**
 > RouteFilterRulesData getRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId)
 
-Get Route Filter Rule By UUID
+Get Route Filter Rule by ID
 
 This API provides capability to view a Route Filter Rule by UUID
 
@@ -396,7 +396,7 @@ public class Example {
 # **getRouteFilterRuleChanges**
 > RouteFilterRulesChangeDataResponse getRouteFilterRuleChanges(routeFilterId, routeFilterRuleId, offset, limit)
 
-Get All Changes
+Get Route Filter Rule Changes
 
 This API provides capability to retrieve all of a Route Filter Rule&#39;s Changes
 
@@ -550,7 +550,7 @@ public class Example {
 # **patchRouteFilterRuleByUuid**
 > RouteFilterRulesData patchRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId, routeFilterRulesPatchRequestItem)
 
-Patch Route Filter Rule
+Update Route Filter Rule
 
 This API provides capability to partially update a Route Filter Rule
 

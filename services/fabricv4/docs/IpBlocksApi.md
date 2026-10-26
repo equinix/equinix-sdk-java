@@ -4,18 +4,18 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteIpBlockById**](IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by UUID |
-| [**getIpBlock**](IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by UUID |
-| [**patchIpBlockById**](IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch IP Block by UUID |
-| [**searchIpBlocks**](IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search for IP Blocks |
-| [**submitIpBlock**](IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned IP Block request |
+| [**deleteIpBlockById**](IpBlocksApi.md#deleteIpBlockById) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by ID |
+| [**getIpBlock**](IpBlocksApi.md#getIpBlock) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by ID |
+| [**patchIpBlockById**](IpBlocksApi.md#patchIpBlockById) | **PATCH** /fabric/v4/ipBlocks/{uuid} | Update IP Block by ID |
+| [**searchIpBlocks**](IpBlocksApi.md#searchIpBlocks) | **POST** /fabric/v4/ipBlocks/search | Search IP Blocks |
+| [**submitIpBlock**](IpBlocksApi.md#submitIpBlock) | **POST** /fabric/v4/ipBlocks | Create IP Block |
 
 
 <a id="deleteIpBlockById"></a>
 # **deleteIpBlockById**
 > IpBlock deleteIpBlockById(uuid)
 
-Delete IP Block by UUID
+Delete IP Block by ID
 
 Delete IP Block by UUID
 
@@ -87,7 +87,7 @@ public class Example {
 # **getIpBlock**
 > IpBlock getIpBlock(uuid)
 
-Retrieve IP Block by UUID
+Retrieve IP Block by ID
 
 Retrieve IP Block by UUID
 
@@ -157,7 +157,7 @@ public class Example {
 # **patchIpBlockById**
 > IpBlock patchIpBlockById(uuid, patchIpBlockRequestBodyItem)
 
-patch IP Block by UUID
+Update IP Block by ID
 
 patch IP Block by UUID
 
@@ -228,7 +228,7 @@ public class Example {
 # **searchIpBlocks**
 > IpBlockSearchResponseBody searchIpBlocks(ipBlocksSearchRequestBody)
 
-Search for IP Blocks
+Search IP Blocks
 
 Search for IP Blocks based on criteria
 
@@ -297,7 +297,7 @@ public class Example {
 # **submitIpBlock**
 > IpBlock submitIpBlock(submitIpBlockRequestBody)
 
-Submits new Equinix owned or customer owned IP Block request
+Create IP Block
 
 Submits new Equinix owned or customer owned IP Block request
 

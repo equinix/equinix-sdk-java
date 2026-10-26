@@ -9,7 +9,7 @@ Simple filter expression with property, operator, and values
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**property** | **String** |  |  |
-|**operator** | [**OperatorEnum**](#OperatorEnum) |  |  |
+|**operator** | [**OperatorEnum**](#OperatorEnum) | \&quot;~*\&quot; is a case-insensitive glob match, equivalent to ILIKE - the same single \&quot;*\&quot; wildcard, not POSIX regex - kept as its own operator only because existing callers already send it.  |  |
 |**values** | **List&lt;String&gt;** |  |  |
 
 
@@ -29,6 +29,7 @@ Simple filter expression with property, operator, and values
 | GREATER_THAN_OR_EQUAL_TO | &quot;&gt;&#x3D;&quot; |
 | LESS_THAN | &quot;&lt;&quot; |
 | LESS_THAN_OR_EQUAL_TO | &quot;&lt;&#x3D;&quot; |
+| CASE_INSENSITIVE_REGEX | &quot;~*&quot; |
 
 
 

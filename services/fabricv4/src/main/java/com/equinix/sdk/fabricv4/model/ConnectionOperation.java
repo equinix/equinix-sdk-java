@@ -139,6 +139,11 @@ public class ConnectionOperation {
   @javax.annotation.Nullable
   private MaintenanceState maintenanceStatus;
 
+  public static final String SERIALIZED_NAME_LOCK_ENABLED = "lockEnabled";
+  @SerializedName(SERIALIZED_NAME_LOCK_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean lockEnabled;
+
   public ConnectionOperation() {
   }
 
@@ -263,6 +268,25 @@ public class ConnectionOperation {
     this.maintenanceStatus = maintenanceStatus;
   }
 
+
+  public ConnectionOperation lockEnabled(@javax.annotation.Nullable Boolean lockEnabled) {
+    this.lockEnabled = lockEnabled;
+    return this;
+  }
+
+  /**
+   * Indicates whether the connection configuration is locked due to an ongoing or scheduled maintenance.
+   * @return lockEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getLockEnabled() {
+    return lockEnabled;
+  }
+
+  public void setLockEnabled(@javax.annotation.Nullable Boolean lockEnabled) {
+    this.lockEnabled = lockEnabled;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -323,13 +347,14 @@ public class ConnectionOperation {
         Objects.equals(this.operationalStatus, connectionOperation.operationalStatus) &&
         Objects.equals(this.errors, connectionOperation.errors) &&
         Objects.equals(this.opStatusChangedAt, connectionOperation.opStatusChangedAt) &&
-        Objects.equals(this.maintenanceStatus, connectionOperation.maintenanceStatus)&&
+        Objects.equals(this.maintenanceStatus, connectionOperation.maintenanceStatus) &&
+        Objects.equals(this.lockEnabled, connectionOperation.lockEnabled)&&
         Objects.equals(this.additionalProperties, connectionOperation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(providerStatus, equinixStatus, operationalStatus, errors, opStatusChangedAt, maintenanceStatus, additionalProperties);
+    return Objects.hash(providerStatus, equinixStatus, operationalStatus, errors, opStatusChangedAt, maintenanceStatus, lockEnabled, additionalProperties);
   }
 
   @Override
@@ -342,6 +367,7 @@ public class ConnectionOperation {
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    opStatusChangedAt: ").append(toIndentedString(opStatusChangedAt)).append("\n");
     sb.append("    maintenanceStatus: ").append(toIndentedString(maintenanceStatus)).append("\n");
+    sb.append("    lockEnabled: ").append(toIndentedString(lockEnabled)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -364,7 +390,7 @@ public class ConnectionOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus"));
+    openapiFields = new HashSet<String>(Arrays.asList("providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus", "lockEnabled"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

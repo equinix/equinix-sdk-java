@@ -24,6 +24,7 @@ Create Stream destination
 | Name | Value |
 |---- | -----|
 | DATADOG | &quot;DATADOG&quot; |
+| DYNATRACE | &quot;DYNATRACE&quot; |
 | GOOGLE_PUBSUB | &quot;GOOGLE_PUBSUB&quot; |
 | PAGERDUTY | &quot;PAGERDUTY&quot; |
 | SERVICENOW | &quot;SERVICENOW&quot; |

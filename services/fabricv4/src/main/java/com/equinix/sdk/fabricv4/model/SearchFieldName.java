@@ -47,6 +47,8 @@ public enum SearchFieldName {
   
   ASIDE_ACCESSPOINT_ROUTER_UUID("/aSide/accessPoint/router/uuid"),
   
+  ASIDE_ACCESSPOINT_INTERCONNECT_UUID("/aSide/accessPoint/interconnect/uuid"),
+  
   ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMIN("/aSide/accessPoint/linkProtocol/vlanTagMin"),
   
   ASIDE_ACCESSPOINT_LINKPROTOCOL_VLANTAGMAX("/aSide/accessPoint/linkProtocol/vlanTagMax"),
@@ -96,6 +98,10 @@ public enum SearchFieldName {
   REDUNDANCY_GROUP("/redundancy/group"),
   
   REDUNDANCY_PRIORITY("/redundancy/priority"),
+  
+  REDUNDANCY_NAME("/redundancy/name"),
+  
+  REDUNDANCY_DESCRIPTION("/redundancy/description"),
   
   ZSIDE_ACCESSPOINT_ACCOUNT_ACCOUNTNAME("/zSide/accessPoint/account/accountName"),
   

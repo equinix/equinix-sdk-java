@@ -60,6 +60,71 @@ public class ProductOffering {
   @javax.annotation.Nullable
   private String name;
 
+  /**
+   * Billing term in months.
+   */
+  @JsonAdapter(BillingTermEnum.Adapter.class)
+  public enum BillingTermEnum {
+    NUMBER_1(1),
+    
+    NUMBER_12(12),
+    
+    NUMBER_24(24),
+    
+    NUMBER_36(36),
+    
+    NUMBER_48(48),
+    
+    NUMBER_60(60);
+
+    private Integer value;
+
+    BillingTermEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static BillingTermEnum fromValue(Integer value) {
+      for (BillingTermEnum b : BillingTermEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<BillingTermEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final BillingTermEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public BillingTermEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value =  jsonReader.nextInt();
+        return BillingTermEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      BillingTermEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_BILLING_TERM = "billingTerm";
+  @SerializedName(SERIALIZED_NAME_BILLING_TERM)
+  @javax.annotation.Nullable
+  private BillingTermEnum billingTerm;
+
   public ProductOffering() {
   }
 
@@ -98,6 +163,26 @@ public class ProductOffering {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public ProductOffering billingTerm(@javax.annotation.Nullable BillingTermEnum billingTerm) {
+    this.billingTerm = billingTerm;
+    return this;
+  }
+
+  /**
+   * Billing term in months.
+   * minimum: 1
+   * @return billingTerm
+   */
+  @javax.annotation.Nullable
+  public BillingTermEnum getBillingTerm() {
+    return billingTerm;
+  }
+
+  public void setBillingTerm(@javax.annotation.Nullable BillingTermEnum billingTerm) {
+    this.billingTerm = billingTerm;
   }
 
   /**
@@ -156,13 +241,14 @@ public class ProductOffering {
     }
     ProductOffering productOffering = (ProductOffering) o;
     return Objects.equals(this.id, productOffering.id) &&
-        Objects.equals(this.name, productOffering.name)&&
+        Objects.equals(this.name, productOffering.name) &&
+        Objects.equals(this.billingTerm, productOffering.billingTerm)&&
         Objects.equals(this.additionalProperties, productOffering.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, additionalProperties);
+    return Objects.hash(id, name, billingTerm, additionalProperties);
   }
 
   @Override
@@ -171,6 +257,7 @@ public class ProductOffering {
     sb.append("class ProductOffering {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    billingTerm: ").append(toIndentedString(billingTerm)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -193,7 +280,7 @@ public class ProductOffering {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "billingTerm"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -217,6 +304,10 @@ public class ProductOffering {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `billingTerm`
+      if (jsonObj.get("billingTerm") != null && !jsonObj.get("billingTerm").isJsonNull()) {
+        BillingTermEnum.validateJsonElement(jsonObj.get("billingTerm"));
       }
   }
 

@@ -5,11 +5,11 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createServiceToken**](ServiceTokensApi.md#createServiceToken) | **POST** /fabric/v4/serviceTokens | Create Service Token |
-| [**createServiceTokenAction**](ServiceTokensApi.md#createServiceTokenAction) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | ServiceToken Actions |
-| [**deleteServiceTokenByUuid**](ServiceTokensApi.md#deleteServiceTokenByUuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Token by uuid |
-| [**getServiceTokenByUuid**](ServiceTokensApi.md#getServiceTokenByUuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Token by uuid |
-| [**getServiceTokens**](ServiceTokensApi.md#getServiceTokens) | **GET** /fabric/v4/serviceTokens | Get All Tokens |
-| [**searchServiceTokens**](ServiceTokensApi.md#searchServiceTokens) | **POST** /fabric/v4/serviceTokens/search | Search servicetokens |
+| [**createServiceTokenAction**](ServiceTokensApi.md#createServiceTokenAction) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | Create Service Token Action |
+| [**deleteServiceTokenByUuid**](ServiceTokensApi.md#deleteServiceTokenByUuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Service Token by ID |
+| [**getServiceTokenByUuid**](ServiceTokensApi.md#getServiceTokenByUuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Service Token by ID |
+| [**getServiceTokens**](ServiceTokensApi.md#getServiceTokens) | **GET** /fabric/v4/serviceTokens | Get Service Tokens |
+| [**searchServiceTokens**](ServiceTokensApi.md#searchServiceTokens) | **POST** /fabric/v4/serviceTokens/search | Search Service Tokens |
 | [**updateServiceTokenByUuid**](ServiceTokensApi.md#updateServiceTokenByUuid) | **PATCH** /fabric/v4/serviceTokens/{serviceTokenId} | Update Token By ID |
 
 
@@ -90,7 +90,7 @@ public class Example {
 # **createServiceTokenAction**
 > ServiceToken createServiceTokenAction(serviceTokenId, serviceTokenActionRequest)
 
-ServiceToken Actions
+Create Service Token Action
 
 This API provides capability to accept/reject user&#39;s servicetokens
 
@@ -163,9 +163,9 @@ public class Example {
 # **deleteServiceTokenByUuid**
 > ServiceToken deleteServiceTokenByUuid(serviceTokenId)
 
-Delete Token by uuid
+Delete Service Token by ID
 
-Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
 
 ### Example
 ```java
@@ -233,7 +233,7 @@ public class Example {
 # **getServiceTokenByUuid**
 > ServiceToken getServiceTokenByUuid(serviceTokenId)
 
-Get Token by uuid
+Get Service Token by ID
 
 Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token&#39;s type, state, location, bandwidth, and other key properties.
 
@@ -303,7 +303,7 @@ public class Example {
 # **getServiceTokens**
 > ServiceTokens getServiceTokens(offset, limit)
 
-Get All Tokens
+Get Service Tokens
 
 Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber&#39;s account.
 
@@ -373,7 +373,7 @@ public class Example {
 # **searchServiceTokens**
 > ServiceTokens searchServiceTokens(serviceTokenSearchRequest, offset, limit)
 
-Search servicetokens
+Search Service Tokens
 
 The API provides capability to get list of user&#39;s servicetokens using search criteria, including optional filtering, pagination and sorting
 

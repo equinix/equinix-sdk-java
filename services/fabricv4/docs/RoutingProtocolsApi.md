@@ -4,15 +4,15 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createConnectionRoutingProtocol**](RoutingProtocolsApi.md#createConnectionRoutingProtocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Protocol |
-| [**createConnectionRoutingProtocolsInBulk**](RoutingProtocolsApi.md#createConnectionRoutingProtocolsInBulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Protocol |
+| [**createConnectionRoutingProtocol**](RoutingProtocolsApi.md#createConnectionRoutingProtocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Routing Protocol |
+| [**createConnectionRoutingProtocolsInBulk**](RoutingProtocolsApi.md#createConnectionRoutingProtocolsInBulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Routing Protocols |
 | [**deleteConnectionRoutingProtocolByUuid**](RoutingProtocolsApi.md#deleteConnectionRoutingProtocolByUuid) | **DELETE** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Delete Protocol |
 | [**getConnectionRoutingProtocolAllBgpActions**](RoutingProtocolsApi.md#getConnectionRoutingProtocolAllBgpActions) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Get BGP Actions |
 | [**getConnectionRoutingProtocolByUuid**](RoutingProtocolsApi.md#getConnectionRoutingProtocolByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Get Protocol |
-| [**getConnectionRoutingProtocols**](RoutingProtocolsApi.md#getConnectionRoutingProtocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | GetRoutingProtocols |
+| [**getConnectionRoutingProtocols**](RoutingProtocolsApi.md#getConnectionRoutingProtocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | Get Routing Protocols |
 | [**getConnectionRoutingProtocolsBgpActionByUuid**](RoutingProtocolsApi.md#getConnectionRoutingProtocolsBgpActionByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions/{actionId} | Get BGP Action |
 | [**getConnectionRoutingProtocolsChangeByUuid**](RoutingProtocolsApi.md#getConnectionRoutingProtocolsChangeByUuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes/{changeId} | Get Change By ID |
-| [**getConnectionRoutingProtocolsChanges**](RoutingProtocolsApi.md#getConnectionRoutingProtocolsChanges) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Changes |
+| [**getConnectionRoutingProtocolsChanges**](RoutingProtocolsApi.md#getConnectionRoutingProtocolsChanges) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Routing Protocol Changes |
 | [**patchConnectionRoutingProtocolByUuid**](RoutingProtocolsApi.md#patchConnectionRoutingProtocolByUuid) | **PATCH** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Patch Protocol |
 | [**postConnectionRoutingProtocolBgpActionByUuid**](RoutingProtocolsApi.md#postConnectionRoutingProtocolBgpActionByUuid) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Clear/Reset BGP |
 | [**replaceConnectionRoutingProtocolByUuid**](RoutingProtocolsApi.md#replaceConnectionRoutingProtocolByUuid) | **PUT** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Replace Protocol |
@@ -23,7 +23,7 @@ All URIs are relative to *https://api.equinix.com*
 # **createConnectionRoutingProtocol**
 > RoutingProtocolData createConnectionRoutingProtocol(connectionId, routingProtocolBase)
 
-Create Protocol
+Create Routing Protocol
 
 This API provides capability to create Routing Protocol for connections
 
@@ -98,7 +98,7 @@ public class Example {
 # **createConnectionRoutingProtocolsInBulk**
 > GetResponse createConnectionRoutingProtocolsInBulk(connectionId, connectionRoutingProtocolPostRequest)
 
-Bulk Create Protocol
+Bulk Create Routing Protocols
 
 This API provides capability to create Routing Protocol for connections
 
@@ -402,7 +402,7 @@ public class Example {
 # **getConnectionRoutingProtocols**
 > GetResponse getConnectionRoutingProtocols(connectionId, offset, limit)
 
-GetRoutingProtocols
+Get Routing Protocols
 
 This API provides capability to get Routing Protocols for connections
 
@@ -630,7 +630,7 @@ public class Example {
 # **getConnectionRoutingProtocolsChanges**
 > RoutingProtocolChangeDataResponse getConnectionRoutingProtocolsChanges(connectionId, routingProtocolId, offset, limit)
 
-Get Changes
+Get Routing Protocol Changes
 
 This API provides capability to retrieve user&#39;s Routing Protocol Changes
 

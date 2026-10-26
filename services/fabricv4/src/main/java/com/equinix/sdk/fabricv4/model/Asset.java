@@ -41,8 +41,6 @@ public enum Asset {
   
   PROJECTS("projects"),
   
-  NETWORKEDGEDEVICES("networkEdgeDevices"),
-  
   COMPANYPROFILES("companyProfiles");
 
   private String value;

@@ -4,16 +4,16 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getStatus**](HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get service status |
+| [**getStatus**](HealthApi.md#getStatus) | **GET** /fabric/v4/health | Get Service Status |
 
 
 <a id="getStatus"></a>
 # **getStatus**
 > HealthResponse getStatus()
 
-Get service status
+Get Service Status
 
-GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
 
 ### Example
 ```java
