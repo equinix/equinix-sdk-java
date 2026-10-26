@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.ConnectionOperation;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -61,6 +62,11 @@ public class ConnectionAcceptanceData {
   @javax.annotation.Nullable
   private Integer providerBandwidth;
 
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  @javax.annotation.Nullable
+  private ConnectionOperation operation;
+
   public ConnectionAcceptanceData() {
   }
 
@@ -99,6 +105,25 @@ public class ConnectionAcceptanceData {
     return providerBandwidth;
   }
 
+
+
+  public ConnectionAcceptanceData operation(@javax.annotation.Nullable ConnectionOperation operation) {
+    this.operation = operation;
+    return this;
+  }
+
+  /**
+   * Get operation
+   * @return operation
+   */
+  @javax.annotation.Nullable
+  public ConnectionOperation getOperation() {
+    return operation;
+  }
+
+  public void setOperation(@javax.annotation.Nullable ConnectionOperation operation) {
+    this.operation = operation;
+  }
 
   /**
    * A container for additional, undeclared properties.
@@ -156,13 +181,14 @@ public class ConnectionAcceptanceData {
     }
     ConnectionAcceptanceData connectionAcceptanceData = (ConnectionAcceptanceData) o;
     return Objects.equals(this.zSide, connectionAcceptanceData.zSide) &&
-        Objects.equals(this.providerBandwidth, connectionAcceptanceData.providerBandwidth)&&
+        Objects.equals(this.providerBandwidth, connectionAcceptanceData.providerBandwidth) &&
+        Objects.equals(this.operation, connectionAcceptanceData.operation)&&
         Objects.equals(this.additionalProperties, connectionAcceptanceData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(zSide, providerBandwidth, additionalProperties);
+    return Objects.hash(zSide, providerBandwidth, operation, additionalProperties);
   }
 
   @Override
@@ -171,6 +197,7 @@ public class ConnectionAcceptanceData {
     sb.append("class ConnectionAcceptanceData {\n");
     sb.append("    zSide: ").append(toIndentedString(zSide)).append("\n");
     sb.append("    providerBandwidth: ").append(toIndentedString(providerBandwidth)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -193,7 +220,7 @@ public class ConnectionAcceptanceData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("zSide", "providerBandwidth"));
+    openapiFields = new HashSet<String>(Arrays.asList("zSide", "providerBandwidth", "operation"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -215,6 +242,10 @@ public class ConnectionAcceptanceData {
       // validate the optional field `zSide`
       if (jsonObj.get("zSide") != null && !jsonObj.get("zSide").isJsonNull()) {
         ConnectionSide.validateJsonElement(jsonObj.get("zSide"));
+      }
+      // validate the optional field `operation`
+      if (jsonObj.get("operation") != null && !jsonObj.get("operation").isJsonNull()) {
+        ConnectionOperation.validateJsonElement(jsonObj.get("operation"));
       }
   }
 

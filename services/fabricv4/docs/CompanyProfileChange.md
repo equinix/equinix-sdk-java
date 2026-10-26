@@ -12,7 +12,7 @@
 |**status** | **String** |  |  [optional] |
 |**createdDateTime** | **OffsetDateTime** |  |  [optional] |
 |**updatedDateTime** | **OffsetDateTime** |  |  [optional] |
-|**data** | **Object** |  |  [optional] |
+|**data** | [**List&lt;CompanyProfileChangeItem&gt;**](CompanyProfileChangeItem.md) |  |  [optional] |
 
 
 

@@ -166,7 +166,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Create Protocol
+     * Create Routing Protocol
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param routingProtocolBase  (required)
@@ -191,7 +191,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Create Protocol
+     * Create Routing Protocol
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param routingProtocolBase  (required)
@@ -217,7 +217,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Create Protocol (asynchronously)
+     * Create Routing Protocol (asynchronously)
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param routingProtocolBase  (required)
@@ -327,7 +327,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Bulk Create Protocol
+     * Bulk Create Routing Protocols
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param connectionRoutingProtocolPostRequest  (required)
@@ -352,7 +352,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Bulk Create Protocol
+     * Bulk Create Routing Protocols
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param connectionRoutingProtocolPostRequest  (required)
@@ -378,7 +378,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Bulk Create Protocol (asynchronously)
+     * Bulk Create Routing Protocols (asynchronously)
      * This API provides capability to create Routing Protocol for connections
      * @param connectionId Connection Id (required)
      * @param connectionRoutingProtocolPostRequest  (required)
@@ -989,7 +989,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * GetRoutingProtocols
+     * Get Routing Protocols
      * This API provides capability to get Routing Protocols for connections
      * @param connectionId Connection Id (required)
      * @param offset offset (optional)
@@ -1014,7 +1014,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * GetRoutingProtocols
+     * Get Routing Protocols
      * This API provides capability to get Routing Protocols for connections
      * @param connectionId Connection Id (required)
      * @param offset offset (optional)
@@ -1040,7 +1040,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * GetRoutingProtocols (asynchronously)
+     * Get Routing Protocols (asynchronously)
      * This API provides capability to get Routing Protocols for connections
      * @param connectionId Connection Id (required)
      * @param offset offset (optional)
@@ -1493,7 +1493,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Get Changes
+     * Get Routing Protocol Changes
      * This API provides capability to retrieve user&#39;s Routing Protocol Changes
      * @param connectionId Connection Id (required)
      * @param routingProtocolId Routing Protocol Id (required)
@@ -1519,7 +1519,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Get Changes
+     * Get Routing Protocol Changes
      * This API provides capability to retrieve user&#39;s Routing Protocol Changes
      * @param connectionId Connection Id (required)
      * @param routingProtocolId Routing Protocol Id (required)
@@ -1546,7 +1546,7 @@ public class RoutingProtocolsApi {
     }
 
     /**
-     * Get Changes (asynchronously)
+     * Get Routing Protocol Changes (asynchronously)
      * This API provides capability to retrieve user&#39;s Routing Protocol Changes
      * @param connectionId Connection Id (required)
      * @param routingProtocolId Routing Protocol Id (required)

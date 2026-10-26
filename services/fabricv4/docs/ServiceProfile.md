@@ -9,10 +9,10 @@ Service Profile is a software definition for a named provider service and it's n
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**state** | **ServiceProfileStateEnum** |  |  [optional] |
-|**account** | [**SimplifiedAccount**](SimplifiedAccount.md) | Seller Account for Service Profile. |  [optional] |
+|**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
 |**change** | [**ServiceProfileChange**](ServiceProfileChange.md) |  |  [optional] |
-|**changeLog** | [**Changelog**](Changelog.md) | Seller Account for Service Profile. |  [optional] |
+|**changeLog** | [**Changelog**](Changelog.md) |  |  [optional] |
 |**href** | **URI** | Service Profile URI response attribute |  [optional] [readonly] |
 |**type** | **ServiceProfileTypeEnum** |  |  [optional] |
 |**name** | **String** | Customer-assigned service profile name |  [optional] |

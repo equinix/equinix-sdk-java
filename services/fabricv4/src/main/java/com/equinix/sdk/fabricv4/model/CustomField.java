@@ -64,7 +64,7 @@ public class CustomField {
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean required;
 
   /**
@@ -177,7 +177,7 @@ public class CustomField {
   }
 
 
-  public CustomField required(@javax.annotation.Nullable Boolean required) {
+  public CustomField required(@javax.annotation.Nonnull Boolean required) {
     this.required = required;
     return this;
   }
@@ -186,12 +186,12 @@ public class CustomField {
    * Get required
    * @return required
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable Boolean required) {
+  public void setRequired(@javax.annotation.Nonnull Boolean required) {
     this.required = required;
   }
 
@@ -364,7 +364,7 @@ public class CustomField {
     openapiFields = new HashSet<String>(Arrays.asList("label", "description", "required", "dataType", "options", "captureInEmail"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("label", "dataType"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("label", "required", "dataType"));
   }
 
   /**

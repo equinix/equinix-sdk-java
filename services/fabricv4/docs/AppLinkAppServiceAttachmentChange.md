@@ -21,7 +21,7 @@ Current state of latest AppLink change
 
 | Name | Value |
 |---- | -----|
-| APP_LINK_UPDATE | &quot;APP_LINK_UPDATE&quot; |
+| APP_SERVICE_UPDATE | &quot;APP_SERVICE_UPDATE&quot; |
 
 
 

@@ -13,8 +13,9 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceAdditionalInfo;
 import com.equinix.sdk.fabricv4.model.ExchangeServiceNotification;
-import com.equinix.sdk.fabricv4.model.Order;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceOrder;
 import com.equinix.sdk.fabricv4.model.PlatformChangelog;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.PublicPeeringConnectionResponse;
@@ -234,7 +235,7 @@ public class ExchangeServiceResponse {
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
   @javax.annotation.Nullable
-  private Order order;
+  private ExchangeServiceOrder order;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
@@ -255,6 +256,11 @@ public class ExchangeServiceResponse {
   @SerializedName(SERIALIZED_NAME_CHANGELOG)
   @javax.annotation.Nullable
   private PlatformChangelog changelog;
+
+  public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
+  @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
+  @javax.annotation.Nullable
+  private ExchangeServiceAdditionalInfo additionalInfo;
 
   public ExchangeServiceResponse() {
   }
@@ -449,7 +455,7 @@ public class ExchangeServiceResponse {
   }
 
 
-  public ExchangeServiceResponse order(@javax.annotation.Nullable Order order) {
+  public ExchangeServiceResponse order(@javax.annotation.Nullable ExchangeServiceOrder order) {
     this.order = order;
     return this;
   }
@@ -459,11 +465,11 @@ public class ExchangeServiceResponse {
    * @return order
    */
   @javax.annotation.Nullable
-  public Order getOrder() {
+  public ExchangeServiceOrder getOrder() {
     return order;
   }
 
-  public void setOrder(@javax.annotation.Nullable Order order) {
+  public void setOrder(@javax.annotation.Nullable ExchangeServiceOrder order) {
     this.order = order;
   }
 
@@ -551,6 +557,25 @@ public class ExchangeServiceResponse {
     this.changelog = changelog;
   }
 
+
+  public ExchangeServiceResponse additionalInfo(@javax.annotation.Nullable ExchangeServiceAdditionalInfo additionalInfo) {
+    this.additionalInfo = additionalInfo;
+    return this;
+  }
+
+  /**
+   * Get additionalInfo
+   * @return additionalInfo
+   */
+  @javax.annotation.Nullable
+  public ExchangeServiceAdditionalInfo getAdditionalInfo() {
+    return additionalInfo;
+  }
+
+  public void setAdditionalInfo(@javax.annotation.Nullable ExchangeServiceAdditionalInfo additionalInfo) {
+    this.additionalInfo = additionalInfo;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -620,13 +645,14 @@ public class ExchangeServiceResponse {
         Objects.equals(this.project, exchangeServiceResponse.project) &&
         Objects.equals(this.account, exchangeServiceResponse.account) &&
         Objects.equals(this.notifications, exchangeServiceResponse.notifications) &&
-        Objects.equals(this.changelog, exchangeServiceResponse.changelog)&&
+        Objects.equals(this.changelog, exchangeServiceResponse.changelog) &&
+        Objects.equals(this.additionalInfo, exchangeServiceResponse.additionalInfo)&&
         Objects.equals(this.additionalProperties, exchangeServiceResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, bandwidth, description, state, location, publicPeeringConnection, routingProtocol, order, project, account, notifications, changelog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, bandwidth, description, state, location, publicPeeringConnection, routingProtocol, order, project, account, notifications, changelog, additionalInfo, additionalProperties);
   }
 
   @Override
@@ -648,6 +674,7 @@ public class ExchangeServiceResponse {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    changelog: ").append(toIndentedString(changelog)).append("\n");
+    sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -670,7 +697,7 @@ public class ExchangeServiceResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "bandwidth", "description", "state", "location", "publicPeeringConnection", "routingProtocol", "order", "project", "account", "notifications", "changelog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "bandwidth", "description", "state", "location", "publicPeeringConnection", "routingProtocol", "order", "project", "account", "notifications", "changelog", "additionalInfo"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -729,7 +756,7 @@ public class ExchangeServiceResponse {
       }
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
-        Order.validateJsonElement(jsonObj.get("order"));
+        ExchangeServiceOrder.validateJsonElement(jsonObj.get("order"));
       }
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
@@ -756,6 +783,10 @@ public class ExchangeServiceResponse {
       // validate the optional field `changelog`
       if (jsonObj.get("changelog") != null && !jsonObj.get("changelog").isJsonNull()) {
         PlatformChangelog.validateJsonElement(jsonObj.get("changelog"));
+      }
+      // validate the optional field `additionalInfo`
+      if (jsonObj.get("additionalInfo") != null && !jsonObj.get("additionalInfo").isJsonNull()) {
+        ExchangeServiceAdditionalInfo.validateJsonElement(jsonObj.get("additionalInfo"));
       }
   }
 

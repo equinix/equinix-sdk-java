@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.CompanyProfileChangeItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -79,7 +82,7 @@ public class CompanyProfileChange {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private Object data;
+  private List<CompanyProfileChangeItem> data = new ArrayList<>();
 
   public CompanyProfileChange() {
   }
@@ -179,8 +182,16 @@ public class CompanyProfileChange {
   }
 
 
-  public CompanyProfileChange data(@javax.annotation.Nullable Object data) {
+  public CompanyProfileChange data(@javax.annotation.Nullable List<CompanyProfileChangeItem> data) {
     this.data = data;
+    return this;
+  }
+
+  public CompanyProfileChange addDataItem(CompanyProfileChangeItem dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -189,11 +200,11 @@ public class CompanyProfileChange {
    * @return data
    */
   @javax.annotation.Nullable
-  public Object getData() {
+  public List<CompanyProfileChangeItem> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable Object data) {
+  public void setData(@javax.annotation.Nullable List<CompanyProfileChangeItem> data) {
     this.data = data;
   }
 
@@ -325,6 +336,20 @@ public class CompanyProfileChange {
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
+        JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
+        if (jsonArraydata != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("data").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
+          }
+
+          // validate the optional field `data` (array)
+          for (int i = 0; i < jsonArraydata.size(); i++) {
+            CompanyProfileChangeItem.validateJsonElement(jsonArraydata.get(i));
+          };
+        }
       }
   }
 

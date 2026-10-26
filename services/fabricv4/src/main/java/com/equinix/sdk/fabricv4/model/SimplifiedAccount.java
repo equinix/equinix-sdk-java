@@ -86,6 +86,7 @@ public class SimplifiedAccount {
   private String ucmId;
 
   public static final String SERIALIZED_NAME_GLOBAL_CUST_ID = "globalCustId";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_GLOBAL_CUST_ID)
   @javax.annotation.Nullable
   private String globalCustId;
@@ -246,6 +247,7 @@ public class SimplifiedAccount {
   }
 
 
+  @Deprecated
   public SimplifiedAccount globalCustId(@javax.annotation.Nullable String globalCustId) {
     this.globalCustId = globalCustId;
     return this;
@@ -254,12 +256,15 @@ public class SimplifiedAccount {
   /**
    * Account name
    * @return globalCustId
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public String getGlobalCustId() {
     return globalCustId;
   }
 
+  @Deprecated
   public void setGlobalCustId(@javax.annotation.Nullable String globalCustId) {
     this.globalCustId = globalCustId;
   }

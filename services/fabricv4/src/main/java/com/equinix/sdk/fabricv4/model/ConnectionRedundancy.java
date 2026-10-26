@@ -61,6 +61,16 @@ public class ConnectionRedundancy {
   @javax.annotation.Nullable
   private ConnectionPriority priority;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
+
   public ConnectionRedundancy() {
   }
 
@@ -99,6 +109,44 @@ public class ConnectionRedundancy {
 
   public void setPriority(@javax.annotation.Nullable ConnectionPriority priority) {
     this.priority = priority;
+  }
+
+
+  public ConnectionRedundancy name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Customer-provided name for the redundancy group
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public ConnectionRedundancy description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Customer-provided description for the redundancy group
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
   }
 
   /**
@@ -157,13 +205,15 @@ public class ConnectionRedundancy {
     }
     ConnectionRedundancy connectionRedundancy = (ConnectionRedundancy) o;
     return Objects.equals(this.group, connectionRedundancy.group) &&
-        Objects.equals(this.priority, connectionRedundancy.priority)&&
+        Objects.equals(this.priority, connectionRedundancy.priority) &&
+        Objects.equals(this.name, connectionRedundancy.name) &&
+        Objects.equals(this.description, connectionRedundancy.description)&&
         Objects.equals(this.additionalProperties, connectionRedundancy.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(group, priority, additionalProperties);
+    return Objects.hash(group, priority, name, description, additionalProperties);
   }
 
   @Override
@@ -172,6 +222,8 @@ public class ConnectionRedundancy {
     sb.append("class ConnectionRedundancy {\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -194,7 +246,7 @@ public class ConnectionRedundancy {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("group", "priority"));
+    openapiFields = new HashSet<String>(Arrays.asList("group", "priority", "name", "description"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -219,6 +271,12 @@ public class ConnectionRedundancy {
       // validate the optional field `priority`
       if (jsonObj.get("priority") != null && !jsonObj.get("priority").isJsonNull()) {
         ConnectionPriority.validateJsonElement(jsonObj.get("priority"));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 

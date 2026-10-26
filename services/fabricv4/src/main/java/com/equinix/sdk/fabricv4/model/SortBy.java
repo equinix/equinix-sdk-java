@@ -79,6 +79,8 @@ public enum SortBy {
   
   OPERATION_PROVIDERSTATUS("/operation/providerStatus"),
   
+  OPERATION_MAINTENANCESTATUS("/operation/maintenanceStatus"),
+  
   REDUNDANCY_PRIORITY("/redundancy/priority");
 
   private String value;

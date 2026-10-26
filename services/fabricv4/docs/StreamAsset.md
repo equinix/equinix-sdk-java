@@ -28,6 +28,7 @@ Stream object
 | XF_ROUTER | &quot;XF_ROUTER&quot; |
 | ORGANIZATION | &quot;ORGANIZATION&quot; |
 | PROJECT | &quot;PROJECT&quot; |
+| VIRTUAL_DEVICE | &quot;VIRTUAL_DEVICE&quot; |
 | DATA | &quot;DATA&quot; |
 | MGMT | &quot;MGMT&quot; |
 | SSH | &quot;SSH&quot; |

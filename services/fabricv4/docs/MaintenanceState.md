@@ -11,7 +11,9 @@
 
 * `COMPLETED` (value: `"COMPLETED"`)
 
-* `DEFERRED` (value: `"DEFERRED"`)
+* `CANCELLED` (value: `"CANCELLED"`)
+
+* `POSTPONED` (value: `"POSTPONED"`)
 
 
 

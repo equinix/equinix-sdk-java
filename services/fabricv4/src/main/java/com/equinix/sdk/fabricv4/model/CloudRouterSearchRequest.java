@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CloudRouterFilters;
+import com.equinix.sdk.fabricv4.model.CloudRouterExpression;
 import com.equinix.sdk.fabricv4.model.CloudRouterSortCriteria;
 import com.equinix.sdk.fabricv4.model.PaginationRequest;
 import com.google.gson.TypeAdapter;
@@ -58,7 +58,7 @@ public class CloudRouterSearchRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
-  private CloudRouterFilters filter;
+  private CloudRouterExpression filter;
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -73,7 +73,7 @@ public class CloudRouterSearchRequest {
   public CloudRouterSearchRequest() {
   }
 
-  public CloudRouterSearchRequest filter(@javax.annotation.Nullable CloudRouterFilters filter) {
+  public CloudRouterSearchRequest filter(@javax.annotation.Nullable CloudRouterExpression filter) {
     this.filter = filter;
     return this;
   }
@@ -83,11 +83,11 @@ public class CloudRouterSearchRequest {
    * @return filter
    */
   @javax.annotation.Nullable
-  public CloudRouterFilters getFilter() {
+  public CloudRouterExpression getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable CloudRouterFilters filter) {
+  public void setFilter(@javax.annotation.Nullable CloudRouterExpression filter) {
     this.filter = filter;
   }
 
@@ -253,7 +253,7 @@ public class CloudRouterSearchRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `filter`
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        CloudRouterFilters.validateJsonElement(jsonObj.get("filter"));
+        CloudRouterExpression.validateJsonElement(jsonObj.get("filter"));
       }
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {

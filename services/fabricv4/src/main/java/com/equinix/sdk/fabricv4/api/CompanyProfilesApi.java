@@ -1325,7 +1325,7 @@ public class CompanyProfilesApi {
     }
 
     /**
-     * Get Company Profile by UUID
+     * Get Company Profile by ID
      * Get company profile details by UUID &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param companyProfileId Company Profile UUID (required)
      * @return CompanyProfileResponse
@@ -1346,7 +1346,7 @@ public class CompanyProfilesApi {
     }
 
     /**
-     * Get Company Profile by UUID
+     * Get Company Profile by ID
      * Get company profile details by UUID &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param companyProfileId Company Profile UUID (required)
      * @return ApiResponse&lt;CompanyProfileResponse&gt;
@@ -1368,7 +1368,7 @@ public class CompanyProfilesApi {
     }
 
     /**
-     * Get Company Profile by UUID (asynchronously)
+     * Get Company Profile by ID (asynchronously)
      * Get company profile details by UUID &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
      * @param companyProfileId Company Profile UUID (required)
      * @param _callback The callback to be executed when the API call finishes

@@ -4,19 +4,19 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createAppDomain**](ApplicationDomainsApi.md#createAppDomain) | **POST** /fabric/v4/appDomains | Create App Domain |
-| [**deleteAppDomainByUuid**](ApplicationDomainsApi.md#deleteAppDomainByUuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete App Domain |
-| [**getAppDomainByUuid**](ApplicationDomainsApi.md#getAppDomainByUuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get App Domain |
-| [**getAttachedAppLinksByAppDomainId**](ApplicationDomainsApi.md#getAttachedAppLinksByAppDomainId) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get attached App Links for App Domain |
-| [**searchAppDomains**](ApplicationDomainsApi.md#searchAppDomains) | **POST** /fabric/v4/appDomains/search | Search App Domains |
-| [**updateAppDomainByUuid**](ApplicationDomainsApi.md#updateAppDomainByUuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update App Domain |
+| [**createAppDomain**](ApplicationDomainsApi.md#createAppDomain) | **POST** /fabric/v4/appDomains | Create Domain |
+| [**deleteAppDomainByUuid**](ApplicationDomainsApi.md#deleteAppDomainByUuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete Domain |
+| [**getAppDomainByUuid**](ApplicationDomainsApi.md#getAppDomainByUuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get Domain |
+| [**getAttachedAppLinksByAppDomainId**](ApplicationDomainsApi.md#getAttachedAppLinksByAppDomainId) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get Attached Links for Domain |
+| [**searchAppDomains**](ApplicationDomainsApi.md#searchAppDomains) | **POST** /fabric/v4/appDomains/search | Search Domains |
+| [**updateAppDomainByUuid**](ApplicationDomainsApi.md#updateAppDomainByUuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update Domain |
 
 
 <a id="createAppDomain"></a>
 # **createAppDomain**
 > AppDomain createAppDomain(appDomainPostRequest)
 
-Create App Domain
+Create Domain
 
 This API provides capability to create user&#39;s App Domain
 
@@ -88,9 +88,9 @@ public class Example {
 # **deleteAppDomainByUuid**
 > AppDomain deleteAppDomainByUuid(appDomainId)
 
-Delete App Domain
+Delete Domain
 
-This API provides capability to delete user&#39;s App Domain
+This API provides capability to delete user&#39;s Domain
 
 ### Example
 ```java
@@ -160,9 +160,9 @@ public class Example {
 # **getAppDomainByUuid**
 > AppDomain getAppDomainByUuid(appDomainId)
 
-Get App Domain
+Get Domain
 
-This API provides capability to retrieve user&#39;s App Domain
+This API provides capability to retrieve user&#39;s Domain
 
 ### Example
 ```java
@@ -231,9 +231,9 @@ public class Example {
 # **getAttachedAppLinksByAppDomainId**
 > AppDomainAttachedAppLinks getAttachedAppLinksByAppDomainId(appDomainId, offset, limit, state, order, style)
 
-Get attached App Links for App Domain
+Get Attached Links for Domain
 
-This API provides capability to retrieve App Links attached to an App Domain.
+This API provides capability to retrieve App Links attached to an App Domain
 
 ### Example
 ```java
@@ -313,7 +313,7 @@ public class Example {
 # **searchAppDomains**
 > AppDomainSearchResponse searchAppDomains(appDomainSearchRequest)
 
-Search App Domains
+Search Domains
 
 The API provides capability to get list of user&#39;s App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -385,9 +385,9 @@ public class Example {
 # **updateAppDomainByUuid**
 > AppDomain updateAppDomainByUuid(appDomainId, appDomainChangeOperation)
 
-Update App Domain
+Update Domain
 
-This API provides capability to update user&#39;s App Domain
+This API provides capability to update user&#39;s Domain
 
 ### Example
 ```java

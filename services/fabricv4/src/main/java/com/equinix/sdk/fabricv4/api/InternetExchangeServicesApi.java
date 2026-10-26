@@ -26,6 +26,10 @@ import java.io.IOException;
 
 
 import com.equinix.sdk.fabricv4.model.Error;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceActionRequest;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceActionResponse;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceCreateRequest;
+import com.equinix.sdk.fabricv4.model.ExchangeServiceReplaceOperation;
 import com.equinix.sdk.fabricv4.model.ExchangeServiceResponse;
 import com.equinix.sdk.fabricv4.model.ExchangeServiceSearchRequest;
 import com.equinix.sdk.fabricv4.model.ExchangeServiceSearchResponse;
@@ -74,6 +78,310 @@ public class InternetExchangeServicesApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for createExchangeService
+     * @param exchangeServiceCreateRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createExchangeServiceCall(@javax.annotation.Nonnull ExchangeServiceCreateRequest exchangeServiceCreateRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = exchangeServiceCreateRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/exchangeServices";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createExchangeServiceValidateBeforeCall(@javax.annotation.Nonnull ExchangeServiceCreateRequest exchangeServiceCreateRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'exchangeServiceCreateRequest' is set
+        if (exchangeServiceCreateRequest == null) {
+            throw new ApiException("Missing the required parameter 'exchangeServiceCreateRequest' when calling createExchangeService(Async)");
+        }
+
+        return createExchangeServiceCall(exchangeServiceCreateRequest, _callback);
+
+    }
+
+    /**
+     * Create Internet Exchange Service
+     * This API provides capability to create Internet Exchange Service
+     * @param exchangeServiceCreateRequest  (required)
+     * @return ExchangeServiceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ExchangeServiceResponse createExchangeService(@javax.annotation.Nonnull ExchangeServiceCreateRequest exchangeServiceCreateRequest) throws ApiException {
+        ApiResponse<ExchangeServiceResponse> localVarResp = createExchangeServiceWithHttpInfo(exchangeServiceCreateRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Internet Exchange Service
+     * This API provides capability to create Internet Exchange Service
+     * @param exchangeServiceCreateRequest  (required)
+     * @return ApiResponse&lt;ExchangeServiceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ExchangeServiceResponse> createExchangeServiceWithHttpInfo(@javax.annotation.Nonnull ExchangeServiceCreateRequest exchangeServiceCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createExchangeServiceValidateBeforeCall(exchangeServiceCreateRequest, null);
+        Type localVarReturnType = new TypeToken<ExchangeServiceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Internet Exchange Service (asynchronously)
+     * This API provides capability to create Internet Exchange Service
+     * @param exchangeServiceCreateRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createExchangeServiceAsync(@javax.annotation.Nonnull ExchangeServiceCreateRequest exchangeServiceCreateRequest, final ApiCallback<ExchangeServiceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createExchangeServiceValidateBeforeCall(exchangeServiceCreateRequest, _callback);
+        Type localVarReturnType = new TypeToken<ExchangeServiceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createExchangeServiceAction
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceActionRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createExchangeServiceActionCall(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull ExchangeServiceActionRequest exchangeServiceActionRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = exchangeServiceActionRequest;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/exchangeServices/{exchangeServiceId}/actions"
+            .replace("{" + "exchangeServiceId" + "}", localVarApiClient.escapeString(exchangeServiceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createExchangeServiceActionValidateBeforeCall(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull ExchangeServiceActionRequest exchangeServiceActionRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'exchangeServiceId' is set
+        if (exchangeServiceId == null) {
+            throw new ApiException("Missing the required parameter 'exchangeServiceId' when calling createExchangeServiceAction(Async)");
+        }
+
+        // verify the required parameter 'exchangeServiceActionRequest' is set
+        if (exchangeServiceActionRequest == null) {
+            throw new ApiException("Missing the required parameter 'exchangeServiceActionRequest' when calling createExchangeServiceAction(Async)");
+        }
+
+        return createExchangeServiceActionCall(exchangeServiceId, exchangeServiceActionRequest, _callback);
+
+    }
+
+    /**
+     * Create Internet Exchange Service Action
+     * This API provides capability to perform actions on Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceActionRequest  (required)
+     * @return ExchangeServiceActionResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ExchangeServiceActionResponse createExchangeServiceAction(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull ExchangeServiceActionRequest exchangeServiceActionRequest) throws ApiException {
+        ApiResponse<ExchangeServiceActionResponse> localVarResp = createExchangeServiceActionWithHttpInfo(exchangeServiceId, exchangeServiceActionRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Internet Exchange Service Action
+     * This API provides capability to perform actions on Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceActionRequest  (required)
+     * @return ApiResponse&lt;ExchangeServiceActionResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ExchangeServiceActionResponse> createExchangeServiceActionWithHttpInfo(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull ExchangeServiceActionRequest exchangeServiceActionRequest) throws ApiException {
+        okhttp3.Call localVarCall = createExchangeServiceActionValidateBeforeCall(exchangeServiceId, exchangeServiceActionRequest, null);
+        Type localVarReturnType = new TypeToken<ExchangeServiceActionResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Internet Exchange Service Action (asynchronously)
+     * This API provides capability to perform actions on Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceActionRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createExchangeServiceActionAsync(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull ExchangeServiceActionRequest exchangeServiceActionRequest, final ApiCallback<ExchangeServiceActionResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createExchangeServiceActionValidateBeforeCall(exchangeServiceId, exchangeServiceActionRequest, _callback);
+        Type localVarReturnType = new TypeToken<ExchangeServiceActionResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for getExchangeServiceById
      * @param exchangeServiceId Internet Exchange Service Id (required)
@@ -295,8 +603,8 @@ public class InternetExchangeServicesApi {
     }
 
     /**
-     * Search Internet Exchange Service
-     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting.
+     * Search Internet Exchange Services
+     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting
      * @param exchangeServiceSearchRequest  (required)
      * @return ExchangeServiceSearchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -317,8 +625,8 @@ public class InternetExchangeServicesApi {
     }
 
     /**
-     * Search Internet Exchange Service
-     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting.
+     * Search Internet Exchange Services
+     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting
      * @param exchangeServiceSearchRequest  (required)
      * @return ApiResponse&lt;ExchangeServiceSearchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -340,8 +648,8 @@ public class InternetExchangeServicesApi {
     }
 
     /**
-     * Search Internet Exchange Service (asynchronously)
-     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting.
+     * Search Internet Exchange Services (asynchronously)
+     * The API provides capability to get list of user&#39;s Internet Exchange Service using search criteria, including optional filtering, pagination and sorting
      * @param exchangeServiceSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -361,6 +669,159 @@ public class InternetExchangeServicesApi {
 
         okhttp3.Call localVarCall = searchExchangeServiceValidateBeforeCall(exchangeServiceSearchRequest, _callback);
         Type localVarReturnType = new TypeToken<ExchangeServiceSearchResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateExchangeServiceById
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceReplaceOperation  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateExchangeServiceByIdCall(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = exchangeServiceReplaceOperation;
+
+        // create path and map variables
+        String localVarPath = "/fabric/v4/exchangeServices/{exchangeServiceId}"
+            .replace("{" + "exchangeServiceId" + "}", localVarApiClient.escapeString(exchangeServiceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json-patch+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateExchangeServiceByIdValidateBeforeCall(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'exchangeServiceId' is set
+        if (exchangeServiceId == null) {
+            throw new ApiException("Missing the required parameter 'exchangeServiceId' when calling updateExchangeServiceById(Async)");
+        }
+
+        // verify the required parameter 'exchangeServiceReplaceOperation' is set
+        if (exchangeServiceReplaceOperation == null) {
+            throw new ApiException("Missing the required parameter 'exchangeServiceReplaceOperation' when calling updateExchangeServiceById(Async)");
+        }
+
+        return updateExchangeServiceByIdCall(exchangeServiceId, exchangeServiceReplaceOperation, _callback);
+
+    }
+
+    /**
+     * Update Internet Exchange Service
+     * The API provides capability to update Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceReplaceOperation  (required)
+     * @return ExchangeServiceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ExchangeServiceResponse updateExchangeServiceById(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation) throws ApiException {
+        ApiResponse<ExchangeServiceResponse> localVarResp = updateExchangeServiceByIdWithHttpInfo(exchangeServiceId, exchangeServiceReplaceOperation);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Internet Exchange Service
+     * The API provides capability to update Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceReplaceOperation  (required)
+     * @return ApiResponse&lt;ExchangeServiceResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ExchangeServiceResponse> updateExchangeServiceByIdWithHttpInfo(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation) throws ApiException {
+        okhttp3.Call localVarCall = updateExchangeServiceByIdValidateBeforeCall(exchangeServiceId, exchangeServiceReplaceOperation, null);
+        Type localVarReturnType = new TypeToken<ExchangeServiceResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Internet Exchange Service (asynchronously)
+     * The API provides capability to update Internet Exchange Service
+     * @param exchangeServiceId Internet Exchange Service Id (required)
+     * @param exchangeServiceReplaceOperation  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal Server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateExchangeServiceByIdAsync(@javax.annotation.Nonnull UUID exchangeServiceId, @javax.annotation.Nonnull List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation, final ApiCallback<ExchangeServiceResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateExchangeServiceByIdValidateBeforeCall(exchangeServiceId, exchangeServiceReplaceOperation, _callback);
+        Type localVarReturnType = new TypeToken<ExchangeServiceResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

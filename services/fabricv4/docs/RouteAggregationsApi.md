@@ -5,18 +5,18 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**attachConnectionRouteAggregation**](RouteAggregationsApi.md#attachConnectionRouteAggregation) | **PUT** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Attach Aggregation |
-| [**createRouteAggregation**](RouteAggregationsApi.md#createRouteAggregation) | **POST** /fabric/v4/routeAggregations | Create Aggregations |
+| [**createRouteAggregation**](RouteAggregationsApi.md#createRouteAggregation) | **POST** /fabric/v4/routeAggregations | Create Route Aggregation |
 | [**deleteRouteAggregationByUuid**](RouteAggregationsApi.md#deleteRouteAggregationByUuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId} | Delete Aggregation |
 | [**detachConnectionRouteAggregation**](RouteAggregationsApi.md#detachConnectionRouteAggregation) | **DELETE** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Detach Aggregation |
 | [**getConnectionRouteAggregationByUuid**](RouteAggregationsApi.md#getConnectionRouteAggregationByUuid) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Get Aggregation |
-| [**getConnectionRouteAggregations**](RouteAggregationsApi.md#getConnectionRouteAggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get All Aggregations |
+| [**getConnectionRouteAggregations**](RouteAggregationsApi.md#getConnectionRouteAggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get Connection Route Aggregations |
 | [**getRouteAggregationByUuid**](RouteAggregationsApi.md#getRouteAggregationByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId} | Get Aggregation |
 | [**getRouteAggregationChangeByUuid**](RouteAggregationsApi.md#getRouteAggregationChangeByUuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes/{changeId} | Get Change By ID |
-| [**getRouteAggregationChanges**](RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes |
-| [**getRouteAggregationConnections**](RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation |
-| [**patchRouteAggregationByUuid**](RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation |
+| [**getRouteAggregationChanges**](RouteAggregationsApi.md#getRouteAggregationChanges) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get Route Aggregation Changes |
+| [**getRouteAggregationConnections**](RouteAggregationsApi.md#getRouteAggregationConnections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get Route Aggregation Connections |
+| [**patchRouteAggregationByUuid**](RouteAggregationsApi.md#patchRouteAggregationByUuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Update Route Aggregation |
 | [**searchCloudRouterRouteAggregationAttachments**](RouteAggregationsApi.md#searchCloudRouterRouteAggregationAttachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments |
-| [**searchRouteAggregations**](RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations |
+| [**searchRouteAggregations**](RouteAggregationsApi.md#searchRouteAggregations) | **POST** /fabric/v4/routeAggregations/search | Search Route Aggregations |
 
 
 <a id="attachConnectionRouteAggregation"></a>
@@ -98,7 +98,7 @@ public class Example {
 # **createRouteAggregation**
 > RouteAggregationsData createRouteAggregation(routeAggregationsBase)
 
-Create Aggregations
+Create Route Aggregation
 
 This API provides capability to create a Route Aggregation
 
@@ -394,7 +394,7 @@ public class Example {
 # **getConnectionRouteAggregations**
 > GetAllConnectionRouteAggregationsResponse getConnectionRouteAggregations(connectionId)
 
-Get All Aggregations
+Get Connection Route Aggregations
 
 This API provides capability to view all Route Aggregations attached to a Connection
 
@@ -614,7 +614,7 @@ public class Example {
 # **getRouteAggregationChanges**
 > RouteAggregationChangeDataResponse getRouteAggregationChanges(routeAggregationId, offset, limit)
 
-Get All Changes
+Get Route Aggregation Changes
 
 This API provides capability to retrieve all of a Route Aggregation&#39;s Changes
 
@@ -690,7 +690,7 @@ public class Example {
 # **getRouteAggregationConnections**
 > GetRouteAggregationGetConnectionsResponse getRouteAggregationConnections(routeAggregationId)
 
-Get All Connections on Route Aggregation
+Get Route Aggregation Connections
 
 This API provides capability to view all Connections using the Route Aggregation
 
@@ -763,7 +763,7 @@ public class Example {
 # **patchRouteAggregationByUuid**
 > RouteAggregationsData patchRouteAggregationByUuid(routeAggregationId, routeAggregationsPatchRequestItem)
 
-Patch Aggregation
+Update Route Aggregation
 
 This API provides capability to partially update a Route Aggregation
 
@@ -913,7 +913,7 @@ public class Example {
 # **searchRouteAggregations**
 > RouteAggregationsSearchResponse searchRouteAggregations(routeAggregationsSearchRequest)
 
-Search Aggregations
+Search Route Aggregations
 
 This API provides capability to search Route Aggregations
 

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createStreamAlertRules**](StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rules |
-| [**deleteStreamAlertRuleByUuid**](StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rules |
-| [**getStreamAlertRuleByUuid**](StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rules |
+| [**createStreamAlertRules**](StreamAlertRulesApi.md#createStreamAlertRules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rule |
+| [**deleteStreamAlertRuleByUuid**](StreamAlertRulesApi.md#deleteStreamAlertRuleByUuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rule |
+| [**getStreamAlertRuleByUuid**](StreamAlertRulesApi.md#getStreamAlertRuleByUuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rule |
 | [**getStreamAlertRules**](StreamAlertRulesApi.md#getStreamAlertRules) | **GET** /fabric/v4/streams/{streamId}/alertRules | Get Stream Alert Rules |
-| [**updateStreamAlertRuleByUuid**](StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules |
+| [**updateStreamAlertRuleByUuid**](StreamAlertRulesApi.md#updateStreamAlertRuleByUuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rule |
 
 
 <a id="createStreamAlertRules"></a>
 # **createStreamAlertRules**
 > StreamAlertRule createStreamAlertRules(streamId, alertRulePostRequest)
 
-Create Stream Alert Rules
+Create Stream Alert Rule
 
 This API provides capability to create user&#39;s Stream Alert Rules
 
@@ -89,7 +89,7 @@ public class Example {
 # **deleteStreamAlertRuleByUuid**
 > StreamAlertRule deleteStreamAlertRuleByUuid(streamId, alertRuleId)
 
-Delete Stream Alert Rules
+Delete Stream Alert Rule
 
 This API provides capability to delete a user&#39;s stream alert rule
 
@@ -163,9 +163,9 @@ public class Example {
 # **getStreamAlertRuleByUuid**
 > StreamAlertRule getStreamAlertRuleByUuid(streamId, alertRuleId)
 
-Get Stream Alert Rules
+Get Stream Alert Rule
 
-This API provides capability to get user&#39;s stream alert rules
+This API provides capability to get user&#39;s stream alert rule
 
 ### Example
 ```java
@@ -312,7 +312,7 @@ public class Example {
 # **updateStreamAlertRuleByUuid**
 > StreamAlertRule updateStreamAlertRuleByUuid(streamId, alertRuleId, alertRulePutRequest)
 
-Update Stream Alert Rules
+Update Stream Alert Rule
 
 This API provides capability to update a user&#39;s stream alert rule
 

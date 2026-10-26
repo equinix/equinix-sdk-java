@@ -312,7 +312,7 @@ public class PortsApi {
 
     /**
      * Create Port
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric™ Port
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return Port
@@ -335,7 +335,7 @@ public class PortsApi {
 
     /**
      * Create Port
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric™ Port
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @return ApiResponse&lt;Port&gt;
@@ -359,7 +359,7 @@ public class PortsApi {
 
     /**
      * Create Port (asynchronously)
-     * Creates Equinix Fabric™ Port.
+     * Creates Equinix Fabric™ Port
      * @param portRequest  (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
@@ -462,7 +462,7 @@ public class PortsApi {
     }
 
     /**
-     * Delete a single port
+     * Delete Port
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
@@ -485,7 +485,7 @@ public class PortsApi {
     }
 
     /**
-     * Delete a single port
+     * Delete Port
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
@@ -509,7 +509,7 @@ public class PortsApi {
     }
 
     /**
-     * Delete a single port (asynchronously)
+     * Delete Port (asynchronously)
      * The API provides capability to delete a single port
      * @param portId Port UUID (required)
      * @param dryRun option to verify that API calls will succeed (optional, default to false)
@@ -607,8 +607,8 @@ public class PortsApi {
     }
 
     /**
-     * Get Port by uuid
-     * Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+     * Get Port by ID
+     * Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
      * @param portId Port UUID (required)
      * @return Port
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -628,8 +628,8 @@ public class PortsApi {
     }
 
     /**
-     * Get Port by uuid
-     * Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+     * Get Port by ID
+     * Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
      * @param portId Port UUID (required)
      * @return ApiResponse&lt;Port&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -650,8 +650,8 @@ public class PortsApi {
     }
 
     /**
-     * Get Port by uuid (asynchronously)
-     * Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+     * Get Port by ID (asynchronously)
+     * Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
      * @param portId Port UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -746,7 +746,7 @@ public class PortsApi {
 
     /**
      * Get All Ports
-     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
      * @param name port name to be provided if specific port(s) to be retrieved (optional)
      * @return AllPortsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -768,7 +768,7 @@ public class PortsApi {
 
     /**
      * Get All Ports
-     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
      * @param name port name to be provided if specific port(s) to be retrieved (optional)
      * @return ApiResponse&lt;AllPortsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -791,7 +791,7 @@ public class PortsApi {
 
     /**
      * Get All Ports (asynchronously)
-     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+     * Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
      * @param name port name to be provided if specific port(s) to be retrieved (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -817,6 +817,8 @@ public class PortsApi {
     /**
      * Build call for getVlans
      * @param portUuid Port UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -829,7 +831,7 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVlansCall(@javax.annotation.Nonnull UUID portUuid, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getVlansCall(@javax.annotation.Nonnull UUID portUuid, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -855,6 +857,14 @@ public class PortsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -875,20 +885,22 @@ public class PortsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getVlansValidateBeforeCall(@javax.annotation.Nonnull UUID portUuid, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getVlansValidateBeforeCall(@javax.annotation.Nonnull UUID portUuid, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'portUuid' is set
         if (portUuid == null) {
             throw new ApiException("Missing the required parameter 'portUuid' when calling getVlans(Async)");
         }
 
-        return getVlansCall(portUuid, _callback);
+        return getVlansCall(portUuid, offset, limit, _callback);
 
     }
 
     /**
      * Get Vlans
-     * The API provides capability to retrieve Vlans for a Port.
+     * The API provides capability to retrieve Vlans for a Port
      * @param portUuid Port UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
      * @return LinkProtocolGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -900,15 +912,17 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public LinkProtocolGetResponse getVlans(@javax.annotation.Nonnull UUID portUuid) throws ApiException {
-        ApiResponse<LinkProtocolGetResponse> localVarResp = getVlansWithHttpInfo(portUuid);
+    public LinkProtocolGetResponse getVlans(@javax.annotation.Nonnull UUID portUuid, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<LinkProtocolGetResponse> localVarResp = getVlansWithHttpInfo(portUuid, offset, limit);
         return localVarResp.getData();
     }
 
     /**
      * Get Vlans
-     * The API provides capability to retrieve Vlans for a Port.
+     * The API provides capability to retrieve Vlans for a Port
      * @param portUuid Port UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
      * @return ApiResponse&lt;LinkProtocolGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -920,16 +934,18 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LinkProtocolGetResponse> getVlansWithHttpInfo(@javax.annotation.Nonnull UUID portUuid) throws ApiException {
-        okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, null);
+    public ApiResponse<LinkProtocolGetResponse> getVlansWithHttpInfo(@javax.annotation.Nonnull UUID portUuid, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, offset, limit, null);
         Type localVarReturnType = new TypeToken<LinkProtocolGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Vlans (asynchronously)
-     * The API provides capability to retrieve Vlans for a Port.
+     * The API provides capability to retrieve Vlans for a Port
      * @param portUuid Port UUID (required)
+     * @param offset offset (optional)
+     * @param limit number of records to fetch (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -942,9 +958,9 @@ public class PortsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVlansAsync(@javax.annotation.Nonnull UUID portUuid, final ApiCallback<LinkProtocolGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getVlansAsync(@javax.annotation.Nonnull UUID portUuid, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limit, final ApiCallback<LinkProtocolGetResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, _callback);
+        okhttp3.Call localVarCall = getVlansValidateBeforeCall(portUuid, offset, limit, _callback);
         Type localVarReturnType = new TypeToken<LinkProtocolGetResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1023,7 +1039,7 @@ public class PortsApi {
     }
 
     /**
-     * Search ports
+     * Search Ports
      * The API provides capability to get list of user&#39;s virtual ports using search criteria, including optional filtering, pagination and sorting
      * @param portV4SearchRequest  (required)
      * @return AllPortsResponse
@@ -1045,7 +1061,7 @@ public class PortsApi {
     }
 
     /**
-     * Search ports
+     * Search Ports
      * The API provides capability to get list of user&#39;s virtual ports using search criteria, including optional filtering, pagination and sorting
      * @param portV4SearchRequest  (required)
      * @return ApiResponse&lt;AllPortsResponse&gt;
@@ -1068,7 +1084,7 @@ public class PortsApi {
     }
 
     /**
-     * Search ports (asynchronously)
+     * Search Ports (asynchronously)
      * The API provides capability to get list of user&#39;s virtual ports using search criteria, including optional filtering, pagination and sorting
      * @param portV4SearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1178,7 +1194,7 @@ public class PortsApi {
     }
 
     /**
-     * Update by UUID
+     * Update Port by ID
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
@@ -1202,7 +1218,7 @@ public class PortsApi {
     }
 
     /**
-     * Update by UUID
+     * Update Port by ID
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)
@@ -1227,7 +1243,7 @@ public class PortsApi {
     }
 
     /**
-     * Update by UUID (asynchronously)
+     * Update Port by ID (asynchronously)
      * Update Port by UUID
      * @param portId Port UUID (required)
      * @param portChangeOperation  (required)

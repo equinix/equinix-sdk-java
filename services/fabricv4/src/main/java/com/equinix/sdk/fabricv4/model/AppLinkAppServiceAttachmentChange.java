@@ -64,7 +64,7 @@ public class AppLinkAppServiceAttachmentChange {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    APP_LINK_UPDATE("APP_LINK_UPDATE");
+    APP_SERVICE_UPDATE("APP_SERVICE_UPDATE");
 
     private String value;
 

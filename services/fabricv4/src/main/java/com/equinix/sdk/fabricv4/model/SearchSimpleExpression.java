@@ -58,7 +58,7 @@ public class SearchSimpleExpression {
   private String property;
 
   /**
-   * Gets or Sets operator
+   * \&quot;~*\&quot; is a case-insensitive glob match, equivalent to ILIKE - the same single \&quot;*\&quot; wildcard, not POSIX regex - kept as its own operator only because existing callers already send it. 
    */
   @JsonAdapter(OperatorEnum.Adapter.class)
   public enum OperatorEnum {
@@ -82,7 +82,9 @@ public class SearchSimpleExpression {
     
     LESS_THAN("<"),
     
-    LESS_THAN_OR_EQUAL_TO("<=");
+    LESS_THAN_OR_EQUAL_TO("<="),
+    
+    CASE_INSENSITIVE_REGEX("~*");
 
     private String value;
 
@@ -165,7 +167,7 @@ public class SearchSimpleExpression {
   }
 
   /**
-   * Get operator
+   * \&quot;~*\&quot; is a case-insensitive glob match, equivalent to ILIKE - the same single \&quot;*\&quot; wildcard, not POSIX regex - kept as its own operator only because existing callers already send it. 
    * @return operator
    */
   @javax.annotation.Nonnull

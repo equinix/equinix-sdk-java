@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.OpticalConnectDemarcationPoint;
 import com.equinix.sdk.fabricv4.model.OpticalConnectLOA;
 import com.equinix.sdk.fabricv4.model.OpticalConnectLocation;
 import com.google.gson.TypeAdapter;
@@ -52,81 +53,10 @@ import com.equinix.sdk.fabricv4.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class OpticalConnectZSideRequest {
-  public static final String SERIALIZED_NAME_PATCH_PANEL_ID = "patchPanelId";
-  @SerializedName(SERIALIZED_NAME_PATCH_PANEL_ID)
+  public static final String SERIALIZED_NAME_DEMARCATION_POINT = "demarcationPoint";
+  @SerializedName(SERIALIZED_NAME_DEMARCATION_POINT)
   @javax.annotation.Nullable
-  private String patchPanelId;
-
-  public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_A = "patchPanelPortA";
-  @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_A)
-  @javax.annotation.Nullable
-  private String patchPanelPortA;
-
-  public static final String SERIALIZED_NAME_PATCH_PANEL_PORT_B = "patchPanelPortB";
-  @SerializedName(SERIALIZED_NAME_PATCH_PANEL_PORT_B)
-  @javax.annotation.Nullable
-  private String patchPanelPortB;
-
-  /**
-   * Type of Connector
-   */
-  @JsonAdapter(ConnectorTypeEnum.Adapter.class)
-  public enum ConnectorTypeEnum {
-    FC("FC"),
-    
-    SC("SC"),
-    
-    LC("LC"),
-    
-    ST("ST");
-
-    private String value;
-
-    ConnectorTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ConnectorTypeEnum fromValue(String value) {
-      for (ConnectorTypeEnum b : ConnectorTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ConnectorTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ConnectorTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ConnectorTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return ConnectorTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      ConnectorTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_CONNECTOR_TYPE = "connectorType";
-  @SerializedName(SERIALIZED_NAME_CONNECTOR_TYPE)
-  @javax.annotation.Nullable
-  private ConnectorTypeEnum connectorType;
+  private OpticalConnectDemarcationPoint demarcationPoint;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
@@ -141,79 +71,22 @@ public class OpticalConnectZSideRequest {
   public OpticalConnectZSideRequest() {
   }
 
-  public OpticalConnectZSideRequest patchPanelId(@javax.annotation.Nullable String patchPanelId) {
-    this.patchPanelId = patchPanelId;
+  public OpticalConnectZSideRequest demarcationPoint(@javax.annotation.Nullable OpticalConnectDemarcationPoint demarcationPoint) {
+    this.demarcationPoint = demarcationPoint;
     return this;
   }
 
   /**
-   * Unique identifier of the patch panel.
-   * @return patchPanelId
+   * Get demarcationPoint
+   * @return demarcationPoint
    */
   @javax.annotation.Nullable
-  public String getPatchPanelId() {
-    return patchPanelId;
+  public OpticalConnectDemarcationPoint getDemarcationPoint() {
+    return demarcationPoint;
   }
 
-  public void setPatchPanelId(@javax.annotation.Nullable String patchPanelId) {
-    this.patchPanelId = patchPanelId;
-  }
-
-
-  public OpticalConnectZSideRequest patchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
-    this.patchPanelPortA = patchPanelPortA;
-    return this;
-  }
-
-  /**
-   * Specify the desired port number for Port A. &lt;br&gt; When ports are not provided, next available ports will be used. 
-   * @return patchPanelPortA
-   */
-  @javax.annotation.Nullable
-  public String getPatchPanelPortA() {
-    return patchPanelPortA;
-  }
-
-  public void setPatchPanelPortA(@javax.annotation.Nullable String patchPanelPortA) {
-    this.patchPanelPortA = patchPanelPortA;
-  }
-
-
-  public OpticalConnectZSideRequest patchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
-    this.patchPanelPortB = patchPanelPortB;
-    return this;
-  }
-
-  /**
-   * Specify the desired port number for Port B. &lt;br&gt; When ports are not provided, next available ports will be used. &lt;br&gt; Required for Connector type FC, SC and ST only. 
-   * @return patchPanelPortB
-   */
-  @javax.annotation.Nullable
-  public String getPatchPanelPortB() {
-    return patchPanelPortB;
-  }
-
-  public void setPatchPanelPortB(@javax.annotation.Nullable String patchPanelPortB) {
-    this.patchPanelPortB = patchPanelPortB;
-  }
-
-
-  public OpticalConnectZSideRequest connectorType(@javax.annotation.Nullable ConnectorTypeEnum connectorType) {
-    this.connectorType = connectorType;
-    return this;
-  }
-
-  /**
-   * Type of Connector
-   * @return connectorType
-   */
-  @javax.annotation.Nullable
-  public ConnectorTypeEnum getConnectorType() {
-    return connectorType;
-  }
-
-  public void setConnectorType(@javax.annotation.Nullable ConnectorTypeEnum connectorType) {
-    this.connectorType = connectorType;
+  public void setDemarcationPoint(@javax.annotation.Nullable OpticalConnectDemarcationPoint demarcationPoint) {
+    this.demarcationPoint = demarcationPoint;
   }
 
 
@@ -309,10 +182,7 @@ public class OpticalConnectZSideRequest {
       return false;
     }
     OpticalConnectZSideRequest opticalConnectZSideRequest = (OpticalConnectZSideRequest) o;
-    return Objects.equals(this.patchPanelId, opticalConnectZSideRequest.patchPanelId) &&
-        Objects.equals(this.patchPanelPortA, opticalConnectZSideRequest.patchPanelPortA) &&
-        Objects.equals(this.patchPanelPortB, opticalConnectZSideRequest.patchPanelPortB) &&
-        Objects.equals(this.connectorType, opticalConnectZSideRequest.connectorType) &&
+    return Objects.equals(this.demarcationPoint, opticalConnectZSideRequest.demarcationPoint) &&
         Objects.equals(this.location, opticalConnectZSideRequest.location) &&
         Objects.equals(this.loa, opticalConnectZSideRequest.loa)&&
         Objects.equals(this.additionalProperties, opticalConnectZSideRequest.additionalProperties);
@@ -320,17 +190,14 @@ public class OpticalConnectZSideRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(patchPanelId, patchPanelPortA, patchPanelPortB, connectorType, location, loa, additionalProperties);
+    return Objects.hash(demarcationPoint, location, loa, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OpticalConnectZSideRequest {\n");
-    sb.append("    patchPanelId: ").append(toIndentedString(patchPanelId)).append("\n");
-    sb.append("    patchPanelPortA: ").append(toIndentedString(patchPanelPortA)).append("\n");
-    sb.append("    patchPanelPortB: ").append(toIndentedString(patchPanelPortB)).append("\n");
-    sb.append("    connectorType: ").append(toIndentedString(connectorType)).append("\n");
+    sb.append("    demarcationPoint: ").append(toIndentedString(demarcationPoint)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    loa: ").append(toIndentedString(loa)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -355,7 +222,7 @@ public class OpticalConnectZSideRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType", "location", "loa"));
+    openapiFields = new HashSet<String>(Arrays.asList("demarcationPoint", "location", "loa"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -374,21 +241,9 @@ public class OpticalConnectZSideRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("patchPanelId") != null && !jsonObj.get("patchPanelId").isJsonNull()) && !jsonObj.get("patchPanelId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelId").toString()));
-      }
-      if ((jsonObj.get("patchPanelPortA") != null && !jsonObj.get("patchPanelPortA").isJsonNull()) && !jsonObj.get("patchPanelPortA").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelPortA` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortA").toString()));
-      }
-      if ((jsonObj.get("patchPanelPortB") != null && !jsonObj.get("patchPanelPortB").isJsonNull()) && !jsonObj.get("patchPanelPortB").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `patchPanelPortB` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patchPanelPortB").toString()));
-      }
-      if ((jsonObj.get("connectorType") != null && !jsonObj.get("connectorType").isJsonNull()) && !jsonObj.get("connectorType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `connectorType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("connectorType").toString()));
-      }
-      // validate the optional field `connectorType`
-      if (jsonObj.get("connectorType") != null && !jsonObj.get("connectorType").isJsonNull()) {
-        ConnectorTypeEnum.validateJsonElement(jsonObj.get("connectorType"));
+      // validate the optional field `demarcationPoint`
+      if (jsonObj.get("demarcationPoint") != null && !jsonObj.get("demarcationPoint").isJsonNull()) {
+        OpticalConnectDemarcationPoint.validateJsonElement(jsonObj.get("demarcationPoint"));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {

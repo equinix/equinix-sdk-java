@@ -13,7 +13,7 @@ Provider Environment associated with an IC_PROFILE service profile <font color=\
 |**type** | **ProviderEnvironmentTypeEnum** |  |  [optional] |
 |**name** | **String** | Provider environment name |  [optional] |
 |**description** | **String** | Provider environment description |  [optional] |
-|**region** | **String** | Cloud provider region identifier |  [optional] |
+|**sellerRegion** | **String** | Cloud provider region identifier |  [optional] |
 |**supportedBandwidths** | **List&lt;Integer&gt;** | Supported bandwidths in Mbps |  [optional] |
 |**metros** | [**List&lt;ServiceMetro&gt;**](ServiceMetro.md) | Derived response attribute. |  [optional] |
 |**supportedFeatures** | **List&lt;String&gt;** | Supported Feature Types |  [optional] |

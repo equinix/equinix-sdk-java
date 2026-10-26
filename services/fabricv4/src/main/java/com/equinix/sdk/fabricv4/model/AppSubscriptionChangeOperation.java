@@ -51,7 +51,7 @@ import com.equinix.sdk.fabricv4.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.16.0")
 public class AppSubscriptionChangeOperation {
   /**
-   * Handy shortcut for operation name
+   * operation type applied to the resource
    */
   @JsonAdapter(OpEnum.Adapter.class)
   public enum OpEnum {
@@ -128,7 +128,7 @@ public class AppSubscriptionChangeOperation {
   }
 
   /**
-   * Handy shortcut for operation name
+   * operation type applied to the resource
    * @return op
    */
   @javax.annotation.Nonnull

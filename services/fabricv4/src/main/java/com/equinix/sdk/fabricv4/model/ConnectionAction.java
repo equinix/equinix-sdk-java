@@ -69,6 +69,61 @@ public class ConnectionAction {
   @javax.annotation.Nonnull
   private String uuid;
 
+  /**
+   * Connection action response state
+   */
+  @JsonAdapter(StateEnum.Adapter.class)
+  public enum StateEnum {
+    SUCCEEDED("SUCCEEDED");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StateEnum fromValue(String value) {
+      for (StateEnum b : StateEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StateEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StateEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StateEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StateEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  @javax.annotation.Nullable
+  private StateEnum state;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
@@ -140,6 +195,25 @@ public class ConnectionAction {
 
   public void setUuid(@javax.annotation.Nonnull String uuid) {
     this.uuid = uuid;
+  }
+
+
+  public ConnectionAction state(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
+    return this;
+  }
+
+  /**
+   * Connection action response state
+   * @return state
+   */
+  @javax.annotation.Nullable
+  public StateEnum getState() {
+    return state;
+  }
+
+  public void setState(@javax.annotation.Nullable StateEnum state) {
+    this.state = state;
   }
 
 
@@ -257,6 +331,7 @@ public class ConnectionAction {
     return Objects.equals(this.type, connectionAction.type) &&
         Objects.equals(this.href, connectionAction.href) &&
         Objects.equals(this.uuid, connectionAction.uuid) &&
+        Objects.equals(this.state, connectionAction.state) &&
         Objects.equals(this.description, connectionAction.description) &&
         Objects.equals(this.data, connectionAction.data) &&
         Objects.equals(this.changeLog, connectionAction.changeLog)&&
@@ -265,7 +340,7 @@ public class ConnectionAction {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, href, uuid, description, data, changeLog, additionalProperties);
+    return Objects.hash(type, href, uuid, state, description, data, changeLog, additionalProperties);
   }
 
   @Override
@@ -275,6 +350,7 @@ public class ConnectionAction {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
@@ -300,7 +376,7 @@ public class ConnectionAction {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "href", "uuid", "description", "data", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "href", "uuid", "state", "description", "data", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "uuid", "data"));
@@ -333,6 +409,13 @@ public class ConnectionAction {
       }
       if (!jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));
+      }
+      // validate the optional field `state`
+      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
+        StateEnum.validateJsonElement(jsonObj.get("state"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

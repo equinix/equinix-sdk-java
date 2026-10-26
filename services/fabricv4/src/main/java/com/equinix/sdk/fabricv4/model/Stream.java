@@ -15,6 +15,8 @@ import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
 import com.equinix.sdk.fabricv4.model.Project;
+import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
+import com.equinix.sdk.fabricv4.model.SimplifiedNotification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,7 +24,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -133,6 +137,16 @@ public class Stream {
   @SerializedName(SERIALIZED_NAME_PROJECT)
   @javax.annotation.Nullable
   private Project project;
+
+  public static final String SERIALIZED_NAME_ACCOUNT = "account";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
+  private SimplifiedAccount account;
+
+  public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
+  @javax.annotation.Nullable
+  private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   /**
    * Stream provision state
@@ -335,6 +349,52 @@ public class Stream {
   }
 
 
+  public Stream account(@javax.annotation.Nullable SimplifiedAccount account) {
+    this.account = account;
+    return this;
+  }
+
+  /**
+   * Get account
+   * @return account
+   */
+  @javax.annotation.Nullable
+  public SimplifiedAccount getAccount() {
+    return account;
+  }
+
+  public void setAccount(@javax.annotation.Nullable SimplifiedAccount account) {
+    this.account = account;
+  }
+
+
+  public Stream notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+
+  public Stream addNotificationsItem(SimplifiedNotification notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
+    return this;
+  }
+
+  /**
+   * Preferences for stream notifications, set at creation
+   * @return notifications
+   */
+  @javax.annotation.Nullable
+  public List<SimplifiedNotification> getNotifications() {
+    return notifications;
+  }
+
+  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+    this.notifications = notifications;
+  }
+
+
   public Stream state(@javax.annotation.Nullable StateEnum state) {
     this.state = state;
     return this;
@@ -490,6 +550,8 @@ public class Stream {
         Objects.equals(this.name, stream.name) &&
         Objects.equals(this.description, stream.description) &&
         Objects.equals(this.project, stream.project) &&
+        Objects.equals(this.account, stream.account) &&
+        Objects.equals(this.notifications, stream.notifications) &&
         Objects.equals(this.state, stream.state) &&
         Objects.equals(this.assetsCount, stream.assetsCount) &&
         Objects.equals(this.streamSubscriptionsCount, stream.streamSubscriptionsCount) &&
@@ -500,7 +562,7 @@ public class Stream {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, project, state, assetsCount, streamSubscriptionsCount, alertRulesCount, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, project, account, notifications, state, assetsCount, streamSubscriptionsCount, alertRulesCount, changeLog, additionalProperties);
   }
 
   @Override
@@ -513,6 +575,8 @@ public class Stream {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
+    sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    assetsCount: ").append(toIndentedString(assetsCount)).append("\n");
     sb.append("    streamSubscriptionsCount: ").append(toIndentedString(streamSubscriptionsCount)).append("\n");
@@ -540,7 +604,7 @@ public class Stream {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "project", "state", "assetsCount", "streamSubscriptionsCount", "alertRulesCount", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "project", "account", "notifications", "state", "assetsCount", "streamSubscriptionsCount", "alertRulesCount", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -581,6 +645,24 @@ public class Stream {
       // validate the optional field `project`
       if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
         Project.validateJsonElement(jsonObj.get("project"));
+      }
+      // validate the optional field `account`
+      if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
+        SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
+      }
+      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
+        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+        if (jsonArraynotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
+          }
+
+          // validate the optional field `notifications` (array)
+          for (int i = 0; i < jsonArraynotifications.size(); i++) {
+            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+          };
+        }
       }
       if ((jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) && !jsonObj.get("state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("state").toString()));

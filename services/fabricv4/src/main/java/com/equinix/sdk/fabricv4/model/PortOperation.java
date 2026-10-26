@@ -141,6 +141,11 @@ public class PortOperation {
   @javax.annotation.Nullable
   private MaintenanceState maintenanceStatus;
 
+  public static final String SERIALIZED_NAME_LOCK_ENABLED = "lockEnabled";
+  @SerializedName(SERIALIZED_NAME_LOCK_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean lockEnabled;
+
   public PortOperation() {
   }
 
@@ -276,6 +281,25 @@ public class PortOperation {
     this.maintenanceStatus = maintenanceStatus;
   }
 
+
+  public PortOperation lockEnabled(@javax.annotation.Nullable Boolean lockEnabled) {
+    this.lockEnabled = lockEnabled;
+    return this;
+  }
+
+  /**
+   * Indicates whether the port configuration is locked due to an ongoing or scheduled maintenance.
+   * @return lockEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getLockEnabled() {
+    return lockEnabled;
+  }
+
+  public void setLockEnabled(@javax.annotation.Nullable Boolean lockEnabled) {
+    this.lockEnabled = lockEnabled;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -337,13 +361,14 @@ public class PortOperation {
         Objects.equals(this.fgVCCount, portOperation.fgVCCount) &&
         Objects.equals(this.accessVCCount, portOperation.accessVCCount) &&
         Objects.equals(this.opStatusChangedAt, portOperation.opStatusChangedAt) &&
-        Objects.equals(this.maintenanceStatus, portOperation.maintenanceStatus)&&
+        Objects.equals(this.maintenanceStatus, portOperation.maintenanceStatus) &&
+        Objects.equals(this.lockEnabled, portOperation.lockEnabled)&&
         Objects.equals(this.additionalProperties, portOperation.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operationalStatus, connectionCount, evplVCCount, fgVCCount, accessVCCount, opStatusChangedAt, maintenanceStatus, additionalProperties);
+    return Objects.hash(operationalStatus, connectionCount, evplVCCount, fgVCCount, accessVCCount, opStatusChangedAt, maintenanceStatus, lockEnabled, additionalProperties);
   }
 
   @Override
@@ -357,6 +382,7 @@ public class PortOperation {
     sb.append("    accessVCCount: ").append(toIndentedString(accessVCCount)).append("\n");
     sb.append("    opStatusChangedAt: ").append(toIndentedString(opStatusChangedAt)).append("\n");
     sb.append("    maintenanceStatus: ").append(toIndentedString(maintenanceStatus)).append("\n");
+    sb.append("    lockEnabled: ").append(toIndentedString(lockEnabled)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -379,7 +405,7 @@ public class PortOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus"));
+    openapiFields = new HashSet<String>(Arrays.asList("operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus", "lockEnabled"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

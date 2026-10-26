@@ -316,7 +316,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Connection Actions
+     * Create Connection Action
      * This API provides capability to accept/reject user&#39;s virtual connection
      * @param connectionId Connection Id (required)
      * @param connectionActionRequest  (required)
@@ -339,7 +339,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Connection Actions
+     * Create Connection Action
      * This API provides capability to accept/reject user&#39;s virtual connection
      * @param connectionId Connection Id (required)
      * @param connectionActionRequest  (required)
@@ -363,7 +363,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Connection Actions (asynchronously)
+     * Create Connection Action (asynchronously)
      * This API provides capability to accept/reject user&#39;s virtual connection
      * @param connectionId Connection Id (required)
      * @param connectionActionRequest  (required)
@@ -463,7 +463,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Delete by ID
+     * Delete Connection by ID
      * Delete Connection by ID
      * @param connectionId Connection UUID (required)
      * @return Connection
@@ -486,7 +486,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Delete by ID
+     * Delete Connection by ID
      * Delete Connection by ID
      * @param connectionId Connection UUID (required)
      * @return ApiResponse&lt;Connection&gt;
@@ -510,7 +510,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Delete by ID (asynchronously)
+     * Delete Connection by ID (asynchronously)
      * Delete Connection by ID
      * @param connectionId Connection UUID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -756,7 +756,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Search connections
+     * Search Connections
      * The API provides capability to get list of user&#39;s virtual connections using search criteria, including optional filtering, pagination and sorting
      * @param searchRequest  (required)
      * @return ConnectionSearchResponse
@@ -778,7 +778,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Search connections
+     * Search Connections
      * The API provides capability to get list of user&#39;s virtual connections using search criteria, including optional filtering, pagination and sorting
      * @param searchRequest  (required)
      * @return ApiResponse&lt;ConnectionSearchResponse&gt;
@@ -801,7 +801,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Search connections (asynchronously)
+     * Search Connections (asynchronously)
      * The API provides capability to get list of user&#39;s virtual connections using search criteria, including optional filtering, pagination and sorting
      * @param searchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -912,7 +912,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Update by ID
+     * Update Connection by ID
      * Update Connection by ID
      * @param connectionId Connection Id (required)
      * @param connectionChangeOperation  (required)
@@ -937,7 +937,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Update by ID
+     * Update Connection by ID
      * Update Connection by ID
      * @param connectionId Connection Id (required)
      * @param connectionChangeOperation  (required)
@@ -963,7 +963,7 @@ public class ConnectionsApi {
     }
 
     /**
-     * Update by ID (asynchronously)
+     * Update Connection by ID (asynchronously)
      * Update Connection by ID
      * @param connectionId Connection Id (required)
      * @param connectionChangeOperation  (required)

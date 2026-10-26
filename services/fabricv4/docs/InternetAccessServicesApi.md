@@ -4,18 +4,18 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createEiaService**](InternetAccessServicesApi.md#createEiaService) | **POST** /fabric/v4/internetAccessServices | Creates Internet Access Service |
-| [**deleteEiaService**](InternetAccessServicesApi.md#deleteEiaService) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by UUID |
-| [**getEiaService**](InternetAccessServicesApi.md#getEiaService) | **GET** /fabric/v4/internetAccessServices/{uuid} | Retrieve Internet Access Service by UUID |
-| [**patchEiaService**](InternetAccessServicesApi.md#patchEiaService) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Patch Internet Access Service by UUID |
-| [**searchEiaServices**](InternetAccessServicesApi.md#searchEiaServices) | **POST** /fabric/v4/internetAccessServices/search | Search for Internet Access Services |
+| [**createEiaService**](InternetAccessServicesApi.md#createEiaService) | **POST** /fabric/v4/internetAccessServices | Create Internet Access Service |
+| [**deleteEiaService**](InternetAccessServicesApi.md#deleteEiaService) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by ID |
+| [**getEiaService**](InternetAccessServicesApi.md#getEiaService) | **GET** /fabric/v4/internetAccessServices/{uuid} | Get Internet Access Service by ID |
+| [**patchEiaService**](InternetAccessServicesApi.md#patchEiaService) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Update Internet Access Service by ID |
+| [**searchEiaServices**](InternetAccessServicesApi.md#searchEiaServices) | **POST** /fabric/v4/internetAccessServices/search | Search Internet Access Services |
 
 
 <a id="createEiaService"></a>
 # **createEiaService**
 > InternetAccessService createEiaService(internetAccessPostRequest)
 
-Creates Internet Access Service
+Create Internet Access Service
 
 Creates Internet Access Service
 
@@ -85,7 +85,7 @@ public class Example {
 # **deleteEiaService**
 > InternetAccessService deleteEiaService(uuid)
 
-Delete Internet Access Service by UUID
+Delete Internet Access Service by ID
 
 Delete Internet Access Service by UUID
 
@@ -154,7 +154,7 @@ public class Example {
 # **getEiaService**
 > InternetAccessService getEiaService(uuid)
 
-Retrieve Internet Access Service by UUID
+Get Internet Access Service by ID
 
 Retrieve Internet Access Service by UUID
 
@@ -222,7 +222,7 @@ public class Example {
 # **patchEiaService**
 > InternetAccessService patchEiaService(uuid, internetAccessPatchOperationUpdate)
 
-Patch Internet Access Service by UUID
+Update Internet Access Service by ID
 
 Patch Internet Access Service by UUID
 
@@ -292,7 +292,7 @@ public class Example {
 # **searchEiaServices**
 > InternetAccessServices searchEiaServices(internetAccessSearchRequest)
 
-Search for Internet Access Services
+Search Internet Access Services
 
 Search for Internet Access Services
 

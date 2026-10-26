@@ -5,7 +5,7 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**getMetroByCode**](MetrosApi.md#getMetroByCode) | **GET** /fabric/v4/metros/{metroCode} | Get Metro by Code |
-| [**getMetros**](MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get all Metros |
+| [**getMetros**](MetrosApi.md#getMetros) | **GET** /fabric/v4/metros | Get Metros |
 
 
 <a id="getMetroByCode"></a>
@@ -14,7 +14,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Get Metro by Code
 
-GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
+GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location
 
 ### Example
 ```java
@@ -82,9 +82,9 @@ public class Example {
 # **getMetros**
 > MetroResponse getMetros(presence, offset, limit)
 
-Get all Metros
+Get Metros
 
-GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
+GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location
 
 ### Example
 ```java

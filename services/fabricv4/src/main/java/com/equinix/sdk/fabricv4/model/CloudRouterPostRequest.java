@@ -146,7 +146,7 @@ public class CloudRouterPostRequest {
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private List<SimplifiedNotification> notifications = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION = "marketplaceSubscription";
@@ -290,7 +290,7 @@ public class CloudRouterPostRequest {
   }
 
 
-  public CloudRouterPostRequest notifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+  public CloudRouterPostRequest notifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -307,12 +307,12 @@ public class CloudRouterPostRequest {
    * Preferences for notifications on connection configuration or status changes
    * @return notifications
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<SimplifiedNotification> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nullable List<SimplifiedNotification> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<SimplifiedNotification> notifications) {
     this.notifications = notifications;
   }
 
@@ -445,7 +445,7 @@ public class CloudRouterPostRequest {
     openapiFields = new HashSet<String>(Arrays.asList("type", "name", "location", "package", "order", "project", "account", "notifications", "marketplaceSubscription"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "location", "package"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "location", "package", "notifications"));
   }
 
   /**
@@ -492,20 +492,16 @@ public class CloudRouterPostRequest {
       if (jsonObj.get("account") != null && !jsonObj.get("account").isJsonNull()) {
         SimplifiedAccount.validateJsonElement(jsonObj.get("account"));
       }
-      if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
-        JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
-        if (jsonArraynotifications != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("notifications").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
-          }
-
-          // validate the optional field `notifications` (array)
-          for (int i = 0; i < jsonArraynotifications.size(); i++) {
-            SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
-          };
-        }
+      // ensure the json data is an array
+      if (!jsonObj.get("notifications").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifications` to be an array in the JSON string but got `%s`", jsonObj.get("notifications").toString()));
       }
+
+      JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");
+      // validate the required field `notifications` (array)
+      for (int i = 0; i < jsonArraynotifications.size(); i++) {
+        SimplifiedNotification.validateJsonElement(jsonArraynotifications.get(i));
+      };
       // validate the optional field `marketplaceSubscription`
       if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
         MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));

@@ -76,7 +76,7 @@ public class AppLinkSimpleExpression {
   }
 
   /**
-   * Possible field names to use on filters:   * &#x60;/project/projectId&#x60; - project id   * &#x60;/uuid&#x60; - App Link uuid   * &#x60;/name&#x60; - App Link name   * &#x60;/description&#x60; - App Link description   * &#x60;/state&#x60; - App Link status   * &#x60;/ipv4Address&#x60; - App Link ipv4 address   * &#x60;/bandwidth&#x60; - App Link bandwidth   * &#x60;/changeLog/createdDateTime&#x60; - App Link creation timestamp   * &#x60;/changeLog/updatedDateTime&#x60; - App Link last updated timestamp   * &#x60;/changeLog/deletedDateTime&#x60; - App Link deletion timestamp 
+   * Possible field names to use on filters:   * &#x60;/project/projectId&#x60; - project id   * &#x60;/uuid&#x60; - App Link uuid   * &#x60;/name&#x60; - App Link name   * &#x60;/description&#x60; - App Link description   * &#x60;/state&#x60; - App Link status   * &#x60;/ipv4Subnet&#x60; - App Link ipv4 subnet   * &#x60;/bandwidth&#x60; - App Link bandwidth   * &#x60;/changeLog/createdDateTime&#x60; - App Link creation timestamp   * &#x60;/changeLog/updatedDateTime&#x60; - App Link last updated timestamp   * &#x60;/changeLog/deletedDateTime&#x60; - App Link deletion timestamp 
    * @return property
    */
   @javax.annotation.Nullable

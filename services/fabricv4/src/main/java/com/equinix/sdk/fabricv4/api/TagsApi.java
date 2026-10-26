@@ -149,7 +149,7 @@ public class TagsApi {
 
     /**
      * Create Tag
-     * Create Tag for Equinix Fabric™.
+     * Create Tag for Equinix Fabric™
      * @param tagRequest  (required)
      * @return TagResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -171,7 +171,7 @@ public class TagsApi {
 
     /**
      * Create Tag
-     * Create Tag for Equinix Fabric™.
+     * Create Tag for Equinix Fabric™
      * @param tagRequest  (required)
      * @return ApiResponse&lt;TagResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,7 +194,7 @@ public class TagsApi {
 
     /**
      * Create Tag (asynchronously)
-     * Create Tag for Equinix Fabric™.
+     * Create Tag for Equinix Fabric™
      * @param tagRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

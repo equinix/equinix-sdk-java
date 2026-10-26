@@ -5,16 +5,16 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**attachConnectionRouteFilter**](RouteFiltersApi.md#attachConnectionRouteFilter) | **PUT** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Attach Route Filter |
-| [**createRouteFilter**](RouteFiltersApi.md#createRouteFilter) | **POST** /fabric/v4/routeFilters | Create Route Filters |
+| [**createRouteFilter**](RouteFiltersApi.md#createRouteFilter) | **POST** /fabric/v4/routeFilters | Create Route Filter |
 | [**deleteRouteFilterByUuid**](RouteFiltersApi.md#deleteRouteFilterByUuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId} | Delete Route Filter |
 | [**detachConnectionRouteFilter**](RouteFiltersApi.md#detachConnectionRouteFilter) | **DELETE** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Detach Route Filter |
 | [**getConnectionRouteFilterByUuid**](RouteFiltersApi.md#getConnectionRouteFilterByUuid) | **GET** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Get Route Filter |
-| [**getConnectionRouteFilters**](RouteFiltersApi.md#getConnectionRouteFilters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get All Route Filters |
-| [**getRouteFilterByUuid**](RouteFiltersApi.md#getRouteFilterByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter By UUID |
+| [**getConnectionRouteFilters**](RouteFiltersApi.md#getConnectionRouteFilters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get Connection Route Filters |
+| [**getRouteFilterByUuid**](RouteFiltersApi.md#getRouteFilterByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter by ID |
 | [**getRouteFilterChangeByUuid**](RouteFiltersApi.md#getRouteFilterChangeByUuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes/{changeId} | Get Change By ID |
-| [**getRouteFilterChanges**](RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes |
+| [**getRouteFilterChanges**](RouteFiltersApi.md#getRouteFilterChanges) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get Route Filter Changes |
 | [**getRouteFilterConnections**](RouteFiltersApi.md#getRouteFilterConnections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter |
-| [**patchRouteFilterByUuid**](RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter |
+| [**patchRouteFilterByUuid**](RouteFiltersApi.md#patchRouteFilterByUuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Update Route Filter |
 | [**searchCloudRouterRouteFilterAttachments**](RouteFiltersApi.md#searchCloudRouterRouteFilterAttachments) | **POST** /fabric/v4/routers/{routerId}/routeFilters/search | Search Cloud Router Route Filter Attachments |
 | [**searchRouteFilters**](RouteFiltersApi.md#searchRouteFilters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters |
 
@@ -100,7 +100,7 @@ public class Example {
 # **createRouteFilter**
 > RouteFiltersData createRouteFilter(routeFiltersBase)
 
-Create Route Filters
+Create Route Filter
 
 This API provides capability to create a Route Filter
 
@@ -396,7 +396,7 @@ public class Example {
 # **getConnectionRouteFilters**
 > GetAllConnectionRouteFiltersResponse getConnectionRouteFilters(connectionId)
 
-Get All Route Filters
+Get Connection Route Filters
 
 This API provides capability to view all Route Filters attached to a Connection
 
@@ -469,7 +469,7 @@ public class Example {
 # **getRouteFilterByUuid**
 > RouteFiltersData getRouteFilterByUuid(routeFilterId)
 
-Get Route Filter By UUID
+Get Route Filter by ID
 
 This API provides capability to view a Route Filter by UUID
 
@@ -616,7 +616,7 @@ public class Example {
 # **getRouteFilterChanges**
 > RouteFilterChangeDataResponse getRouteFilterChanges(routeFilterId, offset, limit)
 
-Get All Changes
+Get Route Filter Changes
 
 This API provides capability to retrieve all of a Route Filter&#39;s Changes
 
@@ -765,7 +765,7 @@ public class Example {
 # **patchRouteFilterByUuid**
 > RouteFiltersData patchRouteFilterByUuid(routeFilterId, routeFiltersPatchRequestItem)
 
-Patch Route Filter
+Update Route Filter
 
 This API provides capability to partially update a Route Filter
 

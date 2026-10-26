@@ -55,7 +55,7 @@ public class RoutingProtocolResponse {
   public static final String SERIALIZED_NAME_CUSTOMER_ASN = "customerAsn";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ASN)
   @javax.annotation.Nullable
-  private String customerAsn;
+  private Integer customerAsn;
 
   public static final String SERIALIZED_NAME_MAC_ADDRESS = "macAddress";
   @SerializedName(SERIALIZED_NAME_MAC_ADDRESS)
@@ -90,21 +90,21 @@ public class RoutingProtocolResponse {
   public RoutingProtocolResponse() {
   }
 
-  public RoutingProtocolResponse customerAsn(@javax.annotation.Nullable String customerAsn) {
+  public RoutingProtocolResponse customerAsn(@javax.annotation.Nullable Integer customerAsn) {
     this.customerAsn = customerAsn;
     return this;
   }
 
   /**
-   * Get customerAsn
+   * Customer Autonomous System Number (ASN)
    * @return customerAsn
    */
   @javax.annotation.Nullable
-  public String getCustomerAsn() {
+  public Integer getCustomerAsn() {
     return customerAsn;
   }
 
-  public void setCustomerAsn(@javax.annotation.Nullable String customerAsn) {
+  public void setCustomerAsn(@javax.annotation.Nullable Integer customerAsn) {
     this.customerAsn = customerAsn;
   }
 
@@ -115,7 +115,7 @@ public class RoutingProtocolResponse {
   }
 
   /**
-   * Get macAddress
+   * MAC address of the customer interface
    * @return macAddress
    */
   @javax.annotation.Nullable
@@ -344,9 +344,6 @@ public class RoutingProtocolResponse {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("customerAsn") != null && !jsonObj.get("customerAsn").isJsonNull()) && !jsonObj.get("customerAsn").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customerAsn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerAsn").toString()));
-      }
       if ((jsonObj.get("macAddress") != null && !jsonObj.get("macAddress").isJsonNull()) && !jsonObj.get("macAddress").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `macAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("macAddress").toString()));
       }

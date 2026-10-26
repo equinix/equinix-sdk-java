@@ -331,7 +331,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Create Route Filters
+     * Create Route Filter
      * This API provides capability to create a Route Filter
      * @param routeFiltersBase  (required)
      * @return RouteFiltersData
@@ -355,7 +355,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Create Route Filters
+     * Create Route Filter
      * This API provides capability to create a Route Filter
      * @param routeFiltersBase  (required)
      * @return ApiResponse&lt;RouteFiltersData&gt;
@@ -380,7 +380,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Create Route Filters (asynchronously)
+     * Create Route Filter (asynchronously)
      * This API provides capability to create a Route Filter
      * @param routeFiltersBase  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -955,7 +955,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Route Filters
+     * Get Connection Route Filters
      * This API provides capability to view all Route Filters attached to a Connection
      * @param connectionId Connection Id (required)
      * @return GetAllConnectionRouteFiltersResponse
@@ -979,7 +979,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Route Filters
+     * Get Connection Route Filters
      * This API provides capability to view all Route Filters attached to a Connection
      * @param connectionId Connection Id (required)
      * @return ApiResponse&lt;GetAllConnectionRouteFiltersResponse&gt;
@@ -1004,7 +1004,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Route Filters (asynchronously)
+     * Get Connection Route Filters (asynchronously)
      * This API provides capability to view all Route Filters attached to a Connection
      * @param connectionId Connection Id (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1106,7 +1106,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get Route Filter By UUID
+     * Get Route Filter by ID
      * This API provides capability to view a Route Filter by UUID
      * @param routeFilterId Route Filters Id (required)
      * @return RouteFiltersData
@@ -1130,7 +1130,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get Route Filter By UUID
+     * Get Route Filter by ID
      * This API provides capability to view a Route Filter by UUID
      * @param routeFilterId Route Filters Id (required)
      * @return ApiResponse&lt;RouteFiltersData&gt;
@@ -1155,7 +1155,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get Route Filter By UUID (asynchronously)
+     * Get Route Filter by ID (asynchronously)
      * This API provides capability to view a Route Filter by UUID
      * @param routeFilterId Route Filters Id (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1423,7 +1423,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Filter Changes
      * This API provides capability to retrieve all of a Route Filter&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param offset offset (optional)
@@ -1448,7 +1448,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Filter Changes
      * This API provides capability to retrieve all of a Route Filter&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param offset offset (optional)
@@ -1474,7 +1474,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Get All Changes (asynchronously)
+     * Get Route Filter Changes (asynchronously)
      * This API provides capability to retrieve all of a Route Filter&#39;s Changes
      * @param routeFilterId Route Filters Id (required)
      * @param offset offset (optional)
@@ -1736,7 +1736,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Patch Route Filter
+     * Update Route Filter
      * This API provides capability to partially update a Route Filter
      * @param routeFilterId Route Filters Id (required)
      * @param routeFiltersPatchRequestItem  (required)
@@ -1761,7 +1761,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Patch Route Filter
+     * Update Route Filter
      * This API provides capability to partially update a Route Filter
      * @param routeFilterId Route Filters Id (required)
      * @param routeFiltersPatchRequestItem  (required)
@@ -1787,7 +1787,7 @@ public class RouteFiltersApi {
     }
 
     /**
-     * Patch Route Filter (asynchronously)
+     * Update Route Filter (asynchronously)
      * This API provides capability to partially update a Route Filter
      * @param routeFilterId Route Filters Id (required)
      * @param routeFiltersPatchRequestItem  (required)

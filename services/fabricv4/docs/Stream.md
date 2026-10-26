@@ -14,6 +14,8 @@ Stream object
 |**name** | **String** | Customer-provided stream name |  [optional] |
 |**description** | **String** | Customer-provided stream description |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
+|**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  |  [optional] |
+|**notifications** | [**List&lt;SimplifiedNotification&gt;**](SimplifiedNotification.md) | Preferences for stream notifications, set at creation |  [optional] |
 |**state** | [**StateEnum**](#StateEnum) | Stream provision state |  [optional] |
 |**assetsCount** | **Integer** | Stream assets count |  [optional] |
 |**streamSubscriptionsCount** | **Integer** | Stream subscriptions count |  [optional] |

@@ -12,7 +12,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**detachPrivateServiceFromProfile**](CompanyProfilesApi.md#detachPrivateServiceFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Detach Private Service |
 | [**detachServiceProfileFromProfile**](CompanyProfilesApi.md#detachServiceProfileFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Detach Service Profile |
 | [**detachTagFromProfile**](CompanyProfilesApi.md#detachTagFromProfile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Detach Tag |
-| [**getCompanyProfile**](CompanyProfilesApi.md#getCompanyProfile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by UUID |
+| [**getCompanyProfile**](CompanyProfilesApi.md#getCompanyProfile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by ID |
 | [**getCompanyProfilePrivateServices**](CompanyProfilesApi.md#getCompanyProfilePrivateServices) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/privateServices | Get Private Services |
 | [**getCompanyProfileServiceProfiles**](CompanyProfilesApi.md#getCompanyProfileServiceProfiles) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles | Get Service Profiles |
 | [**getTags**](CompanyProfilesApi.md#getTags) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/tags | Get Tags |
@@ -595,7 +595,7 @@ public class Example {
 # **getCompanyProfile**
 > CompanyProfileResponse getCompanyProfile(companyProfileId)
 
-Get Company Profile by UUID
+Get Company Profile by ID
 
 Get company profile details by UUID &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt;
 

@@ -63,8 +63,8 @@ public class LoaReplaceOperation {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
-  private Object value;
+  @javax.annotation.Nullable
+  private Object value = null;
 
   public LoaReplaceOperation() {
   }
@@ -107,7 +107,7 @@ public class LoaReplaceOperation {
   }
 
 
-  public LoaReplaceOperation value(@javax.annotation.Nonnull Object value) {
+  public LoaReplaceOperation value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -116,12 +116,12 @@ public class LoaReplaceOperation {
    * New value for updated parameter
    * @return value
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 

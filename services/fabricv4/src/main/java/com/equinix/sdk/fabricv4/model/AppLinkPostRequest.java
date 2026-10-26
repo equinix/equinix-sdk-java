@@ -73,10 +73,10 @@ public class AppLinkPostRequest {
   @javax.annotation.Nonnull
   private AppLinkPostRequestRouter router;
 
-  public static final String SERIALIZED_NAME_IPV4_ADDRESS = "ipv4Address";
-  @SerializedName(SERIALIZED_NAME_IPV4_ADDRESS)
-  @javax.annotation.Nullable
-  private String ipv4Address;
+  public static final String SERIALIZED_NAME_IPV4_SUBNET = "ipv4Subnet";
+  @SerializedName(SERIALIZED_NAME_IPV4_SUBNET)
+  @javax.annotation.Nonnull
+  private String ipv4Subnet;
 
   public static final String SERIALIZED_NAME_BANDWIDTH = "bandwidth";
   @SerializedName(SERIALIZED_NAME_BANDWIDTH)
@@ -167,22 +167,22 @@ public class AppLinkPostRequest {
   }
 
 
-  public AppLinkPostRequest ipv4Address(@javax.annotation.Nullable String ipv4Address) {
-    this.ipv4Address = ipv4Address;
+  public AppLinkPostRequest ipv4Subnet(@javax.annotation.Nonnull String ipv4Subnet) {
+    this.ipv4Subnet = ipv4Subnet;
     return this;
   }
 
   /**
-   * AppLink IP address
-   * @return ipv4Address
+   * Customer-provided IP subnet for AppLink setup (/29 or larger subnet)
+   * @return ipv4Subnet
    */
-  @javax.annotation.Nullable
-  public String getIpv4Address() {
-    return ipv4Address;
+  @javax.annotation.Nonnull
+  public String getIpv4Subnet() {
+    return ipv4Subnet;
   }
 
-  public void setIpv4Address(@javax.annotation.Nullable String ipv4Address) {
-    this.ipv4Address = ipv4Address;
+  public void setIpv4Subnet(@javax.annotation.Nonnull String ipv4Subnet) {
+    this.ipv4Subnet = ipv4Subnet;
   }
 
 
@@ -282,7 +282,7 @@ public class AppLinkPostRequest {
         Objects.equals(this.name, appLinkPostRequest.name) &&
         Objects.equals(this.description, appLinkPostRequest.description) &&
         Objects.equals(this.router, appLinkPostRequest.router) &&
-        Objects.equals(this.ipv4Address, appLinkPostRequest.ipv4Address) &&
+        Objects.equals(this.ipv4Subnet, appLinkPostRequest.ipv4Subnet) &&
         Objects.equals(this.bandwidth, appLinkPostRequest.bandwidth) &&
         Objects.equals(this.project, appLinkPostRequest.project)&&
         Objects.equals(this.additionalProperties, appLinkPostRequest.additionalProperties);
@@ -290,7 +290,7 @@ public class AppLinkPostRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, description, router, ipv4Address, bandwidth, project, additionalProperties);
+    return Objects.hash(type, name, description, router, ipv4Subnet, bandwidth, project, additionalProperties);
   }
 
   @Override
@@ -301,7 +301,7 @@ public class AppLinkPostRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    router: ").append(toIndentedString(router)).append("\n");
-    sb.append("    ipv4Address: ").append(toIndentedString(ipv4Address)).append("\n");
+    sb.append("    ipv4Subnet: ").append(toIndentedString(ipv4Subnet)).append("\n");
     sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -326,10 +326,10 @@ public class AppLinkPostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "router", "ipv4Address", "bandwidth", "project"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "description", "router", "ipv4Subnet", "bandwidth", "project"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "router", "bandwidth", "project"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "router", "ipv4Subnet", "bandwidth", "project"));
   }
 
   /**
@@ -362,8 +362,8 @@ public class AppLinkPostRequest {
       }
       // validate the required field `router`
       AppLinkPostRequestRouter.validateJsonElement(jsonObj.get("router"));
-      if ((jsonObj.get("ipv4Address") != null && !jsonObj.get("ipv4Address").isJsonNull()) && !jsonObj.get("ipv4Address").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipv4Address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipv4Address").toString()));
+      if (!jsonObj.get("ipv4Subnet").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ipv4Subnet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipv4Subnet").toString()));
       }
       // validate the required field `project`
       Project.validateJsonElement(jsonObj.get("project"));

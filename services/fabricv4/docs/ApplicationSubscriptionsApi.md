@@ -4,20 +4,20 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createAppSubscription**](ApplicationSubscriptionsApi.md#createAppSubscription) | **POST** /fabric/v4/appSubscriptions | Create App Subscription |
-| [**deleteAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#deleteAppSubscriptionByUuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete App Subscription |
-| [**getAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#getAppSubscriptionByUuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get App Subscription |
-| [**searchAppSubscriptions**](ApplicationSubscriptionsApi.md#searchAppSubscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search App Subscriptions |
-| [**updateAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#updateAppSubscriptionByUuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update App Subscription |
+| [**createAppSubscription**](ApplicationSubscriptionsApi.md#createAppSubscription) | **POST** /fabric/v4/appSubscriptions | Create Subscription |
+| [**deleteAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#deleteAppSubscriptionByUuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete Subscription |
+| [**getAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#getAppSubscriptionByUuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get Subscription |
+| [**searchAppSubscriptions**](ApplicationSubscriptionsApi.md#searchAppSubscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search Subscriptions |
+| [**updateAppSubscriptionByUuid**](ApplicationSubscriptionsApi.md#updateAppSubscriptionByUuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update Subscription |
 
 
 <a id="createAppSubscription"></a>
 # **createAppSubscription**
 > AppSubscription createAppSubscription(appSubscriptionPostRequest)
 
-Create App Subscription
+Create Subscription
 
-This API provides capability to create user&#39;s App Subscription
+This API provides capability to create user&#39;s Subscription
 
 ### Example
 ```java
@@ -86,9 +86,9 @@ public class Example {
 # **deleteAppSubscriptionByUuid**
 > AppSubscription deleteAppSubscriptionByUuid(appSubscriptionId)
 
-Delete App Subscription
+Delete Subscription
 
-This API provides capability to delete user&#39;s App Subscription
+This API provides capability to delete user&#39;s Subscription
 
 ### Example
 ```java
@@ -158,9 +158,9 @@ public class Example {
 # **getAppSubscriptionByUuid**
 > AppSubscription getAppSubscriptionByUuid(appSubscriptionId)
 
-Get App Subscription
+Get Subscription
 
-This API provides capability to retrieve user&#39;s App Subscription
+This API provides capability to retrieve user&#39;s Subscription
 
 ### Example
 ```java
@@ -229,7 +229,7 @@ public class Example {
 # **searchAppSubscriptions**
 > AppSubscriptionSearchResponse searchAppSubscriptions(appSubscriptionSearchRequest)
 
-Search App Subscriptions
+Search Subscriptions
 
 The API provides capability to get list of user&#39;s App Subscriptions using search criteria, including optional filtering, pagination and sorting
 
@@ -301,9 +301,9 @@ public class Example {
 # **updateAppSubscriptionByUuid**
 > AppSubscription updateAppSubscriptionByUuid(appSubscriptionId, appSubscriptionChangeOperation)
 
-Update App Subscription
+Update Subscription
 
-This API provides capability to update user&#39;s App Subscription
+This API provides capability to update user&#39;s Subscription
 
 ### Example
 ```java

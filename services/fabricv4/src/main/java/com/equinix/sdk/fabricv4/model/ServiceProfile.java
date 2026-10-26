@@ -227,7 +227,7 @@ public class ServiceProfile {
   }
 
   /**
-   * Seller Account for Service Profile.
+   * Get account
    * @return account
    */
   @javax.annotation.Nullable
@@ -284,7 +284,7 @@ public class ServiceProfile {
   }
 
   /**
-   * Seller Account for Service Profile.
+   * Get changeLog
    * @return changeLog
    */
   @javax.annotation.Nullable

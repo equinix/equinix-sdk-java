@@ -4,23 +4,23 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createAppService**](ApplicationServicesApi.md#createAppService) | **POST** /fabric/v4/appServices | Create App Service |
-| [**deleteAppServiceByUuid**](ApplicationServicesApi.md#deleteAppServiceByUuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete App Service |
-| [**getAppServiceByUuid**](ApplicationServicesApi.md#getAppServiceByUuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get App Service |
-| [**getAttachedAppLinksByAppServiceId**](ApplicationServicesApi.md#getAttachedAppLinksByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get attached App Links for App Service |
-| [**getAttachedAppSubscriptionsByAppServiceId**](ApplicationServicesApi.md#getAttachedAppSubscriptionsByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get attached App Subscriptions for App Service |
-| [**searchAppServices**](ApplicationServicesApi.md#searchAppServices) | **POST** /fabric/v4/appServices/search | Search App Services |
-| [**searchAttachedAppSubscriptionsByAppServiceId**](ApplicationServicesApi.md#searchAttachedAppSubscriptionsByAppServiceId) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search attached App Subscriptions |
-| [**updateAppServiceByUuid**](ApplicationServicesApi.md#updateAppServiceByUuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update App Service |
+| [**createAppService**](ApplicationServicesApi.md#createAppService) | **POST** /fabric/v4/appServices | Create Service |
+| [**deleteAppServiceByUuid**](ApplicationServicesApi.md#deleteAppServiceByUuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete Service |
+| [**getAppServiceByUuid**](ApplicationServicesApi.md#getAppServiceByUuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get Service |
+| [**getAttachedAppLinksByAppServiceId**](ApplicationServicesApi.md#getAttachedAppLinksByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get Attached Links for Service |
+| [**getAttachedAppSubscriptionsByAppServiceId**](ApplicationServicesApi.md#getAttachedAppSubscriptionsByAppServiceId) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get Attached Subscriptions for Service |
+| [**searchAppServices**](ApplicationServicesApi.md#searchAppServices) | **POST** /fabric/v4/appServices/search | Search Services |
+| [**searchAttachedAppSubscriptionsByAppServiceId**](ApplicationServicesApi.md#searchAttachedAppSubscriptionsByAppServiceId) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search Attached Subscriptions |
+| [**updateAppServiceByUuid**](ApplicationServicesApi.md#updateAppServiceByUuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update Service |
 
 
 <a id="createAppService"></a>
 # **createAppService**
 > AppService createAppService(appServicePostRequest)
 
-Create App Service
+Create Service
 
-This API provides capability to create user&#39;s App Service
+This API provides capability to create user&#39;s Service
 
 ### Example
 ```java
@@ -90,9 +90,9 @@ public class Example {
 # **deleteAppServiceByUuid**
 > AppService deleteAppServiceByUuid(appServiceId)
 
-Delete App Service
+Delete Service
 
-This API provides capability to delete user&#39;s App Service
+This API provides capability to delete user&#39;s Service
 
 ### Example
 ```java
@@ -162,9 +162,9 @@ public class Example {
 # **getAppServiceByUuid**
 > AppService getAppServiceByUuid(appServiceId)
 
-Get App Service
+Get Service
 
-This API provides capability to retrieve user&#39;s App Service
+This API provides capability to retrieve user&#39;s Service
 
 ### Example
 ```java
@@ -233,9 +233,9 @@ public class Example {
 # **getAttachedAppLinksByAppServiceId**
 > AppServiceAttachedAppLinks getAttachedAppLinksByAppServiceId(appServiceId, offset, limit, state, order, style)
 
-Get attached App Links for App Service
+Get Attached Links for Service
 
-This API provides capability to retrieve App Links attached to an App Service.
+This API provides capability to retrieve App Links attached to an App Service
 
 ### Example
 ```java
@@ -315,9 +315,9 @@ public class Example {
 # **getAttachedAppSubscriptionsByAppServiceId**
 > AppServiceAttachedAppSubscriptions getAttachedAppSubscriptionsByAppServiceId(appServiceId, offset, limit, state, order, style)
 
-Get attached App Subscriptions for App Service
+Get Attached Subscriptions for Service
 
-This API provides capability to retrieve App Subscriptions attached to an App Service.
+This API provides capability to retrieve App Subscriptions attached to an App Service
 
 ### Example
 ```java
@@ -397,7 +397,7 @@ public class Example {
 # **searchAppServices**
 > AppServiceSearchResponse searchAppServices(appServiceSearchRequest)
 
-Search App Services
+Search Services
 
 The API provides capability to get list of user&#39;s App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -469,9 +469,9 @@ public class Example {
 # **searchAttachedAppSubscriptionsByAppServiceId**
 > AppServiceAttachedAppSubscriptionSearchResponse searchAttachedAppSubscriptionsByAppServiceId(appServiceId, appServiceAttachedAppSubscriptionSearchRequest)
 
-Search attached App Subscriptions
+Search Attached Subscriptions
 
-The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
 
 ### Example
 ```java
@@ -543,9 +543,9 @@ public class Example {
 # **updateAppServiceByUuid**
 > AppService updateAppServiceByUuid(appServiceId, appServiceChangeOperation)
 
-Update App Service
+Update Service
 
-This API provides capability to update user&#39;s App Service
+This API provides capability to update user&#39;s Service
 
 ### Example
 ```java

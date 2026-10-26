@@ -113,7 +113,9 @@ public class Price {
     
     NUMBER_24(24),
     
-    NUMBER_36(36);
+    NUMBER_36(36),
+    
+    NUMBER_60(60);
 
     private Integer value;
 

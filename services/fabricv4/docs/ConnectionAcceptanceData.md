@@ -10,6 +10,7 @@ Connection acceptance data
 |------------ | ------------- | ------------- | -------------|
 |**zSide** | [**ConnectionSide**](ConnectionSide.md) |  |  [optional] |
 |**providerBandwidth** | **Integer** | Authorization key bandwidth in Mbps |  [optional] [readonly] |
+|**operation** | [**ConnectionOperation**](ConnectionOperation.md) |  |  [optional] |
 
 
 

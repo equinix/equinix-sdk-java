@@ -150,8 +150,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Create App Subscription
-     * This API provides capability to create user&#39;s App Subscription
+     * Create Subscription
+     * This API provides capability to create user&#39;s Subscription
      * @param appSubscriptionPostRequest  (required)
      * @return AppSubscription
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -172,8 +172,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Create App Subscription
-     * This API provides capability to create user&#39;s App Subscription
+     * Create Subscription
+     * This API provides capability to create user&#39;s Subscription
      * @param appSubscriptionPostRequest  (required)
      * @return ApiResponse&lt;AppSubscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,8 +195,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Create App Subscription (asynchronously)
-     * This API provides capability to create user&#39;s App Subscription
+     * Create Subscription (asynchronously)
+     * This API provides capability to create user&#39;s Subscription
      * @param appSubscriptionPostRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -294,8 +294,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Delete App Subscription
-     * This API provides capability to delete user&#39;s App Subscription
+     * Delete Subscription
+     * This API provides capability to delete user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @return AppSubscription
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -317,8 +317,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Delete App Subscription
-     * This API provides capability to delete user&#39;s App Subscription
+     * Delete Subscription
+     * This API provides capability to delete user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @return ApiResponse&lt;AppSubscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -341,8 +341,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Delete App Subscription (asynchronously)
-     * This API provides capability to delete user&#39;s App Subscription
+     * Delete Subscription (asynchronously)
+     * This API provides capability to delete user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -440,8 +440,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Get App Subscription
-     * This API provides capability to retrieve user&#39;s App Subscription
+     * Get Subscription
+     * This API provides capability to retrieve user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @return AppSubscription
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -462,8 +462,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Get App Subscription
-     * This API provides capability to retrieve user&#39;s App Subscription
+     * Get Subscription
+     * This API provides capability to retrieve user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @return ApiResponse&lt;AppSubscription&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -485,8 +485,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Get App Subscription (asynchronously)
-     * This API provides capability to retrieve user&#39;s App Subscription
+     * Get Subscription (asynchronously)
+     * This API provides capability to retrieve user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -584,7 +584,7 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Search App Subscriptions
+     * Search Subscriptions
      * The API provides capability to get list of user&#39;s App Subscriptions using search criteria, including optional filtering, pagination and sorting
      * @param appSubscriptionSearchRequest  (required)
      * @return AppSubscriptionSearchResponse
@@ -607,7 +607,7 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Search App Subscriptions
+     * Search Subscriptions
      * The API provides capability to get list of user&#39;s App Subscriptions using search criteria, including optional filtering, pagination and sorting
      * @param appSubscriptionSearchRequest  (required)
      * @return ApiResponse&lt;AppSubscriptionSearchResponse&gt;
@@ -631,7 +631,7 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Search App Subscriptions (asynchronously)
+     * Search Subscriptions (asynchronously)
      * The API provides capability to get list of user&#39;s App Subscriptions using search criteria, including optional filtering, pagination and sorting
      * @param appSubscriptionSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -739,8 +739,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Update App Subscription
-     * This API provides capability to update user&#39;s App Subscription
+     * Update Subscription
+     * This API provides capability to update user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @param appSubscriptionChangeOperation  (required)
      * @return AppSubscription
@@ -764,8 +764,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Update App Subscription
-     * This API provides capability to update user&#39;s App Subscription
+     * Update Subscription
+     * This API provides capability to update user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @param appSubscriptionChangeOperation  (required)
      * @return ApiResponse&lt;AppSubscription&gt;
@@ -790,8 +790,8 @@ public class ApplicationSubscriptionsApi {
     }
 
     /**
-     * Update App Subscription (asynchronously)
-     * This API provides capability to update user&#39;s App Subscription
+     * Update Subscription (asynchronously)
+     * This API provides capability to update user&#39;s Subscription
      * @param appSubscriptionId App Subscription UUID (required)
      * @param appSubscriptionChangeOperation  (required)
      * @param _callback The callback to be executed when the API call finishes

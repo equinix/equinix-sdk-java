@@ -8,7 +8,7 @@ App Link change operation data
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**op** | [**OpEnum**](#OpEnum) | Handy shortcut for operation name |  |
+|**op** | [**OpEnum**](#OpEnum) | operation type applied to the resource |  |
 |**path** | [**PathEnum**](#PathEnum) | path inside document leading to updated parameter |  |
 |**value** | **Object** | new value for updated parameter |  |
 
@@ -31,7 +31,7 @@ App Link change operation data
 | NAME | &quot;/name&quot; |
 | DESCRIPTION | &quot;/description&quot; |
 | BANDWIDTH | &quot;/bandwidth&quot; |
-| IPV4ADDRESS | &quot;/ipv4Address&quot; |
+| IPV4SUBNET | &quot;/ipv4Subnet&quot; |
 
 
 

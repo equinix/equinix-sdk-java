@@ -16,7 +16,6 @@ import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.AccessPointType;
 import com.equinix.sdk.fabricv4.model.Address;
 import com.equinix.sdk.fabricv4.model.CloudRouter;
-import com.equinix.sdk.fabricv4.model.Interconnect;
 import com.equinix.sdk.fabricv4.model.MetalInterconnection;
 import com.equinix.sdk.fabricv4.model.ModelInterface;
 import com.equinix.sdk.fabricv4.model.PeeringType;
@@ -116,11 +115,6 @@ public class AccessPoint {
   @SerializedName(SERIALIZED_NAME_NETWORK)
   @javax.annotation.Nullable
   private SimplifiedNetwork network;
-
-  public static final String SERIALIZED_NAME_INTERCONNECT = "interconnect";
-  @SerializedName(SERIALIZED_NAME_INTERCONNECT)
-  @javax.annotation.Nullable
-  private Interconnect interconnect;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
@@ -429,25 +423,6 @@ public class AccessPoint {
 
   public void setNetwork(@javax.annotation.Nullable SimplifiedNetwork network) {
     this.network = network;
-  }
-
-
-  public AccessPoint interconnect(@javax.annotation.Nullable Interconnect interconnect) {
-    this.interconnect = interconnect;
-    return this;
-  }
-
-  /**
-   * Get interconnect
-   * @return interconnect
-   */
-  @javax.annotation.Nullable
-  public Interconnect getInterconnect() {
-    return interconnect;
-  }
-
-  public void setInterconnect(@javax.annotation.Nullable Interconnect interconnect) {
-    this.interconnect = interconnect;
   }
 
 
@@ -764,7 +739,6 @@ public class AccessPoint {
         Objects.equals(this.virtualDevice, accessPoint.virtualDevice) &&
         Objects.equals(this._interface, accessPoint._interface) &&
         Objects.equals(this.network, accessPoint.network) &&
-        Objects.equals(this.interconnect, accessPoint.interconnect) &&
         Objects.equals(this.environment, accessPoint.environment) &&
         Objects.equals(this.sellerRegion, accessPoint.sellerRegion) &&
         Objects.equals(this.peeringType, accessPoint.peeringType) &&
@@ -783,7 +757,7 @@ public class AccessPoint {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, interconnect, environment, sellerRegion, peeringType, authenticationKey, activationKey, providerConnectionId, virtualNetwork, interconnection, role, productOffering, bandwidthCommit, providerIdentifier, address, additionalProperties);
+    return Objects.hash(type, account, location, port, profile, router, linkProtocol, virtualDevice, _interface, network, environment, sellerRegion, peeringType, authenticationKey, activationKey, providerConnectionId, virtualNetwork, interconnection, role, productOffering, bandwidthCommit, providerIdentifier, address, additionalProperties);
   }
 
   @Override
@@ -800,7 +774,6 @@ public class AccessPoint {
     sb.append("    virtualDevice: ").append(toIndentedString(virtualDevice)).append("\n");
     sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    interconnect: ").append(toIndentedString(interconnect)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
     sb.append("    sellerRegion: ").append(toIndentedString(sellerRegion)).append("\n");
     sb.append("    peeringType: ").append(toIndentedString(peeringType)).append("\n");
@@ -836,7 +809,7 @@ public class AccessPoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "interconnect", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -894,10 +867,6 @@ public class AccessPoint {
       // validate the optional field `network`
       if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonNull()) {
         SimplifiedNetwork.validateJsonElement(jsonObj.get("network"));
-      }
-      // validate the optional field `interconnect`
-      if (jsonObj.get("interconnect") != null && !jsonObj.get("interconnect").isJsonNull()) {
-        Interconnect.validateJsonElement(jsonObj.get("interconnect"));
       }
       // validate the optional field `environment`
       if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {

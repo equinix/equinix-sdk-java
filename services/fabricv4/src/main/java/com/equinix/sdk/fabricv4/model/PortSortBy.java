@@ -57,7 +57,9 @@ public enum PortSortBy {
   
   BANDWIDTH("/bandwidth"),
   
-  SERVICECODE("/serviceCode");
+  SERVICECODE("/serviceCode"),
+  
+  OPERATION_MAINTENANCESTATUS("/operation/maintenanceStatus");
 
   private String value;
 

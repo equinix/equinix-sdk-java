@@ -55,6 +55,8 @@
 
 * `OPERATION_PROVIDERSTATUS` (value: `"/operation/providerStatus"`)
 
+* `OPERATION_MAINTENANCESTATUS` (value: `"/operation/maintenanceStatus"`)
+
 * `REDUNDANCY_PRIORITY` (value: `"/redundancy/priority"`)
 
 

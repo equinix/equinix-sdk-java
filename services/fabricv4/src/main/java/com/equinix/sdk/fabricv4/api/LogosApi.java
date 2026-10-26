@@ -182,7 +182,7 @@ public class LogosApi {
 
     /**
      * Create Logo
-     * Create Logo for Equinix Fabric™ Company Profile.
+     * Create Logo for Equinix Fabric™ Company Profile
      * @param logo Logo image file (required)
      * @param name Name of the Logo (required)
      * @param description Description of the logo (required)
@@ -207,7 +207,7 @@ public class LogosApi {
 
     /**
      * Create Logo
-     * Create Logo for Equinix Fabric™ Company Profile.
+     * Create Logo for Equinix Fabric™ Company Profile
      * @param logo Logo image file (required)
      * @param name Name of the Logo (required)
      * @param description Description of the logo (required)
@@ -233,7 +233,7 @@ public class LogosApi {
 
     /**
      * Create Logo (asynchronously)
-     * Create Logo for Equinix Fabric™ Company Profile.
+     * Create Logo for Equinix Fabric™ Company Profile
      * @param logo Logo image file (required)
      * @param name Name of the Logo (required)
      * @param description Description of the logo (required)

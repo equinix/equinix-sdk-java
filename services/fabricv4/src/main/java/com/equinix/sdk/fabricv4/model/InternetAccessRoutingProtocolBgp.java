@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.InternetAccessBgpAuthType;
 import com.equinix.sdk.fabricv4.model.InternetAccessConnection;
 import com.equinix.sdk.fabricv4.model.InternetAccessCustomerAsnRange;
 import com.equinix.sdk.fabricv4.model.InternetAccessCustomerRoute;
@@ -76,13 +77,19 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
   private Long customerAsn;
 
   public static final String SERIALIZED_NAME_BGP_AUTH_KEY = "bgpAuthKey";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_BGP_AUTH_KEY)
   @javax.annotation.Nullable
   private String bgpAuthKey;
 
+  public static final String SERIALIZED_NAME_BGP_AUTH_TYPE = "bgpAuthType";
+  @SerializedName(SERIALIZED_NAME_BGP_AUTH_TYPE)
+  @javax.annotation.Nullable
+  private InternetAccessBgpAuthType bgpAuthType = InternetAccessBgpAuthType.NONE;
+
   public static final String SERIALIZED_NAME_CUSTOMER_ASN_RANGE = "customerAsnRange";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ASN_RANGE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private InternetAccessCustomerAsnRange customerAsnRange;
 
   public InternetAccessRoutingProtocolBgp() {
@@ -149,26 +156,49 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
   }
 
 
+  @Deprecated
   public InternetAccessRoutingProtocolBgp bgpAuthKey(@javax.annotation.Nullable String bgpAuthKey) {
     this.bgpAuthKey = bgpAuthKey;
     return this;
   }
 
   /**
-   * BGP authentication key
+   * BGP authentication key. This field is deprecated and will be removed in future releases. Please use bgpAuthType instead to determine if a BGP authentication key is configured.
    * @return bgpAuthKey
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public String getBgpAuthKey() {
     return bgpAuthKey;
   }
 
+  @Deprecated
   public void setBgpAuthKey(@javax.annotation.Nullable String bgpAuthKey) {
     this.bgpAuthKey = bgpAuthKey;
   }
 
 
-  public InternetAccessRoutingProtocolBgp customerAsnRange(@javax.annotation.Nonnull InternetAccessCustomerAsnRange customerAsnRange) {
+  public InternetAccessRoutingProtocolBgp bgpAuthType(@javax.annotation.Nullable InternetAccessBgpAuthType bgpAuthType) {
+    this.bgpAuthType = bgpAuthType;
+    return this;
+  }
+
+  /**
+   * Get bgpAuthType
+   * @return bgpAuthType
+   */
+  @javax.annotation.Nullable
+  public InternetAccessBgpAuthType getBgpAuthType() {
+    return bgpAuthType;
+  }
+
+  public void setBgpAuthType(@javax.annotation.Nullable InternetAccessBgpAuthType bgpAuthType) {
+    this.bgpAuthType = bgpAuthType;
+  }
+
+
+  public InternetAccessRoutingProtocolBgp customerAsnRange(@javax.annotation.Nullable InternetAccessCustomerAsnRange customerAsnRange) {
     this.customerAsnRange = customerAsnRange;
     return this;
   }
@@ -177,12 +207,12 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
    * Get customerAsnRange
    * @return customerAsnRange
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public InternetAccessCustomerAsnRange getCustomerAsnRange() {
     return customerAsnRange;
   }
 
-  public void setCustomerAsnRange(@javax.annotation.Nonnull InternetAccessCustomerAsnRange customerAsnRange) {
+  public void setCustomerAsnRange(@javax.annotation.Nullable InternetAccessCustomerAsnRange customerAsnRange) {
     this.customerAsnRange = customerAsnRange;
   }
 
@@ -201,13 +231,14 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
         Objects.equals(this.asn, internetAccessRoutingProtocolBgp.asn) &&
         Objects.equals(this.customerAsn, internetAccessRoutingProtocolBgp.customerAsn) &&
         Objects.equals(this.bgpAuthKey, internetAccessRoutingProtocolBgp.bgpAuthKey) &&
+        Objects.equals(this.bgpAuthType, internetAccessRoutingProtocolBgp.bgpAuthType) &&
         Objects.equals(this.customerAsnRange, internetAccessRoutingProtocolBgp.customerAsnRange) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportPolicy, asn, customerAsn, bgpAuthKey, customerAsnRange, super.hashCode());
+    return Objects.hash(exportPolicy, asn, customerAsn, bgpAuthKey, bgpAuthType, customerAsnRange, super.hashCode());
   }
 
   @Override
@@ -219,6 +250,7 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
     sb.append("    asn: ").append(toIndentedString(asn)).append("\n");
     sb.append("    customerAsn: ").append(toIndentedString(customerAsn)).append("\n");
     sb.append("    bgpAuthKey: ").append(toIndentedString(bgpAuthKey)).append("\n");
+    sb.append("    bgpAuthType: ").append(toIndentedString(bgpAuthType)).append("\n");
     sb.append("    customerAsnRange: ").append(toIndentedString(customerAsnRange)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -241,10 +273,10 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "customerAsnRange"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "bgpAuthType", "customerAsnRange"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("exportPolicy", "customerAsnRange", "type", "customerRoutes", "connections"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("exportPolicy", "type", "customerRoutes", "connections"));
   }
 
   /**
@@ -276,8 +308,14 @@ public class InternetAccessRoutingProtocolBgp extends InternetAccessRoutingProto
       if ((jsonObj.get("bgpAuthKey") != null && !jsonObj.get("bgpAuthKey").isJsonNull()) && !jsonObj.get("bgpAuthKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));
       }
-      // validate the required field `customerAsnRange`
-      InternetAccessCustomerAsnRange.validateJsonElement(jsonObj.get("customerAsnRange"));
+      // validate the optional field `bgpAuthType`
+      if (jsonObj.get("bgpAuthType") != null && !jsonObj.get("bgpAuthType").isJsonNull()) {
+        InternetAccessBgpAuthType.validateJsonElement(jsonObj.get("bgpAuthType"));
+      }
+      // validate the optional field `customerAsnRange`
+      if (jsonObj.get("customerAsnRange") != null && !jsonObj.get("customerAsnRange").isJsonNull()) {
+        InternetAccessCustomerAsnRange.validateJsonElement(jsonObj.get("customerAsnRange"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

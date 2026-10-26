@@ -15,6 +15,7 @@ App Link object
 |**description** | **String** | Customer-provided App Link description |  [optional] |
 |**state** | **AppLinkState** |  |  [optional] |
 |**router** | [**AppLinkCloudRouter**](AppLinkCloudRouter.md) |  |  |
+|**ipv4Subnet** | **String** | Customer-provided IP subnet for AppLink setup (/29 or larger subnet) |  |
 |**ipv4Address** | **String** | App Link IP address |  [optional] |
 |**bandwidth** | **Integer** | App Link aggregated data transfer capacity in Mbps |  |
 |**project** | [**Project**](Project.md) |  |  |

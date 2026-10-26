@@ -64,6 +64,8 @@ public class StreamSubscriptionSink {
   public enum TypeEnum {
     DATADOG("DATADOG"),
     
+    DYNATRACE("DYNATRACE"),
+    
     GOOGLE_PUBSUB("GOOGLE_PUBSUB"),
     
     PAGERDUTY("PAGERDUTY"),

@@ -5,11 +5,11 @@ All URIs are relative to *https://api.equinix.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createConnection**](ConnectionsApi.md#createConnection) | **POST** /fabric/v4/connections | Create Connection |
-| [**createConnectionAction**](ConnectionsApi.md#createConnectionAction) | **POST** /fabric/v4/connections/{connectionId}/actions | Connection Actions |
-| [**deleteConnectionByUuid**](ConnectionsApi.md#deleteConnectionByUuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete by ID |
+| [**createConnectionAction**](ConnectionsApi.md#createConnectionAction) | **POST** /fabric/v4/connections/{connectionId}/actions | Create Connection Action |
+| [**deleteConnectionByUuid**](ConnectionsApi.md#deleteConnectionByUuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete Connection by ID |
 | [**getConnectionByUuid**](ConnectionsApi.md#getConnectionByUuid) | **GET** /fabric/v4/connections/{connectionId} | Get Connection by ID |
-| [**searchConnections**](ConnectionsApi.md#searchConnections) | **POST** /fabric/v4/connections/search | Search connections |
-| [**updateConnectionByUuid**](ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update by ID |
+| [**searchConnections**](ConnectionsApi.md#searchConnections) | **POST** /fabric/v4/connections/search | Search Connections |
+| [**updateConnectionByUuid**](ConnectionsApi.md#updateConnectionByUuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update Connection by ID |
 | [**validateConnections**](ConnectionsApi.md#validateConnections) | **POST** /fabric/v4/connections/validate | Validate Connection |
 
 
@@ -91,7 +91,7 @@ public class Example {
 # **createConnectionAction**
 > ConnectionAction createConnectionAction(connectionId, connectionActionRequest)
 
-Connection Actions
+Create Connection Action
 
 This API provides capability to accept/reject user&#39;s virtual connection
 
@@ -164,7 +164,7 @@ public class Example {
 # **deleteConnectionByUuid**
 > Connection deleteConnectionByUuid(connectionId)
 
-Delete by ID
+Delete Connection by ID
 
 Delete Connection by ID
 
@@ -308,7 +308,7 @@ public class Example {
 # **searchConnections**
 > ConnectionSearchResponse searchConnections(searchRequest)
 
-Search connections
+Search Connections
 
 The API provides capability to get list of user&#39;s virtual connections using search criteria, including optional filtering, pagination and sorting
 
@@ -379,7 +379,7 @@ public class Example {
 # **updateConnectionByUuid**
 > Connection updateConnectionByUuid(connectionId, connectionChangeOperation, dryRun)
 
-Update by ID
+Update Connection by ID
 
 Update Connection by ID
 

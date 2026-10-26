@@ -13,6 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
+import com.equinix.sdk.fabricv4.model.ServiceProfileTypeEnum;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -60,6 +61,11 @@ public class CompanyServiceProfile {
   @javax.annotation.Nullable
   private String uuid;
 
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
+  private ServiceProfileTypeEnum type;
+
   public CompanyServiceProfile() {
   }
 
@@ -98,6 +104,25 @@ public class CompanyServiceProfile {
 
   public void setUuid(@javax.annotation.Nullable String uuid) {
     this.uuid = uuid;
+  }
+
+
+  public CompanyServiceProfile type(@javax.annotation.Nullable ServiceProfileTypeEnum type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @javax.annotation.Nullable
+  public ServiceProfileTypeEnum getType() {
+    return type;
+  }
+
+  public void setType(@javax.annotation.Nullable ServiceProfileTypeEnum type) {
+    this.type = type;
   }
 
   /**
@@ -156,13 +181,14 @@ public class CompanyServiceProfile {
     }
     CompanyServiceProfile companyServiceProfile = (CompanyServiceProfile) o;
     return Objects.equals(this.href, companyServiceProfile.href) &&
-        Objects.equals(this.uuid, companyServiceProfile.uuid)&&
+        Objects.equals(this.uuid, companyServiceProfile.uuid) &&
+        Objects.equals(this.type, companyServiceProfile.type)&&
         Objects.equals(this.additionalProperties, companyServiceProfile.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, additionalProperties);
+    return Objects.hash(href, uuid, type, additionalProperties);
   }
 
   @Override
@@ -171,6 +197,7 @@ public class CompanyServiceProfile {
     sb.append("class CompanyServiceProfile {\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -193,7 +220,7 @@ public class CompanyServiceProfile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -217,6 +244,10 @@ public class CompanyServiceProfile {
       }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ServiceProfileTypeEnum.validateJsonElement(jsonObj.get("type"));
       }
   }
 

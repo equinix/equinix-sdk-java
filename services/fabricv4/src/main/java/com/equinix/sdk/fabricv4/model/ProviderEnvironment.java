@@ -82,10 +82,10 @@ public class ProviderEnvironment {
   @javax.annotation.Nullable
   private String description;
 
-  public static final String SERIALIZED_NAME_REGION = "region";
-  @SerializedName(SERIALIZED_NAME_REGION)
+  public static final String SERIALIZED_NAME_SELLER_REGION = "sellerRegion";
+  @SerializedName(SERIALIZED_NAME_SELLER_REGION)
   @javax.annotation.Nullable
-  private String region;
+  private String sellerRegion;
 
   public static final String SERIALIZED_NAME_SUPPORTED_BANDWIDTHS = "supportedBandwidths";
   @SerializedName(SERIALIZED_NAME_SUPPORTED_BANDWIDTHS)
@@ -204,22 +204,22 @@ public class ProviderEnvironment {
   }
 
 
-  public ProviderEnvironment region(@javax.annotation.Nullable String region) {
-    this.region = region;
+  public ProviderEnvironment sellerRegion(@javax.annotation.Nullable String sellerRegion) {
+    this.sellerRegion = sellerRegion;
     return this;
   }
 
   /**
    * Cloud provider region identifier
-   * @return region
+   * @return sellerRegion
    */
   @javax.annotation.Nullable
-  public String getRegion() {
-    return region;
+  public String getSellerRegion() {
+    return sellerRegion;
   }
 
-  public void setRegion(@javax.annotation.Nullable String region) {
-    this.region = region;
+  public void setSellerRegion(@javax.annotation.Nullable String sellerRegion) {
+    this.sellerRegion = sellerRegion;
   }
 
 
@@ -382,7 +382,7 @@ public class ProviderEnvironment {
         Objects.equals(this.type, providerEnvironment.type) &&
         Objects.equals(this.name, providerEnvironment.name) &&
         Objects.equals(this.description, providerEnvironment.description) &&
-        Objects.equals(this.region, providerEnvironment.region) &&
+        Objects.equals(this.sellerRegion, providerEnvironment.sellerRegion) &&
         Objects.equals(this.supportedBandwidths, providerEnvironment.supportedBandwidths) &&
         Objects.equals(this.metros, providerEnvironment.metros) &&
         Objects.equals(this.supportedFeatures, providerEnvironment.supportedFeatures) &&
@@ -392,7 +392,7 @@ public class ProviderEnvironment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, uuid, type, name, description, region, supportedBandwidths, metros, supportedFeatures, changeLog, additionalProperties);
+    return Objects.hash(href, uuid, type, name, description, sellerRegion, supportedBandwidths, metros, supportedFeatures, changeLog, additionalProperties);
   }
 
   @Override
@@ -404,7 +404,7 @@ public class ProviderEnvironment {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    sellerRegion: ").append(toIndentedString(sellerRegion)).append("\n");
     sb.append("    supportedBandwidths: ").append(toIndentedString(supportedBandwidths)).append("\n");
     sb.append("    metros: ").append(toIndentedString(metros)).append("\n");
     sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
@@ -431,7 +431,7 @@ public class ProviderEnvironment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "uuid", "type", "name", "description", "sellerRegion", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -466,8 +466,8 @@ public class ProviderEnvironment {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+      if ((jsonObj.get("sellerRegion") != null && !jsonObj.get("sellerRegion").isJsonNull()) && !jsonObj.get("sellerRegion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sellerRegion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sellerRegion").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("supportedBandwidths") != null && !jsonObj.get("supportedBandwidths").isJsonNull() && !jsonObj.get("supportedBandwidths").isJsonArray()) {

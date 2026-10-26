@@ -80,6 +80,11 @@ public class ServiceProfileLastMileApiIntegration {
   @javax.annotation.Nullable
   private Boolean placeOrderEnabled;
 
+  public static final String SERIALIZED_NAME_QUOTE_VIA_AGGREGATOR_ENABLED = "quoteViaAggregatorEnabled";
+  @SerializedName(SERIALIZED_NAME_QUOTE_VIA_AGGREGATOR_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean quoteViaAggregatorEnabled;
+
   public ServiceProfileLastMileApiIntegration() {
   }
 
@@ -196,6 +201,25 @@ public class ServiceProfileLastMileApiIntegration {
     this.placeOrderEnabled = placeOrderEnabled;
   }
 
+
+  public ServiceProfileLastMileApiIntegration quoteViaAggregatorEnabled(@javax.annotation.Nullable Boolean quoteViaAggregatorEnabled) {
+    this.quoteViaAggregatorEnabled = quoteViaAggregatorEnabled;
+    return this;
+  }
+
+  /**
+   * Whether quote via aggregator is enabled for the last-mile provider.
+   * @return quoteViaAggregatorEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getQuoteViaAggregatorEnabled() {
+    return quoteViaAggregatorEnabled;
+  }
+
+  public void setQuoteViaAggregatorEnabled(@javax.annotation.Nullable Boolean quoteViaAggregatorEnabled) {
+    this.quoteViaAggregatorEnabled = quoteViaAggregatorEnabled;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -256,13 +280,14 @@ public class ServiceProfileLastMileApiIntegration {
         Objects.equals(this.productOfferingEnabled, serviceProfileLastMileApiIntegration.productOfferingEnabled) &&
         Objects.equals(this.poqEnabled, serviceProfileLastMileApiIntegration.poqEnabled) &&
         Objects.equals(this.quoteEnabled, serviceProfileLastMileApiIntegration.quoteEnabled) &&
-        Objects.equals(this.placeOrderEnabled, serviceProfileLastMileApiIntegration.placeOrderEnabled)&&
+        Objects.equals(this.placeOrderEnabled, serviceProfileLastMileApiIntegration.placeOrderEnabled) &&
+        Objects.equals(this.quoteViaAggregatorEnabled, serviceProfileLastMileApiIntegration.quoteViaAggregatorEnabled)&&
         Objects.equals(this.additionalProperties, serviceProfileLastMileApiIntegration.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(siteValidationEnabled, dataCenterLocationEnabled, productOfferingEnabled, poqEnabled, quoteEnabled, placeOrderEnabled, additionalProperties);
+    return Objects.hash(siteValidationEnabled, dataCenterLocationEnabled, productOfferingEnabled, poqEnabled, quoteEnabled, placeOrderEnabled, quoteViaAggregatorEnabled, additionalProperties);
   }
 
   @Override
@@ -275,6 +300,7 @@ public class ServiceProfileLastMileApiIntegration {
     sb.append("    poqEnabled: ").append(toIndentedString(poqEnabled)).append("\n");
     sb.append("    quoteEnabled: ").append(toIndentedString(quoteEnabled)).append("\n");
     sb.append("    placeOrderEnabled: ").append(toIndentedString(placeOrderEnabled)).append("\n");
+    sb.append("    quoteViaAggregatorEnabled: ").append(toIndentedString(quoteViaAggregatorEnabled)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -297,7 +323,7 @@ public class ServiceProfileLastMileApiIntegration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("siteValidationEnabled", "dataCenterLocationEnabled", "productOfferingEnabled", "poqEnabled", "quoteEnabled", "placeOrderEnabled"));
+    openapiFields = new HashSet<String>(Arrays.asList("siteValidationEnabled", "dataCenterLocationEnabled", "productOfferingEnabled", "poqEnabled", "quoteEnabled", "placeOrderEnabled", "quoteViaAggregatorEnabled"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

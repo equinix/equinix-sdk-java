@@ -10,7 +10,7 @@ All URIs are relative to *https://api.equinix.com*
 | [**getNetworkByUuid**](NetworksApi.md#getNetworkByUuid) | **GET** /fabric/v4/networks/{networkId} | Get Network By ID |
 | [**getNetworkChangeByUuid**](NetworksApi.md#getNetworkChangeByUuid) | **GET** /fabric/v4/networks/{networkId}/changes/{changeId} | Get Change By ID |
 | [**getNetworkChanges**](NetworksApi.md#getNetworkChanges) | **GET** /fabric/v4/networks/{networkId}/changes | Get Network Changes |
-| [**searchNetworks**](NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Network |
+| [**searchNetworks**](NetworksApi.md#searchNetworks) | **POST** /fabric/v4/networks/search | Search Networks |
 | [**updateNetworkByUuid**](NetworksApi.md#updateNetworkByUuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID |
 
 
@@ -449,9 +449,9 @@ public class Example {
 # **searchNetworks**
 > NetworkSearchResponse searchNetworks(networkSearchRequest)
 
-Search Network
+Search Networks
 
-The API provides capability to get list of user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
+The API provides capability to search user&#39;s Fabric Network using search criteria, including optional filtering, pagination and sorting
 
 ### Example
 ```java

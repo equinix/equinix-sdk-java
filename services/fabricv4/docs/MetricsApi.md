@@ -4,7 +4,7 @@ All URIs are relative to *https://api.equinix.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getMetricByAssetId**](MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id |
+| [**getMetricByAssetId**](MetricsApi.md#getMetricByAssetId) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id (Deprecated) |
 | [**getMetricByName**](MetricsApi.md#getMetricByName) | **GET** /fabric/v4/metrics | Get Metrics by Name |
 | [**searchMetrics**](MetricsApi.md#searchMetrics) | **POST** /fabric/v4/metrics/search | Search Metrics |
 
@@ -13,7 +13,7 @@ All URIs are relative to *https://api.equinix.com*
 # **getMetricByAssetId**
 > GetMetricsByAssetResponse getMetricByAssetId(asset, assetId, name, fromDateTime, toDateTime, offset, limit)
 
-Get Metrics by Asset Id
+Get Metrics by Asset Id (Deprecated)
 
 This API provides capability to retrieve Metrics of an asset id
 

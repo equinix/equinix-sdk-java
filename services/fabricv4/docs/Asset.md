@@ -17,8 +17,6 @@
 
 * `PROJECTS` (value: `"projects"`)
 
-* `NETWORKEDGEDEVICES` (value: `"networkEdgeDevices"`)
-
 * `COMPANYPROFILES` (value: `"companyProfiles"`)
 
 

@@ -320,7 +320,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Create Aggregations
+     * Create Route Aggregation
      * This API provides capability to create a Route Aggregation
      * @param routeAggregationsBase  (required)
      * @return RouteAggregationsData
@@ -344,7 +344,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Create Aggregations
+     * Create Route Aggregation
      * This API provides capability to create a Route Aggregation
      * @param routeAggregationsBase  (required)
      * @return ApiResponse&lt;RouteAggregationsData&gt;
@@ -369,7 +369,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Create Aggregations (asynchronously)
+     * Create Route Aggregation (asynchronously)
      * This API provides capability to create a Route Aggregation
      * @param routeAggregationsBase  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -944,7 +944,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Aggregations
+     * Get Connection Route Aggregations
      * This API provides capability to view all Route Aggregations attached to a Connection
      * @param connectionId Connection Id (required)
      * @return GetAllConnectionRouteAggregationsResponse
@@ -968,7 +968,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Aggregations
+     * Get Connection Route Aggregations
      * This API provides capability to view all Route Aggregations attached to a Connection
      * @param connectionId Connection Id (required)
      * @return ApiResponse&lt;GetAllConnectionRouteAggregationsResponse&gt;
@@ -993,7 +993,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Aggregations (asynchronously)
+     * Get Connection Route Aggregations (asynchronously)
      * This API provides capability to view all Route Aggregations attached to a Connection
      * @param connectionId Connection Id (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1412,7 +1412,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Aggregation Changes
      * This API provides capability to retrieve all of a Route Aggregation&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1437,7 +1437,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Changes
+     * Get Route Aggregation Changes
      * This API provides capability to retrieve all of a Route Aggregation&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1463,7 +1463,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Changes (asynchronously)
+     * Get Route Aggregation Changes (asynchronously)
      * This API provides capability to retrieve all of a Route Aggregation&#39;s Changes
      * @param routeAggregationId Route Aggregations Id (required)
      * @param offset offset (optional)
@@ -1566,7 +1566,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Connections on Route Aggregation
+     * Get Route Aggregation Connections
      * This API provides capability to view all Connections using the Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @return GetRouteAggregationGetConnectionsResponse
@@ -1590,7 +1590,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Connections on Route Aggregation
+     * Get Route Aggregation Connections
      * This API provides capability to view all Connections using the Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @return ApiResponse&lt;GetRouteAggregationGetConnectionsResponse&gt;
@@ -1615,7 +1615,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Get All Connections on Route Aggregation (asynchronously)
+     * Get Route Aggregation Connections (asynchronously)
      * This API provides capability to view all Connections using the Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1725,7 +1725,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Patch Aggregation
+     * Update Route Aggregation
      * This API provides capability to partially update a Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationsPatchRequestItem  (required)
@@ -1750,7 +1750,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Patch Aggregation
+     * Update Route Aggregation
      * This API provides capability to partially update a Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationsPatchRequestItem  (required)
@@ -1776,7 +1776,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Patch Aggregation (asynchronously)
+     * Update Route Aggregation (asynchronously)
      * This API provides capability to partially update a Route Aggregation
      * @param routeAggregationId Route Aggregations Id (required)
      * @param routeAggregationsPatchRequestItem  (required)
@@ -2040,7 +2040,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Search Aggregations
+     * Search Route Aggregations
      * This API provides capability to search Route Aggregations
      * @param routeAggregationsSearchRequest  (required)
      * @return RouteAggregationsSearchResponse
@@ -2064,7 +2064,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Search Aggregations
+     * Search Route Aggregations
      * This API provides capability to search Route Aggregations
      * @param routeAggregationsSearchRequest  (required)
      * @return ApiResponse&lt;RouteAggregationsSearchResponse&gt;
@@ -2089,7 +2089,7 @@ public class RouteAggregationsApi {
     }
 
     /**
-     * Search Aggregations (asynchronously)
+     * Search Route Aggregations (asynchronously)
      * This API provides capability to search Route Aggregations
      * @param routeAggregationsSearchRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
