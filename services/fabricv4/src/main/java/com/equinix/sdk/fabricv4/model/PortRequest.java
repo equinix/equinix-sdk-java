@@ -22,7 +22,6 @@ import com.equinix.sdk.fabricv4.model.PortNotification;
 import com.equinix.sdk.fabricv4.model.PortOrder;
 import com.equinix.sdk.fabricv4.model.PortRedundancy;
 import com.equinix.sdk.fabricv4.model.PortServiceCode;
-import com.equinix.sdk.fabricv4.model.PortSettings;
 import com.equinix.sdk.fabricv4.model.PortType;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.SimplifiedAccountRequest;
@@ -387,11 +386,6 @@ public class PortRequest {
   @SerializedName(SERIALIZED_NAME_PACKAGE)
   @javax.annotation.Nullable
   private ModelPackage _package;
-
-  public static final String SERIALIZED_NAME_SETTINGS = "settings";
-  @SerializedName(SERIALIZED_NAME_SETTINGS)
-  @javax.annotation.Nullable
-  private PortSettings settings;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
@@ -801,25 +795,6 @@ public class PortRequest {
   }
 
 
-  public PortRequest settings(@javax.annotation.Nullable PortSettings settings) {
-    this.settings = settings;
-    return this;
-  }
-
-  /**
-   * Get settings
-   * @return settings
-   */
-  @javax.annotation.Nullable
-  public PortSettings getSettings() {
-    return settings;
-  }
-
-  public void setSettings(@javax.annotation.Nullable PortSettings settings) {
-    this.settings = settings;
-  }
-
-
   public PortRequest notifications(@javax.annotation.Nullable List<PortNotification> notifications) {
     this.notifications = notifications;
     return this;
@@ -975,7 +950,6 @@ public class PortRequest {
         Objects.equals(this.encapsulation, portRequest.encapsulation) &&
         Objects.equals(this.lagEnabled, portRequest.lagEnabled) &&
         Objects.equals(this._package, portRequest._package) &&
-        Objects.equals(this.settings, portRequest.settings) &&
         Objects.equals(this.notifications, portRequest.notifications) &&
         Objects.equals(this.physicalPorts, portRequest.physicalPorts) &&
         Objects.equals(this.loas, portRequest.loas)&&
@@ -984,7 +958,7 @@ public class PortRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, order, account, serviceType, serviceCode, bandwidth, location, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, _package, settings, notifications, physicalPorts, loas, additionalProperties);
+    return Objects.hash(type, physicalPortsSpeed, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, order, account, serviceType, serviceCode, bandwidth, location, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, _package, notifications, physicalPorts, loas, additionalProperties);
   }
 
   @Override
@@ -1011,7 +985,6 @@ public class PortRequest {
     sb.append("    encapsulation: ").append(toIndentedString(encapsulation)).append("\n");
     sb.append("    lagEnabled: ").append(toIndentedString(lagEnabled)).append("\n");
     sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
@@ -1037,7 +1010,7 @@ public class PortRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "notifications", "physicalPorts", "loas"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "notifications", "physicalPorts", "loas"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "physicalPortsSpeed", "physicalPortsType", "connectivitySourceType", "project", "account", "location", "encapsulation"));
@@ -1122,10 +1095,6 @@ public class PortRequest {
       // validate the optional field `package`
       if (jsonObj.get("package") != null && !jsonObj.get("package").isJsonNull()) {
         ModelPackage.validateJsonElement(jsonObj.get("package"));
-      }
-      // validate the optional field `settings`
-      if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        PortSettings.validateJsonElement(jsonObj.get("settings"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");

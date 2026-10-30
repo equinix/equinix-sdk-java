@@ -14,7 +14,6 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
-import com.equinix.sdk.fabricv4.model.EndCustomer;
 import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.ModelPackage;
 import com.equinix.sdk.fabricv4.model.PhysicalPort;
@@ -495,11 +494,6 @@ public class Port {
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
   @javax.annotation.Nullable
   private List<PortAdditionalInfo> additionalInfo = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_END_CUSTOMER = "endCustomer";
-  @SerializedName(SERIALIZED_NAME_END_CUSTOMER)
-  @javax.annotation.Nullable
-  private EndCustomer endCustomer;
 
   public static final String SERIALIZED_NAME_PHYSICAL_PORTS = "physicalPorts";
   @SerializedName(SERIALIZED_NAME_PHYSICAL_PORTS)
@@ -1292,25 +1286,6 @@ public class Port {
   }
 
 
-  public Port endCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-    return this;
-  }
-
-  /**
-   * Get endCustomer
-   * @return endCustomer
-   */
-  @javax.annotation.Nullable
-  public EndCustomer getEndCustomer() {
-    return endCustomer;
-  }
-
-  public void setEndCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-  }
-
-
   public Port physicalPorts(@javax.annotation.Nullable List<PhysicalPort> physicalPorts) {
     this.physicalPorts = physicalPorts;
     return this;
@@ -1477,7 +1452,6 @@ public class Port {
         Objects.equals(this.physicalPortQuantity, port.physicalPortQuantity) &&
         Objects.equals(this.notifications, port.notifications) &&
         Objects.equals(this.additionalInfo, port.additionalInfo) &&
-        Objects.equals(this.endCustomer, port.endCustomer) &&
         Objects.equals(this.physicalPorts, port.physicalPorts) &&
         Objects.equals(this.loas, port.loas) &&
         Objects.equals(this.marketplaceSubscription, port.marketplaceSubscription)&&
@@ -1486,7 +1460,7 @@ public class Port {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, endCustomer, physicalPorts, loas, marketplaceSubscription, additionalProperties);
+    return Objects.hash(href, type, uuid, name, description, physicalPortsSpeed, connectionsCount, physicalPortsType, physicalPortsCount, connectivitySourceType, bmmrType, project, state, order, operation, account, change, changeLog, serviceType, serviceCode, bandwidth, availableBandwidth, usedBandwidth, location, device, _interface, demarcationPointIbx, tetherIbx, demarcationPoint, redundancy, encapsulation, lagEnabled, lag, asn, _package, settings, physicalPortQuantity, notifications, additionalInfo, physicalPorts, loas, marketplaceSubscription, additionalProperties);
   }
 
   @Override
@@ -1532,7 +1506,6 @@ public class Port {
     sb.append("    physicalPortQuantity: ").append(toIndentedString(physicalPortQuantity)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
-    sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
     sb.append("    physicalPorts: ").append(toIndentedString(physicalPorts)).append("\n");
     sb.append("    loas: ").append(toIndentedString(loas)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
@@ -1558,7 +1531,7 @@ public class Port {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "physicalPorts", "loas", "marketplaceSubscription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1722,10 +1695,6 @@ public class Port {
             PortAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
-      }
-      // validate the optional field `endCustomer`
-      if (jsonObj.get("endCustomer") != null && !jsonObj.get("endCustomer").isJsonNull()) {
-        EndCustomer.validateJsonElement(jsonObj.get("endCustomer"));
       }
       if (jsonObj.get("physicalPorts") != null && !jsonObj.get("physicalPorts").isJsonNull()) {
         JsonArray jsonArrayphysicalPorts = jsonObj.getAsJsonArray("physicalPorts");

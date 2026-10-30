@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CompanyProfileContactContacts;
+import com.equinix.sdk.fabricv4.model.CompanyProfileContactContactsInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -111,7 +111,7 @@ public class CompanyProfileContact {
   public static final String SERIALIZED_NAME_CONTACTS = "contacts";
   @SerializedName(SERIALIZED_NAME_CONTACTS)
   @javax.annotation.Nullable
-  private List<CompanyProfileContactContacts> contacts = new ArrayList<>();
+  private List<CompanyProfileContactContactsInner> contacts = new ArrayList<>();
 
   public CompanyProfileContact() {
   }
@@ -135,12 +135,12 @@ public class CompanyProfileContact {
   }
 
 
-  public CompanyProfileContact contacts(@javax.annotation.Nullable List<CompanyProfileContactContacts> contacts) {
+  public CompanyProfileContact contacts(@javax.annotation.Nullable List<CompanyProfileContactContactsInner> contacts) {
     this.contacts = contacts;
     return this;
   }
 
-  public CompanyProfileContact addContactsItem(CompanyProfileContactContacts contactsItem) {
+  public CompanyProfileContact addContactsItem(CompanyProfileContactContactsInner contactsItem) {
     if (this.contacts == null) {
       this.contacts = new ArrayList<>();
     }
@@ -153,11 +153,11 @@ public class CompanyProfileContact {
    * @return contacts
    */
   @javax.annotation.Nullable
-  public List<CompanyProfileContactContacts> getContacts() {
+  public List<CompanyProfileContactContactsInner> getContacts() {
     return contacts;
   }
 
-  public void setContacts(@javax.annotation.Nullable List<CompanyProfileContactContacts> contacts) {
+  public void setContacts(@javax.annotation.Nullable List<CompanyProfileContactContactsInner> contacts) {
     this.contacts = contacts;
   }
 
@@ -290,7 +290,7 @@ public class CompanyProfileContact {
 
           // validate the optional field `contacts` (array)
           for (int i = 0; i < jsonArraycontacts.size(); i++) {
-            CompanyProfileContactContacts.validateJsonElement(jsonArraycontacts.get(i));
+            CompanyProfileContactContactsInner.validateJsonElement(jsonArraycontacts.get(i));
           };
         }
       }

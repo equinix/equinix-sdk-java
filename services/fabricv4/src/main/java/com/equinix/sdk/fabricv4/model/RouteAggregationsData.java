@@ -14,7 +14,6 @@ package com.equinix.sdk.fabricv4.model;
 import java.util.Objects;
 import java.util.Locale;
 import com.equinix.sdk.fabricv4.model.Changelog;
-import com.equinix.sdk.fabricv4.model.RouteAggregationState;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsChange;
 import com.equinix.sdk.fabricv4.model.RouteAggregationsDataProject;
 import com.google.gson.TypeAdapter;
@@ -132,11 +131,6 @@ public class RouteAggregationsData {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
-
-  public static final String SERIALIZED_NAME_STATE = "state";
-  @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
-  private RouteAggregationState state;
 
   public static final String SERIALIZED_NAME_CHANGE = "change";
   @SerializedName(SERIALIZED_NAME_CHANGE)
@@ -258,25 +252,6 @@ public class RouteAggregationsData {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
-  }
-
-
-  public RouteAggregationsData state(@javax.annotation.Nullable RouteAggregationState state) {
-    this.state = state;
-    return this;
-  }
-
-  /**
-   * Get state
-   * @return state
-   */
-  @javax.annotation.Nullable
-  public RouteAggregationState getState() {
-    return state;
-  }
-
-  public void setState(@javax.annotation.Nullable RouteAggregationState state) {
-    this.state = state;
   }
 
 
@@ -434,7 +409,6 @@ public class RouteAggregationsData {
         Objects.equals(this.uuid, routeAggregationsData.uuid) &&
         Objects.equals(this.name, routeAggregationsData.name) &&
         Objects.equals(this.description, routeAggregationsData.description) &&
-        Objects.equals(this.state, routeAggregationsData.state) &&
         Objects.equals(this.change, routeAggregationsData.change) &&
         Objects.equals(this.connectionsCount, routeAggregationsData.connectionsCount) &&
         Objects.equals(this.rulesCount, routeAggregationsData.rulesCount) &&
@@ -445,7 +419,7 @@ public class RouteAggregationsData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, uuid, name, description, state, change, connectionsCount, rulesCount, project, changeLog, additionalProperties);
+    return Objects.hash(href, type, uuid, name, description, change, connectionsCount, rulesCount, project, changeLog, additionalProperties);
   }
 
   @Override
@@ -457,7 +431,6 @@ public class RouteAggregationsData {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    change: ").append(toIndentedString(change)).append("\n");
     sb.append("    connectionsCount: ").append(toIndentedString(connectionsCount)).append("\n");
     sb.append("    rulesCount: ").append(toIndentedString(rulesCount)).append("\n");
@@ -485,7 +458,7 @@ public class RouteAggregationsData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "state", "change", "connectionsCount", "rulesCount", "project", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "name", "description", "change", "connectionsCount", "rulesCount", "project", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -522,10 +495,6 @@ public class RouteAggregationsData {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // validate the optional field `state`
-      if (jsonObj.get("state") != null && !jsonObj.get("state").isJsonNull()) {
-        RouteAggregationState.validateJsonElement(jsonObj.get("state"));
       }
       // validate the optional field `change`
       if (jsonObj.get("change") != null && !jsonObj.get("change").isJsonNull()) {

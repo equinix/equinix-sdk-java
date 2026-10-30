@@ -402,7 +402,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PortsApi apiInstance = new PortsApi(defaultClient);
-    UUID portUuid = UUID.randomUUID(); // UUID | Port UUID
+    UUID portUuid = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Port UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {

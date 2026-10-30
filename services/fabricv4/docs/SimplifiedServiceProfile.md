@@ -26,7 +26,7 @@ Service Profile is a software definition for a named provider service and it's n
 |**environments** | [**List&lt;ProviderEnvironment&gt;**](ProviderEnvironment.md) | Provider environments associated with this IC_PROFILE service profile. &lt;font color&#x3D;\&quot;red\&quot;&gt; &lt;sup color&#x3D;&#39;red&#39;&gt;Beta&lt;/sup&gt;&lt;/font&gt; |  [optional] |
 |**selfProfile** | **Boolean** | response attribute indicates whether the profile belongs to the same organization as the api-invoker. |  [optional] [readonly] |
 |**projectId** | **String** |  |  [optional] |
-|**lastMileConfig** | [**ServiceProfileLastMileConfig**](ServiceProfileLastMileConfig.md) |  |  [optional] |
+|**lastMileConfig** | **ServiceProfileLastMileConfig** |  |  [optional] |
 
 
 

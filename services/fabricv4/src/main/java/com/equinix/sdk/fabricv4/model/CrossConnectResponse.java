@@ -20,7 +20,7 @@ import com.equinix.sdk.fabricv4.model.CrossConnectChangelog;
 import com.equinix.sdk.fabricv4.model.CrossConnectLink;
 import com.equinix.sdk.fabricv4.model.CrossConnectNotification;
 import com.equinix.sdk.fabricv4.model.CrossConnectRedundancy;
-import com.equinix.sdk.fabricv4.model.CrossConnectResponseAllowedActions;
+import com.equinix.sdk.fabricv4.model.CrossConnectResponseAllowedActionsInner;
 import com.equinix.sdk.fabricv4.model.CrossConnectState;
 import com.equinix.sdk.fabricv4.model.CrossConnectType;
 import com.equinix.sdk.fabricv4.model.CrossConnectZSideResponse;
@@ -94,7 +94,7 @@ public class CrossConnectResponse {
   public static final String SERIALIZED_NAME_ALLOWED_ACTIONS = "allowedActions";
   @SerializedName(SERIALIZED_NAME_ALLOWED_ACTIONS)
   @javax.annotation.Nullable
-  private List<CrossConnectResponseAllowedActions> allowedActions = new ArrayList<>();
+  private List<CrossConnectResponseAllowedActionsInner> allowedActions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BMMR_TYPE = "bmmrType";
   @SerializedName(SERIALIZED_NAME_BMMR_TYPE)
@@ -165,7 +165,7 @@ public class CrossConnectResponse {
   }
 
   public CrossConnectResponse(
-     List<CrossConnectResponseAllowedActions> allowedActions, 
+     List<CrossConnectResponseAllowedActionsInner> allowedActions, 
      String serialNumber, 
      List<CrossConnectLink> links
   ) {
@@ -275,7 +275,7 @@ public class CrossConnectResponse {
    * @return allowedActions
    */
   @javax.annotation.Nullable
-  public List<CrossConnectResponseAllowedActions> getAllowedActions() {
+  public List<CrossConnectResponseAllowedActionsInner> getAllowedActions() {
     return allowedActions;
   }
 
@@ -692,7 +692,7 @@ public class CrossConnectResponse {
 
           // validate the optional field `allowedActions` (array)
           for (int i = 0; i < jsonArrayallowedActions.size(); i++) {
-            CrossConnectResponseAllowedActions.validateJsonElement(jsonArrayallowedActions.get(i));
+            CrossConnectResponseAllowedActionsInner.validateJsonElement(jsonArrayallowedActions.get(i));
           };
         }
       }

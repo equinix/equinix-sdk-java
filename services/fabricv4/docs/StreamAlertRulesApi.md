@@ -39,7 +39,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamAlertRulesApi apiInstance = new StreamAlertRulesApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     AlertRulePostRequest alertRulePostRequest = new AlertRulePostRequest(); // AlertRulePostRequest | 
     try {
       StreamAlertRule result = apiInstance.createStreamAlertRules(streamId, alertRulePostRequest);
@@ -113,8 +113,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamAlertRulesApi apiInstance = new StreamAlertRulesApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID alertRuleId = UUID.randomUUID(); // UUID | alert rule UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID alertRuleId = UUID.fromString("0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15"); // UUID | alert rule UUID
     try {
       StreamAlertRule result = apiInstance.deleteStreamAlertRuleByUuid(streamId, alertRuleId);
       System.out.println(result);
@@ -187,8 +187,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamAlertRulesApi apiInstance = new StreamAlertRulesApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID alertRuleId = UUID.randomUUID(); // UUID | alert rule UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID alertRuleId = UUID.fromString("0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15"); // UUID | alert rule UUID
     try {
       StreamAlertRule result = apiInstance.getStreamAlertRuleByUuid(streamId, alertRuleId);
       System.out.println(result);
@@ -261,7 +261,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamAlertRulesApi apiInstance = new StreamAlertRulesApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -336,8 +336,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamAlertRulesApi apiInstance = new StreamAlertRulesApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID alertRuleId = UUID.randomUUID(); // UUID | alert rule UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID alertRuleId = UUID.fromString("0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15"); // UUID | alert rule UUID
     AlertRulePutRequest alertRulePutRequest = new AlertRulePutRequest(); // AlertRulePutRequest | 
     try {
       StreamAlertRule result = apiInstance.updateStreamAlertRuleByUuid(streamId, alertRuleId, alertRulePutRequest);

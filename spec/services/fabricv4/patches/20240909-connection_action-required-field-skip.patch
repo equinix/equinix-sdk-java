@@ -1,12 +1,12 @@
 diff --git a/spec/services/fabricv4/oas3.patched/openapi.yaml b/spec/services/fabricv4/oas3.patched/openapi.yaml
-index ff43d17..972a8cc 100644
+index bb19aab..906a78e 100644
 --- a/spec/services/fabricv4/oas3.patched/openapi.yaml
 +++ b/spec/services/fabricv4/oas3.patched/openapi.yaml
-@@ -12566,7 +12566,6 @@ components:
-     ConnectionAction:
+@@ -56469,7 +56469,6 @@ components:
+           $ref: '#/components/schemas/Changelog'
        required:
-         - data
--        - href
          - type
+-        - href
          - uuid
-       type: object
+         - data
+     ConnectionRouteEntrySimpleExpression:

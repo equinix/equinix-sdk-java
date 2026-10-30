@@ -17,7 +17,6 @@ import com.equinix.sdk.fabricv4.model.ConnectionRedundancy;
 import com.equinix.sdk.fabricv4.model.ConnectionSide;
 import com.equinix.sdk.fabricv4.model.ConnectionSideAdditionalInfo;
 import com.equinix.sdk.fabricv4.model.ConnectionType;
-import com.equinix.sdk.fabricv4.model.EndCustomer;
 import com.equinix.sdk.fabricv4.model.GeoScopeType;
 import com.equinix.sdk.fabricv4.model.MarketplaceSubscription;
 import com.equinix.sdk.fabricv4.model.Order;
@@ -121,11 +120,6 @@ public class ConnectionPostRequest {
   @SerializedName(SERIALIZED_NAME_MARKETPLACE_SUBSCRIPTION)
   @javax.annotation.Nullable
   private MarketplaceSubscription marketplaceSubscription;
-
-  public static final String SERIALIZED_NAME_END_CUSTOMER = "endCustomer";
-  @SerializedName(SERIALIZED_NAME_END_CUSTOMER)
-  @javax.annotation.Nullable
-  private EndCustomer endCustomer;
 
   public ConnectionPostRequest() {
   }
@@ -375,25 +369,6 @@ public class ConnectionPostRequest {
     this.marketplaceSubscription = marketplaceSubscription;
   }
 
-
-  public ConnectionPostRequest endCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-    return this;
-  }
-
-  /**
-   * Get endCustomer
-   * @return endCustomer
-   */
-  @javax.annotation.Nullable
-  public EndCustomer getEndCustomer() {
-    return endCustomer;
-  }
-
-  public void setEndCustomer(@javax.annotation.Nullable EndCustomer endCustomer) {
-    this.endCustomer = endCustomer;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -460,14 +435,13 @@ public class ConnectionPostRequest {
         Objects.equals(this.zSide, connectionPostRequest.zSide) &&
         Objects.equals(this.project, connectionPostRequest.project) &&
         Objects.equals(this.additionalInfo, connectionPostRequest.additionalInfo) &&
-        Objects.equals(this.marketplaceSubscription, connectionPostRequest.marketplaceSubscription) &&
-        Objects.equals(this.endCustomer, connectionPostRequest.endCustomer)&&
+        Objects.equals(this.marketplaceSubscription, connectionPostRequest.marketplaceSubscription)&&
         Objects.equals(this.additionalProperties, connectionPostRequest.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, name, order, notifications, bandwidth, geoScope, redundancy, aSide, zSide, project, additionalInfo, marketplaceSubscription, endCustomer, additionalProperties);
+    return Objects.hash(type, name, order, notifications, bandwidth, geoScope, redundancy, aSide, zSide, project, additionalInfo, marketplaceSubscription, additionalProperties);
   }
 
   @Override
@@ -486,7 +460,6 @@ public class ConnectionPostRequest {
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    marketplaceSubscription: ").append(toIndentedString(marketplaceSubscription)).append("\n");
-    sb.append("    endCustomer: ").append(toIndentedString(endCustomer)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -509,7 +482,7 @@ public class ConnectionPostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "order", "notifications", "bandwidth", "geoScope", "redundancy", "aSide", "zSide", "project", "additionalInfo", "marketplaceSubscription", "endCustomer"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "name", "order", "notifications", "bandwidth", "geoScope", "redundancy", "aSide", "zSide", "project", "additionalInfo", "marketplaceSubscription"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("type", "name", "notifications", "bandwidth", "aSide", "zSide"));
@@ -587,10 +560,6 @@ public class ConnectionPostRequest {
       // validate the optional field `marketplaceSubscription`
       if (jsonObj.get("marketplaceSubscription") != null && !jsonObj.get("marketplaceSubscription").isJsonNull()) {
         MarketplaceSubscription.validateJsonElement(jsonObj.get("marketplaceSubscription"));
-      }
-      // validate the optional field `endCustomer`
-      if (jsonObj.get("endCustomer") != null && !jsonObj.get("endCustomer").isJsonNull()) {
-        EndCustomer.validateJsonElement(jsonObj.get("endCustomer"));
       }
   }
 

@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.ValidateRequestFilterAnd;
+import com.equinix.sdk.fabricv4.model.ValidateRequestFilterAndInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -56,17 +56,17 @@ public class ValidateRequestFilter {
   public static final String SERIALIZED_NAME_AND = "and";
   @SerializedName(SERIALIZED_NAME_AND)
   @javax.annotation.Nullable
-  private List<ValidateRequestFilterAnd> and = new ArrayList<>();
+  private List<ValidateRequestFilterAndInner> and = new ArrayList<>();
 
   public ValidateRequestFilter() {
   }
 
-  public ValidateRequestFilter and(@javax.annotation.Nullable List<ValidateRequestFilterAnd> and) {
+  public ValidateRequestFilter and(@javax.annotation.Nullable List<ValidateRequestFilterAndInner> and) {
     this.and = and;
     return this;
   }
 
-  public ValidateRequestFilter addAndItem(ValidateRequestFilterAnd andItem) {
+  public ValidateRequestFilter addAndItem(ValidateRequestFilterAndInner andItem) {
     if (this.and == null) {
       this.and = new ArrayList<>();
     }
@@ -79,11 +79,11 @@ public class ValidateRequestFilter {
    * @return and
    */
   @javax.annotation.Nullable
-  public List<ValidateRequestFilterAnd> getAnd() {
+  public List<ValidateRequestFilterAndInner> getAnd() {
     return and;
   }
 
-  public void setAnd(@javax.annotation.Nullable List<ValidateRequestFilterAnd> and) {
+  public void setAnd(@javax.annotation.Nullable List<ValidateRequestFilterAndInner> and) {
     this.and = and;
   }
 
@@ -207,7 +207,7 @@ public class ValidateRequestFilter {
 
           // validate the optional field `and` (array)
           for (int i = 0; i < jsonArrayand.size(); i++) {
-            ValidateRequestFilterAnd.validateJsonElement(jsonArrayand.get(i));
+            ValidateRequestFilterAndInner.validateJsonElement(jsonArrayand.get(i));
           };
         }
       }

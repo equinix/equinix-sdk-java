@@ -8,7 +8,7 @@ A-Side connection details.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**demarcationPoint** | [**CrossConnectASideRequestDemarcationPoint**](CrossConnectASideRequestDemarcationPoint.md) |  |  [optional] |
+|**demarcationPoint** | [**CrossConnectDemarcationPoint**](CrossConnectDemarcationPoint.md) |  |  [optional] |
 
 
 

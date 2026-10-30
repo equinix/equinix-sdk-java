@@ -6,13 +6,15 @@ import com.equinix.sdk.fabricv4.api.*;
 import static com.equinix.openapi.fabric.tests.helpers.TokenGenerator.generate;
 
 public class Apis {
+    public static CloudRouterPackagesApi cloudRouterPackagesApi;
     public static CloudRoutersApi cloudRoutersApi;
     public static ConnectionsApi connectionsApi;
     public static HealthApi healthApi;
     public static MetrosApi metrosApi;
     public static NetworksApi networksApi;
     public static PortsApi portsApi;
-    public static PrecisionTimeApi precisionTimeApi;
+    public static PrecisionTimePackagesApi precisionTimePackagesApi;
+    public static PrecisionTimeServicesApi precisionTimeServicesApi;
     public static PricesApi pricesApi;
     public static RouteFilterRulesApi routeFilterRulesApi;
     public static RouteFiltersApi routeFiltersApi;
@@ -40,13 +42,15 @@ public class Apis {
     }
 
     private static void setApis() {
+        cloudRouterPackagesApi = new CloudRouterPackagesApi(TokenGenerator.getApiClient(currentUser));
         cloudRoutersApi = new CloudRoutersApi(TokenGenerator.getApiClient(currentUser));
         connectionsApi = new ConnectionsApi(TokenGenerator.getApiClient(currentUser));
         healthApi = new HealthApi(TokenGenerator.getApiClient(currentUser));
         metrosApi = new MetrosApi(TokenGenerator.getApiClient(currentUser));
         networksApi = new NetworksApi(TokenGenerator.getApiClient(currentUser));
         portsApi = new PortsApi(TokenGenerator.getApiClient(currentUser));
-        precisionTimeApi = new PrecisionTimeApi(TokenGenerator.getApiClient(currentUser));
+        precisionTimePackagesApi = new PrecisionTimePackagesApi(TokenGenerator.getApiClient(currentUser));
+        precisionTimeServicesApi = new PrecisionTimeServicesApi(TokenGenerator.getApiClient(currentUser));
         pricesApi = new PricesApi(TokenGenerator.getApiClient(currentUser));
         routeFiltersApi = new RouteFiltersApi(TokenGenerator.getApiClient(currentUser));
         routeFilterRulesApi = new RouteFilterRulesApi(TokenGenerator.getApiClient(currentUser));

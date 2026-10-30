@@ -13,11 +13,9 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.PhysicalPortSettings;
 import com.equinix.sdk.fabricv4.model.PhysicalPortType;
 import com.equinix.sdk.fabricv4.model.PortAdditionalInfo;
 import com.equinix.sdk.fabricv4.model.PortDemarcationPoint;
-import com.equinix.sdk.fabricv4.model.PortInterface;
 import com.equinix.sdk.fabricv4.model.PortLoa;
 import com.equinix.sdk.fabricv4.model.PortNotification;
 import com.equinix.sdk.fabricv4.model.PortOperation;
@@ -116,16 +114,6 @@ public class PhysicalPort {
   @SerializedName(SERIALIZED_NAME_DEMARCATION_POINT)
   @javax.annotation.Nullable
   private PortDemarcationPoint demarcationPoint;
-
-  public static final String SERIALIZED_NAME_SETTINGS = "settings";
-  @SerializedName(SERIALIZED_NAME_SETTINGS)
-  @javax.annotation.Nullable
-  private PhysicalPortSettings settings;
-
-  public static final String SERIALIZED_NAME_INTERFACE = "interface";
-  @SerializedName(SERIALIZED_NAME_INTERFACE)
-  @javax.annotation.Nullable
-  private PortInterface _interface;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "notifications";
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
@@ -349,44 +337,6 @@ public class PhysicalPort {
   }
 
 
-  public PhysicalPort settings(@javax.annotation.Nullable PhysicalPortSettings settings) {
-    this.settings = settings;
-    return this;
-  }
-
-  /**
-   * Get settings
-   * @return settings
-   */
-  @javax.annotation.Nullable
-  public PhysicalPortSettings getSettings() {
-    return settings;
-  }
-
-  public void setSettings(@javax.annotation.Nullable PhysicalPortSettings settings) {
-    this.settings = settings;
-  }
-
-
-  public PhysicalPort _interface(@javax.annotation.Nullable PortInterface _interface) {
-    this._interface = _interface;
-    return this;
-  }
-
-  /**
-   * Get _interface
-   * @return _interface
-   */
-  @javax.annotation.Nullable
-  public PortInterface getInterface() {
-    return _interface;
-  }
-
-  public void setInterface(@javax.annotation.Nullable PortInterface _interface) {
-    this._interface = _interface;
-  }
-
-
   public PhysicalPort notifications(@javax.annotation.Nullable List<PortNotification> notifications) {
     this.notifications = notifications;
     return this;
@@ -570,8 +520,6 @@ public class PhysicalPort {
         Objects.equals(this.uuid, physicalPort.uuid) &&
         Objects.equals(this.tether, physicalPort.tether) &&
         Objects.equals(this.demarcationPoint, physicalPort.demarcationPoint) &&
-        Objects.equals(this.settings, physicalPort.settings) &&
-        Objects.equals(this._interface, physicalPort._interface) &&
         Objects.equals(this.notifications, physicalPort.notifications) &&
         Objects.equals(this.additionalInfo, physicalPort.additionalInfo) &&
         Objects.equals(this.order, physicalPort.order) &&
@@ -582,7 +530,7 @@ public class PhysicalPort {
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, id, state, account, interfaceSpeed, interfaceType, uuid, tether, demarcationPoint, settings, _interface, notifications, additionalInfo, order, operation, loas, additionalProperties);
+    return Objects.hash(href, type, id, state, account, interfaceSpeed, interfaceType, uuid, tether, demarcationPoint, notifications, additionalInfo, order, operation, loas, additionalProperties);
   }
 
   @Override
@@ -599,8 +547,6 @@ public class PhysicalPort {
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    tether: ").append(toIndentedString(tether)).append("\n");
     sb.append("    demarcationPoint: ").append(toIndentedString(demarcationPoint)).append("\n");
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-    sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
     sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
@@ -628,7 +574,7 @@ public class PhysicalPort {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "state", "account", "interfaceSpeed", "interfaceType", "uuid", "tether", "demarcationPoint", "settings", "interface", "notifications", "additionalInfo", "order", "operation", "loas"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "id", "state", "account", "interfaceSpeed", "interfaceType", "uuid", "tether", "demarcationPoint", "notifications", "additionalInfo", "order", "operation", "loas"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -675,14 +621,6 @@ public class PhysicalPort {
       // validate the optional field `demarcationPoint`
       if (jsonObj.get("demarcationPoint") != null && !jsonObj.get("demarcationPoint").isJsonNull()) {
         PortDemarcationPoint.validateJsonElement(jsonObj.get("demarcationPoint"));
-      }
-      // validate the optional field `settings`
-      if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
-        PhysicalPortSettings.validateJsonElement(jsonObj.get("settings"));
-      }
-      // validate the optional field `interface`
-      if (jsonObj.get("interface") != null && !jsonObj.get("interface").isJsonNull()) {
-        PortInterface.validateJsonElement(jsonObj.get("interface"));
       }
       if (jsonObj.get("notifications") != null && !jsonObj.get("notifications").isJsonNull()) {
         JsonArray jsonArraynotifications = jsonObj.getAsJsonArray("notifications");

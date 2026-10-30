@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.MetricDatapoints;
+import com.equinix.sdk.fabricv4.model.MetricDatapointsInner;
 import com.equinix.sdk.fabricv4.model.MetricResource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -87,7 +87,7 @@ public class Metric {
   public static final String SERIALIZED_NAME_DATAPOINTS = "datapoints";
   @SerializedName(SERIALIZED_NAME_DATAPOINTS)
   @javax.annotation.Nullable
-  private List<MetricDatapoints> datapoints = new ArrayList<>();
+  private List<MetricDatapointsInner> datapoints = new ArrayList<>();
 
   public Metric() {
   }
@@ -206,12 +206,12 @@ public class Metric {
   }
 
 
-  public Metric datapoints(@javax.annotation.Nullable List<MetricDatapoints> datapoints) {
+  public Metric datapoints(@javax.annotation.Nullable List<MetricDatapointsInner> datapoints) {
     this.datapoints = datapoints;
     return this;
   }
 
-  public Metric addDatapointsItem(MetricDatapoints datapointsItem) {
+  public Metric addDatapointsItem(MetricDatapointsInner datapointsItem) {
     if (this.datapoints == null) {
       this.datapoints = new ArrayList<>();
     }
@@ -224,11 +224,11 @@ public class Metric {
    * @return datapoints
    */
   @javax.annotation.Nullable
-  public List<MetricDatapoints> getDatapoints() {
+  public List<MetricDatapointsInner> getDatapoints() {
     return datapoints;
   }
 
-  public void setDatapoints(@javax.annotation.Nullable List<MetricDatapoints> datapoints) {
+  public void setDatapoints(@javax.annotation.Nullable List<MetricDatapointsInner> datapoints) {
     this.datapoints = datapoints;
   }
 
@@ -383,7 +383,7 @@ public class Metric {
 
           // validate the optional field `datapoints` (array)
           for (int i = 0; i < jsonArraydatapoints.size(); i++) {
-            MetricDatapoints.validateJsonElement(jsonArraydatapoints.get(i));
+            MetricDatapointsInner.validateJsonElement(jsonArraydatapoints.get(i));
           };
         }
       }

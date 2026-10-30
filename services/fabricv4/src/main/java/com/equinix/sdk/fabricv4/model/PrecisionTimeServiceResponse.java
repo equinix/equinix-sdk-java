@@ -18,7 +18,6 @@ import com.equinix.sdk.fabricv4.model.Ipv4;
 import com.equinix.sdk.fabricv4.model.Md5;
 import com.equinix.sdk.fabricv4.model.PrecisionTimeOrder;
 import com.equinix.sdk.fabricv4.model.PrecisionTimePackagePostResponse;
-import com.equinix.sdk.fabricv4.model.PrecisionTimePrice;
 import com.equinix.sdk.fabricv4.model.Project;
 import com.equinix.sdk.fabricv4.model.PtpAdvanceConfiguration;
 import com.equinix.sdk.fabricv4.model.SimplifiedAccount;
@@ -262,11 +261,6 @@ public class PrecisionTimeServiceResponse {
   @SerializedName(SERIALIZED_NAME_ORDER)
   @javax.annotation.Nullable
   private PrecisionTimeOrder order;
-
-  public static final String SERIALIZED_NAME_PRICING = "pricing";
-  @SerializedName(SERIALIZED_NAME_PRICING)
-  @javax.annotation.Nullable
-  private PrecisionTimePrice pricing;
 
   public static final String SERIALIZED_NAME_CHANGE_LOG = "changeLog";
   @SerializedName(SERIALIZED_NAME_CHANGE_LOG)
@@ -558,25 +552,6 @@ public class PrecisionTimeServiceResponse {
   }
 
 
-  public PrecisionTimeServiceResponse pricing(@javax.annotation.Nullable PrecisionTimePrice pricing) {
-    this.pricing = pricing;
-    return this;
-  }
-
-  /**
-   * Get pricing
-   * @return pricing
-   */
-  @javax.annotation.Nullable
-  public PrecisionTimePrice getPricing() {
-    return pricing;
-  }
-
-  public void setPricing(@javax.annotation.Nullable PrecisionTimePrice pricing) {
-    this.pricing = pricing;
-  }
-
-
   public PrecisionTimeServiceResponse changeLog(@javax.annotation.Nullable Changelog changeLog) {
     this.changeLog = changeLog;
     return this;
@@ -664,14 +639,13 @@ public class PrecisionTimeServiceResponse {
         Objects.equals(this.project, precisionTimeServiceResponse.project) &&
         Objects.equals(this.account, precisionTimeServiceResponse.account) &&
         Objects.equals(this.order, precisionTimeServiceResponse.order) &&
-        Objects.equals(this.pricing, precisionTimeServiceResponse.pricing) &&
         Objects.equals(this.changeLog, precisionTimeServiceResponse.changeLog)&&
         Objects.equals(this.additionalProperties, precisionTimeServiceResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type, name, uuid, state, operation, _package, connections, ipv4, ntpAdvancedConfiguration, ptpAdvancedConfiguration, project, account, order, pricing, changeLog, additionalProperties);
+    return Objects.hash(href, type, name, uuid, state, operation, _package, connections, ipv4, ntpAdvancedConfiguration, ptpAdvancedConfiguration, project, account, order, changeLog, additionalProperties);
   }
 
   @Override
@@ -692,7 +666,6 @@ public class PrecisionTimeServiceResponse {
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
-    sb.append("    pricing: ").append(toIndentedString(pricing)).append("\n");
     sb.append("    changeLog: ").append(toIndentedString(changeLog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -716,7 +689,7 @@ public class PrecisionTimeServiceResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "pricing", "changeLog"));
+    openapiFields = new HashSet<String>(Arrays.asList("href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "changeLog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("href", "type", "uuid", "state", "package"));
@@ -814,10 +787,6 @@ public class PrecisionTimeServiceResponse {
       // validate the optional field `order`
       if (jsonObj.get("order") != null && !jsonObj.get("order").isJsonNull()) {
         PrecisionTimeOrder.validateJsonElement(jsonObj.get("order"));
-      }
-      // validate the optional field `pricing`
-      if (jsonObj.get("pricing") != null && !jsonObj.get("pricing").isJsonNull()) {
-        PrecisionTimePrice.validateJsonElement(jsonObj.get("pricing"));
       }
       // validate the optional field `changeLog`
       if (jsonObj.get("changeLog") != null && !jsonObj.get("changeLog").isJsonNull()) {

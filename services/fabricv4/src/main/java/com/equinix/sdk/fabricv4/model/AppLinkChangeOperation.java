@@ -172,8 +172,8 @@ public class AppLinkChangeOperation {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
-  private Object value;
+  @javax.annotation.Nullable
+  private Object value = null;
 
   public AppLinkChangeOperation() {
   }
@@ -216,7 +216,7 @@ public class AppLinkChangeOperation {
   }
 
 
-  public AppLinkChangeOperation value(@javax.annotation.Nonnull Object value) {
+  public AppLinkChangeOperation value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -225,12 +225,12 @@ public class AppLinkChangeOperation {
    * new value for updated parameter
    * @return value
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 

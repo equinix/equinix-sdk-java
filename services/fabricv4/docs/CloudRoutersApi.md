@@ -125,7 +125,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     CloudRouterActionRequest cloudRouterActionRequest = new CloudRouterActionRequest(); // CloudRouterActionRequest | 
     try {
       CloudRouterActionResponse result = apiInstance.createCloudRouterAction(routerId, cloudRouterActionRequest);
@@ -200,7 +200,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     CloudRouterCommandPostRequest cloudRouterCommandPostRequest = new CloudRouterCommandPostRequest(); // CloudRouterCommandPostRequest | 
     try {
       CloudRouterCommand result = apiInstance.createCloudRouterCommand(routerId, cloudRouterCommandPostRequest);
@@ -275,7 +275,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     try {
       apiInstance.deleteCloudRouterByUuid(routerId);
     } catch (ApiException e) {
@@ -346,8 +346,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
-    UUID commandId = UUID.randomUUID(); // UUID | Command UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
+    UUID commandId = UUID.fromString("37c10edc-ba2e-4240-a850-8a48f9c47d00"); // UUID | Command UUID
     try {
       apiInstance.deleteCloudRouterCommandByUuid(routerId, commandId);
     } catch (ApiException e) {
@@ -419,7 +419,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     try {
       GetAllCloudRouterCommands result = apiInstance.getAllCloudRouterCommands(routerId);
       System.out.println(result);
@@ -492,7 +492,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     CloudRouterActionState state = CloudRouterActionState.fromValue("SUCCEEDED"); // CloudRouterActionState | Action state
     try {
       CloudRouterActionsSearchResponse result = apiInstance.getCloudRouterActions(routerId, state);
@@ -567,8 +567,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
-    UUID actionId = UUID.randomUUID(); // UUID | Action UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
+    UUID actionId = UUID.fromString("457400f8-d360-11e9-bb65-2a2ae2dbcced"); // UUID | Action UUID
     CloudRouterActionState state = CloudRouterActionState.fromValue("SUCCEEDED"); // CloudRouterActionState | Action state
     try {
       CloudRouterActionResponse result = apiInstance.getCloudRouterActionsByUuid(routerId, actionId, state);
@@ -644,7 +644,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     try {
       CloudRouterReadResponse result = apiInstance.getCloudRouterByUuid(routerId);
       System.out.println(result);
@@ -715,8 +715,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
-    UUID commandId = UUID.randomUUID(); // UUID | Command UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
+    UUID commandId = UUID.fromString("37c10edc-ba2e-4240-a850-8a48f9c47d00"); // UUID | Command UUID
     try {
       CloudRouterCommand result = apiInstance.getCloudRouterCommand(routerId, commandId);
       System.out.println(result);
@@ -790,7 +790,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     CloudRouterCommandSearchRequest cloudRouterCommandSearchRequest = new CloudRouterCommandSearchRequest(); // CloudRouterCommandSearchRequest | 
     try {
       CloudRouterCommandSearchResponse result = apiInstance.searchCloudRouterCommands(routerId, cloudRouterCommandSearchRequest);
@@ -865,7 +865,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     RouteTableEntrySearchRequest routeTableEntrySearchRequest = new RouteTableEntrySearchRequest(); // RouteTableEntrySearchRequest | 
     try {
       RouteTableEntrySearchResponse result = apiInstance.searchCloudRouterRoutes(routerId, routeTableEntrySearchRequest);
@@ -1012,7 +1012,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionRouteSearchRequest connectionRouteSearchRequest = new ConnectionRouteSearchRequest(); // ConnectionRouteSearchRequest | 
     try {
       ConnectionRouteTableEntrySearchResponse result = apiInstance.searchConnectionAdvertisedRoutes(connectionId, connectionRouteSearchRequest);
@@ -1085,7 +1085,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionRouteSearchRequest connectionRouteSearchRequest = new ConnectionRouteSearchRequest(); // ConnectionRouteSearchRequest | 
     try {
       ConnectionRouteTableEntrySearchResponse result = apiInstance.searchConnectionReceivedRoutes(connectionId, connectionRouteSearchRequest);
@@ -1158,7 +1158,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Router UUID
     CloudRouterActionsSearchRequest cloudRouterActionsSearchRequest = new CloudRouterActionsSearchRequest(); // CloudRouterActionsSearchRequest | 
     try {
       CloudRouterActionsSearchResponse result = apiInstance.searchRouterActions(routerId, cloudRouterActionsSearchRequest);
@@ -1233,7 +1233,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CloudRoutersApi apiInstance = new CloudRoutersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     List<CloudRouterChangeOperation> cloudRouterChangeOperation = Arrays.asList(); // List<CloudRouterChangeOperation> | 
     try {
       CloudRouter result = apiInstance.updateCloudRouterByUuid(routerId, cloudRouterChangeOperation);

@@ -113,7 +113,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PrecisionTimeServicesApi apiInstance = new PrecisionTimeServicesApi(defaultClient);
-    UUID serviceId = UUID.randomUUID(); // UUID | Service UUID
+    UUID serviceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Service UUID
     try {
       PrecisionTimeServiceResponse result = apiInstance.deleteTimeServiceById(serviceId);
       System.out.println(result);
@@ -185,7 +185,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PrecisionTimeServicesApi apiInstance = new PrecisionTimeServicesApi(defaultClient);
-    UUID serviceId = UUID.randomUUID(); // UUID | Service UUID
+    UUID serviceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Service UUID
     PrecisionTimeServiceRequest precisionTimeServiceRequest = new PrecisionTimeServiceRequest(); // PrecisionTimeServiceRequest | 
     try {
       PrecisionTimeServiceResponse result = apiInstance.fulfillTimeServices(serviceId, precisionTimeServiceRequest);
@@ -260,7 +260,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PrecisionTimeServicesApi apiInstance = new PrecisionTimeServicesApi(defaultClient);
-    UUID serviceId = UUID.randomUUID(); // UUID | Service UUID
+    UUID serviceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Service UUID
     try {
       PrecisionTimeServiceResponse result = apiInstance.getTimeServicesById(serviceId);
       System.out.println(result);
@@ -333,7 +333,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PrecisionTimeServicesApi apiInstance = new PrecisionTimeServicesApi(defaultClient);
-    UUID serviceId = UUID.randomUUID(); // UUID | Service UUID
+    UUID serviceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Service UUID
     try {
       PrecisionTimeServiceConnectionsResponse result = apiInstance.getTimeServicesConnectionsByServiceId(serviceId);
       System.out.println(result);
@@ -476,7 +476,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     PrecisionTimeServicesApi apiInstance = new PrecisionTimeServicesApi(defaultClient);
-    UUID serviceId = UUID.randomUUID(); // UUID | Service UUID
+    UUID serviceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Service UUID
     List<PrecisionTimeChangeOperation> precisionTimeChangeOperation = Arrays.asList(); // List<PrecisionTimeChangeOperation> | 
     try {
       PrecisionTimeServiceResponse result = apiInstance.updateTimeServicesById(serviceId, precisionTimeChangeOperation);

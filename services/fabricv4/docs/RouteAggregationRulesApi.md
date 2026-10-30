@@ -44,7 +44,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     RouteAggregationRulesBase routeAggregationRulesBase = new RouteAggregationRulesBase(); // RouteAggregationRulesBase | 
     try {
       RouteAggregationRulesData result = apiInstance.createRouteAggregationRule(routeAggregationId, routeAggregationRulesBase);
@@ -119,7 +119,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     RouteAggregationRulesPostRequest routeAggregationRulesPostRequest = new RouteAggregationRulesPostRequest(); // RouteAggregationRulesPostRequest | 
     try {
       GetRouteAggregationRulesResponse result = apiInstance.createRouteAggregationRulesInBulk(routeAggregationId, routeAggregationRulesPostRequest);
@@ -194,8 +194,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
     try {
       RouteAggregationRulesData result = apiInstance.deleteRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId);
       System.out.println(result);
@@ -269,8 +269,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
     try {
       RouteAggregationRulesData result = apiInstance.getRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId);
       System.out.println(result);
@@ -344,9 +344,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
-    UUID changeId = UUID.randomUUID(); // UUID | Route Aggregation Rule Change UUID
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Route Aggregation Rule Change UUID
     try {
       RouteAggregationRulesChangeData result = apiInstance.getRouteAggregationRuleChangeByUuid(routeAggregationId, routeAggregationRuleId, changeId);
       System.out.println(result);
@@ -420,8 +420,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -498,7 +498,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -574,8 +574,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
     List<RouteAggregationRulesPatchRequestItem> routeAggregationRulesPatchRequestItem = Arrays.asList(); // List<RouteAggregationRulesPatchRequestItem> | 
     try {
       RouteAggregationRulesData result = apiInstance.patchRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesPatchRequestItem);
@@ -651,8 +651,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String routeAggregationRuleId = "routeAggregationRuleId_example"; // String | Route Aggregation Rules Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String routeAggregationRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route Aggregation Rules Id
     RouteAggregationRulesBase routeAggregationRulesBase = new RouteAggregationRulesBase(); // RouteAggregationRulesBase | 
     try {
       RouteAggregationRulesData result = apiInstance.replaceRouteAggregationRuleByUuid(routeAggregationId, routeAggregationRuleId, routeAggregationRulesBase);
@@ -728,7 +728,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationRulesApi apiInstance = new RouteAggregationRulesApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     RouteAggregationRulesSearchRequest routeAggregationRulesSearchRequest = new RouteAggregationRulesSearchRequest(); // RouteAggregationRulesSearchRequest | 
     try {
       RouteAggregationRulesSearchResponse result = apiInstance.searchRouteAggregationRules(routeAggregationId, routeAggregationRulesSearchRequest);
