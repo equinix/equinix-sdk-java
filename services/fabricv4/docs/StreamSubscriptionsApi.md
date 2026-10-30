@@ -40,7 +40,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     StreamSubscriptionPostRequest streamSubscriptionPostRequest = new StreamSubscriptionPostRequest(); // StreamSubscriptionPostRequest | 
     try {
       StreamSubscription result = apiInstance.createStreamSubscriptions(streamId, streamSubscriptionPostRequest);
@@ -114,8 +114,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID subscriptionId = UUID.randomUUID(); // UUID | Stream Subscription UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID subscriptionId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Stream Subscription UUID
     try {
       StreamSubscription result = apiInstance.deleteStreamSubscriptionByUuid(streamId, subscriptionId);
       System.out.println(result);
@@ -188,8 +188,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID subscriptionId = UUID.randomUUID(); // UUID | Stream Subscription UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID subscriptionId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Stream Subscription UUID
     try {
       StreamSubscription result = apiInstance.getStreamSubscriptionByUuid(streamId, subscriptionId);
       System.out.println(result);
@@ -262,7 +262,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -409,8 +409,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamSubscriptionsApi apiInstance = new StreamSubscriptionsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID subscriptionId = UUID.randomUUID(); // UUID | Stream Subscription UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID subscriptionId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Stream Subscription UUID
     StreamSubscriptionPutRequest streamSubscriptionPutRequest = new StreamSubscriptionPutRequest(); // StreamSubscriptionPutRequest | 
     try {
       StreamSubscription result = apiInstance.updateStreamSubscriptionByUuid(streamId, subscriptionId, streamSubscriptionPutRequest);

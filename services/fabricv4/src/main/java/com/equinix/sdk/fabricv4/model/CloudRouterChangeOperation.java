@@ -116,8 +116,8 @@ public class CloudRouterChangeOperation {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
-  private Object value;
+  @javax.annotation.Nullable
+  private Object value = null;
 
   public CloudRouterChangeOperation() {
   }
@@ -160,7 +160,7 @@ public class CloudRouterChangeOperation {
   }
 
 
-  public CloudRouterChangeOperation value(@javax.annotation.Nonnull Object value) {
+  public CloudRouterChangeOperation value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -169,12 +169,12 @@ public class CloudRouterChangeOperation {
    * new value for updated parameter
    * @return value
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 

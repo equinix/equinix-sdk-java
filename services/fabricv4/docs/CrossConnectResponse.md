@@ -13,7 +13,7 @@ Cross Connect Response.
 |**uuid** | **UUID** | Cross Connect Identifier. |  [optional] |
 |**name** | **String** | A short, descriptive name for this Cross Connect. |  [optional] |
 |**state** | **CrossConnectState** |  |  [optional] |
-|**allowedActions** | [**List&lt;CrossConnectResponseAllowedActions&gt;**](CrossConnectResponseAllowedActions.md) | List of actions that can be performed on the Cross Connect based on its current state. Use these values to determine which action types are valid to submit to the actions endpoint.  |  [optional] [readonly] |
+|**allowedActions** | [**List&lt;CrossConnectResponseAllowedActionsInner&gt;**](CrossConnectResponseAllowedActionsInner.md) | List of actions that can be performed on the Cross Connect based on its current state. Use these values to determine which action types are valid to submit to the actions endpoint.  |  [optional] [readonly] |
 |**bmmrType** | **BmmrType** |  |  [optional] |
 |**mediaType** | **String** | Media type of the Cross Connect. |  [optional] |
 |**mediaSubType** | **String** | Media sub-type of the Cross Connect. |  [optional] |

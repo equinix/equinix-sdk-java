@@ -36,7 +36,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationProcessorsApi apiInstance = new ApplicationProcessorsApi(defaultClient);
-    UUID appProcessorId = UUID.randomUUID(); // UUID | App Processor UUID
+    UUID appProcessorId = UUID.fromString("90ee425c-9988-454c-96d9-1128bc16350f"); // UUID | App Processor UUID
     try {
       AppProcessor result = apiInstance.getAppProcessorByUuid(appProcessorId);
       System.out.println(result);

@@ -116,7 +116,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     CreateLoaNote createLoaNote = new CreateLoaNote(); // CreateLoaNote | 
     try {
       LoaNoteDetails result = apiInstance.createLoaNoteByLoaId(loaId, createLoaNote);
@@ -190,8 +190,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
-    UUID actionId = UUID.randomUUID(); // UUID | Action UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
+    UUID actionId = UUID.fromString("30cc7878-54e3-4e1a-8651-87a61354bad4"); // UUID | Action UUID
     try {
       LoaActionResponse result = apiInstance.getLoaActionsByUuid(loaId, actionId);
       System.out.println(result);
@@ -264,7 +264,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     try {
       LoaResponse result = apiInstance.getLoaByUuid(loaId);
       System.out.println(result);
@@ -336,7 +336,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     try {
       LoaConsumersResponse result = apiInstance.getLoaConsumersByLoaId(loaId);
       System.out.println(result);
@@ -408,7 +408,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     try {
       LoaNotesResponse result = apiInstance.getLoaNotesByUuid(loaId);
       System.out.println(result);
@@ -480,7 +480,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     LoaActionRequest loaActionRequest = new LoaActionRequest(); // LoaActionRequest | 
     try {
       LoaActionResponse result = apiInstance.performLoaAction(loaId, loaActionRequest);
@@ -626,7 +626,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     LoaActionSearchRequest loaActionSearchRequest = new LoaActionSearchRequest(); // LoaActionSearchRequest | 
     try {
       LoaActionSearchResponse result = apiInstance.searchLoaAction(loaId, loaActionSearchRequest);
@@ -700,7 +700,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     LoasApi apiInstance = new LoasApi(defaultClient);
-    UUID loaId = UUID.randomUUID(); // UUID | Loa UUID
+    UUID loaId = UUID.fromString("29cc7878-54e3-4e1a-8651-87a61354bac2"); // UUID | Loa UUID
     List<LoaReplaceOperation> loaReplaceOperation = Arrays.asList(); // List<LoaReplaceOperation> | 
     try {
       LoaResponse result = apiInstance.updateLoaByUuid(loaId, loaReplaceOperation);

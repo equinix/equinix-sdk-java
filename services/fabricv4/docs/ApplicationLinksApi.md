@@ -55,8 +55,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     try {
       AppLinkAppDomainAttachment result = apiInstance.attachAppDomainToAppLink(appLinkId, appDomainId);
       System.out.println(result);
@@ -129,8 +129,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appProcessorId = UUID.randomUUID(); // UUID | App Processor UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appProcessorId = UUID.fromString("90ee425c-9988-454c-96d9-1128bc16350f"); // UUID | App Processor UUID
     AppLinkAttachProcessorRequest appLinkAttachProcessorRequest = new AppLinkAttachProcessorRequest(); // AppLinkAttachProcessorRequest | 
     try {
       AppLinkAppProcessorAttachment result = apiInstance.attachAppProcessorToAppLink(appLinkId, appProcessorId, appLinkAttachProcessorRequest);
@@ -206,8 +206,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     AppLinkAttachServiceRequest appLinkAttachServiceRequest = new AppLinkAttachServiceRequest(); // AppLinkAttachServiceRequest | 
     try {
       AppLinkAppServiceAttachment result = apiInstance.attachAppServiceToAppLink(appLinkId, appServiceId, appLinkAttachServiceRequest);
@@ -353,7 +353,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     try {
       AppLink result = apiInstance.deleteAppLinkByUuid(appLinkId);
       System.out.println(result);
@@ -425,8 +425,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     try {
       AppLinkAppDomainAttachment result = apiInstance.detachAppDomainFromAppLink(appLinkId, appDomainId);
       System.out.println(result);
@@ -499,8 +499,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appProcessorId = UUID.randomUUID(); // UUID | App Processor UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appProcessorId = UUID.fromString("90ee425c-9988-454c-96d9-1128bc16350f"); // UUID | App Processor UUID
     try {
       AppLinkAppProcessorAttachment result = apiInstance.detachAppProcessorFromAppLink(appLinkId, appProcessorId);
       System.out.println(result);
@@ -573,8 +573,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     try {
       AppLinkAppServiceAttachment result = apiInstance.detachAppServiceFromAppLink(appLinkId, appServiceId);
       System.out.println(result);
@@ -647,7 +647,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     try {
       AppLink result = apiInstance.getAppLinkByUuid(appLinkId);
       System.out.println(result);
@@ -718,8 +718,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     try {
       AppLinkAppDomainAttachment result = apiInstance.getAttachedAppDomainByUuid(appLinkId, appDomainId);
       System.out.println(result);
@@ -791,7 +791,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppLinkAttachState> attachmentStatus = Arrays.asList(); // List<AppLinkAttachState> | Filter attached App Domains by one or more attachment lifecycle states.
@@ -873,8 +873,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appProcessorId = UUID.randomUUID(); // UUID | App Processor UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appProcessorId = UUID.fromString("90ee425c-9988-454c-96d9-1128bc16350f"); // UUID | App Processor UUID
     try {
       AppLinkAppProcessorAttachment result = apiInstance.getAttachedAppProcessor(appLinkId, appProcessorId);
       System.out.println(result);
@@ -946,7 +946,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppLinkAttachState> attachmentStatus = Arrays.asList(); // List<AppLinkAttachState> | Filter attached App Processors by one or more attachment lifecycle states.
@@ -1028,8 +1028,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     try {
       AppLinkAppServiceAttachment result = apiInstance.getAttachedAppServiceByUuid(appLinkId, appServiceId);
       System.out.println(result);
@@ -1101,7 +1101,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppLinkAttachState> attachmentStatus = Arrays.asList(); // List<AppLinkAttachState> | Filter attached App Services by one or more attachment lifecycle states.
@@ -1255,7 +1255,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     AppLinkAttachDomainSearchRequest appLinkAttachDomainSearchRequest = new AppLinkAttachDomainSearchRequest(); // AppLinkAttachDomainSearchRequest | 
     try {
       AppLinkAttachDomainSearchResponse result = apiInstance.searchAttachedAppDomains(appLinkId, appLinkAttachDomainSearchRequest);
@@ -1329,7 +1329,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     AppLinkAttachProcessorSearchRequest appLinkAttachProcessorSearchRequest = new AppLinkAttachProcessorSearchRequest(); // AppLinkAttachProcessorSearchRequest | 
     try {
       AppLinkAttachProcessorSearchResponse result = apiInstance.searchAttachedAppProcessors(appLinkId, appLinkAttachProcessorSearchRequest);
@@ -1403,7 +1403,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     AppLinkAttachServiceSearchRequest appLinkAttachServiceSearchRequest = new AppLinkAttachServiceSearchRequest(); // AppLinkAttachServiceSearchRequest | 
     try {
       AppLinkAttachServiceSearchResponse result = apiInstance.searchAttachedAppServices(appLinkId, appLinkAttachServiceSearchRequest);
@@ -1477,7 +1477,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
     List<AppLinkChangeOperation> appLinkChangeOperation = Arrays.asList(); // List<AppLinkChangeOperation> | 
     try {
       AppLink result = apiInstance.updateAppLinkByUuid(appLinkId, appLinkChangeOperation);
@@ -1552,8 +1552,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationLinksApi apiInstance = new ApplicationLinksApi(defaultClient);
-    UUID appLinkId = UUID.randomUUID(); // UUID | App Link UUID
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appLinkId = UUID.fromString("23cd19ab-d3bb-478b-9f25-bd12a3af1914"); // UUID | App Link UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     List<AppLinkAppServiceAttachmentChangeOperation> appLinkAppServiceAttachmentChangeOperation = Arrays.asList(); // List<AppLinkAppServiceAttachmentChangeOperation> | 
     try {
       AppLinkAppServiceAttachment result = apiInstance.updateAppServiceAttachmentToAppLink(appLinkId, appServiceId, appLinkAppServiceAttachmentChangeOperation);

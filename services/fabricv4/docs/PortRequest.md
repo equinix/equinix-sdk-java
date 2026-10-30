@@ -28,7 +28,6 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 |**encapsulation** | [**PortEncapsulation**](PortEncapsulation.md) |  |  |
 |**lagEnabled** | **Boolean** | Indicates whether Link Aggregation Group (LAG) is enabled on this port |  [optional] |
 |**_package** | [**ModelPackage**](ModelPackage.md) |  |  [optional] |
-|**settings** | [**PortSettings**](PortSettings.md) |  |  [optional] |
 |**notifications** | [**List&lt;PortNotification&gt;**](PortNotification.md) | Notification preferences |  [optional] |
 |**physicalPorts** | [**List&lt;PhysicalPort&gt;**](PhysicalPort.md) | Physical ports that implement this port |  [optional] |
 |**loas** | [**List&lt;PortLoa&gt;**](PortLoa.md) | Port Loas |  [optional] |

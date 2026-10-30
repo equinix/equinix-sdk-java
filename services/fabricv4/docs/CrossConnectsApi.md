@@ -190,8 +190,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
-    UUID actionId = UUID.randomUUID(); // UUID | Cross Connect Action UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
+    UUID actionId = UUID.fromString("30cc7878-54e3-4e1a-8651-87a61354bad4"); // UUID | Cross Connect Action UUID.
     try {
       CrossConnectActionResponse result = apiInstance.getCrossConnectActionByUuid(crossConnectId, actionId);
       System.out.println(result);
@@ -264,7 +264,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     try {
       CrossConnectAttachmentsResponse result = apiInstance.getCrossConnectAttachmentsByUuid(crossConnectId);
       System.out.println(result);
@@ -336,7 +336,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     try {
       CrossConnectResponse result = apiInstance.getCrossConnectByUuid(crossConnectId);
       System.out.println(result);
@@ -408,7 +408,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -484,7 +484,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     try {
       SchedulesResponse result = apiInstance.getCrossConnectSchedulesByUuid(crossConnectId);
       System.out.println(result);
@@ -556,7 +556,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     try {
       CrossConnectServicesResponse result = apiInstance.getCrossConnectServicesByUuid(crossConnectId);
       System.out.println(result);
@@ -628,7 +628,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     CrossConnectActionRequest crossConnectActionRequest = new CrossConnectActionRequest(); // CrossConnectActionRequest | 
     try {
       CrossConnectActionResponse result = apiInstance.performCrossConnectAction(crossConnectId, crossConnectActionRequest);
@@ -702,7 +702,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     CrossConnectsApi apiInstance = new CrossConnectsApi(defaultClient);
-    UUID crossConnectId = UUID.randomUUID(); // UUID | Cross Connect UUID.
+    UUID crossConnectId = UUID.fromString("46bb1a31-c28f-4197-8b10-06e0e03d0743"); // UUID | Cross Connect UUID.
     CrossConnectActionSearchRequest crossConnectActionSearchRequest = new CrossConnectActionSearchRequest(); // CrossConnectActionSearchRequest | 
     try {
       CrossConnectActionSearchResponse result = apiInstance.searchCrossConnectAction(crossConnectId, crossConnectActionSearchRequest);

@@ -114,7 +114,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     try {
       AppService result = apiInstance.deleteAppServiceByUuid(appServiceId);
       System.out.println(result);
@@ -186,7 +186,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     try {
       AppService result = apiInstance.getAppServiceByUuid(appServiceId);
       System.out.println(result);
@@ -257,7 +257,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppLinkState> state = Arrays.asList(); // List<AppLinkState> | Filter attached App Links by one or more lifecycle states.
@@ -339,7 +339,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppSubscriptionState> state = Arrays.asList(); // List<AppSubscriptionState> | Filter attached App Subscriptions by one or more lifecycle states.
@@ -493,7 +493,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     AppServiceAttachedAppSubscriptionSearchRequest appServiceAttachedAppSubscriptionSearchRequest = new AppServiceAttachedAppSubscriptionSearchRequest(); // AppServiceAttachedAppSubscriptionSearchRequest | 
     try {
       AppServiceAttachedAppSubscriptionSearchResponse result = apiInstance.searchAttachedAppSubscriptionsByAppServiceId(appServiceId, appServiceAttachedAppSubscriptionSearchRequest);
@@ -567,7 +567,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationServicesApi apiInstance = new ApplicationServicesApi(defaultClient);
-    UUID appServiceId = UUID.randomUUID(); // UUID | App Service UUID
+    UUID appServiceId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | App Service UUID
     List<AppServiceChangeOperation> appServiceChangeOperation = Arrays.asList(); // List<AppServiceChangeOperation> | 
     try {
       AppService result = apiInstance.updateAppServiceByUuid(appServiceId, appServiceChangeOperation);

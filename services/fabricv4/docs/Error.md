@@ -13,7 +13,7 @@ Error Response with details
 |**correlationId** | **String** |  |  [optional] |
 |**details** | **String** |  |  [optional] |
 |**help** | **String** |  |  [optional] |
-|**additionalInfo** | [**List&lt;PriceErrorAdditionalInfo&gt;**](PriceErrorAdditionalInfo.md) |  |  [optional] |
+|**additionalInfo** | [**List&lt;ErrorAdditionalInfoInner&gt;**](ErrorAdditionalInfoInner.md) |  |  [optional] |
 
 
 

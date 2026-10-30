@@ -35,7 +35,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     MarketplaceSubscriptionsApi apiInstance = new MarketplaceSubscriptionsApi(defaultClient);
-    UUID subscriptionId = UUID.randomUUID(); // UUID | Subscription UUID
+    UUID subscriptionId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Subscription UUID
     try {
       SubscriptionResponse result = apiInstance.getSubscriptionById(subscriptionId);
       System.out.println(result);

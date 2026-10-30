@@ -119,9 +119,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID assetId = UUID.randomUUID(); // UUID | asset UUID
+    UUID assetId = UUID.fromString("757400f8-d360-11e9-bb65-2a2ae2dbcce6"); // UUID | asset UUID
     Asset asset = Asset.fromValue("ports"); // Asset | asset
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     try {
       StreamAsset result = apiInstance.deleteStreamAssetByUuid(assetId, asset, streamId);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     try {
       Stream result = apiInstance.deleteStreamByUuid(streamId);
       System.out.println(result);
@@ -267,8 +267,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID deviceId = UUID.fromString("8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d"); // UUID | Network Edge Device UUID
     try {
       StreamAsset result = apiInstance.deleteStreamDevice(streamId, deviceId);
       System.out.println(result);
@@ -341,9 +341,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID assetId = UUID.randomUUID(); // UUID | asset UUID
+    UUID assetId = UUID.fromString("757400f8-d360-11e9-bb65-2a2ae2dbcce6"); // UUID | asset UUID
     Asset asset = Asset.fromValue("ports"); // Asset | asset
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     try {
       StreamAsset result = apiInstance.getStreamAssetByUuid(assetId, asset, streamId);
       System.out.println(result);
@@ -417,7 +417,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     try {
       Stream result = apiInstance.getStreamByUuid(streamId);
       System.out.println(result);
@@ -489,8 +489,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID deviceId = UUID.fromString("8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d"); // UUID | Network Edge Device UUID
     try {
       StreamAsset result = apiInstance.getStreamDevice(streamId, deviceId);
       System.out.println(result);
@@ -779,9 +779,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID assetId = UUID.randomUUID(); // UUID | asset UUID
+    UUID assetId = UUID.fromString("757400f8-d360-11e9-bb65-2a2ae2dbcce6"); // UUID | asset UUID
     Asset asset = Asset.fromValue("ports"); // Asset | asset
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     StreamAssetPutRequest streamAssetPutRequest = new StreamAssetPutRequest(); // StreamAssetPutRequest | 
     try {
       StreamAsset result = apiInstance.updateStreamAssetByUuid(assetId, asset, streamId, streamAssetPutRequest);
@@ -858,7 +858,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
     StreamPutRequest streamPutRequest = new StreamPutRequest(); // StreamPutRequest | 
     try {
       Stream result = apiInstance.updateStreamByUuid(streamId, streamPutRequest);
@@ -933,8 +933,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StreamsApi apiInstance = new StreamsApi(defaultClient);
-    UUID streamId = UUID.randomUUID(); // UUID | Stream UUID
-    UUID deviceId = UUID.randomUUID(); // UUID | Network Edge Device UUID
+    UUID streamId = UUID.fromString("657400f8-d360-11e9-bb65-2a2ae2dbcce5"); // UUID | Stream UUID
+    UUID deviceId = UUID.fromString("8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d"); // UUID | Network Edge Device UUID
     StreamDevicePutRequest streamDevicePutRequest = new StreamDevicePutRequest(); // StreamDevicePutRequest | 
     try {
       StreamAsset result = apiInstance.updateStreamDevice(streamId, deviceId, streamDevicePutRequest);

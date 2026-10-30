@@ -8,7 +8,7 @@ Last-mile configuration for the service profile.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiIntegration** | [**ServiceProfileLastMileApiIntegration**](ServiceProfileLastMileApiIntegration.md) |  |  [optional] |
+|**apiIntegration** | **ServiceProfileLastMileApiIntegration** |  |  [optional] |
 |**productCatalogs** | [**List&lt;ServiceProfileLastMileProductCatalog&gt;**](ServiceProfileLastMileProductCatalog.md) | Last-mile provider catalogs. |  [optional] |
 
 

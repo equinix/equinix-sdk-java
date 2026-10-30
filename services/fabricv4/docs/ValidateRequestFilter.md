@@ -8,7 +8,7 @@ Filters
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**and** | [**List&lt;ValidateRequestFilterAnd&gt;**](ValidateRequestFilterAnd.md) |  |  [optional] |
+|**and** | [**List&lt;ValidateRequestFilterAndInner&gt;**](ValidateRequestFilterAndInner.md) |  |  [optional] |
 
 
 

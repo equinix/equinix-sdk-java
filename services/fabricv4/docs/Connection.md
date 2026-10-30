@@ -13,7 +13,6 @@ Connection specification
 |**uuid** | **String** | Equinix-assigned connection identifier |  [optional] |
 |**name** | **String** | Customer-provided connection name |  |
 |**description** | **String** | Customer-provided connection description |  [optional] |
-|**state** | **ConnectionState** |  |  [optional] |
 |**change** | [**Change**](Change.md) |  |  [optional] |
 |**operation** | [**ConnectionOperation**](ConnectionOperation.md) |  |  [optional] |
 |**order** | [**Order**](Order.md) |  |  [optional] |
