@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.PriceErrorAdditionalInfo;
+import com.equinix.sdk.fabricv4.model.ErrorAdditionalInfoInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -189,7 +189,7 @@ public class PriceError {
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
   @javax.annotation.Nullable
-  private List<PriceErrorAdditionalInfo> additionalInfo = new ArrayList<>();
+  private List<ErrorAdditionalInfoInner> additionalInfo = new ArrayList<>();
 
   public PriceError() {
 
@@ -290,12 +290,12 @@ public class PriceError {
   }
 
 
-  public PriceError additionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
+  public PriceError additionalInfo(@javax.annotation.Nullable List<ErrorAdditionalInfoInner> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
 
-  public PriceError addAdditionalInfoItem(PriceErrorAdditionalInfo additionalInfoItem) {
+  public PriceError addAdditionalInfoItem(ErrorAdditionalInfoInner additionalInfoItem) {
     if (this.additionalInfo == null) {
       this.additionalInfo = new ArrayList<>();
     }
@@ -308,11 +308,11 @@ public class PriceError {
    * @return additionalInfo
    */
   @javax.annotation.Nullable
-  public List<PriceErrorAdditionalInfo> getAdditionalInfo() {
+  public List<ErrorAdditionalInfoInner> getAdditionalInfo() {
     return additionalInfo;
   }
 
-  public void setAdditionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<ErrorAdditionalInfoInner> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 

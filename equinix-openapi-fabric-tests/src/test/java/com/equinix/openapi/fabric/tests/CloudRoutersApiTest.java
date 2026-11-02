@@ -8,6 +8,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 import static com.equinix.openapi.fabric.tests.helpers.Apis.*;
@@ -155,8 +156,8 @@ public class CloudRoutersApiTest {
     @Test
     public void getCloudRouterPackageByCode() throws ApiException {
         Code routerPackageCode = Code.STANDARD;
-        CloudRouterPackage cloudRouterPackage = cloudRoutersApi.getCloudRouterPackageByCode(RouterPackageCode.STANDARD);
-        assertEquals(200, cloudRoutersApi.getApiClient().getStatusCode());
+        CloudRouterPackage cloudRouterPackage = cloudRouterPackagesApi.getCloudRouterPackageByCode(RouterPackageCode.STANDARD);
+        assertEquals(200, cloudRouterPackagesApi.getApiClient().getStatusCode());
         assertEquals(cloudRouterPackage.getCode(), routerPackageCode);
     }
 
@@ -165,8 +166,8 @@ public class CloudRoutersApiTest {
      */
     @Test
     public void getCloudRouterPackages() throws ApiException {
-        PackageResponse packageResponse = cloudRoutersApi.getCloudRouterPackages(10, 10);
-        assertEquals(200, cloudRoutersApi.getApiClient().getStatusCode());
+        PackageResponse packageResponse = cloudRouterPackagesApi.getCloudRouterPackages(10, 10);
+        assertEquals(200, cloudRouterPackagesApi.getApiClient().getStatusCode());
         assertNotNull(packageResponse.getData());
     }
 
@@ -203,21 +204,18 @@ public class CloudRoutersApiTest {
     public void searchCloudRouters() throws ApiException {
         CloudRouterReadResponse cloudRouter = createRouter();
 
-        CloudRouterSimpleExpression cloudRouterSimpleExpression = new CloudRouterSimpleExpression();
-        cloudRouterSimpleExpression.setOperator(SearchExpression.OperatorEnum.EQUAL.getValue());
-        cloudRouterSimpleExpression.setProperty(CloudRouterSortBy.NAME.getValue());
-        cloudRouterSimpleExpression.values(singletonList(cloudRouter.getName()));
+        CloudRouterExpression nameExpression = new CloudRouterExpression()
+                .operator(SearchExpression.OperatorEnum.EQUAL.getValue())
+                .property(CloudRouterSortBy.NAME.getValue())
+                .values(singletonList(cloudRouter.getName()));
 
-        CloudRouterSimpleExpression cloudRouterSimpleExpression2 = new CloudRouterSimpleExpression();
-        cloudRouterSimpleExpression2.setOperator(SearchExpression.OperatorEnum.EQUAL.getValue());
-        cloudRouterSimpleExpression2.setProperty(CloudRouterSortBy.STATE.getValue());
-        cloudRouterSimpleExpression2.values(singletonList(cloudRouter.getState().getValue()));
+        CloudRouterExpression stateExpression = new CloudRouterExpression()
+                .operator(SearchExpression.OperatorEnum.EQUAL.getValue())
+                .property(CloudRouterSortBy.STATE.getValue())
+                .values(singletonList(cloudRouter.getState().getValue()));
 
-        CloudRouterFilters cloudRouterFilters = new CloudRouterFilters();
-        CloudRouterFilter cloudRouterFilter = new CloudRouterFilter(cloudRouterSimpleExpression);
-        CloudRouterFilter cloudRouterFilter2 = new CloudRouterFilter(cloudRouterSimpleExpression2);
-        cloudRouterFilters.addAndItem(cloudRouterFilter);
-        cloudRouterFilters.addAndItem(cloudRouterFilter2);
+        CloudRouterExpression cloudRouterFilters = new CloudRouterExpression()
+                .and(Arrays.asList(nameExpression, stateExpression));
 
         CloudRouterSearchRequest cloudRouterSearchRequest = new CloudRouterSearchRequest()
                 .filter(cloudRouterFilters)

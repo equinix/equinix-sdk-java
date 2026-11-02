@@ -38,7 +38,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     EventsApi apiInstance = new EventsApi(defaultClient);
-    UUID cloudEventId = UUID.randomUUID(); // UUID | Cloud Event UUID
+    UUID cloudEventId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Event UUID
     try {
       CloudEvent result = apiInstance.getCloudEvent(cloudEventId);
       System.out.println(result);
@@ -110,7 +110,7 @@ public class Example {
 
     EventsApi apiInstance = new EventsApi(defaultClient);
     CloudEventAssetType asset = CloudEventAssetType.fromValue("ports"); // CloudEventAssetType | asset
-    UUID assetId = UUID.randomUUID(); // UUID | asset UUID
+    UUID assetId = UUID.fromString("757400f8-d360-11e9-bb65-2a2ae2dbcce6"); // UUID | asset UUID
     OffsetDateTime fromDateTime = OffsetDateTime.now(); // OffsetDateTime | Start date and time
     OffsetDateTime toDateTime = OffsetDateTime.now(); // OffsetDateTime | End date and time
     Integer offset = 0; // Integer | offset

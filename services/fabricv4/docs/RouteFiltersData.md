@@ -12,7 +12,6 @@
 |**uuid** | **UUID** | Route filter identifier |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**description** | **String** | Customer-provided connection description |  [optional] |
-|**state** | **RouteFilterState** |  |  [optional] |
 |**change** | [**RouteFiltersChange**](RouteFiltersChange.md) |  |  [optional] |
 |**notMatchedRuleAction** | [**NotMatchedRuleActionEnum**](#NotMatchedRuleActionEnum) |  |  [optional] |
 |**connectionsCount** | **Integer** |  |  [optional] |

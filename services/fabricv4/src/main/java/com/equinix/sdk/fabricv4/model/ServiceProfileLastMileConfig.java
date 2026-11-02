@@ -224,10 +224,6 @@ public class ServiceProfileLastMileConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `apiIntegration`
-      if (jsonObj.get("apiIntegration") != null && !jsonObj.get("apiIntegration").isJsonNull()) {
-        ServiceProfileLastMileApiIntegration.validateJsonElement(jsonObj.get("apiIntegration"));
-      }
       if (jsonObj.get("productCatalogs") != null && !jsonObj.get("productCatalogs").isJsonNull()) {
         JsonArray jsonArrayproductCatalogs = jsonObj.getAsJsonArray("productCatalogs");
         if (jsonArrayproductCatalogs != null) {

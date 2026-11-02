@@ -44,7 +44,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     RouteFilterRulesBase routeFilterRulesBase = new RouteFilterRulesBase(); // RouteFilterRulesBase | 
     try {
       RouteFilterRulesData result = apiInstance.createRouteFilterRule(routeFilterId, routeFilterRulesBase);
@@ -119,7 +119,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     RouteFilterRulesPostRequest routeFilterRulesPostRequest = new RouteFilterRulesPostRequest(); // RouteFilterRulesPostRequest | 
     try {
       GetRouteFilterRulesResponse result = apiInstance.createRouteFilterRulesInBulk(routeFilterId, routeFilterRulesPostRequest);
@@ -194,8 +194,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
     try {
       RouteFilterRulesData result = apiInstance.deleteRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId);
       System.out.println(result);
@@ -269,8 +269,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
     try {
       RouteFilterRulesData result = apiInstance.getRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId);
       System.out.println(result);
@@ -344,9 +344,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
-    UUID changeId = UUID.randomUUID(); // UUID | Route Filter Rule Change UUID
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Route Filter Rule Change UUID
     try {
       RouteFilterRulesChangeData result = apiInstance.getRouteFilterRuleChangeByUuid(routeFilterId, routeFilterRuleId, changeId);
       System.out.println(result);
@@ -420,8 +420,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -498,7 +498,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -574,8 +574,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
     List<RouteFilterRulesPatchRequestItem> routeFilterRulesPatchRequestItem = Arrays.asList(); // List<RouteFilterRulesPatchRequestItem> | 
     try {
       RouteFilterRulesData result = apiInstance.patchRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId, routeFilterRulesPatchRequestItem);
@@ -651,8 +651,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String routeFilterRuleId = "routeFilterRuleId_example"; // String | Route  Filter  Rules Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String routeFilterRuleId = "65b025ef-022b-4180-85cf-82cfc1ab655b"; // String | Route  Filter  Rules Id
     RouteFilterRulesBase routeFilterRulesBase = new RouteFilterRulesBase(); // RouteFilterRulesBase | 
     try {
       RouteFilterRulesData result = apiInstance.replaceRouteFilterRuleByUuid(routeFilterId, routeFilterRuleId, routeFilterRulesBase);
@@ -728,7 +728,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFilterRulesApi apiInstance = new RouteFilterRulesApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     RouteFilterRulesSearchRequest routeFilterRulesSearchRequest = new RouteFilterRulesSearchRequest(); // RouteFilterRulesSearchRequest | 
     try {
       RouteFilterRulesSearchResponse result = apiInstance.searchRouteFilterRules(routeFilterId, routeFilterRulesSearchRequest);

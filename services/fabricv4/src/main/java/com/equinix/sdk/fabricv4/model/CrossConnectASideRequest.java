@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.CrossConnectASideRequestDemarcationPoint;
+import com.equinix.sdk.fabricv4.model.CrossConnectDemarcationPoint;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,12 +54,12 @@ public class CrossConnectASideRequest {
   public static final String SERIALIZED_NAME_DEMARCATION_POINT = "demarcationPoint";
   @SerializedName(SERIALIZED_NAME_DEMARCATION_POINT)
   @javax.annotation.Nullable
-  private CrossConnectASideRequestDemarcationPoint demarcationPoint;
+  private CrossConnectDemarcationPoint demarcationPoint;
 
   public CrossConnectASideRequest() {
   }
 
-  public CrossConnectASideRequest demarcationPoint(@javax.annotation.Nullable CrossConnectASideRequestDemarcationPoint demarcationPoint) {
+  public CrossConnectASideRequest demarcationPoint(@javax.annotation.Nullable CrossConnectDemarcationPoint demarcationPoint) {
     this.demarcationPoint = demarcationPoint;
     return this;
   }
@@ -69,11 +69,11 @@ public class CrossConnectASideRequest {
    * @return demarcationPoint
    */
   @javax.annotation.Nullable
-  public CrossConnectASideRequestDemarcationPoint getDemarcationPoint() {
+  public CrossConnectDemarcationPoint getDemarcationPoint() {
     return demarcationPoint;
   }
 
-  public void setDemarcationPoint(@javax.annotation.Nullable CrossConnectASideRequestDemarcationPoint demarcationPoint) {
+  public void setDemarcationPoint(@javax.annotation.Nullable CrossConnectDemarcationPoint demarcationPoint) {
     this.demarcationPoint = demarcationPoint;
   }
 
@@ -189,7 +189,7 @@ public class CrossConnectASideRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `demarcationPoint`
       if (jsonObj.get("demarcationPoint") != null && !jsonObj.get("demarcationPoint").isJsonNull()) {
-        CrossConnectASideRequestDemarcationPoint.validateJsonElement(jsonObj.get("demarcationPoint"));
+        CrossConnectDemarcationPoint.validateJsonElement(jsonObj.get("demarcationPoint"));
       }
   }
 

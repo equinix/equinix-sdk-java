@@ -47,8 +47,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       ConnectionRouteAggregationData result = apiInstance.attachConnectionRouteAggregation(routeAggregationId, connectionId);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     try {
       RouteAggregationsData result = apiInstance.deleteRouteAggregationByUuid(routeAggregationId);
       System.out.println(result);
@@ -268,8 +268,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       ConnectionRouteAggregationData result = apiInstance.detachConnectionRouteAggregation(routeAggregationId, connectionId);
       System.out.println(result);
@@ -343,8 +343,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       ConnectionRouteAggregationData result = apiInstance.getConnectionRouteAggregationByUuid(routeAggregationId, connectionId);
       System.out.println(result);
@@ -418,7 +418,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       GetAllConnectionRouteAggregationsResponse result = apiInstance.getConnectionRouteAggregations(connectionId);
       System.out.println(result);
@@ -491,7 +491,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     try {
       RouteAggregationsData result = apiInstance.getRouteAggregationByUuid(routeAggregationId);
       System.out.println(result);
@@ -564,8 +564,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
-    UUID changeId = UUID.randomUUID(); // UUID | Routing Protocol Change UUID
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Routing Protocol Change UUID
     try {
       RouteAggregationChangeData result = apiInstance.getRouteAggregationChangeByUuid(routeAggregationId, changeId);
       System.out.println(result);
@@ -638,7 +638,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -714,7 +714,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     try {
       GetRouteAggregationGetConnectionsResponse result = apiInstance.getRouteAggregationConnections(routeAggregationId);
       System.out.println(result);
@@ -787,7 +787,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    String routeAggregationId = "routeAggregationId_example"; // String | Route Aggregations Id
+    String routeAggregationId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Aggregations Id
     List<RouteAggregationsPatchRequestItem> routeAggregationsPatchRequestItem = Arrays.asList(); // List<RouteAggregationsPatchRequestItem> | 
     try {
       RouteAggregationsData result = apiInstance.patchRouteAggregationByUuid(routeAggregationId, routeAggregationsPatchRequestItem);
@@ -862,7 +862,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteAggregationsApi apiInstance = new RouteAggregationsApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     CloudRouterRouteAggregationsSearchBase cloudRouterRouteAggregationsSearchBase = new CloudRouterRouteAggregationsSearchBase(); // CloudRouterRouteAggregationsSearchBase | 
     try {
       CloudRouterRouteAggregationsSearchResponse result = apiInstance.searchCloudRouterRouteAggregationAttachments(routerId, cloudRouterRouteAggregationsSearchBase);

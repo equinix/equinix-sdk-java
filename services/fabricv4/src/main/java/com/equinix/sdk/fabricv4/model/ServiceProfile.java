@@ -1022,10 +1022,6 @@ public class ServiceProfile {
       if ((jsonObj.get("projectId") != null && !jsonObj.get("projectId").isJsonNull()) && !jsonObj.get("projectId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
       }
-      // validate the optional field `lastMileConfig`
-      if (jsonObj.get("lastMileConfig") != null && !jsonObj.get("lastMileConfig").isJsonNull()) {
-        ServiceProfileLastMileConfig.validateJsonElement(jsonObj.get("lastMileConfig"));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -14,7 +14,6 @@
 |**summary** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**state** | **String** | Company Profile State |  [optional] |
-|**account** | [**CompanyProfileResponseAccount**](CompanyProfileResponseAccount.md) |  |  [optional] |
 |**metros** | [**List&lt;CompanyMetro&gt;**](CompanyMetro.md) |  |  [optional] |
 |**logo** | [**CompanyLogo**](CompanyLogo.md) |  |  [optional] |
 |**tags** | [**List&lt;TagResponse&gt;**](TagResponse.md) |  |  [optional] |

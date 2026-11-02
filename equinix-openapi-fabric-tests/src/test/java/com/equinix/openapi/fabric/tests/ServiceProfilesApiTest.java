@@ -134,7 +134,7 @@ public class ServiceProfilesApiTest {
     }
 
     public ServiceProfiles getServiceProfilesByQueryResponse(String viewPointQuery) throws ApiException {
-        return serviceProfilesApi.getServiceProfiles(1, 10, viewPointQuery);
+        return serviceProfilesApi.listServiceProfiles(1, 10, viewPointQuery);
     }
 
     /**

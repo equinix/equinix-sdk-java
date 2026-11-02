@@ -12,7 +12,6 @@
 |**uuid** | **UUID** | Route Aggregation identifier |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**description** | **String** | Customer-provided connection description |  [optional] |
-|**state** | **RouteAggregationState** |  |  [optional] |
 |**change** | [**RouteAggregationsChange**](RouteAggregationsChange.md) |  |  [optional] |
 |**connectionsCount** | **Integer** |  |  [optional] |
 |**rulesCount** | **Integer** |  |  [optional] |

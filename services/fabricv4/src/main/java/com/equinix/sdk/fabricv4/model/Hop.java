@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.HopProbes;
+import com.equinix.sdk.fabricv4.model.HopProbesInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -61,7 +61,7 @@ public class Hop {
   public static final String SERIALIZED_NAME_PROBES = "probes";
   @SerializedName(SERIALIZED_NAME_PROBES)
   @javax.annotation.Nullable
-  private List<HopProbes> probes = new ArrayList<>();
+  private List<HopProbesInner> probes = new ArrayList<>();
 
   public Hop() {
   }
@@ -85,12 +85,12 @@ public class Hop {
   }
 
 
-  public Hop probes(@javax.annotation.Nullable List<HopProbes> probes) {
+  public Hop probes(@javax.annotation.Nullable List<HopProbesInner> probes) {
     this.probes = probes;
     return this;
   }
 
-  public Hop addProbesItem(HopProbes probesItem) {
+  public Hop addProbesItem(HopProbesInner probesItem) {
     if (this.probes == null) {
       this.probes = new ArrayList<>();
     }
@@ -103,11 +103,11 @@ public class Hop {
    * @return probes
    */
   @javax.annotation.Nullable
-  public List<HopProbes> getProbes() {
+  public List<HopProbesInner> getProbes() {
     return probes;
   }
 
-  public void setProbes(@javax.annotation.Nullable List<HopProbes> probes) {
+  public void setProbes(@javax.annotation.Nullable List<HopProbesInner> probes) {
     this.probes = probes;
   }
 
@@ -233,7 +233,7 @@ public class Hop {
 
           // validate the optional field `probes` (array)
           for (int i = 0; i < jsonArrayprobes.size(); i++) {
-            HopProbes.validateJsonElement(jsonArrayprobes.get(i));
+            HopProbesInner.validateJsonElement(jsonArrayprobes.get(i));
           };
         }
       }

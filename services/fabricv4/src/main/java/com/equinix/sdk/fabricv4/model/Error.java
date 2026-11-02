@@ -13,7 +13,7 @@ package com.equinix.sdk.fabricv4.model;
 
 import java.util.Objects;
 import java.util.Locale;
-import com.equinix.sdk.fabricv4.model.PriceErrorAdditionalInfo;
+import com.equinix.sdk.fabricv4.model.ErrorAdditionalInfoInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -81,7 +81,7 @@ public class Error {
   public static final String SERIALIZED_NAME_ADDITIONAL_INFO = "additionalInfo";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_INFO)
   @javax.annotation.Nullable
-  private List<PriceErrorAdditionalInfo> additionalInfo = new ArrayList<>();
+  private List<ErrorAdditionalInfoInner> additionalInfo = new ArrayList<>();
 
   public Error() {
   }
@@ -181,12 +181,12 @@ public class Error {
   }
 
 
-  public Error additionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
+  public Error additionalInfo(@javax.annotation.Nullable List<ErrorAdditionalInfoInner> additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
 
-  public Error addAdditionalInfoItem(PriceErrorAdditionalInfo additionalInfoItem) {
+  public Error addAdditionalInfoItem(ErrorAdditionalInfoInner additionalInfoItem) {
     if (this.additionalInfo == null) {
       this.additionalInfo = new ArrayList<>();
     }
@@ -199,11 +199,11 @@ public class Error {
    * @return additionalInfo
    */
   @javax.annotation.Nullable
-  public List<PriceErrorAdditionalInfo> getAdditionalInfo() {
+  public List<ErrorAdditionalInfoInner> getAdditionalInfo() {
     return additionalInfo;
   }
 
-  public void setAdditionalInfo(@javax.annotation.Nullable List<PriceErrorAdditionalInfo> additionalInfo) {
+  public void setAdditionalInfo(@javax.annotation.Nullable List<ErrorAdditionalInfoInner> additionalInfo) {
     this.additionalInfo = additionalInfo;
   }
 
@@ -359,7 +359,7 @@ public class Error {
 
           // validate the optional field `additionalInfo` (array)
           for (int i = 0; i < jsonArrayadditionalInfo.size(); i++) {
-            PriceErrorAdditionalInfo.validateJsonElement(jsonArrayadditionalInfo.get(i));
+            ErrorAdditionalInfoInner.validateJsonElement(jsonArrayadditionalInfo.get(i));
           };
         }
       }

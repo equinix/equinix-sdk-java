@@ -111,7 +111,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     InternetExchangeServicesApi apiInstance = new InternetExchangeServicesApi(defaultClient);
-    UUID exchangeServiceId = UUID.randomUUID(); // UUID | Internet Exchange Service Id
+    UUID exchangeServiceId = UUID.fromString("a8ba52de-faae-43b5-b0b1-6904d37ee011"); // UUID | Internet Exchange Service Id
     ExchangeServiceActionRequest exchangeServiceActionRequest = new ExchangeServiceActionRequest(); // ExchangeServiceActionRequest | 
     try {
       ExchangeServiceActionResponse result = apiInstance.createExchangeServiceAction(exchangeServiceId, exchangeServiceActionRequest);
@@ -185,7 +185,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     InternetExchangeServicesApi apiInstance = new InternetExchangeServicesApi(defaultClient);
-    UUID exchangeServiceId = UUID.randomUUID(); // UUID | Internet Exchange Service Id
+    UUID exchangeServiceId = UUID.fromString("a8ba52de-faae-43b5-b0b1-6904d37ee011"); // UUID | Internet Exchange Service Id
     try {
       ExchangeServiceResponse result = apiInstance.getExchangeServiceById(exchangeServiceId);
       System.out.println(result);
@@ -328,7 +328,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     InternetExchangeServicesApi apiInstance = new InternetExchangeServicesApi(defaultClient);
-    UUID exchangeServiceId = UUID.randomUUID(); // UUID | Internet Exchange Service Id
+    UUID exchangeServiceId = UUID.fromString("a8ba52de-faae-43b5-b0b1-6904d37ee011"); // UUID | Internet Exchange Service Id
     List<ExchangeServiceReplaceOperation> exchangeServiceReplaceOperation = Arrays.asList(); // List<ExchangeServiceReplaceOperation> | 
     try {
       ExchangeServiceResponse result = apiInstance.updateExchangeServiceById(exchangeServiceId, exchangeServiceReplaceOperation);

@@ -18,8 +18,6 @@ Physical Port specification
 |**uuid** | **UUID** | Equinix assigned response attribute for physical port identifier |  [optional] |
 |**tether** | [**PortTether**](PortTether.md) |  |  [optional] |
 |**demarcationPoint** | [**PortDemarcationPoint**](PortDemarcationPoint.md) |  |  [optional] |
-|**settings** | [**PhysicalPortSettings**](PhysicalPortSettings.md) |  |  [optional] |
-|**_interface** | [**PortInterface**](PortInterface.md) |  |  [optional] |
 |**notifications** | [**List&lt;PortNotification&gt;**](PortNotification.md) | Notification preferences |  [optional] |
 |**additionalInfo** | [**List&lt;PortAdditionalInfo&gt;**](PortAdditionalInfo.md) | Physical Port additional information |  [optional] |
 |**order** | [**PortOrder**](PortOrder.md) |  |  [optional] |

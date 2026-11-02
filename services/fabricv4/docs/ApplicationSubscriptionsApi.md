@@ -110,7 +110,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationSubscriptionsApi apiInstance = new ApplicationSubscriptionsApi(defaultClient);
-    UUID appSubscriptionId = UUID.randomUUID(); // UUID | App Subscription UUID
+    UUID appSubscriptionId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Subscription UUID
     try {
       AppSubscription result = apiInstance.deleteAppSubscriptionByUuid(appSubscriptionId);
       System.out.println(result);
@@ -182,7 +182,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationSubscriptionsApi apiInstance = new ApplicationSubscriptionsApi(defaultClient);
-    UUID appSubscriptionId = UUID.randomUUID(); // UUID | App Subscription UUID
+    UUID appSubscriptionId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Subscription UUID
     try {
       AppSubscription result = apiInstance.getAppSubscriptionByUuid(appSubscriptionId);
       System.out.println(result);
@@ -325,7 +325,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationSubscriptionsApi apiInstance = new ApplicationSubscriptionsApi(defaultClient);
-    UUID appSubscriptionId = UUID.randomUUID(); // UUID | App Subscription UUID
+    UUID appSubscriptionId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Subscription UUID
     List<AppSubscriptionChangeOperation> appSubscriptionChangeOperation = Arrays.asList(); // List<AppSubscriptionChangeOperation> | 
     try {
       AppSubscription result = apiInstance.updateAppSubscriptionByUuid(appSubscriptionId, appSubscriptionChangeOperation);

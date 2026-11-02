@@ -17,7 +17,7 @@ import com.equinix.sdk.fabricv4.model.InternetAccessConnectionBgpRequest;
 import com.equinix.sdk.fabricv4.model.InternetAccessCustomerAsnRange;
 import com.equinix.sdk.fabricv4.model.InternetAccessCustomerRouteRequest;
 import com.equinix.sdk.fabricv4.model.InternetAccessExportPolicy;
-import com.equinix.sdk.fabricv4.model.InternetAccessRoutingProtocolBgpRequestAsn;
+import com.equinix.sdk.fabricv4.model.InternetAccessRoutingProtocolBgpRequestAllOfAsn;
 import com.equinix.sdk.fabricv4.model.InternetAccessRoutingProtocolRequest;
 import com.equinix.sdk.fabricv4.model.InternetAccessRoutingProtocolType;
 import com.google.gson.TypeAdapter;
@@ -72,7 +72,7 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
   public static final String SERIALIZED_NAME_ASN = "asn";
   @SerializedName(SERIALIZED_NAME_ASN)
   @javax.annotation.Nullable
-  private InternetAccessRoutingProtocolBgpRequestAsn asn;
+  private InternetAccessRoutingProtocolBgpRequestAllOfAsn asn;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ASN = "customerAsn";
   @Deprecated
@@ -139,7 +139,7 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
   }
 
 
-  public InternetAccessRoutingProtocolBgpRequest asn(@javax.annotation.Nullable InternetAccessRoutingProtocolBgpRequestAsn asn) {
+  public InternetAccessRoutingProtocolBgpRequest asn(@javax.annotation.Nullable InternetAccessRoutingProtocolBgpRequestAllOfAsn asn) {
     this.asn = asn;
     return this;
   }
@@ -149,11 +149,11 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
    * @return asn
    */
   @javax.annotation.Nullable
-  public InternetAccessRoutingProtocolBgpRequestAsn getAsn() {
+  public InternetAccessRoutingProtocolBgpRequestAllOfAsn getAsn() {
     return asn;
   }
 
-  public void setAsn(@javax.annotation.Nullable InternetAccessRoutingProtocolBgpRequestAsn asn) {
+  public void setAsn(@javax.annotation.Nullable InternetAccessRoutingProtocolBgpRequestAllOfAsn asn) {
     this.asn = asn;
   }
 
@@ -315,7 +315,7 @@ public class InternetAccessRoutingProtocolBgpRequest extends InternetAccessRouti
       InternetAccessExportPolicy.validateJsonElement(jsonObj.get("exportPolicy"));
       // validate the optional field `asn`
       if (jsonObj.get("asn") != null && !jsonObj.get("asn").isJsonNull()) {
-        InternetAccessRoutingProtocolBgpRequestAsn.validateJsonElement(jsonObj.get("asn"));
+        InternetAccessRoutingProtocolBgpRequestAllOfAsn.validateJsonElement(jsonObj.get("asn"));
       }
       if ((jsonObj.get("bgpAuthKey") != null && !jsonObj.get("bgpAuthKey").isJsonNull()) && !jsonObj.get("bgpAuthKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bgpAuthKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bgpAuthKey").toString()));

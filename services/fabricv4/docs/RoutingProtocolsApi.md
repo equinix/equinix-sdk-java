@@ -47,7 +47,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     RoutingProtocolBase routingProtocolBase = new RoutingProtocolBase(); // RoutingProtocolBase | 
     try {
       RoutingProtocolData result = apiInstance.createConnectionRoutingProtocol(connectionId, routingProtocolBase);
@@ -122,7 +122,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionRoutingProtocolPostRequest connectionRoutingProtocolPostRequest = new ConnectionRoutingProtocolPostRequest(); // ConnectionRoutingProtocolPostRequest | 
     try {
       GetResponse result = apiInstance.createConnectionRoutingProtocolsInBulk(connectionId, connectionRoutingProtocolPostRequest);
@@ -197,8 +197,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       RoutingProtocolData result = apiInstance.deleteConnectionRoutingProtocolByUuid(routingProtocolId, connectionId);
       System.out.println(result);
@@ -272,8 +272,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -351,8 +351,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       RoutingProtocolData result = apiInstance.getConnectionRoutingProtocolByUuid(routingProtocolId, connectionId);
       System.out.println(result);
@@ -426,7 +426,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -502,9 +502,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    UUID actionId = UUID.randomUUID(); // UUID | BGP Action UUID
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    UUID actionId = UUID.fromString("86534014-34b4-53f6-45d6-4b94a92d8623"); // UUID | BGP Action UUID
     try {
       BGPActionData result = apiInstance.getConnectionRoutingProtocolsBgpActionByUuid(connectionId, routingProtocolId, actionId);
       System.out.println(result);
@@ -578,9 +578,9 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    UUID changeId = UUID.randomUUID(); // UUID | Routing Protocol Change UUID
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Routing Protocol Change UUID
     try {
       RoutingProtocolChangeData result = apiInstance.getConnectionRoutingProtocolsChangeByUuid(connectionId, routingProtocolId, changeId);
       System.out.println(result);
@@ -654,8 +654,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -732,8 +732,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     List<ConnectionChangeOperation> connectionChangeOperation = Arrays.asList(); // List<ConnectionChangeOperation> | 
     try {
       RoutingProtocolData result = apiInstance.patchConnectionRoutingProtocolByUuid(routingProtocolId, connectionId, connectionChangeOperation);
@@ -809,8 +809,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     BGPActionRequest bgPActionRequest = new BGPActionRequest(); // BGPActionRequest | 
     try {
       BGPActionData result = apiInstance.postConnectionRoutingProtocolBgpActionByUuid(routingProtocolId, connectionId, bgPActionRequest);
@@ -886,8 +886,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routingProtocolId = UUID.randomUUID(); // UUID | Routing Protocol Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    UUID routingProtocolId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Routing Protocol Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     RoutingProtocolBase routingProtocolBase = new RoutingProtocolBase(); // RoutingProtocolBase | 
     try {
       RoutingProtocolData result = apiInstance.replaceConnectionRoutingProtocolByUuid(routingProtocolId, connectionId, routingProtocolBase);
@@ -963,7 +963,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RoutingProtocolsApi apiInstance = new RoutingProtocolsApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     ValidateRequest validateRequest = new ValidateRequest(); // ValidateRequest | 
     try {
       ValidateSubnetResponse result = apiInstance.validateRoutingProtocol(routerId, validateRequest);

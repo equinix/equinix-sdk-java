@@ -47,8 +47,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionRouteFiltersBase connectionRouteFiltersBase = new ConnectionRouteFiltersBase(); // ConnectionRouteFiltersBase | 
     try {
       ConnectionRouteFilterData result = apiInstance.attachConnectionRouteFilter(routeFilterId, connectionId, connectionRouteFiltersBase);
@@ -197,7 +197,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     try {
       RouteFiltersData result = apiInstance.deleteRouteFilterByUuid(routeFilterId);
       System.out.println(result);
@@ -270,8 +270,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       ConnectionRouteFilterData result = apiInstance.detachConnectionRouteFilter(routeFilterId, connectionId);
       System.out.println(result);
@@ -345,8 +345,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       ConnectionRouteFilterData result = apiInstance.getConnectionRouteFilterByUuid(routeFilterId, connectionId);
       System.out.println(result);
@@ -420,7 +420,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     try {
       GetAllConnectionRouteFiltersResponse result = apiInstance.getConnectionRouteFilters(connectionId);
       System.out.println(result);
@@ -493,7 +493,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     try {
       RouteFiltersData result = apiInstance.getRouteFilterByUuid(routeFilterId);
       System.out.println(result);
@@ -566,8 +566,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
-    UUID changeId = UUID.randomUUID(); // UUID | Routing Protocol Change UUID
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Routing Protocol Change UUID
     try {
       RouteFilterChangeData result = apiInstance.getRouteFilterChangeByUuid(routeFilterId, changeId);
       System.out.println(result);
@@ -640,7 +640,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     try {
@@ -716,7 +716,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     try {
       GetRouteFilterGetConnectionsResponse result = apiInstance.getRouteFilterConnections(routeFilterId);
       System.out.println(result);
@@ -789,7 +789,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    String routeFilterId = "routeFilterId_example"; // String | Route Filters Id
+    String routeFilterId = "695a8471-6595-4ac6-a2f4-b3d96ed3a59d"; // String | Route Filters Id
     List<RouteFiltersPatchRequestItem> routeFiltersPatchRequestItem = Arrays.asList(); // List<RouteFiltersPatchRequestItem> | 
     try {
       RouteFiltersData result = apiInstance.patchRouteFilterByUuid(routeFilterId, routeFiltersPatchRequestItem);
@@ -864,7 +864,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     RouteFiltersApi apiInstance = new RouteFiltersApi(defaultClient);
-    UUID routerId = UUID.randomUUID(); // UUID | Cloud Router UUID
+    UUID routerId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Cloud Router UUID
     CloudRouterRouteFiltersSearchBase cloudRouterRouteFiltersSearchBase = new CloudRouterRouteFiltersSearchBase(); // CloudRouterRouteFiltersSearchBase | 
     try {
       CloudRouterRouteFiltersSearchResponse result = apiInstance.searchCloudRouterRouteFilterAttachments(routerId, cloudRouterRouteFiltersSearchBase);

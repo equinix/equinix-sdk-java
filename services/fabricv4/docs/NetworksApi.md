@@ -117,7 +117,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
     try {
       Network result = apiInstance.deleteNetworkByUuid(networkId);
       System.out.println(result);
@@ -188,7 +188,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
     try {
       NetworkConnections result = apiInstance.getConnectionsByNetworkUuid(networkId);
       System.out.println(result);
@@ -259,7 +259,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
     try {
       Network result = apiInstance.getNetworkByUuid(networkId);
       System.out.println(result);
@@ -329,8 +329,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
-    UUID changeId = UUID.randomUUID(); // UUID | Network Change UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
+    UUID changeId = UUID.fromString("6d500177-9404-41f2-99e8-2bf1a84d8db5"); // UUID | Network Change UUID
     try {
       NetworkChange result = apiInstance.getNetworkChangeByUuid(networkId, changeId);
       System.out.println(result);
@@ -402,7 +402,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
     try {
       NetworkChangeResponse result = apiInstance.getNetworkChanges(networkId);
       System.out.println(result);
@@ -544,7 +544,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
-    UUID networkId = UUID.randomUUID(); // UUID | Network UUID
+    UUID networkId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Network UUID
     List<NetworkChangeOperation> networkChangeOperation = Arrays.asList(); // List<NetworkChangeOperation> | 
     try {
       Network result = apiInstance.updateNetworkByUuid(networkId, networkChangeOperation);

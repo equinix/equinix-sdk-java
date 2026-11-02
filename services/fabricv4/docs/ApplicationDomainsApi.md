@@ -112,7 +112,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationDomainsApi apiInstance = new ApplicationDomainsApi(defaultClient);
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     try {
       AppDomain result = apiInstance.deleteAppDomainByUuid(appDomainId);
       System.out.println(result);
@@ -184,7 +184,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationDomainsApi apiInstance = new ApplicationDomainsApi(defaultClient);
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     try {
       AppDomain result = apiInstance.getAppDomainByUuid(appDomainId);
       System.out.println(result);
@@ -255,7 +255,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationDomainsApi apiInstance = new ApplicationDomainsApi(defaultClient);
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     Integer offset = 1; // Integer | offset
     Integer limit = 10; // Integer | number of records to fetch
     List<AppLinkState> state = Arrays.asList(); // List<AppLinkState> | Filter attached App Links by one or more lifecycle states.
@@ -409,7 +409,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ApplicationDomainsApi apiInstance = new ApplicationDomainsApi(defaultClient);
-    UUID appDomainId = UUID.randomUUID(); // UUID | App Domain UUID
+    UUID appDomainId = UUID.fromString("20f3ef8e-d670-4236-86fa-bb0038adcfc3"); // UUID | App Domain UUID
     List<AppDomainChangeOperation> appDomainChangeOperation = Arrays.asList(); // List<AppDomainChangeOperation> | 
     try {
       AppDomain result = apiInstance.updateAppDomainByUuid(appDomainId, appDomainChangeOperation);

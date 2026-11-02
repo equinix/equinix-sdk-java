@@ -1,11 +1,12 @@
 diff --git a/spec/services/fabricv4/oas3.patched/openapi.yaml b/spec/services/fabricv4/oas3.patched/openapi.yaml
+index bb19aab..e7f8213 100644
 --- a/spec/services/fabricv4/oas3.patched/openapi.yaml
 +++ b/spec/services/fabricv4/oas3.patched/openapi.yaml
-@@ -16160,7 +16160,6 @@ components:
-         - changeLog
-         - href
-         - name
--        - order
+@@ -58245,7 +58245,6 @@ components:
+         - billing
+         - account
          - project
-         - routingProtocol
-         - state
+-        - order
+         - changeLog
+         - useCase
+       properties:

@@ -38,7 +38,7 @@ public class Example {
 
     MetricsApi apiInstance = new MetricsApi(defaultClient);
     MetricAssetType asset = MetricAssetType.fromValue("ports"); // MetricAssetType | asset
-    UUID assetId = UUID.randomUUID(); // UUID | asset UUID
+    UUID assetId = UUID.fromString("757400f8-d360-11e9-bb65-2a2ae2dbcce6"); // UUID | asset UUID
     String name = "equinix.fabric.connection.bandwidth_rx.usage"; // String | Name of the metric types:  - `equinix.fabric.connection.bandwidth_rx.usage` - `equinix.fabric.connection.bandwidth_tx.usage` - `equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count` - `equinix.fabric.connection.byte_rx.count` - `equinix.fabric.connection.byte_tx.count` - `equinix.fabric.connection.bandwidth_rx.usage_summary` - `equinix.fabric.connection.bandwidth_tx.usage_summary` - `equinix.fabric.port.bandwidth_rx.usage` - `equinix.fabric.port.bandwidth_tx.usage` - `equinix.fabric.port.packets_dropped_rx.count` - `equinix.fabric.port.packets_dropped_tx.count` - `equinix.fabric.port.packets_erred_rx.count` - `equinix.fabric.port.packets_erred_tx.count` - `equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency` - `equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg` 
     OffsetDateTime fromDateTime = OffsetDateTime.now(); // OffsetDateTime | Start date and time
     OffsetDateTime toDateTime = OffsetDateTime.now(); // OffsetDateTime | End date and time

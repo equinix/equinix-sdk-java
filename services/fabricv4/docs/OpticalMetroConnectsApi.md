@@ -180,7 +180,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     OpticalMetroConnectsApi apiInstance = new OpticalMetroConnectsApi(defaultClient);
-    UUID opticalConnectId = UUID.randomUUID(); // UUID | Unique identifier of an Optical Connect.
+    UUID opticalConnectId = UUID.fromString("557400f8-d360-11e9-bb65-2a2ae2dbcce4"); // UUID | Unique identifier of an Optical Connect.
     try {
       OpticalConnectResponse result = apiInstance.getOpticalConnectByUuid(opticalConnectId);
       System.out.println(result);

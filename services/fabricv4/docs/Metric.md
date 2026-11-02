@@ -14,7 +14,7 @@ Metric object
 |**interval** | **String** | Metric interval (set automatically based on search range) |  [optional] |
 |**resource** | [**MetricResource**](MetricResource.md) |  |  [optional] |
 |**summary** | **String** | Metric summary |  [optional] |
-|**datapoints** | [**List&lt;MetricDatapoints&gt;**](MetricDatapoints.md) | Metric data points |  [optional] |
+|**datapoints** | [**List&lt;MetricDatapointsInner&gt;**](MetricDatapointsInner.md) | Metric data points |  [optional] |
 
 
 

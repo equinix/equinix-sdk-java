@@ -115,7 +115,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionActionRequest connectionActionRequest = new ConnectionActionRequest(); // ConnectionActionRequest | 
     try {
       ConnectionAction result = apiInstance.createConnectionAction(connectionId, connectionActionRequest);
@@ -260,7 +260,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     ConnectionDirection direction = ConnectionDirection.fromValue("INTERNAL"); // ConnectionDirection | Connection Direction
     try {
       Connection result = apiInstance.getConnectionByUuid(connectionId, direction);
@@ -403,7 +403,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ConnectionsApi apiInstance = new ConnectionsApi(defaultClient);
-    String connectionId = "connectionId_example"; // String | Connection Id
+    String connectionId = "557400f8-d360-11e9-bb65-2a2ae2dbcce4"; // String | Connection Id
     List<ConnectionChangeOperation> connectionChangeOperation = Arrays.asList(); // List<ConnectionChangeOperation> | 
     Boolean dryRun = false; // Boolean | option to verify that API calls will succeed
     try {
