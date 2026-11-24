@@ -9,11 +9,13 @@
     <version>0.13.0</version>
 
     <!--
-    TODO: this modules section needs to be regenerated
-    whenever a new service is onboarded
+    The service modules between the GENERATED markers are written by
+    script/generate_poms.sh (make generate-poms). Do not edit them by hand.
     -->
     <modules>
+        <!-- BEGIN GENERATED: modules -->
         <module>services/fabricv4</module>
+        <!-- END GENERATED: modules -->
         <module>equinix-sdk-java</module>
     </modules>
 </project>

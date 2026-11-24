@@ -29,3 +29,11 @@ mkdir -p templates/services/${service_name} && touch templates/services/${servic
 mkdir -p patches/services/${service_name} && touch patches/services/${service_name}/.keep
 
 make -f Makefile.${service_name} all
+
+# The umbrella poms (pom.xml and equinix-sdk-java/pom.xml) list every service.
+# The release job regenerates them. Do not commit changes to them in the
+# onboarding PR, because that makes PRs for other services conflict.
+echo
+echo "Onboarded ${service_name}."
+echo "To build it from the root pom, run: make generate-poms"
+echo "Then do not commit the changes to pom.xml or equinix-sdk-java/pom.xml."
