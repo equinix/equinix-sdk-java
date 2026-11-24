@@ -36,15 +36,14 @@ This will:
 ## Umbrella poms:
 
 The root `pom.xml` lists every service module. `equinix-sdk-java/pom.xml` lists every service dependency.
-The text between the `BEGIN GENERATED` and `END GENERATED` comments in these files comes from the
-directories under `services/`. The script `script/generate_poms.sh` writes it.
+Both files are generated and Git ignores them. Do not edit them or commit them.
 
-* The release job runs the script through `make generate-all`.
-* The PR test workflow runs the script before `mvn clean install`.
-* To build a new service from the root pom on your computer, run `make generate-poms`.
+* The templates are `templates/umbrella/root.pom.xml.tmpl` and `templates/umbrella/sdk.pom.xml.tmpl`.
+* The script `script/generate_poms.sh` writes the poms. It reads the `version` file and the directories under `services/`.
+* After a clone, and after you add a service, run `make generate-poms`.
+* The release job and the CI jobs that run Maven run the script too.
 
-Do not commit changes to these generated blocks in a service PR.
-If you do, PRs for other services conflict with yours.
+Because Git ignores these files, PRs for different services cannot conflict on them.
 
 ## Running sample:
 

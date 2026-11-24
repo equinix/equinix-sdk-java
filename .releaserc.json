@@ -39,7 +39,9 @@
             ".",
             "!**/.openapi-generator/*",
             "!settings.xml",
-            "!toolchains.xml"
+            "!toolchains.xml",
+            "!pom.xml",
+            "!equinix-sdk-java/pom.xml"
           ]
         ]
       }

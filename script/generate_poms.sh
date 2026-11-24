@@ -1,18 +1,25 @@
 #!/bin/bash
 #
-# Regenerate the service lists in the hand-maintained umbrella poms.
+# Generate the umbrella poms from templates.
 #
-# The script scans services/*/pom.xml and rewrites the text between the
-# BEGIN GENERATED and END GENERATED marker comments in two files:
-#   - pom.xml                   (the <module> entries)
-#   - equinix-sdk-java/pom.xml  (the <dependency> entries)
+#   templates/umbrella/root.pom.xml.tmpl -> pom.xml
+#   templates/umbrella/sdk.pom.xml.tmpl  -> equinix-sdk-java/pom.xml
 #
-# Service PRs must not edit those blocks. The release job runs this script
-# through "make generate-all". Run "make generate-poms" to update them locally.
+# The script fills in the version from the "version" file. It also fills in
+# one module and one dependency for each services/*/pom.xml file.
+# Git ignores the generated poms, so service PRs cannot conflict on them.
+# Run this script (or "make generate-poms") after a clone, and after you
+# add a service. The CI jobs that run Maven run it too.
 
 set -eu
 
 cd "$(dirname "$0")/.."
+
+version=$(tr -d '[:space:]' < version)
+if [ -z "$version" ]; then
+  echo "error: the version file is empty" >&2
+  exit 1
+fi
 
 service_count=0
 module_lines=$(mktemp)
@@ -40,37 +47,38 @@ if [ "$service_count" -eq 0 ]; then
   exit 1
 fi
 
-# replace_block FILE NAME CONTENT_FILE
-# Replace the lines between the NAME markers in FILE with CONTENT_FILE.
-replace_block() {
-  local file=$1 name=$2 content_file=$3
-  local begin="<!-- BEGIN GENERATED: $name -->"
-  local end="<!-- END GENERATED: $name -->"
+# render TEMPLATE OUTPUT PLACEHOLDER CONTENT_FILE
+# Copy TEMPLATE to OUTPUT. Replace the line that holds only PLACEHOLDER with
+# the lines of CONTENT_FILE. Replace @VERSION@ with the project version.
+render() {
+  local template=$1 output=$2 placeholder=$3 content_file=$4
 
-  if ! grep -qF -- "$begin" "$file" || ! grep -qF -- "$end" "$file"; then
-    echo "error: $file has no BEGIN/END GENERATED markers for $name" >&2
+  # The output directory can be missing in a fresh clone, because it holds only ignored files.
+  mkdir -p "$(dirname "$output")"
+
+  if ! grep -qxF -- "$placeholder" "$template"; then
+    echo "error: $template has no line that holds only $placeholder" >&2
     exit 1
   fi
 
   local tmp
   tmp=$(mktemp)
-  awk -v begin="$begin" -v end="$end" -v content="$content_file" '
-    index($0, begin) {
-      print
+  awk -v placeholder="$placeholder" -v content="$content_file" -v version="$version" '
+    $0 == placeholder {
       while ((getline line < content) > 0) print line
       close(content)
-      skipping = 1
       next
     }
-    index($0, end) { skipping = 0 }
-    !skipping { print }
-  ' "$file" > "$tmp"
-  # Write through cat to keep the mode of the original file.
-  cat "$tmp" > "$file"
-  rm -f "$tmp"
+    {
+      gsub(/@VERSION@/, version)
+      print
+    }
+  ' "$template" > "$tmp"
+  chmod 644 "$tmp"
+  mv "$tmp" "$output"
 }
 
-replace_block pom.xml modules "$module_lines"
-replace_block equinix-sdk-java/pom.xml dependencies "$dependency_lines"
+render templates/umbrella/root.pom.xml.tmpl pom.xml @MODULES@ "$module_lines"
+render templates/umbrella/sdk.pom.xml.tmpl equinix-sdk-java/pom.xml @DEPENDENCIES@ "$dependency_lines"
 
-echo "Updated umbrella poms for $service_count service(s)."
+echo "Generated pom.xml and equinix-sdk-java/pom.xml for $service_count service(s) at version $version."
