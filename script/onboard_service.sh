@@ -29,3 +29,9 @@ mkdir -p templates/services/${service_name} && touch templates/services/${servic
 mkdir -p patches/services/${service_name} && touch patches/services/${service_name}/.keep
 
 make -f Makefile.${service_name} all
+
+# The umbrella poms (pom.xml and equinix-sdk-java/pom.xml) are generated from
+# the services/ directories and Git ignores them. No edit is needed.
+echo
+echo "Onboarded ${service_name}."
+echo "To build it from the root pom, run: make generate-poms"

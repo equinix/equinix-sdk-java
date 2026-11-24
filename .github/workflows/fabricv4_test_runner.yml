@@ -27,6 +27,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Generate umbrella poms
+        run: script/generate_poms.sh
+
       - name: Install modules
         run: mvn clean install -DskipTests
 
@@ -76,6 +79,9 @@ jobs:
         with:
           java-version: ${{ matrix.testConfig.jdk }}
           distribution: 'temurin'
+
+      - name: Generate umbrella poms
+        run: script/generate_poms.sh
 
       - name: Restore local Maven repository
         uses: actions/cache/restore@v4

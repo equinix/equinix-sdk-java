@@ -33,6 +33,18 @@ This will:
 5. Generate the Fabric Java SDK Client based on the Patched Fabric OAS 3.0 Spec
 6. Build the generated Fabric Java SDK Client with `mvn clean package`
 
+## Umbrella poms:
+
+The root `pom.xml` lists every service module. `equinix-sdk-java/pom.xml` lists every service dependency.
+Both files are generated and Git ignores them. Do not edit them or commit them.
+
+* The templates are `templates/umbrella/root.pom.xml.tmpl` and `templates/umbrella/sdk.pom.xml.tmpl`.
+* The script `script/generate_poms.sh` writes the poms. It reads the `version` file and the directories under `services/`.
+* After a clone, and after you add a service, run `make generate-poms`.
+* The release job and the CI jobs that run Maven run the script too.
+
+Because Git ignores these files, PRs for different services cannot conflict on them.
+
 ## Running sample:
 
 Build generated client (The Makefile command `make generate` includes these commands as well):
